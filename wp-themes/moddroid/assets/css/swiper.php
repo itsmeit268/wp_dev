@@ -1,0 +1,1 @@
+<style id="swiper-style-<?php echo THEMES_NAMES; ?>-v<?php echo VERSION; ?>"></style>

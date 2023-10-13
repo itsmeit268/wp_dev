@@ -1,0 +1,4 @@
+<style>#breadcrumbiblog1 {padding:5px 5px 5px 0px; margin: 0px 0px 15px 0px; font-size:90%; line-height: 1.4em; border-bottom:3px double #eee;}/* Breadcrumb */#breadcrumbiblog{background:#fff;line-height:1.2em;width:auto;overflow:hidden;margin:0;padding:10px 0;border-top:0px solid #dedede;border-bottom:0px solid #dedede;font-size:80%;color:#888;font-weight:400;text-overflow:ellipsis;-webkit-text-overflow:ellipsis;white-space:nowrap}#breadcrumbiblog a{display:inline-block;text-decoration:none;transition:all .3s ease-in-out;color:#666;font-weight:400}#breadcrumbiblog a:hover{color:#11589D}#breadcrumbiblog svg{width:16px;height:16px;vertical-align:-4px}#breadcrumbiblog svg path{fill:#666}}</style>
+<div id="breadcrumbiblog">
+<?php if (function_exists('breadcrumbsX')) breadcrumbsX(); ?>
+</div>

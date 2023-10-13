@@ -1,0 +1,276 @@
+@import url(var(--font_body_custom_fonts_rtl)) !important;
+
+body {
+	font-family: var(--font_body_rtl) !important;
+	text-align: right !important;
+}
+
+#accordion-downloads a span {
+	color: var(--color_link);
+}
+
+span.align-middle.whites {
+	color: white !important;
+}
+
+#accordion-faqs a {
+	color: var(--putih);
+}
+
+section h2 {
+	/* float: right !important; */
+}
+
+body {
+	text-align: right !important;
+}
+
+.text-primary,.text-truncate {
+	margin-right: 5px;
+}
+
+.svg-4,.svg-99 {
+	margin-left: 5px !important;
+}
+
+section ul#menu-about-us {
+	float: right !important;
+}
+
+.site-footer .menu li {
+	direction: rtl !important;
+	margin-right: 5px !important;
+	text-align: right !important;
+}
+
+.accordion .toggler:after {
+	margin-right: auto !important;
+	margin-left: unset !important;
+}
+
+.svg-5 {
+	margin-left: 5px !important;
+}
+
+.ml-auto {
+	margin-right: 20px !important;
+}
+
+.breadcrumb-item {
+	margin-right: 10px !important;
+}
+
+.breadcrumb-item .breadcrumb-item::before {
+	margin-left: 0.5rem !important;
+}
+
+#entry-content h1,#entry-content h2,#entry-content h3,#entry-content h4,#entry-content h5,#entry-content h6 {
+	text-align: center !important;
+	font-size: 20px;
+	padding-bottom: 10px;
+	text-transform: capitalize;
+}
+
+.box-app dt.ic-app {
+	float: right !important;
+	margin-left: 20px;
+}
+
+dd.info-app span {
+	margin-right: -11px;
+}
+
+.vid.poster {
+	width: 100% !important;
+	max-height: 176px !important;
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.rtl .version_history .list .icon {
+	right: 16px !important;
+}
+
+
+.rtl .version_history .list .v_h_button {
+	left: 0 !important;
+	text-align: left !important;
+	padding-left: 8px !important;
+}
+
+.rtl .version_history .list .title .version {
+	padding-left: 6px !important;
+}
+
+.rtl .version_history .list .text span {
+	padding-left: 8px !important;
+}
+
+.rtl .version_history .list .v_h_button .info:before {
+	right: 0 !important;
+}
+
+.rtl .info_box .down-button:before,.rtl .version_history .list .down:before {
+	right: 0 !important;
+}
+
+.rtl .version_history .list .info_box.info-download {
+	padding-right: 0 !important;
+	left: 0 !important;
+}
+
+.rtl .version_history .info-download .table:before {
+	right: -20% !important;
+}
+
+.rtl .version_history .more-apk span:after,.rtl .version_history .more-apk span:before {
+	right: 50%!important;
+}
+
+@media (min-width:720px) {
+	.rtl .version_history .list .package_info {
+		padding-right: 80px !important;
+	}
+ 
+}
+
+@media (min-width:960px) {
+	.rtl .detail_banner {
+		padding-right: 100px !important;
+		padding-left: 240px !important;
+		text-align: right !important;
+	}
+
+	.rtl .detail_banner .icon { 
+		right: 0 !important; 
+	}
+}
+.rtl .breadcrumb-item .breadcrumb-item::before {
+	border-bottom: 2px solid #6c757d !important;
+	border-left: 2px solid #6c757d !important;
+	border-top: unset !important;
+	border-right: unset !important;
+	display: inline-block;
+	vertical-align: middle;
+	width: 0.5rem;
+	height: 0.5rem;
+	padding-right: 0;
+	margin-top: -0.25rem;
+	margin-right: unset !important;
+	margin-left: 0.5rem !important;
+	transform: rotate(45deg);
+}
+
+/* REVIEW BOX */
+
+.rtl .review_app_box {
+ text-align:right!important;
+}
+.rtl .review_app_box .icon {
+ right:16px!important;
+}  
+ 
+.rtl .review_app_box .other a.alternatives,.rtl .review_app_box .other span {
+ padding-right:16px!important;
+ margin-left:6px!important;
+}
+.rtl .review_app_box .other a.alternatives:before,.rtl .review_app_box .other span:before {
+ right: 0!important;
+ background-position:right 3px!important;
+}    
+.rtl .review_app_box .google_play_btn,.rtl .review_app_box .pre_register_btn {
+ margin-right:100px!important;
+}
+
+@media (min-width:560px) {
+ .rtl .review_app_box {
+  text-align:right!important;
+ } 
+ .rtl .review_app_box .icon { 
+  right:16px!important; 
+ }
+ .rtl .review_app_box .button {
+  left:16px!important;
+ }
+ .rtl .review_app_box .gp_btn {
+  left:4px!important;
+ }
+}
+
+
+.rtl .review_icon, .rtl .star_icon {
+ padding-right:14px!important;
+} 
+.rtl .review_icon:before, .rtl .star_icon:before {
+ right: 0!important;
+}  
+.rtl .review_banner img.img {
+ right:50%!important;
+}
+
+.ml-auto {
+	margin-left: 20px !important;
+}
+
+input-group > .custom-select:not(:last-child),.input-group > .form-control:not(:last-child) {
+	border-top-right-radius: 10px !important;
+	border-bottom-right-radius: 10px !important;
+}
+
+.input-group-append {
+	margin-right: -1px;
+}
+
+.input-group > .input-group-append > .btn,.input-group > .input-group-append > .input-group-text,.input-group > .input-group-prepend:first-child > .btn:not(:first-child),.input-group> .input-group-prepend:first-child> .input-group-text:not(:first-child),.input-group > .input-group-prepend:not(:first-child) > .btn,.input-group > .input-group-prepend:not(:first-child) > .input-group-text {
+	border-top-left-radius: 10px !important;
+	border-bottom-left-radius: 10px !important;
+}
+
+.pl-3,.px-3 {
+	padding-right: 1rem !important;
+	padding-bottom: 15px;
+}
+
+section .row kbd,.row .small kbd {
+	right: 40px;
+}
+
+.nav-rtl {
+	margin-right: auto !important;
+}
+
+.offset-lg-2-rtl {
+	margin-right: 16.666667%;
+}
+
+.input-group-append-rtl {
+	margin-right: -1px;
+}
+
+.input-group-append-rtl,.input-group-prepend {
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.svg-5-rtl {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.svg-5-rtl {
+	margin-right: auto !important;
+}
+
+.tags-links {
+	display: none !important;
+}
+
+.font-weight-normal,dd.title {
+	font-weight: 700 !important;
+}
+
+.rtl.Rtl .accordion-container .accordion-title::after { 
+  left: 25px!important; 
+}

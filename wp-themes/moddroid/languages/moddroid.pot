@@ -1,0 +1,3649 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Moddroid\n"
+"POT-Creation-Date: 2023-09-02 03:29+0800\n"
+"PO-Revision-Date: 2023-09-02 03:29+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:85
+msgid "Search results for"
+msgstr ""
+
+#: archive-news.php:32 archive-news.php:42 archive-news.php:52
+#: archive-news.php:62 archive-news.php:72 archive-news.php:87 archive.php:41
+#: archive.php:51 archive.php:61 archive.php:71 archive.php:81 archive.php:94
+#: archive.php:104 categorie.php:26 categorie.php:36 tag.php:69
+#: taxonomy-developer.php:41 taxonomy-developer.php:51
+#: taxonomy-developer.php:61 taxonomy-developer.php:71
+#: taxonomy-developer.php:81 taxonomy-developer.php:94
+#: template/template-popular-apps.php:36 template/template-popular-games.php:37
+#: template/template-top-rate-gp.php:33 template/template-top-rate.php:32
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: archive.php:96
+msgid "Latest Updates"
+msgstr ""
+
+#: archive.php:97
+msgid "New Releases"
+msgstr ""
+
+#: archive.php:98
+msgid "Popular"
+msgstr ""
+
+#: archive.php:104
+msgid "Discover thousands of unique mobile"
+msgstr ""
+
+#: archive.php:104
+msgid ""
+"We are constantly updating daily, along with the best mods available here"
+msgstr ""
+
+#: author.php:24
+msgid "The passwords you entered do not match.  Your password was not updated."
+msgstr ""
+
+#: author.php:31
+msgid "The Email you entered is not valid.  please try again."
+msgstr ""
+
+#: author.php:33
+msgid "This email is already used by another user.  try a different one."
+msgstr ""
+
+#: author.php:119
+msgid "logged in to see your comments"
+msgstr ""
+
+#: author.php:162
+msgid "online"
+msgstr ""
+
+#: author.php:162
+msgid "offline"
+msgstr ""
+
+#: author.php:179
+msgid "Registered"
+msgstr ""
+
+#: author.php:186
+msgid "Last Activity"
+msgstr ""
+
+#: author.php:215
+msgid "Published"
+msgstr ""
+
+#: author.php:236
+msgid "logged in to see your post"
+msgstr ""
+
+#: author.php:237
+msgid "Login Now"
+msgstr ""
+
+#: author.php:245
+msgid "Comments"
+msgstr ""
+
+#: author.php:256
+msgid "Add Your Biographical Info"
+msgstr ""
+
+#: author.php:270
+msgid "Settings account"
+msgstr ""
+
+#: author.php:275
+msgid "Username"
+msgstr ""
+
+#: author.php:280
+msgid "E-Mail"
+msgstr ""
+
+#: author.php:285
+msgid "First Names"
+msgstr ""
+
+#: author.php:290
+msgid "Last Names"
+msgstr ""
+
+#: author.php:296
+msgid "Display Nickname Publicly"
+msgstr ""
+
+#: author.php:324
+msgid "New Password"
+msgstr ""
+
+#: author.php:328
+msgid "Repeat new password"
+msgstr ""
+
+#: author.php:334
+msgid "Biographical Information"
+msgstr ""
+
+#: author.php:358 libs/addons/includes/core.php:1051
+msgid "Save"
+msgstr ""
+
+#: author.php:359 wp-report-post/wp-report-post.php:677
+#: wp-report-post/wp-report-post.php:784
+msgid "Cancel"
+msgstr ""
+
+#: categorie.php:49
+msgid ""
+"The page you were looking for could not be found. It might have been "
+"removed, renamed, or did not exist in the first place."
+msgstr ""
+
+#: include/comment.new.php:15 include/comment.new.php:16
+msgid "Leave Comments"
+msgstr ""
+
+#: include/comment.old.php:43
+msgid "Comment navigation"
+msgstr ""
+
+#: include/comment.old.php:63
+msgid "Comments are closed."
+msgstr ""
+
+#: include/info_apk.php:151 include/info_apk_2.php:200
+#: include/info_apk_new.php:238
+msgid "Content Rating"
+msgstr ""
+
+#: include/info_apk.php:176 include/info_apk_2.php:238
+msgid "Play Store"
+msgstr ""
+
+#: include/info_apk.php:181 include/info_apk_2.php:186
+#: include/info_apk_new.php:215
+msgid "Total installs"
+msgstr ""
+
+#: include/info_apk.php:192 include/info_apk.php:193 include/info_apk_2.php:244
+#: include/info_apk_2.php:247 include/info_apk_new.php:257
+#: include/info_apk_new.php:258
+msgid "Android"
+msgstr ""
+
+#: include/info_apk.php:197 include/info_apk_2.php:258
+#: include/info_apk_new.php:262
+msgid "ratings"
+msgstr ""
+
+#: include/info_apk.php:200 include/info_apk_2.php:261
+#: include/info_apk_new.php:265
+msgid "Price"
+msgstr ""
+
+#: include/info_apk_2.php:177 include/info_apk_new.php:206
+msgid "Mod Version"
+msgstr ""
+
+#: include/info_apk_3.php:147
+msgid " by "
+msgstr ""
+
+#: include/new.rate.php:209 rate-my-post/rating-widget.php:60
+msgid "Please Rate!"
+msgstr ""
+
+#: libs/addons/checks.php:70 libs/addons/includes/checks.php:70
+msgid "Available app updates!"
+msgstr ""
+
+#: libs/addons/includes/core.php:24
+msgid "App Details"
+msgstr ""
+
+#: libs/addons/includes/core.php:25
+msgid "Download Link Box"
+msgstr ""
+
+#: libs/addons/includes/core.php:27
+msgid "Entry Content"
+msgstr ""
+
+#: libs/addons/includes/core.php:29 libs/addons/includes/core.php:52
+#: libs/tgm.php:2553
+msgid "Version"
+msgstr ""
+
+#: libs/addons/includes/core.php:51
+msgid "Poster"
+msgstr ""
+
+#: libs/addons/includes/core.php:53 libs/elements/widget-sidebar-cat.php:68
+#: libs/merlin/includes/pengaturan.php:360
+msgid "Title"
+msgstr ""
+
+#: libs/addons/includes/core.php:54
+msgid "Update Date"
+msgstr ""
+
+#: libs/addons/includes/core.php:55 libs/addons/includes/core.php:103
+#: wp-report-post/wp-report-post.php:962
+msgid "Edit"
+msgstr ""
+
+#: libs/addons/includes/core.php:126
+msgid "Here for Default Contents from Sources"
+msgstr ""
+
+#: libs/addons/includes/core.php:127
+msgid "Please copy this if you want use this contents"
+msgstr ""
+
+#: libs/addons/includes/core.php:232
+msgid "Add Your Details App Informations"
+msgstr ""
+
+#: libs/addons/includes/core.php:238
+msgid "Playstore ID"
+msgstr ""
+
+#: libs/addons/includes/core.php:241 libs/addons/includes/core.php:256
+#: libs/addons/includes/core.php:292 libs/addons/includes/core.php:306
+#: libs/addons/includes/core.php:319 libs/addons/includes/core.php:335
+#: libs/addons/includes/core.php:349 libs/addons/includes/core.php:363
+#: libs/addons/includes/core.php:377 libs/addons/includes/core.php:391
+#: libs/addons/includes/core.php:405 libs/addons/includes/core.php:419
+#: libs/addons/includes/core.php:433 libs/addons/includes/core.php:448
+msgid "Example"
+msgstr ""
+
+#: libs/addons/includes/core.php:243
+msgid "If You Make It Empty"
+msgstr ""
+
+#: libs/addons/includes/core.php:244
+msgid "App Detail Info"
+msgstr ""
+
+#: libs/addons/includes/core.php:244 libs/addons/includes/core.php:245
+#: libs/addons/includes/core.php:322
+msgid "not showing up"
+msgstr ""
+
+#: libs/addons/includes/core.php:245
+msgid "All Version"
+msgstr ""
+
+#: libs/addons/includes/core.php:253
+msgid "App Name"
+msgstr ""
+
+#: libs/addons/includes/core.php:267
+msgid "apps Google Play (Get it on)"
+msgstr ""
+
+#: libs/addons/includes/core.php:270
+msgid "Example "
+msgstr ""
+
+#: libs/addons/includes/core.php:273
+msgid "or copy this"
+msgstr ""
+
+#: libs/addons/includes/core.php:289
+msgid "apps Poster"
+msgstr ""
+
+#: libs/addons/includes/core.php:303
+msgid "apps background images"
+msgstr ""
+
+#: libs/addons/includes/core.php:316
+msgid "Apps Version From Playstore"
+msgstr ""
+
+#: libs/addons/includes/core.php:321
+msgid "Dont Make It "
+msgstr ""
+
+#: libs/addons/includes/core.php:321
+msgid "Empty"
+msgstr ""
+
+#: libs/addons/includes/core.php:322
+msgid "if Empty All Version"
+msgstr ""
+
+#: libs/addons/includes/core.php:332
+msgid "apps version from Sources"
+msgstr ""
+
+#: libs/addons/includes/core.php:346
+msgid "apps developers"
+msgstr ""
+
+#: libs/addons/includes/core.php:360
+msgid "apps installs"
+msgstr ""
+
+#: libs/addons/includes/core.php:374
+msgid "apps Average Rating"
+msgstr ""
+
+#: libs/addons/includes/core.php:388
+msgid "apps Number of Votes"
+msgstr ""
+
+#: libs/addons/includes/core.php:402
+msgid "OS Required"
+msgstr ""
+
+#: libs/addons/includes/core.php:416
+msgid "apps updates"
+msgstr ""
+
+#: libs/addons/includes/core.php:430
+msgid "apps Size"
+msgstr ""
+
+#: libs/addons/includes/core.php:436 libs/addons/includes/core.php:451
+msgid "Not Format Like This"
+msgstr ""
+
+#: libs/addons/includes/core.php:445
+msgid "apps youtube id"
+msgstr ""
+
+#: libs/addons/includes/core.php:472
+msgid "App Desc"
+msgstr ""
+
+#: libs/addons/includes/core.php:485
+msgid "App what news"
+msgstr ""
+
+#: libs/addons/includes/core.php:497
+msgid "mod features for homes.. etc"
+msgstr ""
+
+#: libs/addons/includes/core.php:509
+msgid "mod features for single post"
+msgstr ""
+
+#: libs/addons/includes/core.php:510
+msgid "Title Mod"
+msgstr ""
+
+#: libs/addons/includes/core.php:513 libs/addons/includes/core.php:529
+#: libs/addons/includes/core.php:545
+msgid "Descripton Mod"
+msgstr ""
+
+#: libs/addons/includes/core.php:525
+msgid "mod features for single post alt 2"
+msgstr ""
+
+#: libs/addons/includes/core.php:526
+msgid "Title Mod alt 2"
+msgstr ""
+
+#: libs/addons/includes/core.php:541
+msgid "mod features for single post alt 3"
+msgstr ""
+
+#: libs/addons/includes/core.php:542
+msgid "Title Mod alt 3"
+msgstr ""
+
+#: libs/addons/includes/core.php:649 libs/addons/includes/core.php:679
+msgid "Here for Default Download Links from Sources Google Play Store"
+msgstr ""
+
+#: libs/addons/includes/core.php:650 libs/addons/includes/core.php:679
+#: libs/addons/includes/core.php:721
+msgid "Please copy this link to download box"
+msgstr ""
+
+#: libs/addons/includes/core.php:650
+msgid "if you not copy the link.. download link use this for default link...."
+msgstr ""
+
+#: libs/addons/includes/core.php:654 libs/tgm.php:2549
+msgid "Type"
+msgstr ""
+
+#: libs/addons/includes/core.php:655 libs/addons/includes/core.php:683
+#: libs/addons/includes/core.php:725
+msgid "Size"
+msgstr ""
+
+#: libs/addons/includes/core.php:656 libs/addons/includes/core.php:684
+#: libs/addons/includes/core.php:726
+msgid "Name"
+msgstr ""
+
+#: libs/addons/includes/core.php:657 libs/addons/includes/core.php:685
+#: libs/addons/includes/core.php:727 libs/addons/includes/core.php:853
+#: libs/addons/includes/core.php:918 wp-report-post/wp-report-post.php:776
+msgid "Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:679
+msgid "if you not copy the link.. download link not showing up..."
+msgstr ""
+
+#: libs/addons/includes/core.php:721
+msgid "Here for Default Download Links from Sources"
+msgstr ""
+
+#: libs/addons/includes/core.php:721
+msgid "if you not copy the link.. download link from Sources not showing up..."
+msgstr ""
+
+#: libs/addons/includes/core.php:791 libs/addons/includes/core.php:886
+#: libs/addons/includes/core.php:951 libs/addons/includes/core.php:1020
+msgid "Tipes"
+msgstr ""
+
+#: libs/addons/includes/core.php:793 libs/addons/includes/core.php:877
+#: libs/addons/includes/core.php:942 libs/addons/includes/core.php:1011
+msgid "Sizes"
+msgstr ""
+
+#: libs/addons/includes/core.php:795 libs/addons/includes/core.php:858
+#: libs/addons/includes/core.php:923 libs/addons/includes/core.php:992
+msgid "Url Names"
+msgstr ""
+
+#: libs/addons/includes/core.php:796 libs/addons/includes/core.php:868
+#: libs/addons/includes/core.php:933 libs/addons/includes/core.php:1002
+msgid "Url Links"
+msgstr ""
+
+#: libs/addons/includes/core.php:800
+msgid ""
+"Here for Default Download Links from Sources, you can't add or remove this."
+msgstr ""
+
+#: libs/addons/includes/core.php:800
+msgid "but you can copy this link for you insert to download link page"
+msgstr ""
+
+#: libs/addons/includes/core.php:834
+msgid "Here for Your can Insert Link Download"
+msgstr ""
+
+#: libs/addons/includes/core.php:834
+msgid "you can add, edit or remove your link"
+msgstr ""
+
+#: libs/addons/includes/core.php:896 libs/addons/includes/core.php:961
+#: libs/addons/includes/core.php:1030
+msgid "Notes"
+msgstr ""
+
+#: libs/addons/includes/core.php:905 libs/addons/includes/core.php:970
+#: libs/addons/includes/core.php:1039
+msgid "Remove Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:987
+msgid "Add new Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:1050
+msgid "Add New Url Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:1204
+msgid "Background Image"
+msgstr ""
+
+#: libs/addons/includes/core.php:1216
+msgid "Add Background Image"
+msgstr ""
+
+#: libs/addons/includes/core.php:1216
+msgid "Best use Dimensions"
+msgstr ""
+
+#: libs/addons/includes/core.php:1219
+msgid "Remove Image"
+msgstr ""
+
+#: libs/addons/includes/core.php:1222
+msgid "add image"
+msgstr ""
+
+#: libs/addons/includes/core.php:1233 libs/addons/includes/core.php:1235
+msgid "select image"
+msgstr ""
+
+#: libs/elements/adm.php:79
+msgid "Exthem.es - Best Product Themes for You"
+msgstr ""
+
+#: libs/elements/adm.php:315
+msgid "Theme Docs"
+msgstr ""
+
+#: libs/elements/comments.php:38 template/better-comments.php:23
+#: template/comments-helper.php:18
+msgid "Pingback:"
+msgstr ""
+
+#: libs/elements/comments.php:41 template/better-comments.php:27
+#, php-format
+msgid "<div class=\"h6 text-break mb-1\">%s</div>"
+msgstr ""
+
+#: libs/elements/comments.php:47 template/better-comments.php:34
+#, php-format
+msgid "<time class=\"text-muted\" datetime=\"%1$s\">%1$s</time>"
+msgstr ""
+
+#: libs/elements/comments.php:78
+msgid "View replies"
+msgstr ""
+
+#: libs/elements/comments.php:78
+msgid "Hide replies"
+msgstr ""
+
+#: libs/elements/core.php:187
+msgid "Total Post"
+msgstr ""
+
+#: libs/elements/core.php:187
+msgid "Post"
+msgstr ""
+
+#: libs/elements/core.php:190
+msgid "Add new post"
+msgstr ""
+
+#: libs/elements/core.php:191
+msgid "Admin Panel"
+msgstr ""
+
+#: libs/elements/core.php:193
+msgid "Edit Profile"
+msgstr ""
+
+#: libs/elements/core.php:194
+msgid "Logout"
+msgstr ""
+
+#: libs/elements/core.php:205
+msgid "Login"
+msgstr ""
+
+#: libs/elements/core.php:382 libs/elements/core.php:504
+msgid "Made with Love by"
+msgstr ""
+
+#: libs/elements/core.php:388 libs/elements/core.php:510
+msgid ""
+" is a completed free website to share games and premium app mod at high "
+"quality"
+msgstr ""
+
+#: libs/elements/cpt.php:9
+msgctxt "Post Type General Name"
+msgid "News"
+msgstr ""
+
+#: libs/elements/cpt.php:10
+msgctxt "Post Type Singular Name"
+msgid "News"
+msgstr ""
+
+#: libs/elements/cpt.php:11 libs/elements/cpt.php:30
+msgid "News"
+msgstr ""
+
+#: libs/elements/cpt.php:12
+msgid "Parent News:"
+msgstr ""
+
+#: libs/elements/cpt.php:13
+msgid "All News"
+msgstr ""
+
+#: libs/elements/cpt.php:14
+msgid "View News "
+msgstr ""
+
+#: libs/elements/cpt.php:15
+msgid "Add New Article"
+msgstr ""
+
+#: libs/elements/cpt.php:16
+msgid "Add News"
+msgstr ""
+
+#: libs/elements/cpt.php:17
+msgid "Edit News "
+msgstr ""
+
+#: libs/elements/cpt.php:18
+msgid "Update News "
+msgstr ""
+
+#: libs/elements/cpt.php:19
+msgid "Search News"
+msgstr ""
+
+#: libs/elements/cpt.php:20 libs/elements/cpt.php:161
+msgid "Not found"
+msgstr ""
+
+#: libs/elements/cpt.php:21 libs/elements/cpt.php:162
+msgid "Not found in Trash"
+msgstr ""
+
+#: libs/elements/cpt.php:31
+msgid " News"
+msgstr ""
+
+#: libs/elements/cpt.php:58
+msgctxt "taxonomy general name"
+msgid "Tags"
+msgstr ""
+
+#: libs/elements/cpt.php:59
+msgctxt "taxonomy singular name"
+msgid "Tag"
+msgstr ""
+
+#: libs/elements/cpt.php:60
+msgid "Search Tags"
+msgstr ""
+
+#: libs/elements/cpt.php:61
+msgid "Popular Tags"
+msgstr ""
+
+#: libs/elements/cpt.php:62
+msgid "All Tags"
+msgstr ""
+
+#: libs/elements/cpt.php:65
+msgid "Edit Tag"
+msgstr ""
+
+#: libs/elements/cpt.php:66
+msgid "Update Tag"
+msgstr ""
+
+#: libs/elements/cpt.php:67
+msgid "Add New Tag"
+msgstr ""
+
+#: libs/elements/cpt.php:68
+msgid "New Tag Name"
+msgstr ""
+
+#: libs/elements/cpt.php:69
+msgid "Separate tags with commas"
+msgstr ""
+
+#: libs/elements/cpt.php:70
+msgid "Add or remove tags"
+msgstr ""
+
+#: libs/elements/cpt.php:71
+msgid "Choose from the most used tags"
+msgstr ""
+
+#: libs/elements/cpt.php:72 taxonomy-news_categories.php:117
+#: taxonomy-news_tags.php:116
+msgid "Tags"
+msgstr ""
+
+#: libs/elements/cpt.php:91
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: libs/elements/cpt.php:92
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
+
+#: libs/elements/cpt.php:93
+msgid "Search Categories"
+msgstr ""
+
+#: libs/elements/cpt.php:94 libs/elements/widget-home.php:451
+#: libs/elements/widget-sidebar-rate.php:407
+#: libs/elements/widget-sidebar.php:434 libs/elements/widget-slider.php:281
+msgid "All Categories"
+msgstr ""
+
+#: libs/elements/cpt.php:95
+msgid "Parent Category"
+msgstr ""
+
+#: libs/elements/cpt.php:96
+msgid "Parent Category:"
+msgstr ""
+
+#: libs/elements/cpt.php:97
+msgid "Edit Category"
+msgstr ""
+
+#: libs/elements/cpt.php:98
+msgid "Update Category"
+msgstr ""
+
+#: libs/elements/cpt.php:99
+msgid "Add New Category"
+msgstr ""
+
+#: libs/elements/cpt.php:100
+msgid "New Category"
+msgstr ""
+
+#: libs/elements/cpt.php:101
+msgid "Categories"
+msgstr ""
+
+#: libs/elements/cpt.php:120
+msgctxt "taxonomy general name"
+msgid "Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:121
+msgctxt "taxonomy singular name"
+msgid "Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:122
+msgid "Search Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:123
+msgid "All Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:124
+msgid "Parent Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:125
+msgid "Parent Developer:"
+msgstr ""
+
+#: libs/elements/cpt.php:126
+msgid "Edit Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:127
+msgid "Update Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:128
+msgid "Add New Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:129
+msgid "New Developer Name"
+msgstr ""
+
+#: libs/elements/cpt.php:130
+msgid "Developer"
+msgstr ""
+
+#: libs/elements/cpt.php:150
+msgctxt "Post Type General Name"
+msgid "Request"
+msgstr ""
+
+#: libs/elements/cpt.php:151
+msgctxt "Post Type Singular Name"
+msgid "Request"
+msgstr ""
+
+#: libs/elements/cpt.php:152 libs/elements/cpt.php:171
+msgid "Request"
+msgstr ""
+
+#: libs/elements/cpt.php:153
+msgid "Parent Request:"
+msgstr ""
+
+#: libs/elements/cpt.php:154
+msgid "All request"
+msgstr ""
+
+#: libs/elements/cpt.php:155
+msgid "View Request Info"
+msgstr ""
+
+#: libs/elements/cpt.php:156 libs/elements/cpt.php:157
+msgid "Add Request"
+msgstr ""
+
+#: libs/elements/cpt.php:158
+msgid "Edit Request Info"
+msgstr ""
+
+#: libs/elements/cpt.php:159
+msgid "Update Request Info"
+msgstr ""
+
+#: libs/elements/cpt.php:160
+msgid "Search Request"
+msgstr ""
+
+#: libs/elements/cpt.php:172
+msgid "Info Request"
+msgstr ""
+
+#: libs/elements/diy.php:8
+msgid "Additional File"
+msgstr ""
+
+#: libs/elements/gallery.php:22
+msgid "Screenshoots Poster Uploader"
+msgstr ""
+
+#: libs/elements/gallery.php:55
+msgid ""
+"Here for Default Screenshoots Poster from Googleplay, you cant add or remove "
+"this"
+msgstr ""
+
+#: libs/elements/gallery.php:55
+msgid "but you can copy this link image url for you insert"
+msgstr ""
+
+#: libs/elements/gallery.php:57
+msgid "Add your link image url here"
+msgstr ""
+
+#: libs/elements/gallery.php:85 libs/elements/gallery.php:111
+#: libs/elements/gallery.php:137
+msgid "Image URL"
+msgstr ""
+
+#: libs/elements/gallery.php:120 libs/elements/gallery.php:143
+msgid "Choose File"
+msgstr ""
+
+#: libs/elements/gallery.php:121 libs/elements/gallery.php:144
+msgid "Remove"
+msgstr ""
+
+#: libs/elements/gallery.php:138
+msgid "Paste Your link image here or Choose your File"
+msgstr ""
+
+#: libs/elements/gallery.php:151
+msgid "Add New Images"
+msgstr ""
+
+#: libs/elements/inits.php:29
+msgid "Header"
+msgstr ""
+
+#: libs/elements/inits.php:30
+msgid "Footer Left"
+msgstr ""
+
+#: libs/elements/inits.php:31
+msgid "Footer Midle"
+msgstr ""
+
+#: libs/elements/inits.php:32
+msgid "Footer Right"
+msgstr ""
+
+#: libs/elements/inits.php:94 taxonomy-news_tags.php:26
+#: taxonomy-news_tags.php:36 taxonomy-news_tags.php:46
+#: taxonomy-news_tags.php:56 taxonomy-news_tags.php:66
+msgid "Home"
+msgstr ""
+
+#: libs/elements/inits.php:100
+msgid "Apps"
+msgstr ""
+
+#: libs/elements/inits.php:105
+msgid "Games"
+msgstr ""
+
+#: libs/elements/inits.php:110
+msgid "Blog"
+msgstr ""
+
+#: libs/elements/inits.php:224
+msgid "Widgets in this area will be shown on Slider Home"
+msgstr ""
+
+#: libs/elements/inits.php:234
+msgid "Widgets in this area will be shown only Home Post"
+msgstr ""
+
+#: libs/elements/inits.php:255
+msgid "Widgets in this area will be shown on sidebar only Home Top."
+msgstr ""
+
+#: libs/elements/inits.php:266
+msgid "Widgets in this area will be shown on sidebar only Home Bottom."
+msgstr ""
+
+#: libs/elements/inits.php:277
+msgid "Widgets in this area will be shown on sidebar Post"
+msgstr ""
+
+#: libs/elements/inits.php:428
+msgid "This content already exists, we recommend not to publish."
+msgstr ""
+
+#: libs/elements/inits.php:430
+msgid "Excellent! this content is unique."
+msgstr ""
+
+#: libs/elements/inits.php:687 libs/elements/inits.php:693
+#, php-format
+msgid "%s "
+msgstr ""
+
+#: libs/elements/inits.php:908
+msgid "Skip to the content"
+msgstr ""
+
+#: libs/elements/inits.php:988
+msgid "Never"
+msgstr ""
+
+#: libs/elements/navwalker.php:29
+msgid "SVG Icons"
+msgstr ""
+
+#: libs/elements/navwalker.php:32
+msgid "Add your SVG Icons, Leave empty if you dont wants use"
+msgstr ""
+
+#: libs/elements/navwalker.php:510
+msgid "Add a menu"
+msgstr ""
+
+#: libs/elements/ratingfilter.php:35
+msgid "Rating"
+msgstr ""
+
+#: libs/elements/ratingfilter.php:37
+msgid "Thank you for rating this software"
+msgstr ""
+
+#: libs/elements/ratingfilter.php:38
+msgid "As you found this software useful..."
+msgstr ""
+
+#: libs/elements/ratingfilter.php:39
+msgid "How come you did not like this software?"
+msgstr ""
+
+#: libs/elements/ratingfilter.php:40
+msgid "How could this software be improved?"
+msgstr ""
+
+#: libs/elements/ratingfilter.php:41
+msgid "Give us some tips..."
+msgstr ""
+
+#: libs/elements/widget-home.php:11
+msgid " Home post Widget."
+msgstr ""
+
+#: libs/elements/widget-home.php:13
+msgid "(MDR) Home Category Post"
+msgstr ""
+
+#: libs/elements/widget-home.php:366
+msgid "Post by Categorie"
+msgstr ""
+
+#: libs/elements/widget-home.php:367 libs/elements/widget-news.php:192
+#: libs/elements/widget-sidebar-rate.php:328
+#: libs/elements/widget-sidebar.php:350
+msgid "Get More..."
+msgstr ""
+
+#: libs/elements/widget-home.php:466
+msgid "Home Category Post"
+msgstr ""
+
+#: libs/elements/widget-home.php:469 libs/elements/widget-news.php:212
+#: libs/elements/widget-sidebar-rate.php:425
+#: libs/elements/widget-sidebar.php:452
+#: libs/elements/widget-slider-by-id.php:164
+#: libs/elements/widget-slider.php:299
+msgid "Title:"
+msgstr ""
+
+#: libs/elements/widget-home.php:475 libs/elements/widget-sidebar-rate.php:431
+msgid "Button Title :"
+msgstr ""
+
+#: libs/elements/widget-home.php:481 libs/elements/widget-sidebar-rate.php:437
+msgid "Button Url:"
+msgstr ""
+
+#: libs/elements/widget-home.php:484 libs/elements/widget-news.php:225
+#: libs/elements/widget-sidebar-rate.php:441
+#: libs/elements/widget-sidebar.php:465
+#: libs/elements/widget-slider-by-id.php:184
+#: libs/elements/widget-slider.php:314
+msgid "Target url for title"
+msgstr ""
+
+#: libs/elements/widget-home.php:484 libs/elements/widget-news.php:225
+#: libs/elements/widget-sidebar-rate.php:441
+#: libs/elements/widget-sidebar.php:465
+#: libs/elements/widget-slider-by-id.php:184
+#: libs/elements/widget-slider.php:314
+msgid "leave blank if you want using title without link."
+msgstr ""
+
+#: libs/elements/widget-home.php:488 libs/elements/widget-sidebar-rate.php:445
+#: libs/elements/widget-sidebar.php:469 libs/elements/widget-slider.php:318
+msgid "Selected categories"
+msgstr ""
+
+#: libs/elements/widget-home.php:491 libs/elements/widget-sidebar-rate.php:448
+#: libs/elements/widget-sidebar.php:472 libs/elements/widget-slider.php:321
+msgid ""
+"Click on the categories with pressed CTRL key to select multiple categories. "
+"If All Categories was selected then other selections will be ignored."
+msgstr ""
+
+#: libs/elements/widget-home.php:495 libs/elements/widget-news.php:229
+#: libs/elements/widget-sidebar-rate.php:452
+#: libs/elements/widget-sidebar.php:476 libs/elements/widget-slider.php:325
+msgid "Number post"
+msgstr ""
+
+#: libs/elements/widget-home.php:500 libs/elements/widget-news.php:234
+#: libs/elements/widget-sidebar-rate.php:457
+#: libs/elements/widget-sidebar.php:481 libs/elements/widget-slider.php:330
+msgid "Mode:"
+msgstr ""
+
+#: libs/elements/widget-home.php:502 libs/elements/widget-news.php:236
+#: libs/elements/widget-sidebar.php:483 libs/elements/widget-slider.php:332
+msgid "Recent Posts"
+msgstr ""
+
+#: libs/elements/widget-home.php:503 libs/elements/widget-news.php:237
+#: libs/elements/widget-sidebar.php:484 libs/elements/widget-slider.php:333
+msgid "Random Posts"
+msgstr ""
+
+#: libs/elements/widget-home.php:504
+msgid "Recent Modified Post"
+msgstr ""
+
+#: libs/elements/widget-home.php:505 libs/elements/widget-news.php:240
+#: libs/elements/widget-sidebar.php:486 libs/elements/widget-slider.php:336
+msgid "Post views"
+msgstr ""
+
+#: libs/elements/widget-home.php:506 libs/elements/widget-sidebar.php:487
+msgid "Post Rate by User (Just Working For Reborns Styles)"
+msgstr ""
+
+#: libs/elements/widget-home.php:507 libs/elements/widget-sidebar.php:488
+msgid "Post Rate by Play Store (Just Working For Reborns Styles)"
+msgstr ""
+
+#: libs/elements/widget-home.php:513 libs/elements/widget-news.php:247
+#: libs/elements/widget-sidebar-rate.php:467
+#: libs/elements/widget-sidebar.php:494 libs/elements/widget-slider.php:343
+msgid "Date:"
+msgstr ""
+
+#: libs/elements/widget-home.php:515 libs/elements/widget-news.php:249
+#: libs/elements/widget-sidebar-rate.php:469
+#: libs/elements/widget-sidebar.php:496 libs/elements/widget-slider.php:345
+msgid "All Time"
+msgstr ""
+
+#: libs/elements/widget-home.php:516 libs/elements/widget-news.php:250
+#: libs/elements/widget-sidebar-rate.php:470
+#: libs/elements/widget-sidebar.php:497 libs/elements/widget-slider.php:346
+msgid "Past Year"
+msgstr ""
+
+#: libs/elements/widget-home.php:517 libs/elements/widget-news.php:251
+#: libs/elements/widget-sidebar-rate.php:471
+#: libs/elements/widget-sidebar.php:498 libs/elements/widget-slider.php:347
+msgid "Past Month"
+msgstr ""
+
+#: libs/elements/widget-home.php:518 libs/elements/widget-news.php:252
+#: libs/elements/widget-sidebar-rate.php:472
+#: libs/elements/widget-sidebar.php:499 libs/elements/widget-slider.php:348
+msgid "Past Week"
+msgstr ""
+
+#: libs/elements/widget-home.php:519 libs/elements/widget-news.php:253
+#: libs/elements/widget-sidebar-rate.php:473
+#: libs/elements/widget-sidebar.php:500 libs/elements/widget-slider.php:349
+msgid "Last \"X\" days"
+msgstr ""
+
+#: libs/elements/widget-home.php:523 libs/elements/widget-news.php:257
+#: libs/elements/widget-sidebar-rate.php:477
+#: libs/elements/widget-sidebar.php:504 libs/elements/widget-slider.php:353
+msgid "Number of last days to filter:"
+msgstr ""
+
+#: libs/elements/widget-home.php:529 libs/elements/widget-sidebar.php:510
+msgid "Show Rate:"
+msgstr ""
+
+#: libs/elements/widget-home.php:531 libs/elements/widget-sidebar.php:512
+msgid "disable"
+msgstr ""
+
+#: libs/elements/widget-home.php:532 libs/elements/widget-sidebar.php:513
+msgid "Rate by user"
+msgstr ""
+
+#: libs/elements/widget-home.php:533 libs/elements/widget-sidebar.php:514
+msgid "Rate by PlayStore"
+msgstr ""
+
+#: libs/elements/widget-home.php:536 libs/elements/widget-home.php:541
+#: libs/elements/widget-home.php:546 libs/elements/widget-home.php:551
+#: libs/elements/widget-sidebar.php:517 libs/elements/widget-sidebar.php:522
+#: libs/elements/widget-sidebar.php:527 libs/elements/widget-sidebar.php:532
+msgid "Just Working For Reborns Styles"
+msgstr ""
+
+#: libs/elements/widget-home.php:539 libs/elements/widget-sidebar.php:520
+msgid "Show Mod ?"
+msgstr ""
+
+#: libs/elements/widget-home.php:544 libs/elements/widget-sidebar-rate.php:483
+#: libs/elements/widget-sidebar.php:525
+msgid "Show Version ?"
+msgstr ""
+
+#: libs/elements/widget-home.php:549 libs/elements/widget-sidebar.php:530
+msgid "Show Count Rate ?"
+msgstr ""
+
+#: libs/elements/widget-news.php:11
+msgid " Display News or Blog On Home Pages."
+msgstr ""
+
+#: libs/elements/widget-news.php:13
+msgid "(MDR) Home News or Blog"
+msgstr ""
+
+#: libs/elements/widget-news.php:191
+msgid "Latest Blog"
+msgstr ""
+
+#: libs/elements/widget-news.php:209
+msgid "Blog or News Widget"
+msgstr ""
+
+#: libs/elements/widget-news.php:218 libs/elements/widget-sidebar.php:458
+#: libs/elements/widget-slider.php:304
+msgid "Title Button:"
+msgstr ""
+
+#: libs/elements/widget-news.php:222 libs/elements/widget-sidebar.php:462
+#: libs/elements/widget-slider.php:311
+msgid "Link Url:"
+msgstr ""
+
+#: libs/elements/widget-news.php:238 libs/elements/widget-sidebar.php:485
+#: libs/elements/widget-slider.php:334
+msgid "Recent Modified date"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:16
+msgid "(MDR) Sidebar Category Selected "
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:17
+msgid " Widget - for Showing Selected Categorie On Sidebar"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:51
+msgid "List Categorie"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:65
+msgid "Sidebar Category by Selected"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:73
+#: libs/elements/widget-slider-by-id.php:177
+msgid "Button Title"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:80
+msgid "Button Link Url:"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:86
+msgid "link url for button"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:89
+msgid "leave blank if you dont want to show button"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:93
+msgid "Select Categories you want to show:"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:120
+msgid "Select for Styles."
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:124
+msgid "MODDROID"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:125
+msgid "MODYOLO"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:126
+msgid "REBORNS"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:130
+msgid "If You Want Use Styles by MODDROID"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:131
+msgid "Please Enable Sidebar Categories Opt 1 & Sidebar Categories Opt 2"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:132
+msgid "Please"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:132
+msgid "SETTING HERE"
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:250
+msgid " Tes kategorie Widget."
+msgstr ""
+
+#: libs/elements/widget-sidebar-cat.php:252
+msgid "(MDR) Tes kategorie"
+msgstr ""
+
+#: libs/elements/widget-sidebar-rate.php:11
+msgid " List Post Rate Widget."
+msgstr ""
+
+#: libs/elements/widget-sidebar-rate.php:13
+msgid "(MDR) List Rate Post"
+msgstr ""
+
+#: libs/elements/widget-sidebar-rate.php:327
+msgid "Top Rates"
+msgstr ""
+
+#: libs/elements/widget-sidebar-rate.php:422
+msgid "List Rate Post"
+msgstr ""
+
+#: libs/elements/widget-sidebar-rate.php:422
+msgid "Just Working for Modyolo and Reborn"
+msgstr ""
+
+#: libs/elements/widget-sidebar-rate.php:460
+msgid "Post Rate by User"
+msgstr ""
+
+#: libs/elements/widget-sidebar-rate.php:461
+msgid "Post Rate by Play Store"
+msgstr ""
+
+#: libs/elements/widget-sidebar.php:11
+msgid " Sidebar Post Widget"
+msgstr ""
+
+#: libs/elements/widget-sidebar.php:13
+msgid "(MDR) Sidebar Post Widget"
+msgstr ""
+
+#: libs/elements/widget-sidebar.php:349
+msgid "Popular Apk"
+msgstr ""
+
+#: libs/elements/widget-sidebar.php:449
+msgid "Home by Popular post"
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:9
+msgid " Display Slider by Post ID&#8217;s"
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:11
+msgid "(MDR) Home Slider Posts ID"
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:34
+msgid "Important Posts"
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:162
+msgid "Slider by post IDs Widget"
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:167
+msgid "Post ID:"
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:169
+msgid "Post IDs, separated by commas."
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:174
+msgid "Button Title:"
+msgstr ""
+
+#: libs/elements/widget-slider-by-id.php:181
+msgid "Link Title:"
+msgstr ""
+
+#: libs/elements/widget-slider.php:10
+msgid " Display Slider Post "
+msgstr ""
+
+#: libs/elements/widget-slider.php:12
+msgid "(MDR) Home Slider Posts"
+msgstr ""
+
+#: libs/elements/widget-slider.php:203
+msgid "Slider by Post Categorie"
+msgstr ""
+
+#: libs/elements/widget-slider.php:296
+msgid "Slider Home Widget"
+msgstr ""
+
+#: libs/elements/widget-slider.php:307
+msgid "button title"
+msgstr ""
+
+#: libs/import-demo.php:35 libs/import-demo.php:51 libs/import-demo.php:67
+#: libs/import-demo.php:83
+msgid "before you import this demo, you have to install all required plugins."
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:44
+msgid "Panel "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:45
+#: libs/merlin/includes/pengaturan.php:1489
+#: libs/merlin/includes/pengaturan.php:1504
+#: libs/merlin/includes/pengaturan.php:1519
+#: libs/merlin/includes/pengaturan.php:1535
+#: libs/merlin/includes/pengaturan.php:1556
+msgid " "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:114
+msgid "Doc"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:171
+#: libs/merlin/includes/pengaturan.php:173
+msgid ""
+"This text is displayed above the options panel. It isn't required, but more "
+"info is always better"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:177
+msgid "<p></p>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:183
+msgid "Extractor APK"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:191
+msgid "How to Post with Apk Extractor"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:193
+msgid ""
+"<a href=\"https://www.youtube.com/watch?v=ZTDM9yl1XB8\" target=\"_blank\" "
+"style=\"display: block; padding: 1em 0; text-align: center; \"><img alt=\"\" "
+"border=\"0\" data-original-height=\"416\" data-original-width=\"1085\" src=\""
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:198
+msgid "Select for Status Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:199
+msgid ""
+"Draft or Publish <br><u class=\"cool-link f2\">Publish</u> to auto post "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:210
+msgid "Select for Language"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:211
+msgid "Select for <u class=\"cool-link f2\">Language</u>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:281
+msgid "Select for Title Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:282
+msgid ""
+"Title <u class=\"cool-link f2\">Mods</u> or Title <u class=\"cool-link f2\"> "
+"PlayStore</u> "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:292
+msgid "Select for Permalink Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:293
+msgid ""
+"Permalink <u class=\"cool-link f2\">Title with Mods</u> or Permalink <u "
+"class=\"cool-link f2\">Title from App Name</u>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:304
+msgid "<u class=\"cool-link f2\">Enable</u> use Title from Playstore "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:313
+msgid ""
+"<u class=\"cool-link f2\">Enable</u> to make it <u class=\"cool-link "
+"f2\">Duplicate Post</u> after Submit Auto Post\n"
+"\t\t\t<br>\n"
+"\t\t\tDefault is <u class=\"cool-link f2\">Enable</u>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:325
+msgid "General"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:333
+msgid "Headers"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:343
+msgid "Enable to use Old Header"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:362
+msgid ""
+"<u class=\"cool-link f2\">*Default is</u>, <u class=\"cool-link "
+"f2\">Moddroid</u>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:376
+msgid "Logo Banner"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:379
+msgid "<u  class=\"cool-link f2\">Upload Your Logo Bannner</u>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:393
+msgid "Favicons"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:396
+msgid "Upload Your <u class=\"cool-link f2\">Favicons</u>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:402
+msgid "No Images Found"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:405
+msgid "Upload Your Default <u class=\"cool-link f2\">No Images Found</u>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:411
+msgid "Enable user <u class=\"cool-link f2\">Login</u> on Header"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:421
+msgid "Footers"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:438
+#: libs/merlin/includes/pengaturan.php:454
+msgid "Codes"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:439
+msgid "<u class=\"cool-link f2\">*HTML Allowed</u>, Insert Your Code Analytics"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:446
+msgid "Fotter Copyright Text"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:455
+msgid ""
+"<u class=\"cool-link f2\">*HTML Allowed</u>, Insert Your Code Copyright "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:468
+msgid "Fonts & Colors"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:477
+msgid "Fonts"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:503
+msgid "THIS IS INFO FOR FONTS SETTINGS"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:511
+msgid "Font Body"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:513
+msgid ""
+"Default is , <b class=\"cool-link f2\" style=\"color: crimson;\">\"segoe ui"
+"\", Verdana, Arial, Helvetica, sans-serif</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:518
+msgid "Font Url link"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:520
+msgid ""
+"Example , <b class=\"cool-link f2\" style=\"color: crimson;\">&lt;link "
+"href=&quot;https://fonts.cdnfonts.com/css/segoe-ui-4&quot; rel=&quot;"
+"stylesheet&quot;&gt;</b><br> open this for search fonts <a href=\"https://"
+"www.cdnfonts.com/\" target=\"_blanl\">cdnfonts.com</a>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:527
+#: libs/merlin/includes/pengaturan.php:534
+msgid "SVG ICON"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:528
+msgid "changes your <b style=\"color: #008080;\">SVG ICONS</b> for before mods"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:535
+msgid ""
+"changes your <b style=\"color: #008080;\">SVG ICONS</b> for download buttons"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:545
+msgid "Colors"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:554
+msgid "Colors Logo (Headers)"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:555
+msgid "*default: <b style=\"color: #008080;\">#212529</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:562
+msgid "Colors Link (Header)"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:563
+msgid "*default: <b style=\"color: #008080;\">#000000</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:570
+msgid "Colors Background (Header)"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:571
+msgid "*default: <b style=\"color: #000000;\">#ffffff</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:578
+msgid "Colors Link (Footer)"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:579
+msgid "*default: <b style=\"color: #008080;\">#ffffff</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:586
+msgid "Colors Background (Footer)"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:587
+msgid "*default: <b style=\"color: #000000;\">#000000</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:594
+msgid "Colors Heading"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:595
+msgid ""
+"Colors for Heading H1 - H2 - H3 - H4 - H5 <br>*default: <b style=\"color: "
+"#008080;\">#000000</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:602
+msgid "Colors Link"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:603
+#: libs/merlin/includes/pengaturan.php:619
+#: libs/merlin/includes/pengaturan.php:627
+#: libs/merlin/includes/pengaturan.php:635
+#: libs/merlin/includes/pengaturan.php:643
+msgid "*default: <b style=\"color: #008080;\">#008080</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:610
+msgid "Colors Body Background "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:611
+msgid "*default: <b style=\"color: #008080;\">#f9f9f9</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:618
+msgid "Colors Button"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:626
+msgid "Colors SVG"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:634
+msgid "Colors Border"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:642
+msgid "Colors Navigation"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:650
+msgid "Colors Star Rate"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:651
+msgid "*default: <b style=\"color: #008080;\">#ffff00</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:658
+msgid "Colors RGB"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:659
+msgid "*default: <b style=\"color: #008080;\">#efeff4</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:667
+msgid "Setting Pages"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:675
+msgid "Home Pages"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:684
+msgid "Hide Latest Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:693
+msgid "Categorie Header"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:704
+msgid "Single Pages"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:714
+msgid "<u class=\"cool-link f2\">Enabled</u> to use Style 2 apk info "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:730
+msgid "<u class=\"cool-link f2\">Enabled</u> to enable background images post "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:739
+msgid "<u class=\"cool-link f2\">Enabled</u> to hide Breadcrumbs "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:748
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Related Post "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:757
+msgid "Limit Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:763
+msgid "<code class=\"cool-link f2\">Limit Post</code> For Related Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:769
+msgid "Title Opt 1"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:771
+msgid ""
+"<i>*Default is</i>, <b style=\"color: crimson;\">Recommended for You</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:777
+msgid "Title Opt 2"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:779
+msgid "<i>*Default is</i>, <b style=\"color: crimson;\">You may also like</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:785
+#: libs/merlin/includes/pengaturan.php:802
+#: libs/merlin/includes/pengaturan.php:819
+msgid "Title Opt 3"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:787
+msgid "<i>*Default is</i>, <b style=\"color: crimson;\">More from</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:793
+msgid "Gallery Image Top "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:794
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Gallery Image Top "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:804
+#: libs/merlin/includes/pengaturan.php:821
+msgid "<i>*Default is</i>, <b style=\"color: crimson;\">Preview</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:810
+msgid "Gallery Image Bottom"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:811
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Gallery Image Bottom"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:827
+msgid "Rating "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:828
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Rating "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:837
+msgid "Random Youtube"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:838
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> to Show Random Youtube on inside "
+"content "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:847
+#: libs/merlin/includes/pengaturan.php:968
+msgid "Showing on"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:858
+msgid "Comments "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:859
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Comments "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:867
+msgid "Tags "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:868
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Tags"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:876
+msgid "Social Shares "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:877
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Social Shares"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:886
+msgid "Pop Next Post "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:887
+msgid "<u class=\"cool-link f2\">Enabled</u> to Pop Next Post "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:896
+#: libs/merlin/includes/pengaturan.php:913
+#: libs/merlin/includes/pengaturan.php:931
+#: libs/merlin/includes/pengaturan.php:2335
+#: libs/merlin/includes/pengaturan.php:2385
+#: libs/merlin/includes/pengaturan.php:2449
+#: libs/merlin/includes/pengaturan.php:2541
+#: libs/merlin/includes/pengaturan.php:2632
+#: libs/merlin/includes/pengaturan.php:2674
+#: libs/merlin/includes/pengaturan.php:2681
+#: libs/merlin/includes/pengaturan.php:2688
+#: libs/merlin/includes/pengaturan.php:2695
+#: libs/merlin/includes/pengaturan.php:2702
+#: libs/merlin/includes/pengaturan.php:2709
+#: libs/merlin/includes/pengaturan.php:2716
+#: libs/merlin/includes/pengaturan.php:2723
+#: libs/merlin/includes/pengaturan.php:2730
+#: libs/merlin/includes/pengaturan.php:2737
+msgid "Title opt 1"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:897
+msgid "Default is <b style=\"color: crimson;\">Next Post</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:904
+msgid "Latest Version"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:905
+msgid "<u class=\"cool-link f2\">Enabled</u> to Latest Version"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:914
+msgid ""
+"Default is <b style=\"color: crimson;\">All Versions</b><br> Please "
+"Activated Duplicate Post on <a href=\"/wp-admin/admin.php?"
+"page=_options&tab=1\">Apk Extractor Setting</a>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:922
+msgid "Report Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:923
+msgid "<u class=\"cool-link f2\">Enabled</u> to Report Post"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:932
+msgid "Default is <b style=\"color: crimson;\">Report</b> "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:939
+#: libs/merlin/includes/pengaturan.php:2392
+#: libs/merlin/includes/pengaturan.php:2456
+#: libs/merlin/includes/pengaturan.php:2548
+#: libs/merlin/includes/pengaturan.php:2639
+msgid "Title opt 2"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:940
+msgid "Default is <b style=\"color: crimson;\">Report Apps</b> "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:947
+msgid "React & Emoji"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:959
+msgid "Popular Pages"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:978
+msgid "Popular Ranges"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:979
+msgid "Select popular by most view weeks, month, or years"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1001
+msgid "Pages App"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1002
+msgid " <b style=\"color: crimson;\">Select Categories for Apps Page</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1018
+msgid "Games Page"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1019
+msgid " <b style=\"color: crimson;\">Select Categories for Games Page</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1027
+msgid "Sidebar Widgets"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1038
+msgid "<u class=\"cool-link f2\">Enabled</u>  Show Sidebar for Single Post "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1047
+#: libs/merlin/includes/pengaturan.php:1228
+msgid "<u class=\"cool-link f2\">Enabled</u> Show "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1055
+#: libs/merlin/includes/pengaturan.php:1236
+#: libs/merlin/includes/pengaturan.php:1490
+#: libs/merlin/includes/pengaturan.php:1505
+#: libs/merlin/includes/pengaturan.php:1520
+#: libs/merlin/includes/pengaturan.php:1536
+#: libs/merlin/includes/pengaturan.php:1557
+#: libs/merlin/includes/pengaturan.php:1574
+#: libs/merlin/includes/pengaturan.php:1886
+#: libs/merlin/includes/pengaturan.php:1904
+msgid "HTML Allowed"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1056
+msgid "Categories Sidebar Opt 1"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1237
+msgid "Categories Sidebar Opt 2"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1434
+msgid "Download Pages"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1444
+msgid "Timer Counts"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1450
+msgid "<code class=\"cool-link f2\"> Timer Counts</code> For Download Pages "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1482
+msgid "Title FAQ 1"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1497
+msgid "Title FAQ 2"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1512
+msgid "Title FAQ 3"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1528
+msgid "Title FAQ 4"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1549
+msgid "Title FAQ 5"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1573
+msgid "Notices for Download Pages"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1586
+msgid "Advertise"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1692
+msgid "Webmasters"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1709
+msgid "Google Search Console"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1710
+msgid "Insert Code Google Search Console "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1717
+msgid "Bing Webmaster Tools"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1718
+msgid "Insert Code Bing Webmaster Tools"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1725
+msgid "Pinterest Site Verification"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1726
+msgid "Insert Code Pinterest Site Verification"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1733
+msgid "Yandex Webmaster Tools"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1734
+msgid "Insert Code Yandex Webmaster Tools"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1741
+msgid "Baidu Webmaster Tools"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1742
+msgid "Insert Code Baidu Webmaster Tools "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1753
+msgid "Social Media"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1762
+msgid "PUT YOUR DETAIL INFO FOR TELEGRAM"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1781
+msgid "User Name Telegram"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1783
+msgid "Example : <b style=\"color: crimson;\">exthemes_helps</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1789
+msgid "Telegram URL"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1792
+#: libs/merlin/includes/pengaturan.php:1828
+#: libs/merlin/includes/pengaturan.php:1838
+#: libs/merlin/includes/pengaturan.php:1848
+#: libs/merlin/includes/pengaturan.php:1858
+msgid "Default is <b style=\"color: crimson;\">"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1799
+msgid "Title 1 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1800
+msgid "Default is <b style=\"color: crimson;\">Join</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1807
+msgid "Title 2"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1808
+msgid "Default is <b style=\"color: crimson;\">on Telegram channel</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1825
+msgid "Facebook"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1835
+msgid "Twitter"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1845
+msgid "Youtube"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1855
+msgid "Instagram"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1869
+msgid "Custom JS CSS"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1887
+msgid ""
+"You can Inject Scripts or CSS Style on Header<br>example<br>&lt;style&gt;<b "
+"style=\"color:#c09853;background-color: #fcf8e3;\">.sample {display:none}</"
+"b>&lt;/style&gt;\n"
+"\t\t\t<br>\n"
+"\t\t\t&lt;script&gt;<b style=\"color:#c09853;background-color: #fcf8e3;"
+"\">Your code</b>&lt;/script&gt;"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1905
+msgid ""
+"You can Inject Scripts or CSS Style on Footer<br>example<br>&lt;style&gt;<b "
+"style=\"color:#c09853;background-color: #fcf8e3;\">.sample {display:none}</"
+"b>&lt;/style&gt;\n"
+"\t\t\t<br>\n"
+"\t\t\t&lt;script&gt;<b style=\"color:#c09853;background-color: #fcf8e3;"
+"\">Your code</b>&lt;/script&gt;"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1948
+#: wp-report-post/wp-report-post.php:306
+msgid "Options"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1957
+msgid "<u class=\"cool-link f2\">Enabled</u> Minify CSS, HTML, no includes JS "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1965
+msgid "Hotlink "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1966
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> to use <b style=\"color: blue;"
+"\">Hotlink Thumbnails</b> from PlayStore<br><code class=\"cool-link "
+"f2\">off</code>  to use <b style=\"color: red;\">Own images</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1975
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> to use CDN by WP</b><br><i>example</i> "
+"<br> https://i3.wp.com/moddroid.demos.web.id/wp-content/uploads/2021/11/"
+"download-truck-simulator-ultimate.png"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1984
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> Enable Masking your Download Link</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:1993
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> to Hide Download Url Link from copy "
+"paste</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2003
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> Enable BackEnd Link</b><br>\n"
+"\t\t\tExample : <br>\n"
+"\t\t\tBefore (<code style=\"text-transform: uppercase;color: #2271b1;\">OFF</"
+"code>)<br>\n"
+"\t\t\t<b style=\"color: blue;\">"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2017
+msgid "<u class=\"cool-link f2\">Enabled</u> to Show Rating before mods "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2026
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> to remove attribut <b>loading=\"lazy"
+"\"</b> from image<br> if you dont know, just leave it default or <code class="
+"\"cool-link f2\">Off</code>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2035
+msgid "<u class=\"cool-link f2\">Enabled</u> to hide bar admin on front end"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2044
+msgid "<u class=\"cool-link f2\">Enabled</u> to use No Jquery"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2054
+msgid "RTL Options"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2064
+msgid "<u class=\"cool-link f2\">Enabled</u>  to Use RTL</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2072
+msgid "Languange"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2074
+msgid " Default is <b style=\"color: crimson;\">ar</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2080
+msgid "Fonts Body "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2082
+msgid ""
+"Click here to <a href=\"https://fontlibrary.org/\" target=\"_blank\">see all "
+"fonts</a><br>Default is <b style=\"color: crimson;\">'Droid Arabic Naskh', "
+"sans-serif</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2089
+msgid "Custom Fonts Url "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2091
+msgid ""
+"Custom Fonts Url CSS for RTL <br>Default is <b style=\"color: crimson;"
+"\">https://fontlibrary.org//face/droid-arabic-kufi</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2097
+msgid "THIS IS INFO FOR CHANGE LANGUAGE NUMBERS FOR RTL"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2105
+msgid "Number 1 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2107
+msgid "Default is <b style=\"color: crimson;\">۱</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2113
+msgid "Number 2 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2115
+msgid "Default is <b style=\"color: crimson;\">۲</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2121
+msgid "Number 3 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2123
+msgid "Default is <b style=\"color: crimson;\">۳</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2129
+msgid "Number 4 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2131
+msgid "Default is <b style=\"color: crimson;\">۴</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2137
+msgid "Number 5 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2139
+msgid "Default is <b style=\"color: crimson;\">۵</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2145
+msgid "Number 6 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2147
+msgid "Default is <b style=\"color: crimson;\">۶</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2153
+msgid "Number 7 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2155
+msgid "Default is <b style=\"color: crimson;\">۷</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2161
+msgid "Number 8 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2163
+msgid "Default is <b style=\"color: crimson;\">۸</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2169
+msgid "Number 9 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2171
+msgid "Default is <b style=\"color: crimson;\">۹</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2177
+msgid "Number 0 "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2179
+msgid "Default is <b style=\"color: crimson;\">۰</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2185
+msgid "Home "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2187
+msgid "Default is <b style=\"color: crimson;\">خانه</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2196
+msgid "SEO Options"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2214
+msgid "Setting"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2241
+msgid "New Theme Style"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2249
+msgid "THIS IS INFO FOR SETTING CATEGORIE"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2251
+msgid ""
+"If You Want Add Your Categories , Please <a href=\"/wp-admin/widgets.php\" "
+"target=\"_blank\" class=\"cool-link f2\">SETTING HERE</a> and choices <b "
+"class=\"cool-link f2\">(MDR) Sidebar Category Selected</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2258
+msgid ""
+"<u class=\"cool-link f2\">Enabled</u> to use new style like modyolo.com</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2266
+msgid "Colors Background  "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2267
+msgid ""
+"Colors Background for Modyolo.Com style  <br>*default: <b style=\"color: "
+"#000000;\">#F0F2F5</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2276
+msgid "<u class=\"cool-link f2\">Enabled</u> to use Reborns style  </b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2284
+msgid "Menu Footer Mobile"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2285
+msgid "changes your <b style=\"color: #008080;\">Menus</b> for Footer Mobile"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2298
+msgid "Social Media Mobile"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2299
+msgid ""
+"changes your <b style=\"color: #008080;\">Social Media</b> for Footer Mobile"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2319
+msgid "About"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2320
+msgid "Add your About on Footer Sections"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2336
+msgid "Default is <b style=\"color: crimson;\">Get</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2344
+msgid "<u class=\"cool-link f2\">Enabled</u> to use Categorie on Search </b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2353
+msgid "Showing to"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2368
+msgid "Change Language"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2377
+msgid "THIS IS INFO FOR CHANGE LANGUAGE AS YOU WISH"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2386
+msgid "Default is <b style=\"color: crimson;\">Latest Updates</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2393
+msgid "Default is <b style=\"color: crimson;\">Search</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2399
+#: libs/merlin/includes/pengaturan.php:2463
+#: libs/merlin/includes/pengaturan.php:2555
+#: libs/merlin/includes/pengaturan.php:2646
+msgid "Title opt 3"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2400
+msgid "Default is <b style=\"color: crimson;\">Search results for:</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2406
+#: libs/merlin/includes/pengaturan.php:2470
+#: libs/merlin/includes/pengaturan.php:2562
+#: libs/merlin/includes/pengaturan.php:2653
+msgid "Title opt 4"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2407
+msgid ""
+"Default is <b style=\"color: crimson;\">File not founds or File has been "
+"remove</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2413
+#: libs/merlin/includes/pengaturan.php:2477
+#: libs/merlin/includes/pengaturan.php:2569
+#: libs/merlin/includes/pengaturan.php:2660
+msgid "Title opt 5"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2414
+msgid "Default is <b style=\"color: crimson;\">News</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2420
+#: libs/merlin/includes/pengaturan.php:2484
+#: libs/merlin/includes/pengaturan.php:2576
+msgid "Title opt 6"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2421
+msgid "Default is <b style=\"color: crimson;\">Useful Sections</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2427
+#: libs/merlin/includes/pengaturan.php:2491
+#: libs/merlin/includes/pengaturan.php:2583
+msgid "Title opt 7"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2428
+msgid "Default is <b style=\"color: crimson;\">About Us</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2434
+#: libs/merlin/includes/pengaturan.php:2498
+#: libs/merlin/includes/pengaturan.php:2590
+msgid "Title opt 8"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2435
+msgid "Default is <b style=\"color: crimson;\">Explore this article</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2442
+msgid "THIS IS INFO FOR CHANGE LANGUAGE APK DETAILS"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2450
+#: libs/merlin/includes/pengaturan.php:2647
+msgid "Default is <b style=\"color: crimson;\">Name</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2457
+msgid "Default is <b style=\"color: crimson;\">Publisher</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2464
+msgid "Default is <b style=\"color: crimson;\">Genre</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2471
+msgid "Default is <b style=\"color: crimson;\">Size</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2478
+msgid "Default is <b style=\"color: crimson;\">Version</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2485
+msgid "Default is <b style=\"color: crimson;\">Update</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2492
+msgid "Default is <b style=\"color: crimson;\">MOD</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2499
+msgid "Default is <b style=\"color: crimson;\">Get it On</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2505
+#: libs/merlin/includes/pengaturan.php:2597
+msgid "Title opt 9"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2506
+msgid "Default is <b style=\"color: crimson;\">What's New</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2512
+msgid "Title opt  "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2513
+msgid "Default is <b style=\"color: crimson;\">What's Mod:</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2519
+#: libs/merlin/includes/pengaturan.php:2604
+msgid "Title opt 10"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2520
+msgid "Default is <b style=\"color: crimson;\">Read</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2526
+#: libs/merlin/includes/pengaturan.php:2611
+msgid "Title opt 11"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2527
+msgid "Default is <b style=\"color: crimson;\">views</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2534
+msgid "THIS IS INFO FOR CHANGE LANGUAGE DOWNLOAD PAGES"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2542
+msgid "Default is <b style=\"color: crimson;\">Thank you for downloading</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2549
+msgid ""
+"Default is <b style=\"color: crimson;\">from our site. The following are "
+"available links. Just press the button and the file will be automatically "
+"downloaded</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2556
+msgid "Default is <b style=\"color: crimson;\">Download FAQs</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2563
+msgid ""
+"Default is <b style=\"color: crimson;\">Your link is almost ready, please "
+"wait a</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2570
+msgid "Default is <b style=\"color: crimson;\">seconds</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2577
+msgid ""
+"Default is <b style=\"color: crimson;\">If the download doesnt start in a "
+"few seconds</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2584
+msgid "Default is <b style=\"color: crimson;\">click here</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2591
+msgid "Default is <b style=\"color: crimson;\">You are downloading</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2598
+msgid ""
+"Default is <b style=\"color: crimson;\">You are now ready to download</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2605
+msgid ""
+"Default is <b style=\"color: crimson;\">for free. Here are some notes:</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2612
+msgid "Default is <b style=\"color: crimson;\">Download Original APK</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2618
+msgid "Title opt 12"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2619
+msgid "Default is <b style=\"color: crimson;\">Download</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2625
+msgid "THIS IS INFO FOR CHANGE LANGUAGE COMMENTS FORMS"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2633
+msgid "Default is <b style=\"color: crimson;\">Comments</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2640
+msgid "Default is <b style=\"color: crimson;\">Send Comment</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2654
+msgid "Default is <b style=\"color: crimson;\">Email</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2661
+msgid "Default is <b style=\"color: crimson;\">Leave me a Comments</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2667
+msgid "THIS IS INFO FOR CHANGE OTHERS LANGUAGE "
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2675
+msgid "Default is <b style=\"color: crimson;\">Last updated on</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2682
+msgid "Default is <b style=\"color: crimson;\">Post on</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2689
+msgid "Default is <b style=\"color: crimson;\">edit me</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2696
+msgid "Default is <b style=\"color: crimson;\">Home</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2703
+msgid "Default is <b style=\"color: crimson;\">UP</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2710
+msgid "Default is <b style=\"color: crimson;\">Close</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2717
+msgid "Default is <b style=\"color: crimson;\">Clear</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2724
+msgid "Default is <b style=\"color: crimson;\">Search Suggest</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2731
+msgid "Default is <b style=\"color: crimson;\">Newest</b>"
+msgstr ""
+
+#: libs/merlin/includes/pengaturan.php:2738
+msgid "Default is <b style=\"color: crimson;\">Oldest</b>"
+msgstr ""
+
+#: libs/tgm.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: libs/tgm.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: libs/tgm.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: libs/tgm.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: libs/tgm.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: libs/tgm.php:386 libs/tgm.php:827 libs/tgm.php:2533 libs/tgm.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: libs/tgm.php:387 libs/tgm.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: libs/tgm.php:388 libs/tgm.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: libs/tgm.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: libs/tgm.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: libs/tgm.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: libs/tgm.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: libs/tgm.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: libs/tgm.php:523
+msgid "Update Required"
+msgstr ""
+
+#: libs/tgm.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: libs/tgm.php:934 libs/tgm.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: libs/tgm.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: libs/tgm.php:1121 libs/tgm.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: libs/tgm.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: libs/tgm.php:2273
+msgid "Required"
+msgstr ""
+
+#: libs/tgm.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: libs/tgm.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: libs/tgm.php:2295
+msgid "External Source"
+msgstr ""
+
+#: libs/tgm.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: libs/tgm.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: libs/tgm.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: libs/tgm.php:2321
+msgid "Active"
+msgstr ""
+
+#: libs/tgm.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: libs/tgm.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: libs/tgm.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: libs/tgm.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: libs/tgm.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: libs/tgm.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: libs/tgm.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: libs/tgm.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: libs/tgm.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: libs/tgm.php:2548
+msgid "Source"
+msgstr ""
+
+#: libs/tgm.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: libs/tgm.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: libs/tgm.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: libs/tgm.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: libs/tgm.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: libs/tgm.php:2717
+msgid "Install"
+msgstr ""
+
+#: libs/tgm.php:2723
+msgid "Update"
+msgstr ""
+
+#: libs/tgm.php:2726
+msgid "Activate"
+msgstr ""
+
+#: libs/tgm.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: libs/tgm.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: libs/tgm.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: libs/tgm.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: libs/tgm.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: libs/tgm.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: libs/tgm.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: libs/tgm.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: libs/tgm.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: libs/tgm.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: libs/tgm.php:3509 libs/tgm.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: libs/tgm.php:3509 libs/tgm.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: libs/tgm.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: libs/tgm.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: libs/tgm.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: libs/tgm.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: libs/tgm.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: single-news.php:49
+msgid "by"
+msgstr ""
+
+#: single-news.php:49
+msgid "edit post"
+msgstr ""
+
+#: template/comments-helper.php:33
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: template/comments-helper.php:40
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: template/comments-helper.php:45
+msgid "(Edit)"
+msgstr ""
+
+#: template/comments-helper.php:51
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: template/download.php:822 template/download.php:832
+#: template/download.php:841 template/download.php:878
+#: template/download.php:890 template/download.php:899
+msgid "apk"
+msgstr ""
+
+#: template/loop.item.new.php:87 template/loop.item.php:91
+#: template/loop.item.php:108 template/loop.item.php:155
+#: template/loop.item.php:175 template/loop.item.related.php:87
+#: template/loop.item.widget.new.php:82 template/loop.item.widget.php:77
+#: template/loop.slider.php:78
+msgid "Original APK"
+msgstr ""
+
+#: template/template-request.php:32
+msgid ""
+"Enter the ID to the game on Google Play and we will add it to the site as "
+"soon as possible."
+msgstr ""
+
+#: template/template-request.php:32
+msgid ""
+"But, at the same time, please note that all orders and mods for them (if "
+"possible) are published whenever possible."
+msgstr ""
+
+#: template/template-request.php:39
+msgid "ID Playstore or Package ID"
+msgstr ""
+
+#: template/template-request.php:41
+msgid "Reason"
+msgstr ""
+
+#: template/template-request.php:43
+msgid "Please... Need Version Updates"
+msgstr ""
+
+#: template/template-request.php:54
+msgid "Need Updates Version"
+msgstr ""
+
+#: template/template-request.php:57
+msgid "Link Dowload Dead and Not Working"
+msgstr ""
+
+#: template/template-request.php:68
+msgid "Links Not Working"
+msgstr ""
+
+#: template/template-request.php:198
+msgid "Thanks.. your request being processed by admin"
+msgstr ""
+
+#: template/template-request.php:222
+msgid ""
+"Sorry...... ID Playstore or Package ID Not Found. please check Package ID "
+"agains"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:129 wp-report-post/wp-report-post.php:671
+msgid "Close"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:305
+msgid "Reported Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:386
+msgid "WP Report Apps Options"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:387
+msgid "Integration"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:390
+msgid "Automatically add"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:391
+msgid ""
+"(Select Nothing if you want to add link or button manually - in template "
+"file)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:395
+msgid "Add after element"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:399
+msgid "Message Min Length"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:403
+msgid "Date / Time format"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:408
+msgid "Require user to be logged in to report"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:424
+msgid "Antispam"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:428
+msgid ""
+"Use reCaptcha (you need both site-key and secret-key that you can obtain for "
+"free <a href=\"https://www.google.com/recaptcha/admin\" target=\"_blank"
+"\">here</a>)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:431
+msgid "reCaptcha Site Key"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:435
+msgid "reCaptcha Secret Key"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:440
+msgid "Show IP to client that is reporting (otherwise to Admin only)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:443
+msgid "IP Whois URL:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:447
+msgid "Email Notification"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:451
+msgid "Send email notification when somebody reports a post or page"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:454
+msgid "Send Notification to"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:458
+msgid "Email Subject"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:462
+msgid "Email Body"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:464
+msgid "Variables:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:468
+msgid "Texts"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:483
+msgid "Save Options"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:678
+msgid "Confirm"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:733
+msgid "Posts"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:733
+msgid "Are you sure you want to"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:733
+msgid "the post titled"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:766
+msgid "[WP Report Post] Somebody reported a Apps!"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:767
+msgid ""
+"Hey, Admin!\n"
+"Somebody has just reported a Apps.\n"
+"Title: [post_title]\n"
+"Link: [permalink]\n"
+"Post ID: [post_id]\n"
+"Reporter Name: [name]\n"
+"Reporter Email: [email]\n"
+"Reporter IP: [ip]\n"
+"Message: [message]\n"
+"--\n"
+"Sincerely, WP Report Post Plugin"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:774
+msgid "Human (e.g 5 minutes ago)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:774
+msgid "Date / Time"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:776
+msgid "Nothing"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:776
+msgid "Button"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:779 wp-report-post/wp-report-post.php:780
+msgid "Report Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:781 wp-report-post/wp-report-post.php:802
+msgid "Your Name:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:782 wp-report-post/wp-report-post.php:803
+msgid "Your Email:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:783
+msgid ""
+"Please tell us why do you think this post is inappropriate and shouldn't be "
+"there:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:785
+msgid "Report"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:786
+msgid "Specified Apps does not exist"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:787
+msgid "Please provide a valid email address"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:788
+msgid "Please enter your name"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:789
+msgid "Please describe why do you think this Apps is inappropriate"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:790
+msgid "You have already reported this Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:791
+msgid "You have successfully reported inappropriate Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:792
+msgid "Error submitting report"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:793
+#, php-format
+msgid "Please <a href=\"%s\">log in</a> to report Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:794
+msgid "Verification Code:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:795
+msgid "Your IP:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:796
+msgid "Invalid verification code"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:800
+msgid "Link Text"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:801
+msgid "Modal Form Title"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:804
+msgid "Your Message:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:805
+msgid "Cancel button"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:806
+msgid "Submit button"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:807
+msgid "Invalid Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:808
+msgid "Invalid Email"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:809
+msgid "Invalid Name"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:810
+msgid "Invalid Message"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:811
+msgid "Already reported"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:812
+msgid "Successfully reported"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:813
+msgid "Error reporting"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:814
+msgid "Text for Captcha"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:815
+msgid "Your IP: text"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:816
+msgid "Invalid Captcha"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:852 wp-report-post/wp-report-post.php:861
+msgid "year"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:853 wp-report-post/wp-report-post.php:862
+msgid "month"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:854 wp-report-post/wp-report-post.php:863
+msgid "day"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:855 wp-report-post/wp-report-post.php:864
+msgid "hour"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:856 wp-report-post/wp-report-post.php:865
+msgid "minute"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:857 wp-report-post/wp-report-post.php:866
+msgid "second"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:861
+msgid "years"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:862
+msgid "months"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:863
+msgid "days"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:864
+msgid "hours"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:865
+msgid "minutes"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:866
+msgid "seconds"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:874
+msgid " ago"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:897
+msgid "Click to view report"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:904
+msgid "Hide"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:911 wp-report-post/wp-report-post.php:929
+msgid "Error"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:959 wp-report-post/wp-report-post.php:1014
+msgid "Unpublish"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:959 wp-report-post/wp-report-post.php:1015
+msgid "Publish"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:961 wp-report-post/wp-report-post.php:971
+msgid "View post in new tab"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:968 wp-report-post/wp-report-post.php:1016
+msgid "Delete Reports"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:989
+msgid "Title "
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:990
+msgid "Date "
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:991
+msgid "User"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:993
+msgid "Report Message"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:1013
+msgid "Delete"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Moddroid"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://exthem.es/item/moddroid-themes-premium"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The Best Themes Downloader for MOD APK files – Modded Games & Apps for "
+"Android include with Google Play Store Extractor Apk. Increase your Google "
+"Adsense earnings with premiums themes <br>Moddroid wordpress themes by <a "
+"href=\"https://exthem.es/\" target=\"_blank\">exthem.es</a> - <a href="
+"\"https://rey.web.id/\" target=\"_blank\">rey.web.id</a>."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "exthem.es"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://exthem.es/"
+msgstr ""
