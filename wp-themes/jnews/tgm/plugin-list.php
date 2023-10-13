@@ -39,26 +39,6 @@ if ( $revert_dashboard ) {
 
 	function jnews_plugin_group() {
 		$groups = array(
-			'recommend'             => array(
-				'type'  => 'recommended',
-				'title' => esc_html__( 'Recommended Plugin', 'jnews' ),
-				'items' => array(
-					array(
-						'name'               => esc_html__( 'HubSpot - CRM & Marketing', 'jnews' ),
-						'slug'               => 'leadin',
-						'recommended'        => true,
-						'required'           => false,
-						'force_activation'   => false,
-						'force_deactivation' => false,
-						'refresh'            => true,
-						'group'              => 'recommend',
-						'description'        => esc_html__( 'HubSpot is a platform with all the tools and integrations you need for marketing, sales, and customer service.', 'jnews' ),
-						'detail'             => array(
-							'image' => JNEWS_THEME_URL . '/assets/img/plugin/hubspot.png',
-						),
-					),
-				),
-			),
 			'require'               => array(
 				'type'   => 'required',
 				'title'  => esc_html__( 'Required Plugin', 'jnews' ),
@@ -1209,6 +1189,26 @@ if ( $revert_dashboard ) {
 					),
 				),
 			),
+            'recommend' => array(
+                'type'  => 'recommended',
+                'title' => esc_html__( 'Recommended Plugin', 'jnews' ),
+                'items' => array(
+                    array(
+                        'name'               => esc_html__( 'HubSpot - CRM & Marketing', 'jnews' ),
+                        'slug'               => 'leadin',
+                        'recommended'        => true,
+                        'required'           => false,
+                        'force_activation'   => false,
+                        'force_deactivation' => false,
+                        'refresh'            => true,
+                        'group'              => 'recommend',
+                        'description'        => esc_html__( 'HubSpot is a platform with all the tools and integrations you need for marketing, sales, and customer service.', 'jnews' ),
+                        'detail'             => array(
+                            'image' => JNEWS_THEME_URL . '/assets/img/plugin/hubspot.png',
+                        ),
+                    ),
+                ),
+            ),
 		);
 
 		return $groups;
