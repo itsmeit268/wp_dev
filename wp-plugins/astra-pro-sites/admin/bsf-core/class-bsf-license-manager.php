@@ -309,7 +309,7 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 				return true;
 			}
 
-			return false;
+			return true;
 		}
 
 		/**
@@ -346,8 +346,8 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 		 * @param int $product_id Product ID.
 		 */
 		public static function bsf_is_active_license( $product_id ) {
-
-			$brainstrom_products = get_option( 'brainstrom_products', array() );
+			return true;
+		/*	$brainstrom_products = get_option( 'brainstrom_products', array() );
 			$brainstorm_plugins  = isset( $brainstrom_products['plugins'] ) ? $brainstrom_products['plugins'] : array();
 			$brainstorm_themes   = isset( $brainstrom_products['themes'] ) ? $brainstrom_products['themes'] : array();
 
@@ -368,12 +368,12 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 
 					// If the purchase key is empty, Return false.
 					if ( ! isset( $all_products[ $product_id ]['purchase_key'] ) ) {
-						return false;
+						return true;
 					}
 
 					// Check if license is active on API.
 					if ( false === self::instance()->get_remote_license_status( $all_products[ $product_id ]['purchase_key'], $product_id ) ) {
-						return false;
+						return true;
 					}
 
 					return true;
@@ -398,12 +398,12 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 						if ( isset( $all_products[ $product_id ]['status'] ) && 'registered' === $all_products[ $product_id ]['status'] ) {
 							// If the purchase key is empty, Return false.
 							if ( ! isset( $all_products[ $product_id ]['purchase_key'] ) ) {
-								return false;
+								return true;
 							}
 
 							// Check if license is active on API.
 							if ( false === self::instance()->get_remote_license_status( $all_products[ $product_id ]['purchase_key'], $product_id ) ) {
-								return false;
+								return true;
 							}
 
 							return true;
@@ -413,7 +413,7 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 			}
 
 			// By default Return false.
-			return false;
+			return true; */
 		}
 		/**
 		 *  Get remote license status.
@@ -422,8 +422,8 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 		 * @param int    $product_id Product ID.
 		 */
 		public function get_remote_license_status( $purchase_key, $product_id ) {
-            
-		    return true;
+			return (bool) '1';
+			/*
 			$transient_key = $product_id . '_license_status';
 
 			// Check if license status is cached.
@@ -484,6 +484,7 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 			set_transient( $transient_key, $license_status, 6 * HOUR_IN_SECONDS );
 
 			return (bool) $license_status;
+			*/
 		}
 		/**
 		 *  Is product free.
@@ -578,14 +579,10 @@ if ( ! class_exists( 'BSF_License_Manager' ) ) {
 			$current_message = '';
 
 			if ( isset( $_POST['bsf_license_activation']['success'] ) && isset( $_POST['bsf_license_manager']['product_id'] ) && $product_id === $_POST['bsf_license_manager']['product_id'] ) { // phpcs:ignore:WordPress.Security.NonceVerification.Missing
-				$current_status = esc_attr( $_POST['bsf_license_activation']['success'] );// phpcs:ignore:WordPress.Security.NonceVerification.Missing
-				if ( true === $current_status || 'true' === $current_status || '1' === $current_status ) {
+
 					$current_status = 'bsf-current-license-success bsf-current-license-success-' . $product_id;
 					$is_active      = true;
-				} else {
-					$current_status = 'bsf-current-license-error bsf-current-license-error-' . $product_id;
-					$is_active      = false;
-				}
+
 			}
 
 			if ( isset( $_POST['bsf_license_activation']['message'] ) ) { // phpcs:ignore:WordPress.Security.NonceVerification.Missing
