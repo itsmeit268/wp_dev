@@ -1,55 +1,58 @@
 <?php
 /** FOXIZ functions */
-update_option( 'foxiz_license_id', [
-	'is_activated' => 1,
-	'purchase_code' => '********-****-****-****-************'
-] );
 
-if ( empty( get_option( 'foxiz_import_id', false ) ) ) {
-	$demos = false;
-	$response = wp_remote_get(
-		"http://wordpressnull.org/foxiz/demos.json",
-		[ 'sslverify' => false, 'timeout' => 30 ]
-	);
-	if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
-		$demos = json_decode( wp_remote_retrieve_body( $response ), true );
-	}
-	update_option( 'foxiz_import_id', $demos );
+if (is_admin()) {
+    update_option( 'foxiz_license_id', [
+        'is_activated' => 1,
+        'purchase_code' => '23f0jb44-s36g-4c55-6g53-2f1e54h4j63p'
+    ] );
+
+    if ( empty( get_option( 'foxiz_import_id', false ) ) ) {
+        $demos = false;
+        $response = wp_remote_get(
+            "http://wordpressnull.org/foxiz/demos.json",
+            [ 'sslverify' => false, 'timeout' => 30 ]
+        );
+        if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
+            $demos = json_decode( wp_remote_retrieve_body( $response ), true );
+        }
+        update_option( 'foxiz_import_id', $demos );
+    }
+
+    add_action( 'init', function() {
+        add_filter( 'pre_http_request', function( $pre, $post_args, $url ) {
+            if ( strpos( $url, 'https://api.themeruby.com/' ) !== false ) {
+                $query_args = [];
+                parse_str( parse_url( $url, PHP_URL_QUERY ), $query_args );
+                $url_path = parse_url( $url, PHP_URL_PATH );
+
+                if ( ( $url_path == '/wp-json/market/validate' ) && isset( $query_args['action'] ) ) {
+                    if ( $query_args['action'] == 'demos' ) {
+                        $response = wp_remote_get(
+                            "http://wordpressnull.org/foxiz/demos.json",
+                            [ 'sslverify' => false, 'timeout' => 30 ]
+                        );
+                        if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
+                            return $response;
+                        }
+                    }
+                    return [ 'response' => [ 'code' => 403, 'message' => 'Bad request.' ] ];
+                } elseif ( ( $url_path == '/import/' ) && isset( $query_args['demo'] ) && isset( $query_args['data'] ) ) {
+                    $ext = in_array( $query_args['data'], ['content', 'pages'] ) ? '.xml' : '.json';
+                    $response = wp_remote_get(
+                        "http://wordpressnull.org/foxiz/demos/{$query_args['demo']}/{$query_args['data']}{$ext}",
+                        [ 'sslverify' => false, 'timeout' => 30 ]
+                    );
+                    if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
+                        return $response;
+                    }
+                    return [ 'response' => [ 'code' => 403, 'message' => 'Bad request.' ] ];
+                }
+            }
+            return $pre;
+        }, 10, 3 );
+    } );
 }
-
-add_action( 'init', function() {
-	add_filter( 'pre_http_request', function( $pre, $post_args, $url ) {
-		if ( strpos( $url, 'https://api.themeruby.com/' ) !== false ) {
-			$query_args = [];
-			parse_str( parse_url( $url, PHP_URL_QUERY ), $query_args );
-			$url_path = parse_url( $url, PHP_URL_PATH );
-
-			if ( ( $url_path == '/wp-json/market/validate' ) && isset( $query_args['action'] ) ) {
-				if ( $query_args['action'] == 'demos' ) {
-					$response = wp_remote_get(
-						"http://wordpressnull.org/foxiz/demos.json",
-						[ 'sslverify' => false, 'timeout' => 30 ]
-					);
-					if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
-						return $response;
-					}
-				}
-				return [ 'response' => [ 'code' => 403, 'message' => 'Bad request.' ] ];
-			} elseif ( ( $url_path == '/import/' ) && isset( $query_args['demo'] ) && isset( $query_args['data'] ) ) {
-				$ext = in_array( $query_args['data'], ['content', 'pages'] ) ? '.xml' : '.json';
-				$response = wp_remote_get(
-					"http://wordpressnull.org/foxiz/demos/{$query_args['demo']}/{$query_args['data']}{$ext}",
-					[ 'sslverify' => false, 'timeout' => 30 ]
-				);
-				if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
-					return $response;
-				}
-				return [ 'response' => [ 'code' => 403, 'message' => 'Bad request.' ] ];
-			}
-		}
-		return $pre;
-	}, 10, 3 );
-} );
 
 define( 'FOXIZ_THEME_VERSION', '2.1.1' );
 
