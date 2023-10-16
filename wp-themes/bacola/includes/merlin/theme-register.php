@@ -18,7 +18,6 @@ function bacola_register_theme_options() {
 	echo '<div class="" id="klb-theme-registration">';
 	echo '<div id="col-left">';
 
-    $str_code = 'MjNmMGpiNDQtczM2Zy00YzU1LTZnNTMtMmYxZTFhOTRqNjNw';
 	if(empty(bacola_get_registered_purchase_code())){
 		echo '<form action="" method="post" id="purchase_code_form">';
 		echo '<h1>'.esc_html__('Register Theme','bacola').'</h1>';
@@ -92,15 +91,31 @@ function bacola_register_theme_options() {
 	}
 	
 	if(isset($_POST['purchase_code'])) {
-        if ($_POST['purchase_code'] === base64_decode($str_code)) {
-            update_option( 'envato_purchase_code_32552148', $purchase_code );
-            update_option( '_license_key_status', 'valid' );
-            echo '<div class="data-response success">'.esc_html__('The theme registered succesfully','bacola').'</div>';
-            update_option( 'envato_purchase_code_32552148', $purchase_code );
-        }
-        echo '<div class="data-response false">'.esc_html__('Please add your license key before attempting to activate one.','bacola').'</div>';
-        delete_option( 'envato_purchase_code_32552148' );
-        delete_option( '_license_key_status' );
+		
+		$api_endpoint = 'http://api.klbtheme.com/wp-json/klb/v1/purchase/';
+
+		$request = wp_remote_get( $api_endpoint . $purchase_code, array(
+			'method'    => 'GET',
+			'timeout'   => 30,
+			'body' => array(
+				'domain' => home_url(),
+			),
+		) );
+
+		if ( is_wp_error( $request ) ) {
+			return new WP_Error( 'klbtheme_api_error', "There is a problem contacting the KlbTheme server. Automatic registration is not possible." );
+		}
+		
+		$response_code = wp_remote_retrieve_response_code( $request );
+		
+		if ( 200 !== $response_code ) {
+			$response_data = json_decode( wp_remote_retrieve_body( $request ), true );
+			echo '<div class="data-response">'.esc_html($response_data['message']).'</div>';
+			return new WP_Error( $response_data['code'], $response_data['message'] . ' Automatic registration is not possible.' );
+		}
+		
+		echo '<div class="data-response success">'.esc_html__('The theme registered succesfully','bacola').'</div>';
+		update_option( 'envato_purchase_code_32552148', $purchase_code );
 	}
 }
 

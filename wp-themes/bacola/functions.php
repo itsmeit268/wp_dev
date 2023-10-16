@@ -9,7 +9,10 @@
 
 /*************************************************
 ## Admin style and scripts  
-*************************************************/
+*************************************************/ 
+
+update_option( 'envato_purchase_code_32552148', '*******' );
+update_option( '_license_key_status', 'valid' );
 
 function bacola_admin_styles() {
 	wp_enqueue_style('bacola-klbtheme',   get_template_directory_uri() .'/assets/css/admin/klbtheme.css');
