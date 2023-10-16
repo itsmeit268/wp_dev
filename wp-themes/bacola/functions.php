@@ -200,12 +200,13 @@ function bacola_register_required_plugins() {
         array(
             'name'                  => esc_html__('Bacola Core','bacola'),
             'slug'                  => 'bacola-core',
-            'source'                => $url . 'bacola-core.zip',
+            'source'                => get_theme_file_path( 'plugins/bacola-core.zip' ),
             'required'              => true,
             'version'               => '1.3.5',
             'force_activation'      => false,
             'force_deactivation'    => false,
             'external_url'          => '',
+			'is_callable'        => '',
         ),
 
         array(
