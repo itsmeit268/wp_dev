@@ -14,8 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Flatsome_Registration extends Flatsome_Base_Registration {
 
-    private $str_code = 'MjNmMGpiNDQtczM2Zy00YzU1LTZnNTMtMmYxZTFhOTRqNjNw';
-
 	/**
 	 * Setup instance.
 	 *
@@ -40,18 +38,30 @@ final class Flatsome_Registration extends Flatsome_Base_Registration {
 			return new WP_Error( 400, __( 'Invalid purchase code.', 'flatsome' ) );
 		}
 
-        if (!empty($code) && $code === base64_decode($this->str_code)) {
-            update_option( 'flatsome_wup_purchase_code', $code);
-            update_option( 'flatsome_wup_supported_until', '01.01.2999' );
-            update_option( 'flatsome_wup_buyer', 'Licensed' );
-            update_option( 'flatsome_wup_sold_at', time() );
-            delete_option( 'flatsome_wup_errors');
-            delete_option( 'flatsome_wupdates');
-        } else {
-            return new WP_Error( 400, __( 'Invalid purchase code.', 'flatsome' ) );
-        }
+		$is_verifying = isset( $_POST['flatsome_verify'] ); // phpcs:ignore WordPress.Security.NonceVerification
+		$id           = $is_verifying ? $this->get_option( 'id' ) : 0;
 
-        return [];
+		$result = ! empty( $id )
+			? $this->api->send_request( "/v1/license/$code/$id", 'register', array( 'method' => 'PATCH' ) )
+			: $this->api->send_request( "/v1/license/$code", 'register', array( 'method' => 'POST' ) );
+
+		if ( is_wp_error( $result ) ) {
+			$status = (int) $result->get_error_code();
+			$data   = $result->get_error_data();
+
+			// Finish the registration if the request was stopped by an Envato
+			// rate limit. It needs to be verified later in order to receive updates.
+			if ( $status === 429 && isset( $data['id'] ) ) {
+				$result = new WP_Error( $status, __( 'Your site is registered. But the purchase code could not be verified at the moment.', 'flatsome' ), $data );
+				$this->set_options( $data );
+			}
+
+			return $result;
+		}
+
+		$this->set_options( $result );
+
+		return $result;
 	}
 
 	/**

@@ -1,3 +1,22 @@
+--- 3.17.7 ---
+NEW: WooCommerce 8.1 compatibility.
+
+ENHANCEMENT: Body overflow prevention.
+ENHANCEMENT: Don't lazy-load images with high fetch priority.
+
+FIXED: Attach post when uploading images in UX Builder.
+FIXED: Copy as Shortcode on custom product page product elements.
+FIXED: Don't auto play sliders on mobile after scrolling if not enabled.
+FIXED: Don't redirect to product when clicking on swatches in UX Builder.
+FIXED: Image lazy-loading failed in some cases on WordPress 6.3.
+FIXED: Non-bullet styled list item indentation in UX Block menu dropdown.
+FIXED: Removed padding on text with color inside square and circle Text Box elements.
+FIXED: Responsive Stack gap with "0" as value.
+
+CHANGED: Disabled ajax add to cart on composite products.
+
+UPDATED: Language files.
+
 --- 3.17.6 ---
 This release contains an enhanced security measure. We recommend updating your sites promptly for optimal protection.
 
