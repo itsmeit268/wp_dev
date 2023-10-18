@@ -1,0 +1,6849 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: 5Play\n"
+"POT-Creation-Date: 2023-09-03 10:13+0800\n"
+"PO-Revision-Date: 2023-09-03 10:13+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:21 search.php:13
+msgid "Search results for"
+msgstr ""
+
+#: 404.php:32
+msgid "Oops! That page can't be found."
+msgstr ""
+
+#: 404.php:35
+msgid "It seems that page for"
+msgstr ""
+
+#: 404.php:35
+msgid ""
+"you are looking for no longer exists. Try to search again or explore more"
+msgstr ""
+
+#: archive.php:14 tag.php:14 taxonomy-developer.php:14
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: archive.php:16
+msgid "Select a category"
+msgstr ""
+
+#: author.php:24
+msgid "The passwords you entered do not match.  Your password was not updated."
+msgstr ""
+
+#: author.php:31
+msgid "The Email you entered is not valid.  please try again."
+msgstr ""
+
+#: author.php:33
+msgid "This email is already used by another user.  try a different one."
+msgstr ""
+
+#: author.php:120
+msgid "logged in to see your comments."
+msgstr ""
+
+#: author.php:121
+msgid "Login Now"
+msgstr ""
+
+#: author.php:253
+msgid "Add Your Biographical Info"
+msgstr ""
+
+#: comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:19
+#, php-format
+msgid ""
+"You must <a href=\"%s\">Register</a> or <a href=\"%s\">Login</a> to post a "
+"comment."
+msgstr ""
+
+#: comments.php:30 comments.php:38
+msgid "back"
+msgstr ""
+
+#: comments.php:62
+msgid ""
+"<svg width=\"24\" height=\"24\"><use xlink:href=\"#i__arrowright\"></use></"
+"svg><span class=\"sr-only\">next</span>"
+msgstr ""
+
+#: comments.php:82
+msgid ""
+"<svg width=\"24\" height=\"24\"><use xlink:href=\"#i__arrowleft\"></use></"
+"svg><span class=\"sr-only\">back</span>"
+msgstr ""
+
+#: comments.php:157 comments.php:186
+msgid "Guests"
+msgstr ""
+
+#: comments.php:158 comments.php:187 libs/core/comments.php:34
+#: libs/core/inits.php:826
+#, php-format
+msgid "%1$sT%2$s"
+msgstr ""
+
+#: comments.php:158 comments.php:187 libs/core/comments.php:34
+#: libs/core/inits.php:826
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: comments.php:158 comments.php:187 libs/core/inits.php:826
+msgid "(Edit)"
+msgstr ""
+
+#: comments.php:286
+msgid "Yours email address will not be published. Required fields are marked *"
+msgstr ""
+
+#: comments.php:297
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+
+#: comments.php:303
+msgid "Your Name"
+msgstr ""
+
+#: comments.php:304
+msgid "Your Email"
+msgstr ""
+
+#: comments.php:306
+msgid "Let us know what you have to say:"
+msgstr ""
+
+#: comments.php:306
+msgid "Your Comments"
+msgstr ""
+
+#: comments.php:307 libs/core/pengaturan.php:1781 libs/core/pengaturan.php:2046
+msgid "Send"
+msgstr ""
+
+#: header.php:96
+msgid "Edit Profile"
+msgstr ""
+
+#: index.php:25
+msgid "Ready to publish your first post?"
+msgstr ""
+
+#: index.php:25
+msgid "Get started here"
+msgstr ""
+
+#: libs/addons/includes/core.php:24
+msgid "App Details"
+msgstr ""
+
+#: libs/addons/includes/core.php:25
+msgid "Download Link Box"
+msgstr ""
+
+#: libs/addons/includes/core.php:27
+msgid "Entry Content"
+msgstr ""
+
+#: libs/addons/includes/core.php:29 libs/addons/includes/core.php:67
+#: libs/core/pengaturan.php:1817
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:715
+#: libs/tgm.php:2553
+msgid "Version"
+msgstr ""
+
+#: libs/addons/includes/core.php:66
+msgid "Poster"
+msgstr ""
+
+#: libs/addons/includes/core.php:68 libs/core/pengaturan.php:1035
+#: libs/core/pengaturan.php:1043 libs/core/pengaturan.php:1051
+#: libs/core/widget-featured.php:140
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:145
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:200
+msgid "Title"
+msgstr ""
+
+#: libs/addons/includes/core.php:69
+msgid "Update Date"
+msgstr ""
+
+#: libs/addons/includes/core.php:70 libs/addons/includes/core.php:118
+#: libs/core/comments-helper.php:58 wp-report-post/wp-report-post.php:958
+msgid "Edit"
+msgstr ""
+
+#: libs/addons/includes/core.php:138
+msgid "Here for Default Contents from Sources"
+msgstr ""
+
+#: libs/addons/includes/core.php:139
+msgid "Please copy this if you want use this contents"
+msgstr ""
+
+#: libs/addons/includes/core.php:236
+msgid "Add Your Details App Informations"
+msgstr ""
+
+#: libs/addons/includes/core.php:245 libs/addons/includes/core.php:265
+#: libs/addons/includes/core.php:280 libs/addons/includes/core.php:294
+#: libs/addons/includes/core.php:311 libs/addons/includes/core.php:325
+#: libs/addons/includes/core.php:341 libs/addons/includes/core.php:355
+#: libs/addons/includes/core.php:369 libs/addons/includes/core.php:383
+#: libs/addons/includes/core.php:398
+msgid "Example"
+msgstr ""
+
+#: libs/addons/includes/core.php:262
+msgid "Playstore ID"
+msgstr ""
+
+#: libs/addons/includes/core.php:267
+msgid "If You Make It Empty."
+msgstr ""
+
+#: libs/addons/includes/core.php:268
+msgid "App Detail Info"
+msgstr ""
+
+#: libs/addons/includes/core.php:268 libs/addons/includes/core.php:269
+#: libs/addons/includes/core.php:328
+msgid "not showing up"
+msgstr ""
+
+#: libs/addons/includes/core.php:269
+msgid "All Version"
+msgstr ""
+
+#: libs/addons/includes/core.php:277
+msgid "App Name"
+msgstr ""
+
+#: libs/addons/includes/core.php:291
+msgid "apps Google Play"
+msgstr ""
+
+#: libs/addons/includes/core.php:297
+msgid "or copy this"
+msgstr ""
+
+#: libs/addons/includes/core.php:308
+msgid "apps Poster"
+msgstr ""
+
+#: libs/addons/includes/core.php:322
+msgid "Apps Version From Playstore"
+msgstr ""
+
+#: libs/addons/includes/core.php:327
+msgid "Dont Make It"
+msgstr ""
+
+#: libs/addons/includes/core.php:327
+msgid "Empty"
+msgstr ""
+
+#: libs/addons/includes/core.php:328
+msgid "if Empty All Version"
+msgstr ""
+
+#: libs/addons/includes/core.php:338
+msgid "apps version from Sources"
+msgstr ""
+
+#: libs/addons/includes/core.php:352
+msgid "OS"
+msgstr ""
+
+#: libs/addons/includes/core.php:366
+msgid "apps updates"
+msgstr ""
+
+#: libs/addons/includes/core.php:380
+msgid "apps Size"
+msgstr ""
+
+#: libs/addons/includes/core.php:386 libs/addons/includes/core.php:401
+msgid "Not Format Like This"
+msgstr ""
+
+#: libs/addons/includes/core.php:395
+msgid "apps youtube id"
+msgstr ""
+
+#: libs/addons/includes/core.php:416
+msgid "App Description"
+msgstr ""
+
+#: libs/addons/includes/core.php:418
+msgid "App What's News"
+msgstr ""
+
+#: libs/addons/includes/core.php:420
+msgid "Mod Features 1"
+msgstr ""
+
+#: libs/addons/includes/core.php:422
+msgid "Mod Features 2"
+msgstr ""
+
+#: libs/addons/includes/core.php:482 libs/addons/includes/core.php:847
+#: libs/addons/includes/core.php:903 libs/addons/includes/core.php:963
+msgid "Url Names"
+msgstr ""
+
+#: libs/addons/includes/core.php:483 libs/addons/includes/core.php:857
+#: libs/addons/includes/core.php:913 libs/addons/includes/core.php:973
+msgid "Url Links"
+msgstr ""
+
+#: libs/addons/includes/core.php:488
+msgid ""
+"Here for Default Download Links from Sources, you can't add or remove this."
+msgstr ""
+
+#: libs/addons/includes/core.php:488
+msgid "but you can copy this link for you insert to download link page"
+msgstr ""
+
+#: libs/addons/includes/core.php:618 libs/addons/includes/core.php:642
+msgid "Here for Default Download Links from Sources"
+msgstr ""
+
+#: libs/addons/includes/core.php:618 libs/addons/includes/core.php:642
+#: libs/addons/includes/core.php:676 libs/addons/includes/core.php:717
+msgid "Please copy this link to download box"
+msgstr ""
+
+#: libs/addons/includes/core.php:618 libs/addons/includes/core.php:642
+#: libs/addons/includes/core.php:676 libs/addons/includes/core.php:717
+msgid "if you not copy the link. download link use this for default link."
+msgstr ""
+
+#: libs/addons/includes/core.php:622 libs/core/pengaturan.php:1763
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:710
+msgid "Name"
+msgstr ""
+
+#: libs/addons/includes/core.php:623 libs/addons/includes/core.php:842
+#: libs/addons/includes/core.php:898 wp-report-post/wp-report-post.php:772
+msgid "Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:824
+msgid "Here for Your can Insert Link Download"
+msgstr ""
+
+#: libs/addons/includes/core.php:824
+msgid "you can add, edit or remove your link"
+msgstr ""
+
+#: libs/addons/includes/core.php:866 libs/addons/includes/core.php:922
+#: libs/addons/includes/core.php:982
+msgid "Sizes"
+msgstr ""
+
+#: libs/addons/includes/core.php:876 libs/addons/includes/core.php:932
+#: libs/addons/includes/core.php:992
+msgid "Notes"
+msgstr ""
+
+#: libs/addons/includes/core.php:885 libs/addons/includes/core.php:941
+#: libs/addons/includes/core.php:1001
+msgid "Remove Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:958
+msgid "Add new Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:1012
+msgid "Add New Url Link"
+msgstr ""
+
+#: libs/addons/includes/core.php:1013 libs/core/pengaturan.php:2128
+msgid "Save"
+msgstr ""
+
+#: libs/core/adm.php:79
+msgid "Best Product Themes for You - "
+msgstr ""
+
+#: libs/core/adm.php:215
+msgid "Theme Docs"
+msgstr ""
+
+#: libs/core/background.php:196
+msgid "Backgrounds Images"
+msgstr ""
+
+#: libs/core/background.php:210
+msgid "add image"
+msgstr ""
+
+#: libs/core/background.php:211
+msgid "remove image"
+msgstr ""
+
+#: libs/core/background.php:221 libs/core/background.php:223
+msgid "select image"
+msgstr ""
+
+#: libs/core/breadcrums.php:27
+msgid "Error 404"
+msgstr ""
+
+#: libs/core/breadcrums.php:28
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: libs/core/breadcrums.php:29
+#, php-format
+msgid "Comment Page %s"
+msgstr ""
+
+#: libs/core/comments-helper.php:31 libs/core/comments.php:23
+msgid "Pingback:"
+msgstr ""
+
+#: libs/core/comments-helper.php:46
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: libs/core/comments-helper.php:53
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: libs/core/comments-helper.php:64 libs/core/inits.php:830
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: libs/core/comments.php:32 libs/core/inits.php:824
+#, php-format
+msgid "%2$s"
+msgstr ""
+
+#: libs/core/cores.php:128
+msgid "All rights reserved - Developed by"
+msgstr ""
+
+#: libs/core/cores.php:128
+msgid "Premium Themes Wordpress "
+msgstr ""
+
+#: libs/core/cores.php:223
+#: libs/panel/inc/ReduxCore/inc/fields/border/field_border.php:125
+#: libs/panel/inc/ReduxCore/inc/fields/spacing/field_spacing.php:191
+#: libs/panel/inc/options/config.php:426
+msgid "All"
+msgstr ""
+
+#: libs/core/cpt.php:17
+msgctxt "Post Type General Name"
+msgid "News"
+msgstr ""
+
+#: libs/core/cpt.php:18
+msgctxt "Post Type Singular Name"
+msgid "News"
+msgstr ""
+
+#: libs/core/cpt.php:19 libs/core/cpt.php:38
+msgid "News"
+msgstr ""
+
+#: libs/core/cpt.php:20
+msgid "Parent News:"
+msgstr ""
+
+#: libs/core/cpt.php:21
+msgid "All News"
+msgstr ""
+
+#: libs/core/cpt.php:22
+msgid "View News Info"
+msgstr ""
+
+#: libs/core/cpt.php:23
+msgid "Add New Article"
+msgstr ""
+
+#: libs/core/cpt.php:24
+msgid "Add News"
+msgstr ""
+
+#: libs/core/cpt.php:25
+msgid "Edit News Info"
+msgstr ""
+
+#: libs/core/cpt.php:26
+msgid "Update News Info"
+msgstr ""
+
+#: libs/core/cpt.php:27
+msgid "Search News"
+msgstr ""
+
+#: libs/core/cpt.php:28
+msgid "Not found"
+msgstr ""
+
+#: libs/core/cpt.php:29
+msgid "Not found in Trash"
+msgstr ""
+
+#: libs/core/cpt.php:39
+msgid "Info News"
+msgstr ""
+
+#: libs/core/cpt.php:63
+msgctxt "taxonomy general name"
+msgid "News Tags"
+msgstr ""
+
+#: libs/core/cpt.php:64
+msgctxt "taxonomy singular name"
+msgid "News Tag"
+msgstr ""
+
+#: libs/core/cpt.php:65
+msgid "Search News Tags"
+msgstr ""
+
+#: libs/core/cpt.php:66
+msgid "Popular News Tags"
+msgstr ""
+
+#: libs/core/cpt.php:67
+msgid "All News Tags"
+msgstr ""
+
+#: libs/core/cpt.php:70
+msgid "Edit News Tag"
+msgstr ""
+
+#: libs/core/cpt.php:71
+msgid "Update News Tag"
+msgstr ""
+
+#: libs/core/cpt.php:72
+msgid "Add New News Tag"
+msgstr ""
+
+#: libs/core/cpt.php:73
+msgid "New News Tag Name"
+msgstr ""
+
+#: libs/core/cpt.php:74
+msgid "Separate News tags with commas"
+msgstr ""
+
+#: libs/core/cpt.php:75
+msgid "Add or remove News tags"
+msgstr ""
+
+#: libs/core/cpt.php:76
+msgid "Choose from the most used News tags"
+msgstr ""
+
+#: libs/core/cpt.php:77
+msgid "News Tags"
+msgstr ""
+
+#: libs/core/cpt.php:93
+msgctxt "taxonomy general name"
+msgid "News Categories"
+msgstr ""
+
+#: libs/core/cpt.php:94
+msgctxt "taxonomy singular name"
+msgid "News Category"
+msgstr ""
+
+#: libs/core/cpt.php:95
+msgid "Search news Categories"
+msgstr ""
+
+#: libs/core/cpt.php:96
+msgid "All News Categories"
+msgstr ""
+
+#: libs/core/cpt.php:97
+msgid "Parent News Category"
+msgstr ""
+
+#: libs/core/cpt.php:98
+msgid "Parent News Category:"
+msgstr ""
+
+#: libs/core/cpt.php:99
+msgid "Edit News Category"
+msgstr ""
+
+#: libs/core/cpt.php:100
+msgid "Update News Category"
+msgstr ""
+
+#: libs/core/cpt.php:101
+msgid "Add New News Category"
+msgstr ""
+
+#: libs/core/cpt.php:102
+msgid "New News Category"
+msgstr ""
+
+#: libs/core/cpt.php:103
+msgid "News Categories"
+msgstr ""
+
+#: libs/core/cpt.php:119
+msgctxt "taxonomy general name"
+msgid "Developer"
+msgstr ""
+
+#: libs/core/cpt.php:120
+msgctxt "taxonomy singular name"
+msgid "Developer"
+msgstr ""
+
+#: libs/core/cpt.php:121
+msgid "Search "
+msgstr ""
+
+#: libs/core/cpt.php:122
+msgid "All "
+msgstr ""
+
+#: libs/core/cpt.php:123 libs/core/cpt.php:124
+msgid "Parent "
+msgstr ""
+
+#: libs/core/cpt.php:125
+msgid "Edit "
+msgstr ""
+
+#: libs/core/cpt.php:126
+msgid "Update "
+msgstr ""
+
+#: libs/core/cpt.php:127
+msgid "Add New "
+msgstr ""
+
+#: libs/core/cpt.php:128
+msgid "New Name"
+msgstr ""
+
+#: libs/core/cpt.php:129 libs/core/pengaturan.php:1823
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:70
+msgid "Developer"
+msgstr ""
+
+#: libs/core/extra.old.php:184
+msgid "Gravatar Image"
+msgstr ""
+
+#: libs/core/extra.old.php:184
+msgid "Gravatar"
+msgstr ""
+
+#: libs/core/gallery.php:22
+msgid "Screenshoots Poster Uploader"
+msgstr ""
+
+#: libs/core/gallery.php:55
+msgid ""
+"Here for Default Screenshoots Poster from Googleplay, you cant add or remove "
+"this"
+msgstr ""
+
+#: libs/core/gallery.php:55
+msgid "but you can copy this link image url for you insert"
+msgstr ""
+
+#: libs/core/gallery.php:57
+msgid "Add your link image url here"
+msgstr ""
+
+#: libs/core/gallery.php:85 libs/core/gallery.php:111 libs/core/gallery.php:137
+msgid "Image URL"
+msgstr ""
+
+#: libs/core/gallery.php:120 libs/core/gallery.php:143
+msgid "Choose File"
+msgstr ""
+
+#: libs/core/gallery.php:121 libs/core/gallery.php:144
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:321
+#: libs/panel/inc/ReduxCore/inc/fields/media/field_media.php:213
+#: libs/panel/inc/ReduxCore/inc/fields/multi_text/field_multi_text.php:72
+#: libs/panel/inc/ReduxCore/inc/fields/multi_text/field_multi_text.php:79
+#: libs/panel/inc/ReduxCore/inc/fields/multi_text/field_multi_text.php:89
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:133
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:190
+msgid "Remove"
+msgstr ""
+
+#: libs/core/gallery.php:138
+msgid "Paste Your link image here or Choose your File"
+msgstr ""
+
+#: libs/core/gallery.php:151
+msgid "Add New Images"
+msgstr ""
+
+#: libs/core/inits.php:72
+msgid "Widgets in this area will be shown on intros Home"
+msgstr ""
+
+#: libs/core/inits.php:82
+msgid "Widgets in this area will be shown on Recommend Home"
+msgstr ""
+
+#: libs/core/inits.php:92
+msgid "Widgets in this area will be shown only Home Categories"
+msgstr ""
+
+#: libs/core/inits.php:122
+msgid "Widgets in this area will be shown only Home Footers"
+msgstr ""
+
+#: libs/core/inits.php:295
+msgid "This content already exists, we recommend not to publish."
+msgstr ""
+
+#: libs/core/inits.php:297
+msgid "Excellent! this content is unique."
+msgstr ""
+
+#: libs/core/inits.php:876
+#, php-format
+msgid ""
+"<time class=\"date muted\" datetime=\"%1$sT%2$s\" style=\"var(--opacity)!"
+"important;color: white !important;\">%1$s</time>"
+msgstr ""
+
+#: libs/core/inits.php:880
+msgid "No comments."
+msgstr ""
+
+#: libs/core/inits.php:982
+msgid "Never"
+msgstr ""
+
+#: libs/core/inits.php:986
+msgid "Last Login :"
+msgstr ""
+
+#: libs/core/inits.php:1097
+msgid "Online Now"
+msgstr ""
+
+#: libs/core/inits.php:1099
+msgid "Last Seen:"
+msgstr ""
+
+#: libs/core/login.php:72
+msgid "Upload your avatar"
+msgstr ""
+
+#: libs/core/login.php:88
+msgid "Upload Image"
+msgstr ""
+
+#: libs/core/login.php:90
+msgid ""
+"Please upload a custom avatar for your profile, to remove the avatar simple "
+"delete the URL and click update."
+msgstr ""
+
+#: libs/core/notifications.php:41
+#, php-format
+msgid "a new version of %s Theme is available"
+msgstr ""
+
+#: libs/core/notifications.php:41
+#, php-format
+msgid "Check Version 5play v.%s"
+msgstr ""
+
+#: libs/core/notifications.php:41
+msgid "UPDATES NOW"
+msgstr ""
+
+#: libs/core/pengaturan.php:57
+msgid "Panel "
+msgstr ""
+
+#: libs/core/pengaturan.php:155 libs/panel/inc/options/config.php:126
+msgid "Doc"
+msgstr ""
+
+#: libs/core/pengaturan.php:217 libs/panel/inc/options/config.php:769
+#: template/loop/comments.php:5 template/loop/comments.php:7
+#: template/loop/comments.php:20 template/loop/comments.php:22
+msgid " "
+msgstr ""
+
+#: libs/core/pengaturan.php:222
+msgid "Extractor APK"
+msgstr ""
+
+#: libs/core/pengaturan.php:230
+msgid "How to Post with Apk Extractor"
+msgstr ""
+
+#: libs/core/pengaturan.php:232
+msgid "<a href=\""
+msgstr ""
+
+#: libs/core/pengaturan.php:238
+msgid "Status Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:239
+msgid ""
+"Select for Status Post <u class=\"cool-link f2\">&nbsp;&nbsp;Draft</u> or <u "
+"class=\"cool-link f2\">&nbsp;&nbsp;Publish</u> <br> Default is <u class="
+"\"cool-link f2\">&nbsp;&nbsp;Publish</u> "
+msgstr ""
+
+#: libs/core/pengaturan.php:249
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:255
+msgid "Language"
+msgstr ""
+
+#: libs/core/pengaturan.php:250
+msgid ""
+"Select for <u class=\"cool-link f2\">&nbsp;&nbsp;Language</u> <br> Default "
+"is <u class=\"cool-link f2\">&nbsp;&nbsp;English</u>"
+msgstr ""
+
+#: libs/core/pengaturan.php:320
+msgid "Title Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:321
+msgid ""
+"Select for Title Post <u class=\"cool-link f2\">&nbsp;&nbsp;Title Mods</u> "
+"or <u class=\"cool-link f2\">&nbsp;&nbsp;Title PlayStore</u> \n"
+"<br>\n"
+"  Default is <u class=\"cool-link f2\">&nbsp;&nbsp;Title PlayStore</u>"
+msgstr ""
+
+#: libs/core/pengaturan.php:333
+msgid "Permalink Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:334
+msgid ""
+"Select for Permalink Post <u class=\"cool-link f2\">&nbsp;&nbsp;Permalink "
+"Title Mods</u> or <u class=\"cool-link f2\">&nbsp;&nbsp;Permalink Title "
+"Playstore</u><br>\n"
+" Default is <u class=\"cool-link f2\">&nbsp;&nbsp;Permalink Title Playstore</"
+"u>"
+msgstr ""
+
+#: libs/core/pengaturan.php:345
+msgid "Title App Name"
+msgstr ""
+
+#: libs/core/pengaturan.php:346
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to use <u "
+"class=\"cool-link f2\">Title Playstore</u>"
+msgstr ""
+
+#: libs/core/pengaturan.php:353
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> enable <u "
+"class=\"cool-link f2\">Duplicate Post</u> after Submit Auto Post\n"
+"\t\t\t<br>\n"
+"\t\t\tDefault is <u class=\"cool-link f2\">&nbsp;&nbsp;ON</u>"
+msgstr ""
+
+#: libs/core/pengaturan.php:371 libs/panel/inc/options/config.php:211
+msgid "Generals"
+msgstr ""
+
+#: libs/core/pengaturan.php:378 libs/panel/inc/options/config.php:220
+msgid "Headers"
+msgstr ""
+
+#: libs/core/pengaturan.php:387
+msgid "Logo Header"
+msgstr ""
+
+#: libs/core/pengaturan.php:388
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"Logo Header"
+msgstr ""
+
+#: libs/core/pengaturan.php:394
+msgid "Header Logo"
+msgstr ""
+
+#: libs/core/pengaturan.php:398
+msgid "<u class=\"cool-link f2\">Upload Your Header Logo</u> "
+msgstr ""
+
+#: libs/core/pengaturan.php:404 libs/panel/inc/options/config.php:246
+msgid "Favicons"
+msgstr ""
+
+#: libs/core/pengaturan.php:405
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"Favicons"
+msgstr ""
+
+#: libs/core/pengaturan.php:411
+msgid "Favicon Logo"
+msgstr ""
+
+#: libs/core/pengaturan.php:415
+msgid "<u class=\"cool-link f2\">Upload Your Favicon</u> "
+msgstr ""
+
+#: libs/core/pengaturan.php:421
+msgid "Menu Login"
+msgstr ""
+
+#: libs/core/pengaturan.php:422
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"Login on Header Menu "
+msgstr ""
+
+#: libs/core/pengaturan.php:428 libs/panel/inc/options/config.php:256
+msgid "Footer"
+msgstr ""
+
+#: libs/core/pengaturan.php:437
+msgid "Statistic Codes"
+msgstr ""
+
+#: libs/core/pengaturan.php:438
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"Statistic Codes"
+msgstr ""
+
+#: libs/core/pengaturan.php:444
+msgid "Analytics"
+msgstr ""
+
+#: libs/core/pengaturan.php:445 libs/core/pengaturan.php:460
+#: libs/core/pengaturan.php:863 libs/core/pengaturan.php:875
+#: libs/core/pengaturan.php:997 libs/core/pengaturan.php:1009
+#: libs/core/pengaturan.php:1193 libs/core/pengaturan.php:1208
+#: libs/core/pengaturan.php:1223 libs/core/pengaturan.php:1238
+#: libs/core/pengaturan.php:1253 libs/core/pengaturan.php:1268
+#: libs/core/pengaturan.php:1457 libs/panel/inc/options/config.php:274
+#: libs/panel/inc/options/config.php:700 libs/panel/inc/options/config.php:714
+msgid "HTML Allowed"
+msgstr ""
+
+#: libs/core/pengaturan.php:452 libs/core/pengaturan.php:459
+#: libs/panel/inc/options/config.php:266 libs/panel/inc/options/config.php:273
+msgid "Footer Copyright"
+msgstr ""
+
+#: libs/core/pengaturan.php:453
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Footer "
+"Copyright"
+msgstr ""
+
+#: libs/core/pengaturan.php:467
+msgid "Colour & Styles"
+msgstr ""
+
+#: libs/core/pengaturan.php:476 libs/core/pengaturan.php:1535
+msgid "Fonts Body"
+msgstr ""
+
+#: libs/core/pengaturan.php:478
+msgid ""
+"*Default is, <code style=\"color: #0073aa;\">'Segoe UI', sans-serif</"
+"code><br> Click Here To Get Font <a href=\"https://www.cdnfonts.com/\" "
+"target=\"_blank\">cdnfonts.com</a>"
+msgstr ""
+
+#: libs/core/pengaturan.php:483 libs/core/pengaturan.php:1543
+msgid "Url Link Fonts"
+msgstr ""
+
+#: libs/core/pengaturan.php:485
+msgid ""
+"*Default is, <br><code style=\"color: #0073aa;\">https://fonts.cdnfonts.com/"
+"css/segoe-ui-4</code><br> Click Here To Get Font <a href=\"https://www."
+"cdnfonts.com/\" target=\"_blank\">cdnfonts.com</a>"
+msgstr ""
+
+#: libs/core/pengaturan.php:490
+msgid "Background Color"
+msgstr ""
+
+#: libs/core/pengaturan.php:491
+msgid "Pick Background Color for the theme (default: #EFF7F1)."
+msgstr ""
+
+#: libs/core/pengaturan.php:498
+msgid "Background Color  (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:499 libs/core/pengaturan.php:779
+msgid "Pick Background Color for the theme (default: #172B3D)."
+msgstr ""
+
+#: libs/core/pengaturan.php:506
+msgid "Header Background "
+msgstr ""
+
+#: libs/core/pengaturan.php:507
+msgid "Pick Background Header Color for the theme (default: #ffffff)."
+msgstr ""
+
+#: libs/core/pengaturan.php:514
+msgid "Header Background (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:515
+msgid "Pick Background Header Color for the theme (default: #2A4055) (dark)."
+msgstr ""
+
+#: libs/core/pengaturan.php:522
+msgid "Footer Background "
+msgstr ""
+
+#: libs/core/pengaturan.php:523
+msgid "Pick Background Footer Color for the theme (default: #142636)."
+msgstr ""
+
+#: libs/core/pengaturan.php:530
+msgid "Footer Background (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:531
+msgid "Pick Background Footer Color for the theme (default: #091521)."
+msgstr ""
+
+#: libs/core/pengaturan.php:538
+msgid "Link Url"
+msgstr ""
+
+#: libs/core/pengaturan.php:539
+msgid "Pick Color Link Url for the theme (default: #999999)."
+msgstr ""
+
+#: libs/core/pengaturan.php:546
+msgid "Link Url (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:547
+msgid "Pick Color Link Url for the theme (default: #fff)."
+msgstr ""
+
+#: libs/core/pengaturan.php:554
+msgid "Link Hover"
+msgstr ""
+
+#: libs/core/pengaturan.php:555
+msgid "Pick Color Link Hover for the theme (default: #438bd3)."
+msgstr ""
+
+#: libs/core/pengaturan.php:562
+msgid "Link Menu"
+msgstr ""
+
+#: libs/core/pengaturan.php:563
+msgid "Pick Color Link Menu for the theme (default: #000000)."
+msgstr ""
+
+#: libs/core/pengaturan.php:570
+msgid "Link Menu (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:571
+msgid "Pick Color Link Menu for the theme (default: #fff)."
+msgstr ""
+
+#: libs/core/pengaturan.php:578
+msgid "Body Text Color"
+msgstr ""
+
+#: libs/core/pengaturan.php:579
+msgid "Pick Color Heading Text for the theme (default: #172B3D)."
+msgstr ""
+
+#: libs/core/pengaturan.php:586
+msgid "Body Text Color (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:587
+msgid "Pick Color Text for the theme (default: #fff)."
+msgstr ""
+
+#: libs/core/pengaturan.php:594 wp-report-post/wp-report-post.php:772
+msgid "Button"
+msgstr ""
+
+#: libs/core/pengaturan.php:595
+msgid "Pick Color Button for the theme (default: #008080)."
+msgstr ""
+
+#: libs/core/pengaturan.php:602
+msgid "Border Button"
+msgstr ""
+
+#: libs/core/pengaturan.php:603
+msgid "Pick Color Border Button for the theme (default: #008080)."
+msgstr ""
+
+#: libs/core/pengaturan.php:610
+msgid "Button Hover"
+msgstr ""
+
+#: libs/core/pengaturan.php:611
+msgid "Pick Color Button Hover for the theme (default: #008080)."
+msgstr ""
+
+#: libs/core/pengaturan.php:618
+msgid "SVG Icon"
+msgstr ""
+
+#: libs/core/pengaturan.php:619
+msgid "Pick SVG Icon Color for the theme (default: #4ccb70)."
+msgstr ""
+
+#: libs/core/pengaturan.php:626
+msgid "SVG Hover"
+msgstr ""
+
+#: libs/core/pengaturan.php:627
+msgid "Pick SVG Icon Hover Color for the theme (default: #f9563d)."
+msgstr ""
+
+#: libs/core/pengaturan.php:634
+msgid "Rgba"
+msgstr ""
+
+#: libs/core/pengaturan.php:635
+msgid "Pick Rgba Color for the theme (default: #FEDE4A)."
+msgstr ""
+
+#: libs/core/pengaturan.php:642
+msgid "Rgba Hover"
+msgstr ""
+
+#: libs/core/pengaturan.php:643
+msgid "Pick RGBA Color Hover for the theme (default: #008080)."
+msgstr ""
+
+#: libs/core/pengaturan.php:650
+msgid "Social Icons"
+msgstr ""
+
+#: libs/core/pengaturan.php:651
+msgid "Pick Social Icons Color for the theme (default: #008080)."
+msgstr ""
+
+#: libs/core/pengaturan.php:658
+msgid "Color Yellow"
+msgstr ""
+
+#: libs/core/pengaturan.php:659
+msgid "Pick Color Yellow for the theme (default: #f9bd3b)."
+msgstr ""
+
+#: libs/core/pengaturan.php:666
+msgid "Color Background 1 Yellow"
+msgstr ""
+
+#: libs/core/pengaturan.php:667
+msgid "Pick Color Background 1 Yellow for the theme (default: #FEDE4A)."
+msgstr ""
+
+#: libs/core/pengaturan.php:674
+msgid "Color Background 2 Yellow"
+msgstr ""
+
+#: libs/core/pengaturan.php:675
+msgid "Pick Color Background 2 Yellow for the theme (default: #F8B035)."
+msgstr ""
+
+#: libs/core/pengaturan.php:682
+msgid "Color Green"
+msgstr ""
+
+#: libs/core/pengaturan.php:683
+msgid "Pick Color Green for the theme (default: #45c368)."
+msgstr ""
+
+#: libs/core/pengaturan.php:690
+msgid "Color Background 1 green"
+msgstr ""
+
+#: libs/core/pengaturan.php:691
+msgid "Pick Color Background 1 green for the theme (default: #4CCB70)."
+msgstr ""
+
+#: libs/core/pengaturan.php:698
+msgid "Color Background 2 green"
+msgstr ""
+
+#: libs/core/pengaturan.php:699
+msgid "Pick Color Background 2 green for the theme (default: #3DBA60)."
+msgstr ""
+
+#: libs/core/pengaturan.php:706
+msgid "Color Purple"
+msgstr ""
+
+#: libs/core/pengaturan.php:707
+msgid "Pick Color Purple for the theme (default: #9248e1)."
+msgstr ""
+
+#: libs/core/pengaturan.php:714
+msgid "Color Background 1 purple"
+msgstr ""
+
+#: libs/core/pengaturan.php:715
+msgid "Pick Color Background 1 purple for the theme (default: #9B54E8)."
+msgstr ""
+
+#: libs/core/pengaturan.php:722
+msgid "Color Background 2 purple"
+msgstr ""
+
+#: libs/core/pengaturan.php:723
+msgid "Pick Color Background 2 purple for the theme (default: #7126C1)."
+msgstr ""
+
+#: libs/core/pengaturan.php:730
+msgid "Color Red"
+msgstr ""
+
+#: libs/core/pengaturan.php:731
+msgid "Pick Color Red for the theme (default: #fb614a)."
+msgstr ""
+
+#: libs/core/pengaturan.php:738
+msgid "Color Background 1 red"
+msgstr ""
+
+#: libs/core/pengaturan.php:739
+msgid "Pick Color Background 1 red for the theme (default: #FF715C)."
+msgstr ""
+
+#: libs/core/pengaturan.php:746
+msgid "Color Background 2 red"
+msgstr ""
+
+#: libs/core/pengaturan.php:747
+msgid "Pick Color Background 2 red for the theme (default: #F74A2F)."
+msgstr ""
+
+#: libs/core/pengaturan.php:754
+msgid "Color Blue"
+msgstr ""
+
+#: libs/core/pengaturan.php:755
+msgid "Pick Color Blue for the theme (default: #37a9e4)."
+msgstr ""
+
+#: libs/core/pengaturan.php:762
+msgid "Color Background 1 blue"
+msgstr ""
+
+#: libs/core/pengaturan.php:763
+msgid "Pick Color Background 1 blue for the theme (default: #38B9E6)."
+msgstr ""
+
+#: libs/core/pengaturan.php:770
+msgid "Color Background 2 blue"
+msgstr ""
+
+#: libs/core/pengaturan.php:771
+msgid "Pick Color Background 2 blue for the theme (default: #368BE1)."
+msgstr ""
+
+#: libs/core/pengaturan.php:778
+msgid "Background Dark Section "
+msgstr ""
+
+#: libs/core/pengaturan.php:786
+msgid "Background Dark Section (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:787
+msgid "Pick Background Color for the theme (default: #0F1F2E)."
+msgstr ""
+
+#: libs/core/pengaturan.php:794
+msgid "Background Entry "
+msgstr ""
+
+#: libs/core/pengaturan.php:795
+msgid "Pick Background Color for the theme (default: #fff)."
+msgstr ""
+
+#: libs/core/pengaturan.php:802
+msgid "Background Entry (dark)"
+msgstr ""
+
+#: libs/core/pengaturan.php:803
+msgid "Pick Background Color for the theme (default: #273D52)."
+msgstr ""
+
+#: libs/core/pengaturan.php:810
+msgid "Opacity "
+msgstr ""
+
+#: libs/core/pengaturan.php:820
+msgid "Nav Color"
+msgstr ""
+
+#: libs/core/pengaturan.php:821
+msgid "Pick Color Nav for the theme (default: #f9bd3b)."
+msgstr ""
+
+#: libs/core/pengaturan.php:828
+msgid "Nav Link Color"
+msgstr ""
+
+#: libs/core/pengaturan.php:829
+msgid "Pick Color Nav Link for the theme (default: #172B3D)."
+msgstr ""
+
+#: libs/core/pengaturan.php:836
+msgid "Like Color"
+msgstr ""
+
+#: libs/core/pengaturan.php:837
+msgid "Pick Color Like for the theme (default: #4ccb70)."
+msgstr ""
+
+#: libs/core/pengaturan.php:844
+msgid "Dislike Color"
+msgstr ""
+
+#: libs/core/pengaturan.php:845
+msgid "Pick Color Dislike for the theme (default: #f9563d)."
+msgstr ""
+
+#: libs/core/pengaturan.php:853
+msgid "Menus"
+msgstr ""
+
+#: libs/core/pengaturan.php:862
+msgid "Header Menu "
+msgstr ""
+
+#: libs/core/pengaturan.php:874
+msgid "Header Sub Menu "
+msgstr ""
+
+#: libs/core/pengaturan.php:887
+msgid "Pages Setting"
+msgstr ""
+
+#: libs/core/pengaturan.php:896
+msgid "Home Pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:905
+msgid "Please add on your intro widget <a href=\""
+msgstr ""
+
+#: libs/core/pengaturan.php:912 libs/core/pengaturan.php:1985
+msgid "Latest Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:913
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Showing "
+"Latest Post on Homes"
+msgstr ""
+
+#: libs/core/pengaturan.php:920
+msgid "Single Pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:929
+msgid "Report Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:937
+msgid "Related Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:944
+msgid "Title Opt "
+msgstr ""
+
+#: libs/core/pengaturan.php:952 libs/panel/inc/options/config.php:655
+msgid "How much to showing "
+msgstr ""
+
+#: libs/core/pengaturan.php:963
+msgid "Gallery Image"
+msgstr ""
+
+#: libs/core/pengaturan.php:989 libs/core/pengaturan.php:996
+msgid "Help Menu"
+msgstr ""
+
+#: libs/core/pengaturan.php:1008
+msgid "Details Safe"
+msgstr ""
+
+#: libs/core/pengaturan.php:1017
+msgid "No Jquery Post "
+msgstr ""
+
+#: libs/core/pengaturan.php:1028
+msgid "Latest Version"
+msgstr ""
+
+#: libs/core/pengaturan.php:1029
+msgid ""
+" <u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to <code "
+"class=\"cool-link f2\">Show Latest Version</code>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1037
+msgid "Default is <code class=\"cool-link f2\">All Version</code>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1045
+msgid "Default is <code class=\"cool-link f2\">Apk</code>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1053
+msgid "Default is <code class=\"cool-link f2\">Mod</code>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1059
+msgid "Popular Pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:1068
+msgid "Limit post "
+msgstr ""
+
+#: libs/core/pengaturan.php:1069
+msgid "Limit Post to showing "
+msgstr ""
+
+#: libs/core/pengaturan.php:1080
+msgid "Category Games"
+msgstr ""
+
+#: libs/core/pengaturan.php:1081
+msgid "Select Category for Top Games Page"
+msgstr ""
+
+#: libs/core/pengaturan.php:1087
+msgid "Category Apps"
+msgstr ""
+
+#: libs/core/pengaturan.php:1088
+msgid "Select Category for Top Apps Page"
+msgstr ""
+
+#: libs/core/pengaturan.php:1093
+msgid "Popular Ranges"
+msgstr ""
+
+#: libs/core/pengaturan.php:1102
+msgid "Select Your Popular Ranges by Most View"
+msgstr ""
+
+#: libs/core/pengaturan.php:1109
+msgid "Download Pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:1151
+msgid "Timer "
+msgstr ""
+
+#: libs/core/pengaturan.php:1152
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"Timer Counts "
+msgstr ""
+
+#: libs/core/pengaturan.php:1158
+msgid "Timer Counts"
+msgstr ""
+
+#: libs/core/pengaturan.php:1159
+msgid "Setting Your Timer"
+msgstr ""
+
+#: libs/core/pengaturan.php:1171
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Hide Url "
+"Link Download from copy paste"
+msgstr ""
+
+#: libs/core/pengaturan.php:1178
+msgid "Advertise"
+msgstr ""
+
+#: libs/core/pengaturan.php:1186
+msgid "Ads Banner All Pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:1187
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to enable ads "
+"banner for home, archive, categorie, search, 404 pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:1194 libs/core/pengaturan.php:1209
+#: libs/core/pengaturan.php:1224 libs/core/pengaturan.php:1239
+#: libs/core/pengaturan.php:1254 libs/core/pengaturan.php:1269
+msgid "Insert your code <br> Scripts or Banner"
+msgstr ""
+
+#: libs/core/pengaturan.php:1201
+msgid "Ads Banner only Homes"
+msgstr ""
+
+#: libs/core/pengaturan.php:1202
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to enable ads "
+"banner for homes"
+msgstr ""
+
+#: libs/core/pengaturan.php:1216
+msgid "Ads Banner Single Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:1217
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to enable "
+"Banner for Single Post"
+msgstr ""
+
+#: libs/core/pengaturan.php:1231
+msgid "Ads Banner Single Post (2)"
+msgstr ""
+
+#: libs/core/pengaturan.php:1232
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to enable "
+"Banner for Single Post Alternative"
+msgstr ""
+
+#: libs/core/pengaturan.php:1246
+msgid "Ads Banner Download Pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:1247
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to enable Ads "
+"Banner for Download Pages"
+msgstr ""
+
+#: libs/core/pengaturan.php:1261
+msgid "Ads Banner Download Pages (2)"
+msgstr ""
+
+#: libs/core/pengaturan.php:1262
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to enable Ads "
+"Banner for Download Pages Alternative"
+msgstr ""
+
+#: libs/core/pengaturan.php:1276
+msgid "Webmasters"
+msgstr ""
+
+#: libs/core/pengaturan.php:1284
+msgid "Webmaster Tools"
+msgstr ""
+
+#: libs/core/pengaturan.php:1285
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Insert "
+"your code <u class=\"cool-link f2\">Webmaster Tools</u>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1291
+msgid "Google Search Console"
+msgstr ""
+
+#: libs/core/pengaturan.php:1292
+msgid "Insert Code Google Search Console "
+msgstr ""
+
+#: libs/core/pengaturan.php:1299
+msgid "Bing Webmaster Tools"
+msgstr ""
+
+#: libs/core/pengaturan.php:1300
+msgid "Insert Code Bing Webmaster Tools"
+msgstr ""
+
+#: libs/core/pengaturan.php:1307
+msgid "Pinterest Site Verification"
+msgstr ""
+
+#: libs/core/pengaturan.php:1308
+msgid "Insert Code Pinterest Site Verification"
+msgstr ""
+
+#: libs/core/pengaturan.php:1315
+msgid "Yandex Webmaster Tools"
+msgstr ""
+
+#: libs/core/pengaturan.php:1316
+msgid "Insert Code Yandex Webmaster Tools"
+msgstr ""
+
+#: libs/core/pengaturan.php:1323
+msgid "Baidu Webmaster Tools"
+msgstr ""
+
+#: libs/core/pengaturan.php:1324
+msgid "Insert Code Baidu Webmaster Tools "
+msgstr ""
+
+#: libs/core/pengaturan.php:1331
+msgid "Sosial Media"
+msgstr ""
+
+#: libs/core/pengaturan.php:1339
+msgid "Socials Media"
+msgstr ""
+
+#: libs/core/pengaturan.php:1340
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable to "
+"Socials Media"
+msgstr ""
+
+#: libs/core/pengaturan.php:1346
+msgid "Facebook"
+msgstr ""
+
+#: libs/core/pengaturan.php:1353
+msgid "Twitter"
+msgstr ""
+
+#: libs/core/pengaturan.php:1360 template/loop/content.php:17
+msgid "Youtube"
+msgstr ""
+
+#: libs/core/pengaturan.php:1367
+msgid "Instagram"
+msgstr ""
+
+#: libs/core/pengaturan.php:1374
+msgid "Telegram"
+msgstr ""
+
+#: libs/core/pengaturan.php:1381
+msgid "Pinterest"
+msgstr ""
+
+#: libs/core/pengaturan.php:1388
+msgid "Linkedin"
+msgstr ""
+
+#: libs/core/pengaturan.php:1395
+msgid "VKontakte "
+msgstr ""
+
+#: libs/core/pengaturan.php:1402
+msgid "Custom JS CSS"
+msgstr ""
+
+#: libs/core/pengaturan.php:1410 libs/panel/inc/options/config.php:692
+msgid "Header Sections"
+msgstr ""
+
+#: libs/core/pengaturan.php:1411
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable to "
+"Header Sections"
+msgstr ""
+
+#: libs/core/pengaturan.php:1417 libs/panel/inc/options/config.php:699
+msgid "Header Section"
+msgstr ""
+
+#: libs/core/pengaturan.php:1418
+msgid ""
+"You can Inject Scripts or CSS Style on Header<br>example<br>&lt;style&gt;<b "
+"style=\"color:#c09853;background-color: #fcf8e3;\">.sample {display:none}</"
+"b>&lt;/style&gt;\n"
+"\t\t\t<br>\n"
+"\t\t\t&lt;script&gt;<b style=\"color:#c09853;background-color: #fcf8e3;"
+"\">Your code</b>&lt;/script&gt;"
+msgstr ""
+
+#: libs/core/pengaturan.php:1426 libs/panel/inc/options/config.php:706
+msgid "Footer Sections "
+msgstr ""
+
+#: libs/core/pengaturan.php:1427
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable to "
+"Footer Sections"
+msgstr ""
+
+#: libs/core/pengaturan.php:1433 libs/panel/inc/options/config.php:713
+msgid "Footer Section"
+msgstr ""
+
+#: libs/core/pengaturan.php:1434
+msgid ""
+"You can Inject Scripts or CSS Style on Footer<br>example<br>&lt;style&gt;<b "
+"style=\"color:#c09853;background-color: #fcf8e3;\">.sample {display:none}</"
+"b>&lt;/style&gt;\n"
+"\t\t\t<br>\n"
+"\t\t\t&lt;script&gt;<b style=\"color:#c09853;background-color: #fcf8e3;"
+"\">Your code</b>&lt;/script&gt;"
+msgstr ""
+
+#: libs/core/pengaturan.php:1442 libs/panel/inc/ReduxCore/framework.php:225
+#: libs/panel/inc/ReduxCore/framework.php:229
+#: libs/panel/inc/options/config.php:739 wp-report-post/wp-report-post.php:302
+msgid "Options"
+msgstr ""
+
+#: libs/core/pengaturan.php:1451
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> for "
+"developers only <br>*<i>don't enable</i>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1458
+msgid "Insert your code "
+msgstr ""
+
+#: libs/core/pengaturan.php:1465
+msgid "Image Google Play"
+msgstr ""
+
+#: libs/core/pengaturan.php:1466
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable to "
+"use CDN from Google Play"
+msgstr ""
+
+#: libs/core/pengaturan.php:1473
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"Scheme SEO MobileApplication"
+msgstr ""
+
+#: libs/core/pengaturan.php:1480
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Hide WP "
+"Admin Bar from frontend"
+msgstr ""
+
+#: libs/core/pengaturan.php:1487
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"Minify Only HTML and CSS, not inlucude JS"
+msgstr ""
+
+#: libs/core/pengaturan.php:1494
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable CDN "
+"Photon WP.com Server"
+msgstr ""
+
+#: libs/core/pengaturan.php:1501
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable "
+"change author permalink "
+msgstr ""
+
+#: libs/core/pengaturan.php:1507
+msgid "Link Base"
+msgstr ""
+
+#: libs/core/pengaturan.php:1509
+msgid "<u class=\"cool-link f2\">EXAMPLE</u> : <b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1517
+msgid "RTL Mode"
+msgstr ""
+
+#: libs/core/pengaturan.php:1527
+msgid ""
+"<u class=\"cool-link f2\">&nbsp;&nbsp;ON&nbsp;&nbsp;&nbsp;</u> to Enable RTL "
+"Mode"
+msgstr ""
+
+#: libs/core/pengaturan.php:1537
+msgid ""
+"Default is, <u class=\"cool-link f2\">'Kahfi', sans-serif</u><br> Click Here "
+"To Get Font <a href=\"https://www.cdnfonts.com/\" target=\"_blank\">cdnfonts."
+"com</a>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1545
+msgid ""
+"Default is, <u class=\"cool-link f2\">https://fonts.cdnfonts.com/css/kahfi</"
+"u><br> Click Here To Get Font <a href=\"https://www.cdnfonts.com/\" target="
+"\"_blank\">cdnfonts.com</a>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1551 libs/core/pengaturan.php:1560
+msgid "Languange "
+msgstr ""
+
+#: libs/core/pengaturan.php:1553
+msgid "Default is <u class=\"cool-link f2\">&nbsp;&nbsp;ar&nbsp;&nbsp;</u>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1562
+msgid "Default is <b style=\"color: crimson;\">ar</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1569
+msgid "THIS IS INFO FOR CHANGE LANGUAGE NUMBERS FOR RTL"
+msgstr ""
+
+#: libs/core/pengaturan.php:1577
+msgid "Number 1 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1579
+msgid "Default is <b style=\"color: crimson;\">۱</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1585
+msgid "Number 2 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1587
+msgid "Default is <b style=\"color: crimson;\">۲</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1593
+msgid "Number 3 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1595
+msgid "Default is <b style=\"color: crimson;\">۳</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1601
+msgid "Number 4 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1603
+msgid "Default is <b style=\"color: crimson;\">۴</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1609
+msgid "Number 5 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1611
+msgid "Default is <b style=\"color: crimson;\">۵</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1617
+msgid "Number 6 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1619
+msgid "Default is <b style=\"color: crimson;\">۶</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1625
+msgid "Number 7 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1627
+msgid "Default is <b style=\"color: crimson;\">۷</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1633
+msgid "Number 8 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1635
+msgid "Default is <b style=\"color: crimson;\">۸</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1641
+msgid "Number 9 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1643
+msgid "Default is <b style=\"color: crimson;\">۹</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1649
+msgid "Number 0 "
+msgstr ""
+
+#: libs/core/pengaturan.php:1651
+msgid "Default is <b style=\"color: crimson;\">۰</b>"
+msgstr ""
+
+#: libs/core/pengaturan.php:1670 libs/panel/inc/options/config.php:757
+msgid "Change Language"
+msgstr ""
+
+#: libs/core/pengaturan.php:1678 libs/panel/inc/options/config.php:767
+msgid "THIS IS INFO FOR CHANGE LANGUAGE AS YOU WISH"
+msgstr ""
+
+#: libs/core/pengaturan.php:1685
+msgid "I want to find..."
+msgstr ""
+
+#: libs/core/pengaturan.php:1691 libs/panel/inc/options/config.php:774
+msgid "Search"
+msgstr ""
+
+#: libs/core/pengaturan.php:1697
+msgid "Find"
+msgstr ""
+
+#: libs/core/pengaturan.php:1703
+msgid "Add new post"
+msgstr ""
+
+#: libs/core/pengaturan.php:1709
+msgid "Logout"
+msgstr ""
+
+#: libs/core/pengaturan.php:1715
+msgid "Authorization"
+msgstr ""
+
+#: libs/core/pengaturan.php:1721
+msgid "Recommend"
+msgstr ""
+
+#: libs/core/pengaturan.php:1727
+msgid "More"
+msgstr ""
+
+#: libs/core/pengaturan.php:1733 libs/core/widget-news.php:185
+msgid "Last news"
+msgstr ""
+
+#: libs/core/pengaturan.php:1739 libs/core/widget-news.php:186
+msgid "All news"
+msgstr ""
+
+#: libs/core/pengaturan.php:1745
+msgid "Read more"
+msgstr ""
+
+#: libs/core/pengaturan.php:1751
+msgid "Latest comments"
+msgstr ""
+
+#: libs/core/pengaturan.php:1757
+msgid "Take a comment"
+msgstr ""
+
+#: libs/core/pengaturan.php:1769 libs/core/pengaturan.php:2040
+#: libs/core/pengaturan.php:2107
+msgid "E-Mail"
+msgstr ""
+
+#: libs/core/pengaturan.php:1775
+msgid "Comment text"
+msgstr ""
+
+#: libs/core/pengaturan.php:1787 libs/core/pengaturan.php:2163
+#: template/loop/comments.php:36
+msgid "Comments"
+msgstr ""
+
+#: libs/core/pengaturan.php:1793
+msgid "Comment on"
+msgstr ""
+
+#: libs/core/pengaturan.php:1799
+msgid "No Comments"
+msgstr ""
+
+#: libs/core/pengaturan.php:1805
+msgid "No Comments Infos"
+msgstr ""
+
+#: libs/core/pengaturan.php:1811
+msgid "Updated"
+msgstr ""
+
+#: libs/core/pengaturan.php:1829
+msgid "Requirements"
+msgstr ""
+
+#: libs/core/pengaturan.php:1835
+msgid "Android"
+msgstr ""
+
+#: libs/core/pengaturan.php:1841
+msgid "Genre"
+msgstr ""
+
+#: libs/core/pengaturan.php:1847
+msgid "Views"
+msgstr ""
+
+#: libs/core/pengaturan.php:1853
+msgid "Google Play"
+msgstr ""
+
+#: libs/core/pengaturan.php:1859
+msgid "Votes:"
+msgstr ""
+
+#: libs/core/pengaturan.php:1865
+msgid "Comments:"
+msgstr ""
+
+#: libs/core/pengaturan.php:1871
+msgid "Popularity"
+msgstr ""
+
+#: libs/core/pengaturan.php:1877
+msgid "Download"
+msgstr ""
+
+#: libs/core/pengaturan.php:1883
+msgid "Request for update"
+msgstr ""
+
+#: libs/core/pengaturan.php:1889 single-news.php:56
+msgid "Share with friends"
+msgstr ""
+
+#: libs/core/pengaturan.php:1895
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:149
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:204
+#: libs/panel/inc/sample/sample-config.php:1862
+#: libs/panel/inc/sample/sample-config.php:1871
+msgid "Description"
+msgstr ""
+
+#: libs/core/pengaturan.php:1901
+msgid "Whats News"
+msgstr ""
+
+#: libs/core/pengaturan.php:1907
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_panel.php:146
+msgid "Help"
+msgstr ""
+
+#: libs/core/pengaturan.php:1913
+msgid "Mod info:"
+msgstr ""
+
+#: libs/core/pengaturan.php:1919
+msgid "Back to main"
+msgstr ""
+
+#: libs/core/pengaturan.php:1925
+msgid "Scroll up"
+msgstr ""
+
+#: libs/core/pengaturan.php:1931
+msgid "Screenshots"
+msgstr ""
+
+#: libs/core/pengaturan.php:1937
+msgid "Enter your search here"
+msgstr ""
+
+#: libs/core/pengaturan.php:1943
+msgid "Login to"
+msgstr ""
+
+#: libs/core/pengaturan.php:1949
+msgid "Login"
+msgstr ""
+
+#: libs/core/pengaturan.php:1955
+msgid "Forgot your password?"
+msgstr ""
+
+#: libs/core/pengaturan.php:1961 libs/core/pengaturan.php:2027
+#: libs/panel/inc/ReduxCore/inc/fields/password/field_password.php:62
+#: libs/panel/inc/sample/sample-config.php:467
+msgid "Password"
+msgstr ""
+
+#: libs/core/pengaturan.php:1967
+msgid "Registration Page"
+msgstr ""
+
+#: libs/core/pengaturan.php:1973
+msgid "Like"
+msgstr ""
+
+#: libs/core/pengaturan.php:1979
+msgid "Dislike"
+msgstr ""
+
+#: libs/core/pengaturan.php:1991
+msgid "More by Developers"
+msgstr ""
+
+#: libs/core/pengaturan.php:1997
+msgid "Registration"
+msgstr ""
+
+#: libs/core/pengaturan.php:2003
+msgid "Thanks for Register"
+msgstr ""
+
+#: libs/core/pengaturan.php:2009 libs/core/pengaturan.php:2079
+msgid "First Name"
+msgstr ""
+
+#: libs/core/pengaturan.php:2015 libs/core/pengaturan.php:2086
+msgid "Last Name"
+msgstr ""
+
+#: libs/core/pengaturan.php:2021 libs/core/pengaturan.php:2072
+#: libs/panel/inc/ReduxCore/inc/fields/password/field_password.php:63
+msgid "Username"
+msgstr ""
+
+#: libs/core/pengaturan.php:2033
+msgid "Confirm password"
+msgstr ""
+
+#: libs/core/pengaturan.php:2052
+msgid "Mods"
+msgstr ""
+
+#: libs/core/pengaturan.php:2058
+msgid "Home"
+msgstr ""
+
+#: libs/core/pengaturan.php:2065
+msgid "Settings account"
+msgstr ""
+
+#: libs/core/pengaturan.php:2093
+msgid "Display Nickname Publicly"
+msgstr ""
+
+#: libs/core/pengaturan.php:2100
+msgid "Biographical Information"
+msgstr ""
+
+#: libs/core/pengaturan.php:2114
+msgid "New Password"
+msgstr ""
+
+#: libs/core/pengaturan.php:2121
+msgid "Repeat new password"
+msgstr ""
+
+#: libs/core/pengaturan.php:2135
+#: libs/panel/inc/ReduxCore/inc/fields/color_rgba/field_color_rgba.php:72
+#: wp-report-post/wp-report-post.php:673 wp-report-post/wp-report-post.php:780
+msgid "Cancel"
+msgstr ""
+
+#: libs/core/pengaturan.php:2142
+msgid "Registered"
+msgstr ""
+
+#: libs/core/pengaturan.php:2149
+msgid "Last Activity"
+msgstr ""
+
+#: libs/core/pengaturan.php:2156
+msgid "Published by"
+msgstr ""
+
+#: libs/core/pengaturan.php:2170
+msgid "online"
+msgstr ""
+
+#: libs/core/pengaturan.php:2177
+msgid "offline"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:14
+msgid "Pathrika Pop Anything"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:15
+msgid "Pops shortcodes, html and custom text"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:188
+msgid "Color: Large screens"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:190
+msgid "Pop Link Color:"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:194
+msgid "Pop Link Hover Color:"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:197
+msgid "Color: Mobile & Small screens"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:199
+msgid "Pop Link Mobile Color:"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:203
+msgid "Pop Link Mobile focus Color:"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:207
+msgid "Pop 1 Configuration"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:210
+msgid "Pop Link Name"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:216
+msgid "Pop Link Icon"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:222
+msgid "Shortcode to Pop"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:227
+msgid "Select Pop Type: "
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:229
+msgid "Pop Over"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:230
+msgid "Pop Up"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:235
+msgid "Only icon, hide link text: "
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:237
+msgid "Yes"
+msgstr ""
+
+#: libs/core/sample-widget-colors.php:238
+msgid "No"
+msgstr ""
+
+#: libs/core/widget-categorie.php:11
+msgid " Display Post by Selected Categorie Widget."
+msgstr ""
+
+#: libs/core/widget-categorie.php:13
+msgid "(5Play) Categorie Widget"
+msgstr ""
+
+#: libs/core/widget-categorie.php:164 libs/core/widget.php:185
+msgid "Popular Games"
+msgstr ""
+
+#: libs/core/widget-categorie.php:165 libs/core/widget.php:186
+msgid "Get More...."
+msgstr ""
+
+#: libs/core/widget-categorie.php:252 libs/core/widget.php:299
+msgid "All Categories"
+msgstr ""
+
+#: libs/core/widget-categorie.php:267
+msgid "Post by Selected Categorie Widget"
+msgstr ""
+
+#: libs/core/widget-categorie.php:270 libs/core/widget-comments.php:63
+#: libs/core/widget-news.php:218 libs/core/widget.php:315
+msgid "Title:"
+msgstr ""
+
+#: libs/core/widget-categorie.php:277 libs/core/widget-news.php:225
+msgid "Button Title :"
+msgstr ""
+
+#: libs/core/widget-categorie.php:284
+msgid "Button Link :"
+msgstr ""
+
+#: libs/core/widget-categorie.php:290 libs/core/widget-news.php:238
+msgid "Target url for title, example :"
+msgstr ""
+
+#: libs/core/widget-categorie.php:290 libs/core/widget-news.php:238
+msgid "leave blank if you want using title without link."
+msgstr ""
+
+#: libs/core/widget-categorie.php:294
+msgid "Icons :"
+msgstr ""
+
+#: libs/core/widget-categorie.php:298
+msgid "Games"
+msgstr ""
+
+#: libs/core/widget-categorie.php:299
+msgid "Apps"
+msgstr ""
+
+#: libs/core/widget-categorie.php:303 libs/core/widget-categorie.php:304
+msgid "Use"
+msgstr ""
+
+#: libs/core/widget-categorie.php:303
+msgid "for Categories Games Icons"
+msgstr ""
+
+#: libs/core/widget-categorie.php:304
+msgid "for Categories Apps Icons"
+msgstr ""
+
+#: libs/core/widget-categorie.php:308 libs/core/widget-comments.php:69
+#: libs/core/widget-news.php:242 libs/core/widget.php:336
+msgid "Color Svg Icons:"
+msgstr ""
+
+#: libs/core/widget-categorie.php:312 libs/core/widget-comments.php:73
+#: libs/core/widget-news.php:246 libs/core/widget.php:338
+msgid "YELLOW"
+msgstr ""
+
+#: libs/core/widget-categorie.php:313 libs/core/widget-comments.php:74
+#: libs/core/widget-news.php:247 libs/core/widget.php:339
+msgid "GREEN"
+msgstr ""
+
+#: libs/core/widget-categorie.php:314 libs/core/widget-comments.php:75
+#: libs/core/widget-news.php:248 libs/core/widget.php:340
+msgid "PURPLE"
+msgstr ""
+
+#: libs/core/widget-categorie.php:315 libs/core/widget-comments.php:76
+#: libs/core/widget-news.php:249 libs/core/widget.php:341
+msgid "RED"
+msgstr ""
+
+#: libs/core/widget-categorie.php:316 libs/core/widget-comments.php:77
+#: libs/core/widget-news.php:250 libs/core/widget.php:342
+msgid "BLUE"
+msgstr ""
+
+#: libs/core/widget-categorie.php:320 libs/core/widget-comments.php:81
+#: libs/core/widget-news.php:254 libs/core/widget.php:344
+msgid "Select color svg icons."
+msgstr ""
+
+#: libs/core/widget-categorie.php:324 libs/core/widget.php:347
+msgid "Selected categories"
+msgstr ""
+
+#: libs/core/widget-categorie.php:330 libs/core/widget.php:349
+msgid ""
+"Click on the categories with pressed CTRL key to select multiple categories. "
+"If All Categories was selected then other selections will be ignored."
+msgstr ""
+
+#: libs/core/widget-categorie.php:334 libs/core/widget.php:352
+msgid "Number post"
+msgstr ""
+
+#: libs/core/widget-categorie.php:341 libs/core/widget-news.php:286
+msgid "Mode:"
+msgstr ""
+
+#: libs/core/widget-categorie.php:345 libs/core/widget-news.php:288
+msgid "Recent Posts"
+msgstr ""
+
+#: libs/core/widget-categorie.php:346 libs/core/widget-news.php:289
+msgid "Random Posts"
+msgstr ""
+
+#: libs/core/widget-categorie.php:347 libs/core/widget-news.php:290
+msgid "Recent Modified Post"
+msgstr ""
+
+#: libs/core/widget-categorie.php:348 libs/core/widget-news.php:291
+msgid "Post views"
+msgstr ""
+
+#: libs/core/widget-categorie.php:354 libs/core/widget-news.php:297
+msgid "Date:"
+msgstr ""
+
+#: libs/core/widget-categorie.php:358 libs/core/widget-news.php:299
+msgid "All Time"
+msgstr ""
+
+#: libs/core/widget-categorie.php:359 libs/core/widget-news.php:300
+msgid "Past Year"
+msgstr ""
+
+#: libs/core/widget-categorie.php:360 libs/core/widget-news.php:301
+msgid "Past Month"
+msgstr ""
+
+#: libs/core/widget-categorie.php:361 libs/core/widget-news.php:302
+msgid "Past Week"
+msgstr ""
+
+#: libs/core/widget-categorie.php:362 libs/core/widget-news.php:303
+msgid "Last \"X\" days"
+msgstr ""
+
+#: libs/core/widget-categorie.php:366 libs/core/widget-news.php:307
+msgid "Number of last days to filter:"
+msgstr ""
+
+#: libs/core/widget-comments.php:9
+msgid " Showing All Comments on Home pages."
+msgstr ""
+
+#: libs/core/widget-comments.php:11
+msgid "(5Play) Comments Home Widget"
+msgstr ""
+
+#: libs/core/widget-comments.php:52
+msgid "Latest comments "
+msgstr ""
+
+#: libs/core/widget-comments.php:60
+msgid "Home Comments Widget"
+msgstr ""
+
+#: libs/core/widget-featured.php:9
+msgid " Display selected Featured from post ID&#8217;s"
+msgstr ""
+
+#: libs/core/widget-featured.php:10
+msgid " Featured Home by ID&#8217;s"
+msgstr ""
+
+#: libs/core/widget-featured.php:26 libs/core/widget-recomended.php:28
+msgid "Important Posts"
+msgstr ""
+
+#: libs/core/widget-featured.php:33
+msgid "Permalink to: "
+msgstr ""
+
+#: libs/core/widget-featured.php:144
+msgid "Post ID"
+msgstr ""
+
+#: libs/core/widget-featured.php:148
+msgid "Post IDs, separated by commas."
+msgstr ""
+
+#: libs/core/widget-featured.php:150
+msgid "Only Limit 4 Post"
+msgstr ""
+
+#: libs/core/widget-intros.php:9
+msgid " Widget for Showing Intro On Home"
+msgstr ""
+
+#: libs/core/widget-intros.php:11
+msgid "( 5play ) Intro Widget"
+msgstr ""
+
+#: libs/core/widget-intros.php:97
+msgid "Games and apps for Android"
+msgstr ""
+
+#: libs/core/widget-intros.php:98
+msgid "#4CCB70"
+msgstr ""
+
+#: libs/core/widget-intros.php:99
+msgid "#ffffff"
+msgstr ""
+
+#: libs/core/widget-intros.php:106
+msgid "Intro Widget"
+msgstr ""
+
+#: libs/core/widget-intros.php:109
+msgid "Title :"
+msgstr ""
+
+#: libs/core/widget-intros.php:117
+msgid "BACKGROUND :"
+msgstr ""
+
+#: libs/core/widget-intros.php:123
+msgid "Default Background is"
+msgstr ""
+
+#: libs/core/widget-intros.php:135
+msgid "Upload your Background. if not upload, Backgrounds using by default,"
+msgstr ""
+
+#: libs/core/widget-intros.php:136
+msgid "Delete Url if you want use by default"
+msgstr ""
+
+#: libs/core/widget-intros.php:141
+msgid "Color Heading "
+msgstr ""
+
+#: libs/core/widget-intros.php:148
+msgid "Color Heading (Dark) "
+msgstr ""
+
+#: libs/core/widget-news.php:10
+msgid " Display all post News on home pages."
+msgstr ""
+
+#: libs/core/widget-news.php:12
+msgid "(5Play) News Homes Widget"
+msgstr ""
+
+#: libs/core/widget-news.php:215
+msgid "News Homes Widget"
+msgstr ""
+
+#: libs/core/widget-news.php:232
+msgid "Button Link"
+msgstr ""
+
+#: libs/core/widget-news.php:258
+msgid "Show Post Dates?"
+msgstr ""
+
+#: libs/core/widget-news.php:262
+msgid "Show Post Views?"
+msgstr ""
+
+#: libs/core/widget-news.php:266
+msgid "Format Date:"
+msgstr ""
+
+#: libs/core/widget-news.php:272
+msgid "to know format dates, check here"
+msgstr ""
+
+#: libs/core/widget-news.php:277
+msgid "Show Read Mores?"
+msgstr ""
+
+#: libs/core/widget-news.php:281
+msgid "Maximum length of description"
+msgstr ""
+
+#: libs/core/widget-recomended.php:9
+msgid " Display Selected Featured From Post ID&#8217;s"
+msgstr ""
+
+#: libs/core/widget-recomended.php:11
+msgid "(5Play) Featured Home"
+msgstr ""
+
+#: libs/core/widget-recomended.php:112
+msgid "Recommend Widgets "
+msgstr ""
+
+#: libs/core/widget-recomended.php:115 wp-report-post/wp-report-post.php:985
+msgid "Title "
+msgstr ""
+
+#: libs/core/widget-recomended.php:120
+msgid "Post ID Number"
+msgstr ""
+
+#: libs/core/widget-recomended.php:123
+msgid "Post ID Number, Separated by Commas."
+msgstr ""
+
+#: libs/core/widget-recomended.php:123
+msgid "Only limited to 4 Posts"
+msgstr ""
+
+#: libs/core/widget.php:35
+msgid " Home Categorie by Modified Widget."
+msgstr ""
+
+#: libs/core/widget.php:37
+msgid " Categorie by Modified Widget"
+msgstr ""
+
+#: libs/core/widget.php:319
+msgid "Title Alt:"
+msgstr ""
+
+#: libs/core/widget.php:323
+msgid "Link Title:"
+msgstr ""
+
+#: libs/core/widget.php:325
+msgid ""
+"Target url for title (example: https://yoursites.com/categories), leave "
+"blank if you want using title without link."
+msgstr ""
+
+#: libs/core/widget.php:328
+msgid "Icons:"
+msgstr ""
+
+#: libs/import-demo.php:35 libs/import-demo.php:51
+msgid "before you import this demo, you have to install all required plugins."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:452
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/extension_customizer.php:689
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:460
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/extension_customizer.php:690
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:468
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:476
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/extension_customizer.php:691
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:484
+msgid ""
+"Your current options will be replaced with the values of this import. Would "
+"you like to proceed?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:493
+msgid "Please Wait"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:504
+msgid "There was an error saving. Here is the result of your action:"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/enqueue.php:505
+msgid ""
+"There was a problem with your action. Please try again or reload the page."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:65
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:141
+msgid "Settings Imported!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:156
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:170
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:184
+msgid "Settings Saved!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:204
+msgid "Settings have changed, you should save them!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:212
+msgid "error(s) were found!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:220
+msgid "warning(s) were found!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/core/panel.php:312
+msgid ""
+"<strong>Your panel has bundled outdated copies of Redux Framework template "
+"files</strong> &#8211; if you encounter functionality issues this could be "
+"the reason. Ensure you update or remove them."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:221
+#, php-format
+msgid "Options panel created using %1$s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:221
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:203
+msgid "Redux Framework"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:1746
+msgid "Enable"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:1751
+msgid "Disable"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:1757
+msgid "moving the mouse over"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:1759
+msgid "clicking"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:1763
+#, php-format
+msgid ""
+"Hints are tooltips that popup when %d the hint icon, offering addition "
+"information about the field in which they appear.  They can be %d d by using "
+"the link below."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:1768
+msgid "Hints"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:1895
+msgid "Default"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:2775
+msgid "Invalid security credential.  Please reload the page and try again."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:2784
+msgid "Invalid user capability.  Please reload the page and try again."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:2864
+msgid "Your panel has no fields. Nothing to save."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:3984
+msgid ""
+"<strong>Redux Framework Notice: </strong>There are references to the Redux "
+"Framework support site in your config's <code>admin_bar_links</code> "
+"argument.  This is sample data.  Please change or remove this data before "
+"shipping your product."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/framework.php:4000
+msgid ""
+"<strong>Redux Framework Notice: </strong>There are references to the Redux "
+"Framework support site in your config's <code>share_icons</code> argument.  "
+"This is sample data.  Please change or remove this data before shipping your "
+"product."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_admin_notices.php:111
+msgid "Dismiss"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_cdn.php:74
+msgid ""
+"Please wait a few minutes, then try refreshing the page. Unable to load some "
+"remotely hosted scripts."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_cdn.php:76
+#, php-format
+msgid ""
+"If you are developing offline, please download and install the <a href=\"%s"
+"\" target=\"_blank\">Redux Vendor Support</a> plugin/extension to bypass the "
+"our CDN and avoid this warning"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_cdn.php:79
+msgid "Redux Framework Warning"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_cdn.php:79
+#, php-format
+msgid "%s CDN unavailable.  Some controls may not render properly."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_cdn.php:115
+#, php-format
+msgid ""
+"The <a href=\"%s\">Vendor Support plugin</a> (or extension) is either not "
+"installed or not activated and thus, some controls may not render properly.  "
+"Please ensure that it is installed and <a href=\"%s\">activated</a>"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_filesystem.php:50
+#: libs/panel/inc/ReduxCore/inc/class.redux_filesystem.php:289
+msgid "File Permission Issues"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_filesystem.php:50
+#: libs/panel/inc/ReduxCore/inc/class.redux_filesystem.php:289
+#, php-format
+msgid ""
+"We were unable to modify required files. Please ensure that <code>%1s</code> "
+"has the proper read-write permissions, or modify your wp-config.php file to "
+"contain your FTP login credentials as <a href=\"%2s\" target=\"_blank"
+"\">outlined here</a>."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/class.redux_helpers.php:622
+#, php-format
+msgid ""
+"<code>%s</code> version <strong style=\"color:red\">%s</strong> is out of "
+"date. The core version is %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/extension_customizer.php:724
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/extension_customizer.php:725
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/extension_customizer.php:726
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_panel.php:89
+msgid "Press return or enter to open this panel"
+msgstr ""
+
+#. translators: %s is the site/panel title in the Customizer
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_panel.php:114
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_panel.php:142
+#, php-format
+msgid "You are customizing %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_panel.php:138
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_section.php:79
+msgid "Back"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_section.php:72
+msgid "Press return or enter to open"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/customizer/inc/customizer_section.php:122
+msgid "Press return or enter to expand"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/extension_import_export.php:120
+msgid "Import / Export"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:91
+msgid "Import Options"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:95
+msgid "Import from File"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:98
+msgid "Import from URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:104
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:111
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:116
+msgid "Import"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:116
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:120
+msgid "Export Options"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:124
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:132
+msgid "Copy Data"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:133
+msgid "Download Data File"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/import_export/import_export/field_import_export.php:134
+msgid "Copy Export URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/options_object/extension_options_object.php:82
+#: libs/panel/inc/ReduxCore/inc/extensions/options_object/options_object/field_options_object.php:104
+msgid "Options Object"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/extensions/options_object/options_object/field_options_object.php:107
+msgid "Show Object in Javascript Console Object"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:124
+#: libs/panel/inc/ReduxCore/inc/fields/color/field_color.php:73
+#: libs/panel/inc/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:79
+#: libs/panel/inc/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:91
+msgid "Transparent"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:141
+msgid "Background Repeat"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:157
+msgid "Background Clip"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:173
+msgid "Background Origin"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:188
+msgid "Background Size"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:203
+msgid "Background Attachment"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:223
+msgid "Background Position"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:277
+#: libs/panel/inc/ReduxCore/inc/fields/media/field_media.php:153
+msgid "No media selected"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/background/field_background.php:314
+#: libs/panel/inc/ReduxCore/inc/fields/media/field_media.php:206
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:126
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:188
+msgid "Upload"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/border/field_border.php:138
+#: libs/panel/inc/ReduxCore/inc/fields/spacing/field_spacing.php:215
+msgid "Top"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/border/field_border.php:145
+#: libs/panel/inc/ReduxCore/inc/fields/spacing/field_spacing.php:222
+msgid "Right"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/border/field_border.php:152
+#: libs/panel/inc/ReduxCore/inc/fields/spacing/field_spacing.php:229
+msgid "Bottom"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/border/field_border.php:159
+#: libs/panel/inc/ReduxCore/inc/fields/spacing/field_spacing.php:236
+msgid "Left"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/border/field_border.php:174
+msgid "Border style"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:68
+msgid "From "
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/color_gradient/field_color_gradient.php:82
+msgid "To "
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/color_rgba/field_color_rgba.php:71
+msgid "Choose"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/color_rgba/field_color_rgba.php:74
+msgid "Select Color"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/dimensions/field_dimensions.php:156
+msgid "Width"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/dimensions/field_dimensions.php:172
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:442
+msgid "Height"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/dimensions/field_dimensions.php:183
+#: libs/panel/inc/ReduxCore/inc/fields/dimensions/field_dimensions.php:184
+#: libs/panel/inc/ReduxCore/inc/fields/spacing/field_spacing.php:245
+#: libs/panel/inc/ReduxCore/inc/fields/spacing/field_spacing.php:246
+msgid "Units"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/gallery/field_gallery.php:73
+#: libs/panel/inc/sample/sample-config.php:915
+msgid "Add/Edit Gallery"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/gallery/field_gallery.php:74
+msgid "Clear Gallery"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:336
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:383
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:437
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:350
+#, php-format
+msgid "Your license code has expired on%s."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:357
+msgid "Your license code has been disabled and can no longer be used."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:362
+msgid "Invalid license."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:368
+msgid "Your license is currently inactive on this website."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:373
+#, php-format
+msgid "This license code does not appear to be valid for %s."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:378
+msgid "Your license code has reached the limit of license activation."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/theme-updater-admin.php:564
+msgid "Could not connect to exthem.es license server"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:30
+msgid "Theme License"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:31
+msgid "Enter your theme license key."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:32
+msgid "License Key"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:33
+msgid "License Action"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:34
+msgid "Deactivate License"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:35
+msgid "Activate License"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:36
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:50
+msgid "License status is unknown."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:37
+msgid "Renew?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:38
+msgid "unlimited"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:39
+msgid "License key is active."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:40
+#, php-format
+msgid "Expires : <b>%s</b>."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:41
+#, php-format
+msgid "You have : <b>%1$s</b> / <b>%2$s</b> sites activated."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:42
+#, php-format
+msgid "License key expired : <b>%s</b>."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:43
+msgid "License key has expired."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:44
+#, php-format
+msgid "Customer : <b>%1$s</b>"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:45
+#, php-format
+msgid "Emails : <b>%1$s</b>"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:46
+msgid "License keys do not match."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:47
+msgid "License is inactive."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:48
+msgid "License key is disabled."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:49
+msgid "Site is inactive."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:51
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/info/updater/themeupdater.php:52
+#, php-format
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
+"title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
+"a>."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/link_color/field_link_color.php:90
+msgid "Regular"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/link_color/field_link_color.php:94
+msgid "Hover"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/link_color/field_link_color.php:98
+msgid "Visited"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/link_color/field_link_color.php:102
+#: libs/tgm.php:2321
+msgid "Active"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/link_color/field_link_color.php:106
+msgid "Focus"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/multi_text/field_multi_text.php:62
+msgid "Add More"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/select/field_select.php:83
+#: libs/panel/inc/ReduxCore/inc/fields/select_image/field_select_image.php:54
+msgid "Select an item"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/select/field_select.php:134
+#: libs/panel/inc/ReduxCore/inc/fields/select_image/field_select_image.php:134
+msgid "No items of this type were found."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:68
+msgid "Slide"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:73
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:174
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:153
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:207
+msgid "URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:167
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:220
+#: wp-report-post/wp-report-post.php:1009
+msgid "Delete"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/slides/field_slides.php:223
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/switch/field_switch.php:41
+msgid "On"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/switch/field_switch.php:44
+msgid "Off"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:231
+msgid "Font Family"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:232
+msgid "Font family"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:258
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:259
+msgid "Backup Font Family"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:273
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:281
+msgid "Font style"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:274
+msgid "Font Weight &amp; Style"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:281
+msgid "Style"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:321
+msgid "Font subsets"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:323
+msgid "Font Subsets"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:325
+msgid "Subsets"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:325
+msgid "Font script"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:342
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:343
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:344
+msgid "Text Align"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:365
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:366
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:367
+msgid "Text Transform"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:388
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:389
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:390
+msgid "Font Variant"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:408
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:409
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:410
+msgid "Text Decoration"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:432
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:433
+msgid "Font Size"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:433
+msgid "Size"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:441
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:442
+msgid "Line Height"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:450
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:451
+msgid "Word Spacing"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:459
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:460
+msgid "Letter Spacing"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:478
+msgid "Font Color"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:480
+msgid "Font color"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:913
+msgid "Standard Fonts"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/fields/typography/field_typography.php:1014
+msgid "Google Webfonts"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/embedded.php:15
+#, php-format
+msgid ""
+"<span class=\"tc-lead tc-recommended\">RECOMMENDED</span>: If you are "
+"submitting to WordPress.org Theme Repository, it is <strong>strongly</"
+"strong> suggested that you read <a href=\"%s\" target=\"_blank\">this "
+"document</a>, or your theme will be rejected because of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/embedded.php:24
+#, php-format
+msgid ""
+"<span class=\"tc-lead tc-required\">REQUIRED</span>: You MUST delete "
+"<strong> %s </strong>, or your theme will be rejected by WP.org theme "
+"submission because of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/embedded.php:38
+msgid "Optional"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/embedded.php:40
+msgid ""
+"<span class=\"tc-lead tc-recommended\">RECOMMENDED</span>: The following "
+"arguments MUST be used for WP.org submissions, or you will be rejected "
+"because of your Redux configuration."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:16
+msgid "Redux localization utilities"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:17
+msgid "Redux Resting Diles"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:18
+msgid "Redux Code Styles"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:19
+msgid "Redux Unit Testing"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:20
+msgid "Redux Plugin File"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:21
+msgid "Redux Boostrap Tests"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:22
+msgid "CI Testing FIle"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:23
+msgid "PHP Unit Testing"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/themecheck/checks/full_package.php:36
+msgid ""
+"It appears that you have embedded the full Redux package inside your theme. "
+"You need only embed the <strong>ReduxCore</strong> folder. Embedding "
+"anything else will get your rejected from theme submission. Suspected Redux "
+"package file(s):"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:129
+msgid "Help improve Our Panel"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:130
+msgid ""
+"Please helps us improve our panel by allowing us to gather anonymous usage "
+"stats so we know which configurations, plugins and themes to test to ensure "
+"compatibility."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:135
+msgid "Allow tracking"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:140
+msgid "Do not allow tracking"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:151
+msgid "Welcome to the Redux Demo Panel"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:152
+msgid "Getting Started"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:152
+#, php-format
+msgid ""
+"This panel demonstrates the many features of Redux.  Before digging in, we "
+"suggest you get up to speed by reviewing %1$s."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:152
+msgid "our documentation"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:153
+msgid "Redux Generator"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:153
+#, php-format
+msgid ""
+"Want to get a head start? Use the %1$s. It will create a customized "
+"boilerplate theme or a standalone admin folder complete with all things "
+"Redux (with the help of Underscores and TGM). Save yourself a headache and "
+"try it today."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:154
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:227
+msgid "Redux Extensions"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:154
+#, php-format
+msgid ""
+"Did you know we have extensions, which greatly enhance the features of "
+"Redux?  Visit our %1$s to learn more!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:154
+msgid "extensions directory"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:155
+msgid "Like Redux?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:155
+#, php-format
+msgid ""
+"If so, please %1$s and consider making a %2$s to keep development of Redux "
+"moving forward."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:155
+msgid "leave us a favorable review on WordPress.org"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:155
+msgid "donation"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:156
+msgid "Newsletter"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:156
+msgid ""
+"If you'd like to keep up to with all things Redux, please subscribe to our "
+"newsletter"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:159
+msgid "Email Address"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:163
+msgid "Subscribe"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/tracking.php:175
+#: wp-report-post/wp-report-post.php:125 wp-report-post/wp-report-post.php:667
+msgid "Close"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/color/validation_color.php:15
+#: libs/panel/inc/ReduxCore/inc/validation/color_rgba/validation_color_rgba.php:14
+#: libs/panel/inc/ReduxCore/inc/validation/colorrgba/validation_colorrgba.php:16
+msgid "This field must be a valid color value."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/comma_numeric/validation_comma_numeric.php:16
+msgid ""
+"You must provide a comma separated list of numerical values for this option."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/css/validation_css.php:39
+msgid "Unsafe strings were found in your CSS and have been filtered out."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/date/validation_date.php:16
+msgid "This field must be a valid date."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/email/validation_email.php:16
+#: libs/panel/inc/ReduxCore/inc/validation/email_not_empty/validation_email_not_empty.php:16
+msgid "You must provide a valid email for this option."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/no_special_chars/validation_no_special_chars.php:16
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/not_empty/validation_not_empty.php:16
+msgid "This field cannot be empty. Please provide a value."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/numeric/validation_numeric.php:16
+#: libs/panel/inc/ReduxCore/inc/validation/numeric_not_empty/validation_numeric_not_empty.php:16
+msgid "You must provide a numerical value for this option."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/unique_slug/validation_unique_slug.php:16
+#, php-format
+msgid ""
+"That URL slug is in use, please choose another. <code>%s</code> is open for "
+"use."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/validation/url/validation_url.php:16
+msgid "You must provide a valid URL for this option."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/about.php:2
+#, php-format
+msgid "Welcome to Redux Framework %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/about.php:5
+#, php-format
+msgid ""
+"Thank you for updating to the latest version! Redux Framework %s is a huge "
+"step forward in Redux Development. Look at all that's new."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/about.php:8
+#: libs/panel/inc/ReduxCore/inc/welcome/views/changelog.php:10
+#: libs/panel/inc/ReduxCore/inc/welcome/views/credits.php:10
+#: libs/panel/inc/ReduxCore/inc/welcome/views/extensions.php:81
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:34
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:8
+#, php-format
+msgid "Version %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/about.php:15
+msgid "What is Redux Framework?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/about.php:17
+msgid ""
+"Redux Framework is the core of many products on the web. It is an option "
+"framework which developers use to\n"
+"            enhance their products."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/about.php:22
+msgid "Learn More"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/about.php:28
+msgid "New in this Release"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/changelog.php:2
+msgid "Redux Framework - Changelog"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/changelog.php:5
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:30
+msgid ""
+"Our core mantra at Redux is backwards compatibility. With hundreds of "
+"thousands of instances worldwide, you can be assured that we will take care "
+"of you and your clients."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/credits.php:2
+msgid "Redux Framework - A Community Effort"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/credits.php:5
+msgid ""
+"We recognize we are nothing without our community. We would like to thank "
+"all of those who help Redux to be what it is. Thank you for your involvement."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/credits.php:18
+#, php-format
+msgid ""
+"Redux is created by a community of developers world wide. Want to have your "
+"name listed too? <a href=\"%d\" target=\"_blank\">Contribute to Redux</a>."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/extensions.php:73
+msgid "Redux Framework - Extensions"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/extensions.php:76
+msgid ""
+"Supercharge your Redux experience. Our extensions provide you with features "
+"that will take your products to the next level."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/extensions.php:89
+msgid ""
+"While some are built specificially for developers, extensions such as Custom "
+"Fonts are sure to make any user happy."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:26
+msgid "Redux Framework - System Status"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:43
+msgid ""
+"Please copy and paste this information in your ticket when contacting "
+"support:"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:48
+msgid "Get System Report"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:53
+msgid "Understanding the Status Report"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:62
+msgid "Copied!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:63
+msgid "Copy for Support"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:73
+msgid "WordPress Environment"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:80
+msgid "Home URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:83
+msgid "The URL of your site's homepage."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:89
+msgid "Site URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:92
+msgid "The root URL of your site."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:100
+msgid "Redux Version"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:103
+msgid "The version of Redux Framework installed on your site."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:111
+msgid "Redux Data Directory Writable"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:114
+msgid ""
+"Redux and its extensions write data to the <code>uploads</code> directory. "
+"This directory must be writable."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:120
+#, php-format
+msgid "To allow data saving, make <code>%s</code> writable."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:126
+msgid "WP Content URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:129
+msgid "The location of Wordpress's content URL."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:137
+msgid "WP Version"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:140
+msgid "The version of WordPress installed on your site."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:148
+msgid "WP Multisite"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:151
+msgid "Whether or not you have WordPress Multisite enabled."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:162
+msgid "Permalink Structure"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:165
+msgid ""
+"The current permalink structure as defined in Wordpress Settings->Permalinks."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:174
+msgid "Front Page Display"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:176
+msgid "The current Reading mode of Wordpress."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:185
+msgid "Front Page"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:188
+msgid "The currently selected page which acts as the site's Front Page."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:196
+msgid "Posts Page"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:199
+msgid "The currently selected page in where blog posts are displayed."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:210
+msgid "WP Memory Limit"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:213
+msgid "The maximum amount of memory (RAM) that your site can use at one time."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:220
+#, php-format
+msgid ""
+"%s - We recommend setting memory to at least 40MB. See: <a href=\"%s\" "
+"target=\"_blank\">Increasing memory allocated to PHP</a>"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:229
+msgid "Database Table Prefix"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:232
+msgid "The prefix structure of the current Wordpress database."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:240
+msgid "WP Debug Mode"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:243
+msgid "Displays whether or not WordPress is in Debug Mode."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:258
+msgid "The current language used by WordPress. Default = English"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:270
+msgid "Browser"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:277
+msgid "Browser Info"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:280
+msgid "Information about web browser current in use."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:297
+msgid "Server Environment"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:304
+msgid "Server Info"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:307
+msgid "Information about the web server that is currently hosting your site."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:315
+msgid "Localhost Environment"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:318
+msgid "Is the server running in a localhost environment."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:332
+msgid "PHP Version"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:335
+msgid "The version of PHP installed on your hosting server."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:343
+msgid "ABSPATH"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:346
+msgid "The ABSPATH variable on the server."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:355
+msgid "PHP Memory Limit"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:356
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:361
+msgid "The largest filesize that can be contained in one post."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:360
+msgid "PHP Post Max Size"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:365
+msgid "PHP Time Limit"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:366
+msgid ""
+"The amount of time (in seconds) that your site will spend on a single "
+"operation before timing out (to avoid server lockups)"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:370
+msgid "PHP Max Input Vars"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:371
+msgid ""
+"The maximum number of variables your server can use for a single function to "
+"avoid overloads."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:375
+msgid "PHP Display Errors"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:376
+msgid "Determines if PHP will display errors within the browser."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:387
+msgid "SUHOSIN Installed"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:388
+msgid ""
+"Suhosin is an advanced protection system for PHP installations. It was "
+"designed to protect your servers on the one hand against a number of well "
+"known problems in PHP applications and on the other hand against potential "
+"unknown vulnerabilities within these applications or the PHP core itself.  "
+"If enabled on your server, Suhosin may need to be configured to increase its "
+"data submission limits."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:399
+msgid "MySQL Version"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:400
+msgid "The version of MySQL installed on your hosting server."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:404
+msgid "Max Upload Size"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:405
+msgid ""
+"The largest filesize that can be uploaded to your WordPress installation."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:410
+msgid "Default Timezone is UTC"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:412
+msgid "The default timezone for your server."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:416
+#, php-format
+msgid "Default timezone is %s - it should be UTC"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:428
+msgid "Used when communicating with remote services with PHP."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:434
+msgid ""
+"Your server does not have fsockopen or cURL enabled - cURL is used to "
+"communicate with other servers. Please contact your hosting provider."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:473
+msgid "Remote Post"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:474
+msgid "Used to send data to remote servers."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:479
+msgid ""
+"wp_remote_post() failed. Many advanced features may not function. Contact "
+"your hosting provider."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:482
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:497
+#, php-format
+msgid "Error: %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:489
+msgid "Remote Get"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:490
+msgid "Used to grab information from remote servers for updates updates."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:495
+msgid ""
+"wp_remote_get() failed. This is needed to get information from remote "
+"servers. Contact your hosting provider."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:531
+msgid "Active Plugins"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:546
+msgid "Visit plugin homepage"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:553
+#, php-format
+msgctxt "by author"
+msgid "by %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:572
+msgid "Redux Instance: "
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:579
+msgid "The opt_name argument for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:587
+msgid "The global_variable argument for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:595
+msgid "Indicates if developer mode is enabled for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:600
+msgid "Indicates if ajax based saving is enabled for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:605
+msgid ""
+"The page slug denotes the string used for the options panel page for this "
+"instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:610
+msgid ""
+"The page permissions variable sets the permission level required to access "
+"the options panel for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:615
+msgid ""
+"This variable set whether or not the menu is displayed as an admin menu item "
+"for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:620
+msgid ""
+"The page parent variable sets where the options menu will be placed on the "
+"WordPress admin sidebar for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:626
+msgid "Indicates if the compiler flag is enabled for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:631
+msgid ""
+"Indicates if output flag for globally shutting off all CSS output is enabled "
+"for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:636
+msgid ""
+"The output_tag variable sets whether or not dynamic CSS will be generated "
+"for the customizer and Google fonts for this instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:645
+msgid ""
+"The specified template path containing custom template files for this "
+"instance of Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:650
+msgid "List of template files overriding the default Redux template files."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:676
+msgid "Indicates the installed Redux extensions and their version numbers."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:705
+msgid "Theme"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:711
+msgid "The name of the current active theme."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:716
+msgid "The installed version of the current active theme."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:722
+msgid "is available"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:728
+msgid "Author URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:729
+msgid "The theme developers URL."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:733
+msgid "Child Theme"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:734
+msgid "Displays whether or not the current theme is a child theme."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:737
+#, php-format
+msgid ""
+"If you're modifying Redux Framework or a parent theme you didn't build "
+"personally, we recommend using a child theme. See: <a href=\"%s\" target="
+"\"_blank\">How to create a child theme</a>"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:745
+msgid "Parent Theme Name"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:747
+msgid "The name of the parent theme."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:752
+msgid "Parent Theme Version"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:754
+msgid "The installed version of the parent theme."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:759
+msgid "Parent Theme Author URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/status_report.php:761
+msgid "The parent theme developers URL."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:2
+msgid "Redux Framework - Support"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:4
+msgid ""
+"We are an open source project used by developers to make powerful control "
+"panels."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:19
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:40
+msgid "Generate a Support URL"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:20
+msgid "Select Support Type"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:21
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:87
+msgid "How to Get Support"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:27
+msgid "Submit a Support Request"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:31
+msgid "To get started, we will need to generate a support hash."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:35
+#, php-format
+msgid ""
+"This will provide to your developer all the information they may need to "
+"remedy your issue. This action WILL send information securely to a remote "
+"server. To see the type of information sent, please look at the  <a href=\"%s"
+"\">Status tab</a>."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:52
+msgid "Select Your Support Type"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:56
+msgid "What type of user are you?"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:63
+#: wp-report-post/wp-report-post.php:987
+msgid "User"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:65
+msgid "I am a user, using a pre-built product."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:72
+msgid "I am a developer, building a product using Redux."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:92
+msgid ""
+"Please proceed to the Redux Framework issue tracker and supply us with your "
+"support URL below. Please also provide any information that will help us to "
+"reproduce your issue."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:101
+msgid ""
+"Listed below are the Wordpress plugins and/or theme installed on your site "
+"that utilize Redux Framework. We do not directly support products created "
+"with our framework.  It is the responsibility of the plugin or theme "
+"developer to support their work. You will need to contact the author(s) of "
+"the products listed below with your support questions."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:105
+msgid ""
+"Please be sure to include for your developer - via cut and paste - the "
+"Support URL in the box below."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/views/support.php:134
+#, php-format
+msgid ""
+"Should the developer not be responsive, read the <a href=\"%s\" target="
+"\"_blank\">following article</a> before asking for support from us directly."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:104
+msgid ""
+"If you like <strong>Redux</strong> please leave us a <a href=\"https://"
+"wordpress.org/support/view/plugin-reviews/redux-framework?filter=5#postform"
+"\" target=\"_blank\" class=\"redux-rating-link\" data-rated="
+"\"Thanks :)\">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating. A huge thank "
+"you from Redux in advance!"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:181
+msgid "Support hash could not be generated. Please try again later."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:203
+msgid "Welcome to Redux Framework"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:211
+msgid "Redux Framework Changelog"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:219
+#: libs/panel/inc/class.redux-plugin.php:418
+msgid "Get Support"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:236
+msgid "The people that develop Redux Framework"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:244
+msgid "Redux Framework Status"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:344
+msgid "What's New"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:347
+#: libs/panel/inc/options/barebones-config.php:151
+#: libs/panel/inc/sample/barebones-config.php:151
+#: libs/panel/inc/sample/sample-config.php:190
+msgid "Extensions"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:350
+msgid "Changelog"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:353
+msgid "Credits"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:356
+#: libs/panel/inc/options/barebones-config.php:145
+#: libs/panel/inc/sample/barebones-config.php:145
+#: libs/panel/inc/sample/sample-config.php:184
+msgid "Support"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:359 libs/tgm.php:2554
+msgid "Status"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/inc/welcome/welcome.php:519
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/footer.tpl.php:57
+#: libs/panel/inc/ReduxCore/templates/panel/header_stickybar.tpl.php:22
+msgid "Save Changes"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/footer.tpl.php:62
+#: libs/panel/inc/ReduxCore/templates/panel/header_stickybar.tpl.php:27
+msgid "Reset Section"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/footer.tpl.php:64
+#: libs/panel/inc/ReduxCore/templates/panel/header_stickybar.tpl.php:29
+msgid "Reset All"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/footer.tpl.php:69
+#: libs/panel/inc/ReduxCore/templates/panel/header_stickybar.tpl.php:33
+msgid "Working..."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:11
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:49
+msgid "Developer Mode Enabled"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:20
+msgid "WP_DEBUG is enabled"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:26
+msgid "you are working in a localhost environment"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:31
+msgid "and"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:34
+msgid "This has been automatically enabled because"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:36
+msgid ""
+"If you are not a developer, your theme/plugin author shipped with developer "
+"mode enabled. Contact them directly to fix it."
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header.tpl.php:58
+msgid "FORCED DEV MODE OFF ENABLED"
+msgstr ""
+
+#: libs/panel/inc/ReduxCore/templates/panel/header_stickybar.tpl.php:15
+msgid "Expand"
+msgstr ""
+
+#: libs/panel/inc/class.redux-plugin.php:314
+msgid "Redux Framework has an embedded demo."
+msgstr ""
+
+#: libs/panel/inc/class.redux-plugin.php:314
+msgid "Click here to activate the sample config file."
+msgstr ""
+
+#: libs/panel/inc/class.redux-plugin.php:415
+msgid "Docs"
+msgstr ""
+
+#: libs/panel/inc/class.redux-plugin.php:416
+msgid "Repo"
+msgstr ""
+
+#: libs/panel/inc/class.redux-plugin.php:417
+msgid "Builder"
+msgstr ""
+
+#: libs/panel/inc/class.redux-plugin.php:423
+msgid "Deactivate Demo Mode"
+msgstr ""
+
+#: libs/panel/inc/class.redux-plugin.php:425
+msgid "Activate Demo Mode"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:35
+#: libs/panel/inc/options/barebones-config.php:36
+#: libs/panel/inc/sample/barebones-config.php:35
+#: libs/panel/inc/sample/barebones-config.php:36
+#: libs/panel/inc/sample/sample-config.php:77
+#: libs/panel/inc/sample/sample-config.php:78
+msgid "Sample Options"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:139
+#: libs/panel/inc/sample/barebones-config.php:139
+#: libs/panel/inc/sample/sample-config.php:178
+#: libs/panel/inc/sample/sample-config.php:2227
+msgid "Documentation"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:184
+#: libs/panel/inc/sample/barebones-config.php:184
+#: libs/panel/inc/sample/sample-config.php:223
+#, php-format
+msgid ""
+"<p>Did you know that Redux sets a global variable for you? To access any of "
+"your saved options from within your code you can use your global variable: "
+"<strong>$%1$s</strong></p>"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:186
+#: libs/panel/inc/sample/barebones-config.php:186
+#: libs/panel/inc/sample/sample-config.php:225
+msgid ""
+"<p>This text is displayed above the options panel. It isn't required, but "
+"more info is always better! The intro_text field accepts all HTML.</p>"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:190
+#: libs/panel/inc/sample/barebones-config.php:190
+#: libs/panel/inc/sample/sample-config.php:229
+msgid ""
+"<p>This text is displayed below the options panel. It isn't required, but "
+"more info is always better! The footer_text field accepts all HTML.</p>"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:205
+#: libs/panel/inc/sample/barebones-config.php:205
+#: libs/panel/inc/sample/sample-config.php:245
+msgid "Theme Information 1"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:206
+#: libs/panel/inc/options/barebones-config.php:211
+#: libs/panel/inc/sample/barebones-config.php:206
+#: libs/panel/inc/sample/barebones-config.php:211
+#: libs/panel/inc/sample/sample-config.php:246
+#: libs/panel/inc/sample/sample-config.php:251
+msgid "<p>This is the tab content, HTML is allowed.</p>"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:210
+#: libs/panel/inc/sample/barebones-config.php:210
+#: libs/panel/inc/sample/sample-config.php:250
+msgid "Theme Information 2"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:217
+#: libs/panel/inc/sample/barebones-config.php:217
+#: libs/panel/inc/sample/sample-config.php:257
+msgid "<p>This is the sidebar content, HTML is allowed.</p>"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:241
+#: libs/panel/inc/sample/barebones-config.php:241
+msgid "Basic Field"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:243
+#: libs/panel/inc/sample/barebones-config.php:243
+msgid "Basic field with no subsections."
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:249
+#: libs/panel/inc/sample/barebones-config.php:249
+msgid "Example Text"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:250
+#: libs/panel/inc/sample/barebones-config.php:250
+msgid "Example description."
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:251
+#: libs/panel/inc/sample/barebones-config.php:251
+msgid "Example subtitle."
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:260
+#: libs/panel/inc/sample/barebones-config.php:260
+#: libs/panel/inc/sample/sample-config.php:281
+msgid "Basic Fields"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:262
+#: libs/panel/inc/sample/barebones-config.php:262
+msgid "Basic fields as subsections."
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:267
+#: libs/panel/inc/sample/barebones-config.php:267
+#: libs/panel/inc/sample/sample-config.php:413
+msgid "Text"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:268
+#: libs/panel/inc/options/barebones-config.php:285
+#: libs/panel/inc/sample/barebones-config.php:268
+#: libs/panel/inc/sample/barebones-config.php:285
+#: libs/panel/inc/sample/sample-config.php:293
+#: libs/panel/inc/sample/sample-config.php:345
+#: libs/panel/inc/sample/sample-config.php:375
+#: libs/panel/inc/sample/sample-config.php:414
+#: libs/panel/inc/sample/sample-config.php:454
+#: libs/panel/inc/sample/sample-config.php:469
+#: libs/panel/inc/sample/sample-config.php:488
+#: libs/panel/inc/sample/sample-config.php:514
+#: libs/panel/inc/sample/sample-config.php:547
+#: libs/panel/inc/sample/sample-config.php:605
+#: libs/panel/inc/sample/sample-config.php:628
+#: libs/panel/inc/sample/sample-config.php:647
+#: libs/panel/inc/sample/sample-config.php:668
+#: libs/panel/inc/sample/sample-config.php:693
+#: libs/panel/inc/sample/sample-config.php:753
+#: libs/panel/inc/sample/sample-config.php:759
+#: libs/panel/inc/sample/sample-config.php:803
+#: libs/panel/inc/sample/sample-config.php:839
+#: libs/panel/inc/sample/sample-config.php:909
+#: libs/panel/inc/sample/sample-config.php:925
+#: libs/panel/inc/sample/sample-config.php:978
+#: libs/panel/inc/sample/sample-config.php:1007
+#: libs/panel/inc/sample/sample-config.php:1020
+#: libs/panel/inc/sample/sample-config.php:1115
+#: libs/panel/inc/sample/sample-config.php:1165
+#: libs/panel/inc/sample/sample-config.php:1204
+#: libs/panel/inc/sample/sample-config.php:1263
+#: libs/panel/inc/sample/sample-config.php:1484
+#: libs/panel/inc/sample/sample-config.php:1580
+#: libs/panel/inc/sample/sample-config.php:1623
+#: libs/panel/inc/sample/sample-config.php:1687
+#: libs/panel/inc/sample/sample-config.php:1707
+#: libs/panel/inc/sample/sample-config.php:1790
+#: libs/panel/inc/sample/sample-config.php:1806
+#: libs/panel/inc/sample/sample-config.php:1854
+#: libs/panel/inc/sample/sample-config.php:1886
+msgid "For full documentation on this field, visit: "
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:275
+#: libs/panel/inc/sample/barebones-config.php:275
+#: libs/panel/inc/sample/sample-config.php:422
+#: libs/panel/inc/sample/sample-config.php:442
+msgid "Text Field"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:276
+#: libs/panel/inc/options/barebones-config.php:293
+#: libs/panel/inc/sample/barebones-config.php:276
+#: libs/panel/inc/sample/barebones-config.php:293
+#: libs/panel/inc/sample/sample-config.php:423
+#: libs/panel/inc/sample/sample-config.php:431
+#: libs/panel/inc/sample/sample-config.php:443
+#: libs/panel/inc/sample/sample-config.php:495
+#: libs/panel/inc/sample/sample-config.php:1861
+#: libs/panel/inc/sample/sample-config.php:1870
+msgid "Subtitle"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:277
+#: libs/panel/inc/options/barebones-config.php:294
+#: libs/panel/inc/sample/barebones-config.php:277
+#: libs/panel/inc/sample/barebones-config.php:294
+#: libs/panel/inc/sample/sample-config.php:424
+#: libs/panel/inc/sample/sample-config.php:432
+#: libs/panel/inc/sample/sample-config.php:444
+msgid "Field Description"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:284
+#: libs/panel/inc/sample/barebones-config.php:284
+msgid "Text Area"
+msgstr ""
+
+#: libs/panel/inc/options/barebones-config.php:292
+#: libs/panel/inc/sample/barebones-config.php:292
+msgid "Text Area Field"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:183
+msgid "<p></p>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:188
+msgid "Extractor Games"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:196
+msgid "Select for Status Post"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:197
+msgid "<i>Draft or Publish * <b>Publish</b> to auto post</i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:231
+msgid "Logo Sites"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:237
+msgid "Logo Images"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:240
+msgid "<i>* Upload Your Images Logo...</i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:249
+msgid "<i>* Your Favicon Logo...</i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:281
+msgid "Menu Footer "
+msgstr ""
+
+#: libs/panel/inc/options/config.php:282
+msgid "<i> Add your Menu on Footer </i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:294
+msgid "Colour Sites"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:303
+msgid "Color Title"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:304
+msgid "Pick Title Color for the theme (default: #fff)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:311
+msgid "Color Title Shadow"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:312
+msgid "Pick Title Shadow Color for the theme (default: #CC4C16)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:319
+msgid "Color Links"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:320
+msgid "Pick Links Color for the theme (default: #CC4C16)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:327
+msgid "Color Links Hovers"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:328
+msgid "Pick Links Hovers Color for the theme (default: #fff)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:335
+msgid "Color Body Backgrounds"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:336
+msgid "Pick Body Backgrounds Color for the theme (default: #546aff)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:343
+msgid "Color Body"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:344
+msgid "Pick Body Color for the theme (default: #fff)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:351
+msgid "Color Border"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:352
+msgid "Pick Border Color for the theme (default: #CC4C16)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:359
+msgid "Color Button"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:360
+msgid "Pick Button Color for the theme (default: #CC4C16)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:367
+msgid "Color Play Background"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:368
+msgid "Pick Play Background Color for the theme (default: #546aff)."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:375
+msgid "Backgrounds"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:378
+msgid "<i>* Your Background Images...</i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:383
+msgid "Category Backgrounds"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:386
+msgid "<i>* Your Category Background Images...</i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:391
+msgid "Play Backgrounds"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:394
+msgid "<i>* Your Play Background Images...</i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:402
+msgid "Categorie"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:410
+msgid "Header"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:411
+msgid "Categorie for Header"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:417 libs/panel/inc/options/config.php:433
+msgid "Categorie "
+msgstr ""
+
+#: libs/panel/inc/options/config.php:418
+msgid "<i> Add your Categorie for headers</i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:427
+msgid "All Categorie "
+msgstr ""
+
+#: libs/panel/inc/options/config.php:434
+msgid "<i> Add your All Categorie  </i>"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:639
+msgid "Single Post"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:648
+msgid "Enable Related Post"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:674
+msgid "Script Insert"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:720
+msgid "Custom CSS"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:727
+#: libs/panel/inc/sample/sample-config.php:560
+msgid "CSS Code"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:728
+msgid "Paste your Custom CSS code here."
+msgstr ""
+
+#: libs/panel/inc/options/config.php:748
+msgid "Enable Minify"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:781
+msgid "Play"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:788
+msgid "View"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:796
+msgid "Fullscreen"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:803 wp-report-post/wp-report-post.php:781
+msgid "Report"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:810
+msgid "Share"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:817
+msgid "Comments Name"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:824
+msgid "Comments E-Mail"
+msgstr ""
+
+#: libs/panel/inc/options/config.php:831
+msgid "Comments Submit"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:283
+msgid "These are really basic fields!"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:289
+msgid "Checkbox"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:298
+msgid "Checkbox Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:299
+#: libs/panel/inc/sample/sample-config.php:307
+#: libs/panel/inc/sample/sample-config.php:326
+#: libs/panel/inc/sample/sample-config.php:334
+#: libs/panel/inc/sample/sample-config.php:351
+#: libs/panel/inc/sample/sample-config.php:365
+#: libs/panel/inc/sample/sample-config.php:1172
+#: libs/panel/inc/sample/sample-config.php:1186
+#: libs/panel/inc/sample/sample-config.php:1271
+#: libs/panel/inc/sample/sample-config.php:1293
+#: libs/panel/inc/sample/sample-config.php:1318
+#: libs/panel/inc/sample/sample-config.php:1339
+#: libs/panel/inc/sample/sample-config.php:1348
+#: libs/panel/inc/sample/sample-config.php:1356
+#: libs/panel/inc/sample/sample-config.php:1365
+#: libs/panel/inc/sample/sample-config.php:1373
+#: libs/panel/inc/sample/sample-config.php:1382
+#: libs/panel/inc/sample/sample-config.php:1390
+#: libs/panel/inc/sample/sample-config.php:1399
+#: libs/panel/inc/sample/sample-config.php:1407
+#: libs/panel/inc/sample/sample-config.php:1416
+#: libs/panel/inc/sample/sample-config.php:1434
+#: libs/panel/inc/sample/sample-config.php:1443
+#: libs/panel/inc/sample/sample-config.php:1451
+#: libs/panel/inc/sample/sample-config.php:1460
+#: libs/panel/inc/sample/sample-config.php:1468
+#: libs/panel/inc/sample/sample-config.php:1476
+#: libs/panel/inc/sample/sample-config.php:1492
+#: libs/panel/inc/sample/sample-config.php:1537
+#: libs/panel/inc/sample/sample-config.php:1797
+msgid "No validation can be done on this field type"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:300
+#: libs/panel/inc/sample/sample-config.php:308
+#: libs/panel/inc/sample/sample-config.php:327
+#: libs/panel/inc/sample/sample-config.php:335
+#: libs/panel/inc/sample/sample-config.php:352
+#: libs/panel/inc/sample/sample-config.php:366
+#: libs/panel/inc/sample/sample-config.php:382
+#: libs/panel/inc/sample/sample-config.php:396
+#: libs/panel/inc/sample/sample-config.php:496
+#: libs/panel/inc/sample/sample-config.php:637
+#: libs/panel/inc/sample/sample-config.php:677
+#: libs/panel/inc/sample/sample-config.php:702
+#: libs/panel/inc/sample/sample-config.php:769
+#: libs/panel/inc/sample/sample-config.php:787
+#: libs/panel/inc/sample/sample-config.php:917
+#: libs/panel/inc/sample/sample-config.php:1173
+#: libs/panel/inc/sample/sample-config.php:1187
+#: libs/panel/inc/sample/sample-config.php:1272
+#: libs/panel/inc/sample/sample-config.php:1294
+#: libs/panel/inc/sample/sample-config.php:1319
+#: libs/panel/inc/sample/sample-config.php:1340
+#: libs/panel/inc/sample/sample-config.php:1349
+#: libs/panel/inc/sample/sample-config.php:1357
+#: libs/panel/inc/sample/sample-config.php:1366
+#: libs/panel/inc/sample/sample-config.php:1374
+#: libs/panel/inc/sample/sample-config.php:1383
+#: libs/panel/inc/sample/sample-config.php:1391
+#: libs/panel/inc/sample/sample-config.php:1400
+#: libs/panel/inc/sample/sample-config.php:1408
+#: libs/panel/inc/sample/sample-config.php:1417
+#: libs/panel/inc/sample/sample-config.php:1427
+#: libs/panel/inc/sample/sample-config.php:1435
+#: libs/panel/inc/sample/sample-config.php:1444
+#: libs/panel/inc/sample/sample-config.php:1452
+#: libs/panel/inc/sample/sample-config.php:1461
+#: libs/panel/inc/sample/sample-config.php:1477
+#: libs/panel/inc/sample/sample-config.php:1538
+#: libs/panel/inc/sample/sample-config.php:1798
+#: libs/panel/inc/sample/sample-config.php:1912
+#: libs/panel/inc/sample/sample-config.php:1922
+#: libs/panel/inc/sample/sample-config.php:1931
+#: libs/panel/inc/sample/sample-config.php:1938
+#: libs/panel/inc/sample/sample-config.php:1947
+#: libs/panel/inc/sample/sample-config.php:1956
+#: libs/panel/inc/sample/sample-config.php:1965
+#: libs/panel/inc/sample/sample-config.php:1987
+#: libs/panel/inc/sample/sample-config.php:2024
+#: libs/panel/inc/sample/sample-config.php:2033
+#: libs/panel/inc/sample/sample-config.php:2042
+#: libs/panel/inc/sample/sample-config.php:2060
+msgid "This is the description field, again good for additional info."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:306
+msgid "Multi Checkbox Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:325
+msgid "Multi Checkbox Option (with menu data)"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:333
+msgid "Multi Checkbox Option (with sidebar data)"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:341
+msgid "Radio"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:350
+msgid "Radio Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:364
+msgid "Radio Option w/ Menu Data"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:372
+msgid "Sortable"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:380
+#: libs/panel/inc/sample/sample-config.php:394
+msgid "Sortable Text Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:381
+#: libs/panel/inc/sample/sample-config.php:395
+msgid "Define and reorder these however you want."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:430
+msgid "Text Field w/ Hint"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:452
+msgid "Multi Text"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:460
+msgid "Multi Text Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:461
+msgid "Field subtitle"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:462
+msgid "Field Decription"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:486
+msgid "Textarea"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:494
+#: libs/panel/inc/sample/sample-config.php:2040
+msgid "Textarea Option - HTML Validated Custom"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:504
+msgid "Editors"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:511
+msgid "WordPress Editor"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:520
+msgid "Editor"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:521
+msgid "Use any of the features of WordPress editor inside your panel!"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:527
+msgid "Editor w/o Media Button"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:543
+msgid "Editor - Full Width"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:551
+msgid "ACE Editor"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:555
+msgid "For full documentation on the this field, visit: "
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:561
+msgid "Paste your CSS code here."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:570
+msgid "JS Code"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:571
+msgid "Paste your JS code here."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:581
+msgid "PHP Code"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:582
+msgid "Paste your PHP code here."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:596
+msgid "Color Selection"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:603
+msgid "Color"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:612
+msgid "Site Title Color"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:613
+msgid "Pick a title color for the theme (default: #000)."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:619
+msgid "Footer Background Color"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:620
+msgid "Pick a background color for the footer (default: #dd9933)."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:627
+msgid "Color Gradient"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:635
+msgid "Header Gradient Color Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:636
+#: libs/panel/inc/sample/sample-config.php:676
+#: libs/panel/inc/sample/sample-config.php:701
+#: libs/panel/inc/sample/sample-config.php:766
+#: libs/panel/inc/sample/sample-config.php:783
+msgid "Only color validation can be done on this field type"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:646
+#: libs/panel/inc/sample/sample-config.php:654
+msgid "Color RGBA"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:655
+msgid "Gives you the RGBA color."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:667
+msgid "Link Color"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:675
+msgid "Links Color Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:692
+msgid "Palette Colors"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:700
+msgid "Palette Color Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:732
+msgid "Design Fields"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:739
+msgid "Background"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:747
+msgid "Body Background"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:748
+msgid "Body background with image, color, etc."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:757
+msgid "Border"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:765
+#: libs/panel/inc/sample/sample-config.php:782
+msgid "Header Border Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:801
+msgid "Dimensions"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:811
+msgid "Dimensions (Width/Height) Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:812
+#: libs/panel/inc/sample/sample-config.php:825
+msgid "Allow your users to choose width, height, and/or unit."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:813
+#: libs/panel/inc/sample/sample-config.php:826
+msgid ""
+"You can enable or disable any piece of this field. Width, Height, or Units."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:824
+msgid "Dimensions (Width) Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:837
+msgid "Spacing"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:859
+#: libs/panel/inc/sample/sample-config.php:884
+msgid "Padding/Margin Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:860
+#: libs/panel/inc/sample/sample-config.php:885
+msgid "Allow your users to choose the spacing or margin they want."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:861
+#: libs/panel/inc/sample/sample-config.php:886
+msgid ""
+"You can enable or disable any piece of this field. Top, Right, Bottom, Left, "
+"or Units."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:899
+msgid "Media Uploads"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:907
+msgid "Gallery"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:916
+msgid ""
+"Create a new Gallery by selecting existing or uploading new images using the "
+"WordPress native uploader"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:923
+msgid "Media"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:932
+msgid "Media w/ URL"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:935
+#: libs/panel/inc/sample/sample-config.php:969
+msgid "Basic media uploader with disabled URL input field."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:936
+#: libs/panel/inc/sample/sample-config.php:948
+#: libs/panel/inc/sample/sample-config.php:956
+#: libs/panel/inc/sample/sample-config.php:970
+msgid "Upload any media using the WordPress native uploader"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:946
+msgid "Media w/o URL"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:947
+#: libs/panel/inc/sample/sample-config.php:955
+msgid ""
+"This represents the minimalistic view. It does not have the preview box or "
+"the display URL in an input box. "
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:954
+msgid "Media No Preview"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:965
+msgid "Upload Anything - Disabled Mode"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:976
+msgid "Slides"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:984
+msgid "Slides Options"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:985
+msgid "Unlimited slides with drag and drop sortings."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:986
+msgid ""
+"This field will store all slides values into a multidimensional array to use "
+"into a foreach loop."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:988
+msgid "This is a title"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:989
+msgid "Description Here"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:990
+msgid "Give us a link!"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:998
+msgid "Presentation Fields"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1005
+msgid "Divide"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1007
+msgid ""
+"The spacer to the section menu as seen to the left (after this section "
+"block) is the divide \"section\". Also the divider below is the divide "
+"\"field\"."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1018
+msgid "Info"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1026
+msgid "This is the info field, if you want to break sections up."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1032
+#: libs/panel/inc/sample/sample-config.php:1039
+#: libs/panel/inc/sample/sample-config.php:1047
+#: libs/panel/inc/sample/sample-config.php:1055
+#: libs/panel/inc/sample/sample-config.php:1064
+#: libs/panel/inc/sample/sample-config.php:1071
+#: libs/panel/inc/sample/sample-config.php:1079
+#: libs/panel/inc/sample/sample-config.php:1088
+#: libs/panel/inc/sample/sample-config.php:1097
+#: libs/panel/inc/sample/sample-config.php:1106
+msgid "This is a title."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1033
+msgid ""
+"This is an info field with the <strong>info</strong> style applied. By "
+"default the <strong>normal</strong> style is applied."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1040
+msgid "This is an info field with the <strong>warning</strong> style applied."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1048
+msgid ""
+"This is an info field with the <strong>success</strong> style applied and an "
+"icon."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1056
+msgid ""
+"This is an info field with the <strong>critical</strong> style applied and "
+"an icon."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1065
+msgid ""
+"This is an info field with the <strong>custom</strong> style applied, color "
+"arg passed, and an icon."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1072
+msgid ""
+"This is an info non-notice field with the <strong>normal</strong> style "
+"applied."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1080
+msgid ""
+"This is an info non-notice field with the <strong>info</strong> style "
+"applied."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1089
+msgid ""
+"This is an info non-notice field with the <strong>warning</strong> style "
+"applied and an icon."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1098
+msgid ""
+"This is an info non-notice field with the <strong>success</strong> style "
+"applied and an icon."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1107
+msgid ""
+"This is an non-notice field with the <strong>critical</strong> style applied "
+"and an icon."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1113
+msgid "Section"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1121
+msgid "Section Example"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1122
+msgid "With the \"section\" field you can create indented option sections."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1128
+#: libs/panel/inc/sample/sample-config.php:1134
+msgid "Field Title"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1129
+#: libs/panel/inc/sample/sample-config.php:1135
+msgid "Field Subtitle"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1145
+msgid "And now you can add more fields below and outside of the indent."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1156
+msgid "Switch & Button Set"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1163
+msgid "Button Set"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1171
+msgid "Button Set Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1185
+msgid "Button Set, Multi Select"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1202
+msgid "Switch"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1211
+msgid "Switch On"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1212
+#: libs/panel/inc/sample/sample-config.php:1219
+msgid "Look, it's on!"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1218
+msgid "Switch Off"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1226
+msgid "Switch - Nested Children, Enable to show"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1227
+msgid "Look, it's on! Also hidden child elements!"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1236
+msgid "Switch - This and the next switch required for patterns to show"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1237
+#: libs/panel/inc/sample/sample-config.php:1246
+msgid "Also called a \"fold\" parent."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1238
+#: libs/panel/inc/sample/sample-config.php:1247
+msgid ""
+"Items set with a fold to this ID will hide unless this is set to the "
+"appropriate value."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1245
+msgid "Switch2 - Enable the above switch and this one for patterns to show"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1255
+msgid "Select Fields"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1261
+msgid "Select"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1270
+msgid "Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1284
+msgid "Theme Stylesheet"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1285
+msgid "Select your themes alternative color scheme."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1292
+msgid "Select Option with optgroup"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1317
+msgid "Multi Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1332
+msgid "You can easily add a variety of data from WordPress."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1338
+msgid "Categories Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1347
+msgid "Categories Multi Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1355
+msgid "Pages Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1364
+msgid "Pages Multi Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1372
+msgid "Tags Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1381
+msgid "Tags Multi Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1389
+msgid "Menus Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1398
+msgid "Menus Multi Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1406
+msgid "Post Type Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1415
+msgid "Post Type Multi Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1425
+msgid "Post Type Multi Select Option + Sortable"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1426
+msgid "This field also has sortable enabled!"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1433
+msgid "Posts Select Option2"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1442
+msgid "Posts Multi Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1450
+msgid "User Role Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1459
+msgid "Capabilities Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1467
+msgid "Elusive Icons Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1469
+msgid "Here's a list of all the elusive icons by name and icon."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1475
+msgid "Users Select Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1482
+msgid "Image Select"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1491
+msgid "Images Option for Layout"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1493
+msgid ""
+"This uses some of the built in images, you can use them for layout options."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1527
+msgid "Images Option (with tiles => true)"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1528
+msgid "Select a background pattern."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1536
+msgid "Images Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1553
+msgid "Preset"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1554
+#: libs/panel/inc/sample/sample-config.php:1556
+msgid ""
+"This allows you to set a json string or array to override multiple "
+"preferences in your theme."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1578
+#: libs/panel/inc/sample/sample-config.php:1586
+#: libs/panel/inc/sample/sample-config.php:1604
+msgid "Select Image"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1587
+#: libs/panel/inc/sample/sample-config.php:1605
+msgid "A preview of the selected image will appear underneath the select box."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1614
+msgid "Slider / Spinner"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1621
+msgid "Slider"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1629
+msgid "Slider Example 1"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1630
+msgid "This slider displays the value as a label."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1631
+msgid "Slider description. Min: 1, max: 500, step: 1, default value: 250"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1641
+msgid "Slider Example 2 with Steps (5)"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1642
+msgid "This example displays the value in a text box"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1643
+msgid "Slider description. Min: 0, max: 300, step: 5, default value: 75"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1653
+msgid "Slider Example 3 with two sliders"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1654
+msgid "This example displays the values in select boxes"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1655
+msgid ""
+"Slider description. Min: 0, max: 500, step: 5, slider 1 default value: 100, "
+"slider 2 default value: 300"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1669
+msgid "Slider Example 4 with float values"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1670
+msgid "This example displays float values"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1671
+msgid "Slider description. Min: 0, max: 1, step: .1, default value: .5"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1685
+msgid "Spinner"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1693
+msgid "JQuery UI Spinner Example 1"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1694
+msgid ""
+"JQuery UI spinner description. Min:20, max: 100, step:20, default value: 40"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1705
+msgid "Typography"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1713
+msgid "Body Font"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1714
+msgid "Specify the body font properties."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1727
+msgid "Typography h2.site-description"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1749
+msgid "Typography option with each property can be called individually."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1764
+msgid "Additional Types"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1788
+msgid "Date"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1796
+msgid "Date Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1804
+msgid "Sorter"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1852
+msgid "Raw"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1860
+msgid "Standard Raw Field"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1869
+msgid "Raw Field <code>full_width</code> False"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1878
+msgid "Advanced Features"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1884
+msgid "Callback"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1892
+msgid "Custom Field Callback"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1893
+msgid "This is a completely unique field type"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1894
+msgid ""
+"This is created with a callback function, so anything goes in this field. "
+"Make sure to define the function though."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1902
+msgid "Field Validation"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1904
+#: libs/panel/inc/sample/sample-config.php:2070
+msgid "For full documentation on validation, visit: "
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1910
+msgid "Text Option - Email Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1911
+msgid ""
+"This is a little space under the Field Title in the Options table, "
+"additional info is good in here."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1920
+msgid "Text Option with Data Attributes"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1921
+msgid ""
+"You can also pass an options array if you want. Set the default to whatever "
+"you like."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1928
+msgid "Multi Text Option - Color Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1930
+msgid ""
+"If you enter an invalid color it will be removed. Try using the text \"blue"
+"\" as a color.  ;)"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1936
+msgid "Text Option - URL Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1937
+msgid "This must be a URL."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1945
+msgid "Text Option - Numeric Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1946
+msgid "This must be numeric."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1954
+msgid "Text Option - Comma Numeric Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1955
+msgid "This must be a comma separated string of numerical values."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1963
+msgid "Text Option - No Special Chars Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1964
+msgid "This must be a alpha numeric only."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1972
+msgid "Text Option - Str Replace Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1973
+#: libs/panel/inc/sample/sample-config.php:1986
+#: libs/panel/inc/sample/sample-config.php:1999
+msgid "You decide."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1974
+msgid "This field's default value was changed by a filter hook!"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1985
+msgid "Text Option - Preg Replace Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:1998
+msgid "Text Option - Custom Callback Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2000
+msgid ""
+"Enter <code>1</code> and click <strong>Save Changes</strong> for an error "
+"message, or enter <code>2</code> and click <strong>Save Changes</strong> for "
+"a warning message."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2022
+msgid "Textarea Option - No HTML Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2023
+msgid "All HTML will be stripped"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2031
+msgid "Textarea Option - HTML Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2032
+msgid "HTML Allowed (wp_kses)"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2041
+msgid "Custom HTML Allowed (wp_kses)"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2058
+msgid "Textarea Option - JS Validated"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2059
+msgid "JS will be escaped"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2068
+msgid "Field Required / Linking"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2174
+msgid "WPML Integration"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2175
+msgid ""
+"These fields can be fully translated by WPML (WordPress Multi-Language). "
+"This serves as an example for you to implement. For extra details look at "
+"our <a href=\"//docs.reduxframework.com/core/advanced/wpml-integration/\" "
+"target=\"_blank\">WPML Implementation</a> documentation."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2182
+msgid "WPML Text"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2183
+msgid "This string can be translated via WPML."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2188
+msgid "WPML Multi Checkbox"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2189
+msgid "You can literally translate the values via key."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2202
+msgid "Customizer Only"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2203
+msgid ""
+"<p class=\"description\">This Section should be visible only in Customizer</"
+"p>"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2209
+msgid "Customizer Only Option"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2210
+msgid "The subtitle is NOT visible in customizer"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2211
+msgid "The field desc is NOT visible in customizer."
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2342
+msgid "Section via hook"
+msgstr ""
+
+#: libs/panel/inc/sample/sample-config.php:2343
+msgid ""
+"<p class=\"description\">This is a section created by adding a filter to the "
+"sections array. Can be used by child themes to add/remove sections from the "
+"options.</p>"
+msgstr ""
+
+#: libs/tgm.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: libs/tgm.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: libs/tgm.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: libs/tgm.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: libs/tgm.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: libs/tgm.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: libs/tgm.php:386 libs/tgm.php:827 libs/tgm.php:2533 libs/tgm.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: libs/tgm.php:387 libs/tgm.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: libs/tgm.php:388 libs/tgm.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: libs/tgm.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: libs/tgm.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: libs/tgm.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: libs/tgm.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: libs/tgm.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: libs/tgm.php:523
+msgid "Update Required"
+msgstr ""
+
+#: libs/tgm.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: libs/tgm.php:934 libs/tgm.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: libs/tgm.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: libs/tgm.php:1121 libs/tgm.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: libs/tgm.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: libs/tgm.php:2273
+msgid "Required"
+msgstr ""
+
+#: libs/tgm.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: libs/tgm.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: libs/tgm.php:2295
+msgid "External Source"
+msgstr ""
+
+#: libs/tgm.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: libs/tgm.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: libs/tgm.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: libs/tgm.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: libs/tgm.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: libs/tgm.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: libs/tgm.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: libs/tgm.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libs/tgm.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: libs/tgm.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: libs/tgm.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: libs/tgm.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: libs/tgm.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: libs/tgm.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: libs/tgm.php:2548
+msgid "Source"
+msgstr ""
+
+#: libs/tgm.php:2549
+msgid "Type"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: libs/tgm.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: libs/tgm.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: libs/tgm.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: libs/tgm.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: libs/tgm.php:2717
+msgid "Install"
+msgstr ""
+
+#: libs/tgm.php:2723
+msgid "Update"
+msgstr ""
+
+#: libs/tgm.php:2726
+msgid "Activate"
+msgstr ""
+
+#: libs/tgm.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: libs/tgm.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: libs/tgm.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: libs/tgm.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: libs/tgm.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: libs/tgm.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: libs/tgm.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: libs/tgm.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: libs/tgm.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: libs/tgm.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: libs/tgm.php:3509 libs/tgm.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: libs/tgm.php:3509 libs/tgm.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: libs/tgm.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: libs/tgm.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: libs/tgm.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: libs/tgm.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: libs/tgm.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: libs/tgm.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: search.php:29
+msgid "Search for Apps & Games"
+msgstr ""
+
+#: search.php:32
+msgid "Found"
+msgstr ""
+
+#: search.php:32
+msgid "responses"
+msgstr ""
+
+#: search.php:32
+msgid "Query results"
+msgstr ""
+
+#: search.php:50
+msgid "Error 404 - Page Not Found"
+msgstr ""
+
+#: search.php:53
+msgid ""
+"It seems that page you are looking for no longer exists. Try to search again "
+"or explore more"
+msgstr ""
+
+#: single-news.php:26 template/loop/apk_info.php:143
+msgid "edit post"
+msgstr ""
+
+#: single-news.php:54
+msgid "Read next"
+msgstr ""
+
+#: template/download.php:152
+msgid "Download on Google Play"
+msgstr ""
+
+#: template/loop/apk_info.php:163
+msgid "Guests cannot request for updates!"
+msgstr ""
+
+#: template/loop/comments.php:9
+msgid "(1)"
+msgstr ""
+
+#: template/loop/comments.php:13 template/loop/comments.php:28
+msgid "Comments are off for this post."
+msgstr ""
+
+#: template/loop/comments.php:24
+msgid "1"
+msgstr ""
+
+#: template/loop/comments.php:41
+msgid "responses to"
+msgstr ""
+
+#: template/loop/download.php:142
+msgid "Information"
+msgstr ""
+
+#: template/template-register.php:77
+msgid "Please don't leave the required fields."
+msgstr ""
+
+#: template/template-register.php:79
+msgid "Invalid email address."
+msgstr ""
+
+#: template/template-register.php:81
+msgid "Email already exist."
+msgstr ""
+
+#: template/template-register.php:83
+msgid "Password do not match."
+msgstr ""
+
+#: template/template-register.php:94
+msgid "Error on user creation."
+msgstr ""
+
+#: template/template-register.php:97
+msgid "You're successfully register.. You can login now"
+msgstr ""
+
+#: template/template-register.php:113
+msgid "Back to the main page"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:301
+msgid "Reported Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:382
+msgid "WP Report Apps Options"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:383
+msgid "Integration"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:386
+msgid "Automatically add"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:387
+msgid ""
+"(Select Nothing if you want to add link or button manually - in template "
+"file)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:391
+msgid "Add after element"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:395
+msgid "Message Min Length"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:399
+msgid "Date / Time format"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:404
+msgid "Require user to be logged in to report"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:420
+msgid "Antispam"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:424
+msgid ""
+"Use reCaptcha (you need both site-key and secret-key that you can obtain for "
+"free <a href=\"https://www.google.com/recaptcha/admin\" target=\"_blank"
+"\">here</a>)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:427
+msgid "reCaptcha Site Key"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:431
+msgid "reCaptcha Secret Key"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:436
+msgid "Show IP to client that is reporting (otherwise to Admin only)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:439
+msgid "IP Whois URL:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:443
+msgid "Email Notification"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:447
+msgid "Send email notification when somebody reports a post or page"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:450
+msgid "Send Notification to"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:454
+msgid "Email Subject"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:458
+msgid "Email Body"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:460
+msgid "Variables:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:464
+msgid "Texts"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:479
+msgid "Save Options"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:674
+msgid "Confirm"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:729
+msgid "Posts"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:729
+msgid "Are you sure you want to"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:729
+msgid "the post titled"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:762
+msgid "[WP Report Post] Somebody reported a Apps!"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:763
+msgid ""
+"Hey, Admin!\n"
+"Somebody has just reported a Apps.\n"
+"Title: [post_title]\n"
+"Link: [permalink]\n"
+"Post ID: [post_id]\n"
+"Reporter Name: [name]\n"
+"Reporter Email: [email]\n"
+"Reporter IP: [ip]\n"
+"Message: [message]\n"
+"--\n"
+"Sincerely, WP Report Post Plugin"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:770
+msgid "Human (e.g 5 minutes ago)"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:770
+msgid "Date / Time"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:772
+msgid "Nothing"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:775 wp-report-post/wp-report-post.php:776
+msgid "Report Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:777 wp-report-post/wp-report-post.php:798
+msgid "Your Name:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:778 wp-report-post/wp-report-post.php:799
+msgid "Your Email:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:779
+msgid ""
+"Please tell us why do you think this post is inappropriate and shouldn't be "
+"there:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:782
+msgid "Specified Apps does not exist"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:783
+msgid "Please provide a valid email address"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:784
+msgid "Please enter your name"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:785
+msgid "Please describe why do you think this Apps is inappropriate"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:786
+msgid "You have already reported this Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:787
+msgid "You have successfully reported inappropriate Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:788
+msgid "Error submitting report"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:789
+#, php-format
+msgid "Please <a href=\"%s\">log in</a> to report Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:790
+msgid "Verification Code:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:791
+msgid "Your IP:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:792
+msgid "Invalid verification code"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:796
+msgid "Link Text"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:797
+msgid "Modal Form Title"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:800
+msgid "Your Message:"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:801
+msgid "Cancel button"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:802
+msgid "Submit button"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:803
+msgid "Invalid Apps"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:804
+msgid "Invalid Email"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:805
+msgid "Invalid Name"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:806
+msgid "Invalid Message"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:807
+msgid "Already reported"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:808
+msgid "Successfully reported"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:809
+msgid "Error reporting"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:810
+msgid "Text for Captcha"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:811
+msgid "Your IP: text"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:812
+msgid "Invalid Captcha"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:848 wp-report-post/wp-report-post.php:857
+msgid "year"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:849 wp-report-post/wp-report-post.php:858
+msgid "month"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:850 wp-report-post/wp-report-post.php:859
+msgid "day"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:851 wp-report-post/wp-report-post.php:860
+msgid "hour"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:852 wp-report-post/wp-report-post.php:861
+msgid "minute"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:853 wp-report-post/wp-report-post.php:862
+msgid "second"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:857
+msgid "years"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:858
+msgid "months"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:859
+msgid "days"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:860
+msgid "hours"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:861
+msgid "minutes"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:862
+msgid "seconds"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:870
+msgid " ago"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:893
+msgid "Click to view report"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:900
+msgid "Hide"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:907 wp-report-post/wp-report-post.php:925
+msgid "Error"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:955 wp-report-post/wp-report-post.php:1010
+msgid "Unpublish"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:955 wp-report-post/wp-report-post.php:1011
+msgid "Publish"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:957 wp-report-post/wp-report-post.php:967
+msgid "View post in new tab"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:964 wp-report-post/wp-report-post.php:1012
+msgid "Delete Reports"
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:986
+msgid "Date "
+msgstr ""
+
+#: wp-report-post/wp-report-post.php:989
+msgid "Report Message"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "5Play"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://exthem.es/item/5play-themes-premium"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The Best Premium Themes for Site Modded Games & Apps for Android include "
+"with Google Play Store Extractor Apk. <br>don't waste your time, money and "
+"energy. <br>Increase your Google Adsense earnings with Premiums Themes "
+"<br>Buy now 5Play Premium Wordpress Themes developer by <a href=\"https://"
+"exthem.es/\" target=\"_blank\">exthem.es</a> - <a href=\"https://rey.web.id/"
+"\" target=\"_blank\">rey.web.id</a>."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "exthem.es"
+msgstr ""
