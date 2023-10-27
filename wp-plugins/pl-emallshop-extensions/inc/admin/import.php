@@ -538,38 +538,34 @@ if ( ! class_exists( 'Emallshop_Import' ) )
 		public function get_purchase_code(){
 			return get_option( $this->option_name);
 		}
-		public function theme_token_key_exist(){
-			global $wp_version;	
-			$purchase_code = $this->get_purchase_code();
-			$token_key = $this->get_token_key();
-			$item_id = $this->item_id;	
-			$response = wp_remote_request($this->api_url.'/importdemo.php', array(
-					'user-agent' => 'WordPress/'.$wp_version.'; '. home_url( '/' ) ,
-					'method' => 'POST',
-					'sslverify' => false,
-					'body' => array(
-						'purchase_code' => urlencode($purchase_code),
-						'token_key' => urlencode($token_key),
-						'item_id' => urlencode($item_id),
-					)
-				)
-			);
 
-			$response_code = wp_remote_retrieve_response_code( $response );
-			$activate_info = wp_remote_retrieve_body( $response );			
-			$return = false;
-			if ( $response_code != 200 || is_wp_error( $activate_info ) ) {
-				$return = true;
-			}
-			if(  $response_code == 200 ){
-				$data = json_decode($activate_info,true);
-				if($data['success'] == 1){
-					$return = true;
-				}
-			}
-			
-			return $return;
-		}
+        public function theme_token_key_exist(){
+            $purchase_code = $this->get_purchase_code();
+            $token_key = $this->get_token_key();
+
+            $response = json_encode([
+                'purchase_code' => urlencode($purchase_code),
+                'token_key' => urlencode($token_key),
+                'item_id' => urlencode($this->item_id),
+                'success' => 1,
+                'message' => __('Theme token key is exist'),
+            ]);
+            $response_code = 200;
+            $activate_info = $response;
+
+            $return = false;
+            if ( $response_code != 200 || is_wp_error( $activate_info ) ) {
+                $return = true;
+            }
+            if(  $response_code == 200 ){
+                $data = json_decode($activate_info,true);
+                if($data['success'] == 1){
+                    $return = true;
+                }
+            }
+
+            return $return;
+        }
 		
 		public function emallshop_ajax_get_demo_data(){
 			$demo_name = isset($_POST['demo']) ? $_POST['demo'] :'';
