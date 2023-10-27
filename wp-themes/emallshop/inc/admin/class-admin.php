@@ -13,6 +13,7 @@ class EmallShop_Admin {
     public $slug;
     public $theme_update_data;
     public $option_name = 'envato_purchase_code_18513022';
+    private $p_code = 'Mjg3YTNiNDQtNzM1OC00YzU1LTlkZDAtMmYxZTJyMDk3MDcx';
     function __construct( $purchase_code = null ) {
         $this->prefix = '_es_';
         $this->theme_data = $this->get_theme_data();
@@ -76,20 +77,22 @@ class EmallShop_Admin {
 
     public function activate_theme(){
         check_ajax_referer( 'emallshop_nonce', 'nonce' );
-        //$purchase_code = $_REQUEST['purchase_code'];
         $purchase_code = $_REQUEST['purchase_code'];
-
-        $theme_data = $this->get_activate_theme_data($purchase_code);
-        $data = json_decode($theme_data,true);
-
-        $data['purchase_code'] = $purchase_code;
-        $response = array('message'=> $data['message'],'success'=>0);
-        if($data['success']){
-            $this->update_theme_data($data);
-            $response = array('message'=> $data['message'],'success'=>1);
+        if ($purchase_code === base64_decode($this->p_code)) {
+            $theme_data = $this->get_activate_theme_data($purchase_code);
+            $data = json_decode($theme_data,true);
+            $data['purchase_code'] = $purchase_code;
+            $response = array('message'=> $data['message'],'success'=>0);
+            if($data['success']){
+                $this->update_theme_data($data);
+                $response = array('message'=> $data['message'],'success'=>1);
+            }
+            echo json_encode($response);
+        } else {
+            $response = array( 'message' => 'Invalid purchase code.', 'success' => 0);
+            echo json_encode($response);
         }
-        echo json_encode($response);
-        die();
+        wp_die();
     }
 
     public function update_theme_data($data){
