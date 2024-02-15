@@ -9,7 +9,7 @@ Redux::setSection( $opt_name, array(
         'id'     => 'woocommerce_product_settings',
         'desc'   => esc_html__( '', 'steelthemes-nest' ),
         'icon'   => 'el el-wrench',
-        'subsection' => true ,
+        //'subsection' => true ,
         'fields' => array(
 
             array(

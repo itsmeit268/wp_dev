@@ -5,7 +5,7 @@
 ** ==============================
 */
 add_action('pre_loader',  'nest_preloader'); 
-add_action('nest_get_theme_details',  'nest_theme_details'); 
+ 
 add_action('nest_custom_search_setup',  'nest_simple_search'); 
 add_filter('get_the_archive_title', 'nest_the_archive_title');
 add_action('nest_custom_header_search' , 'nest_header_simple_search');
@@ -97,20 +97,68 @@ function nest_simple_search() { ?>
 } 
 /*
 ** ============================== 
-**  Details
+**  Maintanance option
 ** ============================== 
-*/
-function nest_theme_details() {  
-$isActivated = get_option('purchase_code') ? true : false; 
-if($isActivated == false){
-?>
-<div class="p-5">
-<div class="alert alert-primary" role="alert"><?php echo esc_html__( '1) We added pruchase code verification system please activate theme by using purchase code.' , 'steelthemes-nest'); ?> <br>
-<?php echo esc_html__( '2) Check theme version - 1.6.5 and nest addons pluign version is 1.4.8.' , 'steelthemes-nest'); ?><br>
-<?php echo esc_html__( '3) Then go to Nest --> Welcome -->  Enter the purchase code and click activate button.', 'steelthemes-nest' ); ?><br>
-<a href="https://themepanthers.com/wp/nest/documentation/#activatetheme" target="_blank" style="color:#000;"><?php echo esc_html__( '4) Click here ->  To download pruchase code and to activate the theme.' , 'steelthemes-nest'); ?></>
-</div>
-</div>
-<?php
-}
-}
+*/ 
+ 
+    function sanitize_checkbox($input) {
+        return ($input == true) ? true : false;
+    }
+    
+    function sanitize_textarea($input) {
+        return sanitize_text_field($input);
+    }
+    
+    function custom_theme_customize_register($wp_customize) {
+        // Add a section
+        $wp_customize->add_section('custom_theme_section', array(
+            'title' => 'Staging Site',
+            'priority' => 30,
+        ));
+    
+        // Add the checkbox control
+        $wp_customize->add_setting('enable_custom_feature', array(
+            'default' => false,
+            'sanitize_callback' => 'sanitize_checkbox',
+        ));
+    
+        $wp_customize->add_control('enable_custom_feature', array(
+            'label' => 'Staging Site Enable / Disable',
+            'section' => 'custom_theme_section',
+            'type' => 'checkbox',
+        ));
+    
+        // Add image control
+        $wp_customize->add_setting('custom_image_setting');
+        $wp_customize->add_control(new WP_Customize_Image_Control(
+            $wp_customize,
+            'custom_image_setting',
+            array(
+                'label' => 'Maintenance Background Image',
+                'section' => 'custom_theme_section',
+                'settings' => 'custom_image_setting',
+            )
+        ));
+    
+        // Add text controls with sanitization
+        $wp_customize->add_setting('custom_text_setting');
+        $wp_customize->add_control('custom_text_setting', array(
+            'label' => 'Title',
+            'section' => 'custom_theme_section',
+            'type' => 'textarea',
+            'sanitize_callback' => 'sanitize_textarea',
+        ));
+    
+        $wp_customize->add_setting('custom_text_setting_two');
+        $wp_customize->add_control('custom_text_setting_two', array(
+            'label' => 'Content',
+            'section' => 'custom_theme_section',
+            'type' => 'textarea',
+            'sanitize_callback' => 'sanitize_textarea',
+        ));
+    
+        // Other controls...
+    }
+    add_action('customize_register', 'custom_theme_customize_register');
+    
+ 

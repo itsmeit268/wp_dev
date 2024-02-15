@@ -25,9 +25,6 @@ if(class_exists('Redux')){
     require get_template_directory() . '/includes/options/config.php';
 }
 
-if(class_exists('OCDI_Plugin')){
-    require get_template_directory() . '/includes/Demo_content/Demo_content.php';  
-}
 require_once get_template_directory() . '/includes/options/theme-option.php'; 
 
 //Theme Custom Extension
@@ -57,9 +54,12 @@ if (class_exists('woocommerce')):
     require_once get_template_directory() . '/includes/woocommerce/quick-view-template.php';
     require_once get_template_directory() . '/includes/woocommerce/mini-cart.php';
 endif;
-
-
- 
+if(is_admin()){
+ // Merlin demo import.
+ require_once get_template_directory() . '/demo-import/class-merlin.php';
+ require_once get_template_directory() . '/demo-import/merlin-config.php'; 
+ require_once get_template_directory() . '/demo-import/merlin-filters.php';
+}
 
 /*
 ==========================================
@@ -114,7 +114,7 @@ function nest_enqueue_scripts_before_install_plugin(){
     wp_enqueue_style('nest-scondary-style', get_template_directory_uri().'/assets/css/overwrite/theme-extra.css' );  
     wp_enqueue_style('nest-main-mb-style', get_template_directory_uri().'/assets/css/overwrite/mobile.css' );
     wp_enqueue_script('bootstrap-bundle', get_template_directory_uri() . '/assets/js/vendor/bootstrap.bundle.min.js', array('jquery') , '5.0.0', true);
-    wp_enqueue_script('waypoints',  get_template_directory_uri() . '/assets/js/plugins/waypoints.js', array('jquery') , '4.0.1', true);
+    wp_enqueue_script('waypoints',  get_template_directory_uri() . '/assets/js/plugins/waypoints.js', array('jquery') , '4.0.1', true); 
     wp_enqueue_script('nest-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery') , '1.0.0', true);
     if(is_singular() && comments_open() && get_option('thread_comments')):
         wp_enqueue_script('comment-reply');

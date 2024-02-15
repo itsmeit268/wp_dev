@@ -386,15 +386,15 @@ if(!empty($nest_theme_mod['theme_setttings_enable']) == true):
             .product-list-small h6 a{ 
                 text-overflow: ellipsis;
                 white-space: initial;
-                display: -webkit-box;
+                display: -webkit-box!important;
                 -webkit-line-clamp: '.$text_over_flow_size.'!important;
-                -webkit-box-orient: vertical;}';
+                -webkit-box-orient: vertical; overflow:hidden!important;}';
         endif;
         $title_height = isset( $nest_theme_mod['title_height'] ) ? $nest_theme_mod['title_height'] : '';
         if(!empty($title_height)):
-            $customize_css .= '.product-cart-wrap .product-content-wrap h2 a, .related.products .product-content-wrap h2 a, 
-            .product_style_five .product-content-wrap h5 a, .dela_type_one .peoduct_deals.style_one .content_mained h2 a,
-            .product-list-small h6 a{ height: '.$title_height.'!important; }';
+            $customize_css .= '.product-cart-wrap .product-content-wrap h2 , .related.products .product-content-wrap h2  , 
+            .product_style_five .product-content-wrap h5 , .dela_type_one .peoduct_deals.style_one .content_mained h2 ,
+            .product-list-small h6 { height: '.$title_height.'!important; }';
         endif;
     endif;
       $filter_deep_content_enable = isset( $nest_theme_mod['filter_deep_content_enable'] ) ? $nest_theme_mod['filter_deep_content_enable'] : '';

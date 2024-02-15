@@ -70,8 +70,6 @@ $disable_mobile_menu = isset( $nest_theme_mod['disable_mobile_menu'] ) ? $nest_t
 			                $row = 'row default_row';
                         endif;
 		            ?>
-				<div class="<?php echo esc_attr( $row ) ?>">
-
-				<?php do_action('nest_get_theme_details'); ?>
+				<div class="<?php echo esc_attr( $row ) ?>"> 
 			
  

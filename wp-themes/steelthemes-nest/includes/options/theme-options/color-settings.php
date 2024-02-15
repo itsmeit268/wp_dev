@@ -5,7 +5,7 @@ Theme Color Settings
 ====================
 */
 Redux::setSection( $opt_name, array(
-            'title'  => esc_html__( 'Theme  Settings', 'steelthemes-nest' ),
+            'title'  => esc_html__( 'Theme Color Settings', 'steelthemes-nest' ),
             'id'     => 'color_scheme',
             'desc'   => esc_html__( '', 'steelthemes-nest' ),
             'icon'   => 'el el-brush',

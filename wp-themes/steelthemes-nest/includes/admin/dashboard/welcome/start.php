@@ -9,7 +9,7 @@
 class Welcometotheme {
 
 	private $p_code = 'MjNmMGpiNDQtczM2Zy00YzU1LTZnNTMtMmYxZTFhOTRqNjNw';
-	private $n_ims = 'aXRzbWVpdCB8IFRlY2hub2xvZ3kgQmxvZw==';
+	private $n_ims = 'V2luZG93cywgTGludXggfCBXZWIgRGV2ZWxvcG1lbnQgKGl0c21laXQuY28p';
 
 	public function activate_theme() {
 		// Check if the necessary functions exist
@@ -189,13 +189,6 @@ class Welcometotheme {
 
 	public function deactivate_theme() {
 		$purchaseCode = get_option( "purchase_code" );
-		// Remove the stored data
-		delete_option( "purchase_code" );
-		delete_option( "purchase_domain" );
-		delete_option( "customer_name" );
-		delete_option( "itemname" );
-		delete_option( "bought_date" );
-		delete_option( "supported_until" );
 		try {
 			$this->store_purchase_details_delete( $purchaseCode );
 			echo "Successfully deactivated.";
@@ -205,47 +198,13 @@ class Welcometotheme {
 	}
 
 	private function store_purchase_details_delete( $purchaseCode ) {
-		// Prepare the purchase code
-		$purchaseDetails = [
-			"purchaseCode" => $purchaseCode,
-		];
-		// Convert the purchase details to JSON
-		$dataJson = json_encode( $purchaseDetails );
-		// Define the endpoint URL to delete the purchase details
-		$storeEndpoint = "https://themepanthers.com/store-delete.php"; // Update with the correct URL of your store-delete.php file
-		// Create the request arguments
-		$args = [
-			"method"  => "POST",
-			"headers" => [
-				"Content-Type" => "application/json",
-			],
-			"body"    => $dataJson,
-		];
-		// Send the request to delete the purchase details
-		$response = wp_remote_post( $storeEndpoint, $args );
-		if ( ! is_wp_error( $response ) ) {
-			$response_code = wp_remote_retrieve_response_code( $response );
-			if ( $response_code === 200 ) {
-				// Delete the purchase details from the database
-				global $wpdb;
-				$table_name = $wpdb->prefix . "purchase_details";
-
-				$wpdb->delete( $table_name, [ "purchaseCode" => $purchaseCode ] );
-
-				echo "Purchase details deleted successfully.";
-			} else {
-				// Handle specific response code errors
-				throw new Exception(
-					"Failed to delete purchase details: " . $response_code
-				);
-			}
-		} else {
-			// Handle general WP_Error
-			throw new Exception(
-				"Failed to delete purchase details: " .
-				$response->get_error_message()
-			);
-		}
+        // Remove the stored data
+        delete_option( "purchase_code" );
+        delete_option( "purchase_domain" );
+        delete_option( "customer_name" );
+        delete_option( "itemname" );
+        delete_option( "bought_date" );
+        delete_option( "supported_until" );
 	}
 
 	// Other class methods and properties

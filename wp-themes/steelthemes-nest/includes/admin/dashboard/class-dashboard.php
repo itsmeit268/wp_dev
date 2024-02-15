@@ -10,9 +10,9 @@ class Theme_Admin_Panel{
     {
         add_action("admin_menu", [$this, "add_admin_menu"]);
         add_action("admin_init", [$this, "register_settings"]);
-        add_action( 'admin_notices', [$this,'display_admin_notice']);
-        add_action('admin_notices', array($this, 'display_theme_activation_notice_main'));  
+        add_action( 'admin_notices', [$this,'display_admin_notice']); 
         add_action( 'admin_notices', [$this,'display_admin_notice_two']);
+        add_action('template_redirect', [$this , 'check_maintenance_mode']);
         add_action(
             "admin_notices",
             [$this, "display_header_admin_notice"],
@@ -92,9 +92,8 @@ class Theme_Admin_Panel{
                 "title" => esc_html__("Import Demo Content", "steelthemes-nest"),
                 "link" => "themes.php?page=one-click-demo-import",
             ];
-        }
-        $isActivated = get_option('purchase_code') ? true : false; 
-        if (class_exists("Nest_elementor_extension") && $isActivated == true) {
+        } 
+        if (class_exists("Nest_elementor_extension")) {
             $navtabs["header"] = [
                 "title" => esc_html__("Create Header", "steelthemes-nest"),
                 "link" => "edit.php?post_type=header",
@@ -150,9 +149,9 @@ class Theme_Admin_Panel{
     }
     public function display_header_admin_notice()
     {
-        $screen = get_current_screen();
-        $isActivated = get_option('purchase_code') ? true : false; 
-        if (class_exists("Nest_elementor_extension") && $isActivated == true) {
+        $screen = get_current_screen(); 
+     
+        if (class_exists("Nest_elementor_extension")) {
             // Check if the current screen is the header post type edit screen
             if ($screen && $screen->post_type === "header") {
                 $this->add_single_tabs("header");
@@ -185,6 +184,13 @@ class Theme_Admin_Panel{
             ) {
                 $this->add_single_tabs("oneclick");
             }
+        }
+    }
+    public function check_maintenance_mode() {
+        $enable_custom_feature = get_theme_mod('enable_custom_feature', false);
+        if ( $enable_custom_feature == true && !current_user_can('manage_options')) {
+            include(locate_template('/includes/admin/dashboard/maintenance-mode.php'));
+            exit();
         }
     }
 
@@ -234,46 +240,16 @@ class Theme_Admin_Panel{
        <div class="admin-notice admin-notice-nests notice notice-info is-dismissible <?php if($admin_notice_enable == false): ?> disable_copt_notice <?php  endif; ?>">
         <ul> 
             <li><?php echo esc_html('Before Import Demo Content Check the server configuration here' , 'steelthemes-nest'); ?> <a target="_blank" href="<?php echo esc_url($admin_dashboard_url);?>"><?php echo esc_html('Click here...' , 'steelthemes-nest'); ?></a></li>
-            <li><?php echo esc_html('We are here to help you.For any issues please submit your ticket here' , 'steelthemes-nest'); ?> <a target="_blank" href="https://steelthemes.ticksy.com/submit/#100019165"><?php echo esc_html('Get Support' , 'steelthemes-nest'); ?></a></li>
+            <li><?php echo esc_html('We are here to help you.For any issues please submit your ticket here' , 'steelthemes-nest'); ?> <a target="_blank" href="https://steelthemes.ticksy.com/submit/#100019994"><?php echo esc_html('Get Support' , 'steelthemes-nest'); ?></a></li>
             <li><?php echo esc_html('Looking for Nest Documentation' , 'steelthemes-nest'); ?> <a target="_blank" href="https://themepanthers.com/wp/nest/documentation"><?php echo esc_html('Click here' , 'steelthemes-nest'); ?></a></li>
-            <li><?php echo esc_html('Important --> If you are going to reset the site or databse please deactivate theme.' , 'steelthemes-nest'); ?> <a target="_blank" href="<?php echo esc_url($admin_dashboard_url);?>"><?php echo esc_html('Click here...' , 'steelthemes-nest'); ?></a></li>
+             
         </ul>
         <p><?php echo esc_html('Disable this notification totally go to Nest -> theme option ->  general settings ->  Disable Admin Notice => Switch Off' , 'steelthemes-nest'); ?></p>
         </div> 
        <?php
     }
-    public function display_theme_activation_notice_main() {
-        $theme_activation_url = admin_url('admin.php?page=nest'); // Replace with the URL to activate the theme 
-        $isActivated = get_option('purchase_code') ? true : false; 
-        if (!$isActivated) {
-        ?>
-        <div class="notice notice-error nest-activate-notice">
-            <p>
-            <?php echo esc_html__('Activate Nest theme with purchase code and enjoy all features.' , 'steelthemes-nest'); ?>
-            <br> 
-            <strong> <?php echo esc_html__(' 1) Dowload purchase code form envato and copy the purchase code.' , 'steelthemes-nest'); ?>
-             <br>
-             <?php echo esc_html__('2) Then Go to Nest -> Welcome' , 'steelthemes-nest'); ?>  <a href="<?php echo esc_url($theme_activation_url); ?>"><?php echo esc_html__('or Click here' , 'steelthemes-nest'); ?></a> <?php echo esc_html__('-> Enter the purchase and activate theme.' , 'steelthemes-nest'); ?> <br>
-            <?php echo esc_html__('3) To downlaod pruchase code please follow this' , 'steelthemes-nest'); ?> -> <a href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code" target="_blank"><?php echo esc_html__('Download Purchase code here' , 'steelthemes-nest'); ?></a>
-        </strong>  </p></div>
-        <?php
-        }
-    }
-    // ============================== theme update ============================
-    public function ifactivated() {
-        $isActivated = get_option('purchase_code') ? true : false; 
-        if (!$isActivated) {
-            return true;
-        } 
-        return false;
-    }
-    public function ifnotactivated() {
-        $isActivated = get_option('purchase_code') ? true : false; 
-        if (!$isActivated) {
-            return false;
-        } 
-        return true;
-    }
+ 
+    
   
 
 }

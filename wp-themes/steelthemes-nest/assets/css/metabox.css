@@ -48,3 +48,8 @@
     width: 200px;
 }
 
+.fixed .column-taxonomy-brand , .fixed .column-woosw {
+    width: 9%;
+}
+
+

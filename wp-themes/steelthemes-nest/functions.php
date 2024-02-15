@@ -35,5 +35,5 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 );
 endif;
 // ============================== theme update ============================
-
  
+

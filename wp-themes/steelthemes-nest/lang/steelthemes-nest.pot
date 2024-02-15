@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-07-27 11:24+0530\n"
-"PO-Revision-Date: 2023-07-27 11:25+0530\n"
+"POT-Creation-Date: 2023-11-04 14:57+0530\n"
+"PO-Revision-Date: 2023-11-04 14:57+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_x;esc_html__;esc_html_x;esc_html_e;esc_html;"
-"esc_attr__;esc_attr_e;esc_attr_x;esc_attr\n"
+"X-Poedit-KeywordsList: __;_e;esc_html;esc_html__;esc_html_e;esc_attr;"
+"esc_attr__;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:30
@@ -81,6 +81,884 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
+#: demo-import/class-merlin.php:453
+msgid "Something went wrong. Please refresh the page and try again!"
+msgstr ""
+
+#: demo-import/class-merlin.php:599
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: demo-import/class-merlin.php:604
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: demo-import/class-merlin.php:713
+msgid "Welcome"
+msgstr ""
+
+#: demo-import/class-merlin.php:720
+msgid "Child"
+msgstr ""
+
+#: demo-import/class-merlin.php:726
+msgid "License"
+msgstr ""
+
+#: demo-import/class-merlin.php:734
+#: includes/admin/dashboard/class-dashboard.php:87
+msgid "Plugins"
+msgstr ""
+
+#: demo-import/class-merlin.php:742 demo-import/class-merlin.php:2004
+msgid "Content"
+msgstr ""
+
+#: demo-import/class-merlin.php:748
+msgid "Ready"
+msgstr ""
+
+#: demo-import/class-merlin.php:857
+msgid "The welcome step has been displayed"
+msgstr ""
+
+#: demo-import/class-merlin.php:955
+msgid "The license activation step has been displayed"
+msgstr ""
+
+#: demo-import/class-merlin.php:1029
+msgid "The child theme installation step has been displayed"
+msgstr ""
+
+#: demo-import/class-merlin.php:1119
+#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2358
+msgid "Required"
+msgstr ""
+
+#: demo-import/class-merlin.php:1120
+msgid "req"
+msgstr ""
+
+#: demo-import/class-merlin.php:1160
+msgid "The plugin installation step has been displayed"
+msgstr ""
+
+#: demo-import/class-merlin.php:1209
+msgid "Select Demo"
+msgstr ""
+
+#: demo-import/class-merlin.php:1248
+msgid "The content import step has been displayed"
+msgstr ""
+
+#: demo-import/class-merlin.php:1331
+msgid "The final step has been displayed"
+msgstr ""
+
+#: demo-import/class-merlin.php:1408
+msgid "The existing child theme was activated"
+msgstr ""
+
+#: demo-import/class-merlin.php:1425
+msgid "The newly generated child theme was activated"
+msgstr ""
+
+#: demo-import/class-merlin.php:1446
+msgid ""
+"Yikes! The theme activation failed. Please try again or contact support."
+msgstr ""
+
+#: demo-import/class-merlin.php:1455
+msgid "Please add your license key before attempting to activate one."
+msgstr ""
+
+#: demo-import/class-merlin.php:1468
+msgid "The license activation was performed with the following results"
+msgstr ""
+
+#: demo-import/class-merlin.php:1514 demo-import/class-merlin.php:1555
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: demo-import/class-merlin.php:1527
+#, php-format
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: demo-import/class-merlin.php:1533
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: demo-import/class-merlin.php:1537
+msgid ""
+"This appears to be an invalid license key. Please try again or contact "
+"support."
+msgstr ""
+
+#: demo-import/class-merlin.php:1542
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: demo-import/class-merlin.php:1547
+#, php-format
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: demo-import/class-merlin.php:1551
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: demo-import/class-merlin.php:1645
+msgid "The child theme functions.php content was generated"
+msgstr ""
+
+#: demo-import/class-merlin.php:1676
+msgid "The child theme style.css content was generated"
+msgstr ""
+
+#: demo-import/class-merlin.php:1710
+msgid ""
+"The child theme screenshot was copied to the child theme, with the following "
+"result"
+msgstr ""
+
+#: demo-import/class-merlin.php:1712
+msgid "The child theme screenshot was not generated, because of these results"
+msgstr ""
+
+#: demo-import/class-merlin.php:1741
+msgid "Activating"
+msgstr ""
+
+#: demo-import/class-merlin.php:1757
+msgid "Updating"
+msgstr ""
+
+#: demo-import/class-merlin.php:1773 demo-import/class-merlin.php:1789
+#: demo-import/class-merlin.php:2007 demo-import/class-merlin.php:2020
+#: demo-import/class-merlin.php:2033 demo-import/class-merlin.php:2046
+#: demo-import/class-merlin.php:2059 demo-import/class-merlin.php:2072
+#: demo-import/class-merlin.php:2115
+msgid "Installing"
+msgstr ""
+
+#: demo-import/class-merlin.php:1781
+msgid "A plugin with the following data will be processed"
+msgstr ""
+
+#: demo-import/class-merlin.php:1793
+msgid "A plugin with the following data was processed"
+msgstr ""
+
+#: demo-import/class-merlin.php:1802 demo-import/class-merlin.php:2008
+#: demo-import/class-merlin.php:2021 demo-import/class-merlin.php:2034
+#: demo-import/class-merlin.php:2047 demo-import/class-merlin.php:2060
+#: demo-import/class-merlin.php:2073
+msgid "Success"
+msgstr ""
+
+#: demo-import/class-merlin.php:1825
+msgid ""
+"The content importer AJAX call failed to start, because of incorrect data"
+msgstr ""
+
+#: demo-import/class-merlin.php:1830
+msgid "Invalid content!"
+msgstr ""
+
+#: demo-import/class-merlin.php:1841
+msgid "The content import AJAX call will be executed with this import data"
+msgstr ""
+
+#: demo-import/class-merlin.php:1883
+msgid "The content import AJAX call failed with this passed data"
+msgstr ""
+
+#: demo-import/class-merlin.php:1894
+msgid "Error"
+msgstr ""
+
+#: demo-import/class-merlin.php:1908
+msgid ""
+"The content importer AJAX call for retrieving total content import items "
+"failed to start, because of incorrect data."
+msgstr ""
+
+#: demo-import/class-merlin.php:1913
+msgid "Invalid data!"
+msgstr ""
+
+#: demo-import/class-merlin.php:2005
+msgid "Demo content data."
+msgstr ""
+
+#: demo-import/class-merlin.php:2006 demo-import/class-merlin.php:2019
+#: demo-import/class-merlin.php:2032 demo-import/class-merlin.php:2045
+#: demo-import/class-merlin.php:2058 demo-import/class-merlin.php:2071
+#: dokan/dashboard/orders-widget.php:31
+msgid "Pending"
+msgstr ""
+
+#: demo-import/class-merlin.php:2017
+msgid "Widgets"
+msgstr ""
+
+#: demo-import/class-merlin.php:2018
+msgid "Sample widgets data."
+msgstr ""
+
+#: demo-import/class-merlin.php:2030
+msgid "Revolution Slider"
+msgstr ""
+
+#: demo-import/class-merlin.php:2031
+msgid "Sample Revolution sliders data."
+msgstr ""
+
+#: demo-import/class-merlin.php:2043
+msgid "Options"
+msgstr ""
+
+#: demo-import/class-merlin.php:2044
+msgid "Sample theme options data."
+msgstr ""
+
+#: demo-import/class-merlin.php:2056
+msgid "Redux Options"
+msgstr ""
+
+#: demo-import/class-merlin.php:2057
+msgid "Redux framework options."
+msgstr ""
+
+#: demo-import/class-merlin.php:2069
+msgid "After import setup"
+msgstr ""
+
+#: demo-import/class-merlin.php:2070
+msgid "After import setup."
+msgstr ""
+
+#: demo-import/class-merlin.php:2099
+msgid "The revolution slider import was executed"
+msgstr ""
+
+#: demo-import/class-merlin.php:2136
+msgid "The home page was set"
+msgstr ""
+
+#: demo-import/class-merlin.php:2146
+msgid "The blog page was set"
+msgstr ""
+
+#: demo-import/class-merlin.php:2161
+msgid "The Hello world post status was set to draft"
+msgstr ""
+
+#: demo-import/class-merlin.php:2185
+msgid ""
+"This predefined demo import does not have the name parameter: "
+"import_file_name"
+msgstr ""
+
+#: demo-import/importer/Importer.php:55
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:55
+msgid ""
+"The XMLReader class is missing! Please install the XMLReader PHP extension "
+"on your server"
+msgstr ""
+
+#: demo-import/importer/Importer.php:68
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:68
+msgid "Could not open the XML file for parsing!"
+msgstr ""
+
+#: demo-import/importer/Importer.php:248
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:248
+msgid "Content import start error: "
+msgstr ""
+
+#: demo-import/importer/Importer.php:280
+#: demo-import/importer/WXRImporter.php:173
+#: demo-import/importer/WXRImporter.php:291
+#: demo-import/importer/WXRImporter.php:364
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:280
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:173
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:291
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:364
+#, php-format
+msgid ""
+"This WXR file (version %s) is newer than the importer (version %s) and may "
+"not be supported. Please consider updating."
+msgstr ""
+
+#: demo-import/importer/Importer.php:504
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:504
+msgid "New AJAX call!"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:135
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:135
+msgid "Could not open the file for parsing"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:514
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:514
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:577
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:577
+msgid "Invalid author mapping"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:678
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:678
+msgid "Cannot import auto-draft posts"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:770
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:770
+#, php-format
+msgid "Failed to import \"%s\": Invalid post type %s"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:794
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:794
+#, php-format
+msgid "%s \"%s\" already exists."
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:872
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:872
+#, php-format
+msgid "Skipping attachment \"%s\", fetching attachments disabled"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:886
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:886
+#, php-format
+msgid "Failed to import \"%s\" (%s)"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:918
+#: demo-import/importer/WXRImporter.php:1837
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:918
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1836
+#, php-format
+msgid "Imported \"%s\" (%s)"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:923
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:923
+#, php-format
+msgid "Post %d remapped to %d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:963
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:963
+#, php-format
+msgid "Failed to import term: %s - %s"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1109
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1108
+msgid "Invalid file type"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1608
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1607
+#, php-format
+msgid "Failed to import user \"%s\""
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1629
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1628
+#, php-format
+msgid "Imported user \"%s\""
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1633
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1632
+#, php-format
+msgid "User %d remapped to %d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1798
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1797
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1842
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1841
+#, php-format
+msgid "Term %d remapped to %d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1901
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1900
+#, php-format
+msgid "Failed to add metakey: %s, metavalue: %s to term_id: %d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1910
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1909
+#, php-format
+msgid "Meta for term_id %d : %s => %s ; successfully added!"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1962
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1961
+#, php-format
+msgid "Remote server returned %1$d %2$s for %3$s"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1984
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1983
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:1990
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1989
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2015
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2014
+#, php-format
+msgid "Running post-processing for post %d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2028
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2027
+#, php-format
+msgid "Could not find the post parent for \"%s\" (post #%d)"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2033
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2032
+#, php-format
+msgid "Post %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2047
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2046
+#, php-format
+msgid "Could not find the author for \"%s\" (post #%d)"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2052
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2051
+#, php-format
+msgid "Post %d was imported with author \"%s\", but could not be found"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2078
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2077
+#, php-format
+msgid "Post %d was marked for post-processing, but none was required."
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2089
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2088
+#, php-format
+msgid "Could not update \"%s\" (post #%d) with mapped data"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2134
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2133
+#, php-format
+msgid "Could not find the menu object for \"%s\" (post #%d)"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2139
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2138
+#, php-format
+msgid ""
+"Post %d was imported with object \"%d\" of type \"%s\", but could not be "
+"found"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2161
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2160
+#, php-format
+msgid "Could not find the comment parent for comment #%d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2165
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2164
+#, php-format
+msgid "Comment %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2179
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2178
+#, php-format
+msgid "Could not find the author for comment #%d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2183
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2182
+#, php-format
+msgid "Comment %d was imported with author %d, but could not be found"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2200
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2199
+#, php-format
+msgid "Could not update comment #%d with mapped data"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2231
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2230
+#, php-format
+msgid "Faulty term_id provided in terms-to-be-remapped array %s"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2241
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2240
+#, php-format
+msgid "No taxonomy provided in terms-to-be-remapped array for term #%d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2251
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2250
+#, php-format
+msgid "No parent_slug identified in remapping-array for term: %d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2259
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2258
+#, php-format
+msgid "The term(%d)\"s parent_slug (%s) is not found in the remapping-array."
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2273
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2272
+#, php-format
+msgid "No data returned by get_term_by for term_id #%d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2292
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2291
+#, php-format
+msgid "Could not update \"%s\" (term #%d) with mapped data"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2302
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2301
+#, php-format
+msgid "Term %d was successfully updated with parent %d"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2337
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2336
+msgid "Starting remapping of featured images"
+msgstr ""
+
+#: demo-import/importer/WXRImporter.php:2346
+#: demo-import/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2345
+#, php-format
+msgid "Remapping featured image ID %d to new ID %d for post ID %d"
+msgstr ""
+
+#: demo-import/includes/class-merlin-customizer-importer.php:30
+msgid "The customizer import has finished successfully"
+msgstr ""
+
+#: demo-import/includes/class-merlin-customizer-importer.php:57
+#, php-format
+msgid "Error: The customizer import file is missing! File path: %s"
+msgstr ""
+
+#: demo-import/includes/class-merlin-customizer-importer.php:70
+msgid ""
+"Error: The customizer import file does not have any content in it. Please "
+"make sure to use the correct customizer import file."
+msgstr ""
+
+#: demo-import/includes/class-merlin-customizer-importer.php:80
+msgid ""
+"Error: The customizer import file is not in a correct format. Please make "
+"sure to use the correct customizer import file."
+msgstr ""
+
+#: demo-import/includes/class-merlin-customizer-importer.php:86
+msgid ""
+"Error: The customizer import file is not suitable for current theme. You can "
+"only import customizer settings for the same theme or a child theme."
+msgstr ""
+
+#: demo-import/includes/class-merlin-downloader.php:49
+msgid "The file was not able to save to disk, while trying to download it"
+msgstr ""
+
+#: demo-import/includes/class-merlin-downloader.php:66
+msgid "Missing URL for downloading a file!"
+msgstr ""
+
+#: demo-import/includes/class-merlin-downloader.php:84
+#, php-format
+msgid ""
+"An error occurred while fetching file from: %1$s%2$s%3$s!%4$sReason: %5$s - "
+"%6$s."
+msgstr ""
+
+#: demo-import/includes/class-merlin-redux-importer.php:32
+msgid "The Redux Framework data was imported"
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:72
+msgid "Error: Widget import file could not be found."
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:83
+msgid "Error: Widget import file does not have any content in it."
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:105
+msgid ""
+"Error: Widget import data could not be read. Please try a different file."
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:144
+msgid "Sidebar does not exist in theme (moving widget to Inactive)"
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:165
+msgid "Site does not support widget"
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:198
+msgid "Widget already exists"
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:256
+msgid "Imported"
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:260
+msgid "Imported to Inactive"
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:266
+msgid "No Title"
+msgstr ""
+
+#: demo-import/includes/class-merlin-widget-importer.php:328
+msgid "No results for widget import!"
+msgstr ""
+
+#: demo-import/merlin-config.php:46
+msgid "Theme Setup / Demo Import"
+msgstr ""
+
+#: demo-import/merlin-config.php:49
+#, php-format
+msgid "%1$s%2$s Themes &lsaquo; Theme Setup: %3$s%4$s"
+msgstr ""
+
+#: demo-import/merlin-config.php:50
+msgid "Return to the dashboard"
+msgstr ""
+
+#: demo-import/merlin-config.php:51
+msgid "Disable this wizard"
+msgstr ""
+
+#: demo-import/merlin-config.php:53
+msgid "Skip"
+msgstr ""
+
+#: demo-import/merlin-config.php:54
+msgid "Next"
+msgstr ""
+
+#: demo-import/merlin-config.php:55
+#: includes/options/theme-options/woocommerce-settings.php:85
+msgid "Start"
+msgstr ""
+
+#: demo-import/merlin-config.php:56
+msgid "Cancel"
+msgstr ""
+
+#: demo-import/merlin-config.php:57 demo-import/merlin-config.php:58
+#: demo-import/merlin-config.php:59
+#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2802
+msgid "Install"
+msgstr ""
+
+#: demo-import/merlin-config.php:60
+msgid "Import"
+msgstr ""
+
+#: demo-import/merlin-config.php:61
+#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2811
+msgid "Activate"
+msgstr ""
+
+#: demo-import/merlin-config.php:62
+msgid "Later"
+msgstr ""
+
+#: demo-import/merlin-config.php:65
+#, php-format
+msgid "Activate %s"
+msgstr ""
+
+#: demo-import/merlin-config.php:67
+#, php-format
+msgid "%s is Activated"
+msgstr ""
+
+#: demo-import/merlin-config.php:69
+msgid "Enter your license key to enable remote updates and theme support."
+msgstr ""
+
+#: demo-import/merlin-config.php:70
+msgid "License key"
+msgstr ""
+
+#: demo-import/merlin-config.php:71
+msgid "The theme is already registered, so you can go to the next step!"
+msgstr ""
+
+#: demo-import/merlin-config.php:72
+msgid "Your theme is activated! Remote updates and theme support are enabled."
+msgstr ""
+
+#: demo-import/merlin-config.php:73
+msgid "Need help?"
+msgstr ""
+
+#: demo-import/merlin-config.php:76
+#, php-format
+msgid "Welcome to %s"
+msgstr ""
+
+#: demo-import/merlin-config.php:77
+msgid "Hi. Welcome back"
+msgstr ""
+
+#: demo-import/merlin-config.php:78
+msgid ""
+"This wizard will set up your theme, install plugins, and import content. It "
+"is optional & should take only a few minutes."
+msgstr ""
+
+#: demo-import/merlin-config.php:79
+msgid ""
+"You may have already run this theme setup wizard. If you would like to "
+"proceed anyway, click on the \"Start\" button below."
+msgstr ""
+
+#: demo-import/merlin-config.php:81
+msgid "Install Child Theme"
+msgstr ""
+
+#: demo-import/merlin-config.php:82
+msgid "You're good to go!"
+msgstr ""
+
+#: demo-import/merlin-config.php:83
+msgid ""
+"Let's build & activate a child theme so you may easily make theme changes."
+msgstr ""
+
+#: demo-import/merlin-config.php:84
+msgid ""
+"Your child theme has already been installed and is now activated, if it "
+"wasn't already."
+msgstr ""
+
+#: demo-import/merlin-config.php:85
+msgid "Learn about child themes"
+msgstr ""
+
+#: demo-import/merlin-config.php:86
+msgid ""
+"Awesome. Your child theme has already been installed and is now activated."
+msgstr ""
+
+#: demo-import/merlin-config.php:87
+msgid "Awesome. Your child theme has been created and is now activated."
+msgstr ""
+
+#: demo-import/merlin-config.php:89
+#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:335
+#: includes/admin/dashboard/pluigns/list-plugins.php:114
+msgid "Install Plugins"
+msgstr ""
+
+#: demo-import/merlin-config.php:90
+msgid "You're up to speed!"
+msgstr ""
+
+#: demo-import/merlin-config.php:91
+msgid ""
+"Let's install some essential WordPress plugins to get your site up to speed."
+msgstr ""
+
+#: demo-import/merlin-config.php:92
+msgid ""
+"The required WordPress plugins are all installed and up to date. Press "
+"\"Next\" to continue the setup wizard."
+msgstr ""
+
+#: demo-import/merlin-config.php:93 demo-import/merlin-config.php:97
+msgid "Advanced"
+msgstr ""
+
+#: demo-import/merlin-config.php:95
+msgid "Import Content"
+msgstr ""
+
+#: demo-import/merlin-config.php:96
+msgid ""
+"Let's import content to your website, to help you get familiar with the "
+"theme."
+msgstr ""
+
+#: demo-import/merlin-config.php:99
+msgid "All done. Have fun!"
+msgstr ""
+
+#: demo-import/merlin-config.php:102
+#, php-format
+msgid "Your theme has been all set up. Enjoy your new theme by %s."
+msgstr ""
+
+#: demo-import/merlin-config.php:103
+msgid "Extras"
+msgstr ""
+
+#: demo-import/merlin-config.php:104
+msgid "View your website"
+msgstr ""
+
+#: demo-import/merlin-config.php:105
+msgid "Explore WordPress"
+msgstr ""
+
+#: demo-import/merlin-config.php:106
+msgid "Get Theme Support"
+msgstr ""
+
+#: demo-import/merlin-config.php:107
+msgid "Start Customizing"
+msgstr ""
+
+#: demo-import/merlin-filters.php:115 demo-import/merlin-filters.php:128
+#: demo-import/merlin-filters.php:141 demo-import/merlin-filters.php:154
+#: demo-import/merlin-filters.php:167 demo-import/merlin-filters.php:180
+#: demo-import/merlin-filters.php:194 demo-import/merlin-filters.php:208
+#: demo-import/merlin-filters.php:221
+msgid "Please keep patients while importing sample data."
+msgstr ""
+
 #: dokan/dashboard/big-counter-widget.php:17
 msgid "Sales"
 msgstr ""
@@ -146,10 +1024,6 @@ msgstr ""
 
 #: dokan/dashboard/orders-widget.php:26
 msgid "Completed"
-msgstr ""
-
-#: dokan/dashboard/orders-widget.php:31
-msgid "Pending"
 msgstr ""
 
 #: dokan/dashboard/orders-widget.php:36
@@ -352,132 +1226,95 @@ msgstr ""
 msgid "No products were found of this vendor!"
 msgstr ""
 
-#: includes/Demo_content/Demo_content.php:22
-#: includes/Demo_content/Demo_content.php:36
-#: includes/Demo_content/Demo_content.php:50
-msgid "Please keep patients while importing sample data."
-msgstr ""
-
 #: includes/admin/dashboard/class-dashboard.php:83
 msgid "Welcome / Theme Activation"
-msgstr ""
-
-#: includes/admin/dashboard/class-dashboard.php:87
-msgid "Plugins"
 msgstr ""
 
 #: includes/admin/dashboard/class-dashboard.php:92
 msgid "Import Demo Content"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:99
+#: includes/admin/dashboard/class-dashboard.php:98
 msgid "Create Header"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:103
+#: includes/admin/dashboard/class-dashboard.php:102
 msgid "Create Footer"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:107
+#: includes/admin/dashboard/class-dashboard.php:106
 msgid "Create Megamenu"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:111
+#: includes/admin/dashboard/class-dashboard.php:110
 #: includes/options/config.php:32 includes/options/config.php:33
 msgid "Theme Options"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:116
+#: includes/admin/dashboard/class-dashboard.php:115
 msgid "Our Themes"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:123
-#: includes/admin/dashboard/class-dashboard.php:125
+#: includes/admin/dashboard/class-dashboard.php:122
+#: includes/admin/dashboard/class-dashboard.php:124
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:218
+#: includes/admin/dashboard/class-dashboard.php:223
 msgid "Warning Disable WP_DEBUG_DISPLAY"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:219
+#: includes/admin/dashboard/class-dashboard.php:224
 msgid ""
 "Debug mode is often enabled to gather more details about an error or site "
 "failure, but may contain sensitive information which \n"
 "                    should not be available on a publicly available website."
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:221
+#: includes/admin/dashboard/class-dashboard.php:226
 msgid ""
 "The value, WP_DEBUG_DISPLAY, has either been enabled by WP_DEBUG or added to "
 "your configuration file. This will\n"
 "                    make errors display on the front end of your site."
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:236
+#: includes/admin/dashboard/class-dashboard.php:241
 msgid "Before Import Demo Content Check the server configuration here"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:236
-#: includes/admin/dashboard/class-dashboard.php:239
+#: includes/admin/dashboard/class-dashboard.php:241
 msgid "Click here..."
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:237
+#: includes/admin/dashboard/class-dashboard.php:242
 msgid "We are here to help you.For any issues please submit your ticket here"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:237
+#: includes/admin/dashboard/class-dashboard.php:242
 msgid "Get Support"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:238
+#: includes/admin/dashboard/class-dashboard.php:243
 msgid "Looking for Nest Documentation"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:238
+#: includes/admin/dashboard/class-dashboard.php:243
 msgid "Click here"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:239
-msgid ""
-"Important --> If you are going to reset the site or databse please "
-"deactivate theme."
-msgstr ""
-
-#: includes/admin/dashboard/class-dashboard.php:241
+#: includes/admin/dashboard/class-dashboard.php:246
 msgid ""
 "Disable this notification totally go to Nest -> theme option ->  general "
 "settings ->  Disable Admin Notice => Switch Off"
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:252
-msgid "Activate Nest theme with purchase code and enjoy all features."
+#: includes/admin/dashboard/maintenance-mode.php:42
+msgid "Site Under Maintenance."
 msgstr ""
 
-#: includes/admin/dashboard/class-dashboard.php:254
-msgid " 1) Dowload purchase code form envato and copy the purchase code."
-msgstr ""
-
-#: includes/admin/dashboard/class-dashboard.php:256
-msgid "2) Then Go to Nest -> Welcome"
-msgstr ""
-
-#: includes/admin/dashboard/class-dashboard.php:256
-msgid "or Click here"
-msgstr ""
-
-#: includes/admin/dashboard/class-dashboard.php:256
-msgid "-> Enter the purchase and activate theme."
-msgstr ""
-
-#: includes/admin/dashboard/class-dashboard.php:257
-msgid "3) To downlaod pruchase code please follow this"
-msgstr ""
-
-#: includes/admin/dashboard/class-dashboard.php:257
-msgid "Download Purchase code here"
+#: includes/admin/dashboard/maintenance-mode.php:47
+msgid "This website is currently undergoing maintenance."
 msgstr ""
 
 #: includes/admin/dashboard/ourthemes/outthemes.php:15
@@ -508,17 +1345,12 @@ msgid "Creote - Corporate & Consulting Business WordPress Theme"
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:334
-#: includes/admin/dashboard/pluigns/list-plugins.php:123
+#: includes/admin/dashboard/pluigns/list-plugins.php:113
 msgid "Install Required Plugins"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:335
-#: includes/admin/dashboard/pluigns/list-plugins.php:124
-msgid "Install Plugins"
-msgstr ""
-
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:337
-#: includes/admin/dashboard/pluigns/list-plugins.php:125
+#: includes/admin/dashboard/pluigns/list-plugins.php:115
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -529,12 +1361,12 @@ msgid "Updating Plugin: %s"
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:340
-#: includes/admin/dashboard/pluigns/list-plugins.php:126
+#: includes/admin/dashboard/pluigns/list-plugins.php:116
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:392
-#: includes/admin/dashboard/pluigns/list-plugins.php:137
+#: includes/admin/dashboard/pluigns/list-plugins.php:127
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -547,7 +1379,7 @@ msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:394
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:3244
-#: includes/admin/dashboard/pluigns/list-plugins.php:138
+#: includes/admin/dashboard/pluigns/list-plugins.php:128
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -613,18 +1445,9 @@ msgid ""
 "not packaged in a folder."
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:1206
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:3033
-msgid "and"
-msgstr ""
-
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2067
 #, php-format
 msgid "TGMPA v%s"
-msgstr ""
-
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2358
-msgid "Required"
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2361
@@ -644,7 +1467,7 @@ msgid "Pre-Packaged"
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2400
-#: includes/admin/dashboard/welcome/welcome.php:373
+#: includes/admin/dashboard/welcome/welcome.php:377
 msgid "Not Installed"
 msgstr ""
 
@@ -666,15 +1489,6 @@ msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2418
 msgid "Update recommended"
-msgstr ""
-
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2427
-#, php-format
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2567
-msgid "unknown"
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2575
@@ -724,16 +1538,8 @@ msgstr ""
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2802
-msgid "Install"
-msgstr ""
-
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2808
 msgid "Update"
-msgstr ""
-
-#: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2811
-msgid "Activate"
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/class-tgm-plugin-activation.php:2842
@@ -820,84 +1626,56 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: includes/admin/dashboard/pluigns/list-plugins.php:15
+msgid "A Nest Addons"
+msgstr ""
+
+#: includes/admin/dashboard/pluigns/list-plugins.php:21
 msgid "Elementor"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:22
-msgid "Nest Addons"
-msgstr ""
-
-#: includes/admin/dashboard/pluigns/list-plugins.php:30
+#: includes/admin/dashboard/pluigns/list-plugins.php:28
 msgid "Woocommerce"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:37
-msgid "HubSpot All-In-One Marketing - Forms, Popups, Live Chat"
+#: includes/admin/dashboard/pluigns/list-plugins.php:35
+msgid "HubSpot All-In-One Marketing"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:44
-msgid "Fiboo Ajax Search"
+#: includes/admin/dashboard/pluigns/list-plugins.php:42
+msgid "Fiboo Search"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:52
-msgid "WPC Smart Compare for WooCommerce"
+#: includes/admin/dashboard/pluigns/list-plugins.php:50
+msgid "WPC  Compare"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:59
-msgid "WPC Smart Wishlist for WooCommerce"
+#: includes/admin/dashboard/pluigns/list-plugins.php:57
+msgid "WPC Wishlist"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:67
-msgid "WPC Frequently Bought Together for WooCommerce"
+#: includes/admin/dashboard/pluigns/list-plugins.php:65
+msgid "WPC Bought Together "
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:75
+#: includes/admin/dashboard/pluigns/list-plugins.php:73
 msgid "Variation Swatches"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:82
+#: includes/admin/dashboard/pluigns/list-plugins.php:80
 msgid "Contact Form 7"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:90
-msgid "MailChimp for WordPress"
+#: includes/admin/dashboard/pluigns/list-plugins.php:88
+msgid "MailChimp"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:98
-msgid "One Click Demo Import"
-msgstr ""
-
-#: includes/admin/dashboard/pluigns/list-plugins.php:105
+#: includes/admin/dashboard/pluigns/list-plugins.php:95
 msgid "Revslider"
 msgstr ""
 
-#: includes/admin/dashboard/pluigns/list-plugins.php:139
+#: includes/admin/dashboard/pluigns/list-plugins.php:129
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: includes/admin/dashboard/welcome/start.php:303
-msgid "Activate your Theme here"
-msgstr ""
-
-#: includes/admin/dashboard/welcome/start.php:306
-msgid "Enter your purchase code:"
-msgstr ""
-
-#: includes/admin/dashboard/welcome/start.php:310
-msgid "Activate Theme"
-msgstr ""
-
-#: includes/admin/dashboard/welcome/start.php:313
-msgid "You can learn how to find your purchase key"
-msgstr ""
-
-#: includes/admin/dashboard/welcome/start.php:313
-msgid "Click Here"
-msgstr ""
-
-#: includes/admin/dashboard/welcome/start.php:335
-msgid "Deactivate Theme"
 msgstr ""
 
 #: includes/admin/dashboard/welcome/welcome.php:14
@@ -911,146 +1689,154 @@ msgid ""
 "importing our dummy content and theme by options."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:42
+#: includes/admin/dashboard/welcome/welcome.php:36
+msgid "To Enable staging site  go to apperance -- customize -- Staging Site"
+msgstr ""
+
+#: includes/admin/dashboard/welcome/welcome.php:37
+msgid "Click Here to enable staging"
+msgstr ""
+
+#: includes/admin/dashboard/welcome/welcome.php:46
 msgid "System Information"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:50
+#: includes/admin/dashboard/welcome/welcome.php:54
 msgid "Your Php Version "
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:70
+#: includes/admin/dashboard/welcome/welcome.php:74
 msgid " is too old. Please upgrade to version 5.6 or higher"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:75
+#: includes/admin/dashboard/welcome/welcome.php:79
 msgid "Please contact Host provider to fix it."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:83
+#: includes/admin/dashboard/welcome/welcome.php:87
 msgid " is up to date."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:96
+#: includes/admin/dashboard/welcome/welcome.php:100
 msgid "MySQL Version"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:122
+#: includes/admin/dashboard/welcome/welcome.php:126
 msgid "PHP Post Max Size"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:148
-#: includes/admin/dashboard/welcome/welcome.php:188
-#: includes/admin/dashboard/welcome/welcome.php:237
-#: includes/admin/dashboard/welcome/welcome.php:288
+#: includes/admin/dashboard/welcome/welcome.php:152
+#: includes/admin/dashboard/welcome/welcome.php:192
+#: includes/admin/dashboard/welcome/welcome.php:241
+#: includes/admin/dashboard/welcome/welcome.php:292
 msgid "looks good"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:153
+#: includes/admin/dashboard/welcome/welcome.php:157
 msgid "Increase Your Post Max Size greaten than 512"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:165
+#: includes/admin/dashboard/welcome/welcome.php:169
 msgid "Max Upload Size"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:199
+#: includes/admin/dashboard/welcome/welcome.php:203
 msgid "Increase Max Upload Size to 300 or 512 or maximum"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:210
+#: includes/admin/dashboard/welcome/welcome.php:214
 msgid "PHP Time Limit"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:227
+#: includes/admin/dashboard/welcome/welcome.php:231
 msgid "sec"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:233
+#: includes/admin/dashboard/welcome/welcome.php:237
 msgid " sec"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:247
+#: includes/admin/dashboard/welcome/welcome.php:251
 msgid ""
 "Your PHP time limit is too low. Please set it to at least 600 seconds to "
 "import demo content"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:258
+#: includes/admin/dashboard/welcome/welcome.php:262
 msgid "PHP Max Input Vars"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:299
+#: includes/admin/dashboard/welcome/welcome.php:303
 msgid "Note:"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:303
+#: includes/admin/dashboard/welcome/welcome.php:307
 msgid ""
 "Your current PHP Max Input Vars setting is too low. Please increase it to at "
 "least"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:311
+#: includes/admin/dashboard/welcome/welcome.php:315
 msgid " to avoid issues with your menu items."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:322
+#: includes/admin/dashboard/welcome/welcome.php:326
 msgid "ZipArchive"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:334
+#: includes/admin/dashboard/welcome/welcome.php:338
 msgid "Yes"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:338
+#: includes/admin/dashboard/welcome/welcome.php:342
 msgid "No"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:345
+#: includes/admin/dashboard/welcome/welcome.php:349
 msgid "ZipArchive class is not available on your server."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:355
+#: includes/admin/dashboard/welcome/welcome.php:359
 msgid "GD Library"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:385
+#: includes/admin/dashboard/welcome/welcome.php:389
 msgid "cURL"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:403
+#: includes/admin/dashboard/welcome/welcome.php:407
 msgid "Not Enabled"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:418
+#: includes/admin/dashboard/welcome/welcome.php:422
 msgid ""
 "Our documentation is simple  , With details and covers all the essential "
 "features from the beginning to the most advanced."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:425
+#: includes/admin/dashboard/welcome/welcome.php:429
 msgid "Documentation"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:437
+#: includes/admin/dashboard/welcome/welcome.php:441
 msgid ""
 "Nest theme comes with 6 months of free support for every license you "
 "purchase. Support can be extended through subscriptions via ThemeForest."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:444
+#: includes/admin/dashboard/welcome/welcome.php:448
 #: includes/options/theme-options/side-menu-settings.php:116
 #: includes/options/theme-options/side-menu-settings.php:117
 msgid "Support"
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:459
+#: includes/admin/dashboard/welcome/welcome.php:463
 msgid ""
 "Here is the Video Tutorials to install theme , pluign , import demo content "
 "and Get Start with it."
 msgstr ""
 
-#: includes/admin/dashboard/welcome/welcome.php:465
+#: includes/admin/dashboard/welcome/welcome.php:469
 msgid "Video Tutorials"
 msgstr ""
 
@@ -1122,28 +1908,28 @@ msgstr ""
 msgid "Next Post"
 msgstr ""
 
-#: includes/functions/header-source.php:43
+#: includes/functions/header-source.php:44
 msgid "Search Results"
 msgstr ""
 
-#: includes/functions/header-source.php:45
+#: includes/functions/header-source.php:46
 msgid "Page Not Found"
 msgstr ""
 
-#: includes/functions/header-source.php:51
+#: includes/functions/header-source.php:52
 msgid "The Latest Posts"
 msgstr ""
 
-#: includes/functions/header-source.php:72
+#: includes/functions/header-source.php:73
 msgid "Service"
 msgstr ""
 
-#: includes/functions/header-source.php:79
+#: includes/functions/header-source.php:80
 #: woocommerce/checkout/review-order.php:23
 msgid "Product"
 msgstr ""
 
-#: includes/functions/header-source.php:91
+#: includes/functions/header-source.php:92
 msgid "Search..."
 msgstr ""
 
@@ -1162,11 +1948,6 @@ msgstr ""
 #: includes/functions/layout.php:167 includes/functions/layout.php:177
 #: includes/functions/layout.php:197 includes/functions/layout.php:207
 msgid "no_column no_sidebar"
-msgstr ""
-
-#: includes/functions/theme.php:79 includes/functions/theme.php:84
-#: woocommerce/global/quantity-input.php:53
-msgid "on"
 msgstr ""
 
 #: includes/functions/theme.php:150
@@ -1346,7 +2127,7 @@ msgid "Product Breadcrumb Link"
 msgstr ""
 
 #: includes/options/theme-options/color-settings.php:8
-msgid "Theme  Settings"
+msgid "Theme Color Settings"
 msgstr ""
 
 #: includes/options/theme-options/color-settings.php:17
@@ -1366,12 +2147,10 @@ msgid "Theme Font Familys"
 msgstr ""
 
 #: includes/options/theme-options/color-settings.php:43
-#: includes/options/theme-options/typography-settings.php:23
 msgid "Font Family Primary"
 msgstr ""
 
 #: includes/options/theme-options/color-settings.php:64
-#: includes/options/theme-options/typography-settings.php:43
 msgid "Font Family Secondary"
 msgstr ""
 
@@ -1720,7 +2499,7 @@ msgid "Button Two Text"
 msgstr ""
 
 #: includes/options/theme-options/mobile-menu-two.php:112
-#: includes/woocommerce/action.php:599
+#: includes/woocommerce/action.php:596
 msgid "Compare"
 msgstr ""
 
@@ -2169,220 +2948,228 @@ msgstr ""
 msgid "Typography Settings"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:17
-msgid "Default Font Family Enable"
-msgstr ""
-
-#: includes/options/theme-options/typography-settings.php:18
-msgid "Enable to fontfamily to change font family"
-msgstr ""
-
-#: includes/options/theme-options/typography-settings.php:63
+#: includes/options/theme-options/typography-settings.php:19
 msgid "Enable H1 Custom Font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:64
+#: includes/options/theme-options/typography-settings.php:20
 msgid "Enable to customize the theme heading h1 tag font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:69
+#: includes/options/theme-options/typography-settings.php:25
 msgid "H1 Font Typography (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:76
+#: includes/options/theme-options/typography-settings.php:32
 msgid "Apply options to customize the h1 heading font for the theme (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:88
+#: includes/options/theme-options/typography-settings.php:44
 msgid "Enable H1 Custom Font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:89
+#: includes/options/theme-options/typography-settings.php:45
 msgid "Enable to customize the theme heading h1 tag font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:94
+#: includes/options/theme-options/typography-settings.php:50
 msgid "H1 Font Typography (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:105
+#: includes/options/theme-options/typography-settings.php:61
 msgid "Apply options to customize the h1 heading font for the theme (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:117
+#: includes/options/theme-options/typography-settings.php:73
 msgid "Enable H2 Custom Font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:118
+#: includes/options/theme-options/typography-settings.php:74
 msgid "Enable to customize the theme heading h2 tag font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:124
+#: includes/options/theme-options/typography-settings.php:80
 msgid "H2 Font Typography (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:131
+#: includes/options/theme-options/typography-settings.php:87
 msgid "Apply options to customize the h2 heading font for the theme (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:146
+#: includes/options/theme-options/typography-settings.php:102
 msgid "Enable H2 Custom Font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:147
+#: includes/options/theme-options/typography-settings.php:103
 msgid "Enable to customize the theme heading h2 tag font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:152
+#: includes/options/theme-options/typography-settings.php:108
 msgid "H2 Font Typography (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:162
+#: includes/options/theme-options/typography-settings.php:118
 msgid "Apply options to customize the h2 heading font for the theme (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:174
+#: includes/options/theme-options/typography-settings.php:130
 msgid "Enable H3 Custom Font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:175
+#: includes/options/theme-options/typography-settings.php:131
 msgid "Enable to customize the theme heading h3 tag font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:180
+#: includes/options/theme-options/typography-settings.php:136
 msgid "H3 Font Typography (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:188
+#: includes/options/theme-options/typography-settings.php:144
 msgid "Apply options to customize the h3 heading  for the theme (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:200
+#: includes/options/theme-options/typography-settings.php:156
 msgid "Enable H3 Custom Font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:201
+#: includes/options/theme-options/typography-settings.php:157
 msgid "Enable to customize the theme heading h3 tag font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:207
+#: includes/options/theme-options/typography-settings.php:163
 msgid "H3 Font Typography (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:218
+#: includes/options/theme-options/typography-settings.php:174
 msgid "Apply options to customize the h3 heading font for the theme (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:230
+#: includes/options/theme-options/typography-settings.php:186
 msgid "Enable H4 Custom Font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:231
+#: includes/options/theme-options/typography-settings.php:187
 msgid "Enable to customize the theme heading h4 tag font"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:236
+#: includes/options/theme-options/typography-settings.php:192
 msgid "H4 Font Typography"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:244
+#: includes/options/theme-options/typography-settings.php:200
 msgid "Apply options to customize the h4 heading font for the theme"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:256
+#: includes/options/theme-options/typography-settings.php:212
 msgid "Enable H4 Custom Font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:257
+#: includes/options/theme-options/typography-settings.php:213
 msgid "Enable to customize the theme heading h4 tag font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:262
+#: includes/options/theme-options/typography-settings.php:218
 msgid "H4 Font Typography (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:273
+#: includes/options/theme-options/typography-settings.php:229
 msgid "Apply options to customize the h4 heading font for the theme (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:285
+#: includes/options/theme-options/typography-settings.php:241
 msgid "Enable H5 Custom Font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:286
+#: includes/options/theme-options/typography-settings.php:242
 msgid "Enable to customize the theme heading h5 tag font"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:291
+#: includes/options/theme-options/typography-settings.php:247
 msgid "H5 Font Typography"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:299
+#: includes/options/theme-options/typography-settings.php:255
 msgid "Apply options to customize the h5 heading font for the theme"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:311
+#: includes/options/theme-options/typography-settings.php:267
 msgid "Enable H5 Custom Font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:312
+#: includes/options/theme-options/typography-settings.php:268
 msgid "Enable to customize the theme heading h5 tag font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:318
+#: includes/options/theme-options/typography-settings.php:274
 msgid "H5 Font Typography (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:329
+#: includes/options/theme-options/typography-settings.php:285
 msgid "Apply options to customize the h5 heading font for the theme (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:341
+#: includes/options/theme-options/typography-settings.php:297
 msgid "Enable H6 Custom Font (Desktop)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:342
+#: includes/options/theme-options/typography-settings.php:298
 msgid "Enable to customize the theme heading h6 tag font"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:347
+#: includes/options/theme-options/typography-settings.php:303
 msgid "H6 Font Typography"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:355
+#: includes/options/theme-options/typography-settings.php:311
 msgid "Apply options to customize the h6 heading font for the theme"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:368
+#: includes/options/theme-options/typography-settings.php:324
 msgid "Enable H6 Custom Font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:369
+#: includes/options/theme-options/typography-settings.php:325
 msgid "Enable to customize the theme heading h6 tag font (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:375
+#: includes/options/theme-options/typography-settings.php:331
 msgid "H6 Font Typography (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:386
+#: includes/options/theme-options/typography-settings.php:342
 msgid "Apply options to customize the h6 heading font for the theme (Mobile)"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:397
+#: includes/options/theme-options/typography-settings.php:353
 msgid "Use Body,Paragraph Custom Font"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:398
+#: includes/options/theme-options/typography-settings.php:354
 msgid "Enable to customize the theme body,p tag font"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:403
+#: includes/options/theme-options/typography-settings.php:359
 msgid "Body Font Typography"
 msgstr ""
 
-#: includes/options/theme-options/typography-settings.php:411
+#: includes/options/theme-options/typography-settings.php:367
 msgid "Apply options to customize the body,paragraph font for the theme"
+msgstr ""
+
+#: includes/options/theme-options/woocommerce-other-settings.php:8
+msgid "Product Other Settings"
+msgstr ""
+
+#: includes/options/theme-options/woocommerce-other-settings.php:18
+msgid "Woocommerce   Settings"
+msgstr ""
+
+#: includes/options/theme-options/woocommerce-other-settings.php:25
+msgid "Show Addd to Cart button for Logged in users only"
+msgstr ""
+
+#: includes/options/theme-options/woocommerce-other-settings.php:31
+msgid "Catalog mode"
 msgstr ""
 
 #: includes/options/theme-options/woocommerce-product-settings.php:8
@@ -2575,10 +3362,6 @@ msgstr ""
 msgid "Fliter Alignment"
 msgstr ""
 
-#: includes/options/theme-options/woocommerce-settings.php:85
-msgid "Start"
-msgstr ""
-
 #: includes/options/theme-options/woocommerce-settings.php:87
 msgid "End"
 msgstr ""
@@ -2651,119 +3434,123 @@ msgstr ""
 msgid "Secs"
 msgstr ""
 
-#: includes/woocommerce/action.php:182
+#: includes/woocommerce/action.php:181
 msgid ":"
 msgstr ""
 
-#: includes/woocommerce/action.php:200 includes/woocommerce/action.php:266
-#: includes/woocommerce/action.php:274 includes/woocommerce/action.php:284
+#: includes/woocommerce/action.php:199 includes/woocommerce/action.php:263
+#: includes/woocommerce/action.php:271 includes/woocommerce/action.php:281
 msgid "Out of Stock"
 msgstr ""
 
-#: includes/woocommerce/action.php:287
+#: includes/woocommerce/action.php:284
 msgid "In Stock"
 msgstr ""
 
-#: includes/woocommerce/action.php:290
+#: includes/woocommerce/action.php:287
 msgid "On Backorder"
 msgstr ""
 
-#: includes/woocommerce/action.php:322 includes/woocommerce/action.php:342
-#: includes/woocommerce/action.php:367
+#: includes/woocommerce/action.php:319 includes/woocommerce/action.php:339
+#: includes/woocommerce/action.php:364
 msgid "Sold"
 msgstr ""
 
-#: includes/woocommerce/action.php:323 includes/woocommerce/action.php:343
-#: includes/woocommerce/action.php:368
+#: includes/woocommerce/action.php:320 includes/woocommerce/action.php:340
+#: includes/woocommerce/action.php:365
 msgid "/"
 msgstr ""
 
-#: includes/woocommerce/action.php:408
+#: includes/woocommerce/action.php:405
 #: template-parts/headers/mobile-header.php:55
 msgid "0"
 msgstr ""
 
-#: includes/woocommerce/action.php:487
+#: includes/woocommerce/action.php:484
 msgid "wp-post-image"
 msgstr ""
 
-#: includes/woocommerce/action.php:593
+#: includes/woocommerce/action.php:590
 msgid "Quick view"
 msgstr ""
 
-#: includes/woocommerce/action.php:607
+#: includes/woocommerce/action.php:604
 msgid "Wishlist"
 msgstr ""
 
-#: includes/woocommerce/action.php:650
+#: includes/woocommerce/action.php:647
 msgid "Sale quantity"
 msgstr ""
 
-#: includes/woocommerce/action.php:659
+#: includes/woocommerce/action.php:656
 msgid "Sold Total Items"
 msgstr ""
 
-#: includes/woocommerce/action.php:668
+#: includes/woocommerce/action.php:665
 msgid "Sold Total Type (Kg , g , li , Ml)"
 msgstr ""
 
-#: includes/woocommerce/action.php:707
+#: includes/woocommerce/action.php:704
 #: includes/woocommerce/quick-view-template.php:45
 msgid "Type:"
 msgstr ""
 
-#: includes/woocommerce/action.php:711
+#: includes/woocommerce/action.php:708
 #: includes/woocommerce/quick-view-template.php:49
 msgid "MFG:"
 msgstr ""
 
-#: includes/woocommerce/action.php:715
+#: includes/woocommerce/action.php:712
 #: includes/woocommerce/quick-view-template.php:53
 msgid "LIFE:"
 msgstr ""
 
-#: includes/woocommerce/action.php:777
+#: includes/woocommerce/action.php:774
 msgid "advertisement"
 msgstr ""
 
-#: includes/woocommerce/action.php:853 includes/woocommerce/action.php:1106
+#: includes/woocommerce/action.php:850 includes/woocommerce/action.php:1103
 msgid "Filter"
 msgstr ""
 
-#: includes/woocommerce/action.php:890 includes/woocommerce/view.php:10
+#: includes/woocommerce/action.php:887 includes/woocommerce/view.php:10
 msgid "Show:"
 msgstr ""
 
-#: includes/woocommerce/action.php:1015
+#: includes/woocommerce/action.php:1012
 msgid "Load More"
 msgstr ""
 
-#: includes/woocommerce/action.php:1034
+#: includes/woocommerce/action.php:1031
 msgid "No more Products to load"
 msgstr ""
 
-#: includes/woocommerce/action.php:1071
+#: includes/woocommerce/action.php:1068
 msgid "All Categories"
 msgstr ""
 
-#: includes/woocommerce/action.php:1079
+#: includes/woocommerce/action.php:1076
 msgid "All Brands"
 msgstr ""
 
-#: includes/woocommerce/action.php:1092
+#: includes/woocommerce/action.php:1089
 msgid "All"
 msgstr ""
 
-#: includes/woocommerce/action.php:1107
+#: includes/woocommerce/action.php:1104
 msgid "Reset Filters"
 msgstr ""
 
-#: includes/woocommerce/action.php:1173
+#: includes/woocommerce/action.php:1169
 msgid "Add to Cart"
 msgstr ""
 
-#: includes/woocommerce/action.php:1189
+#: includes/woocommerce/action.php:1186
 msgid "Add"
+msgstr ""
+
+#: includes/woocommerce/action.php:1198
+msgid "Empty Cart"
 msgstr ""
 
 #: includes/woocommerce/card.php:17
@@ -2774,8 +3561,8 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: includes/woocommerce/card.php:405 includes/woocommerce/card.php:451
-#: includes/woocommerce/card.php:497
+#: includes/woocommerce/card.php:406 includes/woocommerce/card.php:452
+#: includes/woocommerce/card.php:498
 #: woocommerce/single-product-styles/product-style-three.php:52
 #: woocommerce/single-product-styles/product-style-two.php:56
 msgid "Awaiting product image"
@@ -2878,7 +3665,7 @@ msgstr ""
 msgid "Remove %s from cart"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:97
+#: woocommerce/cart/mini-cart.php:101
 msgid "No products in the cart."
 msgstr ""
 
@@ -2906,6 +3693,10 @@ msgstr ""
 
 #: woocommerce/global/quantity-input.php:45
 msgid "Product quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:53
+msgid "on"
 msgstr ""
 
 #: woocommerce/loop/add-to-cart.php:30
@@ -2979,7 +3770,7 @@ msgstr ""
 msgid "SKU:"
 msgstr ""
 
-#: woocommerce/single-product/meta.php:34
+#: woocommerce/single-product/meta.php:33
 msgid "N/A"
 msgstr ""
 

@@ -88,7 +88,11 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
-	<p class="woocommerce-mini-cart__buttons buttons"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p>
+	<p class="woocommerce-mini-cart__buttons buttons">
+		<?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?>
+		<?php do_action( 'nest_get_empty_cart' ); ?>
+		
+</p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_after_buttons' ); ?>
 

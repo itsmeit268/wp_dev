@@ -15,7 +15,7 @@ global $nest_theme_mod;
 <?php endif; ?>
 <div class="cart_notice"></div>
 <?php get_template_part('template-parts/footer/default', 'footer'); ?>
-</div>
+
 <?php if(function_exists('nest_mini_cart_mobile')): nest_mini_cart_mobile(); endif; ?>
 <?php // mobile nav  ?>
 <?php do_action('nest_custom_mobile_menu'); //nest_quick_view();?>
@@ -46,8 +46,8 @@ global $nest_theme_mod;
 <?php if(!empty($nest_theme_mod['bactotop_enable']) == true): ?>
 <a class="scrollUp"><i class="fi-rs-arrow-small-up"></i></a>
 <?php endif; ?>
-<!--page_wapper-->
-</div>
+ 
+ 
 <?php wp_footer(); ?>
 </body>
 </html>

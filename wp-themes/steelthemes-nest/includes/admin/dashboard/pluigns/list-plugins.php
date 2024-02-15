@@ -12,16 +12,14 @@ class Getrequiredpluigns {
 
         $plugins = array(
             array(
+                'name' => esc_html__('A Nest Addons', 'steelthemes-nest') , 
+                'source'  => get_template_directory() . '/includes/plugins/nest-addons.zip',
+                'slug' => 'nest-addons',
+                'required' => true, 
+            ) ,
+            array(
                 'name' => esc_html__('Elementor', 'steelthemes-nest') ,
                 'slug' => 'elementor',
-                'required' => true,
-                'force_activation' => false,
-                'force_deactivation' => false,
-            ) , 
-            array(
-                'name' => esc_html__('Nest Addons', 'steelthemes-nest') ,
-                'slug' => 'nest-addons',
-                'source'  => get_template_directory() . '/includes/plugins/nest-addons.zip',
                 'required' => true,
                 'force_activation' => false,
                 'force_deactivation' => false,
@@ -34,14 +32,14 @@ class Getrequiredpluigns {
                 'force_deactivation' => false,
             ),
             array(
-                'name' => esc_html__('HubSpot All-In-One Marketing - Forms, Popups, Live Chat', 'steelthemes-nest'),
+                'name' => esc_html__('HubSpot All-In-One Marketing', 'steelthemes-nest'),
                 'slug' => 'leadin',
                 'required' => false,
                 'force_activation' => false,
                 'force_deactivation' => false,
             ),
             array(
-                'name' => esc_html__('Fiboo Ajax Search', 'steelthemes-nest'),
+                'name' => esc_html__('Fiboo Search', 'steelthemes-nest'),
                 'slug' => 'ajax-search-for-woocommerce',
                 'required' => false,
                 'force_activation' => false,
@@ -49,14 +47,14 @@ class Getrequiredpluigns {
             ),
             
             array(
-                'name' => esc_html__('WPC Smart Compare for WooCommerce', 'steelthemes-nest'),
+                'name' => esc_html__('WPC  Compare', 'steelthemes-nest'),
                 'slug' => 'woo-smart-compare',
                 'required' => true,
                 'force_activation' => false,
                 'force_deactivation' => false,
             ),
             array(
-                'name' => esc_html__('WPC Smart Wishlist for WooCommerce', 'steelthemes-nest'),
+                'name' => esc_html__('WPC Wishlist', 'steelthemes-nest'),
                 'slug'   => 'woo-smart-wishlist',
                 'required' => true,
                 'force_activation' => false,
@@ -64,7 +62,7 @@ class Getrequiredpluigns {
             ),
 
             array(
-                'name' => esc_html__('WPC Frequently Bought Together for WooCommerce', 'steelthemes-nest'),
+                'name' => esc_html__('WPC Bought Together ', 'steelthemes-nest'),
                 'slug'   => 'woo-bought-together',
                 'required' => false,
                 'force_activation' => false,
@@ -87,20 +85,12 @@ class Getrequiredpluigns {
             ),
            
             array(
-                'name' => esc_html__('MailChimp for WordPress', 'steelthemes-nest') ,
+                'name' => esc_html__('MailChimp', 'steelthemes-nest') ,
                 'slug' => 'mailchimp-for-wp',
                 'required' => false,
                 'force_activation' => false,
                 'force_deactivation' => false,
-            ),
-    
-            array(
-				'name' => esc_html__('One Click Demo Import', 'steelthemes-nest'),
-				'slug'   => 'one-click-demo-import',
-				'required' => false,
-				'force_activation' => false,
-				'force_deactivation' => false,
-			),
+            ), 
             array(
                 'name' => esc_html__('Revslider', 'steelthemes-nest') ,
                 'slug' => 'revslider',

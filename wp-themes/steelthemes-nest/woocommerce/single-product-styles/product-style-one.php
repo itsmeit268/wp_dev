@@ -18,9 +18,9 @@ $product_deals_date = get_post_meta(get_the_ID() , 'product_deals_date', true);
                 
                     <div class="other_content  d-flex align-items-center">
                         <div class="top  d-flex align-items-center">
-                        <?php if(function_exists('woocommerce_show_product_sale_flash')): ?>
-                              <div class="sale_flash"> <?php woocommerce_show_product_sale_flash(); ?></div>
-                            <?php endif; ?>
+          
+                             <?php woocommerce_show_product_sale_flash(); ?> 
+                            
                             <?php do_action('nest_single_rating'); ?>
                         </div>
                         <div class="meta">

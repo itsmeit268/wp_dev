@@ -164,8 +164,12 @@ if(!class_exists('Redux')) {
     require get_template_directory() . '/includes/options/theme-options/blog-settings.php';
     require get_template_directory() . '/includes/options/theme-options/woocommerce-settings.php';
     require get_template_directory() . '/includes/options/theme-options/woocommerce-product-settings.php'; 
+    require get_template_directory() . '/includes/options/theme-options/woocommerce-other-settings.php'; 
+    
     require get_template_directory() . '/includes/options/theme-options/404-settings.php';
     require get_template_directory() . '/includes/options/theme-options/color-settings.php';
+    require get_template_directory() . '/includes/options/theme-options/typography-settings.php';
+    
     if(class_exists('WeDevs_Dokan')){
         require get_template_directory() . '/includes/options/theme-options/dokan-settings.php';
     }

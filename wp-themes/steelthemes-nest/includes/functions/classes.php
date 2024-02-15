@@ -34,7 +34,10 @@ function nest_body_classes($classes){
     if(!empty($nest_theme_mod['mobile_floating_enable']) == true):
         $classes[] = 'mob_float_enble';
     endif;
-    
+    $catalogmode = isset( $nest_theme_mod['catalogmode'] ) ? $nest_theme_mod['catalogmode'] : '';
+    if($catalogmode == true || (get_post_meta(get_the_ID() , 'catalog_mode_for_this', true) == true)){
+        $classes[] = 'nestcatmode';
+    }
 
     return $classes;
 }

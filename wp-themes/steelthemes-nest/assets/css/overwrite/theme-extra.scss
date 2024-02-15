@@ -323,7 +323,21 @@ a{
         padding: 80px 0px 50px;
     }
 }
-
+@media (max-width: 768px){
+html .dokan-dashboard .dokan-dash-sidebar, html .dokan-dashboard .dokan-dashboard-content { 
+    padding: 10px!important;
+} 
+} 
+@media (max-width: 768px){
+    html  .dokan-dashboard-wrap .dokan-dashboard-content article.dashboard-content-area .dashboard-widget.big-counter li {
+        width: 48%!important;
+    }
+}
+@media (max-width: 600px){
+    html .dokan-dashboard .dokan-dashboard-content article.dashboard-content-area .dashboard-widget.big-counter ul {
+        flex-direction: column;
+}
+}
 /*
 **   ==============================   
 **   Blog Archive
@@ -2426,7 +2440,7 @@ body .products_box_outer ul.products   {
                      line-height: 35px;
                      
                      i{
-                         font-size: 14px;
+                        top: 4px;
                      } 
                  }
              }
@@ -5557,11 +5571,13 @@ border-radius: unset!important;
     }
 }
 .woocommerce-mini-cart__buttons{
-    display: block;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
     a{
         position: relative;
-        padding: 6px 25px!important;
-        line-height: 35px!important;
+        padding: 4px 15px!important;
+        line-height: 25px!important;
         font-size: 14px;
         font-family: var(--font-heading);
         font-weight: 600;
@@ -5569,6 +5585,7 @@ border-radius: unset!important;
         background: var(--color-brand);
         display: inline-block;
         border-radius: 5px;
+        min-height: unset!important;
         &:last-child{
             float: right;
         }
@@ -5980,6 +5997,27 @@ border-radius: unset!important;
                 width: auto;
             }
         }
+    }
+}
+
+@media(max-width:768px){
+    .cart_notice{
+        right: 0px;
+        max-width: 100%;
+        padding: 0px 5px;
+        .product-image{
+            display: none!important;
+        }
+          .woocommerce-message{
+            padding: 20px 20px 48px!important;
+            a.button  {
+                left: 20px!important;
+            }
+            a.no_view_checkout{
+                left: 140px!important;
+            }
+          }
+        
     }
 }
  
@@ -7066,33 +7104,41 @@ body .variations .value.woo-variation-items-wrapper{
         .woocommerce-product-rating{
             margin-bottom: 0px!important;
             margin-right: 15px;
+            border-right: 1px solid var(--border-color);
+            padding-right: 18px; 
+            a{
+                font-size: 14px;
+                line-height: normal;
+                display: inline-block;
+            }
         }
         .product_meta {
             margin-top: 0px!important;
         }
-        .meta  {
-            border-left: 1px solid var(--border-color);
-            padding-left: 15px;
-            margin-left: 5px;
+        .meta  { 
             .product_meta {
                 span{
                     margin-right: 10px;
                 }
             }
         }
-        .sale_flash{
-            margin-right: 15px;
+        .top{
+            width: unset;
+        } 
             .onsale{
+                margin-right: 15px;
                 position: relative;
                 border-radius: 6px;
                 background: var(--color-brand-2);
                 color: var(--color-heading);
                 top: unset;
-                padding: 2px 6px;
-             
+                padding: 2px 6px; 
+                display: inline-block;
+                min-height: unset;
+                line-height: 20px;
                 left: unset;
             }
-        }
+      
     }
 }
 
@@ -7752,6 +7798,59 @@ body, html{
 .owl-carousel .product_wrapper{
     margin: 0px 1px
 }
+
+// maintance 
+.page_wapper.maintenance{
+    overflow: hidden;
+  }
+
+  .maintenance-content{ 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the content takes the full viewport height */
+    position: relative;
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    h2 , p{
+        color: #ffffff;
+    }
+    .box_content{
+        display: block;
+        vertical-align: middle;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        z-index: 99;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background: var(--color-brand);
+        opacity: .7; 
+        left: 0;
+        z-index: 1;
+    }
+  }
+
+  //outofstock
+
+  .outofstock{
+    .add.button{
+        display: none!important;
+    }
+  }
 /*---=================================================
 =====================responsive=======================
 =================================================---*/

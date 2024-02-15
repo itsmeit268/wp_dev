@@ -821,6 +821,10 @@
 @media(min-width:1200px){
     .nest_filter_box form .left_s{
         flex-wrap: wrap; 
+        select{
+            opacity: 0;
+            height: 0!important;
+        }
         span.select2 {
             min-width: 140px;
             width: 140px!important;
@@ -977,7 +981,7 @@
 
 // .product_grid_style_two .woocommerce-product-gallery__wrapper
 
-.product_grid_style_two .woocommerce-product-gallery__wrapper{
+.product_grid_style_two .woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image{
     pointer-events: none;
 }
 

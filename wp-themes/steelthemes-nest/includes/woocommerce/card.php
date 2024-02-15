@@ -114,7 +114,7 @@ $porduct_store_link = get_post_meta(get_the_ID() , 'porduct_store_link', true);
 if(is_array($product_hover_images) || is_object($product_hover_images)):
     if(!empty($product_hover_images['url'])): 
 ?>
-<img src="<?php echo esc_url($product_hover_images['url']); ?>" class="hover-img" alt="<?php the_title(); ?>">
+<img src="<?php echo esc_url($product_hover_images['url']); ?>" class="hover-img attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="<?php the_title(); ?>">
 <?php
 endif; endif;
  
@@ -134,7 +134,7 @@ function nest_product_card_one(){
     <div class="product-img-action-wrap">
         <div class="product-img product-img-zoom">
             <a href="<?php echo esc_url(get_permalink(get_the_id())); ?>">
-                <?php echo woocommerce_get_product_thumbnail('default-img'); ?>
+                <?php echo woocommerce_template_loop_product_thumbnail();; ?>
                 <?php do_action('get_nest_hover_product_image'); ?>
             </a>
         </div>
@@ -157,6 +157,7 @@ function nest_product_card_one(){
             </div>
             <?php if($add_to_cart_enable_disable == true): ?>
             <div class="add-cart">
+                <?php do_action('getsbw_wc_add_buy_now_button_single'); ?>
                 <?php  woocommerce_template_loop_add_to_cart(); ?>
             </div>
             <?php endif; ?>
@@ -181,7 +182,7 @@ function nest_product_card_one_sold(){
     <div class="product-img-action-wrap">
         <div class="product-img product-img-zoom">
             <a href="<?php echo esc_url(get_permalink(get_the_id())); ?>">
-                <?php echo woocommerce_get_product_thumbnail('default-img'); ?>
+                <?php echo woocommerce_template_loop_product_thumbnail();; ?>
                 <?php do_action('get_nest_hover_product_image'); ?>
             </a>
         </div>
@@ -230,7 +231,7 @@ function nest_product_card_two(){
     <div class="product-img-action-wrap">
         <div class="product-img product-img-zoom">
             <a href="<?php echo esc_url(get_permalink(get_the_id())); ?>">
-                <?php echo woocommerce_get_product_thumbnail('default-img'); ?>
+                <?php echo woocommerce_template_loop_product_thumbnail();; ?>
                 <?php do_action('get_nest_hover_product_image'); ?>
             </a>
         </div>
@@ -274,7 +275,7 @@ function nest_product_card_three(){
     <article class="d-flex align-items-center hover-up">
         <div class="col-md-4 pr-15 mb-0">
             <a href="<?php echo esc_url(get_permalink(get_the_id())); ?>">
-                <?php echo woocommerce_get_product_thumbnail('default-img'); ?>
+                <?php echo woocommerce_template_loop_product_thumbnail();; ?>
             </a>
         </div>
         <div class="col-md-8 mb-0">
@@ -309,7 +310,7 @@ function nest_product_card_four(){
             <div class="product-img product-img-zoom">
                 <div class="product-img-inner">
                     <a href="<?php echo esc_url(get_permalink(get_the_id())); ?>">
-                        <?php echo woocommerce_get_product_thumbnail('default-img'); ?>
+                        <?php echo woocommerce_template_loop_product_thumbnail();; ?>
                         <?php do_action('get_nest_hover_product_image') ?>
                     </a>
                 </div>
@@ -359,7 +360,7 @@ function nest_product_card_five(){
 <div class="product_style_five product-cart-wrap product_wrapper">
     <div class="product-img-inner">
         <a href="<?php echo esc_url(get_permalink(get_the_id())); ?>">
-            <?php echo woocommerce_get_product_thumbnail('default-img'); ?>
+            <?php echo woocommerce_template_loop_product_thumbnail();; ?>
             <?php do_action('get_nest_hover_product_image') ?>
         </a>
         <?php if($badge_enable == true): ?>
@@ -550,7 +551,7 @@ function nest_product_card_six(){
     <div class="product-img-action-wrap">
         <div class="product-img product-img-zoom">
             <a href="<?php echo esc_url(get_permalink(get_the_id())); ?>">
-                <?php echo woocommerce_get_product_thumbnail('default-img'); ?>
+                <?php echo woocommerce_template_loop_product_thumbnail();; ?>
                 <?php do_action('get_nest_hover_product_image'); ?>
             </a>
         </div> 

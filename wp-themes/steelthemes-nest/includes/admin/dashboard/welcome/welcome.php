@@ -29,8 +29,12 @@ global $wp_filesystem, $wpdb; ?>
                     <div class="clearfix d-flex">
                         
                         <div class="copt_system_information">
-                            <div class="start_box">
-                         
+                            <?php 
+                              $customizer_url = admin_url( 'customize.php' );
+                            ?>
+                            <div class="start_box"> 
+                            <p style="padding:10px 0 0 0;"><?php echo esc_html__("To Enable staging site  go to apperance -- customize -- Staging Site", "steelthemes-nest"); ?>
+                            <a target="_blank" href="<?php echo  esc_url( $customizer_url ); ?>" class="customizer-button"><?php echo esc_html__("Click Here to enable staging", "steelthemes-nest"); ?></a></p>
                             <?php
                             $Welcometotheme = new Welcometotheme();
                             $Welcometotheme->theme_activation_page();

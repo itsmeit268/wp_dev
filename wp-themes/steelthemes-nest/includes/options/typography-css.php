@@ -11,155 +11,136 @@ function nest_typogrophy_css(){
 global $nest_theme_mod;
 $css = '';
 /*---typography-for-h1-desktop-*/
-if(!empty($nest_theme_mod['font_family_enable']) == true){
-  $font_familt_commoncss = '';
-  $font_familt_common = $nest_theme_mod['font_familt_common']['font-family'];
-  $font_familt_commoncss = $font_familt_common ?  $font_familt_common  : '';
-  if(!empty($font_familt_commoncss)){
-    $css .= ':root   {--nest-family-one:' . $font_familt_commoncss . '!important}';
-  }
-   
-    $font_familt_common_twocss = '';
-    $font_familt_common_two = $nest_theme_mod['font_familt_common_two']['font-family'];
-    $font_familt_common_twocss = $font_familt_common_two ?  $font_familt_common_two  : '';
-    if(!empty($font_familt_common_twocss)){
-      $css .= ':root   {--nest-family-two:' . $font_familt_common_twocss . '!important}';
-    }
-  }
-  
+ 
 
 if(!empty($nest_theme_mod['heading_style_h1_enable_desk']) == true){
-
-$desk_h1_font_sizecss = '';
-$desk_h1_font_size = $nest_theme_mod['h1_typography']['font-size'];
-$desk_h1_font_sizecss = $desk_h1_font_size ? 'font-size:' . $desk_h1_font_size . '!important; ' : '';
-if(!empty($desk_h1_font_sizecss)){
-  $css .= '@media(min-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $desk_h1_font_sizecss . '}}';
-}
-$desk_h1_font_weightcss = '';
-$desk_h1_font_weight = $nest_theme_mod['h1_typography']['font-weight'];
-$desk_h1_font_weightcss = $desk_h1_font_weight ? 'font-weight:' . $desk_h1_font_weight . '!important; ' : '';
-if(!empty($desk_h1_font_weightcss)){
-  $css .= ' body h1 , h1 , h1 a  ' . ' {' . $desk_h1_font_weightcss . '}';
-}
-
-$desk_h1_font_stylecss = '';
-$desk_h1_font_style = $nest_theme_mod['h1_typography']['font-style'];
-$desk_h1_font_stylecss = $desk_h1_font_style ? 'font-style:' . $desk_h1_font_style . '!important; ' : '';
-if(!empty($desk_h1_font_stylecss)){
-  $css .= 'body h1 , h1 , h1 a  ' . ' {' . $desk_h1_font_stylecss . '}';
-}
-
-$desk_h1_lineheightcss = '';
-$desk_h1_lineheight = $nest_theme_mod['h1_typography']['line-height'];
-$desk_h1_lineheightcss = $desk_h1_lineheight ? 'line-height:' . $desk_h1_lineheight . '!important; ' : '';
-if(!empty($desk_h1_lineheightcss)){
-$css .= '@media(min-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $desk_h1_lineheightcss . '}}';
-}
-
- 
+  $desk_h1_fontfamily = '';
+  $desk_h1_fontfamily = $nest_theme_mod['h1_typography']['font-family'];
+  $desk_h1_fontfamilys = $desk_h1_fontfamily ?  $desk_h1_fontfamily  : '';
+  if(!empty($desk_h1_fontfamilys)){
+    $css .= ' body h1 , h1 , h1 a  ' . ' {' . $desk_h1_fontfamilys . '}';
+  }
+  $desk_h1_font_sizecss = '';
+  $desk_h1_font_size = $nest_theme_mod['h1_typography']['font-size'];
+  $desk_h1_font_sizecss = $desk_h1_font_size ? 'font-size:' . $desk_h1_font_size . '!important; ' : '';
+  if(!empty($desk_h1_font_sizecss)){
+    $css .= '@media(min-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $desk_h1_font_sizecss . '}}';
+  }
+  $desk_h1_font_weightcss = '';
+  $desk_h1_font_weight = $nest_theme_mod['h1_typography']['font-weight'];
+  $desk_h1_font_weightcss = $desk_h1_font_weight ? 'font-weight:' . $desk_h1_font_weight . '!important; ' : '';
+  if(!empty($desk_h1_font_weightcss)){
+    $css .= ' body h1 , h1 , h1 a  ' . ' {' . $desk_h1_font_weightcss . '}';
+  }
+  $desk_h1_font_stylecss = '';
+  $desk_h1_font_style = $nest_theme_mod['h1_typography']['font-style'];
+  $desk_h1_font_stylecss = $desk_h1_font_style ? 'font-style:' . $desk_h1_font_style . '!important; ' : '';
+  if(!empty($desk_h1_font_stylecss)){
+    $css .= 'body h1 , h1 , h1 a  ' . ' {' . $desk_h1_font_stylecss . '}';
+  }
+  $desk_h1_lineheightcss = '';
+  $desk_h1_lineheight = $nest_theme_mod['h1_typography']['line-height'];
+  $desk_h1_lineheightcss = $desk_h1_lineheight ? 'line-height:' . $desk_h1_lineheight . '!important; ' : '';
+  if(!empty($desk_h1_lineheightcss)){
+  $css .= '@media(min-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $desk_h1_lineheightcss . '}}';
+  } 
 }
 /*---typography-for-h1-desktop-*/
 
 /*---typography-for-h1-mobile-*/
 
 if(!empty($nest_theme_mod['heading_style_h1_enable_mob']) == true){
-
   $mob_h1_font_sizecss = '';
   $mob_h1_font_size = $nest_theme_mod['h1_typography_mobile']['font-size'];
   $mob_h1_font_sizecss = $mob_h1_font_size ? 'font-size:' . $mob_h1_font_size . '!important; ' : '';
   if(!empty($mob_h1_font_sizecss)){
-$css .= '@media(max-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $mob_h1_font_sizecss . '}}';
+    $css .= '@media(max-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $mob_h1_font_sizecss . '}}';
   }
-  
   $mob_h1_font_linehecss = '';
   $mob_h1_font_lheight= $nest_theme_mod['h1_typography_mobile']['line-height'];
   $mob_h1_font_linehecss = $mob_h1_font_lheight ? 'line-height:' . $mob_h1_font_lheight . '!important; ' : '';
   if(!empty($mob_h1_font_linehecss)){
-$css .= '@media(max-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $mob_h1_font_linehecss . '}}';
+    $css .= '@media(max-width:768px){ body h1 , h1 , h1 a  ' . ' {' . $mob_h1_font_linehecss . '}}';
   }
-  
-  }
-  /*---typography-for-h1-mobile-*/
+}
+/*---typography-for-h1-mobile-*/
 
-  /*---typography-for-h2-desktop-*/
+/*---typography-for-h2-desktop-*/
 
 if(!empty($nest_theme_mod['heading_style_h2_enable_desk']) == true){
-
+  $desk_h2_fontfamily = '';
+  $desk_h2_fontfamily = $nest_theme_mod['h2_typography']['font-family'];
+  $desk_h2_fontfamilys = $desk_h2_fontfamily ?  $desk_h2_fontfamily  : '';
+  if(!empty($desk_h2_fontfamilys)){
+    $css .= ' body h1 , h1 , h1 a  ' . ' {' . $desk_h2_fontfamilys . '}';
+  }
   $desk_h2_font_sizecss = '';
   $desk_h2_font_size = $nest_theme_mod['h2_typography']['font-size'];
   $desk_h2_font_sizecss = $desk_h2_font_size ? 'font-size:' . $desk_h2_font_size . '!important; ' : '';
   if(!empty($desk_h2_font_sizecss)){
-$css .= '@media(min-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $desk_h2_font_sizecss . '}}';
+    $css .= '@media(min-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $desk_h2_font_sizecss . '}}';
   }
   $desk_h2_font_weightcss = '';
   $desk_h2_font_weight = $nest_theme_mod['h2_typography']['font-weight'];
   $desk_h2_font_weightcss = $desk_h2_font_weight ? 'font-weight:' . $desk_h2_font_weight . '!important; ' : '';
   if(!empty($desk_h2_font_weightcss)){
-$css .= 'body h2 , h2 , h2 a  ' . ' {' . $desk_h2_font_weightcss . '}';
+    $css .= 'body h2 , h2 , h2 a  ' . ' {' . $desk_h2_font_weightcss . '}';
   }
-  
   $desk_h2_font_stylecss = '';
   $desk_h2_font_style = $nest_theme_mod['h2_typography']['font-style'];
   $desk_h2_font_stylecss = $desk_h2_font_style ? 'font-style:' . $desk_h2_font_style . '!important; ' : '';
   if(!empty($desk_h2_font_stylecss)){
-$css .= ' body h2 , h2 , h2 a  ' . ' {' . $desk_h2_font_stylecss . '}';
+    $css .= ' body h2 , h2 , h2 a  ' . ' {' . $desk_h2_font_stylecss . '}';
   }
   $desk_h2_lineheightcss = '';
   $desk_h2_lineheight = $nest_theme_mod['h2_typography']['line-height'];
   $desk_h2_lineheightcss = $desk_h2_lineheight ? 'line-height:' . $desk_h2_lineheight . '!important; ' : '';
   if(!empty($desk_h2_lineheightcss)){
-$css .= '@media(min-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $desk_h2_lineheightcss . '}}';
+  $css .= '@media(min-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $desk_h2_lineheightcss . '}}';
   }
- 
-  
+}
+/*---typography-for-h2-desktop-*/
+/*---typography-for-h2-mobile-*/
+if(!empty($nest_theme_mod['heading_style_h2_enable_mob']) == true){
+  $mob_h2_font_sizecss = '';
+  $mob_h2_font_size = $nest_theme_mod['h2_typography_mobile']['font-size'];
+  $mob_h2_font_sizecss = $mob_h2_font_size ? 'font-size:' . $mob_h2_font_size . '!important; ' : '';
+  if(!empty($mob_h2_font_sizecss)){
+    $css .= '@media(max-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $mob_h2_font_sizecss . '}}';
   }
-  /*---typography-for-h2-desktop-*/
-  
-  /*---typography-for-h2-mobile-*/
-  
-  if(!empty($nest_theme_mod['heading_style_h2_enable_mob']) == true){
-  
-$mob_h2_font_sizecss = '';
-$mob_h2_font_size = $nest_theme_mod['h2_typography_mobile']['font-size'];
-$mob_h2_font_sizecss = $mob_h2_font_size ? 'font-size:' . $mob_h2_font_size . '!important; ' : '';
-if(!empty($mob_h2_font_sizecss)){
-  $css .= '@media(max-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $mob_h2_font_sizecss . '}}';
-}
-
-$mob_h2_font_linehecss = '';
-$mob_h2_font_lheight= $nest_theme_mod['h2_typography_mobile']['line-height'];
-$mob_h2_font_lheight = $mob_h2_font_lheight ? 'line-height:' . $mob_h2_font_lheight . '!important; ' : '';
-if(!empty($mob_h2_font_linehecss)){
-  $css .= '@media(max-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $mob_h2_font_linehecss . '}}';
-}
-
+  $mob_h2_font_linehecss = '';
+  $mob_h2_font_lheight= $nest_theme_mod['h2_typography_mobile']['line-height'];
+  $mob_h2_font_lheight = $mob_h2_font_lheight ? 'line-height:' . $mob_h2_font_lheight . '!important; ' : '';
+  if(!empty($mob_h2_font_linehecss)){
+    $css .= '@media(max-width:768px){ body h2 , h2 , h2 a  ' . ' {' . $mob_h2_font_linehecss . '}}';
+  }
 }
 /*---typography-for-h2-mobile-*/
-
-
-  /*---typography-for-h3-desktop-*/
-
+/*---typography-for-h3-desktop-*/
 if(!empty($nest_theme_mod['heading_style_h3_enable_desk']) == true){
-
+  $desk_h3_fontfamily = '';
+  $desk_h3_fontfamily = $nest_theme_mod['h2_typography']['font-family'];
+  $desk_h3_fontfamilys = $desk_h3_fontfamily ?  $desk_h3_fontfamily  : '';
+  if(!empty($desk_h3_fontfamilys)){
+    $css .= ' body h1 , h1 , h1 a  ' . ' {' . $desk_h3_fontfamilys . '}';
+  }
   $desk_h3_font_sizecss = '';
   $desk_h3_font_size = $nest_theme_mod['h3_typography']['font-size'];
   $desk_h3_font_sizecss = $desk_h3_font_size ? 'font-size:' . $desk_h3_font_size . '!important; ' : '';
   if(!empty($desk_h3_font_sizecss)){
-$css .= '@media(min-width:768px){ body h3 , h3 , h3 a  ' . ' {' . $desk_h3_font_sizecss . '}}';
+    $css .= '@media(min-width:768px){ body h3 , h3 , h3 a  ' . ' {' . $desk_h3_font_sizecss . '}}';
   }
   $desk_h3_font_weightcss = '';
   $desk_h3_font_weight = $nest_theme_mod['h3_typography']['font-weight'];
   $desk_h3_font_weightcss = $desk_h3_font_weight ? 'font-weight:' . $desk_h3_font_weight . '!important; ' : '';
   if(!empty($desk_h3_font_weightcss)){
-$css .= 'body h3 , h3 , h3 a  ' . ' {' . $desk_h3_font_weightcss . '}';
+    $css .= 'body h3 , h3 , h3 a  ' . ' {' . $desk_h3_font_weightcss . '}';
   }
-  
   $desk_h3_font_stylecss = '';
   $desk_h3_font_style = $nest_theme_mod['h3_typography']['font-style'];
   $desk_h3_font_stylecss = $desk_h3_font_style ? 'font-style:' . $desk_h3_font_style . '!important; ' : '';
   if(!empty($desk_h3_font_stylecss)){
-$css .= 'body h3 , h3 , h3 a ' . ' {' . $desk_h3_font_stylecss . '}';
+    $css .= 'body h3 , h3 , h3 a ' . ' {' . $desk_h3_font_stylecss . '}';
   }
   $desk_h3_lineheightcss = '';
   $desk_h3_lineheight = $nest_theme_mod['h3_typography']['line-height'];
@@ -167,36 +148,34 @@ $css .= 'body h3 , h3 , h3 a ' . ' {' . $desk_h3_font_stylecss . '}';
   if(!empty($desk_h3_lineheightcss)){
   $css .= '@media(min-width:768px){ body h3 , h3 , h3 a  ' . ' {' . $desk_h3_lineheightcss . '}}';
   }
-  
+}
+/*---typography-for-h3-desktop-*/
+/*---typography-for-h3-mobile-*/
+if(!empty($nest_theme_mod['heading_style_h3_enable_mob']) == true){
+  $mob_h3_font_sizecss = '';
+  $mob_h3_font_size = $nest_theme_mod['h3_typography_mobile']['font-size'];
+  $mob_h3_font_sizecss = $mob_h3_font_size ? 'font-size:' . $mob_h3_font_size . '!important; ' : '';
+  if(!empty($mob_h3_font_sizecss)){
+    $css .= '@media(max-width:768px){body h3 , h3 , h3 a  ' . ' {' . $mob_h3_font_size . '}}';
   }
-  /*---typography-for-h3-desktop-*/
-  
-  /*---typography-for-h3-mobile-*/
-  
-  if(!empty($nest_theme_mod['heading_style_h3_enable_mob']) == true){
-  
-$mob_h3_font_sizecss = '';
-$mob_h3_font_size = $nest_theme_mod['h3_typography_mobile']['font-size'];
-$mob_h3_font_sizecss = $mob_h3_font_size ? 'font-size:' . $mob_h3_font_size . '!important; ' : '';
-if(!empty($mob_h3_font_sizecss)){
-  $css .= '@media(max-width:768px){body h3 , h3 , h3 a  ' . ' {' . $mob_h3_font_size . '}}';
-}
-
-$mob_h3_font_linehecss = '';
-$mob_h3_font_lheight= $nest_theme_mod['h3_typography_mobile']['line-height'];
-$mob_h3_font_linehecss = $mob_h3_font_lheight ? 'line-height:' . $mob_h3_font_lheight . '!important; ' : '';
-if(!empty($mob_h3_font_linehecss)){
-  $css .= '@media(max-width:768px){body h3 , h3 , h3 a  ' . ' {' . $mob_h3_font_linehecss . '}}';
-}
-
+  $mob_h3_font_linehecss = '';
+  $mob_h3_font_lheight= $nest_theme_mod['h3_typography_mobile']['line-height'];
+  $mob_h3_font_linehecss = $mob_h3_font_lheight ? 'line-height:' . $mob_h3_font_lheight . '!important; ' : '';
+  if(!empty($mob_h3_font_linehecss)){
+    $css .= '@media(max-width:768px){body h3 , h3 , h3 a  ' . ' {' . $mob_h3_font_linehecss . '}}';
+  }
 }
 /*---typography-for-h3-mobile-*/
 
-
-  /*---typography-for-h4-desktop-*/
+/*---typography-for-h4-desktop-*/
 
 if(!empty($nest_theme_mod['heading_style_h4_enable_desk']) == true){
-
+  $desk_h4_fontfamily = '';
+  $desk_h4_fontfamily = $nest_theme_mod['h4_typography']['font-family'];
+  $desk_h4_fontfamilys = $desk_h4_fontfamily ?  $desk_h4_fontfamily  : '';
+  if(!empty($desk_h4_fontfamilys)){
+    $css .= ' body h1 , h1 , h1 a  ' . ' {' . $desk_h4_fontfamilys . '}';
+  }
   $desk_h4_font_sizecss = '';
   $desk_h4_font_size = $nest_theme_mod['h4_typography']['font-size'];
   $desk_h4_font_sizecss = $desk_h4_font_size ? 'font-size:' . $desk_h4_font_size . '!important; ' : '';

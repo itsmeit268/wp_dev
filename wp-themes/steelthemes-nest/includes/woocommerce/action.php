@@ -17,7 +17,6 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 // single removing summary end
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);
- 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
 // twice the ajax cart
 if ('no' === get_option('woocommerce_cart_redirect_after_add') && 'yes' === get_option('woocommerce_enable_ajax_add_to_cart') ) { 
@@ -227,9 +226,7 @@ function nest_get_current_product_category(){
 <?php
   }
  
-}  
-
-
+}   
 
 /*
 **==============================   
@@ -1096,7 +1093,7 @@ function nest_add_category_brand_and_attribute_filter_dropdowns() {
                     $term_name = $term->name;
                     $term_slug = $term->slug;
                     $term_value = get_term_meta( $term_id, 'attribute_pa_' . $attribute->attribute_name, true );
-                    echo '<option value="' . esc_attr( $term_slug ) . '"' . selected( $term_slug, isset( $_GET[ $attribute_taxonomy . '_filter' ] ) ? $_GET[ $attribute_taxonomy . '_filter' ] : '', false ) . '>' . esc_html( $term_name ) . ' (' . esc_html( $term_value ) . ')</option>';
+                    echo '<option value="' . esc_attr( $term_slug ) . '"' . selected( $term_slug, isset( $_GET[ $attribute_taxonomy . '_filter' ] ) ? $_GET[ $attribute_taxonomy . '_filter' ] : '', false ) . '>' . esc_html( $term_name ) . ' </option>';
                 }
                 echo '</select>';
             }
@@ -1134,8 +1131,7 @@ function apply_category_brand_and_attribute_filters_to_product_query( $q ) {
     }
     $attributes = wc_get_attribute_taxonomies();
     foreach ( $attributes as $attribute ) {
-        $attribute_taxonomy = 'pa_' . $attribute->attribute_name;
-
+        $attribute_taxonomy = 'pa_' . $attribute->attribute_name; 
         if ( isset( $_GET[ $attribute_taxonomy . '_filter' ] ) && ! empty( $_GET[ $attribute_taxonomy . '_filter' ] ) ) {
             $attribute_filter = sanitize_text_field( $_GET[ $attribute_taxonomy . '_filter' ] );
             $tax_query[] = array(
@@ -1187,8 +1183,28 @@ function nest_sticky_addtocart($product) {
 add_action('wp_enqueue_scripts', 'nest_add_css' );
 function nest_add_css(){
     $add_css = '';
-    $add_css .= 'body .product-type-simple .product-cart-wrap.style_one .product-card-bottom .add-cart a::before, body .product-type-simple .product-cart-wrap.deals_style_one .product-card-bottom .add-cart a::before {content:"'.esc_html('Add' , 'steelthemes-nest').'"!important;}';
+    $add_css .= 'body .product-type-simple .product-cart-wrap.style_one .product-card-bottom .add-cart a::before, body .product-type-simple .product-cart-wrap.deals_style_one .product-card-bottom .add-cart a::before {content:"'.esc_html__('Add' , 'steelthemes-nest').'"!important;}';
     wp_add_inline_style('nest-main-style', $add_css);
 }
-
  
+ /*
+**=================================== 
+** Empty Cart Buton
+**===================================
+*/
+
+
+// check for empty-cart get param to clear the cart
+add_action( 'init', 'nest_woocommerce_clear_cart_url' );
+function nest_woocommerce_clear_cart_url() {
+    global $woocommerce;
+
+    if ( isset( $_GET['empty-cart'] ) ) {
+        $woocommerce->cart->empty_cart();
+    }
+}
+add_action( 'woocommerce_cart_actions', 'nest_add_clear_cart_button', 20 );
+add_action( 'nest_get_empty_cart', 'nest_add_clear_cart_button', 20 );
+function nest_add_clear_cart_button() {
+    echo "<a class='button empty_carts' href='?empty-cart=true'>" . esc_html__( 'Empty Cart', 'steelthemes-nest' ) . "</a>";
+} 
