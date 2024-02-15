@@ -12,9 +12,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
+ * @see https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.8.0
+ * @version 8.5.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -83,7 +83,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 				<?php foreach ( $order->get_items() as $item_id => $item ) { ?>
 					<div class="order-item">
 						<div class="product-name">
-							<a href="<?php echo get_permalink($item->get_product_id()); ?>"><?php echo esc_html($item->get_name()); ?></a> <strong class="product-quantity">Ã—&nbsp;<?php echo esc_html($item->get_quantity()); ?></strong>
+							<a href="<?php echo get_permalink($item->get_product_id()); ?>"><?php echo esc_html($item->get_name()); ?></a> <strong class="product-quantity">×&nbsp;<?php echo esc_html($item->get_quantity()); ?></strong>
 						</div>
 						<div class="product-thumbnail">
 							<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $item->get_product_id() ), 'thumbnail'); ?>
@@ -112,7 +112,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 	<?php endif; ?>
 
 <?php else : ?>
-	<?php wc_print_notice( esc_html__( 'No order has been made yet.', 'bacola' ) . ' <a class="woocommerce-Button button' . esc_attr( $wp_button_class ) . '" href="' . esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ) . '">' . esc_html__( 'Browse products', 'bacola' ) . '</a>', 'notice' ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment ?>
+	<?php wc_print_notice( esc_html__( 'No order has been made yet.', 'bacola' ) . ' <a class="woocommerce-Button wc-forward button' . esc_attr( $wp_button_class ) . '" href="' . esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ) . '">' . esc_html__( 'Browse products', 'bacola' ) . '</a>', 'notice' ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment ?>
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_account_orders', $has_orders ); ?>

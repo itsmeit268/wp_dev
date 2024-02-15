@@ -3,16 +3,13 @@
  * functions.php
  * @package WordPress
  * @subpackage Bacola
- * @since Bacola 1.3.5
+ * @since Bacola 1.4.0
  * 
  */
 
 /*************************************************
 ## Admin style and scripts  
 *************************************************/ 
-
-update_option( 'envato_purchase_code_32552148', '*******' );
-update_option( '_license_key_status', 'valid' );
 
 function bacola_admin_styles() {
 	wp_enqueue_style('bacola-klbtheme',   get_template_directory_uri() .'/assets/css/admin/klbtheme.css');
@@ -150,8 +147,8 @@ add_action( 'tgmpa_register', 'bacola_register_required_plugins' );
 
 function bacola_register_required_plugins() {
 
-	$url = 'http://klbtheme.com/bacola/plugins/';
-	$mainurl = 'http://klbtheme.com/plugins/';
+	$url = 'https://klbtheme.com/bacola/plugins/';
+	$mainurl = 'https://klbtheme.com/plugins/';
 
 	$plugins = array(
 		
@@ -200,13 +197,12 @@ function bacola_register_required_plugins() {
         array(
             'name'                  => esc_html__('Bacola Core','bacola'),
             'slug'                  => 'bacola-core',
-            'source'                => get_theme_file_path( 'plugins/bacola-core.zip' ),
+            'source'                => $url . 'bacola-core.zip',
             'required'              => true,
-            'version'               => '1.3.5',
+            'version'               => '1.3.9',
             'force_activation'      => false,
             'force_deactivation'    => false,
             'external_url'          => '',
-			'is_callable'        => '',
         ),
 
         array(
@@ -214,7 +210,7 @@ function bacola_register_required_plugins() {
             'slug'                  => 'envato-market',
             'source'                => $mainurl . 'envato-market.zip',
             'required'              => true,
-            'version'               => '2.0.8',
+            'version'               => '2.0.11',
             'force_activation'      => false,
             'force_deactivation'    => false,
             'external_url'          => '',

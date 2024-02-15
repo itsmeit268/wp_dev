@@ -66,7 +66,7 @@
 					<a href="<?php echo esc_url( home_url( "/" ) ); ?>" title="<?php bloginfo("name"); ?>">
 						<?php if (get_theme_mod( 'bacola_logo' )) { ?>
 							<?php $size = get_theme_mod( 'bacola_logo_size', array( 'width' => '164', 'height' => '44') ); ?>
-							<img class="desktop-logo hide-mobile" src="<?php echo esc_url( wp_get_attachment_url(get_theme_mod( 'bacola_logo' )) ); ?>" width="<?php echo esc_attr( $size["width"] ); ?>" height="<?php echo esc_attr( $size["height"] ); ?>" alt="<?php bloginfo("name"); ?>">
+							<img class="desktop-logo hide-mobile" src="<?php echo esc_url( wp_get_attachment_url(get_theme_mod( 'bacola_logo' )) ); ?>" alt="<?php bloginfo("name"); ?>">
 						<?php } elseif (get_theme_mod( 'bacola_logo_text' )) { ?>
 							<span class="brand-text hide-mobile"><?php echo esc_html(get_theme_mod( 'bacola_logo_text' )); ?></span>
 						<?php } else { ?>
