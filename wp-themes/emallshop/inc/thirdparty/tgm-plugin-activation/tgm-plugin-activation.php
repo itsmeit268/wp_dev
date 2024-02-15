@@ -49,7 +49,7 @@ function emallshop_register_required_plugins() {
 		array(
 			'name' 					=> esc_html__('PL EmallShop Extensions','emallshop'),
 			'slug' 					=> 'pl-emallshop-extensions',
-			'source'             	=> esc_url('https://itsmeit.co/files/wplugins/pl-emallshop-extensions.zip'),
+			'source'             	=> esc_url('https://presslayouts.com/plugins/pl-emallshop-extensions.zip'),
 			'version'  				=> '1.3.2',
 			'required' 				=> true,
 		),
@@ -57,21 +57,21 @@ function emallshop_register_required_plugins() {
 			'name' 					=> esc_html__('WPBakery Visual Composer','emallshop'),
 			'slug' 					=> 'js_composer',
 			'source'             	=> esc_url('https://presslayouts.com/plugins/js_composer.zip'),
-			'version'  				=> '7.0',
+			'version'  				=> '7.4',
 			'required' 				=> true,
 		),
 		array(
 			'name' 					=> esc_html__('Revolution Slider','emallshop'),
 			'slug' 					=> 'revslider',
 			'source'             	=> esc_url('https://presslayouts.com/plugins/revslider.zip'),
-			'version'  				=> '6.6.16',
+			'version'  				=> '6.6.20',
 			'required' 				=> true,
 		),
 		array(
 			'name' 					=> esc_html__('Ultimate Addons for Visual Composer','emallshop'),
 			'slug' 					=> 'Ultimate_VC_Addons',
 			'source'             	=> esc_url('https://presslayouts.com/plugins/Ultimate_VC_Addons.zip'),
-			'version'  				=> '3.19.18',
+			'version'  				=> '3.19.19',
 			'required' 				=> true,
 		),
 		array(

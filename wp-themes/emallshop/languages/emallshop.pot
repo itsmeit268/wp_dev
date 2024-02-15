@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EmallShop 1.0\n"
 "Report-Msgid-Bugs-To: https://demo.presslayouts.com/emallshop/\n"
-"POT-Creation-Date: 2023-07-20 16:47+0530\n"
+"POT-Creation-Date: 2023-12-05 14:33+0530\n"
 "PO-Revision-Date: 2016-03-21 21:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -821,67 +821,67 @@ msgstr ""
 
 #: inc/admin/theme_options.php:257 inc/admin/theme_options.php:281
 #: inc/theme-function.php:72 inc/theme-function.php:80
-#: inc/theme-function.php:1684 inc/theme-function.php:1697
+#: inc/theme-function.php:1686 inc/theme-function.php:1699
 msgid "Shop"
 msgstr ""
 
 #: inc/admin/theme_options.php:258 inc/theme-function.php:73
-#: inc/theme-function.php:81 inc/theme-function.php:1685
-#: inc/theme-function.php:1698
+#: inc/theme-function.php:81 inc/theme-function.php:1687
+#: inc/theme-function.php:1700
 msgid "Sidebar/Filters"
 msgstr ""
 
 #: inc/admin/theme_options.php:259 inc/admin/theme_options.php:295
 #: inc/theme-function.php:74 inc/theme-function.php:82
-#: inc/theme-function.php:526 inc/theme-function.php:1686
-#: inc/theme-function.php:1699 inc/theme-function.php:1732
+#: inc/theme-function.php:528 inc/theme-function.php:1688
+#: inc/theme-function.php:1701 inc/theme-function.php:1734
 msgid "Wishlist"
 msgstr ""
 
 #: inc/admin/theme_options.php:260 inc/admin/theme_options.php:309
 #: inc/admin/theme_options.php:2620 inc/theme-function.php:75
-#: inc/theme-function.php:83 inc/theme-function.php:424
-#: inc/theme-function.php:683 inc/theme-function.php:1687
-#: inc/theme-function.php:1700 inc/theme-function.php:1745
+#: inc/theme-function.php:83 inc/theme-function.php:426
+#: inc/theme-function.php:685 inc/theme-function.php:1689
+#: inc/theme-function.php:1702 inc/theme-function.php:1747
 msgid "Cart"
 msgstr ""
 
 #: inc/admin/theme_options.php:261 inc/admin/theme_options.php:323
 #: inc/theme-function.php:76 inc/theme-function.php:84
-#: inc/theme-function.php:1688 inc/theme-function.php:1701
-#: inc/theme-function.php:1757
+#: inc/theme-function.php:1690 inc/theme-function.php:1703
+#: inc/theme-function.php:1759
 msgid "Account"
 msgstr ""
 
 #: inc/admin/theme_options.php:264 inc/admin/theme_options.php:337
-#: inc/breadcrumbs.php:19 inc/theme-function.php:1773
+#: inc/breadcrumbs.php:19 inc/theme-function.php:1775
 msgid "Home"
 msgstr ""
 
 #: inc/admin/theme_options.php:265 inc/admin/theme_options.php:351
-#: inc/admin/theme_options.php:993 inc/theme-function.php:798
-#: inc/theme-function.php:819 inc/theme-function.php:1782
+#: inc/admin/theme_options.php:993 inc/theme-function.php:800
+#: inc/theme-function.php:821 inc/theme-function.php:1784
 msgid "Menu"
 msgstr ""
 
 #: inc/admin/theme_options.php:266 inc/admin/theme_options.php:365
-#: inc/theme-function.php:434 inc/theme-function.php:547
-#: inc/theme-function.php:1799
+#: inc/theme-function.php:436 inc/theme-function.php:549
+#: inc/theme-function.php:1801
 msgid "Compare"
 msgstr ""
 
 #: inc/admin/theme_options.php:267 inc/admin/theme_options.php:393
-#: inc/theme-function.php:1839
+#: inc/theme-function.php:1841
 msgid "Order"
 msgstr ""
 
 #: inc/admin/theme_options.php:268 inc/admin/theme_options.php:407
-#: inc/theme-function.php:1853
+#: inc/theme-function.php:1855
 msgid "Order Tracking"
 msgstr ""
 
 #: inc/admin/theme_options.php:269 inc/admin/theme_options.php:435
-#: inc/admin/theme_options.php:2820 inc/theme-function.php:1859
+#: inc/admin/theme_options.php:2820 inc/theme-function.php:1861
 msgid "Blog"
 msgstr ""
 
@@ -1037,7 +1037,7 @@ msgstr ""
 msgid "Enter filter navbar label"
 msgstr ""
 
-#: inc/admin/theme_options.php:379 inc/theme-function.php:1812
+#: inc/admin/theme_options.php:379 inc/theme-function.php:1814
 msgid "Filters"
 msgstr ""
 
@@ -1101,7 +1101,7 @@ msgstr ""
 msgid "Enter sidebar navbar label"
 msgstr ""
 
-#: inc/admin/theme_options.php:421 inc/theme-function.php:1817
+#: inc/admin/theme_options.php:421 inc/theme-function.php:1819
 msgid "Sidebar"
 msgstr ""
 
@@ -1882,8 +1882,8 @@ msgstr ""
 msgid "Enter Service Title 2"
 msgstr ""
 
-#: inc/admin/theme_options.php:1624 inc/theme-function.php:641
-#: inc/theme-function.php:650
+#: inc/admin/theme_options.php:1624 inc/theme-function.php:643
+#: inc/theme-function.php:652
 msgid "Free Shipping"
 msgstr ""
 
@@ -1891,7 +1891,7 @@ msgstr ""
 msgid "Enter Service Sort Description 2"
 msgstr ""
 
-#: inc/admin/theme_options.php:1630 inc/theme-function.php:642
+#: inc/admin/theme_options.php:1630 inc/theme-function.php:644
 msgid "all order over $100."
 msgstr ""
 
@@ -1899,7 +1899,7 @@ msgstr ""
 msgid "Enter Service Title 3"
 msgstr ""
 
-#: inc/admin/theme_options.php:1642 inc/theme-function.php:651
+#: inc/admin/theme_options.php:1642 inc/theme-function.php:653
 msgid "Return & Exchange"
 msgstr ""
 
@@ -2535,7 +2535,7 @@ msgstr ""
 msgid "SKU"
 msgstr ""
 
-#: inc/admin/theme_options.php:2484 inc/theme-function.php:1788
+#: inc/admin/theme_options.php:2484 inc/theme-function.php:1790
 #: single-portfolio.php:87
 msgid "Category"
 msgstr ""
@@ -2642,8 +2642,8 @@ msgstr ""
 msgid "Auto update cart when change product quantity."
 msgstr ""
 
-#: inc/admin/theme_options.php:2640 inc/theme-function.php:423
-#: inc/theme-function.php:491
+#: inc/admin/theme_options.php:2640 inc/theme-function.php:425
+#: inc/theme-function.php:493
 msgid "Checkout"
 msgstr ""
 
@@ -2874,7 +2874,7 @@ msgid "Select Pagination Style Of Blog Page"
 msgstr ""
 
 #: inc/admin/theme_options.php:2998 inc/admin/theme_options.php:3228
-#: inc/theme-function.php:1300 inc/theme-function.php:1351
+#: inc/theme-function.php:1302 inc/theme-function.php:1353
 msgid "Load More"
 msgstr ""
 
@@ -3885,8 +3885,8 @@ msgstr ""
 msgid "Visit your store"
 msgstr ""
 
-#: inc/integrations/dokan/dokan-functions.php:143 inc/theme-function.php:420
-#: inc/theme-function.php:454
+#: inc/integrations/dokan/dokan-functions.php:143 inc/theme-function.php:422
+#: inc/theme-function.php:456
 msgid "My Account"
 msgstr ""
 
@@ -3927,7 +3927,7 @@ msgid "No products found."
 msgstr ""
 
 #: inc/integrations/woocommerce/woo-functions.php:237
-#: inc/theme-function.php:675 inc/theme-function.php:691
+#: inc/theme-function.php:677 inc/theme-function.php:693
 #, php-format
 msgid "%d item"
 msgid_plural "%d item(s)"
@@ -3935,7 +3935,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: inc/integrations/woocommerce/woo-functions.php:258
-#: inc/theme-function.php:474 inc/theme-function.php:690
+#: inc/theme-function.php:476 inc/theme-function.php:692
 msgid "Shopping Cart"
 msgstr ""
 
@@ -3949,7 +3949,7 @@ msgid "category banner"
 msgstr ""
 
 #: inc/integrations/woocommerce/woo-functions.php:491
-#: inc/theme-function.php:821
+#: inc/theme-function.php:823
 msgid "Categories"
 msgstr ""
 
@@ -4011,8 +4011,8 @@ msgid "View Cart"
 msgstr ""
 
 #: inc/integrations/woocommerce/woo-functions.php:1374
-#: inc/theme-function.php:259 inc/theme-function.php:1309
-#: inc/theme-function.php:1360
+#: inc/theme-function.php:261 inc/theme-function.php:1311
+#: inc/theme-function.php:1362
 msgid "Loading..."
 msgstr ""
 
@@ -4277,31 +4277,31 @@ msgstr ""
 msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/theme-function.php:189
+#: inc/theme-function.php:191
 msgid "Days"
 msgstr ""
 
-#: inc/theme-function.php:190
+#: inc/theme-function.php:192
 msgid "Hours"
 msgstr ""
 
-#: inc/theme-function.php:191
+#: inc/theme-function.php:193
 msgid "Mins"
 msgstr ""
 
-#: inc/theme-function.php:192
+#: inc/theme-function.php:194
 msgid "Secs"
 msgstr ""
 
-#: inc/theme-function.php:193
+#: inc/theme-function.php:195
 msgid "+ Show more"
 msgstr ""
 
-#: inc/theme-function.php:194
+#: inc/theme-function.php:196
 msgid "- Show less"
 msgstr ""
 
-#: inc/theme-function.php:255
+#: inc/theme-function.php:257
 msgid ""
 "WARNING: Clicking this button will replace your current theme options, "
 "sliders.  It can also take a minute to complete. Importing data is "
@@ -4309,101 +4309,101 @@ msgid ""
 "importing twice will duplicate menus, pages and all posts."
 msgstr ""
 
-#: inc/theme-function.php:260
+#: inc/theme-function.php:262
 msgid "Are you sure you want to leave?"
 msgstr ""
 
-#: inc/theme-function.php:261
+#: inc/theme-function.php:263
 msgid "Demo imported successfully."
 msgstr ""
 
-#: inc/theme-function.php:262
+#: inc/theme-function.php:264
 msgid "Please Enter Purchase Code"
 msgstr ""
 
-#: inc/theme-function.php:263
+#: inc/theme-function.php:265
 msgid "Purchase code is empty"
 msgstr ""
 
-#: inc/theme-function.php:311
+#: inc/theme-function.php:313
 msgid "News"
 msgstr ""
 
-#: inc/theme-function.php:383
+#: inc/theme-function.php:385
 msgid "Login/Register"
 msgstr ""
 
-#: inc/theme-function.php:385
+#: inc/theme-function.php:387
 msgid "Logout"
 msgstr ""
 
-#: inc/theme-function.php:399 woocommerce/myaccount/form-login.php:72
+#: inc/theme-function.php:401 woocommerce/myaccount/form-login.php:72
 #: woocommerce/myaccount/form-login.php:109
 msgid "Register"
 msgstr ""
 
-#: inc/theme-function.php:428
+#: inc/theme-function.php:430
 msgid "My Wishlist"
 msgstr ""
 
-#: inc/theme-function.php:437
+#: inc/theme-function.php:439
 msgid "sign Out"
 msgstr ""
 
-#: inc/theme-function.php:507
+#: inc/theme-function.php:509
 msgid "Track Order"
 msgstr ""
 
-#: inc/theme-function.php:598
+#: inc/theme-function.php:600
 msgid "Help"
 msgstr ""
 
-#: inc/theme-function.php:611 inc/theme-function.php:613
-#: inc/theme-function.php:1642
+#: inc/theme-function.php:613 inc/theme-function.php:615
+#: inc/theme-function.php:1644
 msgid "logo"
 msgstr ""
 
-#: inc/theme-function.php:713 inc/theme-function.php:1824
+#: inc/theme-function.php:715 inc/theme-function.php:1826
 msgid "Search"
 msgstr ""
 
-#: inc/theme-function.php:757 inc/theme-function.php:836
+#: inc/theme-function.php:759 inc/theme-function.php:838
 #, php-format
 msgid "Add your <a href=\"%s\">navigation menu here</a>"
 msgstr ""
 
-#: inc/theme-function.php:774
+#: inc/theme-function.php:776
 msgid "Shopping Categories"
 msgstr ""
 
-#: inc/theme-function.php:1311 inc/theme-function.php:1362
+#: inc/theme-function.php:1313 inc/theme-function.php:1364
 msgid "No more blog"
 msgstr ""
 
-#: inc/theme-function.php:1397
+#: inc/theme-function.php:1399
 msgid "Post Navigation"
 msgstr ""
 
-#: inc/theme-function.php:1486
+#: inc/theme-function.php:1488
 msgid "Related Post"
 msgstr ""
 
-#: inc/theme-function.php:1590
+#: inc/theme-function.php:1592
 #, php-format
 msgid ""
 " %1$s Theme is not activated! Please activate your theme and enjoy all "
 "features of the %2$s theme"
 msgstr ""
 
-#: inc/theme-function.php:1594
+#: inc/theme-function.php:1596
 msgid "Please activate the theme!"
 msgstr ""
 
-#: inc/theme-function.php:1596
+#: inc/theme-function.php:1598
 msgid "Activate Now"
 msgstr ""
 
-#: inc/theme-function.php:1720
+#: inc/theme-function.php:1722
 msgid "shop"
 msgstr ""
 
@@ -4914,6 +4914,7 @@ msgid "Price"
 msgstr ""
 
 #: woocommerce/cart/cart.php:33 woocommerce/cart/cart.php:134
+#: woocommerce/global/quantity-input.php:38
 msgid "Quantity"
 msgstr ""
 
@@ -4978,6 +4979,21 @@ msgstr ""
 #: woocommerce/checkout/review-order.php:142
 #: woocommerce/order/order-details.php:55
 msgid "Total"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:31
+#: woocommerce/global/quantity-input.php:59
+msgid "Product quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:38
+#, php-format
+msgid "%s quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:58
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
 msgstr ""
 
 #: woocommerce/loop/orderby.php:25

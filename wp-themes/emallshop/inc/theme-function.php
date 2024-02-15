@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @ since EmallShop 2.0
 /* --------------------------------------------------------------------- */
 function emallshop_body_classes( $classes ) {
-	$emallshop_theme 	= wp_get_theme();
+	$emallshop_theme 	= wp_get_theme('emallshop');
 	$classes[] 			= 'emallshop-v-' . $emallshop_theme->get( 'Version' );
 	
 	if( emallshop_get_option('sticky-header', 0) == 1 ){

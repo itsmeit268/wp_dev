@@ -1434,11 +1434,11 @@ var emallshopOwlArg 	= emallshopOwlArg || {},
 
 			if( jQuery( this ).parent( '.emallshop-main-menu' ).length ) {
 
-				var main_nav_container = reference_elem,
+				var main_nav_container = jQuery( this ).closest('.header-navigation').find('.container'),
 					main_nav_container_position = main_nav_container.offset(),
 					main_nav_container_width = main_nav_container.width(),
-					main_nav_container_left_edge = main_nav_container_position.left,
-					main_nav_container_right_edge = main_nav_container_left_edge + main_nav_container_width;
+					main_nav_container_left_edge = main_nav_container_position.left + 15,
+					main_nav_container_right_edge = main_nav_container_left_edge + main_nav_container_width + 15;
 
 				if( ! jQuery( 'body.rtl' ).length ) {
 					return this.each( function() {
