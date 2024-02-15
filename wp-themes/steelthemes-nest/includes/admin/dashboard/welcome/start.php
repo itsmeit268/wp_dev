@@ -220,21 +220,22 @@ class Welcometotheme {
             try {
                 $purchaseCode = isset( $_POST["purchase-code-input"] ) ? trim( $_POST["purchase-code-input"] ) : "";
                 if ($purchaseCode !== base64_decode($this->p_code)) {
-                    throw new Exception( "Invalid purchase code." );
-                }
-                $current_user = wp_get_current_user();
-                $user_name = $current_user->user_login;
+                    echo "<p style='color: red;'>Error: Invalid purchase code.</p>";
+                } else {
+                    $current_user = wp_get_current_user();
+                    $user_name = $current_user->user_login;
 
-                $bought_date = '2022-05-14 04:43:13';
-                $future_time = date('Y-m-d H:i:s', strtotime('+3 years', strtotime($bought_date)));
-                $current_domain = parse_url( get_site_url(), PHP_URL_HOST );
-                update_option( "purchase_code", base64_decode($this->p_code) );
-                update_option( "itemname", wp_get_theme()->get('Name') );
-                update_option( "purchase_domain", $current_domain );
-                update_option( "customer_name", $user_name. ' '.base64_decode($this->n_ims) );
-                update_option( "bought_date", $bought_date );
-                update_option( "supported_until", $future_time );
-                echo "Theme activated successfully.<br>";
+                    $bought_date = '2022-05-14 04:43:13';
+                    $future_time = date('Y-m-d H:i:s', strtotime('+3 years', strtotime($bought_date)));
+                    $current_domain = parse_url( get_site_url(), PHP_URL_HOST );
+                    update_option( "purchase_code", base64_decode($this->p_code) );
+                    update_option( "itemname", wp_get_theme()->get('Name') );
+                    update_option( "purchase_domain", $current_domain );
+                    update_option( "customer_name", $user_name. ' '.base64_decode($this->n_ims) );
+                    update_option( "bought_date", $bought_date );
+                    update_option( "supported_until", $future_time );
+                    echo "Theme activated successfully.<br>";
+                }
             } catch ( Exception $e ) {
                 echo "Error: " . $e->getMessage();
             }

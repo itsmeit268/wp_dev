@@ -425,6 +425,11 @@ class Merlin {
 	 * Add the admin page.
 	 */
 	public function admin_page() {
+        $isActivated = get_option('purchase_code') ? true : false;
+        if (strpos($_SERVER['REQUEST_URI'], 'page=demo-import') !== false && $isActivated == false) {
+            wp_redirect( admin_url( 'admin.php?page=nest' ) );
+            exit();
+        }
 
 		// Strings passed in from the config file.
 		$strings = $this->strings;
