@@ -9,7 +9,7 @@ Licensor's Author Username:
 PressLayouts
 
 Licensee:
-itsmeit | Technology Blogs
+Windows, Linux | Web Development
 
 Item Title:
 EmallShop - Responsive WooCommerce WordPress Theme
