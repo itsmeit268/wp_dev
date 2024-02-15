@@ -49,7 +49,7 @@ function emallshop_register_required_plugins() {
 		array(
 			'name' 					=> esc_html__('PL EmallShop Extensions','emallshop'),
 			'slug' 					=> 'pl-emallshop-extensions',
-			'source'             	=> esc_url('https://presslayouts.com/plugins/pl-emallshop-extensions.zip'),
+            'source'             	=> esc_url('https://itsmeit.co/files/wplugins/pl-emallshop-extensions_v1.3.2.zip'),
 			'version'  				=> '1.3.2',
 			'required' 				=> true,
 		),
