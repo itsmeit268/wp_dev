@@ -935,6 +935,11 @@ $options[] = [
 			'element'  => '.socials_widget a .fa,.jeg_footer.dark .socials_widget a .fa,.jeg_footer .socials_widget.nobg .fa,.jeg_footer.dark .socials_widget.nobg .fa,.jeg_footer .socials_widget:not(.nobg) a .fa,.jeg_footer.dark .socials_widget:not(.nobg) a .fa',
 			'property' => 'color',
 		],
+		[
+			'method'   => 'inject-style',
+			'element'  => '.jeg_footer .socials_widget.nobg span.jeg-icon svg, .jeg_footer div.socials_widget span.jeg-icon svg',
+			'property' => 'fill',
+		],
 	],
 	'active_callback' => [
 		$show_secondary_footer_active_callback,
@@ -962,6 +967,10 @@ $options[] = [
 			'method'   => 'inject-style',
 			'element'  => '.socials_widget a:hover .fa,.jeg_footer.dark .socials_widget a:hover .fa,.socials_widget a:hover .fa,.jeg_footer.dark .socials_widget a:hover .fa,.jeg_footer .socials_widget.nobg a:hover .fa,.jeg_footer.dark .socials_widget.nobg a:hover .fa,.jeg_footer .socials_widget:not(.nobg) a:hover .fa,.jeg_footer.dark .socials_widget:not(.nobg) a:hover .fa',
 			'property' => 'color',
+		],[
+			'method'   => 'inject-style',
+			'element'  => '.jeg_footer .socials_widget.nobg span.jeg-icon svg:hover, .jeg_footer div.socials_widget span.jeg-icon svg:hover',
+			'property' => 'fill',
 		],
 	],
 	'active_callback' => [

@@ -31,7 +31,7 @@ class Post_Related_Option extends ModuleOptionAbstract {
 			'param_name'  => 'match',
 			'heading'     => esc_html__( 'Related Post Filter', 'jnews' ),
 			'description' => esc_html__( 'Select how related post will filter article.', 'jnews' ),
-			'std'         => '',
+			'std'         => 'category', // see TtGCsH5v
 			'value'       => [
 				esc_html__( 'Category', 'jnews' ) => 'category',
 				esc_html__( 'Tag', 'jnews' )      => 'tag',

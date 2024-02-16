@@ -180,6 +180,17 @@ class Element_Socialiconitem_View extends ModuleViewAbstract {
 							</a>';
 					break;
 
+				case 'threads':
+					$svg   = true;
+					$label = ! empty( $social_vertical ) ? '<span>' . jnews_return_translation( 'Threads', 'jnews', 'threads' ) . '</span>' : '';
+					$icon  = jnews_get_svg( 'threads' );
+
+					$output .= '<a href="' . $attr['social_url'] . '" target="_blank" rel="external noopener nofollow" class="jeg_threads">
+										<span class="jeg-icon icon-threads" ' . $social_inline_css . '><div class="' . $social_svg_class . '">' . $icon . '</div></span>
+									' . $label . '
+								</a>';
+					break;
+
 				case 'twitter':
 					$svg   = true;
 					$label = ! empty( $social_vertical ) ? '<span>' . jnews_return_translation( 'Twitter', 'jnews', 'twitter' ) . '</span>' : '';

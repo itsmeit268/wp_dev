@@ -1,6 +1,9 @@
 <?php
 /**
+ * Video Attribute
+ *
  * @author Jegtheme
+ * @package jnews
  */
 
 namespace JNews\Util;
@@ -9,18 +12,28 @@ namespace JNews\Util;
  * Class JNews Video Thumbnail
  */
 class VideoAttribute {
+
 	/**
+	 * Meta Option
+	 *
 	 * @var string
 	 */
 	public static $meta_option = 'jnews_video_option';
+
 	/**
+	 * Meta Cache
+	 *
 	 * @var string
 	 */
 	public static $meta_cache = 'jnews_video_cache';
+
 	/**
+	 * Meta Duration
+	 *
 	 * @var string
 	 */
 	public static $meta_duration = 'video_duration';
+
 	/**
 	 * @var string
 	 */
@@ -31,15 +44,24 @@ class VideoAttribute {
 	 * @var string
 	 */
 	public static $meta_thumbnail = 'thumbnail';
+
 	/**
+	 * Video Attribute
+	 *
 	 * @var VideoAttribute
 	 */
 	private static $instance;
+
 	/**
+	 * Executed
+	 *
 	 * @var bool
 	 */
 	private static $executed = false;
+
 	/**
+	 * Attribute
+	 *
 	 * @var array
 	 */
 	private $attribute = array();
@@ -66,6 +88,8 @@ class VideoAttribute {
 	}
 
 	/**
+	 * Instance
+	 *
 	 * @return VideoAttribute
 	 */
 	public static function getInstance() {
@@ -104,7 +128,9 @@ class VideoAttribute {
 	}
 
 	/**
-	 * Print API notice
+	 * Method print_api_notice
+	 *
+	 * @return void
 	 */
 	public function print_api_notice() {
 		?>
@@ -144,7 +170,9 @@ class VideoAttribute {
 	}
 
 	/**
-	 * Dismiss api notice
+	 * Method dismiss_api_notice
+	 *
+	 * @return void
 	 */
 	public function dismiss_api_notice() {
 		update_option( 'jnews_dismiss_api_notice', true );
@@ -162,7 +190,7 @@ class VideoAttribute {
 	/**
 	 * Video Post Thumbnail
 	 *
-	 * @param integer $post_id
+	 * @param integer $post_id post id.
 	 */
 	public function video_attribute( $post_id ) {
 		if ( ! self::$executed ) {
@@ -174,10 +202,8 @@ class VideoAttribute {
 
 				if ( isset( $_POST['_format_video_embed'] ) ) {
 					$video_url = sanitize_textarea_field( $_POST['_format_video_embed'] );
-				} else {
-					if ( isset( $_POST['jnews_single_post']['video'] ) ) {
+				} elseif ( isset( $_POST['jnews_single_post']['video'] ) ) {
 						$video_url = sanitize_textarea_field( $_POST['jnews_single_post']['video'] );
-					}
 				}
 
 				if ( ! isset( $attribute['url'] ) || ( isset( $attribute['url'] ) && $attribute['url'] != $video_url ) ) {
@@ -194,7 +220,7 @@ class VideoAttribute {
 	/**
 	 * Get Video Attribute
 	 *
-	 * @param $video_url
+	 * @param string $video_url video url.
 	 *
 	 * @return array
 	 */
@@ -229,7 +255,7 @@ class VideoAttribute {
 	/**
 	 * Get video id
 	 *
-	 * @param string $video_url
+	 * @param string $video_url video url.
 	 *
 	 * @return string
 	 */
@@ -240,32 +266,32 @@ class VideoAttribute {
 		if ( $video_type == 'youtube' ) {
 			$regexes = array(
 				'#(?:https?:)?//www\.youtube(?:\-nocookie|\.googleapis)?\.com/(?:v|e|embed)/([A-Za-z0-9\-_]+)#',
-				// Comprehensive search for both iFrame and old school embeds
+				// Comprehensive search for both iFrame and old school embeds.
 				'#(?:https?(?:a|vh?)?://)?(?:www\.)?youtube(?:\-nocookie)?\.com/watch\?.*v=([A-Za-z0-9\-_]+)#',
-				// Any YouTube URL. After http(s) support a or v for Youtube Lyte and v or vh for Smart Youtube plugin
+				// Any YouTube URL. After http(s) support a or v for Youtube Lyte and v or vh for Smart Youtube plugin.
 				'#(?:https?(?:a|vh?)?://)?youtu\.be/([A-Za-z0-9\-_]+)#',
-				// Any shortened youtu.be URL. After http(s) a or v for Youtube Lyte and v or vh for Smart Youtube plugin
+				// Any shortened youtu.be URL. After http(s) a or v for Youtube Lyte and v or vh for Smart Youtube plugin.
 				'#<div class="lyte" id="([A-Za-z0-9\-_]+)"#',
-				// YouTube Lyte
+				// YouTube Lyte.
 				'#data-youtube-id="([A-Za-z0-9\-_]+)"#',
-				// LazyYT.js
+				// LazyYT.js.
 				'#(?:https?(?:a|vh?)?://)?(?:www\.)?(?:youtu\.be/|youtube(?:\-nocookie)?\.com/(?:(?:watch|ytscreeningroom|playlist)\?(?:.*v=|v/|embed/|list=))?)(?:([A-Za-z0-9\-_]+)?(?:.*list=([A-Za-z0-9\-_]+))?)#',
-				// Detect playlist
+				// Detect playlist.
 			);
 
 			foreach ( $regexes as $regex ) {
 				if ( preg_match( $regex, $video_url, $matches ) ) {
 					$video_id = $matches[1];
 					if ( strpos( $video_url, 'list=' ) > 0 ) {
-					    $video_id = array(
-					            'playlist' => $matches[1]
-                        );
-					    if ( isset( $matches[2] ) ) {
-						    $video_id = array(
-							    'id'       => $matches[1],
-							    'playlist' => isset( $matches[2] ) ? $matches[2] : '',
-						    );
-                        }
+						$video_id = array(
+							'playlist' => $matches[1],
+						);
+						if ( isset( $matches[2] ) ) {
+							$video_id = array(
+								'id'       => $matches[1],
+								'playlist' => isset( $matches[2] ) ? $matches[2] : '',
+							);
+						}
 					}
 				}
 			}
@@ -274,19 +300,19 @@ class VideoAttribute {
 		if ( $video_type == 'vimeo' ) {
 			$regexes = array(
 				'#<object[^>]+>.+?http://vimeo\.com/moogaloop.swf\?clip_id=([A-Za-z0-9\-_]+)&.+?</object>#s',
-				// Standard Vimeo embed code
+				// Standard Vimeo embed code.
 				'#(?:https?:)?//player\.vimeo\.com/video/([0-9]+)#',
-				// Vimeo iframe player
+				// Vimeo iframe player.
 				'#\[vimeo id=([A-Za-z0-9\-_]+)]#',
-				// JR_embed shortcode
+				// JR_embed shortcode.
 				'#\[vimeo clip_id="([A-Za-z0-9\-_]+)"[^>]*]#',
-				// Another shortcode
+				// Another shortcode.
 				'#\[vimeo video_id="([A-Za-z0-9\-_]+)"[^>]*]#',
-				// Yet another shortcode
+				// Yet another shortcode.
 				'#(?:https?://)?(?:www\.)?vimeo\.com/([0-9]+)#',
-				// Vimeo URL
+				// Vimeo URL.
 				'#(?:https?://)?(?:www\.)?vimeo\.com/channels/(?:[A-Za-z0-9]+)/([0-9]+)#',
-				// Channel URL
+				// Channel URL.
 			);
 
 			foreach ( $regexes as $regex ) {
@@ -299,13 +325,13 @@ class VideoAttribute {
 		if ( $video_type == 'dailymotion' ) {
 			$regexes = array(
 				'#<object[^>]+>.+?http://www\.dailymotion\.com/swf/video/([A-Za-z0-9]+).+?</object>#s',
-				// Dailymotion flash
+				// Dailymotion flash.
 				'#//www\.dailymotion\.com/embed/video/([A-Za-z0-9]+)#',
-				// Dailymotion iframe
+				// Dailymotion iframe.
 				'#(?:https?://)?(?:www\.)?dailymotion\.com/video/([A-Za-z0-9]+)#',
-				// Dailymotion URL
+				// Dailymotion URL.
 				'#(?:https?://)?(?:www\.)?dai\.ly/([A-Za-z0-9]+)#',
-				// Dailymotion short URL
+				// Dailymotion short URL.
 			);
 
 			foreach ( $regexes as $regex ) {
@@ -321,7 +347,7 @@ class VideoAttribute {
 	/**
 	 * Get video provider
 	 *
-	 * @param string $video_url
+	 * @param string $video_url video url.
 	 *
 	 * @return string
 	 */
@@ -335,7 +361,7 @@ class VideoAttribute {
 			return 'vimeo';
 		} elseif ( strpos( $video_url, 'dailymotion' ) > 0 || strpos( $video_url, 'dai.ly' ) > 0 ) {
 			return 'dailymotion';
-		} elseif ( $video_format === 'mp4' ) {
+		} elseif ( 'mp4' === $video_format ) {
 			return 'mp4';
 		} elseif ( wp_oembed_get( $video_url ) ) {
 			return 'oembed';
@@ -346,7 +372,7 @@ class VideoAttribute {
 	/**
 	 * Get YouTube Attribute
 	 *
-	 * @param $video_id
+	 * @param int $video_id video id.
 	 *
 	 * @return array
 	 */
@@ -383,7 +409,7 @@ class VideoAttribute {
 			}
 		}
 
-		// Get short video
+		// Get short video.
 		$search_url     = "https://www.youtube.com/results?search_query=\"{$video_id}\"";
 		$youtube_search = wp_remote_get(
 			$search_url,
@@ -403,6 +429,13 @@ class VideoAttribute {
 		return $video_detail;
 	}
 
+	/**
+	 * Method youtube_category
+	 *
+	 * @param int $catid $catid.
+	 *
+	 * @return array
+	 */
 	public function youtube_category( $catid ) {
 		$taxonomy        = array();
 		$category_detail = array();
@@ -417,7 +450,7 @@ class VideoAttribute {
 				$term              = $this->create_taxonomy( $taxonomy );
 				if ( ! is_wp_error( $term ) ) {
 					$term_exist = term_exists( (int) $term, 'category' );
-					if ( $term_exist['term_id'] !== 0 && $term_exist['term_id'] !== null ) {
+					if ( 0 !== $term_exist['term_id'] && null !== $term_exist['term_id'] ) {
 						$category_detail = array(
 							'name' => $taxonomy['title'],
 							'id'   => $term,
@@ -442,13 +475,14 @@ class VideoAttribute {
 		);
 		$args = wp_parse_args( $args, $default );
 		$args = sanitize_term( $args, $args['taxonomy'], 'db' );
-		// expected_slashed ($name)
+		// expected_slashed ($name).
 		$name     = wp_unslash( $args['title'] );
 		$taxonomy = $args['taxonomy'];
 		$parent   = (int) $args['parent'];
 
 		$slug_provided = ! empty( $args['slug'] );
 		$slug          = ! $slug_provided ? sanitize_title( $name ) : $args['slug'];
+
 		/*
 		 * Prevent the creation of terms with duplicate names at the same level of a taxonomy hierarchy,
 		 * unless a unique slug has been explicitly provided.
@@ -524,7 +558,7 @@ class VideoAttribute {
 	/**
 	 * Unescape UTF8
 	 *
-	 * @param $str
+	 * @param string $str str.
 	 *
 	 * @return null|string|string[]
 	 */
@@ -541,7 +575,7 @@ class VideoAttribute {
 	/**
 	 * Get Vimeo Attribute
 	 *
-	 * @param $video_id
+	 * @param int $video_id video id.
 	 *
 	 * @return array
 	 */
@@ -573,7 +607,7 @@ class VideoAttribute {
 	/**
 	 * Get Daily Motion Attribute
 	 *
-	 * @param $video_id
+	 * @param int $video_id video id.
 	 *
 	 * @return array
 	 */
@@ -598,7 +632,7 @@ class VideoAttribute {
 					$term                    = $this->create_taxonomy( $taxonomy );
 					if ( ! is_wp_error( $term ) ) {
 						$term_exist = term_exists( (int) $term, 'category' );
-						if ( $term_exist !== 0 && $term_exist !== null ) {
+						if ( 0 !== $term_exist && null !== $term_exist ) {
 							$video_detail['category'] = array(
 								'name' => $taxonomy['title'],
 								'id'   => $term,
@@ -615,28 +649,29 @@ class VideoAttribute {
 	/**
 	 * Save attribute to Post
 	 *
-	 * @param $attribute
-	 * @param $post_id
+	 * @param array $attribute attribute.
+	 * @param int   $post_id post id.
+	 * @param int   $video_url video url.
 	 *
 	 * @return array
 	 */
 	public function save_attribute_to_post( $attribute, $post_id, $video_url ) {
-		// save thumbnail first
+		// save thumbnail first.
 		if ( isset( $attribute[ self::$meta_thumbnail ] ) && ! get_post_thumbnail_id( $post_id ) ) {
 			$attachment_id = $this->save_to_media_library( $post_id, $attribute[ self::$meta_thumbnail ] );
 			$this->set_featured_image( $post_id, $attachment_id, $video_url );
 			$attribute[ self::$meta_thumbnail ] = $attachment_id;
 		}
 
-		// save duration
+		// save duration.
 		if ( isset( $attribute['duration'] ) && ! empty( $attribute['duration'] ) ) {
 			$this->attribute[ self::$meta_duration ] = $attribute['duration'];
 		}
 
-		// save preview
+		// save preview.
 		if ( isset( $attribute['video_preview'] ) && ! empty( $attribute['video_preview'] ) ) {
-            add_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99, 0 );
-			$attachment                             = $this->save_to_media_library( $post_id, $attribute['video_preview'] );
+			add_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99, 0 );
+			$attachment = $this->save_to_media_library( $post_id, $attribute['video_preview'] );
 			remove_filter( 'intermediate_image_sizes_advanced', '__return_empty_array', 99 );
 			$this->attribute[ self::$meta_preview ] = wp_get_attachment_url( $attachment );
 			$attribute[ self::$meta_preview ]       = $attachment;
@@ -650,21 +685,21 @@ class VideoAttribute {
 	/**
 	 * Save video thumbnail into media library
 	 *
-	 * @param integer $post_id
-	 * @param string  $thumbnail_url
+	 * @param integer $post_id post id.
+	 * @param string  $thumbnail_url thumbnail url.
 	 *
 	 * @return integer thumbnail id
 	 */
 	public function save_to_media_library( $post_id, $thumbnail_url ) {
-		// error_log( var_export( 'Fetch the image', true ) );
+		// error_log( var_export( 'Fetch the image', true ) ); .
 		$response = wp_remote_get(
 			$thumbnail_url,
 			array(
 				'timeout' => 20,
 			)
 		);
-		// error_log( var_export( 'Success : ' . ! is_wp_error( $response ), true ) );
-		// error_log( var_export( 'Response code : ' . $response['response']['code'], true ) );
+		// error_log( var_export( 'Success : ' . ! is_wp_error( $response ), true ) ); .
+		// error_log( var_export( 'Response code : ' . $response['response']['code'], true ) ); .
 
 		if ( ! is_wp_error( $response ) && $response['response']['code'] == '200' ) {
 			$supported_image = array( 'jpeg', 'jpg', 'png', 'gif', 'webp' );
@@ -673,7 +708,7 @@ class VideoAttribute {
 			$image_type      = wp_remote_retrieve_header( $response, 'content-type' );
 
 			// Translate MIME type into an extension
-			// error_log( var_export( 'Image type : ' . $image_type , true ) );
+			// error_log( var_export( 'Image type : ' . $image_type , true ) ); .
 			if ( $image_type == 'image/' . $supported_image[0] || $image_type == 'image/' . $supported_image[1] ) {
 				$image_extension = '.jpg';
 			} elseif ( $image_type == 'image/' . $supported_image[2] ) {
@@ -692,9 +727,9 @@ class VideoAttribute {
 			}
 
 			$filename = $this->construct_filename( $post_id ) . $image_extension;
-			// error_log( var_export( 'Upload Image', true ) );
+			// error_log( var_export( 'Upload Image', true ) ); .
 			$upload = wp_upload_bits( $filename, null, $image_content );
-			// error_log( var_export( 'Success : ' . ! $upload['error'], true ) );
+			// error_log( var_export( 'Success : ' . ! $upload['error'], true ) ); .
 			if ( ! $upload['error'] ) {
 				$wp_filetype = wp_check_filetype( basename( $upload['file'] ), null );
 
@@ -708,7 +743,7 @@ class VideoAttribute {
 					'sideload'
 				);
 
-				// Contstruct the attachment array
+				// Contstruct the attachment array.
 				$attachment = array(
 					'post_mime_type' => $upload['type'],
 					'post_title'     => get_the_title( $post_id ),
@@ -716,7 +751,7 @@ class VideoAttribute {
 					'post_status'    => 'inherit',
 				);
 
-				// Insert the attachment
+				// Insert the attachment.
 				$attach_id = wp_insert_attachment( $attachment, $upload['file'], $post_id );
 				if ( ! strpos( $image_content, 'ANMF' ) || ! strpos( $image_content, 'ANMF' ) ) {
 					require_once ABSPATH . 'wp-admin/includes/image.php';
@@ -732,7 +767,7 @@ class VideoAttribute {
 	/**
 	 * Create filename for image thumbnail
 	 *
-	 * @param integer $post_id
+	 * @param integer $post_id post id.
 	 *
 	 * @return string
 	 */
@@ -750,9 +785,9 @@ class VideoAttribute {
 	/**
 	 * Set post thumbnail
 	 *
-	 * @param integer $post_id
-	 * @param integer $attach_id
-	 * @param string  $video_url
+	 * @param integer $post_id post id.
+	 * @param integer $attach_id  attach id.
+	 * @param string  $video_url video url.
 	 */
 	public function set_featured_image( $post_id, $attach_id, $video_url ) {
 		set_post_thumbnail( $post_id, $attach_id );
@@ -761,7 +796,8 @@ class VideoAttribute {
 	/**
 	 * Remove Attachment
 	 *
-	 * @param $attribute
+	 * @param array $attribute attribute.
+	 * @param int   $post_id post_id.
 	 */
 	public function remove_attachment( $attribute, $post_id ) {
 		if ( isset( $attribute['thumbnail'] ) && ctype_digit( $attribute['thumbnail'] ) && ! get_post_thumbnail_id( $post_id ) ) {

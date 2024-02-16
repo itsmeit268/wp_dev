@@ -1,5 +1,53 @@
 Change Log:
 
+=== 11.2.1 ===
+- [IMPROVEMENT] Add option to use new dropdown menu in mobile menu drawer content
+- [IMPROVEMENT] Add options to filter displayed users based on specific roles on the Pay Writer Stats page
+- [IMPROVEMENT] Add the WeatherAPI for the new Weather Forecast Source
+- [BUG] Fix two Podcast Series options appear in Classic Editor
+- [BUG] Fix Custom Font variant not working
+- [BUG] Fix the margin of the Badge and Arrow icons in the header menu on the RTL theme
+- [BUG] Fix the tooltips in the Header Builder on the RTL theme
+- [BUG] Fixing the issue of empty content being added in JNews Hero 6 on mobile devices.
+- [BUG] Fix deprecated warning on paywall
+- [BUG] Fix YouTube playlist cache not working
+- [BUG] Fix custom templates not working with Multilanguage
+- [BUG] Fix subscriptions not automatically updated when using the woocommerce high-performance order storage
+- [BUG] Fix discount price display issue in JNews Post Package
+- [PLUGIN] Update WPBakery Page Builder v7.3
+- [PLUGIN] Update JNews - Essential v11.0.8
+- [PLUGIN] Update JNews - Podcast v11.0.4
+- [PLUGIN] Update JegAI Assistant v1.2.2
+- [PLUGIN] Update JNews - Pay Writer v11.0.2
+- [PLUGIN] Update JNews - Frontend Submit v11.0.1
+- [PLUGIN] Update JNews - Paywall v11.0.4
+- [PLUGIN] Update JNews - Weather v11.0.2
+
+=== 11.2.0 ===
+- [IMPROVEMENT] Add Timezone in datePublished, dateModified and dateCreated fields in Article JSON Schema
+- [IMPROVEMENT] Changing the registered username from the email to a random username generated from the user's name in JNews - Social Login
+- [IMPROVEMENT] Add Thread to social icon
+- [New Demo] ESport
+- [New Demo] SEO
+- [PLUGIN] Update WPBakery Page Builder v7.2
+- [PLUGIN] Update JNews - JSON LD Rich Snippet v11.0.3
+- [PLUGIN] Update JNews - Social Login v11.0.3
+
+=== 11.1.5 ===
+- [IMPROVEMENT] Add enable and disable JNews style on Gutenberg editor option on customizer
+- [IMPROVEMENT] Change the Manual Pay button to Mark As Paid
+- [BUG] Fix Related Post pagination not working if JNews - Gallery added in the single post
+- [BUG] Fix block / column width options not work in JNews - Related Post Module
+- [BUG] Fix default options in Blog Page Schema type
+- [BUG] Fix undefined index view in Post Earning Status
+- [BUG] Fix Enable Fix Amount Donation option issue
+- [BUG] Fix double breadcrumb JSON Schema
+- [BUG] Fix Twitter and Facebook share card issue
+- [PLUGIN] Update JNews - JSON LD Rich Snippet v11.0.2
+- [PLUGIN] Update JNews - Pay Writer v11.0.1
+- [PLUGIN] Update JNews - Meta Header v11.0.3
+- [PLUGIN] Update JNews - Essential v11.0.7
+
 === 11.1.3 ===
 - [IMPROVEMENT] Change Twitter logo to Twitter X in JNews Popular Widget
 - [IMPROVEMENT] Improve the User List Element style for the subscribe button

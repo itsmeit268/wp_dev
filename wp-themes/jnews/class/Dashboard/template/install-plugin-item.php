@@ -1,6 +1,7 @@
 <?php
 $plugin_instance = $instance->get_tgm_instance()->plugins[$plugin['slug']];
 // $plugin_activated = jnews_plugin_active($instance->get_tgm_instance(), $plugin['slug']);
+
 $plugin_activated = $instance->get_tgm_instance()->is_plugin_active($plugin['slug']);
 
 $plugin_installed = $instance->get_tgm_instance()->is_plugin_installed($plugin['slug']);

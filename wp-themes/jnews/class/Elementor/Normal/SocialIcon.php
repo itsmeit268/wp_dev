@@ -169,6 +169,7 @@ class SocialIcon extends Widget_Base {
 							'snapchat'      => esc_attr__( 'Snapchat', 'jnews' ),
 							'whatsapp'      => esc_attr__( 'Whatsapp', 'jnews' ),
 							'line'          => esc_attr__( 'Line', 'jnews' ),
+							'threads'       => esc_attr__( 'Thrads', 'jnews' ),
 						),
 						'default'     => '',
 						'label_block' => true,
@@ -212,7 +213,7 @@ class SocialIcon extends Widget_Base {
 		$bg_color_css   = ( $style != 'nobg' ) && ! empty( $bg_color ) ? 'background-color:' . $bg_color . ';' : '';
 		$icon_color_css = ! empty( $icon_color ) ? 'color:' . $icon_color . ';' : '';
 		$inline_css     = ! empty( $bg_color_css ) || ! empty( $icon_color_css ) ? 'style="' . $bg_color_css . $icon_color_css . '"' : '';
-		$svg_css        = ! empty( $icon_color ) ? '.socials_widget a .jeg-icon .' . $jeg_icon_class . ' svg{fill:' . $icon_color . ';} .socials_widget.nobg a .jeg-icon .' . $jeg_icon_class . ' svg{fill:' . $icon_color . ';}' : '';
+		$svg_css        = ! empty( $icon_color ) ? '.socials_widget a .jeg-icon .' . $jeg_icon_class . ' svg{fill:' . $icon_color . ';} .socials_widget.nobg a .jeg-icon .' . $jeg_icon_class . ' svg ,.jeg_footer .socials_widget a .jeg-icon .' . $jeg_icon_class . ' svg{fill:' . $icon_color . ';} .socials_widget.nobg a .jeg-icon .' . $jeg_icon_class . ' svg {fill:' . $icon_color . ';}' : '';
 
 		$vertical = ! empty( $vertical ) ? true : false;
 
@@ -387,6 +388,17 @@ class SocialIcon extends Widget_Base {
 											<span class="jeg-icon icon-tiktok" ' . $inline_css . '><div class="' . $jeg_icon_class . '"> ' . $icon . ' </div></span>
 											' . $label . '
 										</a>';
+								break;
+
+							case 'threads':
+								$svg   = true;
+								$label = $vertical ? '<span>' . jnews_return_translation( 'Threads', 'jnews', 'threads' ) . '</span>' : '';
+								$icon  = jnews_get_svg( 'threads' );
+
+								$output .= '<a href="' . $social['social_url'] . '" target="_blank" rel="external noopener nofollow" class="jeg_threads">
+												<span class="jeg-icon icon-threads" ' . $inline_css . '><div class="' . $jeg_icon_class . '"> ' . $icon . ' </div></span>
+												' . $label . '
+											</a>';
 								break;
 
 							case 'line':

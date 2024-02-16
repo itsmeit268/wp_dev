@@ -585,9 +585,9 @@ Class SinglePost {
 	public function render_breadcrumb( $render = true ) {
 		if ( $render ) {
 			echo jnews_render_breadcrumb();
+		} else {
+			return jnews_render_breadcrumb();
 		}
-
-		return jnews_render_breadcrumb();
 	}
 
 	/**

@@ -1,7 +1,11 @@
 <?php
 /**
+ * Init
+ *
  * @author : Jegtheme
+ * @package jnews
  */
+
 namespace JNews;
 
 use JNews\Asset\BackendAsset;
@@ -44,10 +48,15 @@ use JNews\Widget\WidgetTitle;
 class Init {
 
 	/**
+	 * Instance
+	 *
 	 * @var Init
 	 */
 	private static $instance;
+
 	/**
+	 * Instance
+	 *
 	 * @return Init
 	 */
 	public static function getInstance() {
@@ -57,6 +66,11 @@ class Init {
 		return static::$instance;
 	}
 
+	/**
+	 * Method __construct
+	 *
+	 * @return void
+	 */
 	private function __construct() {
 		$this->load_helper();
 		$this->init_themes();
@@ -68,200 +82,17 @@ class Init {
 		}
 	}
 
-	public function load_helper() {
-		defined( 'JNEWS_THEME_DIR_PLUGIN' ) || define( 'JNEWS_THEME_DIR_PLUGIN', JNEWS_THEME_DIR . 'plugins/' );
-		defined( 'JNEWS_THEME_SERVER' ) || define( 'JNEWS_THEME_SERVER', 'https://jnews.io/' );
-		defined( 'JEGTHEME_SERVER' ) || define( 'JEGTHEME_SERVER', 'https://support.jegtheme.com/' );
-		// Load Plugin Helper
-		require_once get_parent_theme_file_path( 'lib/theme-helper.php' );
-		require_once get_parent_theme_file_path( 'lib/theme-filter.php' );
-
-		// Load class helper if there's no essential
-		if ( defined( 'JNEWS_ESSENTIAL' ) ) {
-			$this->essential_script();
-		} else {
-			require_once get_parent_theme_file_path( 'lib/class-helper.php' );
-		}
-
-	}
-
-	public function populate_metabox() {
-		new Metabox();
-	}
-
-	public function load_textdomain() {
-		load_theme_textdomain( 'jnews', get_parent_theme_file_path( 'languages' ) );
-	}
-
-	public function multilang() {
-		if ( class_exists( 'Polylang' ) ) {
-			// multilanguage
-			Polylang::getInstance();
-		}
-
-		if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
-			// WPML multilanguage
-			WPML::getInstance();
-		}
-	}
-
-	public function init_themes() {
-		// Rest API
-		RestAPI::instance();
-
-		// Themes Menu
-		Menu::getInstance();
-
-		// Initialize Image
-		Image::getInstance();
-
-		// Customizer
-		Customizer::getInstance();
-
-		// SchemeStyle
-		SchemeStyle::instance();
-
-		// Dashboard
-		AdminDashboard::getInstance();
-
-		// Multi language Initialize
-		$this->multilang();
-
-		GoogleAnalytics::getInstance();
-
-		GoogleFonts::getInstance();
-
-		// Updater.
-		Updater::instance();
-
-		if ( is_admin() ) {
-			// Back End
-
-			// License
-			ValidateLicense::getInstance();
-
-			// load backend asset
-			BackendAsset::getInstance();
-
-		} else {
-			// Front End
-
-			// Frontend Ajax
-			FrontendAjax::getInstance();
-
-			// load google analytics
-
-			// load frontend asset
-			FrontendAsset::getInstance();
-
-			// Comment Number
-			CommentNumber::getInstance();
-
-			// Google Captcha
-			Captcha::getInstance();
-		}
-
-		// Load Widget
-		$this->load_widget();
-	}
-
-	public function essential_script() {
-		// Custom Mega Menu
-		CustomMegaMenu::getInstance();
-
-		// Footer Builder
-		FooterBuilder::getInstance();
-
-		// Archive Builder
-		ArchiveBuilder::getInstance();
-
-		// Single Post Builder
-		SinglePostTemplate::getInstance();
-
-		// Account Page
-		AccountPage::getInstance();
-
-		// Social Callback
-		SocialCallback::getInstance();
-
-		// Init Gutenberg
-		Gutenberg::getInstance();
-
-		 // Need to load video attribute
-		 VideoAttribute::getInstance();
-
-		 // Shortcode
-		 Shortcode::getInstance();
-
-		if ( is_admin() ) {
-			// Back End
-			// Load header builder on backend
-			HeaderBuilder::getInstance();
-		} else {
-			// Front End
-
-			// Style Helper
-			StyleHelper::getInstance();
-
-			 // Ads
-			Ads::getInstance();
-		}
-
-		// Load Visual Composer
-		$this->load_module();
-
-		$this->populate_metabox();
-	}
-
-	public function load_module() {
-		ModuleManager::getInstance();
-		if ( defined( 'WPB_VC_VERSION' ) ) {
-			ModuleVC::getInstance();
-		}
-		if ( defined( 'ELEMENTOR_VERSION' ) ) {
-			ModuleElementor::getInstance();
-		}
-	}
-
-	public function load_widget() {
-		Widget::getInstance();
-		WidgetTitle::getInstance();
-
-		if ( apply_filters( 'jnews_load_all_widget', false ) ) {
-			$this->load_widget_element();
-		}
-	}
-
-	public function load_widget_element() {
-		global $pagenow;
-		EditWidgetArea::getInstance();
-		AdditionalWidget::getInstance();
-		if ( $pagenow === 'widgets.php' || $pagenow === 'post.php' || $pagenow === 'admin-ajax.php' || is_customize_preview() || ! is_admin() || apply_filters( 'jnews_load_register_widget', false ) ) {
-			RegisterNormalWidget::getInstance();
-			RegisterModuleWidget::getInstance();
-		}
-	}
-
-	public function setup_hook() {
-		define( 'YP_THEME_MODE', 'true' );
-
-		add_action( 'admin_init', array( $this, 'disable_vc_auto_update' ), 9 );
-		add_action( 'after_setup_theme', array( $this, 'themes_support' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'load_admin_style' ) );
-		add_action( 'customize_preview_init', array( $this, 'preview_init' ) );
-		add_action( 'admin_head', array( $this, 'admin_ajax_url' ), 1 );
-		add_action( 'after_switch_theme', array( $this, 'flush_rewrite_rules' ) );
-
-		if ( apply_filters( 'jnews_load_post_subtitle', false ) ) {
-			// Post Subtitle Field
-			add_action( 'edit_form_before_permalink', array( $this, 'post_subtitle_field' ) );
-			add_action( 'edit_post', array( $this, 'post_subtitle' ) );
-			add_action( 'save_post', array( $this, 'post_subtitle' ) );
-		}
-		add_action( 'admin_notices', array( $this, 'plugin_update_notice' ) );
-
-		add_filter( 'jquery_migrate_panel', array( $this, 'migrate_panel' ) );
-		add_action( 'jnews_update_themes', array( $this, 'update_themes' ) );
+	/**
+	 * Method admin_ajax_url
+	 *
+	 * @return void
+	 */
+	public function admin_ajax_url() {
+		?>
+		<script type="text/javascript">
+			var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
+		</script>
+		<?php
 	}
 
 	/**
@@ -275,23 +106,263 @@ class Init {
 	}
 
 	/**
-	 * Provide custom schedule update status for themes
+	 * Method essential_script
+	 *
+	 * @return void
 	 */
-	public function update_themes() {
-		AdminDashboard::getInstance();
-		if ( is_admin() || wp_doing_cron() ) {
-			$validate  = ValidateLicense::getInstance();
-			$transient = get_site_transient( 'update_themes' );
-			$transient = $validate->transient_update_themes( $transient );
+	public function essential_script() {
+		// Custom Mega Menu.
+		CustomMegaMenu::getInstance();
 
-			set_site_transient( 'update_themes', $transient );
+		// Footer Builder.
+		FooterBuilder::getInstance();
+
+		// Archive Builder.
+		ArchiveBuilder::getInstance();
+
+		// Single Post Builder.
+		SinglePostTemplate::getInstance();
+
+		// Account Page.
+		AccountPage::getInstance();
+
+		// Social Callback.
+		SocialCallback::getInstance();
+
+		// Init Gutenberg.
+		Gutenberg::getInstance();
+
+		// Need to load video attribute.
+		VideoAttribute::getInstance();
+
+		// Shortcode.
+		Shortcode::getInstance();
+
+		if ( is_admin() ) {
+			// Back End
+			// Load header builder on backend.
+			HeaderBuilder::getInstance();
+		} else {
+			// Front End.
+
+			// Style Helper.
+			StyleHelper::getInstance();
+
+			// Ads.
+			Ads::getInstance();
+		}
+
+		// Load Visual Composer.
+		$this->load_module();
+
+		$this->populate_metabox();
+	}
+
+	/**
+	 * Method flush_rewrite_rules
+	 *
+	 * @return void
+	 */
+	public function flush_rewrite_rules() {
+		// $this->add_rewrite_rule();
+
+		global $wp_rewrite;
+		$wp_rewrite->flush_rules();
+	}
+
+	/**
+	 * Method init_themes
+	 *
+	 * @return void
+	 */
+	public function init_themes() {
+		// Rest API.
+		RestAPI::instance();
+
+		// Themes Menu.
+		Menu::getInstance();
+
+		// Initialize Image.
+		Image::getInstance();
+
+		// Customizer.
+		Customizer::getInstance();
+
+		// SchemeStyle.
+		SchemeStyle::instance();
+
+		// Dashboard.
+		AdminDashboard::getInstance();
+
+		// Multi language Initialize.
+		$this->multilang();
+
+		GoogleAnalytics::getInstance();
+
+		GoogleFonts::getInstance();
+
+		// Updater.
+		Updater::instance();
+
+		if ( is_admin() ) {
+			// Back End.
+
+			// License.
+			ValidateLicense::getInstance();
+
+			// load backend asset.
+			BackendAsset::getInstance();
+
+		} else {
+			// Front End.
+
+			// Frontend Ajax.
+			FrontendAjax::getInstance();
+
+			// load google analytics.
+
+			// load frontend asset.
+			FrontendAsset::getInstance();
+
+			// Comment Number.
+			CommentNumber::getInstance();
+
+			// Google Captcha.
+			Captcha::getInstance();
+		}
+
+		// Load Widget.
+		$this->load_widget();
+	}
+
+	/**
+	 * Method load_helper
+	 *
+	 * @return void
+	 */
+	public function load_helper() {
+		defined( 'JNEWS_THEME_DIR_PLUGIN' ) || define( 'JNEWS_THEME_DIR_PLUGIN', JNEWS_THEME_DIR . 'plugins/' );
+		defined( 'JNEWS_THEME_SERVER' ) || define( 'JNEWS_THEME_SERVER', 'https://jnews.io/' );
+		defined( 'JEGTHEME_SERVER' ) || define( 'JEGTHEME_SERVER', 'https://support.jegtheme.com/' );
+		// Load Plugin Helper.
+		require_once get_parent_theme_file_path( 'lib/theme-helper.php' );
+		require_once get_parent_theme_file_path( 'lib/theme-filter.php' );
+
+		// Load class helper if there's no essential.
+		if ( defined( 'JNEWS_ESSENTIAL' ) ) {
+			$this->essential_script();
+		} else {
+			require_once get_parent_theme_file_path( 'lib/class-helper.php' );
 		}
 	}
 
+	/**
+	 * Method load_textdomain
+	 *
+	 * @return void
+	 */
+	public function load_textdomain() {
+		load_theme_textdomain( 'jnews', get_parent_theme_file_path( 'languages' ) );
+	}
+
+	/**
+	 * Method load_module
+	 *
+	 * @return void
+	 */
+	public function load_module() {
+		ModuleManager::getInstance();
+		if ( defined( 'WPB_VC_VERSION' ) ) {
+			ModuleVC::getInstance();
+		}
+		if ( defined( 'ELEMENTOR_VERSION' ) ) {
+			ModuleElementor::getInstance();
+		}
+	}
+
+	/**
+	 * Method load_widget
+	 *
+	 * @return void
+	 */
+	public function load_widget() {
+		Widget::getInstance();
+		WidgetTitle::getInstance();
+
+		if ( apply_filters( 'jnews_load_all_widget', false ) ) {
+			$this->load_widget_element();
+		}
+	}
+
+	/**
+	 * Method load_widget_element
+	 *
+	 * @return void
+	 */
+	public function load_widget_element() {
+		global $pagenow;
+		EditWidgetArea::getInstance();
+		AdditionalWidget::getInstance();
+		if ( 'widgets.php' === $pagenow || 'post.php' === $pagenow || 'admin-ajax.php' === $pagenow || is_customize_preview() || ! is_admin() || apply_filters( 'jnews_load_register_widget', false ) ) {
+			RegisterNormalWidget::getInstance();
+			RegisterModuleWidget::getInstance();
+		}
+	}
+
+	/**
+	 * Method load_admin_style
+	 *
+	 * @return void
+	 */
+	public function load_admin_style() {
+		add_editor_style( get_parent_theme_file_uri( 'assets/css/admin/editor.css' ) );
+		if ( is_rtl() ) {
+			add_editor_style( get_parent_theme_file_uri( 'assets/css/admin/editor-rtl.css' ) );
+		}
+	}
+
+	/**
+	 * Method multilang
+	 *
+	 * @return void
+	 */
+	public function multilang() {
+		if ( class_exists( 'Polylang' ) ) {
+			// multilanguage.
+			Polylang::getInstance();
+		}
+
+		if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
+			// WPML multilanguage.
+			WPML::getInstance();
+		}
+	}
+
+	/**
+	 * Method migrate_panel
+	 *
+	 * @param string $panel $panel.
+	 *
+	 * @return string
+	 */
 	public function migrate_panel( $panel ) {
 		return 'jnews_global_panel';
 	}
 
+	/**
+	 * Method populate_metabox
+	 *
+	 * @return void
+	 */
+	public function populate_metabox() {
+		new Metabox();
+	}
+
+	/**
+	 * Method plugin_update_notice
+	 *
+	 * @return void
+	 */
 	public function plugin_update_notice() {
 		if ( is_admin() ) {
 			$plugins = \JNews\Util\Api\Plugin::get_plugin_list();
@@ -299,6 +370,14 @@ class Init {
 		}
 	}
 
+	/**
+	 * Method plugin_update_notice_text
+	 *
+	 * @param array  $plugin $plugin.
+	 * @param string $action $action.
+	 *
+	 * @return string
+	 */
 	public function plugin_update_notice_text( $plugin, $action ) {
 		$link = apply_filters( 'jnews_plugin_action_url', $plugin['slug'], $action );
 		// phpcs:disable WordPress.WP.I18n.UnorderedPlaceholdersText
@@ -354,71 +433,25 @@ class Init {
 		return $notice;
 	}
 
-	public function flush_rewrite_rules() {
-		// $this->add_rewrite_rule();
-
-		global $wp_rewrite;
-		$wp_rewrite->flush_rules();
-	}
-
+	/**
+	 * Method preview_init
+	 *
+	 * @return void
+	 */
 	public function preview_init() {
-		// Theme Customizer Redirect Tag Init
+		// Theme Customizer Redirect Tag Init.
 		CustomizerRedirect::getInstance();
 	}
 
-	public function load_admin_style() {
-		add_editor_style( get_parent_theme_file_uri( 'assets/css/admin/editor.css' ) );
-		if ( is_rtl() ) {
-			add_editor_style( get_parent_theme_file_uri( 'assets/css/admin/editor-rtl.css' ) );
-		}
-	}
-
-	public function themes_support() {
-		// support feed link
-		add_theme_support( 'automatic-feed-links' );
-
-		// title tag
-		add_theme_support( 'title-tag' );
-
-		// featured image
-		add_theme_support( 'post-thumbnails' );
-
-		// Add support for full and wide align images.
-		add_theme_support( 'align-wide' );
-
-		// selective refresh widget
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		// Supported post type
-		add_theme_support( 'post-formats', array( 'gallery', 'video' ) );
-
-		// HTML 5 support
-		add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption' ) );
-
-		// support woocommerce
-		add_theme_support( 'woocommerce' );
-
-		add_theme_support( 'wc-product-gallery-zoom' );
-		add_theme_support( 'wc-product-gallery-lightbox' );
-		add_theme_support( 'wc-product-gallery-slider' );
-
-		// auto load next post
-		add_theme_support( 'auto-load-next-post' );
-
-		// gutenberg optimized
-		add_theme_support( 'editor-styles' );
-		add_editor_style( 'style-editor.css' );
-
-		// add excerpt to page to avoid showing shortode on search page
-		add_post_type_support( 'page', 'excerpt' );
-
-		// global variables to avoid duplicate queries
-		global $jnews_get_all_custom_archive_template;
-		$jnews_get_all_custom_archive_template = jnews_get_all_custom_archive_template();
-	}
-
+	/**
+	 * Method post_subtitle_field
+	 *
+	 * @param object $post $post.
+	 *
+	 * @return void
+	 */
 	public function post_subtitle_field( $post ) {
-		if ( $post->post_type === 'post' ) {
+		if ( 'post' === $post->post_type ) {
 			$post_subtitle = get_post_meta( $post->ID, 'post_subtitle', true );
 			$subtitle      = ! empty( $post_subtitle ) ? esc_html( $post_subtitle ) : '';
 
@@ -428,6 +461,13 @@ class Init {
 		}
 	}
 
+	/**
+	 * Method post_subtitle
+	 *
+	 * @param int $post_id $post_id.
+	 *
+	 * @return void
+	 */
 	public function post_subtitle( $post_id ) {
 		if ( ! defined( 'XMLRPC_REQUEST' ) && isset( $_POST['post_subtitle'] ) ) {
 			$post_subtitle = sanitize_text_field( $_POST['post_subtitle'] );
@@ -436,11 +476,95 @@ class Init {
 		}
 	}
 
-	public function admin_ajax_url() {
-		?>
-		<script type="text/javascript">
-			var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
-		</script>
-		<?php
+	/**
+	 * Method setup_hook
+	 *
+	 * @return void
+	 */
+	public function setup_hook() {
+		define( 'YP_THEME_MODE', 'true' );
+
+		add_action( 'admin_init', array( $this, 'disable_vc_auto_update' ), 9 );
+		add_action( 'after_setup_theme', array( $this, 'themes_support' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'load_admin_style' ) );
+		add_action( 'customize_preview_init', array( $this, 'preview_init' ) );
+		add_action( 'admin_head', array( $this, 'admin_ajax_url' ), 1 );
+		add_action( 'after_switch_theme', array( $this, 'flush_rewrite_rules' ) );
+
+		if ( apply_filters( 'jnews_load_post_subtitle', false ) ) {
+			// Post Subtitle Field.
+			add_action( 'edit_form_before_permalink', array( $this, 'post_subtitle_field' ) );
+			add_action( 'edit_post', array( $this, 'post_subtitle' ) );
+			add_action( 'save_post', array( $this, 'post_subtitle' ) );
+		}
+		add_action( 'admin_notices', array( $this, 'plugin_update_notice' ) );
+
+		add_filter( 'jquery_migrate_panel', array( $this, 'migrate_panel' ) );
+		add_action( 'jnews_update_themes', array( $this, 'update_themes' ) );
+	}
+
+	/**
+	 * Provide custom schedule update status for themes
+	 */
+	public function update_themes() {
+		AdminDashboard::getInstance();
+		if ( is_admin() || wp_doing_cron() ) {
+			$validate  = ValidateLicense::getInstance();
+			$transient = get_site_transient( 'update_themes' );
+			$transient = $validate->transient_update_themes( $transient );
+
+			set_site_transient( 'update_themes', $transient );
+		}
+	}
+
+	/**
+	 * Method themes_support
+	 *
+	 * @return void
+	 */
+	public function themes_support() {
+		// support feed link.
+		add_theme_support( 'automatic-feed-links' );
+
+		// title tag.
+		add_theme_support( 'title-tag' );
+
+		// featured image.
+		add_theme_support( 'post-thumbnails' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// selective refresh widget.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Supported post type.
+		add_theme_support( 'post-formats', array( 'gallery', 'video' ) );
+
+		// HTML 5 support.
+		add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption' ) );
+
+		// support woocommerce.
+		add_theme_support( 'woocommerce' );
+
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
+		// auto load next post.
+		add_theme_support( 'auto-load-next-post' );
+
+		// gutenberg optimized.
+		if ( get_theme_mod( 'jnews_gutenberg_editor_style', true ) ) {
+			// eMAHmTKT.
+			add_theme_support( 'editor-styles' );
+			add_editor_style( 'style-editor.css' );
+		}
+		// add excerpt to page to avoid showing shortode on search page.
+		add_post_type_support( 'page', 'excerpt' );
+
+		// global variables to avoid duplicate queries.
+		global $jnews_get_all_custom_archive_template;
+		$jnews_get_all_custom_archive_template = jnews_get_all_custom_archive_template();
 	}
 }

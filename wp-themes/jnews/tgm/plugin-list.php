@@ -39,6 +39,26 @@ if ( $revert_dashboard ) {
 
 	function jnews_plugin_group() {
 		$groups = array(
+			'recommend'             => array(
+				'type'  => 'recommended',
+				'title' => esc_html__( 'Recommended Plugin', 'jnews' ),
+				'items' => array(
+					array(
+						'name'               => esc_html__( 'HubSpot - CRM & Marketing', 'jnews' ),
+						'slug'               => 'leadin',
+						'recommended'        => true,
+						'required'           => false,
+						'force_activation'   => false,
+						'force_deactivation' => false,
+						'refresh'            => true,
+						'group'              => 'recommend',
+						'description'        => esc_html__( 'HubSpot is a platform with all the tools and integrations you need for marketing, sales, and customer service.', 'jnews' ),
+						'detail'             => array(
+							'image' => JNEWS_THEME_URL . '/assets/img/plugin/hubspot.png',
+						),
+					),
+				),
+			),
 			'require'               => array(
 				'type'   => 'required',
 				'title'  => esc_html__( 'Required Plugin', 'jnews' ),
@@ -47,7 +67,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Essential', 'jnews' ),
 						'slug'             => 'jnews-essential',
-						'version'          => '11.0.6',
+						'version'          => '11.0.8',
 						'source'           => 'jnews-essential.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -83,7 +103,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'               => esc_html__( 'WPBakery Page Builder', 'jnews' ),
 						'slug'               => 'js_composer',
-						'version'            => '7.0',
+						'version'            => '7.3',
 						'source'             => 'js_composer.zip',
 						'required'           => false,
 						'force_activation'   => false,
@@ -164,7 +184,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - JSON LD Rich Snippet', 'jnews' ),
 						'slug'             => 'jnews-jsonld',
-						'version'          => '11.0.1',
+						'version'          => '11.0.3',
 						'source'           => 'jnews-jsonld.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -239,7 +259,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Meta Header', 'jnews' ),
 						'slug'             => 'jnews-meta-header',
-						'version'          => '11.0.2',
+						'version'          => '11.0.3',
 						'source'           => 'jnews-meta-header.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -268,7 +288,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'               => esc_html__( 'JNews - Paywall', 'jnews' ),
 						'slug'               => 'jnews-paywall',
-						'version'            => '11.0.3',
+						'version'            => '11.0.4',
 						'source'             => 'jnews-paywall.zip',
 						'required'           => false,
 						'force_activation'   => false,
@@ -310,7 +330,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'               => esc_html__( 'JNews - Pay Writer', 'jnews' ),
 						'slug'               => 'jnews-pay-writer',
-						'version'            => '10.0.5',
+						'version'            => '11.0.2',
 						'source'             => 'jnews-pay-writer.zip',
 						'required'           => false,
 						'force_activation'   => false,
@@ -398,7 +418,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'               => esc_html__( 'JNews - Podcast', 'jnews' ),
 						'slug'               => 'jnews-podcast',
-						'version'            => '11.0.3',
+						'version'            => '11.0.4',
 						'source'             => 'jnews-podcast.zip',
 						'required'           => false,
 						'force_activation'   => false,
@@ -494,7 +514,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Frontend Submit', 'jnews' ),
 						'slug'             => 'jnews-frontend-submit',
-						'version'          => '10.0.2',
+						'version'          => '11.0.1',
 						'source'           => 'jnews-frontend-submit.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -854,7 +874,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Social Login', 'jnews' ),
 						'slug'             => 'jnews-social-login',
-						'version'          => '11.0.2',
+						'version'          => '11.0.3',
 						'source'           => 'jnews-social-login.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -938,7 +958,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Weather', 'jnews' ),
 						'slug'             => 'jnews-weather',
-						'version'          => '11.0.1',
+						'version'          => '11.0.2',
 						'source'           => 'jnews-weather.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -1189,26 +1209,6 @@ if ( $revert_dashboard ) {
 					),
 				),
 			),
-            'recommend' => array(
-                'type'  => 'recommended',
-                'title' => esc_html__( 'Recommended Plugin', 'jnews' ),
-                'items' => array(
-                    array(
-                        'name'               => esc_html__( 'HubSpot - CRM & Marketing', 'jnews' ),
-                        'slug'               => 'leadin',
-                        'recommended'        => true,
-                        'required'           => false,
-                        'force_activation'   => false,
-                        'force_deactivation' => false,
-                        'refresh'            => true,
-                        'group'              => 'recommend',
-                        'description'        => esc_html__( 'HubSpot is a platform with all the tools and integrations you need for marketing, sales, and customer service.', 'jnews' ),
-                        'detail'             => array(
-                            'image' => JNEWS_THEME_URL . '/assets/img/plugin/hubspot.png',
-                        ),
-                    ),
-                ),
-            ),
 		);
 
 		return $groups;

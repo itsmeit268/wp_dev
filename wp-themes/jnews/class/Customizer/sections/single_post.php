@@ -950,7 +950,7 @@ $options[] = [
 	'transport'       => 'postMessage',
 	'default'         => false,
 	'type'            => 'jnews-toggle',
-	'label'           => esc_html__( 'Disable Jnews Style on Table', 'jnews' ),
+	'label'           => esc_html__( 'Disable JNews Style on Table', 'jnews' ),
 	'description'     => esc_html__( 'This option will disable JNews style on table.', 'jnews' ),
 	'postvar'         => [ $single_post_tag ],
 ];

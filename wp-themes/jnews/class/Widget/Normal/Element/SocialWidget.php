@@ -114,7 +114,8 @@ class SocialWidget implements NormalWidgetInterface {
 							'line'          => esc_attr__( 'Line', 'jnews' ),
 							'discord'       => esc_attr__( 'Discord', 'jnews' ),
 							'odnoklassniki' => esc_attr__( 'Odnoklassniki', 'jnews' ),
-							'tiktok'        => esc_attr__( 'TikTok', 'jnews' ), // see jVWSazUJ
+							'tiktok'        => esc_attr__( 'TikTok', 'jnews' ),
+							'threads'       => esc_attr__( 'Threads', 'jnews' ),
 						),
 					),
 					'social_url'  => array(
@@ -147,10 +148,13 @@ class SocialWidget implements NormalWidgetInterface {
 		 */
 		$widgetstyle = isset( $widgetstyle ) ? $widgetstyle : '';
 		$output      = '';
+
 		$bg_color    = ( $widgetstyle != 'nobg' ) && ! empty( $bg_color ) ? 'background-color:' . $bg_color . ';' : '';
-		$fill        = ! empty( $icon_color ) ? '#' . $widget_id . '.widget.widget_jnews_social .jeg_social_wrap .socials_widget span svg { fill:' . $icon_color . '; }' : '';
-		$icon_color = ! empty( $icon_color ) ? 'color:' . $icon_color . ';' : '';
-		$inline_css = ! empty( $bg_color ) || ! empty( $icon_color ) ? '#' . $widget_id . ' .jeg_social_wrap .socials_widget i{' . $bg_color . $icon_color . '}.jeg_social_wrap .socials_widget span {' . $bg_color . '}' . $fill : '';
+		$fill        = ! empty( $icon_color ) ? '#' . $widget_id . ' .socials_widget .jeg-icon svg { fill:' . $icon_color . '; }' : '';
+		$svg_bg      = ( $widgetstyle != 'nobg' ) && ! empty( $bg_color ) ? '#' . $widget_id . ' .jeg_social_wrap .socials_widget a span.jeg-icon{' . $bg_color . '}' : '';
+		$footer_fill = ! empty( $icon_color ) ? '#' . $widget_id . ' .jeg_social_wrap .socials_widget i span svg { fill:' . $icon_color . '; }' : '';
+		$icon_color  = ! empty( $icon_color ) ? 'color:' . $icon_color . ';' : '';
+		$inline_css  = ! empty( $bg_color ) || ! empty( $icon_color ) ? '#' . $widget_id . ' .jeg_social_wrap .socials_widget i{' . $bg_color . $icon_color . '}.jeg_social_wrap .socials_widget span {' . $bg_color . '}' . $svg_bg . $fill . $footer_fill : '';
 		if ( isset( $account ) && ! empty( $account ) ) {
 			$account = json_decode( urldecode( $account ) );
 			if ( is_array( $account ) ) {
@@ -346,6 +350,16 @@ class SocialWidget implements NormalWidgetInterface {
 											<span class="jeg-icon icon-tiktok">' . $icon . '</span>
 											' . $label . '
 										</a>';
+								break;
+
+							case 'threads':
+								$label = ( isset( $verticalsocial ) && $verticalsocial ) ? '<span>' . jnews_return_translation( 'Threads', 'jnews', 'threads' ) . '</span>' : '';
+
+								$icon    = jnews_get_svg( 'threads' );
+								$output .= '<a href="' . $social->social_url . '" target="_blank" rel="external noopener nofollow" class="jeg_threads">
+												<span class="jeg-icon icon-threads">' . $icon . '</span>
+												' . $label . '
+											</a>';
 								break;
 
 							case 'twitter':

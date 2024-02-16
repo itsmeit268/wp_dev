@@ -91,7 +91,7 @@ class Element_Userlist_View extends ModuleViewAbstract {
 
 		if ( isset( $attr['alt_color'] ) && ! empty( $attr['alt_color'] ) ) {
 			$style .= ".{$unique_class} .jeg_subscribe_count, .{$unique_class} .follow-wrapper a, .{$unique_class} .jeg_userlist-socials a i { color: {$attr['alt_color']} }";
-			$style .= ".jeg_userlist-socials a svg { fill: {$attr['alt_color']} }";
+			$style .= ".{$unique_class} .jeg_userlist-socials a i svg { fill: {$attr['alt_color']} }";
 		}
 
 		if ( isset( $attr['accent_color'] ) && ! empty( $attr['accent_color'] ) ) {
@@ -247,6 +247,7 @@ class Element_Userlist_View extends ModuleViewAbstract {
 			'rss'        => 'fa-rss',
 			'twitch'     => 'fa-twitch',
 			'tiktok'     => 'jeg-icon icon-tiktok',
+			'threads'    => 'jeg-icon icon-threads',
 		);
 
 		return $social_array;
@@ -264,7 +265,7 @@ class Element_Userlist_View extends ModuleViewAbstract {
 			if ( defined( 'JNEWS_VIDEO' ) ) {
 				$follow_button   = $attr['follow_button'];
 				$show_subscriber = $attr['userlist_subscriber'];
-				$addtional_class = $show_subscriber ? ' show_count' : ''; //see q4M726pW
+				$addtional_class = $show_subscriber ? ' show_count' : ''; // see q4M726pW
 				/** @var  $follow_button */
 				$follow_button = $follow_button && function_exists( 'jnews_video_render_subscribe_member_actions' ) ? jnews_video_render_subscribe_member_actions( $user_id ) : '';
 				$follow_button = ! empty( $follow_button ) ? '<div class="follow-wrapper">' . $follow_button . '<div class="jnews-spinner"><i class="fa fa-spinner fa-pulse active"></i></div></div>' : '';

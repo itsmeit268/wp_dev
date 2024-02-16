@@ -10,7 +10,7 @@ use JNews\Single\SinglePost;
 class Post_Related_View extends PostViewAbstract {
 
 	public function render_module_back( $attr, $column_class ) {
-		$attribute = [
+		$attribute = array(
 			'first_title'             => get_theme_mod( 'jnews_single_post_related_override_title', false ) ? get_theme_mod( 'jnews_single_post_related_ftitle', 'Related' ) : jnews_return_translation( 'Related', 'jnews', 'related' ),
 			'second_title'            => get_theme_mod( 'jnews_single_post_related_override_title', false ) ? get_theme_mod( 'jnews_single_post_related_stitle', 'Posts' ) : jnews_return_translation( ' Posts', 'jnews', 'posts' ),
 			'header_type'             => $attr['header_type'],
@@ -26,7 +26,8 @@ class Post_Related_View extends PostViewAbstract {
 			'pagination_mode'         => $attr['pagination'],
 			'pagination_scroll_limit' => $attr['auto_load'],
 			'paged'                   => 1,
-		];
+			'column_width'            => $attr['column_width'], //see TtGCsH5v
+		);
 
 		$name = 'JNews_Block_' . str_replace( 'template_', '', $attr['template'] );
 		$name = jnews_get_view_class_from_shortcode( $name );
@@ -42,7 +43,7 @@ class Post_Related_View extends PostViewAbstract {
 
 	public function render_module_front( $attr, $column_class ) {
 		$match    = $attr['match'];
-		$category = $tag = $result = [];
+		$category = $tag = $result = array();
 		if ( $match === 'category' ) {
 			SinglePost::getInstance()->recursive_category( get_the_category(), $result );
 
@@ -60,7 +61,7 @@ class Post_Related_View extends PostViewAbstract {
 			}
 		}
 
-		$attribute = [
+		$attribute = array(
 			'first_title'             => get_theme_mod( 'jnews_single_post_related_override_title', false ) ? get_theme_mod( 'jnews_single_post_related_ftitle', 'Related' ) : jnews_return_translation( 'Related', 'jnews', 'related' ),
 			'second_title'            => get_theme_mod( 'jnews_single_post_related_override_title', false ) ? get_theme_mod( 'jnews_single_post_related_stitle', 'Posts' ) : jnews_return_translation( ' Posts', 'jnews', 'posts' ),
 			'header_type'             => $attr['header_type'],
@@ -76,7 +77,8 @@ class Post_Related_View extends PostViewAbstract {
 			'pagination_mode'         => $attr['pagination'],
 			'pagination_scroll_limit' => $attr['auto_load'],
 			'paged'                   => 1,
-		];
+			'column_width'            => $attr['column_width'], // see TtGCsH5v
+		);
 
 		$name = 'JNews_Block_' . str_replace( 'template_', '', $attr['template'] );
 		$name = jnews_get_view_class_from_shortcode( $name );

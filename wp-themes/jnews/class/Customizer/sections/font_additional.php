@@ -27,7 +27,7 @@ $options[] = [
 		'font_weight' => [
 			'type'        => 'select',
 			'label'       => esc_attr__( 'Font Weight', 'jnews' ),
-			'description' => esc_attr__( 'Please choose this file\'s font weight.', 'jnews' ),
+			'description' => esc_attr__( 'Please choose the font weight for this file.', 'jnews' ),
 			'choices'     => [
 				'100' => '100',
 				'200' => '200',
@@ -44,12 +44,12 @@ $options[] = [
 		'font_style'  => [
 			'type'        => 'select',
 			'label'       => esc_attr__( 'Font Style', 'jnews' ),
-			'description' => esc_attr__( 'Please fill this file\'s font style.', 'jnews' ),
+			'description' => esc_attr__( 'Please choose the font style for this file.', 'jnews' ),
 			'choices'     => [
+				'normal' => esc_attr__( 'Normal', 'jnews' ),
 				'italic' => esc_attr__( 'Italic', 'jnews' ),
-				'normal' => esc_attr__( 'Regular', 'jnews' ),
 			],
-			'default'     => 'regular',
+			'default'     => 'normal',
 		],
 		'eot'         => [
 			'type'      => 'upload',

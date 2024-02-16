@@ -6,54 +6,50 @@ namespace JNews\Module\Footer;
 
 use JNews\Module\ModuleViewAbstract;
 
-Class Footer_Social_View extends ModuleViewAbstract
-{
-    public function render_module($attr, $column_class)
-    {
-        /** style  */
-        $style = $this->custom_color($attr, $this->unique_id . ' ');
-        $style = !empty($style) ? "<style scoped>{$style}</style>" : "";
+class Footer_Social_View extends ModuleViewAbstract {
 
-        $social =
-            "<div {$this->element_id($attr)} class='jeg_social_icon_block socials_widget {$this->unique_id} " . esc_attr($attr['social_icon'])  . " {$attr['el_class']}'>"
-                . jnews_generate_social_icon_block( false ) .
-            "</div>";
+	public function render_module( $attr, $column_class ) {
+		/** style  */
+		$style = $this->custom_color( $attr, $this->unique_id . ' ' );
+		$style = ! empty( $style ) ? "<style scoped>{$style}</style>" : '';
 
-        return "{$style}{$social}";
-    }
+		$social =
+			"<div {$this->element_id($attr)} class='jeg_social_icon_block socials_widget {$this->unique_id} " . esc_attr( $attr['social_icon'] ) . " {$attr['el_class']}'>"
+				. jnews_generate_social_icon_block( false ) .
+			'</div>';
 
-    public function custom_color($attr, $unique_id)
-    {
-        $unique_class = trim($unique_id);
-        $style  = '';
+		return "{$style}{$social}";
+	}
 
-        if(isset($attr['icon_text_color']) && !empty($attr['icon_text_color']))
-        {
-            $style .= ".{$unique_class}.jeg_social_icon_block a .fa { color: {$attr['icon_text_color']} !important; }";
-            $style .= ".{$unique_class}.jeg_social_icon_block a .jeg-icon svg { fill: {$attr['icon_text_color']} !important; }";
-        }
+	public function custom_color( $attr, $unique_id ) {
+		$unique_class = trim( $unique_id );
+		$style        = '';
 
-        if(isset($attr['icon_text_hover_color']) && !empty($attr['icon_text_hover_color']))
-        {
-            $style .= ".{$unique_class}.jeg_social_icon_block a:hover .fa { color: {$attr['icon_text_hover_color']} !important; }";
-            $style .= ".{$unique_class}.jeg_social_icon_block a:hover .jeg-icon svg { fill: {$attr['icon_text_hover_color']} !important; }";
-        }
+		if ( isset( $attr['icon_text_color'] ) && ! empty( $attr['icon_text_color'] ) ) {
+			$style .= ".{$unique_class}.jeg_social_icon_block a .fa { color: {$attr['icon_text_color']} !important; }";
+			$style .= ".{$unique_class}.jeg_social_icon_block a .jeg-icon svg { fill: {$attr['icon_text_color']} !important; }";
+		}
 
-        if(isset($attr['icon_background']) && !empty($attr['icon_background']))
-        {
-            $style .= ".{$unique_class}.jeg_social_icon_block > a > i.fa { background-color: {$attr['icon_background']} !important; }";
-            $style .= ".{$unique_class}.jeg_social_icon_block > a > span.jeg-icon { background-color: {$attr['icon_background']} !important; }";
-        }
+		if ( isset( $attr['icon_text_hover_color'] ) && ! empty( $attr['icon_text_hover_color'] ) ) {
+			$style .= ".{$unique_class}.jeg_social_icon_block a:hover .fa { color: {$attr['icon_text_hover_color']} !important; }";
+			$style .= ".{$unique_class}.jeg_social_icon_block a:hover .jeg-icon svg { fill: {$attr['icon_text_hover_color']} !important; }";
+		}
 
-        if(isset($attr['icon_hover_background']) && !empty($attr['icon_hover_background']))
-        {
-            $style .= ".{$unique_class}.jeg_social_icon_block > a:hover > i.fa { background-color: {$attr['icon_hover_background']} !important; }";
-            $style .= ".{$unique_class}.jeg_social_icon_block > a:hover > span.jeg-icon { background-color: {$attr['icon_hover_background']} !important; }";
-        }
+		if ( isset( $attr['icon_background'] ) && ! empty( $attr['icon_background'] ) ) {
+			$style .= ".{$unique_class}.jeg_social_icon_block > a > i.fa { background-color: {$attr['icon_background']} !important; }";
+			$style .= ".{$unique_class}.jeg_social_icon_block > a > i > span.jeg-icon { background-color: {$attr['icon_background']} !important; }";
+			$style .= ".{$unique_class}.jeg_social_icon_block > a > span.jeg-icon { background-color: {$attr['icon_background']} !important; }";
 
-        return $style;
-    }
+		}
 
-    public function render_column_alt($result, $column_class) {}
-    public function render_column($result, $column_class) {}
+		if ( isset( $attr['icon_hover_background'] ) && ! empty( $attr['icon_hover_background'] ) ) {
+			$style .= ".{$unique_class}.jeg_social_icon_block > a:hover > i.fa { background-color: {$attr['icon_hover_background']} !important; }";
+			$style .= ".{$unique_class}.jeg_social_icon_block > a:hover > span.jeg-icon { background-color: {$attr['icon_hover_background']} !important; }";
+		}
+
+		return $style;
+	}
+
+	public function render_column_alt( $result, $column_class ) {}
+	public function render_column( $result, $column_class ) {}
 }

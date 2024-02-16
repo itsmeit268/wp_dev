@@ -1,47 +1,51 @@
 <?php
 
-$options = [];
+$options = array();
 
-$options[] = [
+$options[] = array(
 	'id'          => 'jnews_social_icon_notice',
 	'type'        => 'jnews-alert',
 	'default'     => 'info',
 	'label'       => esc_html__( 'Info', 'jnews' ),
-	'description' => wp_kses( __(
-		'<ul>
+	'description' => wp_kses(
+		__(
+			'<ul>
                     <li>This social icon will show on header & footer of your website. </li>
                     <li>Also will be used if you install JNews - Meta Header & JNews - JSON LD plugin</li>
                 </ul>',
-		'jnews' ), wp_kses_allowed_html() ),
-];
+			'jnews'
+		),
+		wp_kses_allowed_html()
+	),
+);
 
-$options[] = [
+$options[] = array(
 	'id'              => 'jnews_social_icon',
 	'transport'       => 'postMessage',
 	'type'            => 'jnews-repeater',
 	'label'           => esc_html__( 'Add Social Icon', 'jnews' ),
 	'description'     => esc_html__( 'Add icon for each of your social account.', 'jnews' ),
-	'default'         => [
-		[
+	'default'         => array(
+		array(
 			'social_icon' => 'facebook',
 			'social_url'  => 'https://www.facebook.com/jegtheme/',
-		],
-		[
+		),
+		array(
 			'social_icon' => 'twitter',
 			'social_url'  => 'https://twitter.com/jegtheme',
-		],
-	],
-	'row_label'       => [
+		),
+	),
+	'row_label'       => array(
 		'type'  => 'text',
 		'value' => esc_attr__( 'Social Icon', 'jnews' ),
 		'field' => false,
-	],
-	'fields'          => [
-		'social_icon' => [
+	),
+	'fields'          => array(
+		'social_icon' => array(
 			'type'    => 'select',
 			'label'   => esc_attr__( 'Social Icon', 'jnews' ),
 			'default' => '',
-			'choices' => [
+			'choices' => array(
 				''              => esc_attr__( 'Choose Icon', 'jnews' ),
 				'facebook'      => esc_attr__( 'Facebook', 'jnews' ),
 				'twitter'       => esc_attr__( 'Twitter', 'jnews' ),
@@ -70,40 +74,41 @@ $options[] = [
 				'tiktok'        => esc_attr__( 'TikTok', 'jnews' ),
 				'snapchat'      => esc_attr__( 'Snapchat', 'jnews' ),
 				'whatsapp'      => esc_attr__( 'Whatsapp', 'jnews' ),
-			],
-		],
-		'social_url'  => [
+				'threads'       => esc_attr__( 'Threads', 'jnews' ),
+			),
+		),
+		'social_url'  => array(
 			'type'    => 'text',
 			'label'   => esc_attr__( 'Social URL', 'jnews' ),
 			'default' => '',
-		],
-	],
-	'partial_refresh' => [
-		'social_icon'             => [
+		),
+	),
+	'partial_refresh' => array(
+		'social_icon'             => array(
 			'selector'        => '.jeg_top_socials',
 			'render_callback' => function () {
 				return jnews_generate_social_icon( false );
 			},
-		],
-		'social_icon2'            => [
+		),
+		'social_icon2'            => array(
 			'selector'        => '.jeg_social_icon_block',
 			'render_callback' => function () {
 				return jnews_generate_social_icon_block( false );
 			},
-		],
-		'social_icon3'            => [
+		),
+		'social_icon3'            => array(
 			'selector'        => '.jeg_new_social_icon_block',
 			'render_callback' => function () {
 				return jnews_generate_social_icon_block( false, true );
 			},
-		],
-		'social_icon_mobile_menu' => [
+		),
+		'social_icon_mobile_menu' => array(
 			'selector'        => '.jeg_mobile_socials',
 			'render_callback' => function () {
 				return jnews_generate_social_icon( false );
 			},
-		],
-	],
-];
+		),
+	),
+);
 
 return $options;

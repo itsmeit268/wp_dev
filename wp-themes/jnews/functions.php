@@ -6,7 +6,7 @@
 defined( 'JNEWS_THEME_URL' ) || define( 'JNEWS_THEME_URL', get_parent_theme_file_uri() );
 defined( 'JNEWS_THEME_FILE' ) || define( 'JNEWS_THEME_FILE', __FILE__ );
 defined( 'JNEWS_THEME_DIR' ) || define( 'JNEWS_THEME_DIR', plugin_dir_path( __FILE__ ) );
-defined( 'JNEWS_THEME_VERSION' ) || define( 'JNEWS_THEME_VERSION', '11.1.3' );
+defined( 'JNEWS_THEME_VERSION' ) || define( 'JNEWS_THEME_VERSION', '11.2.1' );
 defined( 'JNEWS_THEME_DIR_PLUGIN' ) || define( 'JNEWS_THEME_DIR_PLUGIN', JNEWS_THEME_DIR . 'plugins/' );
 defined( 'JNEWS_THEME_NAMESPACE' ) || define( 'JNEWS_THEME_NAMESPACE', 'JNews_' );
 defined( 'JNEWS_THEME_CLASSPATH' ) || define( 'JNEWS_THEME_CLASSPATH', JNEWS_THEME_DIR . 'class/' );
@@ -18,11 +18,14 @@ defined( 'JEGTHEME_SERVER' ) || define( 'JEGTHEME_SERVER', 'https://support.jegt
 
 // TGM
 if ( is_admin() ) {
-    update_option('jnews_license', [
-        'validated'     => true,
-        'refresh'       => 'jnews',
-        'purchase_code' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
-    ]);
+    update_option(
+	'jnews_license',
+        array(
+            'validated'     => true,
+            'refresh'       => 'jnews',
+            'purchase_code' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+        )
+    );
     add_filter( 'jnews_revert_dashboard', '__return_true' );
 	require get_parent_theme_file_path( 'tgm/plugin-list.php' );
 }

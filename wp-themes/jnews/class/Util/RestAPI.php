@@ -1,6 +1,9 @@
 <?php
 /**
+ * Rest API
+ *
  * @author : Jegtheme
+ * @package jnews
  */
 
 namespace JNews\Util;
@@ -51,6 +54,176 @@ class RestAPI {
 	}
 
 	/**
+	 * Check plugin remote
+	 *
+	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+	 *
+	 * @return \WP_Error|array
+	 */
+	public function check_plugin_remote( $request ) {
+		$slug   = $request->get_param( 'slug' );
+		$source = $request->get_param( 'source' );
+		$nonce  = sanitize_key( $request->get_param( 'nonce' ) );
+		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) ) {
+			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
+		}
+		$result = '';
+		if ( ! empty( $source ) ) {
+			if ( file_exists( JNEWS_THEME_DIR_PLUGIN . $source ) ) {
+				$result = 'bundle';
+			} else {
+				$result = 'server';
+			}
+		} elseif ( is_wp_error( Plugin::retrieve_plugin_source( $slug ) ) ) {
+				$result = 'server';
+		} else {
+			$result = 'remote';
+		}
+
+		return $this->response_success( $result );
+	}
+
+	/**
+	 * Export Panel Options
+	 *
+	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+	 *
+	 * @return \WP_REST_Response|array
+	 */
+	public function export_panel_options( $request ) {
+		$action      = sanitize_key( $request->get_param( 'action' ) );
+		$nonce       = sanitize_key( $request->get_param( 'nonce' ) );
+		$panel_nonce = sanitize_key( $request->get_param( 'panelNonce' ) );
+		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $panel_nonce ) ) {
+			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
+		}
+		return $this->response_success( apply_filters( 'jnews_panel_request_export_option', $action, $panel_nonce ) );
+	}
+
+	/**
+	 * Get Dashboard Config
+	 *
+	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+	 *
+	 * @return array
+	 */
+	public function get_dashboard_config( $request ) {
+		$config = sanitize_key( $request->get_param( 'config' ) );
+		$nonce  = sanitize_key( $request->get_param( 'nonce' ) );
+		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $config ) ) {
+			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
+		}
+		if ( 'system' === $config ) {
+			$system = SystemDashboard::get_instance();
+			return $this->response_success( $system->jnews_dashboard_config() );
+		} elseif ( 'all' === $config ) {
+			return $this->response_success( AdminDashboard::jnews_dashboard() );
+		}
+	}
+
+	/**
+	 * Get Validate Notice Length
+	 *
+	 * @return int
+	 */
+	public function get_validate_notice_length() {
+		return \JNews\Util\ValidateLicense::check_validate_notice_length();
+	}
+
+	/**
+	 * Get Plugins
+	 *
+	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+	 *
+	 * @return array
+	 */
+	public function get_plugins( $request ) {
+		$plugins       = Plugin::get_plugin_list();
+		$plugin_groups = Plugin::get_plugin_group();
+
+		return $this->response_success(
+			array(
+				'plugins' => $plugins,
+				'groups'  => $plugin_groups,
+			)
+		);
+	}
+
+	/**
+	 * Import Panel Options
+	 *
+	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+	 *
+	 * @return \WP_REST_Response|array
+	 */
+	public function import_panel_options( $request ) {
+		$action      = sanitize_key( $request->get_param( 'action' ) );
+		$nonce       = sanitize_key( $request->get_param( 'nonce' ) );
+		$panel_nonce = sanitize_key( $request->get_param( 'panelNonce' ) );
+		$options     = $request->get_param( 'options' );
+		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $panel_nonce ) || empty( $options ) ) {
+			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
+		}
+		return $this->response_success( apply_filters( 'jnews_panel_request_import_option', $options, $action, $panel_nonce ) );
+	}
+
+		/**
+		 * Manage give plugin
+		 *
+		 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+		 *
+		 * @return \WP_Error|array
+		 */
+	public function manage_plugin( $request ) {
+		$from          = sanitize_key( $request->get_param( 'from' ) );
+		$nonce         = sanitize_key( $request->get_param( 'nonce' ) );
+		$doing         = sanitize_key( $request->get_param( 'doing' ) );
+		$plugin        = $request->get_param( 'plugin' );
+		$plugin_source = isset( $plugin['source'] ) ? $plugin['source'] : false;
+		$plugin        = array_map( 'sanitize_text_field', $plugin );
+		if ( $plugin_source ) {
+			$plugin['source'] = $plugin_source;
+		}
+		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) ) {
+			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
+		}
+		if ( isset( $plugin['refresh'] ) && '1' === $plugin['refresh'] ) {
+			$plugin['refresh'] = true;
+		}
+		return $this->response_success( Plugin::manage_plugin( $plugin, $this, $doing, $from ) );
+	}
+
+	/**
+	 * Manage import demo
+	 *
+	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+	 *
+	 * @return boolean|array
+	 */
+	public function manage_demo( $request ) {
+		$id       = sanitize_text_field( $request->get_param( 'id' ) );
+		$action   = sanitize_text_field( $request->get_param( 'action' ) );
+		$step     = sanitize_text_field( $request->get_param( 'step' ) );
+		$option   = $request->get_param( 'option' );
+		$demo     = $request->get_param( 'demo' );
+		$data     = $request->get_param( 'data' );
+		$importer = new Importer( $id, $action, $step, $option, $data, $demo );
+		$result   = $importer->prepare_import();
+
+		return $this->response_success( $result ? $result : true );
+	}
+
+	/**
+	 * Check user permissions
+	 *
+	 * @return boolean
+	 */
+	public function permission_install_plugin() {
+		return current_user_can( 'install_plugins' );
+	}
+
+
+	/**
 	 * Prepare assets.
 	 */
 	public function prepare_assets() {
@@ -92,12 +265,21 @@ class RestAPI {
 	}
 
 	/**
+	 * Check permission manage options
+	 *
+	 * @return bool
+	 */
+	public function permission_manage_options() {
+		return function_exists( 'jnews_permission_manage_options' ) ? jnews_permission_manage_options() : current_user_can( 'manage_options' );
+	}
+
+	/**
 	 * Register API
 	 *
 	 * @return void
 	 */
 	public function register_routes() {
-		// Config
+		// Config.
 		register_rest_route(
 			self::ENDPOINT,
 			'getDashboardConfig',
@@ -215,37 +397,62 @@ class RestAPI {
 				'permission_callback' => array( $this, 'permission_manage_options' ),
 			)
 		);
-
 	}
 
 	/**
-	 * Check permission manage options
-	 *
-	 * @return bool
-	 */
-	public function permission_manage_options() {
-		return function_exists( 'jnews_permission_manage_options' ) ? jnews_permission_manage_options() : current_user_can( 'manage_options' );
-	}
-
-	/**
-	 * Get Dashboard Config
+	 * Restore Panel Options
 	 *
 	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
 	 *
-	 * @return array
+	 * @return \WP_REST_Response|array
 	 */
-	public function get_dashboard_config( $request ) {
-		$config = sanitize_key( $request->get_param( 'config' ) );
-		$nonce  = sanitize_key( $request->get_param( 'nonce' ) );
-		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $config ) ) {
+	public function restore_panel_options( $request ) {
+		$action      = sanitize_key( $request->get_param( 'action' ) );
+		$nonce       = sanitize_key( $request->get_param( 'nonce' ) );
+		$panel_nonce = sanitize_key( $request->get_param( 'panelNonce' ) );
+		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $panel_nonce ) ) {
 			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
 		}
-		if ( 'system' === $config ) {
-			$system = SystemDashboard::get_instance();
-			return $this->response_success( $system->jnews_dashboard_config() );
-		} elseif ( 'all' === $config ) {
-			return $this->response_success( AdminDashboard::jnews_dashboard() );
+		return $this->response_success( apply_filters( 'jnews_panel_request_restore', $action, $panel_nonce ) );
+	}
+
+	/**
+	 * Reset license handler
+	 *
+	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
+	 */
+	public function reset_license( $request ) {
+		$purchase_code = $request->get_param( 'code' );
+		if ( ! empty( $purchase_code ) ) {
+			jnews_reset_license();
 		}
+	}
+
+	/**
+	 * Return error response
+	 *
+	 * @param string $message Error message.
+	 *
+	 * @return \WP_REST_Response
+	 */
+	public function response_error( $message ) {
+		return new \WP_REST_Response(
+			array(
+				'message' => $message,
+			),
+			500
+		);
+	}
+
+	/**
+	 * Return success response
+	 *
+	 * @param array $args args.
+	 *
+	 * @return \WP_REST_Response
+	 */
+	public function response_success( $args ) {
+		return new \WP_REST_Response( $args, 200 );
 	}
 
 	/**
@@ -267,98 +474,6 @@ class RestAPI {
 	}
 
 	/**
-	 * Restore Panel Options
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 *
-	 * @return \WP_REST_Response|array
-	 */
-	public function restore_panel_options( $request ) {
-		$action      = sanitize_key( $request->get_param( 'action' ) );
-		$nonce       = sanitize_key( $request->get_param( 'nonce' ) );
-		$panel_nonce = sanitize_key( $request->get_param( 'panelNonce' ) );
-		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $panel_nonce ) ) {
-			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
-		}
-		return $this->response_success( apply_filters( 'jnews_panel_request_restore', $action, $panel_nonce ) );
-	}
-
-	/**
-	 * Import Panel Options
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 *
-	 * @return \WP_REST_Response|array
-	 */
-	public function import_panel_options( $request ) {
-		$action      = sanitize_key( $request->get_param( 'action' ) );
-		$nonce       = sanitize_key( $request->get_param( 'nonce' ) );
-		$panel_nonce = sanitize_key( $request->get_param( 'panelNonce' ) );
-		$options     = $request->get_param( 'options' );
-		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $panel_nonce ) || empty( $options ) ) {
-			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
-		}
-		return $this->response_success( apply_filters( 'jnews_panel_request_import_option', $options, $action, $panel_nonce ) );
-	}
-
-	/**
-	 * Export Panel Options
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 *
-	 * @return \WP_REST_Response|array
-	 */
-	public function export_panel_options( $request ) {
-		$action      = sanitize_key( $request->get_param( 'action' ) );
-		$nonce       = sanitize_key( $request->get_param( 'nonce' ) );
-		$panel_nonce = sanitize_key( $request->get_param( 'panelNonce' ) );
-		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) || empty( $panel_nonce ) ) {
-			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
-		}
-		return $this->response_success( apply_filters( 'jnews_panel_request_export_option', $action, $panel_nonce ) );
-	}
-
-	/**
-	 * Reset license handler
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 */
-	public function reset_license( $request ) {
-		$purchase_code = $request->get_param( 'code' );
-		if ( ! empty( $purchase_code ) ) {
-			jnews_reset_license();
-		}
-	}
-
-	/**
-	 * Get Validate Notice Length
-	 *
-	 * @return int
-	 */
-	public function get_validate_notice_length() {
-		return \JNews\Util\ValidateLicense::check_validate_notice_length();
-	}
-
-	/**
-	 * Get Plugins
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 *
-	 * @return array
-	 */
-	public function get_plugins( $request ) {
-		$plugins       = Plugin::get_plugin_list();
-		$plugin_groups = Plugin::get_plugin_group();
-
-		return $this->response_success(
-			array(
-				'plugins' => $plugins,
-				'groups'  => $plugin_groups,
-			)
-		);
-	}
-
-	/**
 	 * Validate plugin
 	 *
 	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
@@ -372,119 +487,5 @@ class RestAPI {
 			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
 		}
 		return $this->response_success( Plugin::validate_plugin( $plugins ) );
-	}
-
-	/**
-	 * Check plugin remote
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 *
-	 * @return \WP_Error|array
-	 */
-	public function check_plugin_remote( $request ) {
-		$slug   = $request->get_param( 'slug' );
-		$source = $request->get_param( 'source' );
-		$nonce  = sanitize_key( $request->get_param( 'nonce' ) );
-		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) ) {
-			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
-		}
-		$result = '';
-		if ( ! empty( $source ) ) {
-			if ( file_exists( JNEWS_THEME_DIR_PLUGIN . $source ) ) {
-				$result = 'bundle';
-			} else {
-				$result = 'server';
-			}
-		} else {
-			if ( is_wp_error( Plugin::retrieve_plugin_source( $slug ) ) ) {
-				$result = 'server';
-			} else {
-				$result = 'remote';
-			}
-		}
-
-		return $this->response_success( $result );
-	}
-
-	/**
-	 * Manage give plugin
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 *
-	 * @return \WP_Error|array
-	 */
-	public function manage_plugin( $request ) {
-		$from          = sanitize_key( $request->get_param( 'from' ) );
-		$nonce         = sanitize_key( $request->get_param( 'nonce' ) );
-		$doing         = sanitize_key( $request->get_param( 'doing' ) );
-		$plugin        = $request->get_param( 'plugin' );
-		$plugin_source = isset( $plugin['source'] ) ? $plugin['source'] : false;
-		$plugin        = array_map( 'sanitize_text_field', $plugin );
-		if ( $plugin_source ) {
-			$plugin['source'] = $plugin_source;
-		}
-		if ( ! wp_verify_nonce( $nonce, 'wp_rest', false ) ) {
-			return $this->response_error( esc_html__( 'You are not allowed to perform this action.', 'jnews' ) );
-		}
-		if ( isset( $plugin['refresh'] ) && '1' === $plugin['refresh'] ) {
-			$plugin['refresh'] = true;
-		}
-		return $this->response_success( Plugin::manage_plugin( $plugin, $this, $doing, $from ) );
-	}
-
-	/**
-	 * Manage import demo
-	 *
-	 * @param \WP_REST_Request $request Core class used to implement a REST request object.
-	 *
-	 * @return boolean|array
-	 */
-	public function manage_demo( $request ) {
-		$id       = sanitize_text_field( $request->get_param( 'id' ) );
-		$action   = sanitize_text_field( $request->get_param( 'action' ) );
-		$step     = sanitize_text_field( $request->get_param( 'step' ) );
-		$option   = $request->get_param( 'option' );
-		$demo     = $request->get_param( 'demo' );
-		$data     = $request->get_param( 'data' );
-		$importer = new Importer( $id, $action, $step, $option, $data, $demo );
-		$result   = $importer->prepare_import();
-
-		return $this->response_success( $result ? $result : true );
-	}
-
-	/**
-	 * Check user permissions
-	 *
-	 * @return boolean
-	 */
-	public function permission_install_plugin() {
-		return current_user_can( 'install_plugins' );
-	}
-
-	/**
-	 * Return success response
-	 *
-	 * @param array $args
-	 *
-	 * @return \WP_REST_Response
-	 */
-	public function response_success( $args ) {
-		return new \WP_REST_Response( $args, 200 );
-	}
-
-	/**
-	 * Return error response
-	 *
-	 * @param string $message Error message
-	 *
-	 * @return \WP_REST_Response
-	 */
-	public function response_error( $message ) {
-		return new \WP_REST_Response(
-			array(
-				'message' => $message,
-			),
-			500
-		);
 	}
 }

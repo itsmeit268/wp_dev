@@ -42,6 +42,6 @@ class OtherOption extends CustomizerOptionAbstract {
 		$this->add_lazy_section( 'jnews_global_api_section', esc_html__( 'Global API Key', 'jnews' ), 'jnews_global_panel' );
 		$this->add_lazy_section( 'jnews_global_speed_section', esc_html__( 'Speed Optimization', 'jnews' ), 'jnews_global_panel' );
 		$this->add_lazy_section( 'jnews_global_query_section', esc_html__( 'Query Option', 'jnews' ), 'jnews_global_panel' );
-		$this->add_lazy_section( 'jnews_global_wpblocks_section', esc_html__( 'WP Blocks Option', 'jnews' ), 'jnews_global_panel' ); //7Q0MnaAV
+		$this->add_lazy_section( 'jnews_global_gutenberg_editor_section', esc_html__( 'Gutenberg', 'jnews' ), 'jnews_global_panel' ); //eMAHmTKT
 	}
 }

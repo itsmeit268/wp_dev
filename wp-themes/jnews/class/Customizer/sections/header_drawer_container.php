@@ -27,6 +27,15 @@ $options[] = [
 ];
 
 $options[] = [
+	'id'          => 'jnews_header_mobile_drawer_new_drop_down',
+	'transport'   => 'postMessage',
+	'default'     => false,
+	'type'        => 'jnews-toggle',
+	'label'       => esc_html__( 'Use New Dropdown Menu', 'jnews' ),
+	'description' => esc_html__( 'Enable this option to use new mobile menu dropdown features (only redirecting users when clicking the menu title)', 'jnews' ),
+];
+
+$options[] = [
 	'id'          => 'jnews_header_mobile_drawer_enable_hover',
 	'transport'   => 'postMessage',
 	'default'     => true,

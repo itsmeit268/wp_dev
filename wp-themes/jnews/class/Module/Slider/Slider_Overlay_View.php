@@ -16,7 +16,7 @@ class Slider_Overlay_View extends SliderViewAbstract {
 
 		foreach ( $results as $key => $post ) {
 			$image = get_the_post_thumbnail_url( $post->ID, 'full' );
-
+			$image = ! empty( $image ) ? $image : get_template_directory_uri() . '/assets/img/jeg-empty.png';
 			if ( $key === 0 ) {
 				$slider .= '<div ' . jnews_post_class( 'jeg_overlay_slider_bg loaded active', $post->ID ) . " style=\"background-image: url('" . esc_url( $image ) . "');\"></div>";
 			} else {
@@ -137,6 +137,10 @@ class Slider_Overlay_View extends SliderViewAbstract {
 		}
 
 		if ( ( $vc_editable === 'true' ) || ( $action === 'elementor' ) ) {
+			if ( $this->manager->is_overlay_slider_rendered() ) {
+				return "<div class='jnews_overlay_slider_notice'>" . esc_html__( 'JNews Overlay Slider cannot be rendered twice on one page. Only the first module will be rendered on your page.', 'jnews' ) . '</div>';
+			}
+			$this->manager->overlay_slider_rendered();
 			return "<div class='jnews_overlay_slider_notice'>" . esc_html__( 'JNews Overlay Slider cannot be rendered with Editor Mode. You can still see it on Your Website.', 'jnews' ) . '</div>';
 		}
 		return null;

@@ -1,6 +1,9 @@
 <?php
 /**
+ * Header Builder
+ *
  * @author : Jegtheme
+ * @package jnews
  */
 
 namespace JNews;
@@ -8,13 +11,17 @@ namespace JNews;
 /**
  * Class JNews Header Builder
  */
-Class HeaderBuilder {
+class HeaderBuilder {
 	/**
+	 * Instance
+	 *
 	 * @var HeaderBuilder
 	 */
 	private static $instance;
 
 	/**
+	 * Instance
+	 *
 	 * @return HeaderBuilder
 	 */
 	public static function getInstance() {
@@ -25,28 +32,24 @@ Class HeaderBuilder {
 		return static::$instance;
 	}
 
+	/**
+	 * Method __construct
+	 *
+	 * @return void
+	 */
 	private function __construct() {
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'header_builder_html' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'header_builder_js' ) );
 	}
 
-	public function header_builder_js() {
-		wp_enqueue_style( 'jnews-header-builder', get_parent_theme_file_uri( 'assets/css/admin/header-builder.css' ) );
-		wp_enqueue_script( 'jnews-header-builder', get_parent_theme_file_uri( 'assets/js/admin/header-builder.js' ), array(
-			'jquery',
-			'jeg-default-control',
-			'jeg-preset-control'
-		), null, true );
-	}
-
-	public function header_builder_html() {
-		$template = new Template( JNEWS_THEME_DIR . 'class/template/' );
-		$template->render( 'header-builder', array( 'template' => $template ), true );
-	}
-
+	/**
+	 * Method desktop_header_element
+	 *
+	 * @return array
+	 */
 	public static function desktop_header_element() {
 		return array(
-            'dark_mode'     => esc_html__( 'Dark Mode', 'jnews' ),
+			'dark_mode'     => esc_html__( 'Dark Mode', 'jnews' ),
 			'top_bar_menu'  => esc_html__( 'Top Bar Menu', 'jnews' ),
 			'social_icon'   => esc_html__( 'Social Icon', 'jnews' ),
 			'nav_icon'      => esc_html__( 'Nav Icon', 'jnews' ),
@@ -81,17 +84,41 @@ Class HeaderBuilder {
 		);
 	}
 
-	public static function mobile_header_element() {
-		return array(
-            'dark_mode'    => esc_html__( 'Dark Mode', 'jnews' ),
-			'logo'         => esc_html__( 'Logo', 'jnews' ),
-			'nav_icon'     => esc_html__( 'Nav Icon', 'jnews' ),
-			'search_icon'  => esc_html__( 'Search Icon', 'jnews' ),
-			'html'         => esc_html__( 'Mobile HTML', 'jnews' ),
-			'buttonmobile' => esc_html__( 'Mobile Button', 'jnews' ),
+	/**
+	 * Method header_builder_html
+	 *
+	 * @return void
+	 */
+	public function header_builder_html() {
+		$template = new Template( JNEWS_THEME_DIR . 'class/template/' );
+		$template->render( 'header-builder', array( 'template' => $template ), true );
+	}
+
+	/**
+	 * Method header_builder_js
+	 *
+	 * @return void
+	 */
+	public function header_builder_js() {
+		wp_enqueue_style( 'jnews-header-builder', get_parent_theme_file_uri( 'assets/css/admin/header-builder.css' ) );
+		wp_enqueue_script(
+			'jnews-header-builder',
+			get_parent_theme_file_uri( 'assets/js/admin/header-builder.js' ),
+			array(
+				'jquery',
+				'jeg-default-control',
+				'jeg-preset-control',
+			),
+			null,
+			true
 		);
 	}
 
+	/**
+	 * Method mobile_drawer_element
+	 *
+	 * @return array
+	 */
 	public static function mobile_drawer_element() {
 		return array(
 			'account'          => esc_html__( 'Account', 'jnews' ),
@@ -105,13 +132,36 @@ Class HeaderBuilder {
 		);
 	}
 
+	/**
+	 * Method mobile_header_element
+	 *
+	 * @return array
+	 */
+	public static function mobile_header_element() {
+		return array(
+			'dark_mode'    => esc_html__( 'Dark Mode', 'jnews' ),
+			'logo'         => esc_html__( 'Logo', 'jnews' ),
+			'nav_icon'     => esc_html__( 'Nav Icon', 'jnews' ),
+			'search_icon'  => esc_html__( 'Search Icon', 'jnews' ),
+			'html'         => esc_html__( 'Mobile HTML', 'jnews' ),
+			'buttonmobile' => esc_html__( 'Mobile Button', 'jnews' ),
+		);
+	}
+
+	/**
+	 * Method remain_desktop
+	 *
+	 * @param string $setting_prefix $setting_prefix.
+	 *
+	 * @return array
+	 */
 	public static function remain_desktop( $setting_prefix ) {
 		$all_element = self::desktop_header_element();
 
 		$rows_desktop    = array( 'top', 'mid', 'bottom' );
 		$columns_desktop = array( 'left', 'center', 'right' );
 
-		if ( $setting_prefix === 'jnews_hb_element_desktop_sticky' ) {
+		if ( 'jnews_hb_element_desktop_sticky' === $setting_prefix ) {
 			$rows_desktop = array( 'mid' );
 		}
 
@@ -131,25 +181,40 @@ Class HeaderBuilder {
 		return $all_element;
 	}
 
+	/**
+	 * Method remain_desktop_header_element
+	 *
+	 * @return array
+	 */
 	public static function remain_desktop_header_element() {
 		return self::remain_desktop( 'jnews_hb_element_desktop' );
 	}
 
+	/**
+	 * Method remain_sticky_header_element
+	 *
+	 * @return array
+	 */
 	public static function remain_sticky_header_element() {
 		return self::remain_desktop( 'jnews_hb_element_desktop_sticky' );
 	}
 
-	public static function remain_mobile_header_element() {
-		$all_element = self::mobile_header_element();
+		/**
+		 * Method remain_mobile_drawer_element
+		 *
+		 * @return array
+		 */
+	public static function remain_mobile_drawer_element() {
+		$all_element = self::mobile_drawer_element();
 
 		$blocks = array(
-			'top' => array( 'center' ),
-			'mid' => array( 'left', 'center', 'right' ),
+			'top'    => array( 'center' ),
+			'bottom' => array( 'center' ),
 		);
 
 		foreach ( $blocks as $row => $columns ) {
 			foreach ( $columns as $column ) {
-				$setting_element = "jnews_hb_element_mobile_{$row}_{$column}";
+				$setting_element = "jnews_hb_element_mobile_drawer_{$row}_{$column}";
 				$default_element = get_theme_mod( $setting_element, array() );
 
 				if ( is_array( $default_element ) ) {
@@ -163,17 +228,22 @@ Class HeaderBuilder {
 		return $all_element;
 	}
 
-	public static function remain_mobile_drawer_element() {
-		$all_element = self::mobile_drawer_element();
+	/**
+	 * Method remain_mobile_header_element
+	 *
+	 * @return array
+	 */
+	public static function remain_mobile_header_element() {
+		$all_element = self::mobile_header_element();
 
 		$blocks = array(
-			'top'    => array( 'center' ),
-			'bottom' => array( 'center' ),
+			'top' => array( 'center' ),
+			'mid' => array( 'left', 'center', 'right' ),
 		);
 
 		foreach ( $blocks as $row => $columns ) {
 			foreach ( $columns as $column ) {
-				$setting_element = "jnews_hb_element_mobile_drawer_{$row}_{$column}";
+				$setting_element = "jnews_hb_element_mobile_{$row}_{$column}";
 				$default_element = get_theme_mod( $setting_element, array() );
 
 				if ( is_array( $default_element ) ) {

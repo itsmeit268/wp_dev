@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: JNews 11.1.3\n"
+"Project-Id-Version: JNews 11.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: Jegtheme <support@jeghteme.com>\n"
 "Language-Team: Jegtheme <support@jeghteme.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-21T09:59:59+00:00\n"
+"POT-Creation-Date: 2023-12-04T09:44:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: jnews\n"
@@ -34,6 +34,7 @@ msgid "http://jegtheme.com/"
 msgstr ""
 
 #: 404.php:24
+#: assets/js/admin/dashboard.js:1
 msgid "Page Not Found"
 msgstr ""
 
@@ -68,14 +69,14 @@ msgid "Change Password"
 msgstr ""
 
 #: class/AccountPage.php:264
-#: class/Customizer/sections/social_icon.php:46
+#: class/Customizer/sections/social_icon.php:50
 #: class/Elementor/Normal/SocialIcon.php:148
-#: class/Elementor/Normal/SocialIcon.php:229
+#: class/Elementor/Normal/SocialIcon.php:230
 #: class/Module/Element/Element_Socialcounteritem_Option.php:46
 #: class/Module/Element/Element_Socialiconitem_Option.php:40
 #: class/Module/Element/Element_Socialiconitem_View.php:20
 #: class/Widget/Normal/Element/SocialWidget.php:94
-#: class/Widget/Normal/Element/SocialWidget.php:161
+#: class/Widget/Normal/Element/SocialWidget.php:165
 #: lib/theme-helper.php:843
 msgid "Facebook"
 msgstr ""
@@ -85,180 +86,191 @@ msgid "Tiktok"
 msgstr ""
 
 #: class/AccountPage.php:266
-#: class/Customizer/sections/social_icon.php:47
+#: class/Customizer/sections/social_icon.php:77
+#: class/Elementor/Normal/SocialIcon.php:395
+#: class/Module/Element/Element_Socialiconitem_Option.php:63
+#: class/Module/Element/Element_Socialiconitem_View.php:185
+#: class/Widget/Normal/Element/SocialWidget.php:118
+#: class/Widget/Normal/Element/SocialWidget.php:356
+#: lib/theme-helper.php:958
+msgid "Threads"
+msgstr ""
+
+#: class/AccountPage.php:267
+#: class/Customizer/sections/social_icon.php:51
 #: class/Elementor/Normal/SocialCounter.php:232
 #: class/Elementor/Normal/SocialIcon.php:149
-#: class/Elementor/Normal/SocialIcon.php:416
+#: class/Elementor/Normal/SocialIcon.php:428
 #: class/Module/Element/Element_Socialcounteritem_Option.php:47
 #: class/Module/Element/Element_Socialiconitem_Option.php:41
-#: class/Module/Element/Element_Socialiconitem_View.php:185
+#: class/Module/Element/Element_Socialiconitem_View.php:196
 #: class/Widget/Normal/Element/SocialCounterWidget.php:164
 #: class/Widget/Normal/Element/SocialWidget.php:95
-#: class/Widget/Normal/Element/SocialWidget.php:353
+#: class/Widget/Normal/Element/SocialWidget.php:367
 #: lib/theme-helper.php:848
 msgid "Twitter"
 msgstr ""
 
-#: class/AccountPage.php:267
-#: class/Customizer/sections/social_icon.php:48
+#: class/AccountPage.php:268
+#: class/Customizer/sections/social_icon.php:52
 #: class/Elementor/Normal/SocialIcon.php:150
 #: class/Module/Element/Element_Socialiconitem_Option.php:42
 #: class/Widget/Normal/Element/SocialWidget.php:96
 msgid "Linkedin"
 msgstr ""
 
-#: class/AccountPage.php:268
-#: class/Customizer/sections/social_icon.php:49
+#: class/AccountPage.php:269
+#: class/Customizer/sections/social_icon.php:53
 #: class/Elementor/Normal/SocialCounter.php:233
 #: class/Elementor/Normal/SocialIcon.php:151
-#: class/Elementor/Normal/SocialIcon.php:247
+#: class/Elementor/Normal/SocialIcon.php:248
 #: class/Module/Element/Element_Socialcounteritem_Option.php:48
 #: class/Module/Element/Element_Socialiconitem_Option.php:43
 #: class/Module/Element/Element_Socialiconitem_View.php:38
 #: class/Widget/Normal/Element/SocialCounterWidget.php:165
 #: class/Widget/Normal/Element/SocialWidget.php:97
-#: class/Widget/Normal/Element/SocialWidget.php:179
+#: class/Widget/Normal/Element/SocialWidget.php:183
 #: lib/theme-helper.php:858
 msgid "Pinterest"
 msgstr ""
 
-#: class/AccountPage.php:269
-#: class/Customizer/sections/social_icon.php:50
+#: class/AccountPage.php:270
+#: class/Customizer/sections/social_icon.php:54
 #: class/Elementor/Normal/SocialCounter.php:234
 #: class/Elementor/Normal/SocialIcon.php:152
-#: class/Elementor/Normal/SocialIcon.php:256
+#: class/Elementor/Normal/SocialIcon.php:257
 #: class/Module/Element/Element_Socialcounteritem_Option.php:49
 #: class/Module/Element/Element_Socialiconitem_Option.php:44
 #: class/Module/Element/Element_Socialiconitem_View.php:47
 #: class/Widget/Normal/Element/SocialCounterWidget.php:166
 #: class/Widget/Normal/Element/SocialWidget.php:98
-#: class/Widget/Normal/Element/SocialWidget.php:188
+#: class/Widget/Normal/Element/SocialWidget.php:192
 #: lib/theme-helper.php:863
 msgid "Behance"
 msgstr ""
 
-#: class/AccountPage.php:270
-#: class/Customizer/sections/social_icon.php:51
+#: class/AccountPage.php:271
+#: class/Customizer/sections/social_icon.php:55
 #: class/Elementor/Normal/SocialIcon.php:153
-#: class/Elementor/Normal/SocialIcon.php:265
+#: class/Elementor/Normal/SocialIcon.php:266
 #: class/Module/Element/Element_Socialiconitem_Option.php:45
 #: class/Module/Element/Element_Socialiconitem_View.php:56
 #: class/Widget/Normal/Element/SocialWidget.php:99
-#: class/Widget/Normal/Element/SocialWidget.php:197
+#: class/Widget/Normal/Element/SocialWidget.php:201
 #: lib/theme-helper.php:868
 msgid "Github"
 msgstr ""
 
-#: class/AccountPage.php:271
-#: class/Customizer/sections/social_icon.php:52
+#: class/AccountPage.php:272
+#: class/Customizer/sections/social_icon.php:56
 #: class/Elementor/Normal/SocialCounter.php:235
 #: class/Elementor/Normal/SocialIcon.php:154
-#: class/Elementor/Normal/SocialIcon.php:274
+#: class/Elementor/Normal/SocialIcon.php:275
 #: class/Module/Element/Element_Socialcounteritem_Option.php:50
 #: class/Module/Element/Element_Socialiconitem_Option.php:46
 #: class/Module/Element/Element_Socialiconitem_View.php:65
 #: class/Widget/Normal/Element/SocialCounterWidget.php:167
 #: class/Widget/Normal/Element/SocialWidget.php:100
-#: class/Widget/Normal/Element/SocialWidget.php:206
+#: class/Widget/Normal/Element/SocialWidget.php:210
 msgid "Flickr"
 msgstr ""
 
-#: class/AccountPage.php:272
-#: class/Customizer/sections/social_icon.php:53
+#: class/AccountPage.php:273
+#: class/Customizer/sections/social_icon.php:57
 #: class/Elementor/Normal/SocialIcon.php:155
-#: class/Elementor/Normal/SocialIcon.php:283
+#: class/Elementor/Normal/SocialIcon.php:284
 #: class/Module/Element/Element_Socialiconitem_Option.php:47
 #: class/Module/Element/Element_Socialiconitem_View.php:74
 #: class/Widget/Normal/Element/SocialWidget.php:101
-#: class/Widget/Normal/Element/SocialWidget.php:215
+#: class/Widget/Normal/Element/SocialWidget.php:219
 #: lib/theme-helper.php:878
 msgid "Tumblr"
 msgstr ""
 
-#: class/AccountPage.php:273
-#: class/Customizer/sections/social_icon.php:55
+#: class/AccountPage.php:274
+#: class/Customizer/sections/social_icon.php:59
 #: class/Elementor/Normal/SocialIcon.php:156
-#: class/Elementor/Normal/SocialIcon.php:292
+#: class/Elementor/Normal/SocialIcon.php:293
 #: class/Module/Element/Element_Socialiconitem_Option.php:48
 #: class/Module/Element/Element_Socialiconitem_View.php:83
 #: class/Widget/Normal/Element/SocialWidget.php:103
-#: class/Widget/Normal/Element/SocialWidget.php:224
+#: class/Widget/Normal/Element/SocialWidget.php:228
 #: lib/theme-helper.php:883
 msgid "Dribbble"
 msgstr ""
 
-#: class/AccountPage.php:274
-#: class/Customizer/sections/social_icon.php:56
+#: class/AccountPage.php:275
+#: class/Customizer/sections/social_icon.php:60
 #: class/Elementor/Normal/SocialCounter.php:236
 #: class/Elementor/Normal/SocialIcon.php:157
-#: class/Elementor/Normal/SocialIcon.php:301
+#: class/Elementor/Normal/SocialIcon.php:302
 #: class/Module/Element/Element_Socialcounteritem_Option.php:51
 #: class/Module/Element/Element_Socialiconitem_Option.php:49
 #: class/Module/Element/Element_Socialiconitem_View.php:92
 #: class/Widget/Normal/Element/SocialCounterWidget.php:168
 #: class/Widget/Normal/Element/SocialWidget.php:105
-#: class/Widget/Normal/Element/SocialWidget.php:233
+#: class/Widget/Normal/Element/SocialWidget.php:237
 #: lib/theme-helper.php:888
 msgid "Soundcloud"
 msgstr ""
 
-#: class/AccountPage.php:275
-#: class/Customizer/sections/social_icon.php:58
+#: class/AccountPage.php:276
+#: class/Customizer/sections/social_icon.php:62
 #: class/Elementor/Normal/SocialCounter.php:237
 #: class/Elementor/Normal/SocialIcon.php:158
-#: class/Elementor/Normal/SocialIcon.php:310
+#: class/Elementor/Normal/SocialIcon.php:311
 #: class/Module/Element/Element_Socialcounteritem_Option.php:52
 #: class/Module/Element/Element_Socialiconitem_Option.php:50
 #: class/Module/Element/Element_Socialiconitem_View.php:101
 #: class/Widget/Normal/Element/SocialCounterWidget.php:169
 #: class/Widget/Normal/Element/SocialWidget.php:106
-#: class/Widget/Normal/Element/SocialWidget.php:242
+#: class/Widget/Normal/Element/SocialWidget.php:246
 #: lib/theme-helper.php:893
 msgid "Instagram"
 msgstr ""
 
-#: class/AccountPage.php:276
-#: class/Customizer/sections/social_icon.php:59
+#: class/AccountPage.php:277
+#: class/Customizer/sections/social_icon.php:63
 #: class/Elementor/Normal/SocialCounter.php:238
 #: class/Elementor/Normal/SocialIcon.php:159
-#: class/Elementor/Normal/SocialIcon.php:319
+#: class/Elementor/Normal/SocialIcon.php:320
 #: class/Module/Element/Element_Socialcounteritem_Option.php:53
 #: class/Module/Element/Element_Socialiconitem_Option.php:51
 #: class/Module/Element/Element_Socialiconitem_View.php:110
 #: class/Widget/Normal/Element/SocialCounterWidget.php:170
 #: class/Widget/Normal/Element/SocialWidget.php:107
-#: class/Widget/Normal/Element/SocialWidget.php:251
+#: class/Widget/Normal/Element/SocialWidget.php:255
 #: lib/theme-helper.php:898
 msgid "Vimeo"
 msgstr ""
 
-#: class/AccountPage.php:277
-#: class/Customizer/sections/social_icon.php:60
+#: class/AccountPage.php:278
+#: class/Customizer/sections/social_icon.php:64
 #: class/Elementor/Normal/SocialCounter.php:239
 #: class/Elementor/Normal/SocialIcon.php:160
-#: class/Elementor/Normal/SocialIcon.php:328
+#: class/Elementor/Normal/SocialIcon.php:329
 #: class/Module/Element/Element_Socialiconitem_View.php:119
 #: class/Widget/Normal/Element/SocialCounterWidget.php:171
 #: class/Widget/Normal/Element/SocialWidget.php:108
-#: class/Widget/Normal/Element/SocialWidget.php:260
+#: class/Widget/Normal/Element/SocialWidget.php:264
 #: lib/theme-helper.php:903
 msgid "Youtube"
 msgstr ""
 
-#: class/AccountPage.php:278
-#: class/Customizer/sections/social_icon.php:63
+#: class/AccountPage.php:279
+#: class/Customizer/sections/social_icon.php:67
 #: class/Elementor/Normal/SocialIcon.php:163
-#: class/Elementor/Normal/SocialIcon.php:355
+#: class/Elementor/Normal/SocialIcon.php:356
 #: class/Module/Element/Element_Socialiconitem_Option.php:55
 #: class/Module/Element/Element_Socialiconitem_View.php:146
 #: class/Widget/Normal/Element/SocialWidget.php:111
-#: class/Widget/Normal/Element/SocialWidget.php:287
+#: class/Widget/Normal/Element/SocialWidget.php:291
 #: lib/theme-helper.php:918
 msgid "Reddit"
 msgstr ""
 
-#: class/AccountPage.php:279
-#: class/Customizer/sections/social_icon.php:62
+#: class/AccountPage.php:280
+#: class/Customizer/sections/social_icon.php:66
 #: class/Elementor/Normal/SocialIcon.php:162
 #: class/Module/Element/Element_Socialcounteritem_Option.php:56
 #: class/Module/Element/Element_Socialiconitem_Option.php:54
@@ -266,66 +278,66 @@ msgstr ""
 msgid "Vk"
 msgstr ""
 
-#: class/AccountPage.php:280
-#: class/Customizer/sections/social_icon.php:64
+#: class/AccountPage.php:281
+#: class/Customizer/sections/social_icon.php:68
 #: class/Elementor/Normal/SocialIcon.php:164
-#: class/Elementor/Normal/SocialIcon.php:364
+#: class/Elementor/Normal/SocialIcon.php:365
 #: class/Module/Element/Element_Socialiconitem_Option.php:56
 #: class/Module/Element/Element_Socialiconitem_View.php:155
 #: class/Widget/Normal/Element/SocialWidget.php:112
-#: class/Widget/Normal/Element/SocialWidget.php:296
+#: class/Widget/Normal/Element/SocialWidget.php:300
 #: lib/theme-helper.php:923
 msgid "Weibo"
 msgstr ""
 
-#: class/AccountPage.php:281
+#: class/AccountPage.php:282
 msgid "Rss"
 msgstr ""
 
-#: class/AccountPage.php:282
-#: class/Customizer/sections/social_icon.php:61
+#: class/AccountPage.php:283
+#: class/Customizer/sections/social_icon.php:65
 #: class/Elementor/Normal/SocialCounter.php:240
 #: class/Elementor/Normal/SocialIcon.php:161
-#: class/Elementor/Normal/SocialIcon.php:346
+#: class/Elementor/Normal/SocialIcon.php:347
 #: class/Module/Element/Element_Socialcounteritem_Option.php:55
 #: class/Module/Element/Element_Socialiconitem_Option.php:53
 #: class/Module/Element/Element_Socialiconitem_View.php:137
 #: class/Widget/Normal/Element/SocialCounterWidget.php:172
 #: class/Widget/Normal/Element/SocialWidget.php:109
-#: class/Widget/Normal/Element/SocialWidget.php:278
+#: class/Widget/Normal/Element/SocialWidget.php:282
 #: lib/theme-helper.php:908
 msgid "Twitch"
 msgstr ""
 
-#: class/AccountPage.php:283
+#: class/AccountPage.php:284
 msgid "Website"
 msgstr ""
 
-#: class/AccountPage.php:333
+#: class/AccountPage.php:334
 msgid "First name should not be empty"
 msgstr ""
 
-#: class/AccountPage.php:370
+#: class/AccountPage.php:371
 msgid "You have successfully edited your account details"
 msgstr ""
 
-#: class/AccountPage.php:385
+#: class/AccountPage.php:386
 msgid "Your old password is not valid"
 msgstr ""
 
-#: class/AccountPage.php:389
+#: class/AccountPage.php:390
 msgid "Please enter your new password"
 msgstr ""
 
-#: class/AccountPage.php:393
+#: class/AccountPage.php:394
 msgid "New Password & Confirm Password do not match"
 msgstr ""
 
-#: class/AccountPage.php:398
+#: class/AccountPage.php:399
 msgid "You have successfully changed your password"
 msgstr ""
 
-#: class/AccountPage.php:400
+#: class/AccountPage.php:401
 msgid "Please enter your old password"
 msgstr ""
 
@@ -1181,6 +1193,7 @@ msgstr ""
 #: class/Module/Block/BlockViewAbstract.php:152
 #: class/Module/Element/Element_Newsticker_View.php:80
 #: lib/theme-filter.php:75
+#: assets/js/admin/dashboard.js:1
 msgid "Prev"
 msgstr ""
 
@@ -1199,7 +1212,8 @@ msgstr ""
 #: class/Module/Element/Element_Newsticker_View.php:79
 #: fragment/comments.php:75
 #: lib/theme-filter.php:96
-#: lib/theme-helper.php:1646
+#: lib/theme-helper.php:1657
+#: assets/js/admin/dashboard.js:1
 msgid "Next"
 msgstr ""
 
@@ -1208,7 +1222,7 @@ msgstr ""
 #: class/Archive/SingleArchive.php:81
 #: class/Module/Block/BlockViewAbstract.php:96
 #: fragment/comments.php:72
-#: lib/theme-helper.php:1645
+#: lib/theme-helper.php:1656
 msgid "Previous"
 msgstr ""
 
@@ -1294,12 +1308,14 @@ msgstr ""
 #: class/Dashboard/AdminDashboard.php:184
 #: class/Dashboard/AdminDashboard.php:185
 #: class/Dashboard/template/import-content.php:9
+#: assets/js/admin/dashboard.js:1
 msgid "Import Demo & Style"
 msgstr ""
 
 #: class/Customizer.php:502
 #: class/Dashboard/AdminDashboard.php:192
 #: class/Dashboard/AdminDashboard.php:193
+#: assets/js/admin/dashboard.js:1
 msgid "Install Plugin"
 msgstr ""
 
@@ -1320,6 +1336,7 @@ msgstr ""
 #: class/Dashboard/AdminDashboard.php:216
 #: class/Dashboard/AdminDashboard.php:217
 #: class/Dashboard/template/documentation.php:102
+#: assets/js/admin/dashboard.js:1
 msgid "Video Documentation"
 msgstr ""
 
@@ -2325,7 +2342,8 @@ msgid "Query Option"
 msgstr ""
 
 #: class/Customizer/OtherOption.php:45
-msgid "WP Blocks Option"
+#: tgm/plugin-list.php:482
+msgid "Gutenberg"
 msgstr ""
 
 #: class/Customizer/SchemeStyleOption.php:17
@@ -3846,60 +3864,60 @@ msgid "Footer menu separator color."
 msgstr ""
 
 #: class/Customizer/sections/footer_global.php:927
-#: class/Customizer/sections/footer_global.php:1018
+#: class/Customizer/sections/footer_global.php:1027
 msgid "Social Icon Color"
 msgstr ""
 
 #: class/Customizer/sections/footer_global.php:928
-#: class/Customizer/sections/footer_global.php:1019
+#: class/Customizer/sections/footer_global.php:1028
 msgid "Footer social icon color."
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:955
+#: class/Customizer/sections/footer_global.php:960
 msgid "Social Icon Hover Color"
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:956
+#: class/Customizer/sections/footer_global.php:961
 msgid "Footer social icon hover color."
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:982
+#: class/Customizer/sections/footer_global.php:991
 msgid "Social Icon Background Color"
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:983
+#: class/Customizer/sections/footer_global.php:992
 msgid "Footer social icon background color."
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1054
+#: class/Customizer/sections/footer_global.php:1063
 msgid "Social Text Color"
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1055
+#: class/Customizer/sections/footer_global.php:1064
 msgid "Footer social text color."
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1085
+#: class/Customizer/sections/footer_global.php:1094
 msgid "Social Line Color"
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1086
+#: class/Customizer/sections/footer_global.php:1095
 msgid "Footer social title line color."
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1111
+#: class/Customizer/sections/footer_global.php:1120
 msgid "Social Icon Hover Background Color"
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1112
+#: class/Customizer/sections/footer_global.php:1121
 msgid "Footer social icon hover background color."
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1147
+#: class/Customizer/sections/footer_global.php:1156
 msgid "Social Hover Text Color"
 msgstr ""
 
-#: class/Customizer/sections/footer_global.php:1148
+#: class/Customizer/sections/footer_global.php:1157
 msgid "Footer social hover text color."
 msgstr ""
 
@@ -4387,6 +4405,35 @@ msgstr ""
 
 #: class/Customizer/sections/global_gdpr.php:175
 msgid "Disable all Google fonts (GDPR) and you can use Custom Font option (self-hosted) or default system fonts instead."
+msgstr ""
+
+#: class/Customizer/sections/global_gutenberg_editor.php:9
+#: class/Customizer/sections/global_gutenberg_editor.php:24
+msgid "Global WP Blocks Settings"
+msgstr ""
+
+#: class/Customizer/sections/global_gutenberg_editor.php:17
+msgid "JNews Style on Gutenberg"
+msgstr ""
+
+#: class/Customizer/sections/global_gutenberg_editor.php:18
+msgid "Enable JNews Styling on Gutenberg Editor"
+msgstr ""
+
+#: class/Customizer/sections/global_gutenberg_editor.php:32
+msgid "WP Blocks Margin Top"
+msgstr ""
+
+#: class/Customizer/sections/global_gutenberg_editor.php:33
+msgid "Set Margin Top of WP Block"
+msgstr ""
+
+#: class/Customizer/sections/global_gutenberg_editor.php:54
+msgid "WP Blocks Margin Bottom"
+msgstr ""
+
+#: class/Customizer/sections/global_gutenberg_editor.php:55
+msgid "Set Margin Bottom of WP Block"
 msgstr ""
 
 #: class/Customizer/sections/global_layout.php:14
@@ -4916,26 +4963,6 @@ msgstr ""
 
 #: class/Customizer/sections/global_speed.php:154
 msgid "Remove any flash of unstyled text/icon ( FOUT ) on Elementor."
-msgstr ""
-
-#: class/Customizer/sections/global_wpblocks.php:8
-msgid "Global WP Blocks Settings"
-msgstr ""
-
-#: class/Customizer/sections/global_wpblocks.php:16
-msgid "WP Blocks Margin Top"
-msgstr ""
-
-#: class/Customizer/sections/global_wpblocks.php:17
-msgid "Set Margin Top of WP Block"
-msgstr ""
-
-#: class/Customizer/sections/global_wpblocks.php:38
-msgid "WP Blocks Margin Bottom"
-msgstr ""
-
-#: class/Customizer/sections/global_wpblocks.php:39
-msgid "Set Margin Bottom of WP Block"
 msgstr ""
 
 #: class/Customizer/sections/header_builder.php:10
@@ -7645,7 +7672,7 @@ msgid "Set color for the progress bar."
 msgstr ""
 
 #: class/Customizer/sections/single_post.php:953
-msgid "Disable Jnews Style on Table"
+msgid "Disable JNews Style on Table"
 msgstr ""
 
 #: class/Customizer/sections/single_post.php:954
@@ -7781,6 +7808,7 @@ msgstr ""
 #: class/Module/Post/Post_Meta_Option.php:41
 #: class/Module/Post/Post_Meta_Option.php:60
 #: class/Module/Post/Post_Related_Option.php:36
+#: assets/js/admin/dashboard.js:1
 msgid "Category"
 msgstr ""
 
@@ -8148,7 +8176,7 @@ msgstr ""
 msgid "set top position video when scroll effect appear"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:10
+#: class/Customizer/sections/social_icon.php:11
 msgid ""
 "<ul>\n"
 "                    <li>This social icon will show on header & footer of your website. </li>\n"
@@ -8156,18 +8184,18 @@ msgid ""
 "                </ul>"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:22
+#: class/Customizer/sections/social_icon.php:26
 msgid "Add Social Icon"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:23
+#: class/Customizer/sections/social_icon.php:27
 #: class/Elementor/Normal/SocialIcon.php:128
 #: class/Widget/Normal/Element/SocialWidget.php:65
 msgid "Add icon for each of your social account."
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:36
-#: class/Customizer/sections/social_icon.php:42
+#: class/Customizer/sections/social_icon.php:40
+#: class/Customizer/sections/social_icon.php:46
 #: class/Customizer/SocialOption.php:31
 #: class/Elementor/Normal/SocialCounter.php:226
 #: class/Elementor/Normal/SocialIcon.php:18
@@ -8184,7 +8212,7 @@ msgstr ""
 msgid "Social Icon"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:45
+#: class/Customizer/sections/social_icon.php:49
 #: class/Elementor/Normal/SocialCounter.php:230
 #: class/Elementor/Normal/SocialIcon.php:147
 #: class/Module/Element/Element_Socialcounteritem_Option.php:45
@@ -8194,108 +8222,108 @@ msgstr ""
 msgid "Choose Icon"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:54
+#: class/Customizer/sections/social_icon.php:58
 #: class/Widget/Normal/Element/SocialWidget.php:102
-#: class/Widget/Normal/Element/SocialWidget.php:314
+#: class/Widget/Normal/Element/SocialWidget.php:318
 #: lib/theme-helper.php:933
 msgid "Telegram"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:57
-#: class/Widget/Normal/Element/SocialWidget.php:305
+#: class/Customizer/sections/social_icon.php:61
+#: class/Widget/Normal/Element/SocialWidget.php:309
 #: lib/theme-helper.php:928
 msgid "StumbleUpon"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:65
+#: class/Customizer/sections/social_icon.php:69
 #: lib/theme-helper.php:943
 msgid "WeChat"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:66
+#: class/Customizer/sections/social_icon.php:70
 #: class/Elementor/Normal/SocialCounter.php:242
 #: class/Elementor/Normal/SocialIcon.php:165
-#: class/Elementor/Normal/SocialIcon.php:373
+#: class/Elementor/Normal/SocialIcon.php:374
 #: class/Module/Element/Element_Socialcounteritem_Option.php:57
 #: class/Module/Element/Element_Socialiconitem_Option.php:57
 #: class/Module/Element/Element_Socialiconitem_View.php:164
 #: class/Widget/Normal/Element/SocialCounterWidget.php:174
 #: class/Widget/Normal/Element/SocialWidget.php:113
-#: class/Widget/Normal/Element/SocialWidget.php:323
+#: class/Widget/Normal/Element/SocialWidget.php:327
 #: lib/theme-helper.php:938
 msgid "RSS"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:67
+#: class/Customizer/sections/social_icon.php:71
 #: class/Elementor/Normal/SocialIcon.php:171
-#: class/Elementor/Normal/SocialIcon.php:394
+#: class/Elementor/Normal/SocialIcon.php:406
 #: class/Module/Element/Element_Socialiconitem_Option.php:61
-#: class/Module/Element/Element_Socialiconitem_View.php:207
+#: class/Module/Element/Element_Socialiconitem_View.php:218
 #: class/Widget/Normal/Element/SocialWidget.php:114
-#: class/Widget/Normal/Element/SocialWidget.php:332
-#: lib/theme-helper.php:963
+#: class/Widget/Normal/Element/SocialWidget.php:336
+#: lib/theme-helper.php:968
 msgid "Line"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:68
+#: class/Customizer/sections/social_icon.php:72
 #: class/Elementor/Normal/SocialIcon.php:166
-#: class/Elementor/Normal/SocialIcon.php:405
+#: class/Elementor/Normal/SocialIcon.php:417
 #: class/Module/Element/Element_Socialiconitem_Option.php:62
-#: class/Module/Element/Element_Socialiconitem_View.php:196
+#: class/Module/Element/Element_Socialiconitem_View.php:207
 #: class/Widget/Normal/Element/SocialWidget.php:115
-#: class/Widget/Normal/Element/SocialWidget.php:370
-#: lib/theme-helper.php:968
+#: class/Widget/Normal/Element/SocialWidget.php:384
+#: lib/theme-helper.php:973
 msgid "Discord"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:69
+#: class/Customizer/sections/social_icon.php:73
 #: class/Elementor/Normal/SocialIcon.php:167
 #: class/Widget/Normal/Element/SocialWidget.php:116
-#: class/Widget/Normal/Element/SocialWidget.php:380
+#: class/Widget/Normal/Element/SocialWidget.php:394
 #: lib/theme-helper.php:948
 msgid "Odnoklassniki"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:70
+#: class/Customizer/sections/social_icon.php:74
 #: class/Elementor/Normal/SocialCounter.php:243
 #: class/Elementor/Normal/SocialIcon.php:168
-#: class/Elementor/Normal/SocialIcon.php:383
+#: class/Elementor/Normal/SocialIcon.php:384
 #: class/Module/Element/Element_Socialcounteritem_Option.php:58
 #: class/Module/Element/Element_Socialiconitem_Option.php:58
 #: class/Module/Element/Element_Socialiconitem_View.php:174
 #: class/Widget/Normal/Element/SocialCounterWidget.php:175
 #: class/Widget/Normal/Element/SocialWidget.php:117
-#: class/Widget/Normal/Element/SocialWidget.php:342
+#: class/Widget/Normal/Element/SocialWidget.php:346
 #: lib/theme-helper.php:953
 msgid "TikTok"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:71
+#: class/Customizer/sections/social_icon.php:75
 #: class/Elementor/Normal/SocialIcon.php:169
-#: class/Elementor/Normal/SocialIcon.php:427
+#: class/Elementor/Normal/SocialIcon.php:439
 #: class/Module/Element/Element_Socialcounteritem_Option.php:59
 #: class/Module/Element/Element_Socialiconitem_Option.php:59
-#: class/Module/Element/Element_Socialiconitem_View.php:217
-#: class/Widget/Normal/Element/SocialWidget.php:362
-#: lib/theme-helper.php:958
+#: class/Module/Element/Element_Socialiconitem_View.php:228
+#: class/Widget/Normal/Element/SocialWidget.php:376
+#: lib/theme-helper.php:963
 msgid "Snapchat"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:72
+#: class/Customizer/sections/social_icon.php:76
 #: class/Elementor/Normal/SocialIcon.php:170
-#: class/Elementor/Normal/SocialIcon.php:436
+#: class/Elementor/Normal/SocialIcon.php:448
 #: class/Module/Element/Element_Socialiconitem_Option.php:60
-#: lib/theme-helper.php:973
+#: lib/theme-helper.php:978
 msgid "Whatsapp"
 msgstr ""
 
-#: class/Customizer/sections/social_icon.php:77
+#: class/Customizer/sections/social_icon.php:82
 #: class/Elementor/Normal/SocialCounter.php:250
-#: class/Elementor/Normal/SocialIcon.php:178
+#: class/Elementor/Normal/SocialIcon.php:179
 #: class/Module/Element/Element_Socialcounteritem_Option.php:66
-#: class/Module/Element/Element_Socialiconitem_Option.php:69
+#: class/Module/Element/Element_Socialiconitem_Option.php:70
 #: class/Widget/Normal/Element/SocialCounterWidget.php:180
-#: class/Widget/Normal/Element/SocialWidget.php:122
+#: class/Widget/Normal/Element/SocialWidget.php:123
 msgid "Social URL"
 msgstr ""
 
@@ -8779,7 +8807,7 @@ msgstr ""
 #: class/Util/Api/Plugin.php:215
 #: fragment/post/meta-post-1.php:20
 #: fragment/post/meta-post-2.php:19
-#: lib/theme-helper.php:3738
+#: lib/theme-helper.php:3749
 #: page-default.php:34
 msgid "by"
 msgstr ""
@@ -9110,15 +9138,18 @@ msgid "Version"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:20
+#: assets/js/admin/dashboard.js:1
 msgid "Please activate the license of JNews theme to get automatic theme update, official support service and all benefits from JNews."
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:35
+#: assets/js/admin/dashboard.js:1
 msgid "Activate JNews License"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:39
 #: class/Dashboard/template/dashboard-landing.php:68
+#: assets/js/admin/dashboard.js:1
 msgid "Tips: You must be logged into the same Themeforest account that purchased JNews. If you already logged in, look in the top menu bar to ensure it is the right account."
 msgstr ""
 
@@ -9131,14 +9162,17 @@ msgid "Please migrate your JNews to new license system"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:64
+#: assets/js/admin/dashboard.js:1
 msgid "Migrate JNews License"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:79
+#: assets/js/admin/dashboard.js:1
 msgid "Thank you for choosing JNews"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:84
+#: assets/js/admin/dashboard.js:1
 msgid "We would like to thank you for purchasing JNews! Before you get started, please be sure to always check out <a href=\"%s\">Documentation</a>"
 msgstr ""
 
@@ -9147,94 +9181,116 @@ msgid "We provide video guidance on every page to help you understand how to use
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:92
+#: assets/js/admin/dashboard.js:1
 msgid "We outline all kinds of good information, and provide you with all the details you need to use JNews."
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:99
 #: class/Dashboard/template/install-plugin.php:37
+#: assets/js/admin/dashboard.js:1
 msgid "Supported Plugin"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:100
+#: assets/js/admin/dashboard.js:1
 msgid "We provide list of all plugins that supported JNews. However, you are not limited to only install plugin from this list. To speed up your website performance please choose only necessary plugin."
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:102
 #: class/Dashboard/template/import-content.php:123
 #: class/Dashboard/template/import-content.php:275
+#: assets/js/admin/dashboard.js:1
 msgid "Install Plugins"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:107
 #: class/Dashboard/template/dashboard-landing.php:110
+#: assets/js/admin/dashboard.js:1
 msgid "Install Demo"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:108
+#: assets/js/admin/dashboard.js:1
 msgid "Installing demo and style as easy as one click. Our import system will also backup widget & customizer setting. Also, will restore both widget and customizer setting during uninstallation."
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:115
+#: assets/js/admin/dashboard.js:1
 msgid "Any Questions?"
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:116
+#: assets/js/admin/dashboard.js:1
 msgid "Our online documentation is an incredible resource for learning how to use JNews. But if you still have any question, please don't hesitate to ask through our dedicated support forum."
 msgstr ""
 
 #: class/Dashboard/template/dashboard-landing.php:118
+#: assets/js/admin/dashboard.js:1
 msgid "Documentation & Support"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:5
+#: assets/js/admin/dashboard.js:1
 msgid "How to Install JNews via WordPress"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:10
+#: assets/js/admin/dashboard.js:1
 msgid "How to Install JNews via FTP"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:15
+#: assets/js/admin/dashboard.js:1
 msgid "How to Update JNews via WordPress"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:20
+#: assets/js/admin/dashboard.js:1
 msgid "How to Update JNews via FTP"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:25
+#: assets/js/admin/dashboard.js:1
 msgid "JNews System Status"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:35
+#: assets/js/admin/dashboard.js:1
 msgid "How to Setup JNews Translation"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:40
+#: assets/js/admin/dashboard.js:1
 msgid "How to Setup JNews Font"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:45
+#: assets/js/admin/dashboard.js:1
 msgid "How to Setup Comments"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:50
+#: assets/js/admin/dashboard.js:1
 msgid "How to Setup JNews Split Post"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:75
+#: assets/js/admin/dashboard.js:1
 msgid "How to Setup JNews Page Loop"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:80
+#: assets/js/admin/dashboard.js:1
 msgid "How to Manage JNews Widget"
 msgstr ""
 
 #: class/Dashboard/template/documentation.php:105
+#: assets/js/admin/dashboard.js:1
 msgid "We would like to thank you for purchasing JNews! Before you get started, please be sure to always take a look at our Documentation and also watch our integrated Video Tutorials."
 msgstr ""
 
 #: class/Dashboard/template/import-content.php:15
+#: assets/js/admin/dashboard.js:1
 msgid "The imported demo will show you about the website structure, theme setting, content structure, design template and etc. In this case, you will be more familiar working with JNews. The imported demo is also fully customizable. Feel free to play around with your own design. Read <a target=\"_blank\" href=\"%s\">here</a> for more information."
 msgstr ""
 
@@ -9309,6 +9365,7 @@ msgid "Import - Elementor Content "
 msgstr ""
 
 #: class/Dashboard/template/import-content.php:63
+#: assets/js/admin/dashboard.js:1
 msgid "When you choose import Elementor Content, we will only import all dummy pages that created with Elementor plugin."
 msgstr ""
 
@@ -9317,11 +9374,13 @@ msgid "Uninstall Warning"
 msgstr ""
 
 #: class/Dashboard/template/import-content.php:72
+#: assets/js/admin/dashboard.js:1
 msgid "This will remove dummy content and also all widgets you add on this demo. We highly recommend you to create backup before continue."
 msgstr ""
 
 #: class/Dashboard/template/import-content.php:78
 #: class/Dashboard/template/import-content.php:85
+#: assets/js/admin/dashboard.js:1
 msgid "Congratulations!"
 msgstr ""
 
@@ -9355,10 +9414,12 @@ msgstr ""
 
 #: class/Dashboard/template/import-content.php:145
 #: class/Dashboard/template/import-content.php:295
+#: assets/js/admin/dashboard.js:1
 msgid "Elementor Only"
 msgstr ""
 
 #: class/Dashboard/template/import-content.php:148
+#: assets/js/admin/dashboard.js:1
 msgid "Visual Composer Only"
 msgstr ""
 
@@ -9388,12 +9449,14 @@ msgstr ""
 
 #: class/Dashboard/template/import-content.php:212
 #: class/Dashboard/template/import-content.php:350
+#: assets/js/admin/dashboard.js:1
 msgid "Import Demo"
 msgstr ""
 
 #: class/Dashboard/template/import-content.php:218
 #: class/Dashboard/template/import-content.php:355
 #: class/Util/Api/Importer.php:300
+#: assets/js/admin/dashboard.js:1
 msgid "Uninstall"
 msgstr ""
 
@@ -9425,6 +9488,7 @@ msgstr ""
 
 #: class/Dashboard/template/install-plugin-item.php:98
 #: class/Util/Api/Plugin.php:28
+#: assets/js/admin/dashboard.js:1
 msgid "Update"
 msgstr ""
 
@@ -9435,6 +9499,7 @@ msgstr ""
 
 #: class/Dashboard/template/install-plugin-item.php:104
 #: class/Util/Api/Plugin.php:32
+#: assets/js/admin/dashboard.js:1
 msgid "Install"
 msgstr ""
 
@@ -9537,6 +9602,7 @@ msgid "Allows you to regenerate your thumbnails after changing the thumbnail siz
 msgstr ""
 
 #: class/Dashboard/template/system-status.php:6
+#: assets/js/admin/dashboard.js:1
 msgid "System Report <em> - Please copy and paste this information when asking for support</em>"
 msgstr ""
 
@@ -9549,25 +9615,26 @@ msgid "End"
 msgstr ""
 
 #: class/Dashboard/template/system-status.php:35
+#: assets/js/admin/dashboard.js:1
 msgid "System Report Copied"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:384
+#: class/Elementor/ModuleElementor.php:386
 #: class/Module/ModuleOptionAbstract.php:507
 msgid "JNews - Module"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:385
+#: class/Elementor/ModuleElementor.php:387
 #: class/Module/Hero/HeroOptionAbstract.php:22
 msgid "JNews - Hero"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:386
+#: class/Elementor/ModuleElementor.php:388
 #: class/Module/Slider/SliderOptionAbstract.php:23
 msgid "JNews - Slider"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:387
+#: class/Elementor/ModuleElementor.php:389
 #: class/Module/Element/Element_Ads_Option.php:52
 #: class/Module/Element/Element_Blocklink_Option.php:23
 #: class/Module/Element/Element_Embedplaylist_Option.php:16
@@ -9585,19 +9652,19 @@ msgstr ""
 msgid "JNews - Element"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:388
+#: class/Elementor/ModuleElementor.php:390
 #: class/Module/Carousel/CarouselOptionAbstract.php:24
 msgid "JNews - Carousel"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:389
+#: class/Elementor/ModuleElementor.php:391
 #: class/Module/Footer/Footer_Header_Option.php:23
 #: class/Module/Footer/Footer_Menu_Option.php:23
 #: class/Module/Footer/Footer_Social_Option.php:20
 msgid "JNews - Footer"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:390
+#: class/Elementor/ModuleElementor.php:392
 #: class/Module/Post/Post_Author_Option.php:13
 #: class/Module/Post/Post_Breadcrumb_Option.php:13
 #: class/Module/Post/Post_Comment_Option.php:13
@@ -9614,7 +9681,7 @@ msgstr ""
 msgid "JNews - Post"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:391
+#: class/Elementor/ModuleElementor.php:393
 #: class/Module/Archive/Archive_Block_Option.php:12
 #: class/Module/Archive/Archive_Breadcrumb_Option.php:12
 #: class/Module/Archive/Archive_Desc_Option.php:12
@@ -9624,24 +9691,24 @@ msgstr ""
 msgid "JNews - Archive"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:432
+#: class/Elementor/ModuleElementor.php:434
 #: class/Module/ModuleVC.php:181
 msgid "Enable Sticky Sidebar"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:435
+#: class/Elementor/ModuleElementor.php:437
 msgid "Set this column as sticky sidebar. Note: Sticky Sidebar will disabled when on the editor or you should refresh the editor to see the result. It will works fine on the frontend."
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:451
+#: class/Elementor/ModuleElementor.php:453
 msgid "Custom CSS Setting"
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:454
+#: class/Elementor/ModuleElementor.php:456
 msgid "Enter custom CSS (Note: it will be outputted only on this particular page)."
 msgstr ""
 
-#: class/Elementor/ModuleElementor.php:483
+#: class/Elementor/ModuleElementor.php:485
 msgid "Padding"
 msgstr ""
 
@@ -9884,20 +9951,20 @@ msgid "Facebook Page"
 msgstr ""
 
 #: class/Elementor/Normal/SocialCounter.php:241
-#: class/Elementor/Normal/SocialIcon.php:337
+#: class/Elementor/Normal/SocialIcon.php:338
 #: class/Module/Element/Element_Socialiconitem_View.php:128
 #: class/Widget/Normal/Element/SocialCounterWidget.php:173
-#: class/Widget/Normal/Element/SocialWidget.php:269
+#: class/Widget/Normal/Element/SocialWidget.php:273
 #: lib/theme-helper.php:913
 msgid "VK"
 msgstr ""
 
 #: class/Elementor/Normal/SocialCounter.php:251
-#: class/Elementor/Normal/SocialIcon.php:179
+#: class/Elementor/Normal/SocialIcon.php:180
 #: class/Module/Element/Element_Socialcounteritem_Option.php:67
-#: class/Module/Element/Element_Socialiconitem_Option.php:70
+#: class/Module/Element/Element_Socialiconitem_Option.php:71
 #: class/Widget/Normal/Element/SocialCounterWidget.php:181
-#: class/Widget/Normal/Element/SocialWidget.php:123
+#: class/Widget/Normal/Element/SocialWidget.php:124
 msgid "Insert your social account url."
 msgstr ""
 
@@ -9992,10 +10059,10 @@ msgstr ""
 #: class/Elementor/Normal/SocialCounter.php:578
 #: class/Module/Element/Element_Socialcounteritem_View.php:228
 #: class/Module/Element/Element_Socialcounteritem_View.php:257
-#: class/Module/Element/Element_Userlist_View.php:276
+#: class/Module/Element/Element_Userlist_View.php:277
 #: class/Widget/Normal/Element/SocialCounterWidget.php:497
 #: class/Widget/Normal/Element/SocialCounterWidget.php:521
-#: lib/theme-helper.php:3776
+#: lib/theme-helper.php:3787
 msgid "Subscriber"
 msgstr ""
 
@@ -10054,9 +10121,13 @@ msgstr ""
 msgid "After Social Text"
 msgstr ""
 
-#: class/Elementor/Normal/SocialIcon.php:238
+#: class/Elementor/Normal/SocialIcon.php:172
+msgid "Thrads"
+msgstr ""
+
+#: class/Elementor/Normal/SocialIcon.php:239
 #: class/Module/Element/Element_Socialiconitem_View.php:29
-#: class/Widget/Normal/Element/SocialWidget.php:170
+#: class/Widget/Normal/Element/SocialWidget.php:174
 #: lib/theme-helper.php:853
 msgid "LinkedIn"
 msgstr ""
@@ -10267,7 +10338,7 @@ msgstr ""
 msgid "Please %s %s plugin to version <strong>%s</strong> or higher."
 msgstr ""
 
-#: class/Init.php:426
+#: class/Init.php:428
 msgid "Enter subtitle here"
 msgstr ""
 
@@ -12398,7 +12469,7 @@ msgstr ""
 
 #: class/Module/Block/BlockViewAbstract.php:274
 #: lib/theme-filter.php:65
-#: lib/theme-helper.php:1765
+#: lib/theme-helper.php:1776
 msgid "Page %s of %s"
 msgstr ""
 
@@ -13917,13 +13988,13 @@ msgid "JNews - Related Post"
 msgstr ""
 
 #: class/Module/Post/Post_Related_View.php:14
-#: class/Module/Post/Post_Related_View.php:64
+#: class/Module/Post/Post_Related_View.php:65
 #: class/Single/SinglePost.php:1277
 msgid "Related"
 msgstr ""
 
 #: class/Module/Post/Post_Related_View.php:15
-#: class/Module/Post/Post_Related_View.php:65
+#: class/Module/Post/Post_Related_View.php:66
 #: class/Single/SinglePost.php:1278
 msgid " Posts"
 msgstr ""
@@ -14395,6 +14466,7 @@ msgid "Installing Related Plugins"
 msgstr ""
 
 #: class/Util/Api/Importer.php:293
+#: assets/js/admin/dashboard.js:1
 msgid "Preparing Data"
 msgstr ""
 
@@ -15435,62 +15507,62 @@ msgstr ""
 msgid "Flirk"
 msgstr ""
 
-#: lib/theme-helper.php:1032
-#: lib/theme-helper.php:1046
-#: lib/theme-helper.php:1060
-#: lib/theme-helper.php:1074
+#: lib/theme-helper.php:1043
+#: lib/theme-helper.php:1057
+#: lib/theme-helper.php:1071
+#: lib/theme-helper.php:1085
 msgid "Social icon element need <strong>JNews Essential</strong> plugin to be activated."
 msgstr ""
 
-#: lib/theme-helper.php:1588
+#: lib/theme-helper.php:1599
 msgid "<strong> Call us: +1 234 JEG THEME </strong>"
 msgstr ""
 
-#: lib/theme-helper.php:1733
+#: lib/theme-helper.php:1744
 msgid "&hellip;"
 msgstr ""
 
-#: lib/theme-helper.php:2489
+#: lib/theme-helper.php:2500
 msgid "edit post"
 msgstr ""
 
-#: lib/theme-helper.php:2493
+#: lib/theme-helper.php:2504
 msgid "edit playlist"
 msgstr ""
 
-#: lib/theme-helper.php:2497
+#: lib/theme-helper.php:2508
 msgid "edit podcast"
 msgstr ""
 
-#: lib/theme-helper.php:2501
+#: lib/theme-helper.php:2512
 msgid "edit category"
 msgstr ""
 
-#: lib/theme-helper.php:2658
+#: lib/theme-helper.php:2669
 msgid "%s ago"
 msgstr ""
 
-#: lib/theme-helper.php:2823
+#: lib/theme-helper.php:2834
 msgid "Updated on"
 msgstr ""
 
-#: lib/theme-helper.php:3704
+#: lib/theme-helper.php:3715
 msgid "others"
 msgstr ""
 
-#: lib/theme-helper.php:3746
+#: lib/theme-helper.php:3757
 msgid "and"
 msgstr ""
 
-#: lib/theme-helper.php:3748
+#: lib/theme-helper.php:3759
 msgid ","
 msgstr ""
 
-#: lib/theme-helper.php:3929
+#: lib/theme-helper.php:3940
 msgid "%s Account is Private. This warning will only show if you login as Admin."
 msgstr ""
 
-#: lib/theme-helper.php:3936
+#: lib/theme-helper.php:3947
 msgid "The site cannot connect to Instagram. Please contact the Sever Administrator. This warning will only show if you login as Admin."
 msgstr ""
 
@@ -15499,6 +15571,7 @@ msgid "Search Result for '%s'"
 msgstr ""
 
 #: searchform.php:2
+#: assets/js/admin/dashboard.js:1
 msgid "Search..."
 msgstr ""
 
@@ -15745,10 +15818,6 @@ msgstr ""
 
 #: tgm/plugin-list.php:479
 msgid "If you're using WordPress v4.9.8 or below, please install both of plugin to enable Gutenberg blocks. If you already using WordPress v5.0.0 or higher, you only need to install JNews - Gutenberg plugin."
-msgstr ""
-
-#: tgm/plugin-list.php:482
-msgid "Gutenberg"
 msgstr ""
 
 #: tgm/plugin-list.php:489
@@ -16115,4 +16184,316 @@ msgstr ""
 
 #: tgm/plugin-list.php:1205
 msgid "An innovative responsive WordPress Slider Plugin that displays your content the beautiful way."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "We provide video guidance on every page to help you understand how to use this theme."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Congratulations! JNews is <span>activated</span> and ready to use. Get ready to create awesome news, magazine, or blog site using this theme. Read below for additional information. We hope you enjoy it!"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Welcome to <strong>%s</strong>"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Version %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Installed"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Import"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Preview"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Failed!"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "OK"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Warning!"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "The WP Plugins directory is not writeable. No worry, please ask support on our forum for more information. Our support team will help you out."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "The WP Uploads directory is not writeable. No worry, please ask support on our forum for more information. Our support team will help you out."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Importing Demo"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Completed"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Please do not refresh or close the page while importing data is in progress."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Importing “<strong>%s</strong>” in progress..."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Cancel"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Please activate your copy of JNews to unlock this demo"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Warning"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstalling Demo"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Please do not refresh or close the page while uninstalling demo is in progress."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstalling “<strong>%s</strong>” in progress..."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "We will only import all dummy pages that created with Elementor plugin."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "We will only import all dummy pages that created with WPBakery Page Builder (Visual Composer) plugin."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Visual Composer"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "When you choose import Visual Composer Content, we will only import all dummy pages that created with WPBakery Page Builder (Visual Composer) plugin."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Elementor"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Builder Content"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Although we do not delete any content when importing the demo, we recommend you create your own backup before importing the demo."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Choose how you want to import this demo:"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "When you enable Install Plugins, we will install all plugins used in the demo to be imported"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Include Content"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "When you enable Include Content, we will import demo content into your server. Content includes image, taxonomy, post & page (including landing page example), menu, widget, and customizer setting. We will also install required plugin to replicate the demo."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Are you sure want to uninstall this demo?"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Preparing Data %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Install Required plugins"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Install Required Plugins %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Install Images"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Import Images %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Install Contents"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Import Contents %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Install Global Style"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Import Global Style %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Required Plugins"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Required Plugins %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Images"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Images %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Contents"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Contents %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Global Style"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Uninstall Global Style %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Finish"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "The demo you imported will be partially imported if you leave this page."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "%s process success"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Please activate the license of JNews theme to unlock all import demo & style feature. Read <a target=\"_blank\" href=\"%s\">here</a> for more information."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Please activate your copy of JNews"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Installing..."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Installing Success"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Installing Failed"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Active"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Activating..."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Activating Success"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Activating Failed"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Deactive"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Deactivating..."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Deactivating Success"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Deactivating Failed"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Updating..."
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Updating Success"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Updating Failed"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Update Available"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Recomended"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "by %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Bulk Action"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Apply"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Only install plugin that you need to make your website lighter & faster"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Open %s"
+msgstr ""
+
+#: assets/js/admin/dashboard.js:1
+msgid "Plugin Dashboard"
 msgstr ""

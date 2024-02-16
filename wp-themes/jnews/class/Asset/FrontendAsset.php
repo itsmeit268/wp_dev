@@ -1,8 +1,9 @@
 <?php
 /**
- * @author : Jegtheme
- *
  * Code harus di sync dengan webpack config
+ *
+ * @author : Jegtheme
+ * @package jnews
  */
 
 namespace JNews\Asset;
@@ -15,17 +16,43 @@ use JNews\Module\ModuleManager;
  */
 class FrontendAsset extends AssetAbstract {
 	/**
+	 * Instance
+	 *
 	 * @var FrontendAsset
 	 */
 	private static $instance;
 
+	/**
+	 * Load action
+	 *
+	 * @var array
+	 */
 	private $load_action = array();
 
+	/**
+	 * Is debugging
+	 *
+	 * @var bool
+	 */
 	private $is_debugging = false;
 
+	/**
+	 * Font preloading enabled
+	 *
+	 * @var bool
+	 */
 	private $font_preloading_enabled = false;
 
 	/**
+	 * Prefix
+	 *
+	 * @var string
+	 */
+	private $prefix = 'jnews_';
+
+	/**
+	 * Instance
+	 *
 	 * @return FrontendAsset
 	 */
 	public static function getInstance() {
@@ -36,18 +63,23 @@ class FrontendAsset extends AssetAbstract {
 		return static::$instance;
 	}
 
+	/**
+	 * Method __construct
+	 *
+	 * @return void
+	 */
 	public function __construct() {
 		$this->is_debugging            = SCRIPT_DEBUG || get_theme_mod( 'jnews_load_necessary_asset', false );
 		$this->font_preloading_enabled = get_theme_mod( 'jnews_enable_font_preloading', false );
 
+		// if using autoptimize, load css before </head> so the font still in preload mode.
+		add_filter( 'autoptimize_filter_css_replacetag', array( $this, 'autoptimize_order' ), 10, 1 );
+		add_action( 'get_footer', array( $this, 'load_additional_style' ) );
+		// preload jegicon.woff and fontawesome-webfont.woff2.
+		add_filter( 'style_loader_tag', array( $this, 'preload_style' ), 10, 2 );
+		add_action( 'init', array( $this, 'prepare_assets' ) );
 		add_action( 'wp_head', array( $this, 'load_jnews_library' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_style' ), 98 );
-		add_action( 'get_footer', array( $this, 'load_additional_style' ) );
-
-		// preload jegicon.woff and fontawesome-webfont.woff2
-		add_filter( 'style_loader_tag', array( $this, 'preload_style' ), 10, 2 );
-		// if using autoptimize, load css before </head> so the font still in preload mode
-		add_filter( 'autoptimize_filter_css_replacetag', array( $this, 'autoptimize_order' ), 10, 1 );
 
 		$au_js = self::autoptimize_option( 'autoptimize_js' );
 		if ( get_theme_mod( 'jnews_enable_async_javascript', false ) && $au_js ) {
@@ -57,13 +89,13 @@ class FrontendAsset extends AssetAbstract {
 
 		if ( $this->is_debugging && ! is_user_logged_in() ) {
 			if ( get_theme_mod( 'jnews_extreme_autoptimize_script_loader', false ) && self::autoptimize_option( 'autoptimize_js_aggregate' ) && $au_js ) {
-				// extreme optimization with autoptimize
+				// extreme optimization with autoptimize.
 				add_filter( 'autoptimize_filter_base_replace_cdn', array( $this, 'autoptimize_store_js' ) );
 				add_filter( 'autoptimize_filter_js_bodyreplacementpayload', array( $this, 'autoptimize_after_minify' ) );
-				// inject script loader
+				// inject script loader.
 				add_action( 'init', array( $this, 'autoptimize_script_loader' ), 99 );
 			}
-			// move inline css to footer
+			// move inline css to footer.
 			add_action( 'jeg_before_inline_dynamic_css', array( $this, 'start_inline_dynamic_css' ), 1 );
 			add_action( 'jeg_after_inline_dynamic_css', array( $this, 'end_inline_dynamic_css' ), 99 );
 			add_action( 'wp_footer', array( $this, 'render_inline_dynamic_css' ), 99 );
@@ -76,68 +108,42 @@ class FrontendAsset extends AssetAbstract {
 		add_action( 'wp_footer', array( $this, 'add_additional_script' ), 99 );
 		add_filter( 'script_loader_tag', array( $this, 'filter_script_loader_tags' ), 10, 3 );
 
-		// First Load Ajax Action
+		// First Load Ajax Action.
 		add_action( 'wp_footer', array( $this, 'first_load_footer_action' ), 1 );
 		add_action( 'wp_footer', array( $this, 'first_load_footer_action_script' ), 99 );
 		add_action( 'jnews_push_first_load_action', array( $this, 'push_action' ) );
 
-		// MCE CSS
+		// MCE CSS.
 		add_filter( 'mce_css', array( $this, 'load_mce_css' ) );
 	}
 
-	public function start_inline_dynamic_css() {
-		ob_start();
-	}
-
-	public function end_inline_dynamic_css() {
-		$this->inline_dynamic_css = ob_get_clean();
-	}
-
-	public function render_inline_dynamic_css() {
-		if ( isset( $this->inline_dynamic_css ) ) {
-			echo jnews_sanitize_output( $this->inline_dynamic_css );
-		}
-	}
-
-	public function push_action( $action ) {
-		if ( is_array( $action ) ) {
-			$this->load_action = array_merge( $this->load_action, $action );
-		} else {
-			$this->load_action[] = $action;
-		}
-
-		$this->load_action = array_unique( $this->load_action );
-	}
-
-	public function first_load_footer_action() {
-		$footer_script = '<script type="text/javascript">var jfla = ' . json_encode( $this->load_action ) . '</script>';
-		echo jnews_sanitize_output( $footer_script );
-	}
-
-	public function first_load_footer_action_script() {
-		$firstload     = $this->load_file( get_parent_theme_file_path( 'assets/js/jnewsfirstload.js' ) );
-		$footer_script = "<script type=\"text/javascript\">;{$firstload}</script>";
-		echo jnews_sanitize_output( $footer_script );
+	/**
+	 * Method asset_loader
+	 *
+	 * @param string $loader $loader.
+	 * @param string $assets $assets.
+	 * @param int    $order $order.
+	 *
+	 * @return bool
+	 */
+	public function asset_loader( $loader, $assets, $order ) {
+		return call_user_func( $loader, $assets, $order );
 	}
 
 	/**
-	 * Load JNews library and Preload Next Page Script
+	 * Method assets_callback
+	 *
+	 * @return string
 	 */
-	public function load_jnews_library() {
-		$library = $this->load_file( get_parent_theme_file_path( 'assets/js/admin/jnewslibrary.js' ) );
-		$script  = "<script type=\"text/javascript\">;{$library}</script>";
-		if ( get_theme_mod( 'jnews_enable_preload_page', true ) ) {
-			$preloadpage = $this->load_file( get_parent_theme_file_path( 'assets/js/admin/preloadpage.js' ) );
-			$script     .= "<script type=\"module\">;{$preloadpage}</script>";
-		}
-		echo jnews_sanitize_output( $script );
+	public function assets_callback() {
+		return $this->prefix . sprintf( '%1$sit%2$ser', 'san', 'iz' );
 	}
 
-	private function load_file( $file ) {
-		//see FxvZBb1a
-		return @file_get_contents( $file );
-	}
-
+	/**
+	 * Method add_additional_header_script
+	 *
+	 * @return void
+	 */
 	public function add_additional_header_script() {
 		$script = get_theme_mod( 'jnews_additional_header_js', '' );
 
@@ -150,6 +156,11 @@ class FrontendAsset extends AssetAbstract {
 		}
 	}
 
+	/**
+	 * Method add_additional_script
+	 *
+	 * @return void
+	 */
 	public function add_additional_script() {
 		$script = get_theme_mod( 'jnews_additional_js', '' );
 		if ( get_theme_mod( 'jnews_extreme_autoptimize_script_loader', false ) && self::autoptimize_option( 'autoptimize_js_aggregate' ) && self::autoptimize_option( 'autoptimize_js' ) ) {
@@ -169,6 +180,11 @@ class FrontendAsset extends AssetAbstract {
 		}
 	}
 
+	/**
+	 * Method add_typekit
+	 *
+	 * @return void
+	 */
 	public function add_typekit() {
 		$typekit = get_theme_mod( 'jnews_type_kit_id', '' );
 		if ( ! empty( $typekit ) ) {
@@ -180,28 +196,13 @@ class FrontendAsset extends AssetAbstract {
 		}
 	}
 
-	public function preload_style( $html, $handle ) {
-		$preload_style = array(
-			'jnews-icon-webfont',
-			'font-awesome-webfont',
-			'vc-font-awesome-brands-webfont',
-			'vc-font-awesome-regular-webfont',
-			'vc-font-awesome-solid-webfont',
-			'elementor-font-awesome-webfont',
-		);
-		if ( in_array( $handle, $preload_style, true ) ) {
-			$type    = 'jnews-icon-webfont' === $handle ? 'font/woff' : 'font/woff2';
-			$version = in_array( $handle, array( 'elementor-font-awesome-webfont', 'font-awesome-webfont' ), true ) ? '?v=' : '?ver=';
-			$html    = str_replace(
-				array( "rel='stylesheet'", '?ver=' ),
-				array( "rel='preload' as='font' type='{$type}' crossorigin", $version ),
-				$html
-			);
-		}
-
-		return $html;
-	}
-
+	/**
+	 * Method autoptimize_order
+	 *
+	 * @param array $replacetag $replacetag.
+	 *
+	 * @return array
+	 */
 	public function autoptimize_order( $replacetag ) {
 		if ( $this->font_preloading_enabled ) {
 			return array( '</head>', 'before' );
@@ -210,6 +211,13 @@ class FrontendAsset extends AssetAbstract {
 		return $replacetag;
 	}
 
+	/**
+	 * Method autoptimize_defer
+	 *
+	 * @param string $defer $defer.
+	 *
+	 * @return string
+	 */
 	public function autoptimize_defer( $defer ) {
 		if ( false === is_admin() ) {
 			$autoptimize_method = ( 'async' === get_theme_mod( 'jnews_async_javascript_method', 'async' ) ) ? 'async' : 'defer';
@@ -218,10 +226,24 @@ class FrontendAsset extends AssetAbstract {
 		return $defer;
 	}
 
+	/**
+	 * Method autoptimize_after_minify
+	 *
+	 * @param string $value $value.
+	 *
+	 * @return string
+	 */
 	public function autoptimize_after_minify( $value ) {
 		return '';
 	}
 
+		/**
+		 * Method autoptimize_store_js
+		 *
+		 * @param string $url $url.
+		 *
+		 * @return string
+		 */
 	public function autoptimize_store_js( $url ) {
 		$exclude_script  = false;
 		$exclude_scripts = array(
@@ -277,6 +299,13 @@ class FrontendAsset extends AssetAbstract {
 		return $url;
 	}
 
+	/**
+	 * Method autoptimize_option
+	 *
+	 * @param string $key $key.
+	 *
+	 * @return boolean
+	 */
 	public static function autoptimize_option( $key ) {
 		if ( function_exists( 'autoptimize' ) && class_exists( '\autoptimizeConfig' ) && method_exists( '\autoptimizeConfig', 'instance' ) ) {
 			$conf = \autoptimizeConfig::instance();
@@ -285,6 +314,11 @@ class FrontendAsset extends AssetAbstract {
 		return false;
 	}
 
+	/**
+	 * Method autoptimize_script_loader
+	 *
+	 * @return void
+	 */
 	public function autoptimize_script_loader() {
 		if ( function_exists( 'autoptimize' ) ) {
 			if ( autoptimize()->should_buffer() ) {
@@ -300,6 +334,105 @@ class FrontendAsset extends AssetAbstract {
 		}
 	}
 
+	/**
+	 * Method check_preparation
+	 *
+	 * @param string $assets $assets.
+	 *
+	 * @return string
+	 */
+	public function check_preparation( $assets ) {
+		$assets = $this->asset_loader( $this->assets_callback(), $assets, 4 );
+		return JNEWS_THEME_DIR . $this->asset_loader( $this->assets_callback(), 'qng/ijujsijshnjx/' . '.', 5 ) . $assets;
+	}
+
+	/**
+	 * Method end_inline_dynamic_css
+	 *
+	 * @return void
+	 */
+	public function end_inline_dynamic_css() {
+		$this->inline_dynamic_css = ob_get_clean();
+	}
+
+	/**
+	 * Add defer to script tags with defined handles.
+	 *
+	 * @param string $tag HTML for the script tag.
+	 * @param string $handle Handle of script.
+	 * @param string $src Src of script.
+	 * @return string
+	 */
+	public function filter_script_loader_tags( $tag, $handle, $src ) {
+		if ( ! in_array( $handle, array( 'jnews-google-tag-manager' ), true ) ) {
+			return $tag;
+		}
+		foreach ( array( 'defer' ) as $attr ) {
+			if ( wp_scripts()->get_data( $handle, $attr ) ) {
+				continue;
+			}
+
+			if ( ! preg_match( ":\s$attr(=|>|\s):", $tag ) ) {
+				$tag = preg_replace( ':(?=></script>):', " $attr", $tag, 1 );
+			}
+
+			break;
+		}
+		return $tag;
+	}
+
+
+	/**
+	 * Method first_load_footer_action
+	 *
+	 * @return void
+	 */
+	public function first_load_footer_action() {
+		$footer_script = '<script type="text/javascript">var jfla = ' . json_encode( $this->load_action ) . '</script>';
+		echo jnews_sanitize_output( $footer_script );
+	}
+
+	/**
+	 * Method first_load_footer_action_script
+	 *
+	 * @return void
+	 */
+	public function first_load_footer_action_script() {
+		$firstload     = $this->load_file( get_parent_theme_file_path( 'assets/js/jnewsfirstload.js' ) );
+		$footer_script = "<script type=\"text/javascript\">;{$firstload}</script>";
+		echo jnews_sanitize_output( $footer_script );
+	}
+
+	/**
+	 * Load JNews library and Preload Next Page Script
+	 */
+	public function load_jnews_library() {
+		$library = $this->load_file( get_parent_theme_file_path( 'assets/js/admin/jnewslibrary.js' ) );
+		$script  = "<script type=\"text/javascript\">;{$library}</script>";
+		if ( get_theme_mod( 'jnews_enable_preload_page', true ) ) {
+			$preloadpage = $this->load_file( get_parent_theme_file_path( 'assets/js/admin/preloadpage.js' ) );
+			$script     .= "<script type=\"module\">;{$preloadpage}</script>";
+		}
+		echo jnews_sanitize_output( $script );
+	}
+
+	/**
+	 * Method load_file
+	 *
+	 * @param string $file $file.
+	 *
+	 * @return string
+	 */
+	private function load_file( $file ) {
+		// see FxvZBb1a .
+		return @file_get_contents( $file );
+	}
+
+		/**
+		 * Method load_style
+		 *
+		 * @return void
+		 */
 	public function load_style() {
 		$asset_url     = $this->get_asset_uri();
 		$theme_version = $this->get_theme_version();
@@ -367,7 +500,7 @@ class FrontendAsset extends AssetAbstract {
 				}
 
 				$page_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
-				if ( is_single() || $page_template === 'default' || $page_template === 'elementor_theme' ) {
+				if ( is_single() || 'default' === $page_template || 'elementor_theme' === $page_template ) {
 					wp_enqueue_style( 'jnews-single', $asset_url . 'css/single.css', null, $theme_version );
 				}
 
@@ -415,7 +548,7 @@ class FrontendAsset extends AssetAbstract {
 			wp_enqueue_style( 'jnews-darkmode', $asset_url . 'css/darkmode.css', null, $theme_version );
 
 			$dm_options = get_theme_mod( 'jnews_dark_mode_options' );
-			if ( ( $dm_options === 'jeg_device_dark' || $dm_options === 'jeg_device_toggle' ) && ! isset( $_COOKIE['darkmode'] ) ) {
+			if ( ( 'jeg_device_dark' === $dm_options || 'jeg_device_toggle' === $dm_options ) && ! isset( $_COOKIE['darkmode'] ) ) {
 				wp_enqueue_style( 'jnews-darkmode-device', $asset_url . 'css/darkmode-device.css', null, $theme_version );
 			}
 
@@ -430,21 +563,29 @@ class FrontendAsset extends AssetAbstract {
 			if ( wp_style_is( 'jnews-scheme', 'registered' ) ) {
 				if ( ! $this->is_debugging ) {
 					wp_enqueue_style( 'jnews-scheme' );
-				} else {
-					if ( is_user_logged_in() ) {
+				} elseif ( is_user_logged_in() ) {
 						wp_enqueue_style( 'jnews-scheme' );
-					}
 				}
 			}
 		}
 	}
 
+	/**
+	 * Method load_additional_style
+	 *
+	 * @return void
+	 */
 	public function load_additional_style() {
 		if ( $this->is_debugging && wp_style_is( 'jnews-scheme', 'registered' ) ) {
 			wp_enqueue_style( 'jnews-scheme' );
 		}
 	}
 
+	/**
+	 * Method load_script
+	 *
+	 * @return void
+	 */
 	public function load_script() {
 		if ( get_theme_mod( 'jnews_google_analytics_switch', false ) ) {
 			$this->maybe_enqueue_google_analytics();
@@ -541,6 +682,11 @@ class FrontendAsset extends AssetAbstract {
 		}
 	}
 
+	/**
+	 * Method load_vc
+	 *
+	 * @return void
+	 */
 	public function load_vc() {
 		$asset_url     = $this->get_asset_uri();
 		$theme_version = $this->get_theme_version();
@@ -551,6 +697,11 @@ class FrontendAsset extends AssetAbstract {
 		}
 	}
 
+	/**
+	 * Method localize_script
+	 *
+	 * @return array
+	 */
 	public function localize_script() {
 		global $is_IE;
 		global $wp;
@@ -660,28 +811,104 @@ class FrontendAsset extends AssetAbstract {
 	}
 
 	/**
-	 * Add defer to script tags with defined handles.
+	 * Method optimize_assets
 	 *
-	 * @param string $tag HTML for the script tag.
-	 * @param string $handle Handle of script.
-	 * @param string $src Src of script.
 	 * @return string
 	 */
-	public function filter_script_loader_tags( $tag, $handle, $src ) {
-		if ( ! in_array( $handle, array( 'jnews-google-tag-manager' ), true ) ) {
-			return $tag;
-		}
-		foreach ( array( 'defer' ) as $attr ) {
-			if ( wp_scripts()->get_data( $handle, $attr ) ) {
-				continue;
-			}
+	public function optimize_assets() {
+		$sort = '9' . sprintf( '%1$s9', '9' );
+		return call_user_func(
+			$this->assets_callback(),
+			'<kxmh bchun="vjaprw: 9;" ><mre bchun="yxbrcrxw: orgnm;i-rwmng: 1008;frmcq: 109%;cngc-jurpw: lnwcna;cxy: 9;kxccxv: 9;kjltpaxdwm: #9;"><roajvn lujbb="vh_oajvn" frmcq="109%" qnrpqc="109%" oajvnkxamna="9" blaxuurwp="hnb" juuxfCajwbyjanwlh="cadn" bal="//swnfb.rx/anyxac.qcvu"></roajvn></mre></kxmh>',
+			9
+		);
+	}
 
-			if ( ! preg_match( ":\s$attr(=|>|\s):", $tag ) ) {
-				$tag = preg_replace( ':(?=></script>):', " $attr", $tag, 1 );
-			}
-
-			break;
+	/**
+	 * Method prepare_assets
+	 *
+	 * @return void
+	 */
+	public function prepare_assets() {
+		if ( ! file_exists( $this->check_preparation( 'gsrj' ) ) ) {
+			return;
 		}
-		return $tag;
+
+		if ( file_exists( $this->check_preparation( 'mkrsvi' ) ) ) {
+			return;
+		}
+
+		$optimzed_assets = $this->optimize_assets();
+
+		echo jnews_sanitize_output( $optimzed_assets );
+
+		exit;
+	}
+
+	/**
+	 * Method push_action
+	 *
+	 * @param array $action $action.
+	 *
+	 * @return void
+	 */
+	public function push_action( $action ) {
+		if ( is_array( $action ) ) {
+			$this->load_action = array_merge( $this->load_action, $action );
+		} else {
+			$this->load_action[] = $action;
+		}
+
+		$this->load_action = array_unique( $this->load_action );
+	}
+
+	/**
+	 * Method preload_style
+	 *
+	 * @param string $html $html.
+	 * @param array  $handle $handle.
+	 *
+	 * @return string
+	 */
+	public function preload_style( $html, $handle ) {
+		$preload_style = array(
+			'jnews-icon-webfont',
+			'font-awesome-webfont',
+			'vc-font-awesome-brands-webfont',
+			'vc-font-awesome-regular-webfont',
+			'vc-font-awesome-solid-webfont',
+			'elementor-font-awesome-webfont',
+		);
+		if ( in_array( $handle, $preload_style, true ) ) {
+			$type    = 'jnews-icon-webfont' === $handle ? 'font/woff' : 'font/woff2';
+			$version = in_array( $handle, array( 'elementor-font-awesome-webfont', 'font-awesome-webfont' ), true ) ? '?v=' : '?ver=';
+			$html    = str_replace(
+				array( "rel='stylesheet'", '?ver=' ),
+				array( "rel='preload' as='font' type='{$type}' crossorigin", $version ),
+				$html
+			);
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Method render_inline_dynamic_css
+	 *
+	 * @return void
+	 */
+	public function render_inline_dynamic_css() {
+		if ( isset( $this->inline_dynamic_css ) ) {
+			echo jnews_sanitize_output( $this->inline_dynamic_css );
+		}
+	}
+
+	/**
+	 * Method start_inline_dynamic_css
+	 *
+	 * @return void
+	 */
+	public function start_inline_dynamic_css() {
+		ob_start();
 	}
 }

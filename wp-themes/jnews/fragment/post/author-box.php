@@ -22,6 +22,7 @@
 		'rss'        => 'fa-rss',
 		'twitch'     => 'fa-twitch',
 		'tiktok'     => 'jeg-icon icon-tiktok',
+		'threads'    => 'jeg-icon icon-threads',
 	);
 
 	if ( function_exists( 'get_coauthors' ) && ! is_author() ) {

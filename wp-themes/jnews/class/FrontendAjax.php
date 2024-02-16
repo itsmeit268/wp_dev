@@ -59,88 +59,90 @@ class FrontendAjax {
 
 	public function ajax_parse_request( $wp ) {
 		if ( array_key_exists( $this->endpoint, $wp->query_vars ) ) {
-			// need to flag this request is ajax request
-			add_filter( 'wp_doing_ajax', array( $this, 'is_doing_ajax' ) );
+			// see M1oc1svD
+			if ( array_key_exists( 'action', $wp->query_vars ) ) {
+				// need to flag this request is ajax request
+				add_filter( 'wp_doing_ajax', array( $this, 'is_doing_ajax' ) );
+				$action = $wp->query_vars['action'];
 
-			$action = $wp->query_vars['action'];
+				switch ( $action ) {
+					case 'jnews_first_load_action':
+						$fragment = new FirstLoadAction();
+						$fragment->build_response( (array) $_REQUEST['load_action'] );
+						break;
+					case 'jnews_newsfeed_load':
+						$sidefeed = new Sidefeed();
+						$sidefeed->build_response();
+						break;
+					case 'jnews_ajax_live_search':
+						$search = new LiveSearch();
+						$search->build_response();
+						break;
+					case 'jnews_mega_category_1':
+						$mega_menu = Menu::getInstance();
+						$mega_menu->mega_menu_category_1_article();
+						break;
+					case 'jnews_mega_category_2':
+						$menu_menu = Menu::getInstance();
+						$menu_menu->mega_menu_category_2_article();
+						break;
+					case 'jnews_build_mega_category_1':
+						$mega_menu = Menu::getInstance();
+						$mega_menu->build_megamenu_category_1_article();
+						break;
+					case 'jnews_build_mega_category_2':
+						$mega_menu = Menu::getInstance();
+						$mega_menu->build_megamenu_category_2_article();
+						break;
+					case 'jnews_refresh_nonce':
+						$this->refresh_nonce();
+						break;
+					case 'jnews_system':
+						wp_redirect( jnews_home_url_multilang() );
+						exit;
+						break;
+					case 'login_handler':
+					case 'register_handler':
+					case 'forget_password_handler':
+						$account = AccountHandler::getInstance();
+						$account->$action();
+						break;
+					case 'jnews_ajax_comment':
+						// ajax comment
+						query_posts(
+							array(
+								'p'            => (int) sanitize_text_field( $_REQUEST['post_id'] ),
+								'post_type'    => sanitize_text_field( $_REQUEST['post_type'] ),
+								'withcomments' => 1,
+								'feed'         => 1,
+							)
+						);
 
-			switch ( $action ) {
-				case 'jnews_first_load_action':
-					$fragment = new FirstLoadAction();
-					$fragment->build_response( (array) $_REQUEST['load_action'] );
-					break;
-				case 'jnews_newsfeed_load':
-					$sidefeed = new Sidefeed();
-					$sidefeed->build_response();
-					break;
-				case 'jnews_ajax_live_search':
-					$search = new LiveSearch();
-					$search->build_response();
-					break;
-				case 'jnews_mega_category_1':
-					$mega_menu = Menu::getInstance();
-					$mega_menu->mega_menu_category_1_article();
-					break;
-				case 'jnews_mega_category_2':
-					$menu_menu = Menu::getInstance();
-					$menu_menu->mega_menu_category_2_article();
-					break;
-				case 'jnews_build_mega_category_1':
-					$mega_menu = Menu::getInstance();
-					$mega_menu->build_megamenu_category_1_article();
-					break;
-				case 'jnews_build_mega_category_2':
-					$mega_menu = Menu::getInstance();
-					$mega_menu->build_megamenu_category_2_article();
-					break;
-				case 'jnews_refresh_nonce':
-					$this->refresh_nonce();
-					break;
-				case 'jnews_system':
-					wp_redirect( jnews_home_url_multilang() );
-					exit;
-					break;
-				case 'login_handler':
-				case 'register_handler':
-				case 'forget_password_handler':
-					$account = AccountHandler::getInstance();
-					$account->$action();
-					break;
-				case 'jnews_ajax_comment':
-					// ajax comment
-					query_posts(
-						array(
-							'p'            => (int) sanitize_text_field( $_REQUEST['post_id'] ),
-							'post_type'    => sanitize_text_field( $_REQUEST['post_type'] ),
-							'withcomments' => 1,
-							'feed'         => 1,
-						)
-					);
+						while ( have_posts() ) :
+							the_post();
+							global $post;
+							setup_postdata( $post );
+							get_template_part( 'fragment/comments' );
+						endwhile;
 
-					while ( have_posts() ) :
-						the_post();
-						global $post;
-						setup_postdata( $post );
-						get_template_part( 'fragment/comments' );
-					endwhile;
+						wp_reset_query();
+						break;
+					case 'jnews_ajax_cart_detail':
+						if ( function_exists( 'WC' ) ) {
+							wp_send_json( jnews_return_translation( 'Cart', 'jnews', 'cart' ) . ' / ' . WC()->cart->get_cart_total() );
+						}
+						break;
+				}
 
-					wp_reset_query();
-					break;
-				case 'jnews_ajax_cart_detail':
-					if ( function_exists( 'WC' ) ) {
-						wp_send_json( jnews_return_translation( 'Cart', 'jnews', 'cart' ) . ' / ' . WC()->cart->get_cart_total() );
-					}
-					break;
+				// Module Ajax
+				$module_prefix = ModuleManager::$module_ajax_prefix;
+				if ( 0 === strpos( $action, $module_prefix ) ) {
+					$module_name = str_replace( $module_prefix, '', $action );
+					ModuleManager::getInstance()->module_ajax( $module_name );
+				}
+
+				do_action( 'jnews_ajax_' . $action );
 			}
-
-			// Module Ajax
-			$module_prefix = ModuleManager::$module_ajax_prefix;
-			if ( 0 === strpos( $action, $module_prefix ) ) {
-				$module_name = str_replace( $module_prefix, '', $action );
-				ModuleManager::getInstance()->module_ajax( $module_name );
-			}
-
-			do_action( 'jnews_ajax_' . $action );
 
 			exit;
 		}

@@ -3,22 +3,22 @@
 <?php do_action( 'jnews_custom_category_template_before_content' ); ?>
 
 <div class="jeg_content">
-    <div class="jeg_vc_content custom_category_template">
+	<div class="jeg_vc_content custom_category_template">
 
 	<?php
-        if ( have_posts() ) :
+	if ( have_posts() ) :
 
-            the_post();
+		the_post();
 
-            $template_id  = get_theme_mod( 'jnews_category_custom_template_id', '' );
+		$template_id = jnews_get_translated_id( get_theme_mod( 'jnews_category_custom_template_id', '' ) );
 
-            if ( $template_id )
-                echo jeg_render_builder_content( $template_id );
-
-        endif;
+		if ( $template_id ) {
+			echo jeg_render_builder_content( $template_id );
+		}
+		endif;
 	?>
 
-    </div>
+	</div>
 </div>
 
 <?php do_action( 'jnews_custom_category_template_after_content' ); ?>

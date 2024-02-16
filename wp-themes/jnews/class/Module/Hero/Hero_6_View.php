@@ -49,7 +49,7 @@ Class Hero_6_View extends HeroViewAbstract
     {
         $first_block    = $this->render_block_type($result[0], 1, 1);
         $second_block   = '';
-        $number_post    = $this->get_number_post();
+        $number_post    = $this->get_number_post() - 1;
 
         for($i = 1; $i <= $number_post; $i++){
             $item = isset($result[$i]) ? $result[$i] : '';

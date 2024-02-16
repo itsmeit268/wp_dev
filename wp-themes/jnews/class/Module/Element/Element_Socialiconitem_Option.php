@@ -60,6 +60,7 @@ class Element_Socialiconitem_Option extends ModuleOptionAbstract {
 				esc_html__( 'Whatsapp', 'jnews' )    => 'whatsapp',
 				esc_html__( 'Line', 'jnews' )        => 'line',
 				esc_html__( 'Discord', 'jnews' )     => 'discord',
+				esc_html__( 'Threads', 'jnews' )     => 'threads',
 			),
 		);
 

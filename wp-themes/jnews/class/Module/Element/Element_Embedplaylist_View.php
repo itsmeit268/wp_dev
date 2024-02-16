@@ -23,9 +23,8 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 		return get_theme_mod( 'jnews_youtube_api' );
 	}
 
-	public function get_video_detail( $results ) {
-		$vimeo = $youtube = $youtube_playlist = $video_detail = [];
-
+	public function get_video_detail( $results, $expired, $playlist_cache = array() ) {
+		$vimeo = $youtube = $youtube_playlist = $video_detail = array();
 		foreach ( $results as $key => $result ) {
 			$result      = preg_replace( '/\s+/', '', $result );
 			$provider    = VideoAttribute::getInstance()->get_video_provider( $result );
@@ -49,10 +48,13 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 			$lists = $youtube_playlist;
 			foreach ( $lists as $list => $id ) {
 				$playlist_results = $this->get_playlist_item( $id );
-				$playlist_cache[ $id ] = $playlist_results;
-				$playlist_cache['expired'] = current_time( 'timestamp' );
-				update_option( $this->meta_playlist, $playlist_cache );
-				$youtube          = $this->insert_playlist( $youtube, $id, $playlist_results );
+				if ( $expired > 0 ) { // see qoRaVyNq
+					$new_playlist_cache['value']   = $playlist_results;
+					$new_playlist_cache['expired'] = current_time( 'timestamp' );
+					$playlist_cache[ $id ]         = $new_playlist_cache;
+					update_option( $this->meta_playlist, $playlist_cache );
+				}
+				$youtube = $this->insert_playlist( $youtube, $id, $playlist_results );
 			}
 		}
 
@@ -82,7 +84,7 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 		if ( ! empty( $vimeo ) ) {
 			foreach ( $vimeo as $item ) {
 				$url          = 'https://vimeo.com/api/oembed.json?url=https://vimeo.com/' . $item . '&width=1920&height=1080';
-				$vimeo_remote = wp_remote_get( $url, [ 'base_url' => 'https://vimeo.com' ] );
+				$vimeo_remote = wp_remote_get( $url, array( 'base_url' => 'https://vimeo.com' ) );
 
 				if ( ! is_wp_error( $vimeo_remote ) && $vimeo_remote['response']['code'] == '200' ) {
 					$vimeo_remote    = json_decode( $vimeo_remote['body'], true );
@@ -118,38 +120,33 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 	 * @return array
 	 */
 	public function build_result( $results ) {
-		$post_id        = $this->get_post_id();
-		$video_retrieve = $video_result = [];
+		$video_retrieve = $video_result = array();
 
-		$now            = current_time( 'timestamp' );
-		/** Test purpose */
-		// delete_option( $this->meta_name );
-		// delete_option( $this->meta_playlist );
+		$now = current_time( 'timestamp' );
 
 		$video_cache = get_option( $this->meta_name, array() );
-
-		// Update purpose, Delete it later.
-		$force_clear_cache = get_option( 'jnews_clear_video_cache', true );
-		if ( $force_clear_cache ) {
-			update_option( 'jnews_clear_video_cache', false );
-			delete_option( $this->meta_name );
-		}
-
 		if ( ! $video_cache ) {
-			$video_cache = [];
+			$video_cache = array();
 		}
-		$playlist_cache = get_option( $this->meta_playlist, [] );
+		$playlist_cache = get_option( $this->meta_playlist, array() );
 
 		$expired = get_theme_mod( 'jnews_youtube_playlist_cache', 1 );
-
-		if ( $expired != 'no' ) {
+		if ( 'no' !== $expired ) {
 			$expired = $expired * 60 * 60;
+			/* delete video cache everyday */
+			if ( ! array_key_exists( 'expired', $video_cache ) ) {
+				delete_option( $this->meta_name );
+				$video_cache    = array();
+				$playlist_cache = array();
+			} elseif ( $video_cache['expired'] < $now ) {
+				delete_option( $this->meta_name );
+				$video_cache    = array();
+				$playlist_cache = array();
+			}
 		} else {
-			$expired = 0;
-		}
-
-		if ( isset( $playlist_cache['expired'] ) && $playlist_cache['expired'] < ( $now - $expired ) ) {
-			delete_option( $this->meta_playlist );
+			$expired        = 0;
+			$video_cache    = array();
+			$playlist_cache = array();
 		}
 
 		foreach ( $results as $key => $result ) {
@@ -158,26 +155,28 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 			if ( is_array( $video_id ) ) {
 				if ( ! array_key_exists( $video_id['playlist'], $playlist_cache ) ) {
 					$video_retrieve[] = $result;
-				}
-			} else {
-				if ( ! array_key_exists( $video_id, $video_cache ) ) {
+				} elseif ( $playlist_cache[ $video_id['playlist'] ]['expired'] < ( $now - $expired ) ) {
 					$video_retrieve[] = $result;
-				} else {
-					if ( ! isset( $video_cache[ $video_id ]['title'] ) ) {
-						$video_retrieve[] = $result;
-					}
 				}
+			} elseif ( ! array_key_exists( $video_id, $video_cache ) ) {
+					$video_retrieve[] = $result;
+			} elseif ( ! isset( $video_cache[ $video_id ]['title'] ) ) {
+					$video_retrieve[] = $result;
 			}
 		}
-
 		if ( ! empty( $video_retrieve ) ) {
-			$video_detail = $this->get_video_detail( $results );
-			$results      = [];
+			$video_detail = $this->get_video_detail( $results, $expired, $playlist_cache );
+			$results      = array();
 			foreach ( $video_detail as $id => $detail ) {
 				$results[] = $detail['url'];
 			}
-			$video_cache  = $video_detail + $video_cache;
-			update_option( $this->meta_name, $video_detail );
+			$video_cache = $video_detail + $video_cache;
+			if ( $expired > 0 ) {
+				if ( ! array_key_exists( 'expired', $video_cache ) ) {
+					$video_cache['expired'] = $now + 24 * 60 * 60;
+				}
+				update_option( $this->meta_name, $video_cache );
+			}
 		}
 
 		$is_video_invalid = false;
@@ -186,7 +185,7 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 			$video_id = VideoAttribute::getInstance()->get_video_id( $result );
 			if ( is_array( $video_id ) ) {
 				if ( array_key_exists( $video_id['playlist'], $playlist_cache ) ) {
-					foreach ( $playlist_cache[ $video_id['playlist'] ] as $pkey => $plist ) {
+					foreach ( $playlist_cache[ $video_id['playlist'] ]['value'] as $pkey => $plist ) {
 						if ( isset( $video_cache[ $plist ] ) ) {
 							$video_result[] = $video_cache[ $plist ];
 						} else {
@@ -285,13 +284,13 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 	 * @return mixed|string
 	 */
 	public function build_data( $results ) {
-		$json = [];
+		$json = array();
 
 		foreach ( $results as $key => $post ) {
-			$json[ $key ] = [
+			$json[ $key ] = array(
 				'type' => $results[ $key ]['type'],
 				'tag'  => $this->get_video_wrapper( $key, $results, true ),
-			];
+			);
 		}
 
 		return wp_json_encode( $json );
@@ -299,7 +298,7 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 
 	public function explode_playlist( $playlist ) {
 		$results = explode( ',', $playlist );
-		$videos  = [];
+		$videos  = array();
 
 		foreach ( $results as $result ) {
 			$result = trim( $result );
@@ -344,7 +343,7 @@ class Element_Embedplaylist_View extends ModuleViewAbstract {
 		$page_token     = ! is_null( $page_token ) ? '&pageToken=' . $page_token : '';
 		$url            = 'https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId=' . $playlist_id . '&key=' . $this->youtube_api() . $page_token;
 		$youtube_remote = wp_remote_get( $url );
-		$youtube        = [];
+		$youtube        = array();
 		if ( ! is_wp_error( $youtube_remote ) && $youtube_remote['response']['code'] == '200' ) {
 			$youtube_remote = json_decode( $youtube_remote['body'] );
 			foreach ( $youtube_remote->items as $key => $item ) {

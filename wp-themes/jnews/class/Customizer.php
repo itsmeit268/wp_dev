@@ -108,7 +108,6 @@ class Customizer {
 
 				add_filter( 'jeg_font_typography', array( $this, 'load_custom_font' ), 80 );
 				add_filter( 'jeg_font_typography', array( $this, 'load_typekit' ), 81 );
-				add_filter( 'jeg_generate_inline_style', array( $this, 'custom_font_css' ) );
 				add_filter( 'jeg_not_google_font', array( $this, 'exclude_font' ) );
 				add_filter( 'jeg_fonts_option_setting', array( $this, 'font_option_setting' ) );
 
@@ -246,7 +245,7 @@ class Customizer {
 			'global_loader',
 			'global_gdpr',
 			'global_query',
-			'global_wpblocks',
+			'global_gutenberg_editor', //eMAHmTKT
 			'global_analytic',
 			'global_api',
 			'block',
@@ -352,7 +351,7 @@ class Customizer {
 			}
 		}
 
-		$excluded_font           = array_merge( $excluded_font, array( 'Georgia', 'Helvetica', 'Monaco' ) );
+		$excluded_font           = array_merge( $excluded_font, array( 'Georgia', 'Helvetica Neue', 'Monaco' ) );
 		$output['excluded_font'] = $excluded_font;
 
 		return $output;
@@ -391,9 +390,32 @@ class Customizer {
 			$variants           = array();
 
 			foreach ( $custom_fonts as $font ) {
+				$font_src = array();
+							// $variants_src = array();
+				if ( ! empty( $font['eot'] ) ) {
+					$font_src[] = "url('" . wp_get_attachment_url( $font['eot'] ) . "#iefix') format('embedded-opentype')";
+				}
+
+				if ( ! empty( $font['woff'] ) ) {
+					$font_src[] = "url('" . wp_get_attachment_url( $font['woff'] ) . "') format('woff')";
+				}
+
+				if ( ! empty( $font['ttf'] ) ) {
+					$font_src[] = "url('" . wp_get_attachment_url( $font['ttf'] ) . "') format('truetype')";
+				}
+
+				if ( ! empty( $font['eot'] ) ) {
+					$font_src[] = "url('" . wp_get_attachment_url( $font['svg'] ) . "') format('svg')";
+				}
+
+				$src = implode( ',', $font_src ) . ' ;';
+
 				$variants[ $font['font_name'] ][] = array(
-					'id'    => $font['font_weight'] . $font['font_style'],
-					'label' => $font['font_weight'] . ' - ' . ucfirst( $font['font_style'] ),
+					'id'          => $font['font_weight'] . $font['font_style'],
+					'label'       => ucfirst( $font['font_style'] ) . ' ' . $font['font_weight'],
+					'src'         => $src,
+					'font-weight' => $font['font_weight'],
+					'font-style'  => $font['font_style'],
 				);
 			}
 
@@ -416,37 +438,6 @@ class Customizer {
 		}
 	}
 
-	public function custom_font_css( $generated_style ) {
-		$custom_font_style = '';
-		$custom_fonts      = get_theme_mod( 'jnews_additional_font', array() );
-
-		foreach ( $custom_fonts as $font ) {
-			if ( ! empty( $font['font_name'] ) ) {
-				$font_src = array();
-
-				if ( ! empty( $font['eot'] ) ) {
-					$font_src[] = "url('" . wp_get_attachment_url( $font['eot'] ) . "#iefix') format('embedded-opentype')";
-				}
-
-				if ( ! empty( $font['woff'] ) ) {
-					$font_src[] = "url('" . wp_get_attachment_url( $font['woff'] ) . "') format('woff')";
-				}
-
-				if ( ! empty( $font['ttf'] ) ) {
-					$font_src[] = "url('" . wp_get_attachment_url( $font['ttf'] ) . "') format('truetype')";
-				}
-
-				if ( ! empty( $font['eot'] ) ) {
-					$font_src[] = "url('" . wp_get_attachment_url( $font['svg'] ) . "') format('svg')";
-				}
-
-				$src                = 'src: ' . implode( ',', $font_src ) . ' ;';
-				$custom_font_style .= " @font-face { font-family: '" . $font['font_name'] . "'; " . $src . " font-weight: {$font['font_weight']}; font-style: {$font['font_style']}; } ";
-			}
-		}
-
-		return $custom_font_style . $generated_style;
-	}
 
 	public function admin_bar( $admin_bar ) {
 		if ( ! current_user_can( 'manage_options' ) ) {
@@ -614,5 +605,4 @@ class Customizer {
 
 		return $label;
 	}
-
 }

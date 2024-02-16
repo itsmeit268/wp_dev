@@ -1,15 +1,37 @@
 <?php
 /**
+ * Gutenberg
+ *
  * @author : Jegtheme
+ * @package jnews
  */
 
 namespace JNews;
 
+/**
+ * Class Gutenberg
+ */
 class Gutenberg {
+
+	/**
+	 * Instance
+	 *
+	 * @var Init
+	 */
 	private static $instance;
 
+	/**
+	 * Settings
+	 *
+	 * @var array
+	 */
 	private static $settings;
 
+	/**
+	 * Instance
+	 *
+	 * @var class
+	 */
 	public static function getInstance() {
 		if ( null === static::$instance ) {
 			static::$instance = new static();
@@ -18,6 +40,9 @@ class Gutenberg {
 		return static::$instance;
 	}
 
+	/**
+	 * Construct
+	 */
 	private function __construct() {
 		if ( self::is_classic() ) {
 			return;
@@ -26,75 +51,89 @@ class Gutenberg {
 		$this->setup_hook();
 	}
 
+	/**
+	 * Method setup_hook
+	 *
+	 * @return void
+	 */
 	protected function setup_hook() {
-		 global $pagenow;
-		 if ( 'post.php' === $pagenow ) {
-			add_action( 'admin_enqueue_scripts', [ $this, 'post_metabox' ] );
-		 }
-		 if( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) {
-			add_action( 'save_post', [ $this, 'save_post_format' ], 99 );
-			add_action( 'edit_post', [ $this, 'save_post_format' ], 99 );
-			add_action( 'admin_enqueue_scripts', [ $this, 'load_font' ] );
-			add_action( 'admin_print_styles', [ $this, 'load_style' ], 99 );
+		global $pagenow;
+		if ( 'post.php' === $pagenow ) {
+			add_action( 'admin_enqueue_scripts', array( $this, 'post_metabox' ) );
+		}
+		if ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) {
+			add_action( 'save_post', array( $this, 'save_post_format' ), 99 );
+			add_action( 'edit_post', array( $this, 'save_post_format' ), 99 );
+			add_action( 'admin_enqueue_scripts', array( $this, 'load_font' ) );
+
+			if ( get_theme_mod( 'jnews_gutenberg_editor_style', true ) ) {
+				// eMAHmTKT .
+				add_action( 'admin_print_styles', array( $this, 'load_style' ), 99 );
+			}
 		} else {
-			add_filter( 'get_the_terms', [ $this, 'get_post_format' ], 10, 3 );
-			add_filter( 'get_post_metadata', [ $this, 'get_post_format_video' ], 10, 3 );
-			add_filter( 'get_post_metadata', [ $this, 'get_post_format_gallery' ], 10, 3 );
+			add_filter( 'get_the_terms', array( $this, 'get_post_format' ), 10, 3 );
+			add_filter( 'get_post_metadata', array( $this, 'get_post_format_video' ), 10, 3 );
+			add_filter( 'get_post_metadata', array( $this, 'get_post_format_gallery' ), 10, 3 );
 			add_filter( 'jnews_load_post_subtitle', '__return_false' );
 		}
 	}
 
+	/**
+	 * Method load_style
+	 *
+	 * @return void
+	 */
 	public function load_style() {
 		$body_font      = get_theme_mod( 'jnews_body_font' );
 		$title_font     = get_theme_mod( 'jnews_h1_font' );
 		$paragraph_font = get_theme_mod( 'jnews_p_font' );
 		?>
-        <style type="text/css">
-            /*Font Style*/
-            @media (max-width: 1200px ) {
-                .wp-block {
-                    width: 85vw;
-                }
-            }
-            <?php if ( ! empty( $body_font ) ) : ?>
+		<style type="text/css">
+			/*Font Style*/
+			@media (max-width: 1200px ) {
+				.wp-block {
+					width: 85vw;
+				}
+			}
+			<?php if ( ! empty( $body_font ) ) : ?>
 			.wp-block {
-                font-family: <?php echo esc_attr( $body_font['font-family'] ); ?>;
-            }
-            <?php endif ?>
+				font-family: <?php echo esc_attr( $body_font['font-family'] ); ?>;
+			}
+			<?php endif ?>
 
 			/* Post Title Style */
-            <?php if ( ! empty( $title_font ) ) { ?>
-			<?php
+			<?php if ( ! empty( $title_font ) ) { ?>
+				<?php
 				$title_size_unit = isset( $title_font['font-size-unit'] ) && '' !== $title_font['font-size-unit'] ? $title_font['font-size-unit'] : 'px';
-			?>
+				?>
 			.editor-styles-wrapper .editor-post-title__input {
-                font-family: <?php echo esc_attr( $title_font['font-family'] ); ?>;
+				font-family: <?php echo esc_attr( $title_font['font-family'] ); ?>;
 				font-size: <?php echo '' === $title_font['font-size'] ? '3em' : esc_attr( $title_font['font-size'] . $title_size_unit ); ?>;
 				color: <?php echo '' === $title_font['color'] ? '#212121' : esc_attr( $title_font['color'] ); ?>;
 				line-height: <?php echo '' === $title_font['line-height'] ? '1.15' : esc_attr( $title_font['line-height'] ); ?>;
-            }
-            <?php } else { ?>
+			}
+			<?php } else { ?>
 			.editor-styles-wrapper .editor-post-title__input {
-            	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+				font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 				font-size: 3em;
 				color: '#212121';
 				line-height: 1.15;
-            }
+			}
 			<?php } ?>
 			/* Post Title Style */
 
 			/* Paragraph Style */
-            <?php if ( ! empty( $paragraph_font ) ) { ?>
-			<?php 
+			<?php if ( ! empty( $paragraph_font ) ) { ?>
+				<?php
 				$paragraph_size_unit = isset( $paragraph_font['font-size-unit'] ) && '' !== $paragraph_font['font-size-unit'] ? esc_attr( $paragraph_font['font-size-unit'] ) : 'px';
-			?>
+				?>
 			.wp-block-paragraph,
 			.wp-block {
-                font-family: <?php echo esc_attr( $paragraph_font['font-family'] ); ?>;
+				font-family: <?php echo esc_attr( $paragraph_font['font-family'] ); ?>;
 				font-size: <?php echo '' === $paragraph_font['font-size'] ? '16px' : esc_attr( $paragraph_font['font-size'] . $paragraph_size_unit ); ?>;
-				color: <?php echo '' === $paragraph_font['color'] ? '#333' : esc_attr( $paragraph_font['color']); ?>;
+				color: <?php echo '' === $paragraph_font['color'] ? '#333' : esc_attr( $paragraph_font['color'] ); ?>;
 				line-height: <?php echo '' === $paragraph_font['line-height'] ? '1.3' : esc_attr( $paragraph_font['line-height'] ); ?>;
-            }
+			}
 			<?php } else { ?>
 			.wp-block-paragraph,
 			.wp-block {
@@ -105,10 +144,15 @@ class Gutenberg {
 			}
 			<?php } ?>
 			/* Paragraph Style */
-        </style>
+		</style>
 		<?php
 	}
 
+	/**
+	 * Method load_font
+	 *
+	 * @return void
+	 */
 	public function load_font() {
 		if ( class_exists( '\Jeg\Util\Style_Generator' ) ) {
 			$style_instance = \Jeg\Util\Style_Generator::get_instance();
@@ -120,6 +164,13 @@ class Gutenberg {
 		}
 	}
 
+	/**
+	 * Method save_post_format
+	 *
+	 * @param int $post_id $post_id.
+	 *
+	 * @return void
+	 */
 	public function save_post_format( $post_id ) {
 		$format = vp_metabox( 'jnews_single_post.format', null, $post_id );
 
@@ -127,134 +178,31 @@ class Gutenberg {
 			set_post_format( $post_id, $format );
 		}
 
-		// additional for post subtitle
+		// additional for post subtitle.
 		$subtitle = vp_metabox( 'jnews_single_post.subtitle', null, $post_id );
-		//make sure that newly saved post have `post_subtitle_flag` set so after the first post save, it will be available in the opposing editor
-		if ( ! metadata_exists( 'post', $post_id, 'post_subtitle_flag' ) ) update_post_meta( $post_id, 'post_subtitle_flag', true );
-		$flag     = (bool) get_post_meta( $post_id, 'post_subtitle_flag', true );
+		// make sure that newly saved post have `post_subtitle_flag` set so after the first post save, it will be available in the opposing editor.
+		if ( ! metadata_exists( 'post', $post_id, 'post_subtitle_flag' ) ) {
+			update_post_meta( $post_id, 'post_subtitle_flag', true );
+		}
+		$flag = (bool) get_post_meta( $post_id, 'post_subtitle_flag', true );
 
 		if ( $flag ) {
 			update_post_meta( $post_id, 'post_subtitle', $subtitle );
 		}
 	}
 
-	public function post_metabox() {
-
-		$screen = get_current_screen();
-
-		if ( $screen->id === 'post' ) {
-
-			$post_id = get_the_ID();
-
-			$this->post_subtitle( $post_id );
-			$this->post_format( $post_id );
-			$this->post_format_video( $post_id );
-			$this->post_format_gallery( $post_id );
-		}
-	}
-
-	protected function post_subtitle( $post_id ) {
-
-		$subtitle = vp_metabox( 'jnews_single_post.subtitle', null, $post_id );
-		$flag     = (bool) get_post_meta( $post_id, 'post_subtitle_flag', true );
-
-		if ( ! $flag ) {
-			// get old post subtitle
-			$subtitle = esc_html( get_post_meta( $post_id, 'post_subtitle', true ) );
-
-			$single_post = get_post_meta( $post_id, 'jnews_single_post', true );
-			if ( is_array( $single_post ) ) {
-				$single_post['subtitle'] = $subtitle;
-			} else {
-				$single_post = [
-					'subtitle' => $subtitle,
-				];
-			}
-
-			// save into post subtitle metabox
-			update_post_meta( $post_id, 'jnews_single_post', $single_post );
-
-			// flag subtitle for this post
-			update_post_meta( $post_id, 'post_subtitle_flag', true );
-		}
-	}
-
-	protected function post_format( $post_id ) {
-
-		$format = vp_metabox( 'jnews_single_post.format', null, $post_id );
-
-		if ( empty( $format ) ) {
-
-			// get old post format
-			$format      = get_post_format( $post_id );
-			$single_post = get_post_meta( $post_id, 'jnews_single_post', true );
-
-			if ( $format ) {
-				if ( isset( $single_post ) && is_array( $single_post ) ) {
-					$single_post['format'] = $format;
-				} else {
-					$single_post = [
-						'format' => $format,
-					];
-				}
-			} else {
-				if ( empty( $single_post ) ) {
-					$single_post = [
-						'format' => 'standard',
-					];
-				} else {
-					$single_post['format'] = 'standard';
-				}
-			}
-
-			// save into post format metabox
-			update_post_meta( $post_id, 'jnews_single_post', $single_post );
-		}
-	}
-
-	protected function post_format_video( $post_id ) {
-
-		$video = vp_metabox( 'jnews_single_post.video', null, $post_id );
-
-		if ( empty( $video ) ) {
-
-			// get old post video
-			$video = get_post_meta( $post_id, '_format_video_embed', true );
-
-			if ( ! empty( $video ) ) {
-
-				$single_post          = get_post_meta( $post_id, 'jnews_single_post', true );
-				$single_post['video'] = $video;
-
-				// save into post video metabox
-				update_post_meta( $post_id, 'jnews_single_post', $single_post );
-			}
-		}
-	}
-
-	protected function post_format_gallery( $post_id ) {
-
-		$gallery = vp_metabox( 'jnews_single_post.gallery', null, $post_id );
-
-		if ( empty( $gallery ) ) {
-
-			// get old post gallery
-			$gallery = get_post_meta( $post_id, '_format_gallery_images', true );
-
-			if ( ! empty( $gallery ) ) {
-
-				$single_post            = get_post_meta( $post_id, 'jnews_single_post', true );
-				$single_post['gallery'] = implode( ',', $gallery );
-
-				// save into post gallery metabox
-				update_post_meta( $post_id, 'jnews_single_post', $single_post );
-			}
-		}
-	}
-
+	/**
+	 * Method get_post_format
+	 *
+	 * @param array  $term $term.
+	 * @param int    $post_id $post_id.
+	 * @param string $taxonomy $taxonomy.
+	 *
+	 * @return array
+	 */
 	public function get_post_format( $term, $post_id, $taxonomy ) {
 
-		if ( $taxonomy === 'post_format' && isset( $term[0] ) ) {
+		if ( 'post_format' === $taxonomy && isset( $term[0] ) ) {
 
 			$post_format = vp_metabox( 'jnews_single_post.format', null, $post_id );
 
@@ -266,9 +214,18 @@ class Gutenberg {
 		return $term;
 	}
 
+	/**
+	 * Method get_post_format_video
+	 *
+	 * @param string $value $value.
+	 * @param int    $object_id $object_id.
+	 * @param string $meta_key $meta_key.
+	 *
+	 * @return string
+	 */
 	public function get_post_format_video( $value, $object_id, $meta_key ) {
 
-		if ( isset( $meta_key ) && $meta_key === '_format_video_embed' ) {
+		if ( isset( $meta_key ) && '_format_video_embed' === $meta_key ) {
 
 			$video = vp_metabox( 'jnews_single_post.video', null, $object_id );
 
@@ -280,29 +237,43 @@ class Gutenberg {
 		return $value;
 	}
 
+	/**
+	 * Method get_post_format_gallery
+	 *
+	 * @param array  $value $value.
+	 * @param int    $object_id $object_id.
+	 * @param string $meta_key $meta_key.
+	 *
+	 * @return array
+	 */
 	public function get_post_format_gallery( $value, $object_id, $meta_key ) {
 
-		if ( isset( $meta_key ) && $meta_key === '_format_gallery_images' ) {
+		if ( isset( $meta_key ) && '_format_gallery_images' === $meta_key ) {
 
 			$video = vp_metabox( 'jnews_single_post.gallery', null, $object_id );
 
 			if ( ! empty( $video ) ) {
-				$value = [ explode( ',', $video ) ];
+				$value = array( explode( ',', $video ) );
 			}
 		}
 
 		return $value;
 	}
 
+	/**
+	 * Method get_settings
+	 *
+	 * @return array
+	 */
 	private static function get_settings() {
 		$settings = apply_filters( 'classic_editor_plugin_settings', false );
 
 		if ( is_array( $settings ) ) {
-			return [
+			return array(
 				'editor'           => ( isset( $settings['editor'] ) && $settings['editor'] === 'block' ) ? 'block' : 'classic',
 				'allow-users'      => ! empty( $settings['allow-users'] ),
 				'hide-settings-ui' => true,
-			];
+			);
 		}
 
 		if ( ! empty( self::$settings ) ) {
@@ -311,10 +282,10 @@ class Gutenberg {
 
 		if ( class_exists( 'Classic_Editor' ) ) {
 			if ( is_multisite() ) {
-				$defaults = [
+				$defaults = array(
 					'editor'      => get_network_option( null, 'classic-editor-replace' ) === 'block' ? 'block' : 'classic',
 					'allow-users' => false,
-				];
+				);
 
 				$defaults = apply_filters( 'classic_editor_network_default_settings', $defaults );
 
@@ -343,7 +314,7 @@ class Gutenberg {
 				$option      = get_option( 'classic-editor-replace' );
 
 				// Normalize old options.
-				if ( $option === 'block' || $option === 'no-replace' ) {
+				if ( 'block' === $option || 'no-replace' === $option ) {
 					$editor = 'block';
 				} else {
 					// empty( $option ) || $option === 'classic' || $option === 'replace'.
@@ -352,10 +323,10 @@ class Gutenberg {
 			}
 
 			// Override the defaults with the user options.
-			if ( ( ! isset( $GLOBALS['pagenow'] ) || $GLOBALS['pagenow'] !== 'options-writing.php' ) && $allow_users ) {
+			if ( ( ! isset( $GLOBALS['pagenow'] ) || 'options-writing.php' !== $GLOBALS['pagenow'] ) && $allow_users ) {
 				$user_options = get_user_option( 'classic-editor-settings' );
 
-				if ( $user_options === 'block' || $user_options === 'classic' ) {
+				if ( 'block' === $user_options || 'classic' === $user_options ) {
 					$editor = $user_options;
 				}
 			}
@@ -364,24 +335,29 @@ class Gutenberg {
 			$allow_users = false;
 		}
 
-		self::$settings = [
+		self::$settings = array(
 			'editor'           => $editor,
 			'hide-settings-ui' => false,
 			'allow-users'      => $allow_users,
-		];
+		);
 
 		return self::$settings;
 	}
 
+	/**
+	 * Method get_current_post_type
+	 *
+	 * @return string
+	 */
 	private static function get_current_post_type() {
 		$uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : null;
 
 		if ( isset( $uri ) ) {
 			$uri_parts = wp_parse_url( $uri );
-			if(isset($uri_parts['path'])) {
+			if ( isset( $uri_parts['path'] ) ) {
 				$file = basename( $uri_parts['path'] );
 
-				if ( $uri && in_array( $file, [ 'post.php', 'post-new.php' ], true ) ) {
+				if ( $uri && in_array( $file, array( 'post.php', 'post-new.php' ), true ) ) {
 					$post_id = self::get_edited_post_id();
 
 					$post_type = isset( $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : null;
@@ -398,6 +374,11 @@ class Gutenberg {
 		}
 	}
 
+	/**
+	 * Method get_edited_post_id
+	 *
+	 * @return int
+	 */
 	private static function get_edited_post_id() {
 		global $post;
 
@@ -416,6 +397,32 @@ class Gutenberg {
 		return 0;
 	}
 
+	/**
+	 * Method has_blocks
+	 *
+	 * @param object $post $post.
+	 *
+	 * @return boolean
+	 */
+	private static function has_blocks( $post = null ) {
+		if ( ! is_string( $post ) ) {
+			$wp_post = get_post( $post );
+
+			if ( $wp_post instanceof WP_Post ) {
+				$post = $wp_post->post_content;
+			}
+		}
+
+		return false !== strpos( (string) $post, '<!-- wp:' );
+	}
+
+	/**
+	 * Method is_classic
+	 *
+	 * @param int $post_id $post_id.
+	 *
+	 * @return boolean
+	 */
 	public static function is_classic( $post_id = 0 ) {
 		if ( self::get_current_post_type() === 'post' ) {
 			$settings = self::get_settings();
@@ -462,15 +469,148 @@ class Gutenberg {
 		return false;
 	}
 
-	private static function has_blocks( $post = null ) {
-		if ( ! is_string( $post ) ) {
-			$wp_post = get_post( $post );
+	/**
+	 * Method post_metabox
+	 *
+	 * @return void
+	 */
+	public function post_metabox() {
 
-			if ( $wp_post instanceof WP_Post ) {
-				$post = $wp_post->post_content;
+		$screen = get_current_screen();
+
+		if ( $screen->id === 'post' ) {
+
+			$post_id = get_the_ID();
+
+			$this->post_subtitle( $post_id );
+			$this->post_format( $post_id );
+			$this->post_format_video( $post_id );
+			$this->post_format_gallery( $post_id );
+		}
+	}
+
+	/**
+	 * Method post_subtitle
+	 *
+	 * @param int $post_id $post_id.
+	 *
+	 * @return void
+	 */
+	protected function post_subtitle( $post_id ) {
+
+		$subtitle = vp_metabox( 'jnews_single_post.subtitle', null, $post_id );
+		$flag     = (bool) get_post_meta( $post_id, 'post_subtitle_flag', true );
+
+		if ( ! $flag ) {
+			// get old post subtitle.
+			$subtitle = esc_html( get_post_meta( $post_id, 'post_subtitle', true ) );
+
+			$single_post = get_post_meta( $post_id, 'jnews_single_post', true );
+			if ( is_array( $single_post ) ) {
+				$single_post['subtitle'] = $subtitle;
+			} else {
+				$single_post = array(
+					'subtitle' => $subtitle,
+				);
+			}
+
+			// save into post subtitle metabox.
+			update_post_meta( $post_id, 'jnews_single_post', $single_post );
+
+			// flag subtitle for this post.
+			update_post_meta( $post_id, 'post_subtitle_flag', true );
+		}
+	}
+
+	/**
+	 * Method post_format
+	 *
+	 * @param int $post_id $post_id.
+	 *
+	 * @return void
+	 */
+	protected function post_format( $post_id ) {
+
+		$format = vp_metabox( 'jnews_single_post.format', null, $post_id );
+
+		if ( empty( $format ) ) {
+
+			// get old post format.
+			$format      = get_post_format( $post_id );
+			$single_post = get_post_meta( $post_id, 'jnews_single_post', true );
+
+			if ( $format ) {
+				if ( isset( $single_post ) && is_array( $single_post ) ) {
+					$single_post['format'] = $format;
+				} else {
+					$single_post = array(
+						'format' => $format,
+					);
+				}
+			} elseif ( empty( $single_post ) ) {
+					$single_post = array(
+						'format' => 'standard',
+					);
+			} else {
+				$single_post['format'] = 'standard';
+			}
+
+			// save into post format metabox.
+			update_post_meta( $post_id, 'jnews_single_post', $single_post );
+		}
+	}
+
+	/**
+	 * Method post_format_video
+	 *
+	 * @param int $post_id $post_id.
+	 *
+	 * @return void
+	 */
+	protected function post_format_video( $post_id ) {
+
+		$video = vp_metabox( 'jnews_single_post.video', null, $post_id );
+
+		if ( empty( $video ) ) {
+
+			// get old post video.
+			$video = get_post_meta( $post_id, '_format_video_embed', true );
+
+			if ( ! empty( $video ) ) {
+
+				$single_post          = get_post_meta( $post_id, 'jnews_single_post', true );
+				$single_post['video'] = $video;
+
+				// save into post video metabox.
+				update_post_meta( $post_id, 'jnews_single_post', $single_post );
 			}
 		}
+	}
 
-		return false !== strpos( (string) $post, '<!-- wp:' );
+	/**
+	 * Method post_format_gallery
+	 *
+	 * @param int $post_id $post_id.
+	 *
+	 * @return void
+	 */
+	protected function post_format_gallery( $post_id ) {
+
+		$gallery = vp_metabox( 'jnews_single_post.gallery', null, $post_id );
+
+		if ( empty( $gallery ) ) {
+
+			// get old post gallery
+			$gallery = get_post_meta( $post_id, '_format_gallery_images', true );
+
+			if ( ! empty( $gallery ) ) {
+
+				$single_post            = get_post_meta( $post_id, 'jnews_single_post', true );
+				$single_post['gallery'] = implode( ',', $gallery );
+
+				// save into post gallery metabox
+				update_post_meta( $post_id, 'jnews_single_post', $single_post );
+			}
+		}
 	}
 }
