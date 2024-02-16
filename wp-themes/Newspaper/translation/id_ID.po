@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "Komentar ditutup."
 
 
-msgid "My account"
-msgstr "Akun saya"
-
-
 msgid "Payment method"
 msgstr "Cara Pembayaran"
+
+
+msgid "You must be logged out to view this page."
+msgstr "Anda harus keluar untuk melihat halaman ini."
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "Mengetik ulang pass salah!"
+
+
+msgid "%s is a required field."
+msgstr "%s adalah bidang yang wajib diisi."
+
+
+msgid "Please provide a valid email address."
+msgstr "Harap berikan alamat email yang valid."
+
+
+msgid "This email address is already registered."
+msgstr "Alamat email ini sudah terdaftar."
+
+
+msgid "Please fill out all password fields."
+msgstr "Silakan isi semua kolom kata sandi."
+
+
+msgid "Please enter your current password."
+msgstr "Silakan masukkan kata sandi Anda saat ini."
+
+
+msgid "Please re-enter your password."
+msgstr "Silakan masukkan kembali kata sandi Anda."
+
+
+msgid "New passwords do not match."
+msgstr "Kata sandi baru tidak cocok."
+
+
+msgid "Your current password is incorrect."
+msgstr "Kata sandi Anda saat ini salah."
+
+
+msgid "Account details changed successfully."
+msgstr "Detail akun berhasil diubah."
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "Tautan aktivasi baru telah dikirim ke alamat email Anda!"
+
+
+msgid "unlimited"
+msgstr "tak terbatas"
+
+
+msgid "Pay with Stripe"
+msgstr "Bayar dengan garis"
+
+
+msgid "Cancel subscription"
+msgstr "Membatalkan langganan"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "Silakan periksa email Anda dan konfirmasi berlangganan!"
+
+
+msgid "Successfully subscribed!"
+msgstr "Berhasil berlangganan!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "Berhasil berhenti berlangganan!"
+
+
+msgid "Enter promo code here"
+msgstr "Masukkan kode promo di sini"
+
+
+msgid "Apply"
+msgstr "Menerapkan"
+
+
+msgid "Coupon applied"
+msgstr "Kupon diterapkan"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "Kesalahan yang tidak tertangkap: ada yang tidak beres, harap muat ulang halaman dan coba lagi!"
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "Kode kupon yang Anda masukkan tidak valid"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "Kode kupon yang Anda masukkan telah mencapai batas pemakaian"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "Kode kupon yang Anda masukkan telah kedaluwarsa"
+
+
+msgid "Coupon name is required !"
+msgstr "Nama kupon wajib diisi!"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "Silakan masukkan kode kupon terlebih dahulu!"
+
+
+msgid "Invalid"
+msgstr "Tidak sah"
+
+
+msgid "Applied"
+msgstr "Terapan"
+
+
+msgid "Remove"
+msgstr "Menghapus"
+
+
+msgid "Price not set"
+msgstr "Harga tidak ditetapkan"
+
+
+msgid "Grand Total"
+msgstr "Total keseluruhan"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "Anda sudah berlangganan, namun masih menunggu pembayaran!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "Langganan ini telah dibatalkan dan akan berakhir pada %end_date%."
+
+
+msgid "Go to checkout"
+msgstr "Pergi ke kasir"
+
+
+msgid "Stripe invoice details"
+msgstr "Rincian faktur stripe"
+
+
+msgid "Stripe subscription details"
+msgstr "Detail langganan stripe"
+
+
+msgid "Current status"
+msgstr "Status terkini"
+
+
+msgid "Initial Invoice Paid"
+msgstr "Faktur awal dibayar"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "Pembuatan langganan: faktur awal dibayar"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "Pembuatan langganan: faktur awal telah dibuat"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "Pembuatan langganan: faktur awal telah diselesaikan, dan siap dibayar"
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "Pembaruan berlangganan: faktur dibayar"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "Perpanjangan langganan: faktur dibayar"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "Perpanjangan langganan: faktur diselesaikan"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "Perpanjangan langganan: faktur dibuat"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "Perpanjangan langganan: faktur akan datang"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "Langganan kedaluwarsa: faktur dibatalkan (faktur pertama belum dibayar)"
+
+
+msgid "Subscription Deleted"
+msgstr "Langganan dihapus"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "Pembuatan langganan: uji coba"
+
+
+msgid "Subscription Canceled"
+msgstr "Langganan dibatalkan"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "Pembuatan langganan: faktur awal dibatalkan"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "Perpanjangan langganan: faktur dibatalkan"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "Pembaruan langganan: faktur dibatalkan"
+
+
+msgid "Invoice updated"
+msgstr "Faktur diperbarui"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "Langganan telah dibatalkan dan akan berakhir pada:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "Penyiapan berhasil - Anda telah berhasil menyiapkan metode pembayaran untuk pembayaran berikutnya."
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "Penyiapan gagal - kami minta maaf, terjadi kesalahan saat menyiapkan metode pembayaran Anda. silakan coba lagi dengan metode pembayaran lain."
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "Pembayaran berhasil - pembayaran langganan terakhir Anda berhasil diselesaikan."
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "Pemrosesan pembayaran - pembayaran langganan terbaru Anda sedang diproses."
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "Pembayaran gagal - kami minta maaf, terjadi kesalahan saat memproses pembayaran Anda. silakan coba lagi dengan metode pembayaran lain."
+
+
+msgid "Download"
+msgstr "Unduh"
+
+
+msgid "Stripe invoice"
+msgstr "Faktur bergaris"
+
+
+msgid "N/A"
+msgstr "Tidak ada"
+
+
+msgid "Latest invoice"
+msgstr "Faktur terbaru"
+
+
+msgid "Invoice"
+msgstr "Faktur"
+
+
+msgid "Unpaid subscription."
+msgstr "Langganan yang belum dibayar."
+
+
+msgid "Locked subscription."
+msgstr "Langganan terkunci."
+
+
+msgid "Invalid subscription."
+msgstr "Langganan tidak valid."
+
+
+msgid "Pay now"
+msgstr "Bayar sekarang"
+
+
+msgid "Show more info"
+msgstr "Tampilkan info lebih lanjut"
+
+
+msgid "Show less info"
+msgstr "Tampilkan lebih sedikit info"
+
+
+msgid "Complete payment"
+msgstr "Pembayaran lengkap"
+
+
+msgid "or"
+msgstr "atau"
+
+
+msgid "Setup Payment"
+msgstr "Pembayaran pengaturan"
+
+
+msgid "Go to Payment"
+msgstr "Pergi ke pembayaran"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "Abjad a -> z"
+
+
+msgid "Oldest posts"
+msgstr "Postingan tertua"
+
+
+msgid "Select"
+msgstr "Pilih"
+
+
+msgid "on"
+msgstr "pada"
+
+
+msgid "No bookmarked posts"
+msgstr "Tidak ada posting yang ditandai"
+
+
+msgid "Log in With Facebook"
+msgstr "Masuk dengan Facebook"
+
+
+msgid "Forgot your password? Get help"
+msgstr "Lupa kata sandi Anda? mendapatkan bantuan"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "Seseorang telah meminta pengaturan ulang kata sandi untuk akun berikut:"
+
+
+msgid "Username: %s"
+msgstr "Nama pengguna: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Jika ini adalah kesalahan, abaikan saja email ini dan tidak akan terjadi apa-apa."
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "Untuk mengatur ulang kata sandi Anda, kunjungi alamat berikut:"
+
+
+msgid "Members"
+msgstr "Anggota"
+
+
+msgid "Downloads"
+msgstr "Unduhan"
+
+
+msgid "inc. TAX"
+msgstr "inc. pajak"
+
+
+msgid "ex. TAX"
+msgstr "mantan. pajak"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "Terjadi kesalahan tak terduga saat mencoba membuat postingan Anda. silakan coba lagi."
+
+
+msgid "Your post has been successfully created."
+msgstr "Postingan Anda telah berhasil dibuat."
+
+
+msgid "Your post has been successfully updated."
+msgstr "Postingan anda telah berhasil diupdate."
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "Telah terjadi kesalahan yang tidak terduga dan email tidak dapat dikirim."
+
+
+msgid "Location:"
+msgstr "Lokasi:"
+
+
+msgid "The email has been successfully sent."
+msgstr "Email telah berhasil dikirim."
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "Sebuah kesalahan yang tidak terduga telah terjadi. silakan coba lagi."
+
+
+msgid "Drag and drop or browse"
+msgstr "Seret dan lepas atau jelajahi"
+
+
+msgid "Search by keyword..."
+msgstr "Cari menggunakan kata kunci..."
+
+
+msgid "Select parent"
+msgstr "Pilih orang tua"
+
+
+msgid "Add new"
+msgstr "Tambah baru"
+
+
+msgid "Parent"
+msgstr "Induk"
+
+
+msgid "Select child"
+msgstr "Pilih anak"
+
+
+msgid "Select sub-child"
+msgstr "Pilih sub-anak"
+
+
+msgid "Posted by"
+msgstr "Diposting oleh"
+
+
+msgid "Overall"
+msgstr "Keseluruhan"
+
+
+msgid "Post review"
+msgstr "Posting ulasan"
+
+
+msgid "This field is required!"
+msgstr "Bagian ini diperlukan!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "Ulasan Anda telah dipublikasikan. harap segarkan halaman untuk melihatnya."
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "Ulasan Anda telah terdaftar dan sedang menunggu persetujuan."
+
+
+msgid "Submit reply"
+msgstr "Kirimkan balasan"
+
+
+msgid "Enter your reply"
+msgstr "Masukkan balasan Anda"
+
+
+msgid "Cancel"
+msgstr "Membatalkan"
+
+
+msgid "Some required fields have been left blank."
+msgstr "Beberapa bidang wajib dikosongkan."
+
+
+msgid "Please enter a valid email address."
+msgstr "Silakan isi alamat email."
+
+
+msgid "The number cannot be lower than"
+msgstr "Jumlahnya tidak boleh lebih rendah dari"
+
+
+msgid "The number cannot be higher than"
+msgstr "Jumlahnya tidak boleh lebih tinggi dari"
+
+
+msgid "Leave a review"
+msgstr "Tinggalkan ulasan"
+
+
+msgid "Submit"
+msgstr "Kirim"
+
+
+msgid "Update"
+msgstr "Memperbarui"
+
+
+msgid "out of 5"
+msgstr "dari 5"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "Anda telah mencapai batas ulasan yang dapat Anda kirimkan untuk artikel ini"
+
+
+msgid "Log in to leave a review."
+msgstr "Masuk untuk meninggalkan ulasan."
+
+
+msgid "Enter a title for your review"
+msgstr "Masukkan judul ulasan Anda"
+
+
+msgid "Enter your review"
+msgstr "Masukkan ulasan Anda"
+
+
+msgid "Review criteria"
+msgstr "Kriteria tinjauan"
+
+
+msgid "Enter Your Name or Company"
+msgstr "Masukkan nama atau perusahaan Anda"
+
+
+msgid "Submit review"
+msgstr "Mengirimkan ulasan"
+
+
+msgid "Delete"
+msgstr "Menghapus"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "Balasan Anda telah dipublikasikan. harap segarkan halaman untuk melihatnya."
+
+
+msgid "You have not created any posts."
+msgstr "Anda belum membuat postingan apa pun."
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "Postingan yang dipilih telah berhasil dihapus."
+
+
+msgid "Rating"
+msgstr "Peringkat"
+
+
+msgid "Title"
+msgstr "Judul"
+
+
+msgid "Post image"
+msgstr "Gambar posting"
+
+
+msgid "Categories"
+msgstr "Kategori"
+
+
+msgid "Date"
+msgstr "Tanggal"
+
+
+msgid "Source title"
+msgstr "Judul sumber"
+
+
+msgid "No rating"
+msgstr "Tidak ada peringkat"
+
+
+msgid "View"
+msgstr "Melihat"
+
+
+msgid "Publish"
+msgstr "Menerbitkan"
+
+
+msgid "Add new post"
+msgstr "Menambahkan postingan baru"
+
+
+msgid "Edit post"
+msgstr "Edit posting"
+
+
+msgid "Publish a post"
+msgstr "Mempublikasikan postingan"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "Status %post_title% telah diubah."
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "Apakah Anda yakin ingin mempublikasikan %post_title%?"
+
+
+msgid "Delete a post"
+msgstr "Menghapus postingan"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "Apakah Anda yakin ingin menghapus %post_title%?"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "%post_title% telah dipindahkan ke sampah."
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "Anda tidak memiliki hak istimewa yang diperlukan untuk melaksanakan permintaan ini."
+
+
+msgid "No search results."
+msgstr "Tidak ada hasil pencarian."
+
+
+msgid "Yes"
+msgstr "Ya"
+
+
+msgid "No"
+msgstr "TIDAK"
+
+
+msgid "Save"
+msgstr "Menyimpan"
+
+
+msgid "Search for a location"
+msgstr "Mencari lokasi"
+
+
+msgid "Address line"
+msgstr "Baris alamat"
+
+
+msgid "(Optional)"
+msgstr "(opsional)"
+
+
+msgid "State"
+msgstr "Negara"
+
+
+msgid "Country"
+msgstr "Negara"
+
+
+msgid "Create new term"
+msgstr "Membuat istilah baru"
+
+
+msgid "Description"
+msgstr "Keterangan"
+
+
+msgid "Delete bookmarks"
+msgstr "Menghapus bookmark"
+
+
+msgid "Reset your password"
+msgstr "Mereset password Anda"
+
+
+msgid "The password reset key has expired."
+msgstr "Kunci pengaturan ulang kata sandi telah kedaluwarsa."
+
+
+msgid "The password reset key is invalid."
+msgstr "Kunci pengaturan ulang kata sandi tidak valid."
+
+
+msgid "New password *"
+msgstr "Kata sandi baru *"
+
+
+msgid "Repeat new password *"
+msgstr "Ulangi kata sandi baru *"
+
+
+msgid "Save password"
+msgstr "Simpan kata sandi"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "Akun Anda telah berhasil diaktifkan!"
+
+
+msgid "Your account has already been activated!"
+msgstr "Akun Anda telah diaktifkan!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "Periksa email Anda untuk tautan aktivasi yang benar. tautan ini tidak valid."
+
+
+msgid "Account activation"
+msgstr "Aktivasi akun"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "Silakan masukkan kata sandi baru sebelum melanjutkan."
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "Harap konfirmasi kata sandi baru sebelum melanjutkan."
+
+
+msgid "Please make sure that the passwords match."
+msgstr "Harap pastikan kata sandinya cocok."
+
+
+msgid "The password has been reset successfully."
+msgstr "Kata sandi telah berhasil diatur ulang."
+
+
+msgid "Manage your billing details."
+msgstr "Mengelola detail penagihan Anda."
+
+
+msgid "Profile picture"
+msgstr "Foto profil"
+
+
+msgid "Remaining publishing rights."
+msgstr "Hak penerbitan yang tersisa."
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "Jumlah artikel yang tersisa untuk dipublikasikan di berbagai jenis postingan."
+
+
+msgid "Bank transfer"
+msgstr "Transfer Bank"
+
+
+msgid "Direct Bank Transfer"
+msgstr "Transfer bank langsung"
+
+
+msgid "Canceled"
+msgstr "Dibatalkan"
+
+
+msgid "Cycle Interval"
+msgstr "Interval siklus"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "Untuk memperbarui file ini, Anda harus mengaktifkan akun Anda."
+
+
+msgid "Cannot process %s field."
+msgstr "Tidak dapat memproses bidang %s."
+
+
+msgid "Modified date"
+msgstr "Tanggal yang diubah"
 

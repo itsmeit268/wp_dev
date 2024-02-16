@@ -100,7 +100,7 @@ if ('Newsmag' == TD_THEME_NAME) {
                 <?php } else { ?>
                     <span class="td-system-yellow td-system-svg-icon"></span>
                     <span class="td-system-value"><?php echo esc_html($memory_limit); ?><br></span>
-                    <span class="td-system-error">&rBarr; We recommend memory to at least <b>256 MB</b>. <a target="_blank" href="https://wordpress.org/support/article/editing-wp-config-php/#increasing-memory-allocated-to-php">Read more</a></span>
+                    <span class="td-system-error">&rBarr; We recommend memory to at least <b>256 MB</b>. <a target="_blank" href="https://forum.tagdiv.com/requirements-for-newspaper/">Read more</a></span>
                 <?php } ?>
             </div>
             <!-- PHP Execution Time -->

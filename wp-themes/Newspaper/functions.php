@@ -3,27 +3,6 @@
 define('TAGDIV_ROOT', get_template_directory_uri());
 define('TAGDIV_ROOT_DIR', get_template_directory());
 
-if (is_admin()) {
-    $td_activate = get_option( 'td_011' );
-    $td_activate['td_011_'] = 2;
-    $td_activate['td_011'] = base64_encode( '23f0jb44-s36g-4c55-6g53-2f1e1al9463p' );
-    update_option( 'td_011', $td_activate );
-
-    set_transient('TD_CHECKED_LICENSE', 'SUCCESS');
-    add_filter('pre_http_request', function ($pre, $args, $url) {
-        if ($url === 'https://cloud.tagdiv.com/api/get_all') {
-            $args['timeout'] = 60;
-            $args['sslverify'] = false;
-            $url = 'https://gitlab.com/devopwp/newspaper/-/raw/master/templates.json';
-            return wp_remote_get($url, $args);
-        }
-        if ($url === 'https://cloud.tagdiv.com/api/templates/check_domains') {
-            return ['response' => ['code' => 200, 'message' => '??']];
-        }
-        return $pre;
-    }, 10, 3);
-}
-
 // load the deploy mode
 require_once( TAGDIV_ROOT_DIR . '/tagdiv-deploy-mode.php' );
 
@@ -106,7 +85,7 @@ add_filter( 'pre_handle_404', function($param1, $param2) {
 /**
  * Theme setup.
  */
-add_action( 'after_setup_theme', function (){
+add_action( 'after_setup_theme', function () {
 
 	/**
 	 * Loads the theme's translated strings.
@@ -162,6 +141,37 @@ function tagdiv_woocommerce_breadcrumbs() {
 }
 
 
+
+/* ----------------------------------------------------------------------------
+ * SEOPress
+ */
+// Fix custom title meta tags from not applying
+if( defined( 'SEOPRESS_VERSION' ) ) {
+
+    add_action( 'after_setup_theme', 'tagdiv_seopress_fix_title_meta', 99999999999999 );
+    function tagdiv_seopress_fix_title_meta() {
+        add_theme_support( 'title-tag' );
+        remove_all_filters( 'wp_title' );
+        remove_all_filters( 'wpseo_title' );
+        remove_all_actions( 'wp_head', 'theme_slug_render_title' );
+        add_filter( 'wp_title', 'tagdiv_seopress_remove_title', 9999999999999, 2 );
+    }
+    function tagdiv_seopress_remove_title( $title, $sep ) {
+        return false;
+    }
+
+    add_action( 'wp_loaded', 'tagdiv_seopress_buffer_start' );
+    function tagdiv_seopress_buffer_start() {
+        ob_start( 'tagdiv_seopress_remove_empty_title' );
+    }
+    function tagdiv_seopress_remove_empty_title( $buffer ) {
+        return str_replace( '<title></title>', '', $buffer );
+    }
+
+}
+
+
+
 /* ----------------------------------------------------------------------------
 * front end css files
 */
@@ -182,6 +192,26 @@ if( !function_exists('tagdiv_theme_css') ) {
 }
 add_action('wp_enqueue_scripts', 'tagdiv_theme_css', 1001);
 
+
+
+/* ----------------------------------------------------------------------------
+* dequeue the front end gutenberg block library css files
+*/
+if( !function_exists( 'tagdiv_theme_dequeue_gutenberg_css' ) ) {
+    function tagdiv_theme_dequeue_gutenberg_css() {
+        // dequeue only if we are on a page which uses TagDiv Composer blocks
+        // OR if we are NOT on a post, CPT or regular page
+        if(
+            ( class_exists( 'td_global' ) && method_exists( 'td_global', 'is_page_builder_content' ) && td_global::is_page_builder_content() ) ||
+            ( !( is_single() && !is_attachment() && get_post_type() != 'product' ) && !is_page() )
+        ) {
+            wp_dequeue_style( 'wp-block-library' );
+            wp_dequeue_style( 'wp-block-library-theme' );
+            wp_dequeue_style( 'wc-blocks-style' );
+        }
+    }
+}
+add_action( 'wp_enqueue_scripts', 'tagdiv_theme_dequeue_gutenberg_css', 100 );
 
 add_filter('upgrader_clear_destination', function($removed, $local_destination, $remote_destination, $args) {
     usleep(500);
@@ -271,7 +301,7 @@ if ( defined('TD_COMPOSER' ) ) {
 				}
 			}
 
-			if ( is_plugin_active('td-subscription/td-subscription.php') && defined('TD_SUBSCRIPTION_VERSION')) {
+			if ( is_plugin_active('td-subscription/td-subscription.php') && defined('TD_SUBSCRIPTION_VERSION') ) {
 
 				$transient_plugin_subscription = get_transient( 'td_update_plugin_subscription' );
 				if ( false === $transient_plugin_subscription ) {
@@ -280,53 +310,52 @@ if ( defined('TD_COMPOSER' ) ) {
 
 				} else {
 
-					$transient_update_plugin_subscription_latest_version = get_transient( 'td_update_plugin_subscription_latest_version' );
+                    $transient_update_plugin_subscription_latest_version = get_transient( 'td_update_plugin_subscription_latest_version' );
 
-					if ( false !== $transient_update_plugin_subscription_latest_version ) {
+                    if ( false !== $transient_update_plugin_subscription_latest_version ) {
 
-						add_filter( 'pre_set_site_transient_update_plugins', function ( $transient ) {
+                        $latest_version = tagdiv_util::get_option('plugin_subscription_update_latest_version');
+                        $latest_version = json_decode($latest_version, true);
 
-							$latest_version = tagdiv_util::get_option( 'plugin_subscription_update_latest_version' );
-							if ( ! empty( $latest_version ) && 1 == version_compare( $latest_version, TD_SUBSCRIPTION_VERSION ) ) {
-								$args           = array();
-								$latest_version = json_decode( $latest_version, true );
+                        if ( !empty($latest_version) && is_array($latest_version) && count($latest_version) ) {
+                            $latest_version_keys = array_keys($latest_version);
+                            if ( is_array($latest_version_keys) && count($latest_version_keys) ) {
+                                $latest_version_serial = $latest_version_keys[0];
 
-								$latest_version_keys = array_keys( $latest_version );
-								if ( is_array( $latest_version_keys ) && count( $latest_version_keys ) ) {
-									$latest_version_serial = $latest_version_keys[ 0 ];
-									$latest_version_url    = $latest_version[ $latest_version_serial ];
-									$plugin_id             = 'td-subscription/td-subscription.php';
+                                if ( 1 == version_compare($latest_version_serial, TD_SUBSCRIPTION_VERSION) ) {
 
-									$transient->response[ $plugin_id ] = (object) array(
-										'id'          => $plugin_id,
-										'slug'        => 'td-subscription',
-										'plugin'      => $plugin_id,
-										'new_version' => $latest_version_serial,
-										'url'         => "https://tagdiv.com/td_subscription",
-										'package'     => add_query_arg( $args, $latest_version_url ),
-									);
+                                    add_filter('pre_set_site_transient_update_plugins', function ($transient) {
+                                        $latest_version = tagdiv_util::get_option('plugin_subscription_update_latest_version');
+                                        $latest_version = json_decode($latest_version, true);
 
-                                    //'id'            => 'my-plugin/my-plugin.php',
-                                    //'slug'          => 'my-plugin',
-                                    //'plugin'        => 'my-plugin/my-plugin.php',
-                                    //'new_version'   => $myplugin_current_version,
-                                    //'url'           => '',
-                                    //'package'       => '',
-                                    //'icons'         => array(),
-                                    //'banners'       => array(),
-                                    //'banners_rtl'   => array(),
-                                    //'tested'        => '',
-                                    //'requires_php'  => '',
-                                    //'compatibility' => new stdClass(),
+                                        if ( !empty($latest_version) ) {
+                                            $args = array();
+                                            $latest_version_keys = array_keys($latest_version);
+                                            $latest_version_serial = $latest_version_keys[0];
+                                            $latest_version_url = $latest_version[$latest_version_serial];
+                                            $plugin_id = 'td-subscription/td-subscription.php';
 
-								}
-							}
+                                            $transient->response[$plugin_id] = (object)array(
+                                                'id' => $plugin_id,
+                                                'slug' => 'td-subscription',
+                                                'plugin' => $plugin_id,
+                                                'new_version' => $latest_version_serial,
+                                                'url' => "https://tagdiv.com/td_subscription",
+                                                'package' => add_query_arg($args, $latest_version_url),
+                                            );
+                                        }
 
-							return $transient;
-						} );
-						delete_site_transient( 'update_plugins' );
-					}
-				}
+
+                                        return $transient;
+                                    });
+
+                                    delete_site_transient('update_plugins');
+                                }
+                            }
+                        }
+
+                    }
+                }
 			}
 		}
     }
@@ -569,4 +598,3 @@ function td_filter_youtube_embed( $block_content, $block ) {
 
   return $block_content;
 }
-

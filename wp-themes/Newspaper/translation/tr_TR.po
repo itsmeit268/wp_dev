@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "Yoruma kapalı."
 
 
-msgid "My account"
-msgstr "Hesabım"
-
-
 msgid "Payment method"
 msgstr "Ödeme şekli"
+
+
+msgid "You must be logged out to view this page."
+msgstr "Bu sayfayı görüntülemek için çıkış yapmalısınız."
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "Yeniden yazılan geçiş yanlış!"
+
+
+msgid "%s is a required field."
+msgstr "%s zorunlu bir alandır."
+
+
+msgid "Please provide a valid email address."
+msgstr "Lütfen geçerli bir e-posta adresi girin."
+
+
+msgid "This email address is already registered."
+msgstr "Bu e-posta adresi zaten kayıtlı."
+
+
+msgid "Please fill out all password fields."
+msgstr "Lütfen tüm şifre alanlarını doldurun."
+
+
+msgid "Please enter your current password."
+msgstr "Lütfen mevcut şifrenizi giriniz."
+
+
+msgid "Please re-enter your password."
+msgstr "Lütfen şifrenizi tekrar girin."
+
+
+msgid "New passwords do not match."
+msgstr "Yeni şifreler uyuşmuyor."
+
+
+msgid "Your current password is incorrect."
+msgstr "Mevcut şifreniz doğru değildir."
+
+
+msgid "Account details changed successfully."
+msgstr "Hesap ayrıntıları başarıyla değiştirildi."
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "Email adresinize yeni aktivasyon linki gönderildi!"
+
+
+msgid "unlimited"
+msgstr "sınırsız"
+
+
+msgid "Pay with Stripe"
+msgstr "şeritle ödeme"
+
+
+msgid "Cancel subscription"
+msgstr "Aboneliği iptal et"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "Lütfen e-postanızı kontrol edin ve aboneliğinizi onaylayın!"
+
+
+msgid "Successfully subscribed!"
+msgstr "Başarıyla Abone Oldunuz!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "Abonelikten başarıyla çıkıldı!"
+
+
+msgid "Enter promo code here"
+msgstr "Promosyon kodunu buraya girin"
+
+
+msgid "Apply"
+msgstr "Uygula"
+
+
+msgid "Coupon applied"
+msgstr "Kupon uygulandı"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "Yakalanmayan hata: Bir şeyler ters gitti, lütfen sayfayı yeniden yükleyip tekrar deneyin!"
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "Girdiğiniz kupon kodu geçersiz"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "Girdiğiniz kupon kodu kullanım limitine ulaştı"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "Girdiğiniz kupon kodunun süresi doldu"
+
+
+msgid "Coupon name is required !"
+msgstr "Kupon adı gerekli!"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "Lütfen önce bir kupon kodu girin!"
+
+
+msgid "Invalid"
+msgstr "Geçersiz"
+
+
+msgid "Applied"
+msgstr "Uygulamalı"
+
+
+msgid "Remove"
+msgstr "Kaldırmak"
+
+
+msgid "Price not set"
+msgstr "Fiyat belirlenmedi"
+
+
+msgid "Grand Total"
+msgstr "Genel Toplam"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "Zaten bir aboneliğiniz var, ancak hâlâ ödenmeyi bekliyor!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "Bu abonelik iptal edildi ve %end_date% tarihinde sona erecek."
+
+
+msgid "Go to checkout"
+msgstr "ödemeye git"
+
+
+msgid "Stripe invoice details"
+msgstr "şerit fatura ayrıntıları"
+
+
+msgid "Stripe subscription details"
+msgstr "şerit abonelik ayrıntıları"
+
+
+msgid "Current status"
+msgstr "şu anki durum"
+
+
+msgid "Initial Invoice Paid"
+msgstr "ödenen ilk fatura"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "Abonelik oluşturma: ilk fatura ödendi"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "Abonelik oluşturma: ilk fatura oluşturuldu"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "Abonelik oluşturma: ilk fatura kesinleşti ve ödenmeye hazır"
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "Abonelik güncellemesi: fatura ödendi"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "Abonelik yenileme: fatura ödendi"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "Abonelik yenileme: fatura kesinleşti"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "Abonelik yenileme: fatura oluşturuldu"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "Abonelik yenileme: fatura gelecek"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "Aboneliğin süresi doldu: fatura geçersiz kılındı (ilk fatura ödenmedi)"
+
+
+msgid "Subscription Deleted"
+msgstr "Abonelik silindi"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "Abonelik oluşturma: deneme"
+
+
+msgid "Subscription Canceled"
+msgstr "Abonelik iptal edildi"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "Abonelik oluşturma: ilk fatura geçersiz kılındı"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "Abonelik yenileme: fatura geçersiz kılındı"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "Abonelik güncellemesi: fatura geçersiz kılındı"
+
+
+msgid "Invoice updated"
+msgstr "Fatura güncellendi"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "Abonelik iptal edildi ve şu tarihte sona erecek:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "Kurulum başarılı - gelecekteki ödemeler için ödeme yönteminizi başarıyla ayarladınız."
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "Kurulum başarısız oldu - Üzgünüz, ödeme yönteminizi ayarlarken bir hata oluştu. lütfen farklı bir ödeme yöntemiyle tekrar deneyin."
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "ödeme başarılı - son abonelik ödemeniz başarıyla tamamlandı."
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "ödeme işleniyor - en son abonelik ödemeniz işleniyor."
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "ödeme başarısız oldu - Üzgünüz, ödemeniz işlenirken bir hata oluştu. lütfen farklı bir ödeme yöntemiyle tekrar deneyin."
+
+
+msgid "Download"
+msgstr "Indirmek"
+
+
+msgid "Stripe invoice"
+msgstr "şerit fatura"
+
+
+msgid "N/A"
+msgstr "Yok"
+
+
+msgid "Latest invoice"
+msgstr "Son fatura"
+
+
+msgid "Invoice"
+msgstr "Fatura"
+
+
+msgid "Unpaid subscription."
+msgstr "ücretsiz abonelik."
+
+
+msgid "Locked subscription."
+msgstr "Abonelik kilitli."
+
+
+msgid "Invalid subscription."
+msgstr "Geçersiz abonelik."
+
+
+msgid "Pay now"
+msgstr "Şimdi öde"
+
+
+msgid "Show more info"
+msgstr "Daha fazla bilgi göster"
+
+
+msgid "Show less info"
+msgstr "Daha az bilgi göster"
+
+
+msgid "Complete payment"
+msgstr "ödemeyi tamamla"
+
+
+msgid "or"
+msgstr "veya"
+
+
+msgid "Setup Payment"
+msgstr "ödeme kurulumu"
+
+
+msgid "Go to Payment"
+msgstr "ödemeye git"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "Alfabetik a -> z"
+
+
+msgid "Oldest posts"
+msgstr "En eski gönderiler"
+
+
+msgid "Select"
+msgstr "Seçme"
+
+
+msgid "on"
+msgstr "Açık"
+
+
+msgid "No bookmarked posts"
+msgstr "Yer imlerine eklenmiş gönderi yok"
+
+
+msgid "Log in With Facebook"
+msgstr "Facebook ile giriş"
+
+
+msgid "Forgot your password? Get help"
+msgstr "Parolanızı mı unuttunuz? yardım almak"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "Birisi aşağıdaki hesap için şifre sıfırlama talebinde bulundu:"
+
+
+msgid "Username: %s"
+msgstr "Kullanıcı adı: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Eğer bu bir hataysa, bu e-postayı dikkate almayın; hiçbir şey olmayacak."
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "şifrenizi sıfırlamak için aşağıdaki adresi ziyaret edin:"
+
+
+msgid "Members"
+msgstr "üyeler"
+
+
+msgid "Downloads"
+msgstr "İndirilenler"
+
+
+msgid "inc. TAX"
+msgstr "Inc. vergi"
+
+
+msgid "ex. TAX"
+msgstr "eski. vergi"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "Gönderinizi oluşturmaya çalışırken beklenmeyen bir hata oluştu. lütfen tekrar deneyin."
+
+
+msgid "Your post has been successfully created."
+msgstr "Gönderiniz başarıyla oluşturuldu."
+
+
+msgid "Your post has been successfully updated."
+msgstr "Gönderiniz başarıyla güncellendi."
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "Beklenmeyen bir hata oluştu ve posta gönderilemedi."
+
+
+msgid "Location:"
+msgstr "Konum:"
+
+
+msgid "The email has been successfully sent."
+msgstr "E-posta başarıyla gönderildi."
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "Beklenmeyen bir hata oluştu. lütfen tekrar deneyin."
+
+
+msgid "Drag and drop or browse"
+msgstr "Sürükleyip bırakın veya göz atın"
+
+
+msgid "Search by keyword..."
+msgstr "Anahtar Kelime İle Ara..."
+
+
+msgid "Select parent"
+msgstr "Ebeveyn seç"
+
+
+msgid "Add new"
+msgstr "Yeni ekle"
+
+
+msgid "Parent"
+msgstr "Ebeveyn"
+
+
+msgid "Select child"
+msgstr "çocuğu seç"
+
+
+msgid "Select sub-child"
+msgstr "Alt çocuğu seç"
+
+
+msgid "Posted by"
+msgstr "Tarafından gönderildi"
+
+
+msgid "Overall"
+msgstr "Etraflı"
+
+
+msgid "Post review"
+msgstr "Inceleme sonrası"
+
+
+msgid "This field is required!"
+msgstr "Bu alan gereklidir!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "Incelemeniz yayınlandı. görebilmek için lütfen sayfayı yenileyiniz."
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "İncelemeniz kaydedildi ve onay bekliyor."
+
+
+msgid "Submit reply"
+msgstr "Yanıtı gönder"
+
+
+msgid "Enter your reply"
+msgstr "Cevabınızı girin"
+
+
+msgid "Cancel"
+msgstr "Iptal etmek"
+
+
+msgid "Some required fields have been left blank."
+msgstr "Bazı zorunlu alanlar boş bırakılmıştır."
+
+
+msgid "Please enter a valid email address."
+msgstr "Geçerli bir e."
+
+
+msgid "The number cannot be lower than"
+msgstr "Sayı bundan daha düşük olamaz"
+
+
+msgid "The number cannot be higher than"
+msgstr "Sayı bundan daha yüksek olamaz"
+
+
+msgid "Leave a review"
+msgstr "Inceleme bırak"
+
+
+msgid "Submit"
+msgstr "Göndermek"
+
+
+msgid "Update"
+msgstr "Güncelleme"
+
+
+msgid "out of 5"
+msgstr "5 üzerinden"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "Bu makale için gönderebileceğiniz inceleme sınırına ulaştınız"
+
+
+msgid "Log in to leave a review."
+msgstr "Yorum bırakmak için giriş yapın."
+
+
+msgid "Enter a title for your review"
+msgstr "Incelemeniz için bir başlık girin"
+
+
+msgid "Enter your review"
+msgstr "Incelemenizi girin"
+
+
+msgid "Review criteria"
+msgstr "Inceleme kriterleri"
+
+
+msgid "Enter Your Name or Company"
+msgstr "Adınızı veya şirketinizi girin"
+
+
+msgid "Submit review"
+msgstr "Inceleme gönder"
+
+
+msgid "Delete"
+msgstr "Silmek"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "Cevabınız yayınlandı. görebilmek için lütfen sayfayı yenileyiniz."
+
+
+msgid "You have not created any posts."
+msgstr "Herhangi bir gönderi oluşturmadınız."
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "Seçilen gönderi başarıyla silindi."
+
+
+msgid "Rating"
+msgstr "Değerlendirme"
+
+
+msgid "Title"
+msgstr "Başlık"
+
+
+msgid "Post image"
+msgstr "Resim gönder"
+
+
+msgid "Categories"
+msgstr "Kategoriler"
+
+
+msgid "Date"
+msgstr "Tarih"
+
+
+msgid "Source title"
+msgstr "Kaynak başlığı"
+
+
+msgid "No rating"
+msgstr "Derecelendirme yok"
+
+
+msgid "View"
+msgstr "Görüş"
+
+
+msgid "Publish"
+msgstr "Yayınla"
+
+
+msgid "Add new post"
+msgstr "Yeni gönderi ekle"
+
+
+msgid "Edit post"
+msgstr "Gönderiyi düzenle"
+
+
+msgid "Publish a post"
+msgstr "Bir gönderi yayınlamak"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "%post_title%'in durumu değiştirildi."
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "%post_title%'i yayınlamak istediğinizden emin misiniz?"
+
+
+msgid "Delete a post"
+msgstr "Bir gönderiyi sil"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "%post_title%'i silmek istediğinizden emin misiniz?"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "%post_title% çöp kutusuna taşındı."
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "Bu isteği gerçekleştirmek için gerekli ayrıcalıklara sahip değilsiniz."
+
+
+msgid "No search results."
+msgstr "Arama sonucu bulunamadı."
+
+
+msgid "Yes"
+msgstr "Evet"
+
+
+msgid "No"
+msgstr "HAYIR"
+
+
+msgid "Save"
+msgstr "Kaydetmek"
+
+
+msgid "Search for a location"
+msgstr "Bir konum arayın"
+
+
+msgid "Address line"
+msgstr "Adres satırı"
+
+
+msgid "(Optional)"
+msgstr "(isteğe bağlı)"
+
+
+msgid "State"
+msgstr "Durum"
+
+
+msgid "Country"
+msgstr "ülke"
+
+
+msgid "Create new term"
+msgstr "Yeni terim oluştur"
+
+
+msgid "Description"
+msgstr "Tanım"
+
+
+msgid "Delete bookmarks"
+msgstr "Yer işaretlerini sil"
+
+
+msgid "Reset your password"
+msgstr "şifrenizi sıfırlayın"
+
+
+msgid "The password reset key has expired."
+msgstr "şifre sıfırlama anahtarının süresi doldu."
+
+
+msgid "The password reset key is invalid."
+msgstr "şifre sıfırlama anahtarı geçersiz."
+
+
+msgid "New password *"
+msgstr "Yeni Şifre *"
+
+
+msgid "Repeat new password *"
+msgstr "Yeni şifreyi tekrar girin *"
+
+
+msgid "Save password"
+msgstr "şifreyi kaydet"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "Hesabınız başarıyla etkinleştirildi!"
+
+
+msgid "Your account has already been activated!"
+msgstr "Hesabınız daha önceden aktive edilmiştir!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "Doğru aktivasyon bağlantısı için e-postanızı kontrol edin. bu bağlantı geçersiz."
+
+
+msgid "Account activation"
+msgstr "Hesap Aktivasyonu"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "Devam etmeden önce lütfen yeni bir şifre girin."
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "Lütfen devam etmeden önce yeni şifreyi onaylayın."
+
+
+msgid "Please make sure that the passwords match."
+msgstr "Lütfen şifrelerin eşleştiğinden emin olun."
+
+
+msgid "The password has been reset successfully."
+msgstr "şifre başarıyla sıfırlandı."
+
+
+msgid "Manage your billing details."
+msgstr "Fatura ayrıntılarınızı yönetin."
+
+
+msgid "Profile picture"
+msgstr "Profil fotoğrafı"
+
+
+msgid "Remaining publishing rights."
+msgstr "Kalan yayın hakları."
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "Farklı gönderi türlerinde yayınlayabileceğiniz makale sayısı."
+
+
+msgid "Bank transfer"
+msgstr "Banka transferi"
+
+
+msgid "Direct Bank Transfer"
+msgstr "Doğrudan Banka Havalesi"
+
+
+msgid "Canceled"
+msgstr "Iptal edildi"
+
+
+msgid "Cycle Interval"
+msgstr "Döngü aralığı"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "Bu dosyayı güncellemek için hesabınızı etkinleştirmeniz gerekir."
+
+
+msgid "Cannot process %s field."
+msgstr "%s alanı işlenemiyor."
+
+
+msgid "Modified date"
+msgstr "Değiştirilme tarihi"
 

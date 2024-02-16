@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "टिप्पणियाँ बंद हैं।"
 
 
-msgid "My account"
-msgstr "मेरा खाता"
-
-
 msgid "Payment method"
 msgstr "भुगतान का तरीका"
+
+
+msgid "You must be logged out to view this page."
+msgstr "इस पृष्ठ को देखने के लिए आपको लॉग आउट होना होगा।"
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "दोबारा टाइप किया गया पास गलत!"
+
+
+msgid "%s is a required field."
+msgstr "%s एक आवश्यक फ़ील्ड है."
+
+
+msgid "Please provide a valid email address."
+msgstr "एक वैध ईमेल पता प्रदान करें।"
+
+
+msgid "This email address is already registered."
+msgstr "यह ईमेल पता पहले से ही पंजीकृत है।"
+
+
+msgid "Please fill out all password fields."
+msgstr "कृपया सभी पासवर्ड फ़ील्ड भरें।"
+
+
+msgid "Please enter your current password."
+msgstr "कृपया अपना वर्तमान पासवर्ड दर्ज करें."
+
+
+msgid "Please re-enter your password."
+msgstr "अपना पासवर्ड दोबारा दर्ज करें।"
+
+
+msgid "New passwords do not match."
+msgstr "नये पासवर्ड मेल नहीं खाते."
+
+
+msgid "Your current password is incorrect."
+msgstr "आपका वर्तमान पासवर्ड ग़लत है."
+
+
+msgid "Account details changed successfully."
+msgstr "खाता विवरण सफलतापूर्वक बदला गया."
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "आपके ईमेल पते पर एक नया सक्रियण लिंक भेज दिया गया है!"
+
+
+msgid "unlimited"
+msgstr "असीमित"
+
+
+msgid "Pay with Stripe"
+msgstr "धारी के साथ भुगतान करें"
+
+
+msgid "Cancel subscription"
+msgstr "सदस्यता रद्द"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "कृपया अपना ईमेल जांचें और सदस्यता की पुष्टि करें!"
+
+
+msgid "Successfully subscribed!"
+msgstr "सफलतापूर्वक सदस्यता ले ली!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "सफलतापूर्वक सदस्यता समाप्त!"
+
+
+msgid "Enter promo code here"
+msgstr "यहां प्रोमो कोड दर्ज करें"
+
+
+msgid "Apply"
+msgstr "आवेदन करना"
+
+
+msgid "Coupon applied"
+msgstr "कूपन लागू"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "ध्यान में न आई त्रुटि: कुछ गलत हो गया, कृपया पृष्ठ पुनः लोड करें और पुनः प्रयास करें!"
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "आपके द्वारा दर्ज किया गया कूपन कोड अमान्य है"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "आपके द्वारा दर्ज किया गया कूपन कोड अपनी उपयोग सीमा तक पहुंच गया है"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "आपके द्वारा दर्ज किया गया कूपन कोड समाप्त हो गया है"
+
+
+msgid "Coupon name is required !"
+msgstr "कूपन नाम आवश्यक है!"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "कृपया पहले एक कूपन कोड दर्ज करें!"
+
+
+msgid "Invalid"
+msgstr "अमान्य"
+
+
+msgid "Applied"
+msgstr "लागू"
+
+
+msgid "Remove"
+msgstr "निकालना"
+
+
+msgid "Price not set"
+msgstr "कीमत निर्धारित नहीं है"
+
+
+msgid "Grand Total"
+msgstr "कुल योग"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "आपके पास पहले से ही एक सदस्यता है, लेकिन यह अभी भी भुगतान की प्रतीक्षा में है!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "यह सदस्यता रद्द कर दी गई है और यह %end_date% पर समाप्त हो जाएगी।"
+
+
+msgid "Go to checkout"
+msgstr "परिक्षण के लिए जाएं"
+
+
+msgid "Stripe invoice details"
+msgstr "धारी चालान विवरण"
+
+
+msgid "Stripe subscription details"
+msgstr "धारी सदस्यता विवरण"
+
+
+msgid "Current status"
+msgstr "वर्तमान स्थिति"
+
+
+msgid "Initial Invoice Paid"
+msgstr "प्रारंभिक चालान का भुगतान किया गया"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "सदस्यता निर्माण: प्रारंभिक चालान का भुगतान किया गया"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "सदस्यता निर्माण: प्रारंभिक चालान बनाया गया है"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "सदस्यता निर्माण: प्रारंभिक चालान को अंतिम रूप दे दिया गया है, और यह भुगतान के लिए तैयार है"
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "सदस्यता अद्यतन: चालान का भुगतान किया गया"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "सदस्यता नवीनीकरण: चालान का भुगतान किया गया"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "सदस्यता नवीनीकरण: चालान को अंतिम रूप दिया गया"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "सदस्यता नवीनीकरण: चालान बनाया गया"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "सदस्यता नवीनीकरण: चालान आगामी"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "सदस्यता समाप्त हो गई: चालान रद्द कर दिया गया (पहले चालान का भुगतान नहीं किया गया था)"
+
+
+msgid "Subscription Deleted"
+msgstr "सदस्यता हटा दी गई"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "सदस्यता निर्माण: परीक्षण"
+
+
+msgid "Subscription Canceled"
+msgstr "सदस्यता रद्द"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "सदस्यता निर्माण: प्रारंभिक चालान रद्द कर दिया गया"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "सदस्यता नवीनीकरण: चालान रद्द कर दिया गया"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "सदस्यता अद्यतन: चालान रद्द कर दिया गया"
+
+
+msgid "Invoice updated"
+msgstr "चालान अद्यतन किया गया"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "सदस्यता रद्द कर दी गई है और यह समाप्त हो जाएगी:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "सेटअप सफल - आपने भविष्य के भुगतानों के लिए अपनी भुगतान विधि सफलतापूर्वक सेट कर ली है।"
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "सेटअप विफल - हमें खेद है, आपकी भुगतान विधि सेट करने में त्रुटि हुई। कृपया किसी भिन्न भुगतान विधि के साथ पुनः प्रयास करें।"
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "भुगतान सफल - आपका नवीनतम सदस्यता भुगतान सफलतापूर्वक पूरा हो गया।"
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "भुगतान प्रसंस्करण - आपका नवीनतम सदस्यता भुगतान संसाधित किया जा रहा है।"
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "भुगतान विफल - हमें खेद है, आपका भुगतान संसाधित करने में त्रुटि हुई। कृपया किसी भिन्न भुगतान विधि के साथ पुनः प्रयास करें।"
+
+
+msgid "Download"
+msgstr "डाउनलोड करना"
+
+
+msgid "Stripe invoice"
+msgstr "धारी चालान"
+
+
+msgid "N/A"
+msgstr "एन/ए"
+
+
+msgid "Latest invoice"
+msgstr "नवीनतम चालान"
+
+
+msgid "Invoice"
+msgstr "चालान"
+
+
+msgid "Unpaid subscription."
+msgstr "अवैतनिक सदस्यता."
+
+
+msgid "Locked subscription."
+msgstr "बंद सदस्यता."
+
+
+msgid "Invalid subscription."
+msgstr "अमान्य सदस्यता."
+
+
+msgid "Pay now"
+msgstr "अब भुगतान करें"
+
+
+msgid "Show more info"
+msgstr "अधिक जानकारी दिखाएं"
+
+
+msgid "Show less info"
+msgstr "कम जानकारी दिखाएं"
+
+
+msgid "Complete payment"
+msgstr "पूर्ण भुगतान"
+
+
+msgid "or"
+msgstr "या"
+
+
+msgid "Setup Payment"
+msgstr "सेटअप भुगतान"
+
+
+msgid "Go to Payment"
+msgstr "भुगतान पर जाएं"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "वर्णमाला a -> z"
+
+
+msgid "Oldest posts"
+msgstr "सबसे पुरानी पोस्ट"
+
+
+msgid "Select"
+msgstr "चुनना"
+
+
+msgid "on"
+msgstr "पर"
+
+
+msgid "No bookmarked posts"
+msgstr "कोई बुकमार्क की गई पोस्ट नहीं"
+
+
+msgid "Log in With Facebook"
+msgstr "फ़ेसबुक लॉगिन करें"
+
+
+msgid "Forgot your password? Get help"
+msgstr "अपना कूट शब्द भूल गए? मदद लें"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "किसी ने निम्नलिखित खाते के लिए पासवर्ड रीसेट का अनुरोध किया है:"
+
+
+msgid "Username: %s"
+msgstr "उपयोक्तानाम: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "यदि यह एक गलती थी, तो बस इस ईमेल को अनदेखा करें और कुछ नहीं होगा।"
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "अपना पासवर्ड रीसेट करने के लिए, निम्नलिखित पते पर जाएँ:"
+
+
+msgid "Members"
+msgstr "सदस्यों"
+
+
+msgid "Downloads"
+msgstr "डाउनलोड"
+
+
+msgid "inc. TAX"
+msgstr "इंक कर"
+
+
+msgid "ex. TAX"
+msgstr "पूर्व। कर"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "आपकी पोस्ट बनाने का प्रयास करते समय एक अप्रत्याशित त्रुटि उत्पन्न हुई है। कृपया पुन: प्रयास करें।"
+
+
+msgid "Your post has been successfully created."
+msgstr "आपकी पोस्ट सफलतापूर्वक बन गई है."
+
+
+msgid "Your post has been successfully updated."
+msgstr "आपकी पोस्ट सफलतापूर्वक अपडेट कर दी गई है."
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "एक अप्रत्याशित त्रुटि उत्पन्न हुई और मेल नहीं भेजा जा सका."
+
+
+msgid "Location:"
+msgstr "जगह:"
+
+
+msgid "The email has been successfully sent."
+msgstr "ईमेल सफलतापूर्वक भेज दिया गया है."
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "एक अप्रत्याशित त्रुटि सामने आई है। कृपया पुन: प्रयास करें।"
+
+
+msgid "Drag and drop or browse"
+msgstr "खींचें और छोड़ें या ब्राउज़ करें"
+
+
+msgid "Search by keyword..."
+msgstr "संकेतशब्द द्वारा खोजें..."
+
+
+msgid "Select parent"
+msgstr "माता-पिता का चयन करें"
+
+
+msgid "Add new"
+msgstr "नया जोड़ो"
+
+
+msgid "Parent"
+msgstr "माता-पिता"
+
+
+msgid "Select child"
+msgstr "बच्चे का चयन करें"
+
+
+msgid "Select sub-child"
+msgstr "उप-बच्चे का चयन करें"
+
+
+msgid "Posted by"
+msgstr "के द्वारा प्रकाशित किया गया"
+
+
+msgid "Overall"
+msgstr "कुल मिलाकर"
+
+
+msgid "Post review"
+msgstr "समीक्षा पोस्ट करें"
+
+
+msgid "This field is required!"
+msgstr "यह फ़ील्ड आवश्यक है!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "आपकी समीक्षा प्रकाशित कर दी गयी है। कृपया इसे देखने के लिए पृष्ठ को ताज़ा करें।"
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "आपकी समीक्षा पंजीकृत कर ली गई है और अनुमोदन की प्रतीक्षा कर रही है।"
+
+
+msgid "Submit reply"
+msgstr "जवाब सबमिट करें"
+
+
+msgid "Enter your reply"
+msgstr "अपना उत्तर दर्ज करें"
+
+
+msgid "Cancel"
+msgstr "रद्द करना"
+
+
+msgid "Some required fields have been left blank."
+msgstr "कुछ आवश्यक फ़ील्ड खाली छोड़ दी गई हैं."
+
+
+msgid "Please enter a valid email address."
+msgstr "कृपया एक मान्य ईमेल पता प्रविष्ट करें।"
+
+
+msgid "The number cannot be lower than"
+msgstr "संख्या इससे कम नहीं हो सकती"
+
+
+msgid "The number cannot be higher than"
+msgstr "संख्या इससे अधिक नहीं हो सकती"
+
+
+msgid "Leave a review"
+msgstr "समीक्षा लिखें"
+
+
+msgid "Submit"
+msgstr "जमा करना"
+
+
+msgid "Update"
+msgstr "अद्यतन"
+
+
+msgid "out of 5"
+msgstr "5 में से"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "आप इस लेख के लिए सबमिट की जा सकने वाली समीक्षाओं की सीमा तक पहुंच गए हैं"
+
+
+msgid "Log in to leave a review."
+msgstr "समीक्षा छोड़ने के लिए लॉग इन करें."
+
+
+msgid "Enter a title for your review"
+msgstr "अपनी समीक्षा के लिए एक शीर्षक दर्ज करें"
+
+
+msgid "Enter your review"
+msgstr "अपनी समीक्षा दर्ज करें"
+
+
+msgid "Review criteria"
+msgstr "समीक्षा मानदंड"
+
+
+msgid "Enter Your Name or Company"
+msgstr "अपना नाम या कंपनी दर्ज करें"
+
+
+msgid "Submit review"
+msgstr "समीक्षा जमा करें"
+
+
+msgid "Delete"
+msgstr "मिटाना"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "आपका उत्तर प्रकाशित हो चुका है. कृपया इसे देखने के लिए पृष्ठ को ताज़ा करें।"
+
+
+msgid "You have not created any posts."
+msgstr "आपने कोई पोस्ट नहीं बनाई है."
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "चयनित पोस्ट सफलतापूर्वक हटा दी गई है."
+
+
+msgid "Rating"
+msgstr "रेटिंग"
+
+
+msgid "Title"
+msgstr "शीर्षक"
+
+
+msgid "Post image"
+msgstr "छवि पोस्ट करें"
+
+
+msgid "Categories"
+msgstr "श्रेणियाँ"
+
+
+msgid "Date"
+msgstr "तारीख"
+
+
+msgid "Source title"
+msgstr "स्रोत शीर्षक"
+
+
+msgid "No rating"
+msgstr "कोई रेटिंग नहीं"
+
+
+msgid "View"
+msgstr "देखना"
+
+
+msgid "Publish"
+msgstr "प्रकाशित"
+
+
+msgid "Add new post"
+msgstr "नई पोस्ट जोड़ें"
+
+
+msgid "Edit post"
+msgstr "संपादित पोस्ट"
+
+
+msgid "Publish a post"
+msgstr "एक पोस्ट प्रकाशित करें"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "%post_title% की स्थिति बदल दी गई है।"
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "क्या आप वाकई %post_title% प्रकाशित करना चाहते हैं?"
+
+
+msgid "Delete a post"
+msgstr "एक पोस्ट हटाएं"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "क्या आप वाकई %post_title% को हटाना चाहते हैं?"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "%post_title% को ट्रैश में ले जाया गया है।"
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "इस अनुरोध को निष्पादित करने के लिए आपके पास आवश्यक विशेषाधिकार नहीं हैं।"
+
+
+msgid "No search results."
+msgstr "खोजने पर कोई परिणाम नहीं मिला।"
+
+
+msgid "Yes"
+msgstr "हाँ"
+
+
+msgid "No"
+msgstr "नहीं"
+
+
+msgid "Save"
+msgstr "बचाना"
+
+
+msgid "Search for a location"
+msgstr "एक स्थान खोजें"
+
+
+msgid "Address line"
+msgstr "पता पंक्ति"
+
+
+msgid "(Optional)"
+msgstr "(वैकल्पिक)"
+
+
+msgid "State"
+msgstr "राज्य"
+
+
+msgid "Country"
+msgstr "देश"
+
+
+msgid "Create new term"
+msgstr "नया शब्द बनाएँ"
+
+
+msgid "Description"
+msgstr "विवरण"
+
+
+msgid "Delete bookmarks"
+msgstr "बुकमार्क हटाएं"
+
+
+msgid "Reset your password"
+msgstr "अपना पासवर्ड रीसेट करें"
+
+
+msgid "The password reset key has expired."
+msgstr "पासवर्ड रीसेट कुंजी समाप्त हो गई है."
+
+
+msgid "The password reset key is invalid."
+msgstr "पासवर्ड रीसेट कुंजी अमान्य है."
+
+
+msgid "New password *"
+msgstr "नया पासवर्ड *"
+
+
+msgid "Repeat new password *"
+msgstr "नया पासवर्ड दोहराएँ *"
+
+
+msgid "Save password"
+msgstr "पासवर्ड को बचाओ"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "आपका खाता सफलतापूर्वक सक्रिय कर दिया गया है!"
+
+
+msgid "Your account has already been activated!"
+msgstr "आपका खाता पहले ही सक्रिय किया जा चुका है!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "सही सक्रियण लिंक के लिए अपना ईमेल जांचें। यह लिंक अमान्य है."
+
+
+msgid "Account activation"
+msgstr "खाता सक्रियण"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "कृपया आगे बढ़ने से पहले एक नया पासवर्ड दर्ज करें।"
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "कृपया आगे बढ़ने से पहले नए पासवर्ड की पुष्टि करें।"
+
+
+msgid "Please make sure that the passwords match."
+msgstr "कृपया सुनिश्चित करें कि पासवर्ड मेल खाते हों।"
+
+
+msgid "The password has been reset successfully."
+msgstr "पासवर्ड सफलतापूर्वक रीसेट कर दिया गया है."
+
+
+msgid "Manage your billing details."
+msgstr "अपने बिलिंग विवरण प्रबंधित करें."
+
+
+msgid "Profile picture"
+msgstr "प्रोफ़ाइल फोटो"
+
+
+msgid "Remaining publishing rights."
+msgstr "शेष प्रकाशन अधिकार."
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "आपके द्वारा विभिन्न पोस्ट प्रकारों में प्रकाशित करने के लिए छोड़े गए लेखों की संख्या।"
+
+
+msgid "Bank transfer"
+msgstr "बैंक ट्रांसफर"
+
+
+msgid "Direct Bank Transfer"
+msgstr "बैंक में सीधे अंतरण"
+
+
+msgid "Canceled"
+msgstr "रद्द"
+
+
+msgid "Cycle Interval"
+msgstr "चक्र अंतराल"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "इस फ़ाइल को अद्यतन करने के लिए, आपको अपना खाता सक्रिय करना होगा।"
+
+
+msgid "Cannot process %s field."
+msgstr "%s फ़ील्ड संसाधित नहीं कर सकता."
+
+
+msgid "Modified date"
+msgstr "संशोधित तिथि"
 

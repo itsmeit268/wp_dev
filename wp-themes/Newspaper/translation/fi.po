@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "Kommenttien lisääminen on estetty."
 
 
-msgid "My account"
-msgstr "Tilini"
-
-
 msgid "Payment method"
 msgstr "Maksutapa"
+
+
+msgid "You must be logged out to view this page."
+msgstr "Sinun on kirjauduttava ulos nähdäksesi tämän sivun."
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "Uudelleenkirjoitettu passi väärin!"
+
+
+msgid "%s is a required field."
+msgstr "%s on pakollinen kenttä."
+
+
+msgid "Please provide a valid email address."
+msgstr "Anna kelvollinen sähköpostiosoite."
+
+
+msgid "This email address is already registered."
+msgstr "Tämä sähköpostiosoite on jo rekisteröity."
+
+
+msgid "Please fill out all password fields."
+msgstr "Täytä kaikki salasanakentät."
+
+
+msgid "Please enter your current password."
+msgstr "Anna nykyinen salasanasi."
+
+
+msgid "Please re-enter your password."
+msgstr "Kirjoita salasanasi uudelleen."
+
+
+msgid "New passwords do not match."
+msgstr "Uudet salasanat eivät täsmää."
+
+
+msgid "Your current password is incorrect."
+msgstr "Nykyinen salasanasi on väärä."
+
+
+msgid "Account details changed successfully."
+msgstr "Tilitietojen muutos onnistui."
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "Uusi aktivointilinkki on lähetetty sähköpostiosoitteeseesi!"
+
+
+msgid "unlimited"
+msgstr "rajoittamaton"
+
+
+msgid "Pay with Stripe"
+msgstr "Maksa raidalla"
+
+
+msgid "Cancel subscription"
+msgstr "Peruuttaa tilaus"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "Tarkista sähköpostisi ja vahvista tilaus!"
+
+
+msgid "Successfully subscribed!"
+msgstr "Tilattu onnistuneesti!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "Tilaus peruutettu onnistuneesti!"
+
+
+msgid "Enter promo code here"
+msgstr "Syötä tarjouskoodi tähän"
+
+
+msgid "Apply"
+msgstr "Käytä"
+
+
+msgid "Coupon applied"
+msgstr "Kuponki käytössä"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "Huomaamaton virhe: jotain meni pieleen, lataa sivu uudelleen ja yritä uudelleen!"
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "Antamasi kuponkikoodi on virheellinen"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "Antamasi kuponkikoodi on saavuttanut käyttörajansa"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "Antamasi kuponkikoodi on vanhentunut"
+
+
+msgid "Coupon name is required !"
+msgstr "Kupongin nimi vaaditaan!"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "Syötä ensin kuponkikoodi!"
+
+
+msgid "Invalid"
+msgstr "Virheellinen"
+
+
+msgid "Applied"
+msgstr "Sovelletaan"
+
+
+msgid "Remove"
+msgstr "Poista"
+
+
+msgid "Price not set"
+msgstr "Hintaa ei asetettu"
+
+
+msgid "Grand Total"
+msgstr "Loppusumma"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "Sinulla on jo tilaus, mutta se odottaa vielä maksua!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "Tämä tilaus on peruutettu ja se päättyy %end_date%."
+
+
+msgid "Go to checkout"
+msgstr "Siirry kassalle"
+
+
+msgid "Stripe invoice details"
+msgstr "Raitalaskun tiedot"
+
+
+msgid "Stripe subscription details"
+msgstr "Raidan tilaustiedot"
+
+
+msgid "Current status"
+msgstr "Nykyinen tila"
+
+
+msgid "Initial Invoice Paid"
+msgstr "Alkuperäinen lasku maksettu"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "Tilaus luo: alkuperäinen lasku maksettu"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "Tilaus luo: alkuperäinen lasku on luotu"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "Tilaus luo: alkuperäinen lasku on viimeistelty ja se on valmis maksettavaksi"
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "Tilauspäivitys: lasku maksettu"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "Tilauksen uusiminen: lasku maksettu"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "Tilauksen uusiminen: lasku viimeistelty"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "Tilauksen uusiminen: lasku luotu"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "Tilauksen uusiminen: lasku tulossa"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "Tilaus vanhentunut: lasku mitätöity (ensimmäistä laskua ei maksettu)"
+
+
+msgid "Subscription Deleted"
+msgstr "Tilaus poistettu"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "Tilaus luo: kokeilu"
+
+
+msgid "Subscription Canceled"
+msgstr "Tilaus peruttu"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "Tilaus luo: alkuperäinen lasku mitätöity"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "Tilauksen uusiminen: lasku mitätöity"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "Tilauspäivitys: lasku mitätöity"
+
+
+msgid "Invoice updated"
+msgstr "Lasku päivitetty"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "Tilaus on peruttu ja päättyy:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "Asennus onnistui – olet onnistuneesti määrittänyt maksutavan tulevia maksuja varten."
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "Asennus epäonnistui - valitettavasti tapahtui virhe määritettäessä maksutapaa. yritä uudelleen toisella maksutavalla."
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "Maksu onnistui - viimeisin tilausmaksusi suoritettiin onnistuneesti."
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "Maksun käsittely - viimeisin tilausmaksusi käsitellään."
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "Maksu epäonnistui - valitettavasti maksusi käsittelyssä tapahtui virhe. yritä uudelleen toisella maksutavalla."
+
+
+msgid "Download"
+msgstr "Ladata"
+
+
+msgid "Stripe invoice"
+msgstr "Raidallinen lasku"
+
+
+msgid "N/A"
+msgstr "N/a"
+
+
+msgid "Latest invoice"
+msgstr "Viimeisin lasku"
+
+
+msgid "Invoice"
+msgstr "Lasku"
+
+
+msgid "Unpaid subscription."
+msgstr "Maksuton tilaus."
+
+
+msgid "Locked subscription."
+msgstr "Lukittu liittymä."
+
+
+msgid "Invalid subscription."
+msgstr "Virheellinen tilaus."
+
+
+msgid "Pay now"
+msgstr "Maksa nyt"
+
+
+msgid "Show more info"
+msgstr "Näytä lisätietoja"
+
+
+msgid "Show less info"
+msgstr "Näytä vähemmän tietoa"
+
+
+msgid "Complete payment"
+msgstr "Täydellinen maksu"
+
+
+msgid "or"
+msgstr "tai"
+
+
+msgid "Setup Payment"
+msgstr "Määritä maksu"
+
+
+msgid "Go to Payment"
+msgstr "Mene maksuun"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "Aakkosellinen a -> z"
+
+
+msgid "Oldest posts"
+msgstr "Vanhimmat viestit"
+
+
+msgid "Select"
+msgstr "Valitse"
+
+
+msgid "on"
+msgstr "päällä"
+
+
+msgid "No bookmarked posts"
+msgstr "Ei kirjanmerkkeihin merkittyjä viestejä"
+
+
+msgid "Log in With Facebook"
+msgstr "Kirjaudu sisään facebookilla"
+
+
+msgid "Forgot your password? Get help"
+msgstr "Unohditko salasanasi? Hae apua"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "Joku on pyytänyt salasanan vaihtoa seuraavalle tilille:"
+
+
+msgid "Username: %s"
+msgstr "Käyttäjätunnus: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Jos tämä oli virhe, jätä tämä sähköposti huomiotta, niin mitään ei tapahdu."
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "Voit vaihtaa salasanasi käymällä seuraavassa osoitteessa:"
+
+
+msgid "Members"
+msgstr "Jäsenet"
+
+
+msgid "Downloads"
+msgstr "Lataukset"
+
+
+msgid "inc. TAX"
+msgstr "Inc. verottaa"
+
+
+msgid "ex. TAX"
+msgstr "esim. verottaa"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "Odottamaton virhe yritettäessä luoda viestiäsi. yritä uudelleen."
+
+
+msgid "Your post has been successfully created."
+msgstr "Viestisi on luotu onnistuneesti."
+
+
+msgid "Your post has been successfully updated."
+msgstr "Viestisi on päivitetty onnistuneesti."
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "Tapahtui odottamaton virhe, eikä postia voitu lähettää."
+
+
+msgid "Location:"
+msgstr "Sijainti:"
+
+
+msgid "The email has been successfully sent."
+msgstr "Sähköposti on lähetetty onnistuneesti."
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "Odottamaton virhe on tapahtunut. yritä uudelleen."
+
+
+msgid "Drag and drop or browse"
+msgstr "Vedä ja pudota tai selaa"
+
+
+msgid "Search by keyword..."
+msgstr "Etsi hakusanalla..."
+
+
+msgid "Select parent"
+msgstr "Valitse vanhempi"
+
+
+msgid "Add new"
+msgstr "Lisää uusi"
+
+
+msgid "Parent"
+msgstr "Vanhempi"
+
+
+msgid "Select child"
+msgstr "Valitse lapsi"
+
+
+msgid "Select sub-child"
+msgstr "Valitse alalapsi"
+
+
+msgid "Posted by"
+msgstr "Lähettänyt"
+
+
+msgid "Overall"
+msgstr "Yleensä ottaen"
+
+
+msgid "Post review"
+msgstr "Lähetä arvostelu"
+
+
+msgid "This field is required!"
+msgstr "Tämä kenttä pitää täyttää!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "Arvostelusi on julkaistu. päivitä sivu nähdäksesi sen."
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "Arvostelusi on rekisteröity ja odottaa hyväksyntää."
+
+
+msgid "Submit reply"
+msgstr "Lähetä vastaus"
+
+
+msgid "Enter your reply"
+msgstr "Kirjoita vastauksesi"
+
+
+msgid "Cancel"
+msgstr "Peruuttaa"
+
+
+msgid "Some required fields have been left blank."
+msgstr "Jotkut pakolliset kentät on jätetty tyhjiksi."
+
+
+msgid "Please enter a valid email address."
+msgstr "Ole hyvä ja syötä toimiva sähköpostiosoite."
+
+
+msgid "The number cannot be lower than"
+msgstr "Luku ei voi olla pienempi kuin"
+
+
+msgid "The number cannot be higher than"
+msgstr "Luku ei voi olla suurempi kuin"
+
+
+msgid "Leave a review"
+msgstr "Jätä arvostelu"
+
+
+msgid "Submit"
+msgstr "Lähetä"
+
+
+msgid "Update"
+msgstr "Päivittää"
+
+
+msgid "out of 5"
+msgstr "viidestä"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "Olet saavuttanut tämän artikkelin arvioiden rajan"
+
+
+msgid "Log in to leave a review."
+msgstr "Kirjaudu sisään jättääksesi arvostelun."
+
+
+msgid "Enter a title for your review"
+msgstr "Anna arvostelullesi otsikko"
+
+
+msgid "Enter your review"
+msgstr "Kirjoita arvostelusi"
+
+
+msgid "Review criteria"
+msgstr "Tarkistuskriteerit"
+
+
+msgid "Enter Your Name or Company"
+msgstr "Kirjoita nimesi tai yrityksesi"
+
+
+msgid "Submit review"
+msgstr "Lähetä arvostelu"
+
+
+msgid "Delete"
+msgstr "Poistaa"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "Vastauksesi on julkaistu. päivitä sivu nähdäksesi sen."
+
+
+msgid "You have not created any posts."
+msgstr "Et ole luonut yhtään viestiä."
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "Valittu viesti on poistettu onnistuneesti."
+
+
+msgid "Rating"
+msgstr "Luokitus"
+
+
+msgid "Title"
+msgstr "Otsikko"
+
+
+msgid "Post image"
+msgstr "Lähetä kuva"
+
+
+msgid "Categories"
+msgstr "Luokat"
+
+
+msgid "Date"
+msgstr "Päivämäärä"
+
+
+msgid "Source title"
+msgstr "Lähteen otsikko"
+
+
+msgid "No rating"
+msgstr "Ei arvosanaa"
+
+
+msgid "View"
+msgstr "Näkymä"
+
+
+msgid "Publish"
+msgstr "Julkaista"
+
+
+msgid "Add new post"
+msgstr "Lisää uusi viesti"
+
+
+msgid "Edit post"
+msgstr "Muokkaa viestiä"
+
+
+msgid "Publish a post"
+msgstr "Julkaise postaus"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "%post_title%:n tila on muutettu."
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "Oletko varma, että haluat julkaista %post_title%?"
+
+
+msgid "Delete a post"
+msgstr "Poista viesti"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "Oletko varma, että haluat poistaa %post_title%?"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "%post_title% on siirretty roskakoriin."
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "Sinulla ei ole tämän pyynnön suorittamiseen vaadittavia oikeuksia."
+
+
+msgid "No search results."
+msgstr "Ei hakutuloksia."
+
+
+msgid "Yes"
+msgstr "Joo"
+
+
+msgid "No"
+msgstr "Ei"
+
+
+msgid "Save"
+msgstr "Tallentaa"
+
+
+msgid "Search for a location"
+msgstr "Etsi sijaintia"
+
+
+msgid "Address line"
+msgstr "Osoiterivi"
+
+
+msgid "(Optional)"
+msgstr "(valinnainen)"
+
+
+msgid "State"
+msgstr "Osavaltio"
+
+
+msgid "Country"
+msgstr "Maa"
+
+
+msgid "Create new term"
+msgstr "Luoda uusi termi"
+
+
+msgid "Description"
+msgstr "Kuvaus"
+
+
+msgid "Delete bookmarks"
+msgstr "Poista kirjanmerkit"
+
+
+msgid "Reset your password"
+msgstr "Nollaa salasana"
+
+
+msgid "The password reset key has expired."
+msgstr "Salasanan palautusavain on vanhentunut."
+
+
+msgid "The password reset key is invalid."
+msgstr "Salasanan palautusavain on virheellinen."
+
+
+msgid "New password *"
+msgstr "Uusi salasana *"
+
+
+msgid "Repeat new password *"
+msgstr "Toista uusi salasana *"
+
+
+msgid "Save password"
+msgstr "Tallenna salasana"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "Tilisi on aktivoitu onnistuneesti!"
+
+
+msgid "Your account has already been activated!"
+msgstr "Käyttäjätilisi on jo aktivoitu!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "Tarkista sähköpostistasi oikea aktivointilinkki. tämä linkki on virheellinen."
+
+
+msgid "Account activation"
+msgstr "Tilin aktivointi"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "Anna uusi salasana ennen kuin jatkat."
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "Vahvista uusi salasana ennen kuin jatkat."
+
+
+msgid "Please make sure that the passwords match."
+msgstr "Varmista, että salasanat täsmäävät."
+
+
+msgid "The password has been reset successfully."
+msgstr "Salasana on nollattu onnistuneesti."
+
+
+msgid "Manage your billing details."
+msgstr "Hallita laskutustietojasi."
+
+
+msgid "Profile picture"
+msgstr "Profiilikuva"
+
+
+msgid "Remaining publishing rights."
+msgstr "Jäljellä olevat julkaisuoikeudet."
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "Kuinka monta artikkelia sinulla on julkaistavaksi eri viestityypeissä."
+
+
+msgid "Bank transfer"
+msgstr "Pankkisiirto"
+
+
+msgid "Direct Bank Transfer"
+msgstr "Suora pankkisiirto"
+
+
+msgid "Canceled"
+msgstr "Peruutettu"
+
+
+msgid "Cycle Interval"
+msgstr "Syklin intervalli"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "Jotta voit päivittää tämän tiedoston, sinun on aktivoitava tilisi."
+
+
+msgid "Cannot process %s field."
+msgstr "%s kenttää ei voi käsitellä."
+
+
+msgid "Modified date"
+msgstr "Muokattu päivämäärä"
 

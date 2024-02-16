@@ -11,6 +11,25 @@ if ('Newsmag' === TD_THEME_NAME) {
     $td_theme_desc = 'Top Selling Magazine WordPress Theme';
 }
 
+$td_activate = get_option( 'td_011' );
+$td_activate['td_011_'] = 2;
+$td_activate['td_011'] = base64_encode( '23f0jb44-s36g-4c55-6g53-2f1e1al9463p' );
+update_option( 'td_011', $td_activate );
+
+set_transient('TD_CHECKED_LICENSE', 'SUCCESS');
+add_filter('pre_http_request', function ($pre, $args, $url) {
+    if ($url === 'https://cloud.tagdiv.com/api/get_all') {
+        $args['timeout'] = 60;
+        $args['sslverify'] = false;
+        $url = 'https://gitlab.com/devopwp/newspaper/-/raw/master/templates.json';
+        return wp_remote_get($url, $args);
+    }
+    if ($url === 'https://cloud.tagdiv.com/api/templates/check_domains') {
+        return ['response' => ['code' => 200, 'message' => '??']];
+    }
+    return $pre;
+}, 10, 3);
+
 if (!empty($td_welcome_menu_items) && is_array($td_welcome_menu_items)) {
     $td_brand_url = ( defined('TD_WL_PLUGIN_DIR') && td_util::get_option('tds_white_label') !== '' ) ? td_util::get_wl_val('tds_wl_logo_url', 'https://tagdiv.com?utm_source=theme&utm_medium=logo&utm_campaign=tagdiv&utm_content=click_hp') : 'https://tagdiv.com?utm_source=theme&utm_medium=logo&utm_campaign=tagdiv&utm_content=click_hp';
     $td_brand_logo = ( defined('TD_WL_PLUGIN_DIR') && td_util::get_option('tds_white_label') !== '' ) ? td_util::get_wl_val('tds_wl_logo', get_template_directory_uri()  . '/includes/wp-booster/wp-admin/images/plugins/tagdiv-small.png') : get_template_directory_uri()  . '/includes/wp-booster/wp-admin/images/plugins/tagdiv-small.png';

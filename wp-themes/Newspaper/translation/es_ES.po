@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "Los comentarios están cerrados."
 
 
-msgid "My account"
-msgstr "Mi cuenta"
-
-
 msgid "Payment method"
 msgstr "Método de pago"
+
+
+msgid "You must be logged out to view this page."
+msgstr "Debe cerrar sesión para ver esta página."
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "¡El pase reescrito es incorrecto!"
+
+
+msgid "%s is a required field."
+msgstr "%s es un campo obligatorio."
+
+
+msgid "Please provide a valid email address."
+msgstr "Por favor ingrese su dirección de correo electrónico válida."
+
+
+msgid "This email address is already registered."
+msgstr "Esta dirección de correo electrónico ya está registrada."
+
+
+msgid "Please fill out all password fields."
+msgstr "Complete todos los campos de contraseña."
+
+
+msgid "Please enter your current password."
+msgstr "Por favor ingrese su contraseña actual."
+
+
+msgid "Please re-enter your password."
+msgstr "Por favor re ingrese su contraseña."
+
+
+msgid "New passwords do not match."
+msgstr "Las nuevas contraseñas no coinciden."
+
+
+msgid "Your current password is incorrect."
+msgstr "Tu contraseña actual es incorrecta."
+
+
+msgid "Account details changed successfully."
+msgstr "Los detalles de la cuenta cambiaron exitosamente."
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "¡Se ha enviado un nuevo enlace de activación a su dirección de correo electrónico!"
+
+
+msgid "unlimited"
+msgstr "ilimitado"
+
+
+msgid "Pay with Stripe"
+msgstr "Pagar con raya"
+
+
+msgid "Cancel subscription"
+msgstr "Cancelar suscripción"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "¡Por favor revisa tu correo electrónico y confirma la suscripción!"
+
+
+msgid "Successfully subscribed!"
+msgstr "Suscrito exitosamente!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "Cancelado la suscripción con éxito!"
+
+
+msgid "Enter promo code here"
+msgstr "Ingrese el código de promoción aquí"
+
+
+msgid "Apply"
+msgstr "Aplicar"
+
+
+msgid "Coupon applied"
+msgstr "Cupón aplicado"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "Error no detectado: algo salió mal. Vuelva a cargar la página e inténtelo de nuevo."
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "El código de cupón que ingresaste no es válido"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "El código de cupón que ingresó ha alcanzado su límite de uso"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "El código de cupón que ingresaste ha caducado"
+
+
+msgid "Coupon name is required !"
+msgstr "¡Se requiere el nombre del cupón!"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "¡Ingrese primero un código de cupón!"
+
+
+msgid "Invalid"
+msgstr "Inválido"
+
+
+msgid "Applied"
+msgstr "Aplicado"
+
+
+msgid "Remove"
+msgstr "Eliminar"
+
+
+msgid "Price not set"
+msgstr "Precio no establecido"
+
+
+msgid "Grand Total"
+msgstr "Gran total"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "¡Ya tienes una suscripción, pero aún estás esperando ser pagada!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "Esta suscripción ha sido cancelada y finalizará el %end_date%."
+
+
+msgid "Go to checkout"
+msgstr "Ir a pagar"
+
+
+msgid "Stripe invoice details"
+msgstr "Detalles de la factura de rayas"
+
+
+msgid "Stripe subscription details"
+msgstr "Detalles de suscripción de banda"
+
+
+msgid "Current status"
+msgstr "Estado actual"
+
+
+msgid "Initial Invoice Paid"
+msgstr "Factura inicial pagada"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "Creación de suscripción: factura inicial pagada"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "Creación de suscripción: se ha creado la factura inicial"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "Creación de suscripción: la factura inicial se ha finalizado y está lista para pagarse."
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "Actualización de suscripción: factura pagada"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "Renovación de suscripción: factura pagada"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "Renovación de suscripción: factura finalizada"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "Renovación de suscripción: factura creada"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "Renovación de suscripción: factura próxima"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "Suscripción caducada: factura anulada (la primera factura no se pagó)"
+
+
+msgid "Subscription Deleted"
+msgstr "Suscripción eliminada"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "Creación de suscripción: prueba"
+
+
+msgid "Subscription Canceled"
+msgstr "Suscripción cancelada"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "Creación de suscripción: factura inicial anulada"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "Renovación de suscripción: factura anulada"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "Actualización de suscripción: factura anulada"
+
+
+msgid "Invoice updated"
+msgstr "Factura actualizada"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "La suscripción ha sido cancelada y finalizará el:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "Configuración exitosa: ha configurado exitosamente su método de pago para pagos futuros."
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "Error de configuración: lo sentimos, se produjo un error al configurar su método de pago. Inténtalo de nuevo con un método de pago diferente."
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "Pago exitoso: el pago de su última suscripción se completó exitosamente."
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "Procesamiento de pagos: se está procesando el último pago de su suscripción."
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "El pago falló. Lo sentimos, hubo un error al procesar su pago. Inténtalo de nuevo con un método de pago diferente."
+
+
+msgid "Download"
+msgstr "Descargar"
+
+
+msgid "Stripe invoice"
+msgstr "Factura rayada"
+
+
+msgid "N/A"
+msgstr "N / A"
+
+
+msgid "Latest invoice"
+msgstr "última factura"
+
+
+msgid "Invoice"
+msgstr "Factura"
+
+
+msgid "Unpaid subscription."
+msgstr "Suscripción no pagada."
+
+
+msgid "Locked subscription."
+msgstr "Suscripción bloqueada."
+
+
+msgid "Invalid subscription."
+msgstr "Suscripción no válida."
+
+
+msgid "Pay now"
+msgstr "Pagar ahora"
+
+
+msgid "Show more info"
+msgstr "Mostrar más información"
+
+
+msgid "Show less info"
+msgstr "Mostrar menos información"
+
+
+msgid "Complete payment"
+msgstr "El pago completo"
+
+
+msgid "or"
+msgstr "o"
+
+
+msgid "Setup Payment"
+msgstr "Pago de configuración"
+
+
+msgid "Go to Payment"
+msgstr "Ir al pago"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "Alfabético a -> z"
+
+
+msgid "Oldest posts"
+msgstr "Publicaciones más antiguas"
+
+
+msgid "Select"
+msgstr "Seleccionar"
+
+
+msgid "on"
+msgstr "en"
+
+
+msgid "No bookmarked posts"
+msgstr "No hay publicaciones marcadas"
+
+
+msgid "Log in With Facebook"
+msgstr "Iniciar sesión con Facebook"
+
+
+msgid "Forgot your password? Get help"
+msgstr "¿Olvidaste tu contraseña? consigue ayuda"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "Alguien ha solicitado un restablecimiento de contraseña para la siguiente cuenta:"
+
+
+msgid "Username: %s"
+msgstr "Nombre de usuario: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Si fue un error, ignora este correo electrónico y no pasará nada."
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "Para restablecer su contraseña, visite la siguiente dirección:"
+
+
+msgid "Members"
+msgstr "Miembros"
+
+
+msgid "Downloads"
+msgstr "Descargas"
+
+
+msgid "inc. TAX"
+msgstr "Cª. impuesto"
+
+
+msgid "ex. TAX"
+msgstr "ex. impuesto"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "Ha ocurrido un error inesperado al intentar crear tu publicación. Inténtalo de nuevo."
+
+
+msgid "Your post has been successfully created."
+msgstr "Tu publicación ha sido creada exitosamente."
+
+
+msgid "Your post has been successfully updated."
+msgstr "Tu publicación se ha actualizado exitosamente."
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "Se ha producido un error inesperado y no se ha podido enviar el correo."
+
+
+msgid "Location:"
+msgstr "Ubicación:"
+
+
+msgid "The email has been successfully sent."
+msgstr "El correo electrónico ha sido enviado exitosamente."
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "Ha ocurrido un error inesperado. Inténtalo de nuevo."
+
+
+msgid "Drag and drop or browse"
+msgstr "Arrastrar y soltar o navegar"
+
+
+msgid "Search by keyword..."
+msgstr "Buscar por palabra clave..."
+
+
+msgid "Select parent"
+msgstr "Seleccionar padre"
+
+
+msgid "Add new"
+msgstr "Agregar nuevo"
+
+
+msgid "Parent"
+msgstr "Padre"
+
+
+msgid "Select child"
+msgstr "Seleccionar niño"
+
+
+msgid "Select sub-child"
+msgstr "Seleccionar sub-hijo"
+
+
+msgid "Posted by"
+msgstr "Publicado por"
+
+
+msgid "Overall"
+msgstr "En general"
+
+
+msgid "Post review"
+msgstr "Revisión posterior"
+
+
+msgid "This field is required!"
+msgstr "¡Este campo es obligatorio!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "Tu opinión se ha publicado. Por favor actualice la página para poder verla."
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "Su reseña ha sido registrada y está pendiente de aprobación."
+
+
+msgid "Submit reply"
+msgstr "Enviar respuesta"
+
+
+msgid "Enter your reply"
+msgstr "Ingresa tu respuesta"
+
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+
+msgid "Some required fields have been left blank."
+msgstr "Algunos campos obligatorios se han dejado en blanco."
+
+
+msgid "Please enter a valid email address."
+msgstr "Por favor, introduce una dirección de correo electrónico válida."
+
+
+msgid "The number cannot be lower than"
+msgstr "El número no puede ser inferior a"
+
+
+msgid "The number cannot be higher than"
+msgstr "El número no puede ser mayor que"
+
+
+msgid "Leave a review"
+msgstr "Dejar un comentario"
+
+
+msgid "Submit"
+msgstr "Entregar"
+
+
+msgid "Update"
+msgstr "Actualizar"
+
+
+msgid "out of 5"
+msgstr "de 5"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "Has alcanzado el límite de reseñas que puedes enviar para este artículo."
+
+
+msgid "Log in to leave a review."
+msgstr "Inicia sesión para dejar una reseña."
+
+
+msgid "Enter a title for your review"
+msgstr "Ingresa un título para tu reseña"
+
+
+msgid "Enter your review"
+msgstr "Ingresa tu reseña"
+
+
+msgid "Review criteria"
+msgstr "Criterios de revisión"
+
+
+msgid "Enter Your Name or Company"
+msgstr "Introduce tu nombre o empresa"
+
+
+msgid "Submit review"
+msgstr "Enviar opinión"
+
+
+msgid "Delete"
+msgstr "Borrar"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "Tu respuesta ha sido publicada. Por favor actualice la página para poder verla."
+
+
+msgid "You have not created any posts."
+msgstr "No has creado ninguna publicación."
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "La publicación seleccionada se ha eliminado exitosamente."
+
+
+msgid "Rating"
+msgstr "Clasificación"
+
+
+msgid "Title"
+msgstr "Título"
+
+
+msgid "Post image"
+msgstr "Publicar imagen"
+
+
+msgid "Categories"
+msgstr "Categorias"
+
+
+msgid "Date"
+msgstr "Fecha"
+
+
+msgid "Source title"
+msgstr "Título de la fuente"
+
+
+msgid "No rating"
+msgstr "Sin evaluar"
+
+
+msgid "View"
+msgstr "Vista"
+
+
+msgid "Publish"
+msgstr "Publicar"
+
+
+msgid "Add new post"
+msgstr "Agregar nueva publicación"
+
+
+msgid "Edit post"
+msgstr "Editar post"
+
+
+msgid "Publish a post"
+msgstr "Publicar una publicación"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "El estado de %post_title% ha sido cambiado."
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "¿Estás seguro de que deseas publicar %post_title%?"
+
+
+msgid "Delete a post"
+msgstr "Eliminar una publicación"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "¿Estás seguro de que deseas eliminar %post_title%?"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "%post_title% ha sido movido a la papelera."
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "Usted no tiene los privilegios necesarios para ejecutar esta solicitud."
+
+
+msgid "No search results."
+msgstr "Sin resultados de búsqueda."
+
+
+msgid "Yes"
+msgstr "Sí"
+
+
+msgid "No"
+msgstr "No"
+
+
+msgid "Save"
+msgstr "Ahorrar"
+
+
+msgid "Search for a location"
+msgstr "Buscar una ubicación"
+
+
+msgid "Address line"
+msgstr "Dirección"
+
+
+msgid "(Optional)"
+msgstr "(opcional)"
+
+
+msgid "State"
+msgstr "Estado"
+
+
+msgid "Country"
+msgstr "País"
+
+
+msgid "Create new term"
+msgstr "Crear nuevo término"
+
+
+msgid "Description"
+msgstr "Descripción"
+
+
+msgid "Delete bookmarks"
+msgstr "Eliminar marcadores"
+
+
+msgid "Reset your password"
+msgstr "Restablecer su contraseña"
+
+
+msgid "The password reset key has expired."
+msgstr "La clave de restablecimiento de contraseña ha caducado."
+
+
+msgid "The password reset key is invalid."
+msgstr "La clave para restablecer la contraseña no es válida."
+
+
+msgid "New password *"
+msgstr "Nueva contraseña *"
+
+
+msgid "Repeat new password *"
+msgstr "Repita la nueva contraseña *"
+
+
+msgid "Save password"
+msgstr "Guardar contraseña"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "¡Su cuenta ha sido activada exitosamente!"
+
+
+msgid "Your account has already been activated!"
+msgstr "¡Tu cuenta ya ha sido activada!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "Revise su correo electrónico para ver el enlace de activación correcto. este enlace no es válido."
+
+
+msgid "Account activation"
+msgstr "Activación de cuenta"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "Ingrese una nueva contraseña antes de continuar."
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "Confirme la nueva contraseña antes de continuar."
+
+
+msgid "Please make sure that the passwords match."
+msgstr "Asegúrese de que las contraseñas coincidan."
+
+
+msgid "The password has been reset successfully."
+msgstr "La contraseña se ha restablecido correctamente."
+
+
+msgid "Manage your billing details."
+msgstr "Gestionar tus datos de facturación."
+
+
+msgid "Profile picture"
+msgstr "Foto de perfil"
+
+
+msgid "Remaining publishing rights."
+msgstr "Restantes derechos de publicación."
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "La cantidad de artículos que le quedan por publicar en diferentes tipos de publicaciones."
+
+
+msgid "Bank transfer"
+msgstr "Transferencia bancaria"
+
+
+msgid "Direct Bank Transfer"
+msgstr "Transferencia bancaria directa"
+
+
+msgid "Canceled"
+msgstr "Cancelado"
+
+
+msgid "Cycle Interval"
+msgstr "Intervalo de ciclo"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "Para actualizar este archivo, debe activar su cuenta."
+
+
+msgid "Cannot process %s field."
+msgstr "No se puede procesar el campo %s."
+
+
+msgid "Modified date"
+msgstr "Fecha de modificación"
 

@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "τα σχόλια είναι κλειδωμένα."
 
 
-msgid "My account"
-msgstr "ο λογαριασμός μου"
-
-
 msgid "Payment method"
 msgstr "μέθοδος πληρωμής"
+
+
+msgid "You must be logged out to view this page."
+msgstr "πρέπει να αποσυνδεθείτε για να δείτε αυτή τη σελίδα."
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "πληκτρολογήθηκε ξανά λάθος!"
+
+
+msgid "%s is a required field."
+msgstr "Το %s είναι υποχρεωτικό πεδίο."
+
+
+msgid "Please provide a valid email address."
+msgstr "δώστε μια έγκυρη διεύθυνση email."
+
+
+msgid "This email address is already registered."
+msgstr "αυτή η διεύθυνση email είναι ήδη εγγεγραμμένη."
+
+
+msgid "Please fill out all password fields."
+msgstr "συμπληρώστε όλα τα πεδία κωδικού πρόσβασης."
+
+
+msgid "Please enter your current password."
+msgstr "παρακαλώ εισάγετε τον τρέχοντα κωδικό πρόσβασής σας."
+
+
+msgid "Please re-enter your password."
+msgstr "Παρακαλώ εισάγετε ξανά τον κωδικό πρόσβασής σας."
+
+
+msgid "New passwords do not match."
+msgstr "οι νέοι κωδικοί πρόσβασης δεν ταιριάζουν."
+
+
+msgid "Your current password is incorrect."
+msgstr "Ο τρέχων κωδικός πρόσβασής σας είναι λανθασμένος."
+
+
+msgid "Account details changed successfully."
+msgstr "τα στοιχεία λογαριασμού άλλαξαν με επιτυχία."
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "ένας νέος σύνδεσμος ενεργοποίησης έχει σταλεί στη διεύθυνση email σας!"
+
+
+msgid "unlimited"
+msgstr "απεριόριστος"
+
+
+msgid "Pay with Stripe"
+msgstr "πληρώστε με ρίγα"
+
+
+msgid "Cancel subscription"
+msgstr "ακύρωση συνδρομής"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "ελέγξτε το email σας και επιβεβαιώστε τη συνδρομή σας!"
+
+
+msgid "Successfully subscribed!"
+msgstr "εγγράφηκε επιτυχώς!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "καταργήθηκε επιτυχώς η εγγραφή!"
+
+
+msgid "Enter promo code here"
+msgstr "εισάγετε εδώ τον κωδικό προσφοράς"
+
+
+msgid "Apply"
+msgstr "ισχύουν"
+
+
+msgid "Coupon applied"
+msgstr "εφαρμόζεται το κουπόνι"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "μη εντοπισμένο σφάλμα: κάτι πήγε στραβά, φορτώστε ξανά τη σελίδα και δοκιμάστε ξανά!"
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "ο κωδικός κουπονιού που εισαγάγατε δεν είναι έγκυρος"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "ο κωδικός κουπονιού που εισαγάγατε έχει φτάσει το όριο χρήσης του"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "ο κωδικός κουπονιού που εισαγάγατε έχει λήξει"
+
+
+msgid "Coupon name is required !"
+msgstr "Το όνομα του κουπονιού είναι υποχρεωτικό!"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "παρακαλώ εισάγετε πρώτα έναν κωδικό κουπονιού!"
+
+
+msgid "Invalid"
+msgstr "Μη έγκυρο"
+
+
+msgid "Applied"
+msgstr "εφαρμοσμένος"
+
+
+msgid "Remove"
+msgstr "αφαιρώ"
+
+
+msgid "Price not set"
+msgstr "τιμή δεν έχει καθοριστεί"
+
+
+msgid "Grand Total"
+msgstr "σύνολο"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "έχετε ήδη μια συνδρομή, αλλά εξακολουθεί να περιμένει να πληρωθεί!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "αυτή η συνδρομή έχει ακυρωθεί και θα λήξει στις %end_date%."
+
+
+msgid "Go to checkout"
+msgstr "Πηγαίνετε στο ταμείο"
+
+
+msgid "Stripe invoice details"
+msgstr "λωρίδες λεπτομέρειες τιμολογίου"
+
+
+msgid "Stripe subscription details"
+msgstr "λεπτομέρειες συνδρομής λωρίδας"
+
+
+msgid "Current status"
+msgstr "τρέχουσα κατάσταση"
+
+
+msgid "Initial Invoice Paid"
+msgstr "εξοφλήθηκε το αρχικό τιμολόγιο"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "δημιουργία συνδρομής: εξόφληση του αρχικού τιμολογίου"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "δημιουργία συνδρομής: δημιουργήθηκε το αρχικό τιμολόγιο"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "δημιουργία συνδρομής: το αρχικό τιμολόγιο έχει οριστικοποιηθεί και είναι έτοιμο για πληρωμή"
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "ενημέρωση συνδρομής: το τιμολόγιο πληρώθηκε"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "ανανέωση συνδρομής: εξοφλήθηκε το τιμολόγιο"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "ανανέωση συνδρομής: το τιμολόγιο οριστικοποιήθηκε"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "ανανέωση συνδρομής: δημιουργήθηκε τιμολόγιο"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "ανανέωση συνδρομής: προσεχές τιμολόγιο"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "η συνδρομή έληξε: το τιμολόγιο ακυρώθηκε (το πρώτο τιμολόγιο δεν πληρώθηκε)"
+
+
+msgid "Subscription Deleted"
+msgstr "η συνδρομή διαγράφηκε"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "συνδρομή δημιουργία: δοκιμαστική"
+
+
+msgid "Subscription Canceled"
+msgstr "η συνδρομή ακυρώθηκε"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "δημιουργία συνδρομής: το αρχικό τιμολόγιο ακυρώθηκε"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "ανανέωση συνδρομής: το τιμολόγιο ακυρώθηκε"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "ενημέρωση συνδρομής: το τιμολόγιο ακυρώθηκε"
+
+
+msgid "Invoice updated"
+msgstr "το τιμολόγιο ενημερώθηκε"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "η συνδρομή έχει ακυρωθεί και θα λήξει στις:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "επιτυχής εγκατάσταση - ρυθμίσατε με επιτυχία τον τρόπο πληρωμής σας για μελλοντικές πληρωμές."
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "Η ρύθμιση απέτυχε - λυπούμαστε, παρουσιάστηκε σφάλμα κατά τη ρύθμιση του τρόπου πληρωμής σας. δοκιμάστε ξανά με διαφορετικό τρόπο πληρωμής."
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "επιτυχής πληρωμή - η τελευταία πληρωμή της συνδρομής σας ολοκληρώθηκε με επιτυχία."
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "επεξεργασία πληρωμών - η τελευταία πληρωμή της συνδρομής σας βρίσκεται υπό επεξεργασία."
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "η πληρωμή απέτυχε - λυπούμαστε, παρουσιάστηκε σφάλμα κατά την επεξεργασία της πληρωμής σας. δοκιμάστε ξανά με διαφορετικό τρόπο πληρωμής."
+
+
+msgid "Download"
+msgstr "Κατεβάστε"
+
+
+msgid "Stripe invoice"
+msgstr "τιμολόγιο ρίγες"
+
+
+msgid "N/A"
+msgstr "α/α"
+
+
+msgid "Latest invoice"
+msgstr "τελευταίο τιμολόγιο"
+
+
+msgid "Invoice"
+msgstr "τιμολόγιο"
+
+
+msgid "Unpaid subscription."
+msgstr "απλήρωτη συνδρομή."
+
+
+msgid "Locked subscription."
+msgstr "κλειδωμένη συνδρομή."
+
+
+msgid "Invalid subscription."
+msgstr "μη έγκυρη συνδρομή."
+
+
+msgid "Pay now"
+msgstr "Πλήρωσε τώρα"
+
+
+msgid "Show more info"
+msgstr "εμφάνιση περισσότερων πληροφοριών"
+
+
+msgid "Show less info"
+msgstr "εμφάνιση λιγότερων πληροφοριών"
+
+
+msgid "Complete payment"
+msgstr "πλήρης πληρωμή"
+
+
+msgid "or"
+msgstr "ή"
+
+
+msgid "Setup Payment"
+msgstr "πληρωμή ρύθμισης"
+
+
+msgid "Go to Payment"
+msgstr "πηγαίνετε στην πληρωμή"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "αλφαβητικό α -> ζ"
+
+
+msgid "Oldest posts"
+msgstr "παλαιότερες αναρτήσεις"
+
+
+msgid "Select"
+msgstr "επιλέγω"
+
+
+msgid "on"
+msgstr "επί"
+
+
+msgid "No bookmarked posts"
+msgstr "δεν υπάρχουν σελιδοδείκτες αναρτήσεις"
+
+
+msgid "Log in With Facebook"
+msgstr "Σύνδεση με το Facebook"
+
+
+msgid "Forgot your password? Get help"
+msgstr "Ξεχάσατε τον κωδικό σας? ζήτα βοήθεια"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "κάποιος ζήτησε επαναφορά κωδικού πρόσβασης για τον ακόλουθο λογαριασμό:"
+
+
+msgid "Username: %s"
+msgstr "όνομα χρήστη: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "αν αυτό ήταν λάθος, απλώς αγνοήστε αυτό το email και δεν θα συμβεί τίποτα."
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "για να επαναφέρετε τον κωδικό πρόσβασής σας, επισκεφθείτε την ακόλουθη διεύθυνση:"
+
+
+msgid "Members"
+msgstr "μέλη"
+
+
+msgid "Downloads"
+msgstr "λήψεις"
+
+
+msgid "inc. TAX"
+msgstr "Inc. φόρος"
+
+
+msgid "ex. TAX"
+msgstr "πρώην. φόρος"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "Παρουσιάστηκε ένα απροσδόκητο σφάλμα κατά την προσπάθεια δημιουργίας της ανάρτησής σας. ΠΑΡΑΚΑΛΩ προσπαθησε ξανα."
+
+
+msgid "Your post has been successfully created."
+msgstr "Η ανάρτησή σας δημιουργήθηκε με επιτυχία."
+
+
+msgid "Your post has been successfully updated."
+msgstr "Η ανάρτησή σας ενημερώθηκε με επιτυχία."
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "προέκυψε ένα απροσδόκητο σφάλμα και δεν ήταν δυνατή η αποστολή του μηνύματος."
+
+
+msgid "Location:"
+msgstr "τοποθεσία:"
+
+
+msgid "The email has been successfully sent."
+msgstr "το email έχει σταλεί με επιτυχία."
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "Παρουσιάστηκε μη αναμενόμενο σφάλμα. ΠΑΡΑΚΑΛΩ προσπαθησε ξανα."
+
+
+msgid "Drag and drop or browse"
+msgstr "μεταφορά και απόθεση ή περιήγηση"
+
+
+msgid "Search by keyword..."
+msgstr "Αναζήτηση με Λέξη-κλειδί..."
+
+
+msgid "Select parent"
+msgstr "επιλέξτε γονέα"
+
+
+msgid "Add new"
+msgstr "προσθεσε νεο"
+
+
+msgid "Parent"
+msgstr "μητρική εταιρεία"
+
+
+msgid "Select child"
+msgstr "επιλεγμένο παιδί"
+
+
+msgid "Select sub-child"
+msgstr "επιλέξτε υπο-παιδί"
+
+
+msgid "Posted by"
+msgstr "αναρτήθηκε από"
+
+
+msgid "Overall"
+msgstr "Συνολικά"
+
+
+msgid "Post review"
+msgstr "μετά την αξιολόγηση"
+
+
+msgid "This field is required!"
+msgstr "αυτό το πεδίο είναι υποχρεωτικό!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "Η κριτική σας έχει δημοσιευθεί. ανανεώστε τη σελίδα για να τη δείτε."
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "Η κριτική σας έχει καταχωρηθεί και αναμένει έγκριση."
+
+
+msgid "Submit reply"
+msgstr "υποβάλετε απάντηση"
+
+
+msgid "Enter your reply"
+msgstr "εισάγετε την απάντησή σας"
+
+
+msgid "Cancel"
+msgstr "Ματαίωση"
+
+
+msgid "Some required fields have been left blank."
+msgstr "ορισμένα υποχρεωτικά πεδία έχουν μείνει κενά."
+
+
+msgid "Please enter a valid email address."
+msgstr "Παρακαλώ εισάγετε μια έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+
+
+msgid "The number cannot be lower than"
+msgstr "ο αριθμός δεν μπορεί να είναι μικρότερος από"
+
+
+msgid "The number cannot be higher than"
+msgstr "ο αριθμός δεν μπορεί να είναι μεγαλύτερος από"
+
+
+msgid "Leave a review"
+msgstr "αφήστε μια κριτική"
+
+
+msgid "Submit"
+msgstr "υποβάλλουν"
+
+
+msgid "Update"
+msgstr "εκσυγχρονίζω"
+
+
+msgid "out of 5"
+msgstr "απο 5"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "έχετε συμπληρώσει το όριο των κριτικών που μπορείτε να υποβάλετε για αυτό το άρθρο"
+
+
+msgid "Log in to leave a review."
+msgstr "συνδεθείτε για να αφήσετε μια κριτική."
+
+
+msgid "Enter a title for your review"
+msgstr "εισάγετε έναν τίτλο για την κριτική σας"
+
+
+msgid "Enter your review"
+msgstr "εισάγετε την κριτική σας"
+
+
+msgid "Review criteria"
+msgstr "κριτήρια αναθεώρησης"
+
+
+msgid "Enter Your Name or Company"
+msgstr "εισάγετε το όνομα ή την εταιρεία σας"
+
+
+msgid "Submit review"
+msgstr "υποβάλετε κριτική"
+
+
+msgid "Delete"
+msgstr "διαγράφω"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "η απάντησή σας έχει δημοσιευτεί. ανανεώστε τη σελίδα για να τη δείτε."
+
+
+msgid "You have not created any posts."
+msgstr "δεν έχετε δημιουργήσει καμία ανάρτηση."
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "η επιλεγμένη ανάρτηση διαγράφηκε επιτυχώς."
+
+
+msgid "Rating"
+msgstr "εκτίμηση"
+
+
+msgid "Title"
+msgstr "τίτλος"
+
+
+msgid "Post image"
+msgstr "ανάρτηση εικόνας"
+
+
+msgid "Categories"
+msgstr "κατηγορίες"
+
+
+msgid "Date"
+msgstr "ημερομηνία"
+
+
+msgid "Source title"
+msgstr "τίτλος πηγής"
+
+
+msgid "No rating"
+msgstr "καμία βαθμολογία"
+
+
+msgid "View"
+msgstr "θέα"
+
+
+msgid "Publish"
+msgstr "δημοσιεύω"
+
+
+msgid "Add new post"
+msgstr "προσθήκη νέας ανάρτησης"
+
+
+msgid "Edit post"
+msgstr "επεξεργασία ανάρτησης"
+
+
+msgid "Publish a post"
+msgstr "δημοσιεύσετε μια ανάρτηση"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "η κατάσταση για το %post_title% έχει αλλάξει."
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "Είστε βέβαιοι ότι θέλετε να δημοσιεύσετε το %post_title%;"
+
+
+msgid "Delete a post"
+msgstr "διαγράψτε μια ανάρτηση"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "Είστε βέβαιοι ότι θέλετε να διαγράψετε το %post_title%;"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "Το %post_title% έχει μετακινηθεί στον κάδο απορριμμάτων."
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "δεν διαθέτετε τα απαιτούμενα προνόμια για να εκτελέσετε αυτό το αίτημα."
+
+
+msgid "No search results."
+msgstr "κανένα αποτέλεσμα αναζήτησης."
+
+
+msgid "Yes"
+msgstr "Ναί"
+
+
+msgid "No"
+msgstr "όχι"
+
+
+msgid "Save"
+msgstr "αποθηκεύσετε"
+
+
+msgid "Search for a location"
+msgstr "αναζήτηση τοποθεσίας"
+
+
+msgid "Address line"
+msgstr "γραμμή διεύθυνσης"
+
+
+msgid "(Optional)"
+msgstr "(προαιρετικός)"
+
+
+msgid "State"
+msgstr "κατάσταση"
+
+
+msgid "Country"
+msgstr "Χώρα"
+
+
+msgid "Create new term"
+msgstr "δημιουργία νέου όρου"
+
+
+msgid "Description"
+msgstr "περιγραφή"
+
+
+msgid "Delete bookmarks"
+msgstr "διαγραφή σελιδοδεικτών"
+
+
+msgid "Reset your password"
+msgstr "Επαναφορά του κωδικού πρόσβασής σας"
+
+
+msgid "The password reset key has expired."
+msgstr "το κλειδί επαναφοράς κωδικού πρόσβασης έχει λήξει."
+
+
+msgid "The password reset key is invalid."
+msgstr "το κλειδί επαναφοράς κωδικού πρόσβασης δεν είναι έγκυρο."
+
+
+msgid "New password *"
+msgstr "Νέος Κωδικός *"
+
+
+msgid "Repeat new password *"
+msgstr "επανάληψη νέου κωδικού πρόσβασης *"
+
+
+msgid "Save password"
+msgstr "αποθήκευση κωδικού"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "ο λογαριασμός σας ενεργοποιήθηκε με επιτυχία!"
+
+
+msgid "Your account has already been activated!"
+msgstr "Ο λογαριασμός σου έχει ήδη ενεργοποιηθεί!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "ελέγξτε το email σας για τον σωστό σύνδεσμο ενεργοποίησης. αυτός ο σύνδεσμος δεν είναι έγκυρος."
+
+
+msgid "Account activation"
+msgstr "Ενεργοποίηση Λογαριασμού"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "εισάγετε έναν νέο κωδικό πρόσβασης πριν συνεχίσετε."
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "επιβεβαιώστε τον νέο κωδικό πρόσβασης πριν συνεχίσετε."
+
+
+msgid "Please make sure that the passwords match."
+msgstr "βεβαιωθείτε ότι οι κωδικοί πρόσβασης ταιριάζουν."
+
+
+msgid "The password has been reset successfully."
+msgstr "ο κωδικός πρόσβασης επαναφέρθηκε με επιτυχία."
+
+
+msgid "Manage your billing details."
+msgstr "διαχειριστείτε τα στοιχεία χρέωσής σας."
+
+
+msgid "Profile picture"
+msgstr "εικόνα προφίλ"
+
+
+msgid "Remaining publishing rights."
+msgstr "εναπομένοντα δικαιώματα δημοσίευσης."
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "τον αριθμό των άρθρων που έχετε απομείνει για δημοσίευση σε διαφορετικούς τύπους αναρτήσεων."
+
+
+msgid "Bank transfer"
+msgstr "τραπεζική μεταφορά"
+
+
+msgid "Direct Bank Transfer"
+msgstr "απευθείας τραπεζική μεταφορά"
+
+
+msgid "Canceled"
+msgstr "ακυρώθηκε"
+
+
+msgid "Cycle Interval"
+msgstr "μεσοδιάστημα κύκλου"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "Για να ενημερώσετε αυτό το αρχείο, πρέπει να ενεργοποιήσετε τον λογαριασμό σας."
+
+
+msgid "Cannot process %s field."
+msgstr "δεν είναι δυνατή η επεξεργασία του πεδίου %s."
+
+
+msgid "Modified date"
+msgstr "τροποποιημένη ημερομηνία"
 

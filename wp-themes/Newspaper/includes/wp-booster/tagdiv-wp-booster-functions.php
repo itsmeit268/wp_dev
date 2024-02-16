@@ -333,7 +333,7 @@ if ( ! function_exists( 'tagdiv_check_plugin_subscription_version' )) {
 
 	function tagdiv_check_plugin_subscription_version() {
 
-		if ( is_plugin_active('td-subscription/td-subscription.php') && defined('TD_SUBSCRIPTION_VERSION')) {
+		if ( is_plugin_active('td-subscription/td-subscription.php') && defined('TD_SUBSCRIPTION_VERSION') ) {
 
 			// When it will be the next check
 			set_transient( 'td_update_plugin_subscription', '1', 3 * DAY_IN_SECONDS );

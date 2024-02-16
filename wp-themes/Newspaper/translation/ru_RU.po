@@ -423,7 +423,7 @@ msgstr "Блог"
 
 
 msgid "Share on Facebook"
-msgstr "Поделиться"
+msgstr "Поделиться в Facebook"
 
 
 msgid "Tweet on Twitter"
@@ -443,7 +443,7 @@ msgstr "Следуйте за нами"
 
 
 msgid "ABOUT US"
-msgstr "О нас"
+msgstr "О НАС"
 
 
 msgid "More"
@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "комментарии закрыты."
 
 
-msgid "My account"
-msgstr "мой счет"
-
-
 msgid "Payment method"
 msgstr "способ оплаты"
+
+
+msgid "You must be logged out to view this page."
+msgstr "вы должны выйти из системы, чтобы просмотреть эту страницу."
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "перепечатал пропуск неверный!"
+
+
+msgid "%s is a required field."
+msgstr "%s — обязательное поле."
+
+
+msgid "Please provide a valid email address."
+msgstr "Пожалуйста, представьте действующий адрес электронной почты."
+
+
+msgid "This email address is already registered."
+msgstr "Этот адрес электронной почты уже зарегистрирован."
+
+
+msgid "Please fill out all password fields."
+msgstr "пожалуйста, заполните все поля пароля."
+
+
+msgid "Please enter your current password."
+msgstr "пожалуйста, введите ваш текущий пароль."
+
+
+msgid "Please re-enter your password."
+msgstr "Пожалуйста, введите еще раз ваш пароль."
+
+
+msgid "New passwords do not match."
+msgstr "новые пароли не совпадают."
+
+
+msgid "Your current password is incorrect."
+msgstr "ваш текущий пароль неверен."
+
+
+msgid "Account details changed successfully."
+msgstr "данные учетной записи успешно изменены."
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "на ваш адрес электронной почты отправлена новая ссылка активации!"
+
+
+msgid "unlimited"
+msgstr "неограниченный"
+
+
+msgid "Pay with Stripe"
+msgstr "платить с помощью полосы"
+
+
+msgid "Cancel subscription"
+msgstr "Отписаться от рассылки"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "пожалуйста, проверьте свою электронную почту и подтвердите подписку!"
+
+
+msgid "Successfully subscribed!"
+msgstr "успешно подписался!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "успешно отписался!"
+
+
+msgid "Enter promo code here"
+msgstr "введите промокод здесь"
+
+
+msgid "Apply"
+msgstr "применять"
+
+
+msgid "Coupon applied"
+msgstr "купон применен"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "необнаруженная ошибка: что-то пошло не так, перезагрузите страницу и повторите попытку!"
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "введенный вами код купона недействителен"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "введенный вами код купона достиг предела использования"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "срок действия введенного вами кода купона истек"
+
+
+msgid "Coupon name is required !"
+msgstr "Требуется имя купона!"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "пожалуйста, сначала введите код купона!"
+
+
+msgid "Invalid"
+msgstr "неверный"
+
+
+msgid "Applied"
+msgstr "применяемый"
+
+
+msgid "Remove"
+msgstr "удалять"
+
+
+msgid "Price not set"
+msgstr "цена не установлена"
+
+
+msgid "Grand Total"
+msgstr "общий итог"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "у вас уже есть подписка, но она еще ждет оплаты!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "эта подписка отменена и завершится %end_date%."
+
+
+msgid "Go to checkout"
+msgstr "перейти к оформлению заказа"
+
+
+msgid "Stripe invoice details"
+msgstr "детали счета-фактуры в полоску"
+
+
+msgid "Stripe subscription details"
+msgstr "подробности подписки на полосу"
+
+
+msgid "Current status"
+msgstr "Текущее состояние"
+
+
+msgid "Initial Invoice Paid"
+msgstr "первоначальный счет оплачен"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "создать подписку: первоначальный счет оплачен"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "создание подписки: создан первоначальный счет-фактура"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "создание подписки: первоначальный счет оформлен и готов к оплате"
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "обновление подписки: счет оплачен"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "продление подписки: счет оплачен"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "продление подписки: счет завершен"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "продление подписки: счет создан"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "продление подписки: ожидается выставление счета"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "срок подписки истек: счет аннулирован (первый счет не оплачен)"
+
+
+msgid "Subscription Deleted"
+msgstr "подписка удалена"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "создание подписки: пробная версия"
+
+
+msgid "Subscription Canceled"
+msgstr "подписка отменена"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "создание подписки: первоначальный счет аннулирован"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "продление подписки: счет аннулирован"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "обновление подписки: счет аннулирован"
+
+
+msgid "Invoice updated"
+msgstr "счет обновлен"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "подписка отменена и завершится:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "установка успешна — вы успешно настроили способ оплаты для будущих платежей."
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "установка не удалась. К сожалению, при настройке способа оплаты произошла ошибка. пожалуйста, попробуйте еще раз, используя другой способ оплаты."
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "платеж успешен — ваш последний платеж по подписке был успешно завершен."
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "обработка платежа — обрабатывается ваш последний платеж по подписке."
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "оплата не удалась. Приносим извинения, при обработке вашего платежа произошла ошибка. пожалуйста, попробуйте еще раз, используя другой способ оплаты."
+
+
+msgid "Download"
+msgstr "скачать"
+
+
+msgid "Stripe invoice"
+msgstr "полосатый счет"
+
+
+msgid "N/A"
+msgstr "н/д"
+
+
+msgid "Latest invoice"
+msgstr "последний счет"
+
+
+msgid "Invoice"
+msgstr "счет"
+
+
+msgid "Unpaid subscription."
+msgstr "неоплаченная подписка."
+
+
+msgid "Locked subscription."
+msgstr "заблокированная подписка."
+
+
+msgid "Invalid subscription."
+msgstr "недействительная подписка."
+
+
+msgid "Pay now"
+msgstr "заплатить сейчас"
+
+
+msgid "Show more info"
+msgstr "показать больше информации"
+
+
+msgid "Show less info"
+msgstr "показывать меньше информации"
+
+
+msgid "Complete payment"
+msgstr "полная оплата"
+
+
+msgid "or"
+msgstr "или"
+
+
+msgid "Setup Payment"
+msgstr "настроить платеж"
+
+
+msgid "Go to Payment"
+msgstr "перейти к оплате"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "алфавитный а -> я"
+
+
+msgid "Oldest posts"
+msgstr "самые старые сообщения"
+
+
+msgid "Select"
+msgstr "выбирать"
+
+
+msgid "on"
+msgstr "на"
+
+
+msgid "No bookmarked posts"
+msgstr "нет записей в закладках"
+
+
+msgid "Log in With Facebook"
+msgstr "Войти с Facebook"
+
+
+msgid "Forgot your password? Get help"
+msgstr "Забыли пароль? получить помощь"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "кто-то запросил сброс пароля для следующей учетной записи:"
+
+
+msgid "Username: %s"
+msgstr "имя пользователя: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "если это была ошибка, просто проигнорируйте это письмо, и ничего не произойдет."
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "чтобы сбросить пароль, посетите следующий адрес:"
+
+
+msgid "Members"
+msgstr "члены"
+
+
+msgid "Downloads"
+msgstr "загрузки"
+
+
+msgid "inc. TAX"
+msgstr "инк. налог"
+
+
+msgid "ex. TAX"
+msgstr "бывший. налог"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "при попытке создать публикацию произошла непредвиденная ошибка. Пожалуйста, попробуйте еще раз."
+
+
+msgid "Your post has been successfully created."
+msgstr "ваш пост успешно создан."
+
+
+msgid "Your post has been successfully updated."
+msgstr "ваше сообщение было успешно обновлено."
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "произошла непредвиденная ошибка, и письмо не удалось отправить."
+
+
+msgid "Location:"
+msgstr "расположение:"
+
+
+msgid "The email has been successfully sent."
+msgstr "письмо было успешно отправлено."
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "Произошла непредвиденная ошибка. Пожалуйста, попробуйте еще раз."
+
+
+msgid "Drag and drop or browse"
+msgstr "перетащите или просмотрите"
+
+
+msgid "Search by keyword..."
+msgstr "Поиск по ключевым словам..."
+
+
+msgid "Select parent"
+msgstr "выбрать родителя"
+
+
+msgid "Add new"
+msgstr "Добавить новое"
+
+
+msgid "Parent"
+msgstr "родитель"
+
+
+msgid "Select child"
+msgstr "выбрать ребенка"
+
+
+msgid "Select sub-child"
+msgstr "выбрать дочернего ребенка"
+
+
+msgid "Posted by"
+msgstr "Сообщение от"
+
+
+msgid "Overall"
+msgstr "общий"
+
+
+msgid "Post review"
+msgstr "опубликовать обзор"
+
+
+msgid "This field is required!"
+msgstr "Это поле обязательно к заполнению!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "ваш отзыв опубликован. пожалуйста, обновите страницу, чтобы увидеть ее."
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "Ваш отзыв зарегистрирован и ожидает одобрения."
+
+
+msgid "Submit reply"
+msgstr "отправить ответ"
+
+
+msgid "Enter your reply"
+msgstr "введите свой ответ"
+
+
+msgid "Cancel"
+msgstr "отмена"
+
+
+msgid "Some required fields have been left blank."
+msgstr "некоторые обязательные поля остались пустыми."
+
+
+msgid "Please enter a valid email address."
+msgstr "Пожалуйста, введите действительный адрес электронной почты."
+
+
+msgid "The number cannot be lower than"
+msgstr "число не может быть меньше"
+
+
+msgid "The number cannot be higher than"
+msgstr "число не может быть больше"
+
+
+msgid "Leave a review"
+msgstr "оставить отзыв"
+
+
+msgid "Submit"
+msgstr "представлять на рассмотрение"
+
+
+msgid "Update"
+msgstr "обновлять"
+
+
+msgid "out of 5"
+msgstr "из 5"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "вы достигли лимита отзывов, которые вы можете отправить для этой статьи"
+
+
+msgid "Log in to leave a review."
+msgstr "войдите, чтобы оставить отзыв."
+
+
+msgid "Enter a title for your review"
+msgstr "введите название вашего обзора"
+
+
+msgid "Enter your review"
+msgstr "введите свой отзыв"
+
+
+msgid "Review criteria"
+msgstr "критерии обзора"
+
+
+msgid "Enter Your Name or Company"
+msgstr "введите свое имя или компанию"
+
+
+msgid "Submit review"
+msgstr "добавить отзыв"
+
+
+msgid "Delete"
+msgstr "удалить"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "ваш ответ опубликован. пожалуйста, обновите страницу, чтобы увидеть ее."
+
+
+msgid "You have not created any posts."
+msgstr "вы не создали ни одной публикации."
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "выбранное сообщение было успешно удалено."
+
+
+msgid "Rating"
+msgstr "рейтинг"
+
+
+msgid "Title"
+msgstr "заголовок"
+
+
+msgid "Post image"
+msgstr "опубликовать изображение"
+
+
+msgid "Categories"
+msgstr "категории"
+
+
+msgid "Date"
+msgstr "дата"
+
+
+msgid "Source title"
+msgstr "название источника"
+
+
+msgid "No rating"
+msgstr "без рейтинга"
+
+
+msgid "View"
+msgstr "вид"
+
+
+msgid "Publish"
+msgstr "публиковать"
+
+
+msgid "Add new post"
+msgstr "добавить новый пост"
+
+
+msgid "Edit post"
+msgstr "Редактировать сообщение"
+
+
+msgid "Publish a post"
+msgstr "опубликовать сообщение"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "статус %post_title% был изменен."
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "вы уверены, что хотите опубликовать %post_title%?"
+
+
+msgid "Delete a post"
+msgstr "удалить сообщение"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "вы уверены, что хотите удалить %post_title%?"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "%post_title% перемещен в корзину."
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "у вас нет необходимых привилегий для выполнения этого запроса."
+
+
+msgid "No search results."
+msgstr "Нет Результатов Поиска."
+
+
+msgid "Yes"
+msgstr "да"
+
+
+msgid "No"
+msgstr "нет"
+
+
+msgid "Save"
+msgstr "сохранять"
+
+
+msgid "Search for a location"
+msgstr "искать место"
+
+
+msgid "Address line"
+msgstr "адресная строка"
+
+
+msgid "(Optional)"
+msgstr "(необязательный)"
+
+
+msgid "State"
+msgstr "состояние"
+
+
+msgid "Country"
+msgstr "страна"
+
+
+msgid "Create new term"
+msgstr "создать новый термин"
+
+
+msgid "Description"
+msgstr "описание"
+
+
+msgid "Delete bookmarks"
+msgstr "удалить закладки"
+
+
+msgid "Reset your password"
+msgstr "сбросить пароль"
+
+
+msgid "The password reset key has expired."
+msgstr "Срок действия ключа сброса пароля истек."
+
+
+msgid "The password reset key is invalid."
+msgstr "ключ сброса пароля недействителен."
+
+
+msgid "New password *"
+msgstr "Новый пароль *"
+
+
+msgid "Repeat new password *"
+msgstr "повторите новый пароль *"
+
+
+msgid "Save password"
+msgstr "Сохраните пароль"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "ваша учетная запись успешно активирована!"
+
+
+msgid "Your account has already been activated!"
+msgstr "Ваш аккаунт уже был активирован!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "проверьте свою электронную почту на наличие правильной ссылки активации. эта ссылка недействительна."
+
+
+msgid "Account activation"
+msgstr "активация аккаунта"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "пожалуйста, введите новый пароль, прежде чем продолжить."
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "пожалуйста, подтвердите новый пароль, прежде чем продолжить."
+
+
+msgid "Please make sure that the passwords match."
+msgstr "пожалуйста, убедитесь, что пароли совпадают."
+
+
+msgid "The password has been reset successfully."
+msgstr "пароль успешно сброшен."
+
+
+msgid "Manage your billing details."
+msgstr "управлять своими платежными данными."
+
+
+msgid "Profile picture"
+msgstr "изображение профиля"
+
+
+msgid "Remaining publishing rights."
+msgstr "оставшиеся права на публикацию."
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "количество статей, которые вам осталось опубликовать в разных типах публикаций."
+
+
+msgid "Bank transfer"
+msgstr "банковский перевод"
+
+
+msgid "Direct Bank Transfer"
+msgstr "прямой банковский перевод"
+
+
+msgid "Canceled"
+msgstr "отменен"
+
+
+msgid "Cycle Interval"
+msgstr "интервал цикла"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "Чтобы обновить это поле, вам необходимо активировать свою учетную запись."
+
+
+msgid "Cannot process %s field."
+msgstr "невозможно обработать поле %s."
+
+
+msgid "Modified date"
+msgstr "дата изменения"
 

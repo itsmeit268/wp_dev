@@ -81,7 +81,7 @@ if ( have_posts() ) {
 
                     <div class="td-module-meta-info">
                         <div class="td-post-author-name">
-                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' ))) ?>"><?php the_author() ?></a>
+                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' ))) ?>"><?php echo get_the_author_meta( 'display_name' ) ?></a>
                             <span> - </span>
                         </div>
 

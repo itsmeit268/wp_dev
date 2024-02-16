@@ -1254,10 +1254,758 @@ msgid "Comments are closed."
 msgstr "ความคิดเห็นถูกปิด"
 
 
-msgid "My account"
-msgstr "บัญชีของฉัน"
-
-
 msgid "Payment method"
 msgstr "วิธีการชำระเงิน"
+
+
+msgid "You must be logged out to view this page."
+msgstr "คุณต้องออกจากระบบเพื่อดูหน้านี้"
+
+
+msgid "Retyped Pass incorrect!"
+msgstr "พิมพ์ซ้ำผ่านไม่ถูกต้อง!"
+
+
+msgid "%s is a required field."
+msgstr "%s เป็นฟิลด์บังคับ"
+
+
+msgid "Please provide a valid email address."
+msgstr "โปรดระบุที่อยู่อีเมลที่ถูกต้อง"
+
+
+msgid "This email address is already registered."
+msgstr "ที่อยู่อีเมลนี้ลงทะเบียนไว้แล้ว"
+
+
+msgid "Please fill out all password fields."
+msgstr "กรุณากรอกข้อมูลในช่องรหัสผ่านทั้งหมด"
+
+
+msgid "Please enter your current password."
+msgstr "กรุณากรอกรหัสผ่านปัจจุบันของคุณ"
+
+
+msgid "Please re-enter your password."
+msgstr "กรุณากรอกรหัสผ่านของคุณอีกครั้ง"
+
+
+msgid "New passwords do not match."
+msgstr "รหัสผ่านใหม่ไม่ตรงกัน"
+
+
+msgid "Your current password is incorrect."
+msgstr "รหัสผ่านปัจจุบันของคุณไม่ถูกต้อง"
+
+
+msgid "Account details changed successfully."
+msgstr "รายละเอียดบัญชีเปลี่ยนแปลงเรียบร้อยแล้ว"
+
+
+msgid "A new activation link has been sent to your email address!"
+msgstr "ลิงค์เปิดใช้งานใหม่ได้ถูกส่งไปยังที่อยู่อีเมลของคุณแล้ว!"
+
+
+msgid "unlimited"
+msgstr "ไม่ จำกัด"
+
+
+msgid "Pay with Stripe"
+msgstr "ชำระเงินด้วยแถบ"
+
+
+msgid "Cancel subscription"
+msgstr "ยกเลิกการสมัครสมาชิก"
+
+
+msgid "Please check your email and confirm subscription!"
+msgstr "โปรดตรวจสอบอีเมลของคุณและยืนยันการสมัคร!"
+
+
+msgid "Successfully subscribed!"
+msgstr "สมัครสมาชิกสำเร็จแล้ว!"
+
+
+msgid "Successfully unsubscribed!"
+msgstr "ยกเลิกการสมัครสำเร็จแล้ว!"
+
+
+msgid "Enter promo code here"
+msgstr "กรอกรหัสโปรโมชั่นที่นี่"
+
+
+msgid "Apply"
+msgstr "นำมาใช้"
+
+
+msgid "Coupon applied"
+msgstr "ใช้คูปองแล้ว"
+
+
+msgid "Uncaught Error: Something went wrong, please reload page and try again!"
+msgstr "ข้อผิดพลาดที่ตรวจไม่พบ: มีบางอย่างผิดพลาด โปรดโหลดหน้าซ้ำแล้วลองอีกครั้ง!"
+
+
+msgid "The coupon code you entered is invalid"
+msgstr "รหัสคูปองที่คุณป้อนไม่ถูกต้อง"
+
+
+msgid "The coupon code you entered has reached its usage limit"
+msgstr "รหัสคูปองที่คุณป้อนถึงขีดจำกัดการใช้งานแล้ว"
+
+
+msgid "The coupon code you entered has expired"
+msgstr "รหัสคูปองที่คุณป้อนหมดอายุแล้ว"
+
+
+msgid "Coupon name is required !"
+msgstr "ต้องระบุชื่อคูปอง !"
+
+
+msgid "Please enter a coupon code first!"
+msgstr "กรุณากรอกรหัสคูปองก่อน!"
+
+
+msgid "Invalid"
+msgstr "ไม่ถูกต้อง"
+
+
+msgid "Applied"
+msgstr "สมัครแล้ว"
+
+
+msgid "Remove"
+msgstr "ลบ"
+
+
+msgid "Price not set"
+msgstr "ไม่ได้กำหนดราคา"
+
+
+msgid "Grand Total"
+msgstr "ผลรวมทั้งสิ้น"
+
+
+msgid "You already have a subscription, but it's still in waiting to be paid!"
+msgstr "คุณได้สมัครสมาชิกแล้ว แต่ยังรอการชำระเงินอยู่!"
+
+
+msgid "This subscription has been canceled and it will end on %END_DATE%."
+msgstr "การสมัครรับข้อมูลนี้ถูกยกเลิกแล้ว และจะสิ้นสุดในวันที่ %end_date%"
+
+
+msgid "Go to checkout"
+msgstr "ไปเช็คเอาท์"
+
+
+msgid "Stripe invoice details"
+msgstr "รายละเอียดใบแจ้งหนี้แถบ"
+
+
+msgid "Stripe subscription details"
+msgstr "รายละเอียดการสมัครสมาชิกแถบ"
+
+
+msgid "Current status"
+msgstr "สถานะปัจจุบัน"
+
+
+msgid "Initial Invoice Paid"
+msgstr "ใบแจ้งหนี้เริ่มต้นที่ชำระแล้ว"
+
+
+msgid "Subscription Create: Initial Invoice Paid"
+msgstr "สร้างการสมัครสมาชิก: ชำระใบแจ้งหนี้เริ่มต้นแล้ว"
+
+
+msgid "Subscription Create: Initial Invoice has been created"
+msgstr "สร้างการสมัครสมาชิก: สร้างใบแจ้งหนี้เริ่มต้นแล้ว"
+
+
+msgid "Subscription Create: Initial Invoice has been finalized, and it is ready to be paid"
+msgstr "สร้างการสมัครสมาชิก: ใบแจ้งหนี้เริ่มแรกได้รับการสรุปแล้ว และพร้อมที่จะชำระเงิน"
+
+
+msgid "Subscription Update: Invoice Paid"
+msgstr "อัปเดตการสมัครสมาชิก: ชำระใบแจ้งหนี้แล้ว"
+
+
+msgid "Subscription Renew: Invoice Paid"
+msgstr "ต่ออายุการสมัครสมาชิก: ชำระใบแจ้งหนี้แล้ว"
+
+
+msgid "Subscription Renew: Invoice Finalized"
+msgstr "ต่ออายุการสมัคร: สรุปใบแจ้งหนี้แล้ว"
+
+
+msgid "Subscription Renew: Invoice Created"
+msgstr "ต่ออายุการสมัคร: สร้างใบแจ้งหนี้แล้ว"
+
+
+msgid "Subscription Renew: Invoice Upcoming"
+msgstr "ต่ออายุการสมัคร: ใบแจ้งหนี้ที่กำลังจะเกิดขึ้น"
+
+
+msgid "Subscription Expired: Invoice Voided(the first invoice was not paid)"
+msgstr "การสมัครสมาชิกหมดอายุ: ใบแจ้งหนี้ถือเป็นโมฆะ (ไม่ได้ชำระใบแจ้งหนี้ใบแรก)"
+
+
+msgid "Subscription Deleted"
+msgstr "ลบการสมัครสมาชิกแล้ว"
+
+
+msgid "Subscription Create: Trialing"
+msgstr "สร้างการสมัครสมาชิก: ทดลองใช้"
+
+
+msgid "Subscription Canceled"
+msgstr "ยกเลิกการสมัครสมาชิกแล้ว"
+
+
+msgid "Subscription Create: Initial Invoice voided"
+msgstr "สร้างการสมัครสมาชิก: ใบแจ้งหนี้เริ่มต้นเป็นโมฆะ"
+
+
+msgid "Subscription Renew: Invoice voided"
+msgstr "ต่ออายุการสมัคร: ใบแจ้งหนี้เป็นโมฆะ"
+
+
+msgid "Subscription Update: Invoice voided"
+msgstr "การอัปเดตการสมัครสมาชิก: ใบแจ้งหนี้เป็นโมฆะ"
+
+
+msgid "Invoice updated"
+msgstr "อัปเดตใบแจ้งหนี้แล้ว"
+
+
+msgid "Subscription has been canceled and will end on: "
+msgstr "การสมัครสมาชิกถูกยกเลิกและจะสิ้นสุดในวันที่:"
+
+
+msgid "Setup successful - You have successfully set up your payment method for future payments."
+msgstr "การตั้งค่าสำเร็จ - คุณได้ตั้งค่าวิธีการชำระเงินสำหรับการชำระเงินในอนาคตสำเร็จแล้ว"
+
+
+msgid "Setup failed - We are sorry, there was an error setting up your payment method. Please try again with a different payment method."
+msgstr "การตั้งค่าล้มเหลว - ขออภัย เกิดข้อผิดพลาดในการตั้งค่าวิธีการชำระเงินของคุณ โปรดลองอีกครั้งโดยใช้วิธีการชำระเงินอื่น"
+
+
+msgid "Payment successful - Your latest subscription payment was completed successfully."
+msgstr "ชำระเงินสำเร็จ - ชำระเงินค่าสมัครสมาชิกครั้งล่าสุดของคุณเสร็จสมบูรณ์แล้ว"
+
+
+msgid "Payment processing - Your latest subscription payment is being processed."
+msgstr "การประมวลผลการชำระเงิน - การชำระเงินการสมัครสมาชิกครั้งล่าสุดของคุณกำลังได้รับการประมวลผล"
+
+
+msgid "Payment failed - We are sorry, there was an error processing your payment. Please try again with a different payment method."
+msgstr "การชำระเงินล้มเหลว - ขออภัย มีข้อผิดพลาดในการประมวลผลการชำระเงินของคุณ โปรดลองอีกครั้งโดยใช้วิธีการชำระเงินอื่น"
+
+
+msgid "Download"
+msgstr "ดาวน์โหลด"
+
+
+msgid "Stripe invoice"
+msgstr "ใบแจ้งหนี้ลาย"
+
+
+msgid "N/A"
+msgstr "ไม่มี"
+
+
+msgid "Latest invoice"
+msgstr "ใบแจ้งหนี้ล่าสุด"
+
+
+msgid "Invoice"
+msgstr "ใบแจ้งหนี้"
+
+
+msgid "Unpaid subscription."
+msgstr "การสมัครสมาชิกที่ยังไม่ได้ชำระเงิน"
+
+
+msgid "Locked subscription."
+msgstr "การสมัครสมาชิกที่ถูกล็อค"
+
+
+msgid "Invalid subscription."
+msgstr "การสมัครสมาชิกไม่ถูกต้อง"
+
+
+msgid "Pay now"
+msgstr "จ่ายตอนนี้"
+
+
+msgid "Show more info"
+msgstr "แสดงข้อมูลเพิ่มเติม"
+
+
+msgid "Show less info"
+msgstr "แสดงข้อมูลน้อยลง"
+
+
+msgid "Complete payment"
+msgstr "ชำระเงินให้เสร็จสิ้น"
+
+
+msgid "or"
+msgstr "หรือ"
+
+
+msgid "Setup Payment"
+msgstr "ตั้งค่าการชำระเงิน"
+
+
+msgid "Go to Payment"
+msgstr "ไปที่การชำระเงิน"
+
+
+msgid "Alphabetical A -> Z"
+msgstr "ตามตัวอักษร a -> z"
+
+
+msgid "Oldest posts"
+msgstr "โพสต์ที่เก่าแก่ที่สุด"
+
+
+msgid "Select"
+msgstr "เลือก"
+
+
+msgid "on"
+msgstr "บน"
+
+
+msgid "No bookmarked posts"
+msgstr "ไม่มีบุ๊กมาร์กโพสต์"
+
+
+msgid "Log in With Facebook"
+msgstr "เข้าสู่ระบบด้วย Facebook"
+
+
+msgid "Forgot your password? Get help"
+msgstr "ลืมรหัสผ่านหรือไม่? ขอความช่วยเหลือ"
+
+
+msgid "Someone has requested a password reset for the following account:"
+msgstr "มีคนขอรีเซ็ตรหัสผ่านสำหรับบัญชีต่อไปนี้:"
+
+
+msgid "Username: %s"
+msgstr "ชื่อผู้ใช้: %s"
+
+
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "หากนี่เป็นข้อผิดพลาด เพียงเพิกเฉยต่ออีเมลฉบับนี้และจะไม่มีอะไรเกิดขึ้น"
+
+
+msgid "To reset your password, visit the following address:"
+msgstr "หากต้องการรีเซ็ตรหัสผ่านของคุณ โปรดไปที่ที่อยู่ต่อไปนี้:"
+
+
+msgid "Members"
+msgstr "สมาชิก"
+
+
+msgid "Downloads"
+msgstr "ดาวน์โหลด"
+
+
+msgid "inc. TAX"
+msgstr "อิงค์ ภาษี"
+
+
+msgid "ex. TAX"
+msgstr "อดีต. ภาษี"
+
+
+msgid "An unexpected error has occured while trying to create your post. Please try again."
+msgstr "เกิดข้อผิดพลาดที่ไม่คาดคิดขณะพยายามสร้างโพสต์ของคุณ กรุณาลองอีกครั้ง."
+
+
+msgid "Your post has been successfully created."
+msgstr "สร้างโพสต์ของคุณสำเร็จแล้ว"
+
+
+msgid "Your post has been successfully updated."
+msgstr "โพสต์ของคุณได้รับการอัปเดตเรียบร้อยแล้ว"
+
+
+msgid "An unexpected error has occurred and the mail could not be sent."
+msgstr "เกิดข้อผิดพลาดที่ไม่คาดคิดและไม่สามารถส่งอีเมลได้"
+
+
+msgid "Location:"
+msgstr "ที่ตั้ง:"
+
+
+msgid "The email has been successfully sent."
+msgstr "ส่งอีเมลเรียบร้อยแล้ว"
+
+
+msgid "An unexpected error has occurred. Please try again."
+msgstr "ข้อผิดพลาดที่ไม่คาดคิดได้เกิดขึ้น. กรุณาลองอีกครั้ง."
+
+
+msgid "Drag and drop or browse"
+msgstr "ลากและวางหรือเรียกดู"
+
+
+msgid "Search by keyword..."
+msgstr "ค้นหาด้วยคำสำคัญ..."
+
+
+msgid "Select parent"
+msgstr "เลือกผู้ปกครอง"
+
+
+msgid "Add new"
+msgstr "เพิ่มใหม่"
+
+
+msgid "Parent"
+msgstr "พ่อแม่"
+
+
+msgid "Select child"
+msgstr "เลือกลูก"
+
+
+msgid "Select sub-child"
+msgstr "เลือกลูกย่อย"
+
+
+msgid "Posted by"
+msgstr "โพสโดย"
+
+
+msgid "Overall"
+msgstr "โดยรวม"
+
+
+msgid "Post review"
+msgstr "โพสต์รีวิว"
+
+
+msgid "This field is required!"
+msgstr "ช่องนี้ต้องระบุ!"
+
+
+msgid "Your review has been published. Please refresh the page in order to see it."
+msgstr "บทวิจารณ์ของคุณได้รับการเผยแพร่แล้ว โปรดรีเฟรชหน้าเพื่อดู"
+
+
+msgid "Your review has been registered and is awaiting approval."
+msgstr "บทวิจารณ์ของคุณได้รับการลงทะเบียนแล้วและกำลังรอการอนุมัติ"
+
+
+msgid "Submit reply"
+msgstr "ส่งคำตอบ"
+
+
+msgid "Enter your reply"
+msgstr "ป้อนคำตอบของคุณ"
+
+
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+
+msgid "Some required fields have been left blank."
+msgstr "ช่องที่ต้องกรอกบางช่องเว้นว่างไว้"
+
+
+msgid "Please enter a valid email address."
+msgstr "กรุณาใส่อีเมล์ที่ถูกต้อง."
+
+
+msgid "The number cannot be lower than"
+msgstr "จำนวนต้องไม่ต่ำกว่า"
+
+
+msgid "The number cannot be higher than"
+msgstr "จำนวนต้องไม่สูงกว่า"
+
+
+msgid "Leave a review"
+msgstr "แสดงความคิดเห็น"
+
+
+msgid "Submit"
+msgstr "ส่ง"
+
+
+msgid "Update"
+msgstr "อัปเดต"
+
+
+msgid "out of 5"
+msgstr "จาก 5"
+
+
+msgid "You have reached the limit of reviews that you can submit for this article"
+msgstr "คุณมีบทวิจารณ์ถึงขีดจำกัดที่คุณสามารถส่งสำหรับบทความนี้ได้แล้ว"
+
+
+msgid "Log in to leave a review."
+msgstr "เข้าสู่ระบบเพื่อแสดงความคิดเห็น"
+
+
+msgid "Enter a title for your review"
+msgstr "ป้อนชื่อสำหรับบทวิจารณ์ของคุณ"
+
+
+msgid "Enter your review"
+msgstr "ป้อนความคิดเห็นของคุณ"
+
+
+msgid "Review criteria"
+msgstr "เกณฑ์การพิจารณา"
+
+
+msgid "Enter Your Name or Company"
+msgstr "ป้อนชื่อหรือบริษัทของคุณ"
+
+
+msgid "Submit review"
+msgstr "ส่งบทวิจารณ์"
+
+
+msgid "Delete"
+msgstr "ลบ"
+
+
+msgid "Your reply has been published. Please refresh the page in order to see it."
+msgstr "คำตอบของคุณได้รับการเผยแพร่แล้ว โปรดรีเฟรชหน้าเพื่อดู"
+
+
+msgid "You have not created any posts."
+msgstr "คุณยังไม่ได้สร้างโพสต์ใดๆ"
+
+
+msgid "The selected post has been successfully deleted."
+msgstr "โพสต์ที่เลือกถูกลบเรียบร้อยแล้ว"
+
+
+msgid "Rating"
+msgstr "การให้คะแนน"
+
+
+msgid "Title"
+msgstr "ชื่อ"
+
+
+msgid "Post image"
+msgstr "โพสต์ภาพ"
+
+
+msgid "Categories"
+msgstr "หมวดหมู่"
+
+
+msgid "Date"
+msgstr "วันที่"
+
+
+msgid "Source title"
+msgstr "ชื่อแหล่งที่มา"
+
+
+msgid "No rating"
+msgstr "ไม่มีการให้คะแนน"
+
+
+msgid "View"
+msgstr "ดู"
+
+
+msgid "Publish"
+msgstr "เผยแพร่"
+
+
+msgid "Add new post"
+msgstr "เพิ่มโพสต์ใหม่"
+
+
+msgid "Edit post"
+msgstr "แก้ไขโพสต์"
+
+
+msgid "Publish a post"
+msgstr "เผยแพร่โพสต์"
+
+
+msgid "The status for %POST_TITLE% has been changed."
+msgstr "สถานะของ %post_title% มีการเปลี่ยนแปลง"
+
+
+msgid "Are you sure you want to publish %POST_TITLE%?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการเผยแพร่ %post_title%?"
+
+
+msgid "Delete a post"
+msgstr "ลบโพสต์"
+
+
+msgid "Are you sure you want to delete %POST_TITLE%?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบ %post_title%?"
+
+
+msgid "%POST_TITLE% has been moved to trash."
+msgstr "%post_title% ถูกย้ายไปที่ถังขยะแล้ว"
+
+
+msgid "You do not hold the required priveleges to execute this request."
+msgstr "คุณไม่มีสิทธิ์ที่จำเป็นในการดำเนินการตามคำขอนี้"
+
+
+msgid "No search results."
+msgstr "ไม่มีผลการค้นหา"
+
+
+msgid "Yes"
+msgstr "ใช่"
+
+
+msgid "No"
+msgstr "เลขที่"
+
+
+msgid "Save"
+msgstr "บันทึก"
+
+
+msgid "Search for a location"
+msgstr "ค้นหาสถานที่"
+
+
+msgid "Address line"
+msgstr "บรรทัดที่อยู่"
+
+
+msgid "(Optional)"
+msgstr "(ไม่จำเป็น)"
+
+
+msgid "State"
+msgstr "สถานะ"
+
+
+msgid "Country"
+msgstr "ประเทศ"
+
+
+msgid "Create new term"
+msgstr "สร้างคำศัพท์ใหม่"
+
+
+msgid "Description"
+msgstr "คำอธิบาย"
+
+
+msgid "Delete bookmarks"
+msgstr "ลบบุ๊กมาร์ก"
+
+
+msgid "Reset your password"
+msgstr "รีเซ็ตรหัสผ่านของคุณ"
+
+
+msgid "The password reset key has expired."
+msgstr "รหัสรีเซ็ตรหัสผ่านหมดอายุแล้ว"
+
+
+msgid "The password reset key is invalid."
+msgstr "รหัสรีเซ็ตรหัสผ่านไม่ถูกต้อง"
+
+
+msgid "New password *"
+msgstr "รหัสผ่านใหม่ *"
+
+
+msgid "Repeat new password *"
+msgstr "ทำซ้ำรหัสผ่านใหม่ *"
+
+
+msgid "Save password"
+msgstr "บันทึกรหัสผ่าน"
+
+
+msgid "Your account has been successfully activated!"
+msgstr "บัญชีของคุณเปิดใช้งานสำเร็จแล้ว!"
+
+
+msgid "Your account has already been activated!"
+msgstr "บัญชีของคุณถูกเปิดใช้งานแล้ว!"
+
+
+msgid "Check your email for the correct activation link. This link is invalid."
+msgstr "ตรวจสอบอีเมลของคุณเพื่อดูลิงก์เปิดใช้งานที่ถูกต้อง ลิงค์นี้ไม่ถูกต้อง"
+
+
+msgid "Account activation"
+msgstr "การเปิดใช้งานบัญชี"
+
+
+msgid "Please enter a new password before proceeding."
+msgstr "กรุณากรอกรหัสผ่านใหม่ก่อนดำเนินการต่อ"
+
+
+msgid "Please confirm the new password before proceeding."
+msgstr "โปรดยืนยันรหัสผ่านใหม่ก่อนดำเนินการต่อ"
+
+
+msgid "Please make sure that the passwords match."
+msgstr "โปรดตรวจสอบให้แน่ใจว่ารหัสผ่านตรงกัน"
+
+
+msgid "The password has been reset successfully."
+msgstr "รีเซ็ตรหัสผ่านสำเร็จแล้ว"
+
+
+msgid "Manage your billing details."
+msgstr "จัดการรายละเอียดการเรียกเก็บเงินของคุณ"
+
+
+msgid "Profile picture"
+msgstr "รูปประวัติ"
+
+
+msgid "Remaining publishing rights."
+msgstr "สิทธิ์ในการเผยแพร่ที่เหลืออยู่"
+
+
+msgid "The number of articles you have left to publish across different post types."
+msgstr "จำนวนบทความที่คุณเหลือไว้เพื่อเผยแพร่ในโพสต์ประเภทต่างๆ"
+
+
+msgid "Bank transfer"
+msgstr "โอนเงินผ่านธนาคาร"
+
+
+msgid "Direct Bank Transfer"
+msgstr "โอนเงินผ่านธนาคารโดยตรง"
+
+
+msgid "Canceled"
+msgstr "ยกเลิก"
+
+
+msgid "Cycle Interval"
+msgstr "ช่วงเวลาของรอบ"
+
+
+msgid "In order to update this filed, you have to activate your account."
+msgstr "เพื่ออัปเดตไฟล์นี้ คุณต้องเปิดใช้งานบัญชีของคุณ"
+
+
+msgid "Cannot process %s field."
+msgstr "ไม่สามารถประมวลผลฟิลด์ %s ได้"
+
+
+msgid "Modified date"
+msgstr "วันที่แก้ไข"
 
