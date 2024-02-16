@@ -67,7 +67,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Essential', 'jnews' ),
 						'slug'             => 'jnews-essential',
-						'version'          => '11.0.8',
+						'version'          => '11.0.7',
 						'source'           => 'jnews-essential.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -288,7 +288,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'               => esc_html__( 'JNews - Paywall', 'jnews' ),
 						'slug'               => 'jnews-paywall',
-						'version'            => '11.0.4',
+						'version'            => '11.0.3',
 						'source'             => 'jnews-paywall.zip',
 						'required'           => false,
 						'force_activation'   => false,
@@ -418,7 +418,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'               => esc_html__( 'JNews - Podcast', 'jnews' ),
 						'slug'               => 'jnews-podcast',
-						'version'            => '11.0.4',
+						'version'            => '11.0.3',
 						'source'             => 'jnews-podcast.zip',
 						'required'           => false,
 						'force_activation'   => false,
@@ -514,7 +514,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Frontend Submit', 'jnews' ),
 						'slug'             => 'jnews-frontend-submit',
-						'version'          => '11.0.1',
+						'version'          => '11.0.0',
 						'source'           => 'jnews-frontend-submit.zip',
 						'required'         => false,
 						'force_activation' => false,
@@ -958,7 +958,7 @@ if ( $revert_dashboard ) {
 					array(
 						'name'             => esc_html__( 'JNews - Weather', 'jnews' ),
 						'slug'             => 'jnews-weather',
-						'version'          => '11.0.2',
+						'version'          => '11.0.1',
 						'source'           => 'jnews-weather.zip',
 						'required'         => false,
 						'force_activation' => false,
