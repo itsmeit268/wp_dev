@@ -14,7 +14,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. If you use builder, some options might be overrided by Menu widget.', 'porto' ), $header_url ),
+						sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. If you use builder, some options might be overrided by Menu widget.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $header_url ),
 						array(
 							'strong' => array(),
 							'b'      => array(),
@@ -23,6 +23,11 @@ if ( $this->legacy_mode ) {
 								'target' => array(),
 								'class'  => array(),
 							),
+							'i'     => array(
+								'class'  => array(),
+							),
+							'span'  => array(),
+							'br'    => array(),
 						)
 					),
 					'class' => 'porto-important-note',
@@ -57,6 +62,7 @@ if ( $this->legacy_mode ) {
 							'img'   => PORTO_OPTIONS_URI . '/svg/menu-overlay.svg',
 						),
 					),
+					'class'   => 'pt-always-visible',
 					'default' => '',
 				),
 				array(
@@ -76,7 +82,8 @@ if ( $this->legacy_mode ) {
 							),
 						)
 					),
-					'class' => 'porto-important-notice redux-info',
+					'notice' => false,
+					'class'  => 'porto-redux-section',
 				),				
 				array(
 					'id'       => 'menu-arrow',
@@ -341,7 +348,8 @@ if ( $this->legacy_mode ) {
 							),
 						)
 					),
-					'class' => 'porto-important-notice redux-info',
+					'notice' => false,
+					'class'  => 'porto-redux-section',
 				),					
 				array(
 					'id'       => 'menu-arrow',
@@ -492,6 +500,29 @@ if ( $this->legacy_mode ) {
 		'transport'  => 'postMessage',
 		'fields'     => array(
 			array(
+				'id'    => 'desc_info_menu_skin_notice',
+				'type'  => 'info',
+				'desc'  => wp_kses(
+					/* translators: %s: Builder url */
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. If you use builder, some options might be overrided by Menu widget.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $header_url ),
+					array(
+						'strong' => array(),
+						'b'      => array(),
+						'a'      => array(
+							'href'   => array(),
+							'target' => array(),
+							'class'  => array(),
+						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
+					)
+				),
+				'class' => 'porto-important-note',
+			),
+			array(
 				'id'       => 'mainmenu-wrap-bg-color',
 				'type'     => 'color',
 				'title'    => __( 'Main Menu Wrapper Background Color', 'porto' ),
@@ -553,6 +584,7 @@ if ( $this->legacy_mode ) {
 				'type'   => 'info',
 				'title'  => __( 'Top Level Menu Item', 'porto' ),
 				'notice' => false,
+				'class'  => 'pt-always-visible',
 			),
 			array(
 				'id'             => 'menu-font',
@@ -577,6 +609,7 @@ if ( $this->legacy_mode ) {
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'menu-font.jpg"/>' ),
 				),
 				'transport'      => 'refresh',
+				'class'          => 'pt-always-visible',
 			),
 			array(
 				'id'             => 'menu-side-font',
@@ -603,6 +636,7 @@ if ( $this->legacy_mode ) {
 				'hint'           => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'menu-side-font.jpg"/>' ),
 				),
+				'class'          => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'menu-text-transform',
@@ -620,6 +654,7 @@ if ( $this->legacy_mode ) {
 				'selector' => array(
 					'node' => ':root',
 				),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-link-color',
@@ -634,6 +669,7 @@ if ( $this->legacy_mode ) {
 				'hint'     => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'mainmenu-toplevel-link-color.gif"/>' ),
 				),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-link-color-sticky',
@@ -644,6 +680,7 @@ if ( $this->legacy_mode ) {
 				'hint'     => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'mainmenu-toplevel-link-cs.gif"/>' ),
 				),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-hbg-color',
@@ -655,6 +692,7 @@ if ( $this->legacy_mode ) {
 				'hint'     => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'mainmenu-toplevel-hbg-color.gif"/>' ),
 				),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-config-active',
@@ -667,6 +705,7 @@ if ( $this->legacy_mode ) {
 				),
 				'on'       => __( 'Yes', 'porto' ),
 				'off'      => __( 'No', 'porto' ),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-alink-color',
@@ -675,6 +714,7 @@ if ( $this->legacy_mode ) {
 				'required' => array( 'mainmenu-toplevel-config-active', 'equals', true ),
 				'default'  => '#ffffff',
 				'validate' => 'color',
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-abg-color',
@@ -683,6 +723,7 @@ if ( $this->legacy_mode ) {
 				'required' => array( 'mainmenu-toplevel-config-active', 'equals', true ),
 				'default'  => '#0088cc',
 				'validate' => 'color',
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-padding1',
@@ -700,6 +741,7 @@ if ( $this->legacy_mode ) {
 				'hint'     => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'mainmenu-toplevel-padding1.gif"/>' ),
 				),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-padding2',
@@ -714,6 +756,7 @@ if ( $this->legacy_mode ) {
 					'padding-left'   => 14,
 					'padding-right'  => 14,
 				),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-toplevel-padding3',
@@ -725,12 +768,14 @@ if ( $this->legacy_mode ) {
 				'hint'     => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'mainmenu-toplevel-padding3.gif"/>' ),
 				),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'     => 'desc_info_menu_popup',
 				'type'   => 'info',
 				'title'  => __( 'Menu Popup', 'porto' ),
 				'notice' => false,
+				'class'  => 'pt-always-visible',
 			),
 			array(
 				'id'             => 'menu-popup-font',
@@ -754,6 +799,7 @@ if ( $this->legacy_mode ) {
 				'hint'           => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'menu-popup-font.jpg"/>' ),
 				),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'      => 'menu-popup-text-transform',
@@ -767,6 +813,7 @@ if ( $this->legacy_mode ) {
 					'initial'    => __( 'Initial', 'porto' ),
 				),
 				'default' => 'none',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'      => 'mainmenu-popup-top-border',
@@ -824,6 +871,7 @@ if ( $this->legacy_mode ) {
 				'selector' => array(
 					'node' => 'li.menu-item, .sub-menu',
 				),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-popup-text-hbg-color',
@@ -866,6 +914,7 @@ if ( $this->legacy_mode ) {
 				'type'   => 'info',
 				'title'  => __( 'Tip', 'porto' ),
 				'notice' => false,
+				'class'  => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'mainmenu-tip-bg-color',
@@ -874,6 +923,7 @@ if ( $this->legacy_mode ) {
 				'subtitle' => __( 'Controls the background color for the tip labels in the main menu item.', 'porto' ),
 				'default'  => '#0cc485',
 				'validate' => 'color',
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'     => 'desc_info_menu_custom',

@@ -88,11 +88,22 @@
     word-wrap: normal;
 }
 
+// Floating elements
 .thumb-info-floating-element-clone {
     position: fixed;
     pointer-events: none;
     transform: scale(0.1);
+    &.page-wrapper {
+        left: unset;
+        transition: unset;
+        z-index: 999;
+        .thumb-tb-floating-el {
+            position: static;
+            transform: none;
+        }
+    }
 }
+
 .heading-highlight-svg,
 .heading-highlight mark { 
     position: relative; 
@@ -149,4 +160,9 @@
             animation: highlightShape 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
         }
     }
+}
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap
 }

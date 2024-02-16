@@ -121,11 +121,11 @@ if ( defined( 'PORTO_FUNC_VERSION' ) ) {
 					$this->set_transient();
 				}
 				// database and patches are empty
-				if ( !$data_patches && empty( $server_patches['update'] ) && empty( $server_patches['delete'] ) ) {
+				if ( empty( $server_patches['update'] ) && empty( $server_patches['delete'] ) ) {
 					return false;
 				}
 				// patched files are the same as server patches
-				if ( !empty( $server_patches ) && ( $server_patches == $data_patches ) ) {
+				if ( ! empty( $data_patches ) && ! empty( $server_patches ) && ( $server_patches == $data_patches ) ) {
 					return false;
 				}
 				return true;

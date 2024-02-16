@@ -1044,12 +1044,13 @@ elseif ( empty( $header_type ) && porto_header_type_is_side() ) :
 	$side_position       = empty( $porto_settings['header-side-position'] ) ? 'left' : 'right';
 	$side_mobile_visible = isset( $current_layout['side_header_toggle'] ) && $current_layout['side_header_toggle'];
 	?>
+	body { --porto-side-header-width: <?php echo ! empty( $current_layout['side_header_width'] ) ? $current_layout['side_header_width'] : '255'; ?>px }
 	<?php if ( ! $side_mobile_visible ) : ?>
 		@media (min-width: 992px) {
 	<?php endif; ?>
-		.header-wrapper #header { display: flex; flex-direction: column; position: fixed; z-index: 1110; top: 0; <?php echo porto_filter_output( $side_position ); ?>: 0; <?php echo 'left' === $side_position ? 'right' : 'left'; ?>: auto; width: 100%; max-width: <?php echo isset( $current_layout['side_header_width'] ) ? $current_layout['side_header_width'] : '255'; ?>px; box-shadow: 0 0 30px <?php echo porto_if_light( 'rgba(0, 0, 0, 0.05)', 'rgba(255, 255, 255, 0.03)' ); ?> }
+		.header-wrapper #header { display: flex; flex-direction: column; position: fixed; z-index: 1110; top: 0; <?php echo porto_filter_output( $side_position ); ?>: 0; <?php echo 'left' === $side_position ? 'right' : 'left'; ?>: auto; width: 100%; max-width: var( --porto-side-header-width ); box-shadow: 0 0 30px <?php echo porto_if_light( 'rgba(0, 0, 0, 0.05)', 'rgba(255, 255, 255, 0.03)' ); ?> }
 		<?php if ( $side_mobile_visible ) : ?>
-			@media (max-width: <?php echo 90 + ( isset( $current_layout['side_header_width'] ) ? (int) $current_layout['side_header_width'] : 255 ); ?>px) {
+			@media (max-width: <?php echo 90 + ( ! empty( $current_layout['side_header_width'] ) ? (int) $current_layout['side_header_width'] : 255 ); ?>px) {
 				.header-wrapper #header { max-width: calc(100% - 90px) }
 			}
 		<?php endif; ?>
@@ -1065,7 +1066,7 @@ elseif ( empty( $header_type ) && porto_header_type_is_side() ) :
 
 		.header-wrapper { z-index: 1002; }
 		<?php if ( ! isset( $current_layout['side_header_toggle'] ) || ! $current_layout['side_header_toggle'] ) : ?>
-			.page-wrapper.side-nav > * { padding-<?php echo porto_filter_output( $side_position ); ?>: <?php echo isset( $current_layout['side_header_width'] ) ? $current_layout['side_header_width'] : '255'; ?>px; padding-<?php echo porto_filter_output( 'right' == $side_position ? 'left' : 'right' ); ?>: 0; }
+			.page-wrapper.side-nav > * { padding-<?php echo porto_filter_output( $side_position ); ?>: var( --porto-side-header-width ); padding-<?php echo porto_filter_output( 'right' == $side_position ? 'left' : 'right' ); ?>: 0; }
 		<?php endif; ?>
 		#header .logo { padding: 7vh 0 5vh; }
 
@@ -1145,7 +1146,7 @@ elseif ( empty( $header_type ) && porto_header_type_is_side() ) :
 		$side_narrow_bar_bg = ! empty( $b['header-bg']['background-color'] ) && 'transparent' != $b['header-bg']['background-color'] ? $b['header-bg']['background-color'] : '#fff';
 		?>
 		#header .mobile-toggle { display: none; }
-		.header-wrapper #header { <?php echo porto_filter_output( $side_position ); ?>: -<?php echo isset( $current_layout['side_header_width'] ) ? (int) $current_layout['side_header_width'] + 10 : '265'; ?>px !important; <?php echo porto_filter_output( 'right' == $side_position ? 'left' : 'right' ); ?>: auto; transition: <?php echo porto_filter_output( $side_position ); ?> .4s cubic-bezier(0.55, 0, 0.1, 1); background: <?php echo esc_html( isset( $b['header-bg']['background-color'] ) ? $b['header-bg']['background-color'] : '' ); ?> }
+		.header-wrapper #header { <?php echo porto_filter_output( $side_position ); ?>: calc( -1 * ( var( --porto-side-header-width ) + 10px ) ) !important; <?php echo porto_filter_output( 'right' == $side_position ? 'left' : 'right' ); ?>: auto; transition: <?php echo porto_filter_output( $side_position ); ?> .4s cubic-bezier(0.55, 0, 0.1, 1); background: <?php echo esc_html( isset( $b['header-bg']['background-color'] ) ? $b['header-bg']['background-color'] : '' ); ?> }
 		#header.side-header-visible { <?php echo porto_filter_output( $side_position ); ?>: 90px !important; }
 		.forcefullwidth_wrapper_tp_banner .rev_slider_wrapper { width: 100% !important; left: auto !important; }
 		<?php if ( 'side' == $current_layout['side_header_toggle'] ) : ?>
@@ -1405,6 +1406,7 @@ if ( (int) $b['container-width'] < 1360 ) {
 	.flickr_badge_image,
 	.wpb_content_element .flickr_badge_image { padding: 4px; }
 	.img-thumbnail .zoom { <?php echo porto_filter_output( $right ); ?>: 8px; bottom: 8px; }
+	.img-thumbnail .image-galley-viewer { <?php echo porto_filter_output( $right ); ?>: 8px; bottom: calc(12px + var(--porto-product-action-margin, 0px) + 2 * var(--porto-product-action-border, 0px) + var(--porto-product-action-width, 30px)); }
 	.thumb-info .thumb-info-wrapper { margin: 4px; }
 	.thumb-info .thumb-info-wrapper:after { bottom: -4px; top: -4px; left: -4px; right: -4px; }
 
@@ -1421,7 +1423,8 @@ if ( (int) $b['container-width'] < 1360 ) {
 		.yith-wcbm-badge { margin: 5px; }
 		.yith-wcbm-badge img { margin: -5px !important; }
 		.product-images .zoom { <?php echo porto_filter_output( $right ); ?>: 8px; bottom: 8px; }
-
+		.product-images .image-galley-viewer { <?php echo porto_filter_output( $right ); ?>: 8px; bottom: calc(12px + var(--porto-product-action-margin, 0px) + 2 * var(--porto-product-action-border, 0px) + var(--porto-product-action-width, 30px)); }
+		.product-images .image-galley-viewer.without-zoom { bottom: 8px; }
 		.product-image-slider.owl-carousel .img-thumbnail,
 		.product-thumbs-slider.owl-carousel .img-thumbnail { width: 99.8%; padding: 3px; }
 
@@ -2716,8 +2719,8 @@ if ( isset( $b['mainmenu-popup-top-border'] ) && isset( $b['mainmenu-popup-top-b
 /* side header */
 <?php if ( porto_header_type_is_side() ) : ?>
 	@media (min-width: 992px) {
-		.page-wrapper.side-nav:not(.side-nav-right) #mini-cart .cart-popup { 
-			<?php echo porto_filter_output( '' == $b['minicart-content'] ? $left : $right ); ?>: 0; <?php echo porto_filter_output( '' == $b['minicart-content'] ? $right : $left ); ?>: auto; 
+		.page-wrapper.side-nav:not(.side-nav-right) #mini-cart:not(.minicart-offcanvas) .cart-popup { 
+			<?php echo porto_filter_output( $left ); ?>: 0; <?php echo porto_filter_output( $right ); ?>: auto; 
 		}
 		<?php if ( isset( $b['header-side-position'] ) && 'right' == $b['header-side-position'] ) : ?>
 		.page-wrapper.side-nav.side-nav-right > .header-wrapper { order: 2; }
@@ -2740,8 +2743,6 @@ if ( isset( $b['mainmenu-popup-top-border'] ) && isset( $b['mainmenu-popup-top-b
 		.page-wrapper.side-nav.side-nav-right .sidebar-menu.subeffect-fadein-<?php echo porto_filter_output( $left ); ?> .narrow ul.sub-menu li.menu-item > ul.sub-menu { animation: menuFadeInRight 0.2s ease-out; }
 		.page-wrapper.side-nav.side-nav-right .sidebar-menu.subeffect-fadein-<?php echo porto_filter_output( $right ); ?> > li.menu-item .popup,
 		.page-wrapper.side-nav.side-nav-right .sidebar-menu.subeffect-fadein-<?php echo porto_filter_output( $right ); ?> > .narrow ul.sub-menu li.menu-item > ul.sub-menu { animation: menuFadeInLeft 0.2s ease-out; }
-		.page-wrapper.side-nav.side-nav-right #mini-cart .cart-popup { <?php echo porto_filter_output( $left ); ?>: auto; <?php echo porto_filter_output( $right ); ?>: 0; }
-		
 		.side-nav-right .side-menu-columns .narrow .menu-item-has-children>a:after, 
 		.side-nav-right .side-menu-columns>.menu-item-has-children>a:after {
 			<?php echo porto_filter_output( $right ); ?>: auto; <?php echo porto_filter_output( $left ); ?>: 18px; transition: <?php echo porto_filter_output( $left ); ?> .25s; content: "\e84f"
@@ -3219,12 +3220,12 @@ if ( $dark ) {
 <?php if ( class_exists( 'Woocommerce' ) && $b['menu-side-font']['line-height'] && empty( $b['side-menu-type'] ) ) : ?>
 	.side-nav-wrap .sidebar-menu .popup:before,
 	.main-sidebar-menu .sidebar-menu .popup:before {
-		top: <?php echo  ( 23 + (float) $b['menu-side-font']['line-height'] - 20 ) / 2 + 1; ?>px
+		top: calc( <?php echo  ( 23 + (float) $b['menu-side-font']['line-height'] - 20 ) / 2 + 1; ?>px + ( -1 * var(--porto-sd-menu-popup-top, 0px) ) )
 	}
 	@media <?php echo porto_filter_output( $screen_large ); ?> {
 		.side-nav-wrap .sidebar-menu .popup:before,
 		.main-sidebar-menu .sidebar-menu .popup:before {
-			top: <?php echo  ( 18 + (float) $b['menu-side-font']['line-height'] - 20 ) / 2 + 1; ?>px
+			top: calc( <?php echo  ( 18 + (float) $b['menu-side-font']['line-height'] - 20 ) / 2 + 1; ?>px + ( -1 * var(--porto-sd-menu-popup-top, 0px) ) )
 		}
 	}
 <?php endif; ?>

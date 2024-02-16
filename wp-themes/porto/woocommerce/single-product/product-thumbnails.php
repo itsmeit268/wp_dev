@@ -40,7 +40,9 @@ if ( 'full_width' === $porto_product_layout || 'centered_vertical_zoom' === $por
 		$image_thumb_link = wp_get_attachment_image_src( $attachment_id, 'shop_thumbnail' );
 
 		$html .= '<div class="img-thumbnail">';
-		$html .= apply_filters( 'woocommerce_single_product_image_thumbnail_html', '<img class="woocommerce-main-thumb img-responsive" alt="' . esc_attr( $image_title ) . '" src="' . esc_url( $image_thumb_link[0] ) . '" />', $attachment_id, $post->ID, '' ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+		if ( $image_thumb_link ) {
+			$html .= apply_filters( 'woocommerce_single_product_image_thumbnail_html', '<img class="woocommerce-main-thumb img-responsive" alt="' . esc_attr( $image_title ) . '" src="' . esc_url( $image_thumb_link[0] ) . '" />', $attachment_id, $post->ID, '' ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped\
+		}
 		$html .= '</div>';
 
 	} else {

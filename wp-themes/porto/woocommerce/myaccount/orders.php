@@ -12,9 +12,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
+ * @see https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.8.0
+ * @version 8.5.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -123,7 +123,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 		</div>
 	<?php endif; ?>
 	<div class="push-top text-center">
-		<a class="woocommerce-Button button btn-v-dark btn-go-shop" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
+		<a class="woocommerce-Button button btn-v-dark btn-go-shop wc-forward" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
 			<?php esc_html_e( 'Go shopping', 'woocommerce' ); ?>
 		</a>
 	</div>
@@ -133,7 +133,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 		<p class="mt-2 mb-4"><?php esc_html_e( 'No order has been made yet.', 'woocommerce' ); ?></p>
 		<div class="porto-separator"><hr class="separator-line  align_center"></div>
 		<div class="push-top">
-			<a class="woocommerce-Button button btn-v-dark btn-go-shop" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
+			<a class="woocommerce-Button button btn-v-dark btn-go-shop wc-forward" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
 				<?php esc_html_e( 'Go shopping', 'woocommerce' ); ?>
 		</a>
 	</div>

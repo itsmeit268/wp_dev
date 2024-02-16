@@ -25,11 +25,11 @@ class Porto_Rank_Math_SEO_Compatibility {
 	 * Fix Setup Wizard Issue
 	 */
 	public function cmb2_types_esc_text_filter( $escaped_value, $meta_value, $args, $cmb2_field ) {
-		if ( ! is_string( $meta_value ) ) {
+		if ( ! ( is_string( $meta_value ) || is_int( $meta_value ) ) ) {
             return false;
         }
 
-        return NULL;
+        return $escaped_value;
 	}
 }
 

@@ -913,6 +913,18 @@ if ( class_exists( 'WP_Importer' ) ) {
 		function process_posts( $index = 0 ) {
 			$this->posts = apply_filters( 'wp_import_posts', $this->posts );
 
+			// Post Types Unlimited Compaibility
+			$whitelist = array();
+			foreach ( $this->posts as $post ) {
+				if ( 'ptu' == $post['post_type'] ) {
+					foreach ( $post['postmeta'] as $meta ) {
+						if ( '_ptu_name' == $meta['key'] ) {
+							$whitelist[] = $meta['value'];
+						}
+					}
+				}
+			}
+
 			$post = $this->posts[ $index ];
 
 			if ( ! $post ) {
@@ -923,7 +935,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 			//foreach ( $this->posts as $post ) {
 				$post = apply_filters( 'wp_import_post_data_raw', $post );
 
-			if ( ! post_type_exists( $post['post_type'] ) ) {
+			if ( ! post_type_exists( $post['post_type'] ) && ! in_array( $post['post_type'], $whitelist ) ) {
 				printf(
 					esc_html__( 'Failed to import &#8220;%1$s&#8221;: Invalid post type %2$s', 'porto' ),
 					esc_html( $post['post_title'] ),

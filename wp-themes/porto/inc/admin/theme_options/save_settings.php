@@ -31,7 +31,23 @@ if ( is_admin() ) {
 		$code_error_msg = get_transient( 'porto_purchase_code_error_msg' );
 		if ( $code_error_msg && ( empty( $_COOKIE['porto_dismiss_code_error_msg'] ) || PORTO_VERSION != $_COOKIE['porto_dismiss_code_error_msg'] ) ) {
 			?>
-
+			<div class="notice notice-error" style="position: relative;">
+				<p>
+					<strong><?php esc_html_e( 'Porto notice:', 'porto' ); ?></strong>
+					<?php
+						echo wp_kses(
+							$code_error_msg,
+							array(
+								'a' => array(
+									'href'   => array(),
+									'target' => array(),
+								),
+							)
+						);
+					?>
+				</p>
+				<button type="button" class="notice-dismiss porto-notice-dismiss"><span class="screen-reader-text"><?php esc_html__( 'Dismiss this notice.', 'porto' ); ?></span></button>
+			</div>
 			<script>
 				(function($) {
 					var setCookie = function (name, value, exdays) {
@@ -90,7 +106,7 @@ if ( is_admin() ) {
 	function porto_import_theme_settings( $plugin_options, $imported_options = '' ) {
 		/**
 		 * @see extension_import_export.php line 95
-		 */
+		 */ 
 		if ( doing_action( 'redux/options/porto_settings/import' ) && is_array( $plugin_options ) && isset( $plugin_options[1] ) && 'remove_cookie' == $plugin_options[1] ) {
 			return;
 		}
@@ -398,7 +414,7 @@ function porto_compile_css( $process = null ) {
 function porto_save_theme_settings( $plugin_options = array() ) {
 	/**
 	 * @see extension_import_export.php line 95
-	 */
+	 */ 
 	if ( doing_action( 'redux/options/porto_settings/import' ) && is_array( $plugin_options ) && isset( $plugin_options[1] ) && 'remove_cookie' == $plugin_options[1] ) {
 		return;
 	}

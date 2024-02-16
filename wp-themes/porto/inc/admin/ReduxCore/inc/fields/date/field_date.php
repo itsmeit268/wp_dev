@@ -33,6 +33,7 @@ if ( ! class_exists( 'ReduxFramework_date' ) ) {
 	 *
 	 * @since       1.0.0
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework_date {
 
 		/**

@@ -140,7 +140,8 @@ function porto_breadcrumbs() {
 				$output .= porto_breadcrumb_leaf();
 			}
 		} elseif ( class_exists( 'WeDevs_Dokan' ) ) {
-			$arr   = apply_filters( 'woocommerce_get_breadcrumb', array() );
+
+            $arr   = apply_filters( 'woocommerce_get_breadcrumb', array(), $post->ID );
 			$index = 0;
 			foreach ( $arr as $crumb ) {
 				if ( $index == count( $arr ) - 1 ) {

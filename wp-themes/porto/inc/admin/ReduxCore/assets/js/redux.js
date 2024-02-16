@@ -701,6 +701,23 @@
                             $.redux.stickyInfo(); // race condition fix
                         }
                         $.redux.initFields();
+                        let $currentsmOptions = $( this ).find( '.pt-showm-options' );
+                        if ( location.hash == '' ) {
+                            $currentsmOptions.removeClass( 'show-more' ).closest( '.redux-field-info' ).nextAll().each( function() {
+                                let $this = $( this );
+                                if ( this.tagName.toLowerCase() == 'table' ) {
+                                    $this.find( 'tr:not(.pt-always-visible, .hide)' ).fadeOut();
+                                } else {
+                                    if ( ! ( $this.hasClass( 'hide' ) || $this.hasClass( 'pt-always-visible' ) ) ) {
+                                        $this.fadeOut();
+                                    }
+                                }
+                            });
+                            $currentsmOptions.find( 'span' ).text( wp.i18n.__( 'Show More Options', 'porto' ) );
+                        } else {
+                            $currentsmOptions.addClass( 'show-more' );
+                            $currentsmOptions.find( 'span' ).text( wp.i18n.__( 'Hide Options', 'porto' ) );
+                        }
                     }
                 );
                 $( '#toplevel_page_' + redux.args.slug ).find( '.current' ).removeClass( 'current' );

@@ -144,13 +144,28 @@ class Porto_Elementor_Compatibility {
 					$changed                             = true;
 				}
 
-				if ( ! get_option( '_porto_elementor_settings' ) && ! empty( $porto_settings['grid-gutter-width'] ) && ( empty( $general_settings['space_between_widgets'] ) || ! isset( $general_settings['space_between_widgets']['size'] ) || $general_settings['space_between_widgets']['size'] != $porto_settings['grid-gutter-width'] ) ) {
-					$general_settings['space_between_widgets'] = array(
-						'size'  => (int) $porto_settings['grid-gutter-width'],
-						'unit'  => 'px',
-						'sizes' => array(),
-					);
-					$changed                                   = true;
+				if ( ! get_option( '_porto_elementor_settings' ) && ! empty( $porto_settings['grid-gutter-width'] ) ) {
+					if ( version_compare( ELEMENTOR_VERSION, '3.16.0', '>=' ) ) {
+						if ( empty( $general_settings['space_between_widgets'] ) || ! isset( $general_settings['space_between_widgets']['size'] ) || $general_settings['space_between_widgets']['size'] != $porto_settings['grid-gutter-width'] || ! isset( $general_settings['space_between_widgets']['column'] ) || $general_settings['space_between_widgets']['column'] != $porto_settings['grid-gutter-width'] ) {
+							$general_settings['space_between_widgets'] = array(
+								'size'   => (int) $porto_settings['grid-gutter-width'],
+								'row'    => (int) $porto_settings['grid-gutter-width'],
+								'column' => (int) $porto_settings['grid-gutter-width'],
+								'unit'   => 'px',
+								'sizes'  => array(),
+							);
+							$changed = true;
+						}
+					} else {
+						if ( ( empty( $general_settings['space_between_widgets'] ) || ! isset( $general_settings['space_between_widgets']['size'] ) || $general_settings['space_between_widgets']['size'] != $porto_settings['grid-gutter-width'] ) ) {
+							$general_settings['space_between_widgets'] = array(
+								'size'   => (int) $porto_settings['grid-gutter-width'],
+								'unit'   => 'px',
+								'sizes'  => array(),
+							);
+							$changed = true;
+						}
+					}
 				}
 
 				if ( ! isset( $general_settings['page_title_selector'] ) || 'h1.page-title' != $general_settings['page_title_selector'] ) {

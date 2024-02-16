@@ -10,6 +10,63 @@ if ( $this->legacy_mode ) {
 			'title'      => __( 'Post', 'porto' ),
 			'fields'     => array(
 				array(
+					'id'    => 'desc_info_builder_post',
+					'type'  => 'info',
+					'desc'  => wp_kses( 
+						__( '
+						<span>
+						<span style="min-width: 150px;">
+							<b>Post Type</b>
+							<span class="description">You can change the blog type, blog layout.</span>
+						</span>
+						<span>
+						<span class="flex-row">
+							<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+							<span>
+								<a href="' . $type_url . '" target="_blank">Add or Change Post Type</a>
+								A Loop is a layout you can customize to display recurring dynamic content - like listings, posts, portfolios, products, , etc.
+							</span>
+						</span>
+						<span class="flex-row">
+							<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+							<span>
+								<a href="' . $single_url . '" target="_blank">Add or Change Single Post layout</a>
+								A single post template allows you to easily design the layout and style of posts, ensuring a design consistency throughout all your blog posts.
+							</span>
+						</span>
+						<span class="flex-row">
+							<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+							<span>
+								<a href="' . $archive_url . '" target="_blank">Add or Change Post Archive Layout</a>
+								An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of posts (e.g. a blog’s list of recent posts), which may be filtered by terms such as authors, categories, tags, search results, etc. <br/><br/>You can also edit the post author page, search result page, date archive page, category page with Archive Builder.
+							</span>
+						</span>													
+						</span>
+						</span><a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), 
+						array( 
+							'b'    => array(),
+							'span' => array(
+								'class' => array(),
+								'style' => array(),
+							),
+							'img'  => array(
+								'src'   => array(),
+								'style' => array(),
+							),
+							'a'    => array(
+								'href'   => array(),
+								'target' => array(),
+								'class'  => array(),
+							),
+							'br'   => array(),
+							'i'     => array(
+								'class'  => array(),
+							),
+						)
+					),
+					'class' => 'porto-opt-ux-builder',
+				),
+				array(
 					'id'       => 'post-format',
 					'type'     => 'switch',
 					'title'    => __( 'Show Post Format', 'porto' ),
@@ -30,6 +87,7 @@ if ( $this->legacy_mode ) {
 					'hint'     => array(
 						'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'hot-label.gif"/>' ),
 					),
+					'class'    => 'pt-always-visible',
 				),
 				array(
 					'id'       => 'post-zoom',
@@ -97,7 +155,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $archive_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Post Archive(Blog)</a> & <a href="%2$s" target="_blank">Post Type(Loop)</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $archive_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -106,6 +164,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -133,6 +196,7 @@ if ( $this->legacy_mode ) {
 				'title'   => __( 'Page Layout', 'porto' ),
 				'options' => $page_layouts,
 				'default' => 'right-sidebar',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'      => 'post-layout',
@@ -473,7 +537,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $single_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Post</a> & <a href="%2$s" target="_blank">Post Type(Loop)</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $single_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -482,6 +546,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -509,6 +578,7 @@ if ( $this->legacy_mode ) {
 				'title'   => __( 'Page Layout', 'porto' ),
 				'options' => $page_layouts,
 				'default' => 'right-sidebar',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'post-banner-block',
@@ -776,7 +846,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $single_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Post</a> & <a href="%2$s" target="_blank">Post Type(Loop)</a> Builders help you to develop your site easily.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $single_url, $type_url ),
 					array(
 						'strong' => array(),
 						'a'      => array(
@@ -784,6 +854,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -966,6 +1041,60 @@ if ( $this->legacy_mode ) {
 		'customizer' => false,
 		'fields'     => array(
 			array(
+				'id'    => 'desc_info_builder_portfolio',
+				'type'  => 'info',
+				'desc'  => wp_kses( 
+					__( '
+					<span><span style="min-width: 150px;">
+						<b>Portfolio Type</b>
+						<span class="description">You can change the portfolio type, portfolio layout.</span>
+					</span>
+					<span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $type_url . '" target="_blank">Add or Change Portfolio Type</a>
+							A Loop is a layout you can customize to display recurring dynamic content - like listings, posts, portfolios, products and etc.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $single_url . '" target="_blank">Add or Change Single Portfolio layout</a>
+							A single portfolio template allows you to easily design the layout and style of portfolios, ensuring a design consistency throughout all your portfolios.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $archive_url . '" target="_blank">Add or Change Portfolio Archive Layout</a>
+							An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of portfolios, which may be filtered by terms such as authors, categories, tags, search results, etc.
+						</span>
+					</span>													
+					</span></span><a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), 
+					array( 
+						'b'    => array(),
+						'span' => array(
+							'class' => array(),
+							'style' => array(),
+						),
+						'img'  => array(
+							'src'   => array(),
+							'style' => array(),
+						),
+						'a'    => array(
+							'href'   => array(),
+							'target' => array(),
+							'class'  => array(),
+						),
+						'i'     => array(
+							'class'  => array(),
+						),
+					)
+				),
+				'class' => 'porto-opt-ux-builder',
+			),
+			array(
 				'id'       => 'enable-portfolio',
 				'type'     => 'switch',
 				'title'    => __( 'Portfolio Content Type', 'porto' ),
@@ -976,6 +1105,7 @@ if ( $this->legacy_mode ) {
 				),
 				'on'       => __( 'Enable', 'porto' ),
 				'off'      => __( 'Disable', 'porto' ),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'portfolio-slug-name',
@@ -983,6 +1113,7 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Slug Name', 'porto' ),
 				'subtitle'    => __( 'This option changes the permalink when you use the permalink type as %postname%. Make sure to regenerate permalinks.', 'porto' ),
 				'placeholder' => 'portfolio',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'portfolio-name',
@@ -990,6 +1121,7 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Name', 'porto' ),
 				'subtitle'    => __( 'A plural descriptive name for the post type marked for translation.', 'porto' ),
 				'placeholder' => __( 'Portfolios', 'porto' ),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'portfolio-singular-name',
@@ -997,6 +1129,7 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Singular Name', 'porto' ),
 				'subtitle'    => __( 'Name for one object of this post type.', 'porto' ),
 				'placeholder' => __( 'Portfolio', 'porto' ),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'portfolio-cat-slug-name',
@@ -1004,6 +1137,7 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Category Slug Name', 'porto' ),
 				'subtitle'    => __( 'The slug name of the taxonomy: category.', 'porto' ),
 				'placeholder' => 'portfolio_cat',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'portfolio-skill-slug-name',
@@ -1011,7 +1145,23 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Skill Slug Name', 'porto' ),
 				'subtitle'    => __( 'The slug name of the taxonomy: skill.', 'porto' ),
 				'placeholder' => 'portfolio_skill',
+				'class'   => 'pt-always-visible',
 			),
+			array(
+				'id'       => 'portfolio-archive-page',
+				'type'     => 'select',
+				'data'     => 'page',
+				'title'    => __( 'Portfolios Page', 'porto' ),
+				'subtitle' => __( 'Select a portfolio archive page.', 'porto' ),
+				'desc'     => wp_kses(
+					__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
+					array(
+						'b' => array(
+							'style' => array(),
+						),
+					)
+				),
+			),			
 		),
 	);
 	if ( $options_style ) {
@@ -1023,21 +1173,6 @@ if ( $this->legacy_mode ) {
 			'icon_class' => '',
 			'title'      => __( 'Portfolio', 'porto' ),
 			'fields'     => array(
-				array(
-					'id'       => 'portfolio-archive-page',
-					'type'     => 'select',
-					'data'     => 'page',
-					'title'    => __( 'Portfolios Page', 'porto' ),
-					'subtitle' => __( 'Select a portfolio archive page.', 'porto' ),
-					'desc'     => wp_kses(
-						__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
-						array(
-							'b' => array(
-								'style' => array(),
-							),
-						)
-					),
-				),
 				array(
 					'id'       => 'portfolio-zoom',
 					'type'     => 'switch',
@@ -1112,7 +1247,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $archive_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Portfolio Archive</a> & <a href="%2$s" target="_blank">Portfolio Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $archive_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -1121,6 +1256,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -1138,6 +1278,7 @@ if ( $this->legacy_mode ) {
 				'title'   => __( 'Page Layout', 'porto' ),
 				'options' => $page_layouts,
 				'default' => 'fullwidth',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'      => 'portfolio-archive-ajax',
@@ -1168,6 +1309,7 @@ if ( $this->legacy_mode ) {
 				'id'       => 'portfolio-archive-sidebar',
 				'type'     => 'select',
 				'title'    => __( 'Select Sidebar', 'porto' ),
+				'class'   => 'pt-always-visible',
 				'required' => array( 'portfolio-archive-layout', 'equals', $sidebars ),
 				'desc'     => wp_kses(
 					__( '<b style="color: red">You should set up the sidebar.</b>', 'porto' ),
@@ -1183,6 +1325,7 @@ if ( $this->legacy_mode ) {
 				'id'       => 'portfolio-archive-sidebar2',
 				'type'     => 'select',
 				'title'    => __( 'Select Sidebar 2', 'porto' ),
+				'class'   => 'pt-always-visible',
 				'required' => array( 'portfolio-archive-layout', 'equals', $both_sidebars ),
 				'desc'     => wp_kses(
 					__( '<b style="color: red">You should set up the sidebar.</b>', 'porto' ),
@@ -1708,7 +1851,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $single_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Portfolio</a> & <a href="%2$s" target="_blank">Portfolio Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $single_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -1717,6 +1860,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -1727,11 +1875,13 @@ if ( $this->legacy_mode ) {
 				'title'   => __( 'Page Layout', 'porto' ),
 				'options' => $page_layouts,
 				'default' => 'fullwidth',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'portfolio-single-sidebar',
 				'type'     => 'select',
 				'title'    => __( 'Select Sidebar', 'porto' ),
+				'class'   => 'pt-always-visible',
 				'required' => array( 'portfolio-single-layout', 'equals', $sidebars ),
 				'data'     => 'sidebars',
 				'desc'     => wp_kses(
@@ -1747,6 +1897,7 @@ if ( $this->legacy_mode ) {
 				'id'       => 'portfolio-single-sidebar2',
 				'type'     => 'select',
 				'title'    => __( 'Select Sidebar 2', 'porto' ),
+				'class'   => 'pt-always-visible',
 				'required' => array( 'portfolio-single-layout', 'equals', $both_sidebars ),
 				'data'     => 'sidebars',
 				'desc'     => wp_kses(
@@ -2009,7 +2160,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $single_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Portfolio</a> & <a href="%2$s" target="_blank">Portfolio Type</a> Builders help you to develop your site easily.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $single_url, $type_url ),
 					array(
 						'strong' => array(),
 						'a'      => array(
@@ -2017,6 +2168,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -2144,6 +2300,57 @@ if ( $this->legacy_mode ) {
 		'customizer' => false,
 		'fields'     => array(
 			array(
+				'id'    => 'desc_info_builder_event',
+				'type'  => 'info',
+				'desc'  => wp_kses( 
+					__( '
+					<span><span style="min-width: 150px;">
+						<b>Event Type</b>
+						<span class="description">You can change the event type, event layout.</span>
+					</span>
+					<span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $type_url . '" target="_blank">Add or Change Event Type</a>
+							A Loop is a layout you can customize to display recurring dynamic content - like events, posts, portfolios, products and etc.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $single_url . '" target="_blank">Add or Change Single Event layout</a>
+							A single event template allows you to easily design the layout and style of events, ensuring a design consistency throughout all your events.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $archive_url . '" target="_blank">Add or Change Event Archive Layout</a>
+							An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of events, which may be filtered by terms such as date, categories, tags, search results, etc.
+						</span>
+					</span>													
+					</span></span>', 'porto' ), 
+					array( 
+						'b'    => array(),
+						'span' => array(
+							'class' => array(),
+							'style' => array(),
+						),
+						'img'  => array(
+							'src'   => array(),
+							'style' => array(),
+						),
+						'a'    => array(
+							'href'   => array(),
+							'target' => array(),
+							'class'  => array(),
+						),
+					)
+				),
+				'class' => 'porto-opt-ux-builder',
+			),	
+			array(
 				'id'       => 'enable-event',
 				'type'     => 'switch',
 				'title'    => __( 'Event Content Type', 'porto' ),
@@ -2202,7 +2409,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $archive_url, $type_url ),
+						sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Event Archive</a> & <a href="%2$s" target="_blank">Event Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $archive_url, $type_url ),
 						array(
 							'strong' => array(),
 							'b'      => array(),
@@ -2211,6 +2418,11 @@ if ( $this->legacy_mode ) {
 								'target' => array(),
 								'class'  => array(),
 							),
+							'i'     => array(
+								'class'  => array(),
+							),
+							'span'  => array(),
+							'br'    => array(),
 						)
 					),
 					'class' => 'porto-important-note',
@@ -2229,6 +2441,7 @@ if ( $this->legacy_mode ) {
 							),
 						)
 					),
+					'class'   => 'pt-always-visible',
 				),
 				array(
 					'id'      => 'event-title',
@@ -2316,7 +2529,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $single_url, $type_url ),
+						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Event</a> & <a href="%2$s" target="_blank">Event Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $single_url, $type_url ),
 						array(
 							'strong' => array(),
 							'b'      => array(),
@@ -2363,6 +2576,60 @@ if ( $this->legacy_mode ) {
 		'customizer' => false,
 		'fields'     => array(
 			array(
+				'id'    => 'desc_info_builder_member',
+				'type'  => 'info',
+				'desc'  => wp_kses( 
+					__( '
+					<span><span style="min-width: 150px;">
+						<b>Member Type</b>
+						<span class="description">You can change the member type, member layout.</span>
+					</span>
+					<span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $type_url . '" target="_blank">Add or Change Member Type</a>
+							A Loop is a layout you can customize to display recurring dynamic content - like members, posts, portfolios, products, etc.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $single_url . '" target="_blank">Add or Change Single Member layout</a>
+							A single member template allows you to easily design the layout and style of members, ensuring a design consistency throughout all your members.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $archive_url . '" target="_blank">Add or Change Member Archive Layout</a>
+							An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of members, which may be filtered by terms such as categories, search results, etc.
+						</span>
+					</span>													
+					</span></span><a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), 
+					array( 
+						'b'    => array(),
+						'span' => array(
+							'class' => array(),
+							'style' => array(),
+						),
+						'img'  => array(
+							'src'   => array(),
+							'style' => array(),
+						),
+						'a'    => array(
+							'href'   => array(),
+							'target' => array(),
+							'class'  => array(),
+						),
+						'i'     => array(
+							'class'  => array(),
+						),
+					)
+				),
+				'class' => 'porto-opt-ux-builder',
+			),	
+			array(
 				'id'       => 'enable-member',
 				'type'     => 'switch',
 				'title'    => __( 'Member Content Type', 'porto' ),
@@ -2373,6 +2640,7 @@ if ( $this->legacy_mode ) {
 				),
 				'on'       => __( 'Enable', 'porto' ),
 				'off'      => __( 'Disable', 'porto' ),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'member-slug-name',
@@ -2380,6 +2648,7 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Slug Name', 'porto' ),
 				'subtitle'    => __( 'This option changes the permalink when you use the permalink type as %postname%. Make sure to regenerate permalinks.', 'porto' ),
 				'placeholder' => 'member',
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'member-name',
@@ -2387,6 +2656,7 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Name', 'porto' ),
 				'subtitle'    => __( 'A plural descriptive name for the post type marked for translation.', 'porto' ),
 				'placeholder' => __( 'Members', 'porto' ),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'member-singular-name',
@@ -2394,6 +2664,7 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Singular Name', 'porto' ),
 				'subtitle'    => __( 'Name for one object of this post type.', 'porto' ),
 				'placeholder' => __( 'Member', 'porto' ),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'          => 'member-cat-slug-name',
@@ -2401,7 +2672,23 @@ if ( $this->legacy_mode ) {
 				'title'       => __( 'Category Slug Name', 'porto' ),
 				'subtitle'    => __( 'The slug name of the taxonomy.', 'porto' ),
 				'placeholder' => 'member_cat',
+				'class'   => 'pt-always-visible',
 			),
+			array(
+				'id'       => 'member-archive-page',
+				'type'     => 'select',
+				'data'     => 'page',
+				'title'    => __( 'Members Page', 'porto' ),
+				'subtitle' => __( 'Select a member archive page.', 'porto' ),
+				'desc'     => wp_kses(
+					__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
+					array(
+						'b' => array(
+							'style' => array(),
+						),
+					)
+				),
+			),			
 		),
 	);
 	if ( $options_style ) {
@@ -2423,21 +2710,6 @@ if ( $this->legacy_mode ) {
 			'title'      => __( 'General', 'porto' ),
 			'id'         => 'memeber-general',
 			'fields'     => array(
-				array(
-					'id'       => 'member-archive-page',
-					'type'     => 'select',
-					'data'     => 'page',
-					'title'    => __( 'Members Page', 'porto' ),
-					'subtitle' => __( 'Select a member archive page.', 'porto' ),
-					'desc'     => wp_kses(
-						__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
-						array(
-							'b' => array(
-								'style' => array(),
-							),
-						)
-					),
-				),
 				array(
 					'id'       => 'member-zoom',
 					'type'     => 'switch',
@@ -2489,7 +2761,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $archive_url, $type_url ),
+						sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Member Archive</a> & <a href="%2$s" target="_blank">Member Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $archive_url, $type_url ),
 						array(
 							'strong' => array(),
 							'b'      => array(),
@@ -2498,6 +2770,11 @@ if ( $this->legacy_mode ) {
 								'target' => array(),
 								'class'  => array(),
 							),
+							'i'     => array(
+								'class'  => array(),
+							),
+							'span'  => array(),
+							'br'    => array(),
 						)
 					),
 					'class' => 'porto-important-note',
@@ -2520,11 +2797,13 @@ if ( $this->legacy_mode ) {
 					'title'   => __( 'Page Layout', 'porto' ),
 					'options' => $page_layouts,
 					'default' => 'fullwidth',
+					'class'   => 'pt-always-visible',
 				),
 				array(
 					'id'       => 'member-archive-sidebar',
 					'type'     => 'select',
 					'title'    => __( 'Select Sidebar', 'porto' ),
+					'class'   => 'pt-always-visible',
 					'required' => array( 'member-archive-layout', 'equals', $sidebars ),
 					'data'     => 'sidebars',
 					'desc'     => wp_kses(
@@ -2540,6 +2819,7 @@ if ( $this->legacy_mode ) {
 					'id'       => 'member-archive-sidebar2',
 					'type'     => 'select',
 					'title'    => __( 'Select Sidebar 2', 'porto' ),
+					'class'   => 'pt-always-visible',
 					'required' => array( 'member-archive-layout', 'equals', $both_sidebars ),
 					'data'     => 'sidebars',
 					'desc'     => wp_kses(
@@ -2899,7 +3179,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $single_url, $type_url ),
+						sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Member</a> & <a href="%2$s" target="_blank">Member Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $single_url, $type_url ),
 						array(
 							'strong' => array(),
 							'b'      => array(),
@@ -2908,6 +3188,11 @@ if ( $this->legacy_mode ) {
 								'target' => array(),
 								'class'  => array(),
 							),
+							'i'     => array(
+								'class'  => array(),
+							),
+							'span'  => array(),
+							'br'    => array(),
 						)
 					),
 					'class' => 'porto-important-note',
@@ -2918,11 +3203,13 @@ if ( $this->legacy_mode ) {
 					'title'   => __( 'Page Layout', 'porto' ),
 					'options' => $page_layouts,
 					'default' => 'fullwidth',
+					'class'   => 'pt-always-visible',
 				),
 				array(
 					'id'       => 'member-single-sidebar',
 					'type'     => 'select',
 					'title'    => __( 'Select Sidebar', 'porto' ),
+					'class'   => 'pt-always-visible',
 					'required' => array( 'member-single-layout', 'equals', $sidebars ),
 					'data'     => 'sidebars',
 					'desc'     => wp_kses(
@@ -2938,6 +3225,7 @@ if ( $this->legacy_mode ) {
 					'id'       => 'member-single-sidebar2',
 					'type'     => 'select',
 					'title'    => __( 'Select Sidebar 2', 'porto' ),
+					'class'   => 'pt-always-visible',
 					'required' => array( 'member-single-layout', 'equals', $both_sidebars ),
 					'data'     => 'sidebars',
 					'desc'     => wp_kses(
@@ -3119,7 +3407,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a>, <a href="%2$s" target="_blank">Single</a> & <a href="%3$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $single_url, $type_url ),
+						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Post Archive(Blog)</a>, <a href="%2$s" target="_blank">Single Post</a> & <a href="%3$s" target="_blank">Post Type(Loop)</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $single_url, $type_url ),
 						array(
 							'strong' => array(),
 							'a'      => array(
@@ -3147,6 +3435,57 @@ if ( $this->legacy_mode ) {
 							),
 						)
 					),
+				),
+				array(
+					'id'    => 'desc_info_builder_post',
+					'type'  => 'info',
+					'desc'  => wp_kses( 
+						__( '
+						<span><span style="min-width: 150px;">
+							<b>Post Type</b>
+							<span class="description">You can change the blog type, blog layout.</span>
+						</span>
+						<span>
+						<span class="flex-row">
+							<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+							<span>
+								<a href="' . $type_url . '" target="_blank">Add or Change Post Type</a>
+								A Loop is a layout you can customize to display recurring dynamic content - like listings, posts, portfolios, products, , etc.
+							</span>
+						</span>
+						<span class="flex-row">
+							<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+							<span>
+								<a href="' . $single_url . '" target="_blank">Add or Change Single Post layout</a>
+								A single post template allows you to easily design the layout and style of posts, ensuring a design consistency throughout all your blog posts.
+							</span>
+						</span>
+						<span class="flex-row">
+							<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+							<span>
+								<a href="' . $archive_url . '" target="_blank">Add or Change Post Archive Layout</a>
+								An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of posts (e.g. a blog’s list of recent posts), which may be filtered by terms such as authors, categories, tags, search results, etc. <br/><br/>You can also edit the post author page, search result page, date archive page, category page with Archive Builder.
+							</span>
+						</span>													
+						</span></span>', 'porto' ), 
+						array( 
+							'b'    => array(),
+							'span' => array(
+								'class' => array(),
+								'style' => array(),
+							),
+							'img'  => array(
+								'src'   => array(),
+								'style' => array(),
+							),
+							'a'    => array(
+								'href'   => array(),
+								'target' => array(),
+							),
+							'br'   => array(),
+						)
+					),
+					'class' => 'porto-opt-ux-builder',
 				),
 				array(
 					'id'      => 'post-archive-layout',
@@ -3194,6 +3533,56 @@ if ( $this->legacy_mode ) {
 		'customizer' => false,
 		'fields'     => array(
 			array(
+				'id'    => 'desc_info_builder_portfolio',
+				'type'  => 'info',
+				'desc'  => wp_kses( 
+					__( '
+					<span><span style="min-width: 150px;">
+						<b>Portfolio Type</b>
+						<span class="description">You can change the portfolio type, portfolio layout.</span>
+					</span>
+					<span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $type_url . '" target="_blank">Add or Change Portfolio Type</a>
+							A Loop is a layout you can customize to display recurring dynamic content - like listings, posts, portfolios, products and etc.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $single_url . '" target="_blank">Add or Change Single Portfolio layout</a>
+							A single portfolio template allows you to easily design the layout and style of portfolios, ensuring a design consistency throughout all your portfolios.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $archive_url . '" target="_blank">Add or Change Portfolio Archive Layout</a>
+							An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of portfolios, which may be filtered by terms such as authors, categories, tags, search results, etc.
+						</span>
+					</span>													
+					</span></span>', 'porto' ), 
+					array( 
+						'b'    => array(),
+						'span' => array(
+							'class' => array(),
+							'style' => array(),
+						),
+						'img'  => array(
+							'src'   => array(),
+							'style' => array(),
+						),
+						'a'    => array(
+							'href'   => array(),
+							'target' => array(),
+						),
+					)
+				),
+				'class' => 'porto-opt-ux-builder',
+			),	
+			array(
 				'id'       => 'enable-portfolio',
 				'type'     => 'switch',
 				'title'    => __( 'Portfolio Content Type', 'porto' ),
@@ -3240,6 +3629,21 @@ if ( $this->legacy_mode ) {
 				'subtitle'    => __( 'The slug name of the taxonomy: skill.', 'porto' ),
 				'placeholder' => 'portfolio_skill',
 			),
+			array(
+				'id'       => 'portfolio-archive-page',
+				'type'     => 'select',
+				'data'     => 'page',
+				'title'    => __( 'Portfolios Page', 'porto' ),
+				'subtitle' => __( 'Select a portfolio archive page.', 'porto' ),
+				'desc'     => wp_kses(
+					__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
+					array(
+						'b' => array(
+							'style' => array(),
+						),
+					)
+				),
+			),			
 		),
 	);
 
@@ -3248,23 +3652,7 @@ if ( $this->legacy_mode ) {
 			'icon'       => 'Simple-Line-Icons-picture',
 			'icon_class' => '',
 			'title'      => __( 'Portfolio', 'porto' ),
-			'fields'     => array(
-				array(
-					'id'       => 'portfolio-archive-page',
-					'type'     => 'select',
-					'data'     => 'page',
-					'title'    => __( 'Portfolios Page', 'porto' ),
-					'subtitle' => __( 'Select a portfolio archive page.', 'porto' ),
-					'desc'     => wp_kses(
-						__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
-						array(
-							'b' => array(
-								'style' => array(),
-							),
-						)
-					),
-				),
-			),
+			'fields'     => array(),
 		),
 		$options_style,
 		$portfolio_options
@@ -3279,7 +3667,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $type_url ),
+					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Portfolio Archive</a> & <a href="%2$s" target="_blank">Portfolio Type</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $type_url ),
 					array(
 						'strong' => array(),
 						'a'      => array(
@@ -3340,7 +3728,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $single_url, $type_url ),
+					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Portfolio</a> & <a href="%2$s" target="_blank">Portfolio Type</a> Builders help you to develop your site easily.', 'porto' ), $single_url, $type_url ),
 					array(
 						'strong' => array(),
 						'a'      => array(
@@ -3405,7 +3793,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a>, <a href="%2$s" target="_blank">Single</a> & <a href="%3$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $single_url, $type_url ),
+					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Event Archive</a>, <a href="%2$s" target="_blank">Single Event</a> & <a href="%3$s" target="_blank">Event Type</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $single_url, $type_url ),
 					array(
 						'strong' => array(),
 						'a'      => array(
@@ -3417,6 +3805,56 @@ if ( $this->legacy_mode ) {
 				),
 				'class' => 'porto-important-note',
 			),
+			array(
+				'id'    => 'desc_info_builder_event',
+				'type'  => 'info',
+				'desc'  => wp_kses( 
+					__( '
+					<span><span style="min-width: 150px;">
+						<b>Event Type</b>
+						<span class="description">You can change the event type, event layout.</span>
+					</span>
+					<span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $type_url . '" target="_blank">Add or Change Event Type</a>
+							A Loop is a layout you can customize to display recurring dynamic content - like events, posts, portfolios, products and etc.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $single_url . '" target="_blank">Add or Change Single Event layout</a>
+							A single event template allows you to easily design the layout and style of events, ensuring a design consistency throughout all your events.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $archive_url . '" target="_blank">Add or Change Event Archive Layout</a>
+							An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of events, which may be filtered by terms such as date, categories, tags, search results, etc.
+						</span>
+					</span>													
+					</span></span>', 'porto' ), 
+					array( 
+						'b'    => array(),
+						'span' => array(
+							'class' => array(),
+							'style' => array(),
+						),
+						'img'  => array(
+							'src'   => array(),
+							'style' => array(),
+						),
+						'a'    => array(
+							'href'   => array(),
+							'target' => array(),
+						),
+					)
+				),
+				'class' => 'porto-opt-ux-builder',
+			),	
 			array(
 				'id'       => 'enable-event',
 				'type'     => 'switch',
@@ -3488,6 +3926,56 @@ if ( $this->legacy_mode ) {
 		'customizer' => false,
 		'fields'     => array(
 			array(
+				'id'    => 'desc_info_builder_member',
+				'type'  => 'info',
+				'desc'  => wp_kses( 
+					__( '
+					<span><span style="min-width: 150px;">
+						<b>Member Type</b>
+						<span class="description">You can change the member type, member layout.</span>
+					</span>
+					<span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $type_url . '" target="_blank">Add or Change Member Type</a>
+							A Loop is a layout you can customize to display recurring dynamic content - like members, posts, portfolios, products, etc.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/single.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $single_url . '" target="_blank">Add or Change Single Member layout</a>
+							A single member template allows you to easily design the layout and style of members, ensuring a design consistency throughout all your members.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/archive.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $archive_url . '" target="_blank">Add or Change Member Archive Layout</a>
+							An archive template allows you to easily design the layout and style of archive pages - those pages that show a list of members, which may be filtered by terms such as categories, search results, etc.
+						</span>
+					</span>													
+					</span></span>', 'porto' ), 
+					array( 
+						'b'    => array(),
+						'span' => array(
+							'class' => array(),
+							'style' => array(),
+						),
+						'img'  => array(
+							'src'   => array(),
+							'style' => array(),
+						),
+						'a'    => array(
+							'href'   => array(),
+							'target' => array(),
+						),
+					)
+				),
+				'class' => 'porto-opt-ux-builder',
+			),	
+			array(
 				'id'       => 'enable-member',
 				'type'     => 'switch',
 				'title'    => __( 'Member Content Type', 'porto' ),
@@ -3527,6 +4015,21 @@ if ( $this->legacy_mode ) {
 				'subtitle'    => __( 'The slug name of the taxonomy.', 'porto' ),
 				'placeholder' => 'member_cat',
 			),
+			array(
+				'id'       => 'member-archive-page',
+				'type'     => 'select',
+				'data'     => 'page',
+				'title'    => __( 'Members Page', 'porto' ),
+				'subtitle' => __( 'Select a member archive page.', 'porto' ),
+				'desc'     => wp_kses(
+					__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
+					array(
+						'b' => array(
+							'style' => array(),
+						),
+					)
+				),
+			),			
 		),
 	);
 
@@ -3536,23 +4039,7 @@ if ( $this->legacy_mode ) {
 			'icon_class' => '',
 			'id'         => 'customizer-member-settings',
 			'title'      => __( 'Member', 'porto' ),
-			'fields'     => array(
-				array(
-					'id'       => 'member-archive-page',
-					'type'     => 'select',
-					'data'     => 'page',
-					'title'    => __( 'Members Page', 'porto' ),
-					'subtitle' => __( 'Select a member archive page.', 'porto' ),
-					'desc'     => wp_kses(
-						__( '<b style="color: red">You should set up the archive page.</b>', 'porto' ),
-						array(
-							'b' => array(
-								'style' => array(),
-							),
-						)
-					),
-				),
-			),
+			'fields'     => array(),
 		),
 		$options_style,
 		$member_options
@@ -3568,7 +4055,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $type_url ),
+						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Member Archive</a> & <a href="%2$s" target="_blank">Member Type</a> Builders help you to develop your site easily.', 'porto' ), $archive_url, $type_url ),
 						array(
 							'strong' => array(),
 							'a'      => array(
@@ -3632,7 +4119,7 @@ if ( $this->legacy_mode ) {
 					'type'  => 'info',
 					'desc'  => wp_kses(
 						/* translators: %s: Builder url */
-						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $single_url, $type_url ),
+						sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Member</a> & <a href="%2$s" target="_blank">Member Type</a> Builders help you to develop your site easily.', 'porto' ), $single_url, $type_url ),
 						array(
 							'strong' => array(),
 							'a'      => array(

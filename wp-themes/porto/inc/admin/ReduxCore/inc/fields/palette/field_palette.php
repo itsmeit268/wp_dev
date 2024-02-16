@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_palette' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_palette {
 
 		/**

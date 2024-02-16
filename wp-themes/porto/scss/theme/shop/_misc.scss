@@ -823,6 +823,6 @@ body.woocommerce-page {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     #{$left}: -12px;
-    top: 13px;
+    top: calc( 13px + ( -1 * var(--porto-sd-menu-popup-top, 0px) ) );
     z-index: 112;
 }

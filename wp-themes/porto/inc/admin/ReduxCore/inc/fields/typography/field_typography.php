@@ -17,6 +17,7 @@
  */
 
 if ( ! class_exists( 'ReduxFramework_typography' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_typography {
 
 		private $std_fonts = array(

@@ -10,6 +10,8 @@
 if ( ! class_exists( 'Porto_Woocommerce_Swatches' ) ) :
 	class Porto_Woocommerce_Swatches {
 
+		public $product_data_tab;
+		
 		public function __construct() {
 
 			add_action( 'init', array( $this, 'init' ) );

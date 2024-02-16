@@ -62,6 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $animation_type
  * @var $animation_duration
  * @var $animation_delay
+ * @var $animation_reveal_clr
  *
  * Shortcode class
  * @var $this WPBakeryShortCode_VC_Row
@@ -442,6 +443,9 @@ if ( $animation_type ) {
 	}
 	if ( $animation_duration && 1000 != $animation_duration ) {
 		$wrapper_attributes[] = 'data-appear-animation-duration="' . esc_attr( $animation_duration ) . '"';
+	}
+	if ( false !== strpos( $animation_type, 'revealDir' ) ) {
+		$wrapper_attributes[] = 'data-animation-reveal-clr="' . ( ! empty( $animation_reveal_clr ) ? esc_attr( $animation_reveal_clr ) : '' ) . '"';
 	}
 }
 

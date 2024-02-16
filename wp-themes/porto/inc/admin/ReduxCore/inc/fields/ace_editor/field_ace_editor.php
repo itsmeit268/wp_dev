@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Don't duplicate me!
 if ( ! class_exists( 'ReduxFramework_ace_editor' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_ace_editor {
 
 		/**

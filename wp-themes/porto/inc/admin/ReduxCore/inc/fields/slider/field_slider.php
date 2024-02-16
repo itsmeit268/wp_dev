@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_slider' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_slider {
 
 		/**

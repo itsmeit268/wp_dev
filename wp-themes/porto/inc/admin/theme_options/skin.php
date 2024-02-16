@@ -222,7 +222,7 @@ $this->sections[] = array(
 			'subtitle' => __( 'If you select "primary" option, social links will be determined by Primary and Primary Inverse color.', 'porto' ),
 			'options'  => array(
 				''        => array(
-                    'label' => __( 'Label, Image / Color swatch', 'porto' ),
+                    'label' => __( 'Default', 'porto' ),
                     'hint'  => array(
                         'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'social-color.jpg"/>' ),
                     ),

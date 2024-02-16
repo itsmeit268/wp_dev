@@ -24,6 +24,8 @@ if ( ! class_exists( 'Redux_Filesystem' ) ) {
 
 		public $parent = null;
 
+		public $killswitch;
+
 		/**
 		 * Return an instance of this class.
 		 *

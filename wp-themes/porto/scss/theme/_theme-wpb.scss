@@ -32,7 +32,14 @@
 		}
 	}
 
-	.vc_row-o-content-middle>.vc_column_container>.vc_column-inner {
+	.vc_row-o-full-height>.vc_column_container>.vc_column-inner,
+	.vc_row-o-full-height>.vc_vc_column>.vc_column_container>.vc_column-inner,
+	.vc_row-o-full-height>.vc_vc_column_inner>.vc_column_container>.vc_column-inner {
+		align-content: flex-start;
+	}
+	.vc_row-flex>.vc_column_container>.vc_column-inner,
+	.vc_row-flex>.vc_vc_column>.vc_column_container>.vc_column-inner,
+	.vc_row-flex>.vc_vc_column_inner>.vc_column_container>.vc_column-inner {
 		flex-direction: row;
 		justify-content: flex-start
 	}

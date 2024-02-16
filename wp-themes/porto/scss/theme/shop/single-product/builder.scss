@@ -9,8 +9,8 @@ $dir: ltr !default;
 .product-layout-image .summary-before { flex: 0 0 auto; width: 100%; }
 .product-layout-image .labels { margin: 0; }
 .product-images-block .img-thumbnail { margin-bottom: var(--porto-grid-gutter-width); }
-.product-images-block .product-images:hover .zoom { opacity: 0; }
-.product-images-block .img-thumbnail:hover .zoom { opacity: 1; background: none; }
+.product-images-block .product-images:hover .zoom, .product-images-block .product-images:hover .image-galley-viewer { opacity: 0; }
+.product-images-block .img-thumbnail:hover .zoom, .product-images-block .img-thumbnail:hover .image-galley-viewer { opacity: 1; background: none; }
 
 .product-layout-full_width .product-thumbnails { position: absolute; top: 15px; #{$left}: 15px; z-index: 2; bottom: 20px; overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
 .product-layout-full_width .product-thumbnails::-webkit-scrollbar { width: 5px; }

@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_password' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_password {
 
 		/**

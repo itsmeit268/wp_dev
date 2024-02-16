@@ -1146,7 +1146,7 @@
             F.trigger('beforeShow');
 
             // Set scrolling before calculating dimensions
-            current.inner.css('overflow', scrolling === 'yes' ? 'scroll' : (scrolling === 'no' ? 'hidden' : scrolling));
+            current.inner.css('overflow', scrolling === 'yes' ? 'scroll' : (scrolling === 'no' ? 'hidden' : 'hidden auto'));
 
             // Set initial dimensions and start position
             F._setDimension();

@@ -64,6 +64,7 @@ if ( ! class_exists( 'Porto_Performance' ) ) :
 			'elementor-app-loader',
 			'elementor-admin-bar',
 			'elementor-web-cli',
+			'porto-edit-page',
 		);
 		/**
 		 * Exclude Style.
@@ -136,6 +137,9 @@ if ( ! class_exists( 'Porto_Performance' ) ) :
 			'--porto-h6-fs',
 			'--porto-h6-lh',
 			'--porto-h6-ls',
+			'--porto-shop-add-links-color',
+			'--porto-shop-add-links-bg-color',
+			'--porto-shop-add-links-border-color',
 		);
 
 		/**

@@ -48,7 +48,7 @@ extract( $atts );
 extract( $this->getStyles( $el_class . $this->getCSSAnimation( $css_animation ), $css, $google_fonts_data, $font_container_data, $atts ) );
 
 $skin        = $border_skin = 'custom';
-$show_border = $border_color = $border_type = $border_size = $enable_typewriter = '';
+$show_border = $border_color = $border_type = $border_size = $enable_typewriter = $enable_marquee = '';
 extract(
 	shortcode_atts(
 		array(
@@ -58,6 +58,7 @@ extract(
 			'border_color'                     => '',
 			'border_type'                      => 'bottom-border',
 			'border_size'                      => '',
+			'enable_marquee'                   => false,
 			'enable_typewriter'                => false,
 			'enable_typeword'                  => false,
 			'typewriter_animation'             => 'fadeIn',
@@ -203,6 +204,9 @@ if ( $animation_type ) {
 	if ( $animation_duration && 1000 != $animation_duration ) {
 		$style .= ' data-appear-animation-duration="' . esc_attr( $animation_duration ) . '"';
 	}
+	if ( false !== strpos( $animation_type, 'revealDir' ) ) {
+		$style .= ' data-animation-reveal-clr="' . ( ! empty( $animation_reveal_clr ) ? esc_attr( $animation_reveal_clr ) : '' ) . '"';
+	}
 } elseif ( ! empty( $enable_typewriter ) ) {
 	$typewriter_options = array(
 		'startDelay'     => 0,
@@ -232,6 +236,10 @@ if ( $animation_type ) {
 	if ( ! empty( $floating_option ) ) {
 		$style .= $floating_option;
 	}
+}
+if ( ! empty( $enable_marquee ) ) {
+	wp_enqueue_script( 'porto-marquee' );
+	$style .= ' data-duration="70000" data-gap="10" data-duplicated="true" data-startVisible="true" data-clone-element="5"';
 }
 
 if ( 'post_title' === $source ) {
@@ -311,6 +319,9 @@ if ( apply_filters( 'vc_custom_heading_template_use_wrapper', false ) || $show_b
 	if ( $text_transform ) {
 		$heading_class .= ' ' . $text_transform;
 	}
+	if ( ! empty( $enable_marquee ) ) {
+		$heading_class .= ' marquee';
+	}
 	$output .= '<' . esc_html( $font_container_data['values']['tag'] ) . ' ' . trim( $style ) . ( $heading_class ? ' class="' . esc_attr( $heading_class ) . '"' : '' ) . '>';
 	$output .= force_balance_tags( wp_specialchars_decode( $text ) );
 	$output .= '</' . $font_container_data['values']['tag'] . '>';
@@ -322,6 +333,9 @@ if ( apply_filters( 'vc_custom_heading_template_use_wrapper', false ) || $show_b
 	}
 	if ( 'custom' !== $skin ) {
 		$css_class .= ' heading-' . $skin;
+	}
+	if ( ! empty( $enable_marquee ) ) {
+		$css_class .= ' marquee';
 	}
 	$output .= '<' . $font_container_data['values']['tag'] . ' ' . $style . ' class="' . esc_attr( $css_class ) . '" ' . ( ! empty( $floating_attr ) ? esc_attr( $floating_attr ) : '' ) . '>';
 	$output .= force_balance_tags( wp_specialchars_decode( $text ) );

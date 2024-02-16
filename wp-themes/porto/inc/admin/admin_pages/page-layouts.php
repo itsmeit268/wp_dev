@@ -27,13 +27,13 @@
 						<p><?php esc_html_e( 'Popup Builder for Any Page', 'porto' ); ?></p>
 					</div>				
 					<div class="top-block layout-part" data-part="top-block">
-						<p><?php esc_html_e( 'Top', 'porto' ); ?></p>
+						<p><?php esc_html_e( 'Pre-Header or eCommerce Top Notice', 'porto' ); ?></p>
 					</div>
 					<div class="header layout-part" data-part="header">
 						<p><?php esc_html_e( 'Header', 'porto' ); ?></p>
 					</div>
 					<div class="banner-block layout-part" data-part="banner-block">
-						<p><?php esc_html_e( 'Banner', 'porto' ); ?></p>
+						<p><?php esc_html_e( 'Banner(Page Header)', 'porto' ); ?></p>
 					</div>
 					<div class="content-top-block layout-part" data-part="content-top-block">
 						<p><?php esc_html_e( 'Content Top', 'porto' ); ?></p>
@@ -53,7 +53,7 @@
 								<p><?php esc_html_e( 'Single Product', 'porto' ); ?></p>
 							</div>					
 							<div class="block product-archive layout-part" data-part="shop">
-								<p><?php esc_html_e( 'Product Archive', 'porto' ); ?></p>
+								<p><?php esc_html_e( 'Product Archive(Shop)', 'porto' ); ?></p>
 							</div>
 							<div class="block content-inner-bottom-block layout-part" data-part="content-inner-bottom-block">
 								<p><?php esc_html_e( 'Content Inner Bottom', 'porto' ); ?></p>

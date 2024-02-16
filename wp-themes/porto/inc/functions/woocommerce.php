@@ -1146,16 +1146,18 @@ function porto_woocommerce_init_layout() {
 			$wcwl_ins = YITH_WCWL_Frontend();
 			if ( has_action( 'woocommerce_single_product_summary', array( $wcwl_ins, 'print_button' ) ) ) {
 				remove_action( 'woocommerce_single_product_summary', array( $wcwl_ins, 'print_button' ), 31 );
-				if ( in_array( $porto_product_layout, array( 'extended', 'full_width', 'sticky_info', 'sticky_both_info', 'centered_vertical_zoom' ) ) ) {
-					add_action( 'woocommerce_after_add_to_cart_button', array( $wcwl_ins, 'print_button' ), 38 );
-				} else {
-					add_action( 'woocommerce_single_product_summary', array( $wcwl_ins, 'print_button' ), 65 );
+				if ( ! porto_check_builder_condition( 'product' ) ) {
+					if ( in_array( $porto_product_layout, array( 'extended', 'full_width', 'sticky_info', 'sticky_both_info', 'centered_vertical_zoom' ) ) ) {
+						add_action( 'woocommerce_after_add_to_cart_button', array( $wcwl_ins, 'print_button' ), 38 );
+					} else {
+						add_action( 'woocommerce_single_product_summary', array( $wcwl_ins, 'print_button' ), 65 );
+					}
 				}
 			}
 		}
 
 		/* compare position */
-		if ( defined( 'YITH_WOOCOMPARE' ) ) {
+		if ( defined( 'YITH_WOOCOMPARE' ) && ! porto_check_builder_condition( 'product' ) ) {
 			if ( 'yes' == get_option( 'yith_woocompare_compare_button_in_product_page', 'yes' ) ) {
 				if ( in_array( $porto_product_layout, array( 'extended', 'full_width', 'sticky_info', 'sticky_both_info', 'centered_vertical_zoom' ) ) ) {
 					add_action( 'woocommerce_after_add_to_cart_button', 'porto_template_loop_compare', 40 );
@@ -2998,4 +3000,21 @@ if ( ! function_exists( 'porto_wc_track_product_view' ) ) {
 	}
 	remove_action( 'template_redirect', 'wc_track_product_view', 20 );
 	add_action( 'template_redirect', 'porto_wc_track_product_view', 20 );
+}
+
+/**
+ * Compatibility with WooCommerce 8.3.0
+ * 
+ * @since 7.0.0
+ */
+
+add_filter( 'woocommerce_get_script_data', 'porto_wc_set_script_data', 99, 2 );
+
+if ( ! function_exists( 'porto_wc_set_script_data' ) ) {
+	function porto_wc_set_script_data( $params, $handle ) {
+		if ( 'wc-cart-fragments' == $handle ) {
+			$params['request_timeout'] = 15000;
+		}
+		return $params;
+	}
 }

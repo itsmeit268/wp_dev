@@ -60,6 +60,7 @@ if ( ! class_exists( 'ReduxFramework' ) ) {
 	 *
 	 * @since       1.0.0
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework {
 
 		// ATTENTION DEVS

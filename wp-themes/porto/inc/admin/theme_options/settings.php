@@ -127,8 +127,11 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 			$porto_footer_columns      = porto_options_footer_columns();
 
 			global $porto_settings_optimize;
-			$archive_url = $single_url = $type_url = $header_url = $footer_url = $shop_url = $product_url = admin_url( 'admin.php?page=porto-speed-optimize-wizard&step=general' );
+			$block_url = $archive_url = $single_url = $type_url = $header_url = $footer_url = $shop_url = $product_url = $popup_url = admin_url( 'admin.php?page=porto-speed-optimize-wizard&step=general' );
 
+			if ( ! ( isset( $porto_settings_optimize['disabled_pbs'] ) && is_array( $porto_settings_optimize['disabled_pbs'] ) && in_array( 'block', $porto_settings_optimize['disabled_pbs'] ) ) ) {
+				$block_url = admin_url( 'edit.php?post_type=porto_builder&porto_builder_type=block' );
+			}
 			if ( ! ( isset( $porto_settings_optimize['disabled_pbs'] ) && is_array( $porto_settings_optimize['disabled_pbs'] ) && in_array( 'archive', $porto_settings_optimize['disabled_pbs'] ) ) ) {
 				$archive_url = admin_url( 'edit.php?post_type=porto_builder&porto_builder_type=archive' );
 			}
@@ -150,6 +153,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 			if ( ! ( isset( $porto_settings_optimize['disabled_pbs'] ) && is_array( $porto_settings_optimize['disabled_pbs'] ) && in_array( 'product', $porto_settings_optimize['disabled_pbs'] ) ) ) {
 				$product_url = admin_url( 'edit.php?post_type=porto_builder&porto_builder_type=product' );
 			}
+			$popup_url = admin_url( 'edit.php?post_type=porto_builder&porto_builder_type=popup' );
 
 			if ( current_user_can( 'manage_options' ) && is_admin() ) {
 				$product_layouts = porto_get_post_type_items(
@@ -369,6 +373,54 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 				$options_style
 			);
 
+			/**
+			 * Template Builder
+			 *  
+			 * @since 6.12.0
+			 */ 
+			$this->sections[] = array(
+				'subsection' => true,
+				'title'      => __( 'Popup Builder', 'porto' ),
+				'fields'     => array(
+					array(
+						'id'    => 'desc_info_builder_popup',
+						'type'  => 'info',
+						'desc'  => wp_kses( 
+							__( '
+							<span><span style="min-width: 150px;">
+								<b>Popup Builder</b>
+								<span class="description">You can control the various popup like Newsletter Popup.</span>
+							</span>
+							<span>
+								<span class="flex-row">
+									<img src="' . PORTO_OPTIONS_URI . '/builder/popup.svg' . '" style="margin-right: 10px;" />
+									<span>
+										<a href="' . $popup_url . '" target="_blank">Add or Change Popup Layout</a>
+										Popup like Newsletter, promo popup, discount popup is built with pre-made on template builder.
+									</span>
+								</span>										
+							</span></span>', 'porto' ), 
+							array( 
+								'b'    => array(),
+								'span' => array(
+									'class' => array(),
+									'style' => array(),
+								),
+								'img'  => array(
+									'src'   => array(),
+									'style' => array(),
+								),
+								'a'    => array(
+									'href'   => array(),
+									'target' => array(),
+								),
+							)
+						),
+						'class' => 'porto-opt-ux-builder',
+					),						
+				),
+			);	
+			
 			$this->sections[] = array(
 				'subsection' => true,
 				'title'      => __( 'Google Map API', 'porto' ),
@@ -737,7 +789,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 						'default'  => '',
 					),
 				),
-			);
+			);		
 
 			// Layout
 			$this->sections[] = $this->add_customizer_field(
@@ -1020,7 +1072,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'type'  => 'info',
 								'desc'  => wp_kses(
 									/* translators: %s: Builder url */
-									sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $header_url ),
+									sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $header_url ),
 									array(
 										'strong' => array(),
 										'b'      => array(),
@@ -1029,6 +1081,11 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 											'target' => array(),
 											'class'  => array(),
 										),
+										'i'     => array(
+											'class'  => array(),
+										),
+										'span'  => array(),
+										'br'    => array(),
 									)
 								),
 								'class' => 'porto-important-note',
@@ -1044,6 +1101,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 										'hide' => __( 'Hide', 'porto' ),
 									)
 								),
+								'class'   => 'pt-always-visible',
 								'default'   => 'default',
 								'transport' => 'refresh',
 							),
@@ -1221,8 +1279,18 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'title'     => __( 'Side Header Position', 'porto' ),
 								'subtitle'  => __( 'When your header type is side header, determines where to put it.', 'porto' ),
 								'options'   => array(
-									''      => __( 'Left', 'porto' ),
-									'right' => __( 'Right', 'porto' ),
+									''      => array(
+										'label' => __( 'Left', 'porto' ),
+										'hint'  => array(
+											'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'header-side-pl.jpg"/>' ),
+										),
+									),
+									'right'      => array(
+										'label' => __( 'Right', 'porto' ),
+										'hint'  => array(
+											'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'header-side-pr.jpg"/>' ),
+										),
+									),
 								),
 								'default'   => '',
 								'transport' => 'refresh',
@@ -1746,7 +1814,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'type'  => 'info',
 								'desc'  => wp_kses(
 									/* translators: %s: Builder url */
-									sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. If you use builder, some options might be overrided by Search Form widget.', 'porto' ), $header_url ),
+									sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. If you use builder, some options might be overrided by Search Form widget.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $header_url ),
 									array(
 										'strong' => array(),
 										'b'      => array(),
@@ -1755,6 +1823,11 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 											'target' => array(),
 											'class'  => array(),
 										),
+										'i'     => array(
+											'class'  => array(),
+										),
+										'span'  => array(),
+										'br'    => array(),
 									)
 								),
 								'class' => 'porto-important-note',
@@ -1774,6 +1847,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'default'  => true,
 								'on'       => __( 'Yes', 'porto' ),
 								'off'      => __( 'No', 'porto' ),
+								'class'   => 'pt-always-visible',
 							),
 							array(
 								'id'       => 'search-layout',
@@ -1804,6 +1878,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 									),
 								),
 								'default'  => $search_layout_default,
+								'class'    => 'pt-always-visible',
 							),
 							array(
 								'id'       => 'show-searchform-mobile',
@@ -1814,6 +1889,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'on'       => __( 'Yes', 'porto' ),
 								'off'      => __( 'No', 'porto' ),
 								'required' => array( 'search-layout', 'contains', 'advanced' ),
+								'class'    => 'pt-always-visible',
 							),
 							array(
 								'id'       => 'search-border-radius',
@@ -1841,6 +1917,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 									'event'     => __( 'Event', 'porto' ),
 								),
 								'default'  => 'all',
+								'class'    => 'pt-always-visible',
 							),
 							array(
 								'id'       => 'search-cats',
@@ -2028,6 +2105,29 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 					'transport'  => 'postMessage',
 					'fields'     => array(
 						array(
+							'id'    => 'desc_info_sticky_header_notice',
+							'type'  => 'info',
+							'desc'  => wp_kses(
+								/* translators: %s: Builder url */
+								sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $header_url ),
+								array(
+									'strong' => array(),
+									'b'      => array(),
+									'a'      => array(
+										'href'   => array(),
+										'target' => array(),
+										'class'  => array(),
+									),
+									'i'     => array(
+										'class'  => array(),
+									),
+									'span'  => array(),
+									'br'    => array(),
+								)
+							),
+							'class' => 'porto-important-note',
+						),						
+						array(
 							'id'        => 'enable-sticky-header',
 							'type'      => 'switch',
 							'title'     => __( 'Enable Sticky Header', 'porto' ),
@@ -2035,6 +2135,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'on'        => __( 'Yes', 'porto' ),
 							'off'       => __( 'No', 'porto' ),
 							'transport' => 'refresh',
+							'class'     => 'pt-always-visible',
 						),
 						array(
 							'id'        => 'enable-sticky-header-tablet',
@@ -2045,6 +2146,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'on'        => __( 'Yes', 'porto' ),
 							'off'       => __( 'No', 'porto' ),
 							'transport' => 'refresh',
+							'class'     => 'pt-always-visible',
 						),
 						array(
 							'id'        => 'enable-sticky-header-mobile',
@@ -2055,11 +2157,13 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'on'        => __( 'Yes', 'porto' ),
 							'off'       => __( 'No', 'porto' ),
 							'transport' => 'refresh',
+							'class'     => 'pt-always-visible',
 						),
 						array(
 							'id'      => 'sticky-header-effect',
 							'type'    => 'button_set',
 							'title'   => __( 'Sticky Header Effect', 'porto' ),
+							'class'   => 'pt-always-visible',
 							'options' => array(
 								''         => array(
 									'label' => __( 'None', 'porto' ),
@@ -2101,6 +2205,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'hint'     => array(
 								'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'change-header-logo.gif"/>' ),
 							),
+							'class'   => 'pt-always-visible',
 						),
 						array(
 							'id'      => 'show-sticky-searchform',
@@ -2213,6 +2318,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'hint'     => array(
 								'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'mainmenu-wrap-ps.gif"/>' ),
 							),
+							'class'     => 'pt-always-visible',
 						),
 					),
 				);
@@ -2729,7 +2835,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'type'  => 'info',
 							'desc'  => wp_kses(
 								/* translators: %s: Builder url */
-								sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $header_url ),
+								sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Header</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $header_url ),
 								array(
 									'strong' => array(),
 									'b'      => array(),
@@ -2738,6 +2844,11 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 										'target' => array(),
 										'class'  => array(),
 									),
+									'i'     => array(
+										'class'  => array(),
+									),
+									'span'  => array(),
+									'br'    => array(),
 								)
 							),
 							'class' => 'porto-important-note',
@@ -2920,7 +3031,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								)
 							),
 							'notice' => false,
-							'class'  => 'porto-redux-section',
+							'class'  => 'porto-redux-section pt-always-visible',
 						),
 						array(
 							'id'       => 'header-bg',
@@ -2976,13 +3087,14 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'selector'       => array(
 								'node' => '#header',
 							),
+							'class'    => 'pt-always-visible',
 						),
 						array(
 							'id'      => 'header-top-border',
 							'type'    => 'border',
 							'all'     => true,
 							'style'   => false,
-							'title'   => __( 'Header Top Border', 'porto' ),
+							'title'   => __( 'Top Border of the Header', 'porto' ),
 							'default' => array(
 								'border-color' => '#ededed',
 								'border-top'   => '3px',
@@ -3006,6 +3118,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'margin-left'   => 0,
 								'margin-right'  => 0,
 							),
+							'class'    => 'pt-always-visible',
 						),
 						array(
 							'id'       => 'header-main-padding',
@@ -3023,6 +3136,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'padding-top'    => '',
 								'padding-bottom' => '',
 							),
+							'class'    => 'pt-always-visible',
 						),
 						array(
 							'id'       => 'header-main-padding-mobile',
@@ -3036,6 +3150,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'padding-top'    => '',
 								'padding-bottom' => '',
 							),
+							'class'    => 'pt-always-visible',
 						),
 						array(
 							'id'     => 'desc_info_header_bottom',
@@ -3437,10 +3552,20 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'id'    => 'desc_info_bredcrumb',
 							'type'  => 'info',
 							'desc'  => wp_kses(
-								__( '<strong>Important Note:</strong> Some below options might be overrided because the priority of the <b>Page Header</b> widget option is <b>higher</b>.', 'porto' ),
+								sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> You can build the Page Header with <a href="%1$s" target="_blank">Block Builder</a>. Some below options might be overrided because the priority of the <b>Page Header</b> widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $block_url ),
 								array(
 									'strong' => array(),
 									'b'      => array(),
+									'a'      => array(
+										'href'   => array(),
+										'target' => array(),
+										'class'  => array(),
+									),
+									'i'     => array(
+										'class'  => array(),
+									),
+									'span'  => array(),
+									'br'    => array(),
 								)
 							),
 							'class' => 'porto-important-note',
@@ -3541,6 +3666,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'id'       => 'breadcrumbs-blog-link',
 							'type'     => 'switch',
 							'title'    => __( 'Show Blog Link', 'porto' ),
+							'class'   => 'pt-always-visible',
 							'subtitle' => __( 'Please select "YES" to insert the permalink of the blog page in single post page.', 'porto' ),
 							'default'  => true,
 							'hint'     => array(
@@ -3554,6 +3680,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'id'       => 'breadcrumbs-shop-link',
 							'type'     => 'switch',
 							'title'    => __( 'Show Shop Link', 'porto' ),
+							'class'   => 'pt-always-visible',
 							'subtitle' => __( 'Please select "YES" to insert permalink of shop page to breadcrumb path in single product page.', 'porto' ),
 							'default'  => true,
 							'required' => array( 'show-breadcrumbs', 'equals', '1' ),
@@ -3567,6 +3694,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'id'       => 'breadcrumbs-archives-link',
 							'type'     => 'switch',
 							'title'    => __( 'Show Custom Post Type Archives Link', 'porto' ),
+							'class'   => 'pt-always-visible',
 							'subtitle' => __( 'Please select "YES" to insert the permalink of "Archive Page" to breadcrumb path in single custom post page.', 'porto' ),
 							'default'  => true,
 							'hint'     => array(
@@ -3580,6 +3708,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'id'       => 'breadcrumbs-categories',
 							'type'     => 'switch',
 							'title'    => __( 'Show Categories Link', 'porto' ),
+							'class'   => 'pt-always-visible',
 							'subtitle' => __( 'Please select "YES" to display the categories in single page.', 'porto' ),
 							'default'  => true,
 							'required' => array( 'show-breadcrumbs', 'equals', '1' ),
@@ -3593,6 +3722,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'id'       => 'breadcrumbs-delimiter',
 							'type'     => 'button_set',
 							'title'    => __( 'Breadcrumbs Delimiter', 'porto' ),
+							'class'   => 'pt-always-visible',
 							'subtitle' => __( 'Select the type of separator between each breadcrumb.', 'porto' ),
 							'required' => array( 'show-breadcrumbs', 'equals', '1' ),
 							'options'  => array(
@@ -3929,7 +4059,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'type'  => 'info',
 								'desc'  => wp_kses(
 									/* translators: %s: Builder url */
-									sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Footer</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $footer_url ),
+									sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Footer</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $footer_url ),
 									array(
 										'strong' => array(),
 										'b'      => array(),
@@ -3938,6 +4068,11 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 											'target' => array(),
 											'class'  => array(),
 										),
+										'i'     => array(
+											'class'  => array(),
+										),
+										'span'  => array(),
+										'br'    => array(),
 									)
 								),
 								'class' => 'porto-important-note',
@@ -4004,6 +4139,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 								'id'       => 'footer-reveal',
 								'type'     => 'switch',
 								'title'    => __( 'Show Reveal Effect', 'porto' ),
+								'class'   => 'pt-always-visible',
 								'desc'     => __( 'Select "YES" to enable reveal effect.', 'porto' ),
 								'subtitle' => __( 'This option is allowed to the footer higher than window\'s height.', 'porto' ),
 								'default'  => false,
@@ -4028,6 +4164,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							array(
 								'id'       => 'footer-ribbon',
 								'type'     => 'text',
+								'class'   => 'pt-always-visible',
 								'subtitle' => __( 'Please input ribbon text which is displayed at the top and left of the footer container if you want.', 'porto' ),
 								'title'    => __( 'Ribbon Text', 'porto' ),
 								'default'  => '',
@@ -4207,7 +4344,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'type'  => 'info',
 							'desc'  => wp_kses(
 								/* translators: %s: Builder url */
-								sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Footer</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $footer_url ),
+								sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Footer</a> Builder helps you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $footer_url ),
 								array(
 									'strong' => array(),
 									'b'      => array(),
@@ -4216,6 +4353,11 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 										'target' => array(),
 										'class'  => array(),
 									),
+									'i'     => array(
+										'class'  => array(),
+									),
+									'span'  => array(),
+									'br'    => array(),
 								)
 							),
 							'class' => 'porto-important-note',
@@ -4414,6 +4556,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							),
 							'default'  => '#0088cc',
 							'validate' => 'color',
+							'class'   => 'pt-always-visible',
 						),
 						array(
 							'id'       => 'footer-ribbon-text-color',
@@ -4423,6 +4566,7 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							'desc'     => __( 'This option is useful when <strong>Theme Option/Footer/Ribbon Text</strong> option gets value.', 'porto' ),
 							'default'  => '#ffffff',
 							'validate' => 'color',
+							'class'   => 'pt-always-visible',
 						),
 						array(
 							'id'     => 'desc_info_footer_bottom',
@@ -4579,13 +4723,14 @@ if ( ! class_exists( 'Redux_Framework_porto_settings' ) ) {
 							),
 						),
 						array(
-							'id'      => 'show-mobile-sidebar',
-							'type'    => 'switch',
-							'title'   => __( 'Show Sidebar in Navigation on mobile', 'porto' ),
-							'default' => false,
-							'on'      => __( 'Yes', 'porto' ),
-							'off'     => __( 'No', 'porto' ),
-							'hint'    => array(
+							'id'       => 'show-mobile-sidebar',
+							'type'     => 'switch',
+							'title'    => __( 'Show as Off-Canvas Sidebar on mobile', 'porto' ),
+							'subtitle' => __( 'Add toggle button for showing the sidebar on mobile.', 'porto' ),
+							'default'  => false,
+							'on'       => __( 'Yes', 'porto' ),
+							'off'      => __( 'No', 'porto' ),
+							'hint'     => array(
 								'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'show-mobile-sidebar.gif"/>' ),
 							),
 						),

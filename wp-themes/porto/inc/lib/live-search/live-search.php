@@ -27,9 +27,13 @@ if ( ! class_exists( 'Porto_Live_Search' ) ) :
 			add_action( 'wp_ajax_nopriv_porto_ajax_search_posts', array( $this, 'ajax_search' ) );
 
 			if ( ! defined( 'YITH_WCAS_PREMIUM' ) ) {
-				if ( ! empty( $porto_settings['search-live'] ) && ! empty( $porto_settings['search-by'] ) && in_array( 'sku', $porto_settings['search-by'] ) && ! wp_doing_ajax() ) {
-					add_filter( 'posts_search', array( $this, 'search_posts_result' ), 999, 2 );
-					add_filter( 'posts_join', array( $this, 'search_posts_join' ), 999, 2 );
+				
+				$is_searchpage = ! empty( $_REQUEST['s'] ) && ( ! empty( $_REQUEST['post_type'] ) && 'product' == $_REQUEST['post_type'] ) && ! is_admin() && ! wp_doing_ajax();
+				if ( ! empty( $porto_settings['search-live'] ) && ! empty( $porto_settings['search-by'] ) && in_array( 'sku', $porto_settings['search-by'] ) && $is_searchpage ) {
+					if ( ! isset( $_REQUEST['yith_pos_request'] ) || 'search-products' != $_REQUEST['yith_pos_request'] ) {
+						add_filter( 'posts_search', array( $this, 'search_posts_result' ), 999, 2 );
+						add_filter( 'posts_join', array( $this, 'search_posts_join' ), 999, 2 );
+					}
 				}
 			} else {
 				add_filter( 'yith_ajax_search_use_and_for_sku', '__return_false' );
@@ -48,6 +52,18 @@ if ( ! class_exists( 'Porto_Live_Search' ) ) :
 					'nonce' => wp_create_nonce( 'porto-live-search-nonce' ),
 				)
 			);
+		}
+
+		/**
+		 * Filter the Unique Objects in a PHP object array
+		 * How to use: returnUniqueProperty($names, 'name');
+		 * 
+		 * @since 7.0.0
+		 */
+		public function return_unique_property( $array, $property ) {
+			$temp_array = array_unique( array_column( $array, $property ) );
+			$more_unique_array = array_values( array_intersect_key( $array, $temp_array ) );
+			return $more_unique_array;
 		}
 
 		public function ajax_search() {
@@ -70,13 +86,15 @@ if ( ! class_exists( 'Porto_Live_Search' ) ) :
 			if ( ! isset( $_REQUEST['post_type'] ) || empty( $_REQUEST['post_type'] ) || 'product' == $_REQUEST['post_type'] ) {
 				if ( class_exists( 'Woocommerce' ) ) {
 					$posts = $this->search_products( 'product', $args );
-					$search_by = isset( $porto_settings['search-by'] ) ? $porto_settings['search-by'] : array();
+					$search_by = ! empty( $porto_settings['search-by'] ) ? $porto_settings['search-by'] : array();
 
 					if ( in_array( 'sku', $search_by ) ) {
 						$posts = array_merge( $posts, $this->search_products( 'sku', $args ) );
+						$posts = $this->return_unique_property( $posts, 'ID' );
 					}
 					if ( in_array( 'product_tag', $search_by ) ) {
 						$posts = array_merge( $posts, $this->search_products( 'tag', $args ) );
+						$posts = $this->return_unique_property( $posts, 'ID' );
 					}
 
 				}

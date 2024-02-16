@@ -20,6 +20,10 @@ class Redux_Customizer_Section extends WP_Customize_Section {
 	 */
 	public $type = 'redux';
 
+	public $opt_name;
+
+	public $section;
+
 	/**
 	 * Constructor.
 	 * Any supplied $args override class property defaults.

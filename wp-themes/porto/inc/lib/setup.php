@@ -43,13 +43,13 @@ if ( current_user_can( 'edit_posts' ) || current_user_can( 'edit_pages' ) ) {
 }
 
 // Pre Order
-if ( class_exists( 'Woocommerce' ) && isset( $porto_settings['woo-pre-order'] ) && $porto_settings['woo-pre-order'] ) {
+if ( class_exists( 'Woocommerce' ) && ! empty( $porto_settings['woo-pre-order'] ) ) {
 	require PORTO_LIB . '/lib/woocommerce-pre-order/init.php';
 }
 
 // Sales Poopup
-if ( class_exists( 'Woocommerce' ) && isset( $porto_settings['woo-sales-popup'] ) && $porto_settings['woo-sales-popup'] &&
-	( ! wp_is_mobile() || ( isset( $porto_settings['woo-sales-popup-mobile'] ) && $porto_settings['woo-sales-popup-mobile'] ) ) ) {
+if ( class_exists( 'Woocommerce' ) && ! empty( $porto_settings['woo-sales-popup'] ) &&
+	( ! wp_is_mobile() || ( ! empty( $porto_settings['woo-sales-popup-mobile'] )  ) ) ) {
 	require PORTO_LIB . '/lib/woocommerce-sales-popup/init.php';
 }
 

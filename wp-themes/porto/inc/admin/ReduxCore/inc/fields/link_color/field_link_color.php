@@ -34,6 +34,7 @@ if ( ! class_exists( 'ReduxFramework_link_color' ) ) {
 	 *
 	 * @since       1.0.0
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework_link_color {
 
 		/**

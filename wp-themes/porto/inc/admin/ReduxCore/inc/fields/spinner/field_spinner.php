@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_spinner' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_spinner {
 
 		/**

@@ -775,7 +775,7 @@
     line-height: 0;
     .main-menu {
         display: none;
-        height: 80%;
+        max-height: 80%;
 
         &:not(.scroll-content) {
             overflow-x: hidden;
@@ -784,7 +784,7 @@
             min-width: 80%;
         }
         @media (min-width: 992px) {
-            height: 50%;
+            max-height: 50%;
         }
         > li.menu-item .popup {
             transform: none;

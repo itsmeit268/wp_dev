@@ -323,13 +323,24 @@
 			var el_obj = $el.get( 0 );
 
 			delay = Math.abs( $el.data( 'appear-animation-delay' ) ? $el.data( 'appear-animation-delay' ) : self.options.delay );
-			if ( delay > 1 ) {
-				el_obj.style.animationDelay = delay + 'ms';
-			}
-
 			duration = Math.abs( $el.data( 'appear-animation-duration' ) ? $el.data( 'appear-animation-duration' ) : self.options.duration );
-			if ( duration != 1000 ) {
-				el_obj.style.animationDuration = duration + 'ms';
+			if ( 'undefined' !== typeof $el.data( 'appear-animation' ) && $el.data( 'appear-animation' ).includes( 'revealDir' ) ) {
+				if ( delay > 1 ) {
+					el_obj.style.setProperty( '--porto-reveal-animationDelay', delay + 'ms' );
+				}
+				if ( duration != 1000 ) {
+					el_obj.style.setProperty( '--porto-reveal-animationDuration', duration + 'ms' );
+				}
+				if ( $el.data( 'animation-reveal-clr' ) ) {
+					el_obj.style.setProperty(  '--porto-reveal-clr', $el.data( 'animation-reveal-clr' ) );
+				}
+			} else {
+				if ( delay > 1 ) {
+					el_obj.style.animationDelay = delay + 'ms';
+				}
+				if ( duration != 1000 ) {
+					el_obj.style.animationDuration = duration + 'ms';
+				}				
 			}
 
 			/*if ( $el.find( '.porto-lazyload:not(.lazy-load-loaded)' ).length ) {
@@ -1032,493 +1043,6 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 
 } ).apply( this, [window.theme, jQuery] );
 
-// Post Ajax on Modal
-( function( theme, $ ) {
-	'use strict';
-
-	theme = theme || {};
-
-	var $rev_sliders;
-
-	$.extend( theme, {
-
-		PostAjaxModal: {
-
-			defaults: {
-				elements: '.page-portfolios'
-			},
-
-			initialize: function( $elements, post_type ) {
-				this.$elements = ( $elements || $( this.defaults.elements ) );
-				if ( typeof post_type == 'undefined' ) {
-					post_type = 'portfolio';
-				}
-
-				this.build( post_type );
-
-				return this;
-			},
-
-			build: function( post_type ) {
-				var parentobj = this,
-					postAjaxOnModal = {
-
-						$wrapper: null,
-						modals: [],
-						currentModal: 0,
-						total: 0,
-						p_type: 'portfolio',
-
-						build: function( $this, p_type ) {
-							var self = this;
-							self.$wrapper = $this;
-							if ( !self.$wrapper ) {
-								return;
-							}
-							self.modals = [];
-							self.total = 0;
-							self.p_type = p_type;
-
-							$this.find( 'a[data-ajax-on-modal]' ).each( function() {
-								self.add( $( this ) );
-							} );
-
-							$this.off( 'mousedown', 'a[data-ajax-on-modal]' ).on( 'mousedown', 'a[data-ajax-on-modal]', function( ev ) {
-								if ( ev.which == 2 ) {
-									ev.preventDefault();
-									return false;
-								}
-							} );
-						},
-
-						add: function( $el ) {
-
-							var self = this,
-								href = $el.attr( 'href' ),
-								index = self.total;
-
-							self.modals.push( { src: href } );
-							self.total++;
-
-							$el.off( 'click' ).on( 'click', function( e ) {
-								e.preventDefault();
-								self.show( index );
-								return false;
-							} );
-
-						},
-
-						next: function() {
-							var self = this;
-							if ( self.currentModal + 1 < self.total ) {
-								self.show( self.currentModal + 1 );
-							} else {
-								self.show( 0 );
-							}
-						},
-
-						prev: function() {
-							var self = this;
-
-							if ( ( self.currentModal - 1 ) >= 0 ) {
-								self.show( self.currentModal - 1 );
-							} else {
-								self.show( self.total - 1 );
-							}
-						},
-
-						show: function( i ) {
-							var self = this;
-
-							self.currentModal = i;
-
-							if ( i < 0 || i > ( self.total - 1 ) ) {
-								return false;
-							}
-
-							$.magnificPopup.close();
-							$.magnificPopup.open( $.extend( true, {}, theme.mfpConfig, {
-								type: 'ajax',
-								items: self.modals,
-								gallery: {
-									enabled: true
-								},
-								ajax: {
-									settings: {
-										type: 'post',
-										data: {
-											ajax_action: self.p_type + '_ajax_modal'
-										}
-									}
-								},
-								mainClass: self.p_type + '-ajax-modal',
-								fixedContentPos: false,
-								callbacks: {
-									parseAjax: function( mfpResponse ) {
-										var $response = $( mfpResponse.data ),
-											$post = $response.find( '#content article.' + self.p_type ),
-											$vc_css = $response.filter( 'style[data-type]:not("")' ),
-											vc_css = '';
-
-										$vc_css.each( function() {
-											vc_css += $( this ).text();
-										} );
-
-										if ( $( '#' + self.p_type + 'AjaxCSS' ).get( 0 ) ) {
-											$( '#' + self.p_type + 'AjaxCSS' ).text( vc_css );
-										} else {
-											$( '<style id="' + self.p_type + 'AjaxCSS">' + vc_css + '</style>' ).appendTo( "head" )
-										}
-
-										$post.find( '.' + self.p_type + '-nav-all' ).html( '<a href="#" data-ajax-' + self.p_type + '-close data-bs-tooltip data-original-title="' + js_porto_vars.popup_close + '" data-bs-placement="bottom"><i class="fas fa-th"></i></a>' );
-										$post.find( '.' + self.p_type + '-nav' ).html( '<a href="#" data-ajax-' + self.p_type + '-prev class="' + self.p_type + '-nav-prev" data-bs-tooltip data-original-title="' + js_porto_vars.popup_prev + '" data-bs-placement="bottom"><i class="fa"></i></a><a href="#" data-toggle="tooltip" data-ajax-' + self.p_type + '-next class="' + self.p_type + '-nav-next" data-bs-tooltip data-original-title="' + js_porto_vars.popup_next + '" data-bs-placement="bottom"><i class="fa"></i></a>' );
-										$post.find( '.elementor-invisible' ).removeClass( 'elementor-invisible' );
-										if ( $post.length == 0 ) {
-											$post = $response.find( '.main-content>.porto-block' );
-										}
-										mfpResponse.data = '<div class="ajax-container">' + $post.html() + '</div>';
-									},
-									ajaxContentAdded: function() {
-										// Wrapper
-										var $wrapper = $( '.' + self.p_type + '-ajax-modal' );
-
-										// Close
-										$wrapper.find( 'a[data-ajax-' + self.p_type + '-close]' ).on( 'click', function( e ) {
-											e.preventDefault();
-											$.magnificPopup.close();
-											return false;
-										} );
-
-										$rev_sliders = $wrapper.find( '.rev_slider, rs-module' );
-
-										// Remove Next and Close
-										if ( self.modals.length <= 1 ) {
-											$wrapper.find( 'a[data-ajax-' + self.p_type + '-prev], a[data-ajax-' + self.p_type + '-next]' ).remove();
-										} else {
-											// Prev
-											$wrapper.find( 'a[data-ajax-' + self.p_type + '-prev]' ).on( 'click', function( e ) {
-												e.preventDefault();
-												if ( $rev_sliders && $rev_sliders.get( 0 ) ) {
-													try { $rev_sliders.revkill(); } catch ( err ) { }
-												}
-												$wrapper.find( '.mfp-arrow-left' ).trigger( 'click' );
-												return false;
-											} );
-											// Next
-											$wrapper.find( 'a[data-ajax-' + self.p_type + '-next]' ).on( 'click', function( e ) {
-												e.preventDefault();
-												if ( $rev_sliders && $rev_sliders.get( 0 ) ) {
-													try { $rev_sliders.revkill(); } catch ( err ) { }
-												}
-												$wrapper.find( '.mfp-arrow-right' ).trigger( 'click' );
-												return false;
-											} );
-										}
-										if ( 'portfolio' == self.p_type ) {
-											$( window ).trigger( 'resize' );
-										}
-										porto_init();
-										theme.refreshVCContent( $wrapper );
-										setTimeout( function() {
-											var videos = $wrapper.find( 'video' );
-											if ( videos.get( 0 ) ) {
-												videos.each( function() {
-													$( this )[0].play();
-													$( this ).parent().parent().parent().find( '.video-controls' ).attr( 'data-action', 'play' );
-													$( this ).parent().parent().parent().find( '.video-controls' ).html( '<i class="ult-vid-cntrlpause"></i>' );
-												} );
-											}
-										}, 600 );
-										$wrapper.off( 'scroll' ).on( 'scroll', function() {
-											$.fn.appear.run();
-										} );
-									},
-									change: function() {
-										$( '.mfp-wrap .ajax-container' ).trigger( 'click' );
-									},
-									beforeClose: function() {
-										if ( $rev_sliders && $rev_sliders.get( 0 ) ) {
-											try { $rev_sliders.revkill(); } catch ( err ) { }
-										}
-										// Wrapper
-										var $wrapper = $( '.' + self.p_type + '-ajax-modal' );
-										$wrapper.off( 'scroll' );
-									}
-								}
-							} ), i );
-						}
-					};
-
-				parentobj.$elements.each( function() {
-
-					var $this = $( this );
-
-					if ( !$this.find( 'a[data-ajax-on-modal]' ).get( 0 ) ) {
-						return;
-					}
-					if ( $this.data( post_type + 'AjaxOnModal' ) ) {
-						return;
-					}
-
-					postAjaxOnModal.build( $this, post_type );
-
-					$this.data( post_type + 'AjaxOnModal', postAjaxOnModal );
-				} );
-
-				return parentobj;
-			}
-		}
-
-	} );
-
-	// Key Press
-	$( document.documentElement ).on( 'keydown', function( e ) {
-		try {
-			if ( e.keyCode == 37 || e.keyCode == 39 ) {
-				if ( $rev_sliders && $rev_sliders.get( 0 ) ) {
-					$rev_sliders.revkill();
-				}
-			}
-		} catch ( err ) { }
-	} );
-
-} ).apply( this, [window.theme, jQuery] );
-
-// Portfolio Ajax on Page
-( function( theme, $ ) {
-	'use strict';
-
-	theme = theme || {};
-
-	var activePortfolioAjaxOnPage;
-
-	$.extend( theme, {
-
-		PortfolioAjaxPage: {
-
-			defaults: {
-				elements: '.page-portfolios'
-			},
-
-			initialize: function( $elements ) {
-				this.$elements = ( $elements || $( this.defaults.elements ) );
-
-				this.build();
-
-				return this;
-			},
-
-			build: function() {
-				var self = this;
-
-				self.$elements.each( function() {
-
-					var $this = $( this );
-
-					if ( !$this.find( '#portfolioAjaxBox' ).get( 0 ) ) {
-						return;
-					}
-					if ( $this.data( 'portfolioAjaxOnPage' ) ) {
-						return;
-					}
-
-					var $container = $( this ),
-						portfolioAjaxOnPage = {
-
-							$wrapper: $container,
-							pages: [],
-							currentPage: 0,
-							total: 0,
-							$ajaxBox: $this.find( '#portfolioAjaxBox' ),
-							$ajaxBoxContent: $this.find( '#portfolioAjaxBoxContent' ),
-
-							build: function() {
-								var self = this;
-
-								self.pages = [];
-								self.total = 0;
-
-								$this.find( 'a[data-ajax-on-page]' ).each( function() {
-									self.add( $( this ) );
-								} );
-
-								$this.off( 'mousedown', 'a[data-ajax-on-page]' ).on( 'mousedown', 'a[data-ajax-on-page]', function( ev ) {
-									if ( ev.which == 2 ) {
-										ev.preventDefault();
-										return false;
-									}
-								} );
-							},
-
-							add: function( $el ) {
-
-								var self = this,
-									href = $el.attr( 'href' );
-
-								self.pages.push( href );
-								self.total++;
-
-								$el.off( 'click' ).on( 'click', function( e ) {
-									e.preventDefault();
-									/* D3-Start */
-									var _class = e.target.className
-									if ( _class == 'owl-next' ) {
-										return false;
-									} else if ( _class == 'owl-prev' ) {
-										return false;
-									} else {
-										self.show( self.pages.indexOf( href ) );
-									}
-									/* End-D3 */
-									return false;
-								} );
-
-							},
-
-							events: function() {
-								var self = this;
-
-								// Close
-								$this.off( 'click', 'a[data-ajax-portfolio-close]' ).on( 'click', 'a[data-ajax-portfolio-close]', function( e ) {
-									e.preventDefault();
-									self.close();
-									return false;
-								} );
-
-								if ( self.total <= 1 ) {
-									$( 'a[data-ajax-portfolio-prev], a[data-ajax-portfolio-next]' ).remove();
-								} else {
-									// Prev
-									$this.off( 'click', 'a[data-ajax-portfolio-prev]' ).on( 'click', 'a[data-ajax-portfolio-prev]', function( e ) {
-										e.preventDefault();
-										self.prev();
-										return false;
-									} );
-									// Next
-									$this.off( 'click', 'a[data-ajax-portfolio-next]' ).on( 'click', 'a[data-ajax-portfolio-next]', function( e ) {
-										e.preventDefault();
-										self.next();
-										return false;
-									} );
-								}
-							},
-
-							close: function() {
-								var self = this;
-
-								if ( self.$ajaxBoxContent.find( '.rev_slider, rs-module' ).get( 0 ) ) {
-									try { self.$ajaxBoxContent.find( '.rev_slider, rs-module' ).revkill(); } catch ( err ) { }
-								}
-								self.$ajaxBoxContent.empty();
-								self.$ajaxBox.removeClass( 'ajax-box-init' ).removeClass( 'ajax-box-loading' );
-							},
-
-							next: function() {
-								var self = this;
-								if ( self.currentPage + 1 < self.total ) {
-									self.show( self.currentPage + 1 );
-								} else {
-									self.show( 0 );
-								}
-							},
-
-							prev: function() {
-								var self = this;
-
-								if ( ( self.currentPage - 1 ) >= 0 ) {
-									self.show( self.currentPage - 1 );
-								} else {
-									self.show( self.total - 1 );
-								}
-							},
-
-							show: function( i ) {
-								var self = this;
-
-								activePortfolioAjaxOnPage = null;
-
-								if ( self.$ajaxBoxContent.find( '.rev_slider, rs-module' ).get( 0 ) ) {
-									try { self.$ajaxBoxContent.find( '.rev_slider, rs-module' ).revkill(); } catch ( err ) { }
-								}
-								self.$ajaxBoxContent.empty();
-								self.$ajaxBox.removeClass( 'ajax-box-init' ).addClass( 'ajax-box-loading' );
-
-								theme.scrolltoContainer( self.$ajaxBox );
-
-								self.currentPage = i;
-
-								if ( i < 0 || i > ( self.total - 1 ) ) {
-									self.close();
-									return false;
-								}
-
-								// Ajax
-								$.ajax( {
-									url: self.pages[i],
-									complete: function( data ) {
-										var $response = $( data.responseText ),
-											$portfolio = $response.find( '#content article.portfolio' ),
-											$vc_css = $response.filter( 'style[data-type]:not("")' ),
-											vc_css = '';
-
-										if ( $( '#portfolioAjaxCSS' ).get( 0 ) ) {
-											$( '#portfolioAjaxCSS' ).text( vc_css );
-										} else {
-											$( '<style id="portfolioAjaxCSS">' + vc_css + '</style>' ).appendTo( "head" )
-										}
-
-										$portfolio.find( '.portfolio-nav-all' ).html( '<a href="#" data-ajax-portfolio-close data-bs-tooltip data-original-title="' + js_porto_vars.popup_close + '"><i class="fas fa-th"></i></a>' );
-										$portfolio.find( '.portfolio-nav' ).html( '<a href="#" data-ajax-portfolio-prev class="portfolio-nav-prev" data-bs-tooltip data-original-title="' + js_porto_vars.popup_prev + '"><i class="fa"></i></a><a href="#" data-toggle="tooltip" data-ajax-portfolio-next class="portfolio-nav-next" data-bs-tooltip data-original-title="' + js_porto_vars.popup_next + '"><i class="fa"></i></a>' );
-										self.$ajaxBoxContent.html( $portfolio.html() ).append( '<div class="row"><div class="col-lg-12"><hr class="tall"></div></div>' );
-										self.$ajaxBox.removeClass( 'ajax-box-loading' );
-										$( window ).trigger( 'resize' );
-										porto_init();
-										theme.refreshVCContent( self.$ajaxBoxContent );
-										self.events();
-										activePortfolioAjaxOnPage = self;
-
-										self.$ajaxBoxContent.find( '.lightbox:not(.manual)' ).each( function() {
-											var $this = $( this ),
-												opts;
-
-											var pluginOptions = $this.data( 'plugin-options' );
-											if ( pluginOptions )
-												opts = pluginOptions;
-
-											$this.themeLightbox( opts );
-										} );
-									}
-								} );
-							}
-						};
-
-					portfolioAjaxOnPage.build();
-
-					$this.data( 'portfolioAjaxOnPage', portfolioAjaxOnPage );
-				} );
-
-				return self;
-			}
-		}
-
-	} );
-
-	// Key Press
-	$( document.documentElement ).on( 'keyup', function( e ) {
-		try {
-			if ( !activePortfolioAjaxOnPage ) return;
-			// Next
-			if ( e.keyCode == 39 ) {
-				activePortfolioAjaxOnPage.next();
-			}
-			// Prev
-			if ( e.keyCode == 37 ) {
-				activePortfolioAjaxOnPage.prev();
-			}
-		} catch ( err ) { }
-	} );
-
-} ).apply( this, [window.theme, jQuery] );
 
 // Post Filter
 ( function( theme, $ ) {
@@ -1808,7 +1332,7 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 						if ( $posts_wrap.hasClass( 'owl-loaded' ) ) {
 							$posts_wrap.removeClass( 'owl-loaded' );
 						}
-
+						$posts.children().addClass( 'fadeInUp animated' );
 						$posts_wrap.append( $posts );
 						theme.refreshVCContent( $posts );
 
@@ -2081,184 +1605,6 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 			}
 		}
 
-	} );
-
-} ).apply( this, [window.theme, jQuery] );
-
-// Member Ajax on Page
-( function( theme, $ ) {
-	'use strict';
-
-	theme = theme || {};
-
-	var activeMemberAjaxOnPage;
-
-	$.extend( theme, {
-
-		MemberAjaxPage: {
-
-			defaults: {
-				elements: '.page-members'
-			},
-
-			initialize: function( $elements ) {
-				this.$elements = ( $elements || $( this.defaults.elements ) );
-
-				this.build();
-
-				return this;
-			},
-
-			build: function() {
-				var self = this;
-
-				self.$elements.each( function() {
-
-					var $this = $( this );
-
-					if ( !$this.find( '#memberAjaxBox' ).get( 0 ) )
-						return;
-
-					var $container = $( this ),
-						memberAjaxOnPage = {
-
-							$wrapper: $container,
-							pages: [],
-							currentPage: 0,
-							total: 0,
-							$ajaxBox: $this.find( '#memberAjaxBox' ),
-							$ajaxBoxContent: $this.find( '#memberAjaxBoxContent' ),
-
-							build: function() {
-								var self = this;
-
-								self.pages = [];
-								self.total = 0;
-
-								$this.find( 'a[data-ajax-on-page]' ).each( function() {
-									self.add( $( this ) );
-								} );
-
-								$this.off( 'mousedown', 'a[data-ajax-on-page]' ).on( 'mousedown', 'a[data-ajax-on-page]', function( ev ) {
-									if ( ev.which == 2 ) {
-										ev.preventDefault();
-										return false;
-									}
-								} );
-							},
-
-							add: function( $el ) {
-
-								var self = this,
-									href = $el.attr( 'href' );
-
-								self.pages.push( href );
-								self.total++;
-
-								$el.off( 'click' ).on( 'click', function( e ) {
-									e.preventDefault();
-									self.show( self.pages.indexOf( href ) );
-									return false;
-								} );
-
-							},
-
-							next: function() {
-								var self = this;
-								if ( self.currentPage + 1 < self.total ) {
-									self.show( self.currentPage + 1 );
-								} else {
-									self.show( 0 );
-								}
-							},
-
-							prev: function() {
-								var self = this;
-
-								if ( ( self.currentPage - 1 ) >= 0 ) {
-									self.show( self.currentPage - 1 );
-								} else {
-									self.show( self.total - 1 );
-								}
-							},
-
-							show: function( i ) {
-								var self = this;
-
-								activeMemberAjaxOnPage = null;
-
-								if ( self.$ajaxBoxContent.find( '.rev_slider, rs-module' ).get( 0 ) ) {
-									try { self.$ajaxBoxContent.find( '.rev_slider, rs-module' ).revkill(); } catch ( err ) { }
-								}
-								self.$ajaxBoxContent.empty();
-								self.$ajaxBox.removeClass( 'ajax-box-init' ).addClass( 'ajax-box-loading' );
-
-								theme.scrolltoContainer( self.$ajaxBox );
-
-								self.currentPage = i;
-
-								if ( i < 0 || i > ( self.total - 1 ) ) {
-									self.close();
-									return false;
-								}
-
-								// Ajax
-								$.ajax( {
-									url: self.pages[i],
-									complete: function( data ) {
-										var $response = $( data.responseText ),
-											$member = $response.find( '#content article.member' ),
-											$vc_css = $response.filter( 'style[data-type]:not("")' ),
-											vc_css = '';
-
-										$vc_css.each( function() {
-											vc_css += $( this ).text();
-										} );
-
-										if ( $( '#memberAjaxCSS' ).get( 0 ) ) {
-											$( '#memberAjaxCSS' ).text( vc_css );
-										} else {
-											$( '<style id="memberAjaxCSS">' + vc_css + '</style>' ).appendTo( "head" )
-										}
-
-										var $append = self.$ajaxBox.find( '.ajax-content-append' ), html = '';
-										if ( $append.length ) html = $append.html();
-										self.$ajaxBoxContent.html( $member.html() ).prepend( '<div class="row"><div class="col-lg-12"><hr class="tall m-t-none"></div></div>' ).append( '<div class="row"><div class="col-md-12"><hr class="m-t-md"></div></div>' + html );
-
-										self.$ajaxBox.removeClass( 'ajax-box-loading' );
-										$( window ).trigger( 'resize' );
-										porto_init();
-										theme.refreshVCContent( self.$ajaxBoxContent );
-										activeMemberAjaxOnPage = self;
-									}
-								} );
-							}
-						};
-
-					memberAjaxOnPage.build();
-
-					$this.data( 'memberAjaxOnPage', memberAjaxOnPage );
-				} );
-
-				return self;
-			}
-		}
-
-	} );
-
-	// Key Press
-	$( document.documentElement ).on( 'keyup', function( e ) {
-		try {
-			if ( !activeMemberAjaxOnPage ) return;
-			// Next
-			if ( e.keyCode == 39 ) {
-				activeMemberAjaxOnPage.next();
-			}
-			// Prev
-			if ( e.keyCode == 37 ) {
-				activeMemberAjaxOnPage.prev();
-			}
-		} catch ( err ) { }
 	} );
 
 } ).apply( this, [window.theme, jQuery] );
@@ -2881,17 +2227,17 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 ( function( theme, $ ) {
 	theme = theme || {};
 
-	var instanceName = '__textimagefloating';
+	var instanceName = '__textelfloating';
 
-	var PluginTImageFloaing = function( $el, opts ) {
+	var PluginTElFloaing = function( $el, opts ) {
 		return this.initialize( $el, opts );
 	};
 
-	PluginTImageFloaing.defaults = {
+	PluginTElFloaing.defaults = {
 		offset: 0,
 	};
 
-	PluginTImageFloaing.prototype = {
+	PluginTElFloaing.prototype = {
 		initialize: function( $el, opts ) {
 			if ( $el.data( instanceName ) ) {
 				return this;
@@ -2905,7 +2251,7 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 			return this;
 		},
 		setData: function( opts ) {
-			this.options = $.extend( true, {}, PluginTImageFloaing.defaults, opts );
+			this.options = $.extend( true, {}, PluginTElFloaing.defaults, opts );
 			this.$el.data( instanceName, this );
 			return this;
 		},
@@ -2918,20 +2264,35 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 		mouseEnter: function( e ) {
 
 			$( '.thumb-info-floating-element-clone' ).remove();
-
-			$( '.thumb-info-floating-element', this.$el ).clone().addClass( 'thumb-info-floating-element-clone' ).removeClass( 'd-none' ).appendTo( document.body );
-
-			$img = $( '.thumb-info-floating-element-clone' ).find( 'img.porto-lazyload' );
-			if ( $img.length && $img.data( 'oi' ) ) {
-				$img.attr( 'src', $img.data( 'oi' ) );
+			var $thumbFloatingEl = $( '.thumb-info-floating-element', this.$el );
+			if ( $thumbFloatingEl.length ) {
+				this.$elClone = $thumbFloatingEl.clone().addClass( 'thumb-info-floating-element-clone' ).removeClass( 'd-none' ).appendTo( document.body );
+			} else if ( this.$el.hasClass( 'tb-hover-content' ) && this.$el.children().length > 0 ) {
+				if ( this.$el.hasClass( 'with-link' ) ) {
+					$thumbFloatingEl = this.$el.children( ':nth-child(2)' );
+				} else {
+					$thumbFloatingEl = this.$el.children( ':first' );
+				}
+				this.$elClone = $thumbFloatingEl.clone().addClass( 'thumb-tb-floating-el' ).appendTo( document.body ).wrap( '<div class="thumb-info-floating-element-clone page-wrapper"></div>' );
+			} else {
+				return;
 			}
+
+			// Image LazyLoad
+			$imgs = $( '.thumb-info-floating-element-clone' ).find( 'img.porto-lazyload' );
+			$imgs.each( function( index, img ) {
+				var $img = $( img );
+				if ( $img.length && $img.data( 'oi' ) ) {
+					$img.attr( 'src', $img.data( 'oi' ) ).addClass( 'lazy-load-loaded' );
+				}
+			} );
 
 			$( '.thumb-info-floating-element-clone' ).css( {
 				left: e.clientX + parseInt( this.options.offset ),
 				top: e.clientY + parseInt( this.options.offset )
 			} ).fadeIn( 300 );
 
-			gsap.to( '.thumb-info-floating-element-clone', 0.5, {
+			gsap.to( '.thumb-info-floating-element-clone', 1, {
 				css: {
 					scaleX: 1,
 					scaleY: 1
@@ -2942,24 +2303,28 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 			$( document.body ).on( 'mousemove', this.mouseMoveFunc );
 		},
 		mouseMove: function( e ) {
-			gsap.to( '.thumb-info-floating-element-clone', 0.5, {
-				css: {
-					left: e.clientX + parseInt( this.options.offset ),
-					top: e.clientY + parseInt( this.options.offset )
-				}
-			} );
+			if ( this.$elClone.length && this.$elClone.closest( 'html' ).length ) {
+				gsap.to( '.thumb-info-floating-element-clone', 0.5, {
+					css: {
+						left: e.clientX + parseInt( this.options.offset ),
+						top: e.clientY + parseInt( this.options.offset )
+					}
+				} );
+			}
 		},
 		mouseOut: function( e ) {
-			gsap.to( '.thumb-info-floating-element-clone', 0.5, {
-				css: {
-					scaleX: 0.5,
-					scaleY: 0.5,
-					opacity: 0
-				}
-			} );
+			if ( this.$elClone.length && this.$elClone.closest( 'html' ).length ) {
+				gsap.to( '.thumb-info-floating-element-clone', 0.5, {
+					css: {
+						scaleX: 0.5,
+						scaleY: 0.5,
+						opacity: 0
+					}
+				} );
+			}
 		},
 		clearData: function( e ) {
-			$( '.thumb-info-floating-element-clone' ).remove();
+			this.$elClone.remove();
 			this.$el.off( 'mouseenter', this.mouseEnterFunc );
 			this.$el.off( 'mouseout', this.mouseOutFunc );
 			$( document.body ).off( 'mousemove', this.mouseMoveFunc );
@@ -2967,7 +2332,7 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 	}
 
 	$.extend( theme, {
-		PluginTImageFloaing: PluginTImageFloaing
+		PluginTElFloaing: PluginTElFloaing
 	} );
 	$.fn.themePluginTIFloating = function() {
 		if ( typeof gsap !== 'undefined' ) {
@@ -2976,7 +2341,7 @@ if ( typeof jQuery.fn.owlCarousel == 'function' ) {
 				if ( $this.data( instanceName ) ) {
 					return $this.data( instanceName );
 				} else {
-					return new PluginTImageFloaing( $this, $this.data( 'plugin-tfloating' ) );
+					return new PluginTElFloaing( $this, $this.data( 'plugin-tfloating' ) );
 				}
 			} );
 		} else {
@@ -3382,11 +2747,14 @@ jQuery( document ).ready( function( $ ) {
 				type: type,
 				mainClass: extraClass
 			};
+			var $popupModal = $this;
 			if ( $this.hasClass( 'porto-onload' ) ) {
 				args['callbacks'] = {
 					'beforeClose': function() {
 						if ( $( '.mfp-wrap .porto-disable-modal-onload' ).length && ( $( '.mfp-wrap .porto-disable-modal-onload' ).is( ':checked' ) || $( '.mfp-wrap .porto-disable-modal-onload input[type="checkbox"]' ).is( ':checked' ) ) ) {
 							$.cookie( 'porto_modal_disable_onload', 'true', { expires: 7 } );
+						} else if ( 'undefined' !== typeof $popupModal.data( 'expired' ) && 'undefined' !== typeof $popupModal.data( 'popup-id' ) ) {
+							$.cookie( 'porto_modal_disable_period_onload_' + $popupModal.data( 'popup-id' ), $popupModal.data('expired'), { expires: $popupModal.data('expired') } );
 						}
 					}
 				};
@@ -3408,7 +2776,9 @@ jQuery( document ).ready( function( $ ) {
 		$wrap.find( '.lightbox:not(.manual)' ).each( function() {
 			var $this = $( this ),
 				opts;
-
+			if ( $this.find( '>.lb-dataContainer' ).length ) {
+				return;
+			}
 			var pluginOptions = $this.data( 'lightbox-options' );
 			if ( pluginOptions ) {
 				opts = pluginOptions;
@@ -3562,26 +2932,6 @@ jQuery( document ).ready( function( $ ) {
 		}
 	} );
 
-	// Post Ajax Modal
-	if ( typeof theme.PostAjaxModal !== 'undefined' ) {
-		// Portfolio
-		if ( $( '.page-portfolios' ).length ) {
-			$( '.page-portfolios' ).each( function() {
-				theme.PostAjaxModal.initialize( $( this ) );
-			} );
-		}
-		// Member
-		if ( $( '.page-members' ).length ) {
-			$( '.page-members' ).each( function() {
-				theme.PostAjaxModal.initialize( $( this ), 'member' );
-			} );
-		}
-	}
-
-	// Portfolio Ajax on Page
-	if ( typeof theme.PortfolioAjaxPage !== 'undefined' ) {
-		theme.PortfolioAjaxPage.initialize();
-	}
 
 	// Post Filter
 	if ( typeof theme.PostFilter !== 'undefined' ) {
@@ -3633,10 +2983,6 @@ jQuery( document ).ready( function( $ ) {
 
 	} );
 
-	// Member Ajax on Page
-	if ( typeof theme.MemberAjaxPage !== 'undefined' ) {
-		theme.MemberAjaxPage.initialize();
-	}
 
 	// Filter Zooms
 	if ( typeof theme.FilterZoom !== 'undefined' ) {
@@ -3883,117 +3229,11 @@ jQuery( document ).ready( function( $ ) {
 			}
 		} );
 	}
-
-	// init Youtube video api
-	var $youtube_videos = $( '.porto-video-social.video-youtube' );
-	if ( $youtube_videos.length ) {
-		window.onYouTubeIframeAPIReady = function() {
-			$youtube_videos.each( function() {
-				var $this = $( this ),
-					$wrap = $this.parent( '.video-wrapper' ),
-					item_id = $this.attr( 'id' ),
-					youtube_id = $this.data( 'video' ),
-					is_loop = $this.data( 'loop' ),
-					enable_audio = $this.data( 'audio' ),
-					autoplay = 1,
-					controls = 0;
-				if ( '0' === $this.data( 'autoplay' ) ) {
-					autoplay = 0;
-				}
-				if ( $this.data( 'controls' ) ) {
-					controls = parseInt( $this.data( 'controls' ) );
-				}
-				new YT.Player( item_id, {
-					width: '100%',
-					//height: '100%',
-					videoId: youtube_id,
-					playerVars: {
-						'autoplay': autoplay,
-						'controls': controls,
-						'modestbranding': 1,
-						'rel': 0,
-						'playsinline': 1,
-						'showinfo': 0,
-						'loop': is_loop
-					},
-					events: {
-						onReady: function( t ) {
-							if ( $wrap.length ) {
-								$wrap.themeFitVideo();
-							}
-							if ( 0 === parseInt( enable_audio ) && t && t.target && t.target.mute ) {
-								t.target.mute();
-							}
-						}
-					}
-				} );
-			} );
-		};
-
-		if ( $( 'script[src*="www.youtube.com/iframe_api"]' ).length ) {
-			setTimeout( onYouTubeIframeAPIReady, 350 );
-		} else {
-			var tag = document.createElement( 'script' );
-			tag.src = "//www.youtube.com/iframe_api";
-			var firstScriptTag = document.getElementsByTagName( 'script' )[0];
-			firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
+	
+	// Hide Tooltip before adding to wishlist
+	$( document ).on( 'yith_wcwl_add_to_wishlist_data', function( e, $el ) {
+		if ( $el.length ) {
+			$el.tooltip( 'hide' );
 		}
-	}
-
-	// init Vimeo video api
-	var $vimeo_videos = $( '.porto-video-social.video-vimeo' );
-	if ( $vimeo_videos.length ) {
-		var portoVimeoInit = function() {
-			$vimeo_videos.each( function() {
-				var $this = $( this ),
-					$wrap = $this.parent( '.fit-video' ),
-					item_id = $this.attr( 'id' ),
-					video_id = $this.data( 'video' ),
-					is_loop = $this.data( 'loop' ),
-					enable_audio = $this.data( 'audio' ),
-					autoplay = true;
-				if ( '0' === $this.data( 'autoplay' ) ) {
-					autoplay = false;
-				}
-				var player = new Vimeo.Player( item_id, {
-					id: video_id,
-					loop: 1 === parseInt( is_loop ) ? true : false,
-					autoplay: autoplay,
-					transparent: false,
-					background: true,
-					muted: 0 === parseInt( enable_audio ) ? true : false,
-					events: {
-						onReady: function( t ) {
-							if ( $wrap.length ) {
-								$wrap.themeFitVideo();
-							}
-							if ( 0 === parseInt( enable_audio ) && t && t.target && t.target.mute ) {
-								t.target.mute();
-							}
-						}
-					}
-				} );
-				if ( 0 === parseInt( enable_audio ) ) {
-					player.setVolume( 0 );
-				}
-				if ( $wrap.length ) {
-					player.ready().then( function() {
-						$wrap.themeFitVideo();
-					} );
-				}
-			} );
-		};
-
-		if ( $( 'script[src="https://player.vimeo.com/api/player.js"]' ).length ) {
-			setTimeout( portoVimeoInit, 350 );
-		} else {
-			var tag = document.createElement( 'script' );
-			tag.addEventListener( 'load', function( event ) {
-				setTimeout( portoVimeoInit, 50 );
-			} );
-			tag.src = "https://player.vimeo.com/api/player.js";
-			var firstScriptTag = document.getElementsByTagName( 'script' )[0];
-			firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
-		}
-	}
+	} );
 } ).apply( this, [window.theme, jQuery] );

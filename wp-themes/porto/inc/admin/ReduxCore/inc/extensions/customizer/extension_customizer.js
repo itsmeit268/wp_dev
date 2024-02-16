@@ -335,8 +335,17 @@
     redux.customizer.init = function() {
         $( 'body' ).addClass( redux_customizer.body_class );
         $( '.accordion-section.redux-section, .accordion-section.redux-panel, .accordion-section-title' ).click(
-            function() {
+            function( e ) {
                 $.redux.initFields();
+                if ( $( e.target ).hasClass( 'accordion-section-title' ) ) {
+                    $( '#customize-theme-controls ul.open' ).find( '.pt-showm-options' ).removeClass( 'show-more' ).closest( 'li.customize-control' ).nextAll().each( function() {
+                        let _this = $( this );
+                        if ( ! ( _this.find( '.pt-always-visible' ).length > 0 || _this.hasClass( 'hide' ) ) ) {
+                            _this.fadeOut();
+                        }
+                    });
+                    $( '#customize-theme-controls ul.open' ).find( '.pt-showm-options span' ).text( wp.i18n.__( 'Show More Options', 'porto' ) );
+                }
             }
         );
 

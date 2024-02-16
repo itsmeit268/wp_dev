@@ -11,8 +11,8 @@ div#main { overflow: hidden; }
 .product-images .img-thumbnail:not(:last-child) { margin-bottom: 4px; }
 .product-images .img-thumbnail .inner { cursor: resize; }
 .product-images .img-thumbnail img { width: 100%; height: auto; }
-.product-images:hover .zoom { opacity: 0; }
-.product-images .img-thumbnail:hover .zoom { opacity: 1; background: none; }
+.product-images:hover .zoom, .product-images:hover .image-galley-viewer { opacity: 0; }
+.product-images .img-thumbnail:hover .zoom, .product-images .img-thumbnail:hover .image-galley-viewer { opacity: 1; background: none; }
 .product-layout-sticky_info .product-summary-wrap .variations .filter-item-list { margin-top: 0; }
 .product-layout-sticky_info .filter-item-list .filter-color { --porto-sw-size: 28px; }
 .product-layout-sticky_info .woocommerce-widget-layered-nav-list a:not(.filter-color),

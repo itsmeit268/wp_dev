@@ -37,6 +37,7 @@ if ( ! function_exists( 'porto_action_body_class' ) ) :
 		$loading_overlay = porto_get_meta_value( 'loading_overlay' );
 		if ( 'no' !== $loading_overlay && ( 'yes' === $loading_overlay || ( 'yes' !== $loading_overlay && $porto_settings['show-loading-overlay'] ) ) ) {
 			$body_class .= ' loading-overlay-showing';
+			wp_enqueue_script( 'porto-loading-overlay' );
 		}
 		$classes[] = esc_attr( $body_class );
 		return $classes;

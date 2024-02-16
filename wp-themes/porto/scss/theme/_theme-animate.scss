@@ -793,3 +793,80 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	50% { transform: rotate(180deg); }
 	100% { transform: rotate(360deg); }
 }
+// Reveal with Color
+[data-appear-animation^=revealDir],
+[class*="revealDir"] {
+	position: relative;
+	overflow: hidden !important;
+	animation-duration: 500ms !important;
+	animation-delay: 0ms;
+	animation-fill-mode: both;
+	// opacity: 0;
+}
+[data-appear-animation^=revealDir].appear-animation-visible,
+[class*="revealDir"].animated {
+	// animation-name: showBlockSlide;
+}
+[class*="revealDir"]:after {
+	content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var( --porto-reveal-clr, var( --porto-primary-color ) );
+    position: absolute;
+    z-index: 1000;
+    animation-duration: var( --porto-reveal-animationDuration, 1s );
+	animation-delay: var( --porto-reveal-animationDelay, 0s );
+    animation-fill-mode: both;
+}
+[data-appear-animation^=revealDir].revealDirTop:after,
+.revealDirTop.animated:after {
+    animation-name: blockSlideToTop;
+}
+[data-appear-animation^=revealDir].revealDirLeft:after,
+.revealDirLeft.animated:after {
+    animation-name: blockSlideToLeft;
+}
+[data-appear-animation^=revealDir].revealDirRight:after,
+.revealDirRight.animated:after {
+    animation-name: blockSlideToRight;
+}
+[data-appear-animation^=revealDir].revealDirDown:after,
+.revealDirDown.animated:after {
+    animation-name: blockSlideToDown;
+}
+/* For Elementor */
+.elementor-edit-area [class*="revealDir"].animated {
+	animation-fill-mode: both !important;
+}
+[class*="revealDir"].animated:after {
+    animation-duration: 1.25s
+}
+[class*="revealDir"].animated.animated-slow:after {
+    animation-duration: 2s
+}
+[class*="revealDir"].animated.animated-fast:after {
+    animation-duration: 0.75s
+}
+/* Block Slide */
+@keyframes blockSlideToRight {
+	0% { transform: translate(-110%, 0); }
+	100% { transform: translate(110%, 0); }
+}
+@keyframes blockSlideToLeft {
+	0% { transform: translate(110%, 0); }
+	100% { transform: translate(-110%, 0); }
+}
+@keyframes blockSlideToTop {
+	0% { transform: translate(0, 110%); }
+	100% { transform: translate(0, -110%); }
+}
+@keyframes blockSlideToDown {
+	0% { transform: translate(0, -110%); }
+	100% { transform: translate(0, 110%); }
+}
+@keyframes showBlockSlide {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}

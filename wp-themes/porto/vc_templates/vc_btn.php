@@ -280,7 +280,7 @@ if ( ! ( $contextual || 'custom' !== $skin ) ) {
 			$onmouseenter[] = 'this.style.color=\'' . esc_js( $outline_custom_hover_text ) . '\';';
 		}
 		if ( $onmouseenter ) {
-			$attributes[] = 'onmouseenter="' . esc_js( implode( ' ', $onmouseenter ) ) . '"';
+			$attributes[] = 'onmouseenter="' . implode( ' ', $onmouseenter ) . '"';
 		}
 
 		if ( ! $outline_custom_color && ! $outline_custom_hover_background && ! $outline_custom_hover_text ) {
@@ -358,6 +358,9 @@ if ( $animation_type ) {
 	}
 	if ( $animation_duration && 1000 != $animation_duration ) {
 		$attributes[] = ' data-appear-animation-duration="' . esc_attr( $animation_duration ) . '"';
+	}
+	if ( false !== strpos( $animation_type, 'revealDir' ) ) {
+		$attributes[] = ' data-animation-reveal-clr="' . ( ! empty( $animation_reveal_clr ) ? esc_attr( $animation_reveal_clr ) : '' ) . '"';
 	}
 } elseif ( ! empty( $atts ) ) {
 	$floating_option = porto_shortcode_add_floating_options( $atts );

@@ -3,6 +3,16 @@
 if ( ! class_exists( 'Redux_Validation_email_not_empty' ) ) {
 	class Redux_Validation_email_not_empty {
 
+		public $parent;
+
+		public $field;
+
+		public $value;
+
+		public $current;
+
+		public $error;
+
 		/**
 		 * Field Constructor.
 		 * Required - must call the parent constructor, then assign field and value to vars, and obviously call the render field function

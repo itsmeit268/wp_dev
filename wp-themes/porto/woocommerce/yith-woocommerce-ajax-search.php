@@ -19,11 +19,12 @@ if ( $show_cats && wp_is_mobile() ) {
 	$show_cats = ( ! isset( $porto_settings['search-cats-mobile'] ) || $porto_settings['search-cats-mobile'] );
 }
 
+$placeholder_text = get_option( 'yith_wcas_search_input_label', __( 'Search&hellip;', 'woocommerce' ) );
 ?>
 
 <form role="search" method="get" id="yith-ajaxsearchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="yith-ajaxsearchform-container <?php echo esc_attr( $container_class ); ?> searchform<?php echo ! $show_cats ? '' : ' searchform-cats'; ?>">
 	<fieldset>
-		<span class="text"><input name="s" id="yith-s" class="yith-s" type="text" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e( 'Search&hellip;', 'woocommerce' ); ?>" /></span>
+		<span class="text"><input name="s" id="yith-s" class="yith-s" type="text" value="<?php echo get_search_query(); ?>" placeholder="<?php echo esc_attr( $placeholder_text ); ?>" /></span>
 		<?php
 		if ( $show_cats ) {
 			$args             = array(

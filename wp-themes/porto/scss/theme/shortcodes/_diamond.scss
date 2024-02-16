@@ -29,6 +29,21 @@
             transform: rotate(-45deg);
         }
 
+        &:before {
+            @include transition (all .2s);
+            color: #fff;
+            content: "\e091";
+            font-family: "simple-line-icons";
+            font-size: 28px;
+            opacity: 0;
+            position: absolute;
+            #{$left}: 50%;
+            top: 50%;
+            z-index: 1000;
+            transform-origin: 50% 50%;
+            transform: translate3d(-50%, -50%, 0) rotate(45deg) scale(2);
+        }
+
         &:after {
             transition: .2s;
             content: " ";
@@ -49,11 +64,9 @@
                 transform: scale(1);
             }
 
-            .content {
-                &:after {
-                    opacity: 0.8;
-                    transform: scale(1);
-                }
+            &:before {
+                opacity: 1;
+                transform: translate3d(-50%, -50%, 0) rotate(45deg) scale(1);
             }
 
         }
@@ -73,21 +86,6 @@
         vertical-align: middle;
         width: 255px;
         position: relative;
-
-        &:after {
-            @include transition (all .2s);
-            color: #fff;
-            content: "\e091";
-            font-family: "simple-line-icons";
-            font-size: 28px;
-            #{$left}: 26%;
-            margin: -6px -12px;
-            opacity: 0;
-            position: absolute;
-            top: 49%;
-            z-index: 1000;
-            transform: scale(2);
-        }
 
         img {
             margin-#{$left}: -50%;

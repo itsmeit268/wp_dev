@@ -124,7 +124,8 @@ if ( 'default' == $type ) {
 	}
 
 	wp_enqueue_script( 'easypiechart' );
-
+	wp_enqueue_script( 'porto-circular-bar' );
+	
 	global $porto_settings;
 	if ( empty( $barcolor ) ) {
 		$barcolor = $porto_settings['skin-color'];

@@ -31,6 +31,7 @@ if ( ! class_exists( 'ReduxFramework_color_rgba' ) ) {
 	 *
 	 * @since       1.0.0
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework_color_rgba {
 
 		/**

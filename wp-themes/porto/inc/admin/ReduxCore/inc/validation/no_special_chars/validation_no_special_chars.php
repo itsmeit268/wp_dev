@@ -3,6 +3,16 @@
 if ( ! class_exists( 'Redux_Validation_no_special_chars' ) ) {
 	class Redux_Validation_no_special_chars {
 
+		public $parent;
+
+		public $field;
+
+		public $value;
+
+		public $current;
+
+		public $warning;
+
 		/**
 		 * Field Constructor.
 		 * Required - must call the parent constructor, then assign field and value to vars, and obviously call the render field function

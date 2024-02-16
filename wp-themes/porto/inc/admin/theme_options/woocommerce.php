@@ -18,6 +18,56 @@ $this->sections[] = $this->add_customizer_field(
 		'transport'  => 'postMessage',
 		'fields'     => array(
 			array(
+				'id'    => 'desc_info_builder_product',
+				'type'  => 'info',
+				'desc'  => wp_kses( 
+					__( '
+					<span><span style="min-width: 150px;">
+						<b>Product Type</b>
+						<span class="description">You can change the product type, product layout, shop layout.</span>
+					</span>
+					<span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/loop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $type_url . '" target="_blank">Add or Change Product Type</a>
+							A Loop is a layout you can customize to display recurring dynamic content - like listings, posts, portfolios, products, , etc.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/product.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $product_url . '" target="_blank">Add or Change Single Product layout</a>
+							A single product template allows you to easily design the layout and style of WooCommerce single product pages, and apply that template to various conditions that you assign.
+						</span>
+					</span>
+					<span class="flex-row">
+						<img src="' . PORTO_OPTIONS_URI . '/builder/shop.svg' . '" style="margin-right: 10px;" />
+						<span>
+							<a href="' . $shop_url . '" target="_blank">Add or Change Product Archive Layout</a>
+							A products archive template allows you to easily design the layout and style of your WooCommerce shop page or other product archive pages - those pages that show a list of products, which may be filtered by terms such as categories, tags, etc.
+						</span>
+					</span>													
+					</span></span>', 'porto' ), 
+					array( 
+						'b'    => array(),
+						'span' => array(
+							'class' => array(),
+							'style' => array(),
+						),
+						'img'  => array(
+							'src'   => array(),
+							'style' => array(),
+						),
+						'a'    => array(
+							'href'   => array(),
+							'target' => array(),
+						),
+					)
+				),
+				'class' => 'porto-opt-ux-builder',
+			),	
+			array(
 				'title'   => __( 'Product Swatch Mode', 'porto' ),
 				'id'      => 'product_variation_display_mode',
 				'type'    => 'button_set',
@@ -52,14 +102,14 @@ $this->sections[] = $this->add_customizer_field(
 			array(
 				'id'     => 'desc_info_product_login_link',
 				'type'   => 'info',
-				'title'  => __( 'Login link', 'porto' ),
+				'title'  => __( 'Login link on Menu', 'porto' ),
 				'notice' => false,
 			),
 			array(
 				'id'       => 'menu-login-pos',
 				'type'     => 'button_set',
 				'title'    => __( 'Display Login / Register Link', 'porto' ),
-				'subtitle' => __( 'Show link in top navigation or main menu.', 'porto' ),
+				'subtitle' => __( 'Show the log in link, log out link(logout) in Top Navigation or Main Menu.', 'porto' ),
 				'options'  => array(
 					''          => __( 'None', 'porto' ),
 					'top_nav'   => array(
@@ -93,7 +143,8 @@ $this->sections[] = $this->add_customizer_field(
 			array(
 				'id'       => 'menu-show-login-icon',
 				'type'     => 'switch',
-				'title'    => __( 'Show Login/Logout Icon', 'porto' ),
+				'title'    => __( 'Show Login, Logout Icon', 'porto' ),
+				'subtitle' => __( 'Show the icon for login link, logout link.' ),
 				'required' => array( 'menu-login-pos', 'equals', array( 'top_nav', 'main_menu' ) ),
 				'default'  => false,
 				'hint'     => array(
@@ -354,7 +405,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Product Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop shop page easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $shop_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Product Archive</a> & <a href="%2$s" target="_blank">Product Type</a> Builders help you to develop shop page easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $shop_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -363,6 +414,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -384,6 +440,7 @@ if ( $this->legacy_mode ) {
 						),
 					)
 				),
+				'class'   => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'product-archive-layout',
@@ -392,6 +449,7 @@ if ( $this->legacy_mode ) {
 				'subtitle' => __( 'Shop Page Layout', 'porto' ),
 				'options'  => $page_layouts,
 				'default'  => 'left-sidebar',
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'product-archive-sidebar2',
@@ -399,6 +457,7 @@ if ( $this->legacy_mode ) {
 				'title'    => __( 'Select Sidebar 2', 'porto' ),
 				'required' => array( 'product-archive-layout', 'equals', $both_sidebars ),
 				'data'     => 'sidebars',
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'category-ajax',
@@ -411,10 +470,12 @@ if ( $this->legacy_mode ) {
 				),
 				'on'       => __( 'Yes', 'porto' ),
 				'off'      => __( 'No', 'porto' ),
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'product-archive-filter-layout',
 				'type'     => 'image_select',
+				'class'    => 'pt-always-visible',
 				'title'    => __( 'Filter Layout', 'porto' ),
 				'subtitle' => __( 'Products filtering layout in shop pages.', 'porto' ),
 				'desc'     => wp_kses(
@@ -480,13 +541,14 @@ if ( $this->legacy_mode ) {
 			array(
 				'id'        => 'category-item',
 				'type'      => 'text',
-				'title'     => __( 'Products per page', 'porto' ),
-				'subtitle'      => __( 'Comma separated list of product counts.', 'porto' ),
+				'title'     => __( 'Products per page (shop products count)', 'porto' ),
+				'subtitle'  => __( 'Comma separated list of product counts.', 'porto' ),
 				'default'   => '12,24,36',
 				'hint'      => array(
 					'content' => esc_html( '<img src="' . PORTO_HINT_URL . 'category-item.gif"/>' ),
 				),
 				'transport' => 'postMessage',
+				'class'     => 'pt-always-visible',
 			),
 			array(
 				'id'        => 'category-view-mode',
@@ -628,6 +690,7 @@ if ( $this->legacy_mode ) {
 			array(
 				'id'        => 'add-to-cart-notification',
 				'type'      => 'image_select',
+				'class'     => 'pt-always-visible',
 				'title'     => __( 'Add to Cart Notification Type', 'porto' ),
 				'subtitle'      => __( 'Select the notification type whenever product is added to cart.', 'porto' ),
 				'options'   => array(
@@ -803,7 +866,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Product</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.', 'porto' ), $product_url, $type_url ),
+					sprintf( __( '<a class="pt-showm-options" href="#"><span>Show More Options</span><i class="fas fa-angle-down"></i></a><strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Product</a> & <a href="%2$s" target="_blank">Product Type</a> Builders help you to develop your site easily. Some below options might be overrided because the priority of the builder widget option is <b>higher</b>.<br/><b>We recommend to use Template Builder to customize easily.</b>', 'porto' ), $product_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -812,6 +875,11 @@ if ( $this->legacy_mode ) {
 							'target' => array(),
 							'class'  => array(),
 						),
+						'i'     => array(
+							'class'  => array(),
+						),
+						'span'  => array(),
+						'br'    => array(),
 					)
 				),
 				'class' => 'porto-important-note',
@@ -819,6 +887,7 @@ if ( $this->legacy_mode ) {
 			array(
 				'id'      => 'desc_info_go_product_sidebar',
 				'type'    => 'info',
+				'class'   => 'pt-always-visible',
 				'desc'    => wp_kses(
 					sprintf(
 						/* translators: %s: widgets url */
@@ -842,6 +911,7 @@ if ( $this->legacy_mode ) {
 				'options'   => $page_layouts,
 				'default'   => 'right-sidebar',
 				'transport' => 'refresh',
+				'class'     => 'pt-always-visible',
 			),
 			array(
 				'id'       => 'product-single-sidebar2',
@@ -849,6 +919,7 @@ if ( $this->legacy_mode ) {
 				'title'    => __( 'Select Sidebar 2', 'porto' ),
 				'required' => array( 'product-single-layout', 'equals', $both_sidebars ),
 				'data'     => 'sidebars',
+				'class'    => 'pt-always-visible',
 			),
 			array(
 				'id'        => 'product-single-content-layout',
@@ -1173,7 +1244,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Product Archive</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop shop page easily.', 'porto' ), $shop_url, $type_url ),
+					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Product Archive</a> & <a href="%2$s" target="_blank">Product Type</a> Builders help you to develop shop page easily.', 'porto' ), $shop_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -1272,7 +1343,7 @@ if ( $this->legacy_mode ) {
 			array(
 				'id'        => 'category-item',
 				'type'      => 'text',
-				'title'     => __( 'Products per page', 'porto' ),
+				'title'     => __( 'Products per page (shop products count)', 'porto' ),
 				'subtitle'  => __( 'Comma separated list of product counts.', 'porto' ),
 				'default'   => '12,24,36',
 				'hint'      => array(
@@ -1347,7 +1418,7 @@ if ( $this->legacy_mode ) {
 				'type'  => 'info',
 				'desc'  => wp_kses(
 					/* translators: %s: Builder url */
-					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Product</a> & <a href="%2$s" target="_blank">Type</a> Builders help you to develop your site easily.', 'porto' ), $product_url, $type_url ),
+					sprintf( __( '<strong>Important Note:</strong> <a href="%1$s" target="_blank">Single Product</a> & <a href="%2$s" target="_blank">Product Type</a> Builders help you to develop your site easily.', 'porto' ), $product_url, $type_url ),
 					array(
 						'strong' => array(),
 						'b'      => array(),
@@ -2126,15 +2197,10 @@ $this->sections[] = array(
 			),
 		),
 		array(
-			'id'     => 'desc_info_wishlist_color',
-			'type'   => 'info',
-			'title'  => __( 'The below options request the YITH WooCommerce Wishlist.', 'porto' ),
-			'notice' => false,
-		),
-		array(
 			'id'       => 'wishlist-color',
 			'type'     => 'color',
-			'title'    => __( 'Wishlist and Compare Color on product page', 'porto' ),
+			'title'    => __( 'Product Action Color', 'porto' ),
+			'subtitle' => __( 'Controls the color of wishlist and compare on single product page.', 'porto' ),
 			'default'  => '#302e2a',
 			'validate' => 'color',
 			'hint'     => array(
@@ -2147,7 +2213,8 @@ $this->sections[] = array(
 		array(
 			'id'       => 'wishlist-color-inverse',
 			'type'     => 'color',
-			'title'    => __( 'Wishlist and Compare Hover Color on product page', 'porto' ),
+			'title'    => __( 'Product Action Hover Color', 'porto' ),
+			'subtitle' => __( 'Controls the hover color of wishlist and compare on single product page.', 'porto' ),
 			'default'  => '',
 			'validate' => 'color',
 			'hint'      => array(

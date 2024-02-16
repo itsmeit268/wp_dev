@@ -20,7 +20,7 @@
         display: inline-block;
         width: 100%;
         height: auto;
-        @include transition($image-transition);
+        transition: opacity .3s, transform 2s cubic-bezier(0,0,.44,1.18);
         transform: translateZ(0);
     }
 

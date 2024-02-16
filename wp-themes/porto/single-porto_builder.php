@@ -93,7 +93,7 @@ if ( have_posts() ) :
 
 	if ( $is_header ) {
 		$is_side = get_post_meta( get_the_ID(), 'header_type', true );
-		echo '<header id="header" class="header-builder header-builder-p' . ( $is_side ? ' header-side' : '' ) . '">';
+		echo '<header id="header" class="header-builder header-builder-p' . ( $is_side ? ' header-side header-side-nav side-nav-wrap' : '' ) . '">';
 	} elseif ( $is_footer ) {
 		echo '<footer id="footer" class="footer footer-builder">';
 	}

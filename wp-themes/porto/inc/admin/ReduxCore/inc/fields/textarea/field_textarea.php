@@ -28,6 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_textarea' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_textarea {
 
 		/**

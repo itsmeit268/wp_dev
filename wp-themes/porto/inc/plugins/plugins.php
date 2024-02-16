@@ -60,6 +60,30 @@ if ( ( current_user_can( 'manage_options' ) && wp_doing_ajax() ) || ( is_admin()
 		 */
 		protected $plugins = array(
 			array(
+				'name'      => 'Porto Functionality',
+				'slug'      => 'porto-functionality',
+				'required'  => true,
+				'url'       => 'porto-functionality/porto-functionality.php',
+				'image_url' => PORTO_PLUGINS_URI . '/images/porto_functionality.png',
+				'source'    => PORTO_URI . '/plugins/porto-functionality.zip',
+			),
+			array(
+				'name'      => 'WPBakery Page Builder',
+				'slug'      => 'js_composer',
+				'required'  => false,
+				'url'       => 'js_composer/js_composer.php',
+				'image_url' => PORTO_PLUGINS_URI . '/images/js_composer.png',
+				'source'    => PORTO_URI . '/plugins/js_composer.zip',
+			),
+			array(
+				'name'      => 'Revolution Slider',
+				'slug'      => 'revslider',
+				'required'  => false,
+				'url'       => 'revslider/revslider.php',
+				'image_url' => PORTO_PLUGINS_URI . '/images/revslider.png',
+				'source'    => PORTO_URI . '/plugins/revslider.zip',
+			),
+			array(
 				'name'      => 'Elementor',
 				'slug'      => 'elementor',
 				'required'  => false,
@@ -158,6 +182,14 @@ if ( ( current_user_can( 'manage_options' ) && wp_doing_ajax() ) || ( is_admin()
 				'image_url'  => PORTO_PLUGINS_URI . '/images/yithemes-icon.png',
 				'visibility' => 'hidden',
 			),
+			array(
+				'name'       => 'Customer Reviews for WooCommerce',
+				'slug'       => 'customer-reviews-woocommerce',
+				'required'   => false,
+				'url'        => 'customer-reviews-woocommerce/ivole.php',
+				'image_url'  => PORTO_PLUGINS_URI . '/images/custom-reviews.png',
+				'visibility' => 'hidden',
+			),			
 			array(
 				'name'       => 'Dokan',
 				'slug'       => 'dokan-lite',

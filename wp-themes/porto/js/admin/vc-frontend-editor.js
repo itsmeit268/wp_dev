@@ -495,12 +495,31 @@ jQuery( document ).ready( function( $ ) {
 					var $floatingWrapper = $floatingImage.find( '.thumb-info-floating-element-wrapper[data-plugin-tfloating]' );
 					// Text Hover Floating Image
 					if ( $.fn.themePluginTIFloating && $floatingWrapper.length ) {
-						var ins = $floatingWrapper.data( '__textimagefloating' );
+						var ins = $floatingWrapper.data( '__textelfloating' );
 						if ( ins ) {
 							ins.clearData();
 						}
 						$floatingWrapper.themePluginTIFloating();
 					}
+				}
+				if ( $floatingImage.find( '[data-clone-element]' ).length ) {
+					$floatingImage.find( '[data-clone-element]' ).each( function() {
+						var $el = $(this)
+						  , content = $el.html()
+						  , qty = $el.attr( 'data-clone-element' );
+						for ( let i = 0; i < qty; i++ ) {
+							$el.html( $el.html() + content );
+						}
+					});
+				}
+				if ( $floatingImage.find( '.marquee' ).length && $.isFunction( $.fn.marquee ) ) {
+					$floatingImage.find( '.marquee' ).marquee( {
+						duration: 5000,
+						gap: 0,
+						delayBeforeStart: 0,
+						direction: 'left',
+						duplicated: true
+					} );
 				}
 			} else if ( ( 'porto_hscroller' == shortcode && e.attributes.params ) ) {
 				if ( $.fn.themePluginHScroller ) {
@@ -667,4 +686,15 @@ jQuery( document ).ready( function( $ ) {
 			}
 		}
 	}
+
+	$( '.porto-block .wpb_column[class*="col-sm-"]' ).each( function() {
+		let $this = $( this );
+		if ( this.classList ) {
+			this.classList.forEach( function( itemClass ) {
+				if ( itemClass.indexOf( 'col-sm-' ) == 0 ) {
+					$this.removeClass( itemClass );
+				}
+			} );
+		}
+	});
 } );

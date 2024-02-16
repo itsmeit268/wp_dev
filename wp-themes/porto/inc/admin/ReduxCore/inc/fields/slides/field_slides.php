@@ -33,6 +33,7 @@ if ( ! class_exists( 'ReduxFramework_slides' ) ) {
 	 *
 	 * @since       1.0.0
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework_slides {
 
 		/**

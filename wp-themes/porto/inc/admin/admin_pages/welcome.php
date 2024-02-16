@@ -60,7 +60,7 @@
 						<?php if ( $error_message ) : ?>
 							<p class="error-invalid-code"><?php echo porto_strip_script_tags( $error_message ); ?></p>
 						<?php endif; ?>
-
+						<div style="margin-top: 10px;"><?php echo sprintf( esc_html__( 'Please login to %1$ssupport site%2$s and can reset your license %3$shere%2$s from current site domain.', 'porto' ), '<a href="https://www.portotheme.com/support/">', '</a>', '<a href="https://www.portotheme.com/support/reset-sites/">' ); ?></div>
 						<p><?php esc_html_e( 'Where can I find my purchase code?', 'porto' ); ?></p>
 						<ol>
 							<?php /* translators: $1: opening A tag which has link to the Themeforest downloads page $2: closing A tag */ ?>

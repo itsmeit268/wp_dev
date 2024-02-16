@@ -107,6 +107,16 @@ function porto_load_shortcodes() {
 			'value'       => '0',
 			'group'       => $animation_group,
 		);
+		$animation_reveal_clr = array(
+			'type'       => 'colorpicker',
+			'heading'    => __( 'Animation Color', 'porto-functionality' ),
+			'param_name' => 'animation_reveal_clr',
+			'dependency' => array(
+				'element' => 'animation_type',
+				'value'   => array( 'revealDirTop', 'revealDirDown', 'revealDirLeft', 'revealDirRight' ),
+			),
+			'group'      => $animation_group,
+		);
 
 		$floating_circle        = array(
 			'type'        => 'checkbox',
@@ -453,7 +463,7 @@ function porto_load_shortcodes() {
 					'element'   => 'no_padding',
 					'is_empty' => true,
 				),
-			),
+			)
 		);
 		vc_add_param(
 			'vc_row',
@@ -990,6 +1000,7 @@ function porto_load_shortcodes() {
 				$animation_type,
 				$animation_duration,
 				$animation_delay,
+				$animation_reveal_clr,
 			)
 		);
 
@@ -1269,7 +1280,7 @@ function porto_load_shortcodes() {
 					'element'   => 'no_padding',
 					'is_empty' => true,
 				),
-			),
+			)
 		);
 		vc_add_params(
 			'vc_row_inner',
@@ -1371,6 +1382,7 @@ function porto_load_shortcodes() {
 				$animation_type,
 				$animation_duration,
 				$animation_delay,
+				$animation_reveal_clr,
 			)
 		);
 
@@ -1959,6 +1971,7 @@ function porto_load_shortcodes() {
 				$animation_type,
 				$animation_duration,
 				$animation_delay,
+				$animation_reveal_clr,
 				array(
 					'type'       => 'porto_param_heading',
 					'param_name' => 'dsc_flt_clr',
@@ -2081,6 +2094,7 @@ function porto_load_shortcodes() {
 				$animation_type,
 				$animation_duration,
 				$animation_delay,
+        		$animation_reveal_clr,
 			)
 		);
 
@@ -2161,13 +2175,25 @@ function porto_load_shortcodes() {
 					'param_name' => 'letter_spacing',
 					'std'        => '',
 					'group'      => $section_group,
-				),
+				),	
 				array(
 					'type'       => 'porto_param_heading',
 					'param_name' => 'dsc_typewriter',
-					'text'       => esc_html__( 'Typewriter Effect', 'porto' ),
+					'text'       => esc_html__( 'Heading Effect', 'porto' ),
 					'group'      => $section_group,
 					'with_group' => true,
+				),
+				array(
+					'type'        => 'checkbox',
+					'heading'     => __( 'Enable Marquee Effect', 'porto' ),
+					'param_name'  => 'enable_marquee',
+					'hint'        => '<img src="' . PORTO_HINT_URL . 'wd_marquee.gif"/>',
+					'value'       => array( __( 'Yes, please', 'js_composer' ) => 'yes' ),
+					'group'       => $section_group,
+					'dependency'  => array(
+						'element'  => 'enable_typewriter',
+						'is_empty' => true,
+					),
 				),
 				array(
 					'type'        => 'checkbox',
@@ -2344,6 +2370,7 @@ function porto_load_shortcodes() {
 				$animation_type,
 				$animation_duration,
 				$animation_delay,
+          		$animation_reveal_clr,
 				array(
 					'type'       => 'porto_param_heading',
 					'param_name' => 'dsc_flt_img',
@@ -3552,7 +3579,8 @@ function porto_load_shortcodes() {
 				),
 				$animation_type, 
 				$animation_duration, 
-				$animation_delay, 
+				$animation_delay,
+          		$animation_reveal_clr,
 				array(
 					'type'       => 'porto_param_heading',
 					'param_name' => 'dsc_flt_clr',
@@ -3755,6 +3783,7 @@ function porto_load_shortcodes() {
 				$animation_type,
 				$animation_duration,
 				$animation_delay,
+				$animation_reveal_clr,
 				array(
 					'type'       => 'porto_param_heading',
 					'param_name' => 'dsc_flt_clr',
@@ -4428,7 +4457,8 @@ if ( is_admin() ) :
 
 				// WPBakery elements
 				// vc_map_update( 'vc_row', 'icon', 'fas fa-align-justify' );
-				// vc_map_update( 'vc_custom_heading', 'icon', 'fas fa-heading' );
+				vc_map_update( 'vc_custom_heading', 'description', __( 'Text with Google fonts including marquee, animated text, typewriter and floating image.', 'porto' ) );
+				vc_map_update( 'vc_section', 'description', __( 'Group multiple rows in section with Shape Divider, Section separator.', 'porto' ) );
 				// vc_map_update( 'vc_message', 'icon', 'fas fa-exclamation-triangle' );
 				// vc_map_update( 'contact-form-7', 'icon', 'far fa-envelope' );
 				// vc_map_update( 'vc_column_text', 'icon', 'fas fa-font' );

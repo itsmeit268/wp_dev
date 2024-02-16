@@ -378,7 +378,7 @@ jQuery( document ).ready( function( $ ) {
 ( function() {
 	'use strict';
 	// Uploading files
-	var file_frame;
+	var file_frame, file_m_frame;
 	var clickedID;
 	jQuery( document ).off( 'click', '.button_upload_image' ).on( 'click', '.button_upload_image', function( event ) {
 		event.preventDefault();
@@ -433,31 +433,95 @@ jQuery( document ).ready( function( $ ) {
 			file_frame.close();
 		} );
 	} );
-	jQuery( document ).off( 'click', '.button_attach_image' ).on( 'click', '.button_attach_image', function( event ) {
-		event.preventDefault();
-		// If the media frame already exists, reopen it.
-		if ( !file_frame ) {
-			// Create the media frame.
-			file_frame = wp.media.frames.downloadable_file = wp.media( {
-				title: 'Choose an image',
-				button: {
-					text: 'Use image'
-				},
-				multiple: false
+	jQuery( document ).ready( function ( $ ) {
+		var updateGallery = function ( id ) {
+			var $attachs = $( '#' + id + '_thumb >.attach-img' ),
+				attachIds = [];
+			$attachs.each( function () {
+				attachIds.push( parseInt( $( this ).attr('attach-id') ) );
 			} );
+			$( '#' + id ).val( JSON.stringify( attachIds ) );
 		}
-		file_frame.open();
-		clickedID = jQuery( this ).data( 'id' );
-		// When an image is selected, run a callback.
-		file_frame.on( 'select', function() {
-			var attachment = file_frame.state().get( 'selection' ).first().toJSON(),
-				$obj = jQuery( '#' + clickedID );
-			$obj.val( attachment.id );
-			jQuery( '#' + clickedID + '_thumb' ).html( '<img src="' + attachment.url + '"/>' );
-			if ( $obj.attr( 'data-name' ) ) $obj.attr( 'name', $obj.attr( 'data-name' ) );
-			file_frame.close();
+		$( '.attach_image.multi-images' ).sortable( {
+			update: function( event, ui ) {
+				updateGallery( $( event.target).attr('id').slice( 0, -6 ) );
+			}
 		} );
-	} );
+		$( document ).on( 'click', '.attach-img .delete_img', function ( event ) {
+			event.preventDefault();
+			var $this = $( this ),
+				imgId =  $this.closest( '.attach_image' ).attr( 'id' );
+			$this.closest( '.attach-img' ).remove();
+			// Remove string '_thumb'
+			updateGallery( imgId.slice( 0, -6 ) );
+		} )
+		$( document ).off( 'click', '.button_attach_image' ).on( 'click', '.button_attach_image', function( event ) {
+			event.preventDefault();
+			var $this = $( this ),
+				clickedID = $this.data( 'id' );
+			if ( $this.siblings( '#' + clickedID + '_thumb' ).hasClass( 'multi-images' ) ) {
+				// If the media frame already exists, reopen it.
+				if ( !file_m_frame ) {
+					// Create the media frame.
+					file_m_frame = wp.media.frames.downloadable_file = wp.media( {
+						title: 'Add images',
+						button: {
+							text: 'Use images'
+						},
+						multiple: true
+					} );
+				}
+				file_m_frame.open();
+				// When an image is selected, run a callback.
+				file_m_frame.on( 'select', function() {
+					var $obj = $( '#' + clickedID ),
+						$attachWrap = $( '#' + clickedID + '_thumb' ),
+						attachments = file_m_frame.state().get( 'selection' ).models,
+						attachIds = [];
+					if ( $obj.val() ) {
+						attachIds = JSON.parse( $obj.val() );
+					}
+					attachments.forEach( function ( attachment ) {
+						if ( -1 == $.inArray( attachment.id, attachIds ) ) {
+							$attachWrap.append( '<div class="attach-img" attach-id="' + attachment.id + '"><img src="' + attachment.attributes.url + '"/><a href="#" class="delete_img" title="Delete Image"></a></div>' );
+							attachIds.push( attachment.id );
+						}
+					} );
+					$obj.val( JSON.stringify( attachIds ) );
+					$attachWrap.sortable( {
+						update: function( event, ui ) {
+							updateGallery( clickedID );
+						}
+					} );
+					if ( $obj.attr( 'data-name' ) ) $obj.attr( 'name', $obj.attr( 'data-name' ) );
+					file_m_frame.close()
+				} );
+			} else {
+				// If the media frame already exists, reopen it.
+				if ( !file_frame ) {
+					// Create the media frame.
+					file_frame = wp.media.frames.downloadable_file = wp.media( {
+						title: 'Choose an image',
+						button: {
+							text: 'Use image'
+						},
+						multiple: false
+					} );
+				}
+				file_frame.open();
+				clickedID = $this.data( 'id' );
+				// When an image is selected, run a callback.
+				file_frame.on( 'select', function() {
+					var attachment = file_frame.state().get( 'selection' ).first().toJSON(),
+						$obj = $( '#' + clickedID );
+					$obj.val( attachment.id );
+					$( '#' + clickedID + '_thumb' ).html( '<img src="' + attachment.url + '"/>' );
+					if ( $obj.attr( 'data-name' ) ) $obj.attr( 'name', $obj.attr( 'data-name' ) );
+					file_frame.close();
+				} );
+			}
+		} );
+	} )
 	jQuery( document ).on( 'click', '.button_remove_image, .button_remove_video', function( event ) {
 		var clickedID = jQuery( this ).data( 'id' );
 		jQuery( '#' + clickedID ).val( '' );
@@ -969,7 +1033,7 @@ jQuery( function( $ ) {
 				block_id = $this.data( 'id' ),
 				$filterCat = $('.blocks-wrapper .category-list a.active'),
 				// Change the Theme Options
-				blockOptions = [ 108, 109, 110, 111, 112, 113, 114, 116, 117, 122, 123, 124, 125, 126, 127, 128, 129, 130, 134, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 154, 157, 164, 166, 242, 243, 244, 245, 279, 280, 281, 282, 283, 285, 286, 287 ];
+				blockOptions = [ 108, 109, 110, 111, 112, 113, 114, 116, 117, 122, 123, 124, 125, 126, 127, 128, 129, 130, 134, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 154, 157, 164, 166, 242, 243, 244, 245, 279, 280, 281, 282, 283, 285, 286, 287, 3257, 3258, 3262, 3266, 3269, 3273 ];
 			$this.attr( 'disabled', 'disabled' );
 			$this.closest( '.block' ).addClass( 'importing' );
 
@@ -1989,7 +2053,7 @@ jQuery( function( $ ) {
 		} );
 		var $options_container = $( '.redux-container' ),
 			$options_extra_tabs = $options_container.find( '.redux-section-field, .redux-info-field:not(.field_move), .redux-notice-field, .redux-container-group, .redux-section-desc, .redux-group-tab h3, .redux-accordion-field' ),
-			$search_targets = $options_container.find( '.form-table tr, .redux-group-tab' ),
+			$search_targets = $options_container.find( '.form-table tr, .redux-group-tab, .porto-important-note, .porto-opt-ux-builder' ),
 			$options_menu_items = $( '.redux-group-menu .redux-group-tab-link-li' );
 		$options_container.find( '.redux-sidebar a' ).on( 'click', function() {
 			if ( !$( '.porto-theme-options-search' ).val() ) {
@@ -2404,7 +2468,7 @@ jQuery( function( $ ) {
 			}
 			if ( e.attributes.params && e.attributes.params.el_class ) {
 				var cls = e.attributes.params.el_class.split( ' ' ),
-					c_arr = ['d-inline-block', 'd-sm-inline-block', 'd-md-inline-block', 'd-lg-inline-block', 'd-xl-inline-block', 'd-none', 'd-sm-none', 'd-md-none', 'd-lg-none', 'd-xl-none', 'd-sm-block', 'd-md-block', 'd-lg-block', 'd-xl-block', 'd-sm-flex', 'd-md-flex', 'd-lg-flex', 'd-xl-flex', 'col-auto', 'col-md-auto', 'col-lg-auto', 'col-xl-auto', 'flex-1', 'flex-none', 'ml-auto', 'ms-auto', 'mr-auto', 'me-auto', 'mx-auto', 'h-100', 'h-50', 'w-100'];
+					c_arr = [ 'd-inline-flex', 'd-inline-block', 'd-sm-inline-block', 'd-md-inline-block', 'd-lg-inline-block', 'd-xl-inline-block', 'd-none', 'd-sm-none', 'd-md-none', 'd-lg-none', 'd-xl-none', 'd-sm-block', 'd-md-block', 'd-lg-block', 'd-xl-block', 'd-sm-flex', 'd-md-flex', 'd-lg-flex', 'd-xl-flex', 'col-auto', 'col-md-auto', 'col-lg-auto', 'col-xl-auto', 'flex-1', 'flex-auto', 'flex-none', 'ml-auto', 'ms-auto', 'ml-md-auto', 'ml-xl-auto', 'ms-lg-auto', 'ms-md-auto', 'ms-xl-auto',  'ms-sm-auto', 'me-sm-auto', 'mr-auto', 'mr-2', 'mr-lg-5', 'me-auto', 'mx-auto', 'mx-2', 'mx-lg-0', 'mr-xl-0', 'mr-xl-auto', 'mr-md-auto', 'ml-xl-0', 'ml-lg-0', 'ml-md-0', 'ml-md-1', 'ml-0', 'ml-sm-0', 'h-100', 'h-50', 'w-100', 'flex-lg-grow-1', 'flex-grow-0', 'flex-grow-1', 'w-auto', 'flex-fill', 'm-r', 'm-r-sm', 'm-r-md', 'position-absolute', 'start-0', 'top-0', 'end-0', 'bottom-0', 'me-3', 'float-end', 'float-lg-end', 'text-center', 'bg-primary'];
 				cls.forEach( function( v, i ) {
 					v = v.trim();
 					if ( !v ) {
@@ -2416,6 +2480,8 @@ jQuery( function( $ ) {
 						if ( $c.length ) {
 							$c.removeClass( v ).addClass( 'mb-0' );
 						}
+					} else if ( 0 === v.indexOf( 'vc_btn3-inline' ) ) {
+						e.view.$el.addClass( 'd-inline-block' );
 					} else if ( -1 !== c_arr.indexOf( v ) || 0 === v.indexOf( 'col-sm-' ) || 0 === v.indexOf( 'order-' ) || 0 === v.indexOf( 'align-self-' ) || 0 === v.indexOf( 'pc-' ) || 0 === v.indexOf( 'pull-' ) || ( ( ( 'position-static' == v && -1 === cls.indexOf( 'porto-ibanner-layer' ) ) || ( /^p-(0|1|2|3|4|5|none)$/.test( v ) && ( !e.attributes.params.is_section || 'yes' != e.attributes.params.is_section ) ) || 'overflow-hidden' == v || 'col-half-section' == v || 0 === v.indexOf( 'background-color-' ) ) && ( 'vc_column' == shortcode || 'vc_column_inner' == shortcode ) ) || ( 'vc_column' != shortcode && 'vc_column_inner' != shortcode && /^col-(\w{2})-(\d{1,2})$/.test( v ) ) ) {
 						if ( -1 === v.indexOf( 'col-sm-' ) ) {
 							e.view.$el.addClass( v );
@@ -2424,11 +2490,25 @@ jQuery( function( $ ) {
 							return;
 						}
 						var $c = e.view.$el.children().eq( 0 );
+						if ( $c.length && $c[0].tagName.toLowerCase() == 'style' ) {
+							$c = e.view.$el.children().eq( 1 );
+							if ( $c.length && $c[0].tagName.toLowerCase() == 'style' ) {
+								$c = e.view.$el.children().eq( 2 );
+							}
+						}
 						if ( $c.hasClass( 'porto-sicon-box-link' ) ) {
 							$c = $c.children().eq( 0 );
 						}
 						if ( $c.length ) {
 							$c.removeClass( v );
+						}
+						if ( 0 === v.indexOf( 'position-absolute' ) ) {
+							let _left = $c.css( 'left' );
+							let _top = $c.css( 'top' );
+							let _right = $c.css( 'right' );
+							let _bottom = $c.css( 'bottom' );
+							e.view.$el.css( { top: _top, left: _left, right: _right, bottom: _bottom } );
+							$c.css( { top: 0, left: 0, right: 0, bottom: 0 } );
 						}
 					}
 				} );
@@ -2831,6 +2911,10 @@ if ( location.hash ) {
 				if ( $particularOption.length ) {
 					adminbarHeight = _$( '.wp-full-overlay-sidebar-content' ).offset().top;
 					setTimeout( () => {
+						let $currentsmOptions = _$( '#customize-theme-controls ul.open' ).find( '.pt-showm-options' );
+						$currentsmOptions.addClass( 'show-more' );
+                        $currentsmOptions.find( 'span' ).text( wp.i18n.__( 'Hide Options', 'porto' ) );
+
 						_$( '.wp-full-overlay-sidebar-content' ).animate( { scrollTop: _$( $particularOption ).offset().top - adminbarHeight } );
 						$particularOption.addClass( 'show-qa-option' );
 						setTimeout( () => {
@@ -2868,7 +2952,9 @@ if ( location.hash ) {
 				if ( hrefTarget == 'layout-default' ) { // Page layout & sidebar
 					_this = _$( '[name=default]' ).closest( '.metabox' );
 				} else if ( ! _this.length ) {
-					alert( wp.i18n.__( 'We can\'t find option \'%1$s\' in metabox.\nThis option is no longer supported in Full Site Editing Mode of Porto Theme or is the wrong option.', 'porto' ).replace( '%1$s', hrefTarget ) );
+					if ( location.href.indexOf( 'action=edit' ) > -1 && Number.isNaN( Number( hrefTarget ) ) ) {
+						alert( wp.i18n.__( 'We can\'t find option \'%1$s\' in metabox.\nThis option is no longer supported in Full Site Editing Mode of Porto Theme or is the wrong option.', 'porto' ).replace( '%1$s', hrefTarget ) );
+					}
 					return;
 				}
 				if ( _$( '.edit-post-header' ).length ) {
@@ -2899,3 +2985,79 @@ if ( location.hash ) {
 		} );
 	}
 }
+
+/**
+ * Show more theme options
+ * 
+ * @since 7.0
+ */
+( function( $ ) {
+	$( document ).ready( function() {
+		if ( $( '#customize-controls' ).length == 0 && $( '.redux-container' ).length > 0 && location.hash == '' ) {
+			let _currentTab = '0';
+			if ( $.cookie && $.cookie( 'redux_current_tab' ) ) {
+				_currentTab = $.cookie( 'redux_current_tab' );
+			}
+			$( '#' + _currentTab + '_section_group' ).find( '.pt-showm-options' ).closest( '.redux-field-info' ).nextAll().each( function() {
+				let $this = $( this );
+				if ( this.tagName.toLowerCase() == 'table' ) {
+					$this.find( 'tr:not(.pt-always-visible, .hide)' ).fadeOut();
+				} else {
+					if ( ! ( $this.hasClass( 'hide' ) || $this.hasClass( 'pt-always-visible' ) ) ) {
+						$this.fadeOut();
+					}
+				}
+			});
+		}
+	});
+	$( document.body ).on( 'click', '.pt-showm-options', function( e ) {
+		e.preventDefault();
+		let $this = $( this );
+		if ( $this.hasClass( 'show-more' ) ) {
+			if ( $( '#customize-controls' ).length ) {
+				$this.closest( 'li.customize-control' ).nextAll().each( function() {
+					let _this = $( this );
+					if ( ! ( _this.find( '.pt-always-visible' ).length > 0 || _this.hasClass( 'hide' ) ) ) {
+						_this.fadeOut();
+					}
+				} );
+			} else {
+				$this.closest( '.redux-field-info' ).nextAll().each( function() {
+					let _this = $( this );
+					if ( this.tagName.toLowerCase() == 'table' ) {
+						_this.find( 'tr:not(.pt-always-visible, .hide)' ).fadeOut();
+					} else {
+						if ( ! ( _this.hasClass( 'hide' ) || _this.hasClass( 'pt-always-visible' ) ) ) {
+							_this.fadeOut();
+						}
+					}
+				});
+			}
+			$this.find( 'span' ).text( wp.i18n.__( 'Show More Options', 'porto' ) );
+		} else {
+			if ( $( '#customize-controls' ).length ) {
+				$this.closest( 'li.customize-control' ).nextAll().each( function() {
+					let _this = $( this );
+					if ( ! ( _this.find( '.pt-always-visible' ).length > 0 || _this.hasClass( 'hide' ) ) ) {
+						_this.fadeIn();
+					}
+				} );
+			} else {
+				$this.closest( '.redux-field-info' ).nextAll().each( function() {
+					let _this = $( this );
+					if ( this.tagName.toLowerCase() == 'table' ) {
+						_this.find( 'tr:not(.pt-always-visible, .hide)' ).fadeIn();
+					} else {
+						if ( ! ( _this.hasClass( 'hide' ) || _this.hasClass( 'pt-always-visible' ) ) ) {
+							_this.fadeIn();
+						}
+					}
+				});
+			}
+			$this.find( 'span' ).text( wp.i18n.__( 'Hide Options', 'porto' ) );
+		}
+
+		$.redux.initFields();
+		$this.toggleClass( 'show-more' );
+	} );
+} ) ( window.jQuery );

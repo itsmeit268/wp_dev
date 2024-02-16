@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_select_image' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_select_image {
 
 		/**

@@ -30,6 +30,7 @@ if ( ! class_exists( 'ReduxFramework_background' ) ) {
 	 *
 	 * @since       3.1.5
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework_background {
 
 		/**

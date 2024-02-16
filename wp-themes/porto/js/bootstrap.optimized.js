@@ -4969,11 +4969,12 @@
     Dropdown,
     //Modal,
     //Offcanvas,
-    Popover,
+    //Popover,
     ScrollSpy,
     Tab,
     //Toast,
-    Tooltip
+    Tooltip,
+    SelectorEngine,
   };
 
   return index_umd;

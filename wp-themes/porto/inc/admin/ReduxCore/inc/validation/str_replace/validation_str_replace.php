@@ -3,6 +3,14 @@
 if ( ! class_exists( 'Redux_Validation_str_replace' ) ) {
 	class Redux_Validation_str_replace {
 
+		public $parent;
+
+		public $field;
+
+		public $value;
+
+		public $current;
+
 		/**
 		 * Field Constructor.
 		 * Required - must call the parent constructor, then assign field and value to vars, and obviously call the render field function

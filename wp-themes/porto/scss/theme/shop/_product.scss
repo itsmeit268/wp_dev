@@ -527,7 +527,8 @@ div.products {
     position: relative;
     margin-bottom: 8px;
 
-    .zoom {
+    .zoom,
+    .image-galley-viewer {
         border-radius: 100%;
         bottom: 4px;
         cursor: pointer;
@@ -549,8 +550,24 @@ div.products {
         }
     }
 
+    .image-galley-viewer {
+        display: flex;
+        justify-content: center;
+        bottom: calc( 8px + var( --porto-product-action-margin, 0px ) + 2 * var( --porto-product-action-border, 0px ) + var( --porto-product-action-width, 30px ) );
+        i {
+            font-size: 16px;
+            &:before {
+                font-size: 1.25em;
+                line-height: inherit;
+            }
+        }
+        &.without-zoom {
+            bottom: 4px;
+        }
+    }
+
     &:hover {
-        .zoom {
+        .zoom, .image-galley-viewer {
             opacity: 1;
         }
     }
@@ -936,7 +953,7 @@ h2.resp-accordion {
             &:hover, &:hover::before,
             &:focus, &:focus::before,
             &:active, &:active::before {
-                color: var(--porto-primary-color);
+                color: var(--porto-wishlist-color-inverse, var(--porto-primary-color));
                 background: none;
             }
         }
@@ -1004,7 +1021,7 @@ h2.resp-accordion {
         margin-bottom: 2px;
     }
     .product-images {
-        .zoom {
+        .zoom, .image-galley-viewer {
             background: none;
             color: $color-dark;
         }

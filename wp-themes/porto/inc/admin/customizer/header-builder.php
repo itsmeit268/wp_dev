@@ -23,6 +23,8 @@ class Porto_Header_Builder {
 
 	protected $mobile_elements = array();
 
+	protected $header_elements = array();
+
 	/**
 	 * Constructor.
 	 */

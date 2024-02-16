@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_dimensions' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_dimensions {
 
 		/**

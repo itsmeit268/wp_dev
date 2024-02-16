@@ -31,6 +31,7 @@ if ( ! class_exists( 'ReduxFramework_extension_custom_fonts' ) ) {
 	 *
 	 * @since       3.1.6
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework_extension_custom_fonts {
 
 		/**

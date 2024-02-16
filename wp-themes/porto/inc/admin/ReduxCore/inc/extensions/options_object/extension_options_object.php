@@ -31,6 +31,7 @@ if ( ! class_exists( 'ReduxFramework_Extension_options_object' ) ) {
 	 *
 	 * @since       3.1.6
 	 */
+	#[\AllowDynamicProperties]
 	class ReduxFramework_Extension_options_object {
 
 		// Protected vars

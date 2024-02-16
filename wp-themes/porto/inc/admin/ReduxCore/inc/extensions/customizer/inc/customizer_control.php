@@ -15,7 +15,7 @@ if ( ! class_exists( 'Redux_Customizer_Control' ) ) {
 							data-id="<?php echo esc_attr( $this->id ); ?>"
 							data-key="<?php echo str_replace( $opt_name . '-', '', $this->redux_id ); ?>"
 							class="redux-customizer-input"
-							id="customizer_control_id_<?php echo esc_attr( $this->redux_id ); ?>" <?php echo esc_url( $this->link() ); ?>
+							id="customizer_control_id_<?php echo esc_attr( $this->redux_id ); ?>" <?php $this->link(); ?>
 							value=""/>
 					<?php endif; ?>
 				<?php $this->render_content(); ?>

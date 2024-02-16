@@ -2063,9 +2063,18 @@ function porto_search_form_content( $is_mobile = false ) {
 
 	ob_start();
 	if ( isset( $porto_settings['search-type'] ) && 'product' === $porto_settings['search-type'] && class_exists( 'WooCommerce' ) && defined( 'YITH_WCAS' ) ) {
-		$wc_get_template = function_exists( 'wc_get_template' ) ? 'wc_get_template' : 'woocommerce_get_template';
-		$wc_get_template( 'yith-woocommerce-ajax-search.php', array(), '', YITH_WCAS_DIR . 'templates/' );
-		return ob_get_clean();
+		if ( version_compare( YITH_WCAS_VERSION, '2.0.0', '>=' ) && ( yith_wcas_is_fresh_block_installation() || yith_wcas_user_switch_to_block() ) ) {
+		} else {
+			if ( version_compare( YITH_WCAS_VERSION, '2.0.0', '>=' ) ) {
+				wp_enqueue_script( 'yith_autocomplete' );
+				wp_enqueue_script( 'yith_wcas_jquery-autocomplete' );
+				wp_enqueue_script( 'yith_wcas_frontend' );
+				wp_enqueue_style( 'yith_wcas_frontend' );
+			}
+			$wc_get_template = function_exists( 'wc_get_template' ) ? 'wc_get_template' : 'woocommerce_get_template';
+			$wc_get_template( 'yith-woocommerce-ajax-search.php', array(), '', YITH_WCAS_DIR . 'templates/' );
+			return ob_get_clean();
+		}
 	}
 	if ( isset( $porto_settings['search-placeholder'] ) && $porto_settings['search-placeholder'] ) {
 		$placeholder_text = strip_tags( $porto_settings['search-placeholder'] );
@@ -2476,8 +2485,9 @@ function porto_header_builder_layout() {
 			$builder_id = porto_check_builder_condition( 'header' );
 			if ( $builder_id ) {
 				$porto_header_builder_layout = array(
-					'ID'   => $builder_id,
-					'type' => 'side' == get_post_meta( $builder_id, 'header_type', true ),
+					'ID'                => $builder_id,
+					'type'              => 'side' == get_post_meta( $builder_id, 'header_type', true ),
+					'side_header_width' => intval( get_post_meta( $builder_id, 'header_side_width', true ) ),
 				);
 			}
 		}
@@ -3533,7 +3543,7 @@ function porto_head_metas() {
 	if ( ! is_singular() ) {
 		return;
 	}
-	if ( defined( 'WPSEO_VERSION' ) ) { // yoast seo
+	if ( function_exists( 'rank_math' ) ||  defined( 'WPSEO_VERSION' ) || defined( 'AIOSEO_PHP_VERSION_DIR' ) ) { // yoast seo
 		return;
 	}
 	global $post;
@@ -3582,6 +3592,10 @@ add_filter( 'language_attributes', 'porto_add_og_doctype' );
  * @since 6.5.0
  */
 function porto_add_og_doctype( $doctype ) {
+	if ( function_exists( 'rank_math' ) || defined( 'WPSEO_VERSION' ) || defined( 'AIOSEO_PHP_VERSION_DIR' ) ) { // yoast seo
+		return $doctype;
+	}
+
 	global $porto_settings;
 	if ( empty( $porto_settings['open-graph'] ) ) {
 		return $doctype;

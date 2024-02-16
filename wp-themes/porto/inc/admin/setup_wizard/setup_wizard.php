@@ -46,13 +46,13 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 			return array(
 				'all'       => 'All',
 				'has-badge' => 'New',
-				'soft'      => 'Full Site Editing',
+				// 'soft'      => 'Full Site Editing',
 				'shop'      => 'Shop',
 				'onepage'   => 'One Page',
 				'business'  => 'Business',
 				'portfolio' => 'Portfolio',
 				'classic'   => 'Classic',
-				'blog'      => 'Blog',
+				// 'blog'      => 'Blog',
 				'elementor' => 'Elementor',
 			);
 		}
@@ -75,48 +75,72 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'     => 'all open-shop',
 					'grouped'    => true,
 				),
-				'blog'                 => array(
-					'alt'        => 'Blog Demo <small>(5 VARIATIONS)</small>',
-					'slider_cat' => 'blog',
-					'img'        => $demo_img_site . '/demos/blog1.jpg',
-					'filter'     => 'all open-blog',
-					'grouped'    => true,
-				),
+				// 'blog'                 => array(
+				// 	'alt'        => 'Blog Demo <small>(5 VARIATIONS)</small>',
+				// 	'slider_cat' => 'blog',
+				// 	'img'        => $demo_img_site . '/demos/blog1.jpg',
+				// 	'filter'     => 'all open-blog',
+				// 	'grouped'    => true,
+				// ),
 				'classic-original'     => array(
 					'alt'       => 'Main Demo',
 					'img'       => $demo_img_site . '/demos/classic_original.jpg',
-					'filter'    => 'classic elementor has-badge badge-updated',
+					'filter'    => 'classic elementor',
 					'revslider' => array( 'full-width-slider.zip', 'full-width-video.zip', 'home-classic-original.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
+				),
+				'creative-agency2'       => array(
+					'alt'     => 'Creative Agency 2',
+					'img'     => $demo_img_site . '/demos/creative-agency2.jpg',
+					'filter'  => 'portfolio business all elementor soft has-badge badge-new',
+					'plugins' => array( 'js_composer', 'post-types-unlimited' ),
+				),
+				'creative-agency1'       => array(
+					'alt'     => 'Creative Agency 1',
+					'img'     => $demo_img_site . '/demos/creative-agency1.jpg',
+					'filter'  => 'portfolio business all elementor soft has-badge badge-new',
+					'plugins' => array( 'js_composer' ),
+				),
+				'personal-portfolio3'       => array(
+					'alt'     => 'Personal Portfolio 3',
+					'img'     => $demo_img_site . '/demos/personal-portfolio3.jpg',
+					'filter'  => 'portfolio business all elementor soft has-badge badge-new',
+					'plugins' => array( 'js_composer' ),
+				),
+				'personal-portfolio2'       => array(
+					'alt'     => 'Personal Portfolio 2',
+					'img'     => $demo_img_site . '/demos/personal-portfolio2.jpg',
+					'filter'  => 'portfolio business all elementor soft has-badge badge-new',
+					'plugins' => array( 'js_composer' ),
 				),
 				'personal-portfolio1'       => array(
 					'alt'     => 'Personal Portfolio 1',
 					'img'     => $demo_img_site . '/demos/personal-portfolio1.jpg',
-					'filter'  => 'portfolio business all elementor has-badge badge-new soft',
+					'filter'  => 'portfolio business all elementor soft',
 					'plugins' => array( 'js_composer' ),
 				),
 				'seo3'       => array(
 					'alt'     => 'SEO 3',
 					'img'     => $demo_img_site . '/demos/seo3.jpg',
-					'filter'  => 'business all elementor has-badge badge-new soft',
+					'filter'  => 'business all elementor soft',
 					'plugins' => array( 'js_composer' ),
 				),
 				'business-consulting5'       => array(
 					'alt'     => 'Business Consulting 5',
 					'img'     => $demo_img_site . '/demos/business-consulting5.jpg',
-					'filter'  => 'business all elementor has-badge badge-new soft',
+					'filter'  => 'business all elementor soft',
 					'plugins' => array( 'js_composer' ),
 				),
 				'transportation'       => array(
 					'alt'     => 'Transportation & Logistic',
 					'img'     => $demo_img_site . '/demos/transportation-logistic.jpg',
-					'filter'  => 'business all elementor has-badge badge-new soft',
+					'filter'  => 'business all elementor soft',
 					'plugins' => array( 'js_composer' ),
 				),
 				'renewable-energy'     => array(
 					'alt'     => 'Renewable Energy',
 					'img'     => $demo_img_site . '/demos/renewable-energy.jpg',
-					'filter'  => 'business all elementor has-badge badge-new soft',
+					'filter'  => 'business all elementor soft',
 					'plugins' => array( 'js_composer' ),
 				),
 				'business-consulting4' => array(
@@ -129,7 +153,7 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'alt'     => 'Auto Services',
 					'img'     => $demo_img_site . '/demos/auto-services.jpg',
 					'filter'  => 'business all elementor soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'startup-agency'       => array(
 					'alt'     => 'Startup Agency',
@@ -140,13 +164,13 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 				'beauty'               => array(
 					'alt'     => 'Beauty Salon',
 					'img'     => $demo_img_site . '/demos/beauty.jpg',
-					'filter'  => 'business all elementor has-badge badge-new soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'filter'  => 'business all elementor soft',
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'dentist'              => array(
 					'alt'     => 'Dentist',
 					'img'     => $demo_img_site . '/demos/dentist.jpg',
-					'filter'  => 'business all elementor has-badge badge-new soft',
+					'filter'  => 'business all elementor soft',
 					'plugins' => array( 'js_composer', 'post-types-unlimited', 'advanced-custom-fields' ),
 				),
 				'business-consulting3' => array(
@@ -179,32 +203,32 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'  => 'business all elementor',
 					'plugins' => array( 'js_composer', 'post-types-unlimited', 'advanced-custom-fields' ),
 				),
-				'construction2'        => array(
-					'alt'       => 'Construction 2',
-					'img'       => $demo_img_site . '/demos/construction2.jpg',
-					'filter'    => 'business all elementor',
-					'revslider' => array( 'home-construction-2.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
+				// 'construction2'        => array(
+				// 	'alt'       => 'Construction 2',
+				// 	'img'       => $demo_img_site . '/demos/construction2.jpg',
+				// 	'filter'    => 'business all elementor',
+				// 	'revslider' => array( 'home-construction-2.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
 				'business-consulting2' => array(
 					'alt'       => 'Business Consulting 2',
 					'img'       => $demo_img_site . '/demos/business-consulting2.jpg',
 					'filter'    => 'business all elementor soft',
 					'plugins'   => array( 'js_composer', 'leadin', 'advanced-custom-fields' ),
 				),
-				'medical2'             => array(
-					'alt'       => 'Medical 2',
-					'img'       => $demo_img_site . '/demos/medical2.jpg',
-					'filter'    => 'business all elementor',
-					'revslider' => array( 'home-medical-2.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'seo2'                 => array(
-					'alt'     => 'SEO 2',
-					'img'     => $demo_img_site . '/demos/seo2.jpg',
-					'filter'  => 'business all elementor',
-					'plugins' => array( 'js_composer' ),
-				),
+				// 'medical2'             => array(
+				// 	'alt'       => 'Medical 2',
+				// 	'img'       => $demo_img_site . '/demos/medical2.jpg',
+				// 	'filter'    => 'business all elementor',
+				// 	'revslider' => array( 'home-medical-2.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'seo2'                 => array(
+				// 	'alt'     => 'SEO 2',
+				// 	'img'     => $demo_img_site . '/demos/seo2.jpg',
+				// 	'filter'  => 'business all elementor',
+				// 	'plugins' => array( 'js_composer' ),
+				// ),
 				'it-services'          => array(
 					'alt'     => 'IT Services',
 					'img'     => $demo_img_site . '/demos/it-services.jpg',
@@ -231,72 +255,72 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'  => 'business elementor all',
 					'plugins' => array( 'js_composer' ),
 				),
-				'hotel'                => array(
-					'alt'       => 'Hotel',
-					'img'       => $demo_img_site . '/demos/hotel.jpg',
-					'filter'    => 'business all elementor',
-					'revslider' => array( 'demo-hotel.zip' ),
-					'plugins'   => array( 'js_composer', 'advanced-custom-fields' ),
-				),
-				'hotel-boxed'          => array(
-					'alt'       => 'Hotel (Boxed)',
-					'img'       => $demo_img_site . '/demos/hotel-boxed.jpg',
-					'filter'    => 'business all elementor',
-					'revslider' => array( 'demo-hotel.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
+				// 'hotel'                => array(
+				// 	'alt'       => 'Hotel',
+				// 	'img'       => $demo_img_site . '/demos/hotel.jpg',
+				// 	'filter'    => 'business all elementor',
+				// 	'revslider' => array( 'demo-hotel.zip' ),
+				// 	'plugins'   => array( 'js_composer', 'advanced-custom-fields' ),
+				// ),
+				// 'hotel-boxed'          => array(
+				// 	'alt'       => 'Hotel (Boxed)',
+				// 	'img'       => $demo_img_site . '/demos/hotel-boxed.jpg',
+				// 	'filter'    => 'business all elementor',
+				// 	'revslider' => array( 'demo-hotel.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
 				'restaurant'           => array(
 					'alt'     => 'Restaurant',
 					'img'     => $demo_img_site . '/demos/restaurant.jpg',
 					'filter'  => 'business all elementor',
 					'plugins' => array( 'js_composer', 'advanced-custom-fields' ),
 				),
-				'law-firm'             => array(
-					'alt'     => 'Law Firm',
-					'img'     => $demo_img_site . '/demos/law-firm.jpg',
-					'filter'  => 'business all elementor',
-					'plugins' => array( 'js_composer' ),
-				),
+				// 'law-firm'             => array(
+				// 	'alt'     => 'Law Firm',
+				// 	'img'     => $demo_img_site . '/demos/law-firm.jpg',
+				// 	'filter'  => 'business all elementor',
+				// 	'plugins' => array( 'js_composer' ),
+				// ),
 				'digital-agency'       => array(
 					'alt'     => 'Digital Agency',
 					'img'     => $demo_img_site . '/demos/demo_digital_agency.jpg',
 					'filter'  => 'business all elementor',
 					'plugins' => array( 'js_composer' ),
 				),
-				'medical'              => array(
-					'alt'       => 'Medical',
-					'img'       => $demo_img_site . '/demos/demo_medical.jpg',
-					'filter'    => 'business all elementor',
-					'revslider' => array( 'demo-medical.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
+				// 'medical'              => array(
+				// 	'alt'       => 'Medical',
+				// 	'img'       => $demo_img_site . '/demos/demo_medical.jpg',
+				// 	'filter'    => 'business all elementor',
+				// 	'revslider' => array( 'demo-medical.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
 				'wedding'              => array(
 					'alt'     => 'Wedding',
 					'img'     => $demo_img_site . '/demos/wedding.jpg',
 					'filter'  => 'business onepage all elementor soft',
 					'plugins' => array( 'js_composer' ),
 				),
-				'photography1'         => array(
-					'alt'       => 'Photography 1',
-					'img'       => $demo_img_site . '/demos/demo_photography_1.jpg',
-					'filter'    => 'business portfolio all elementor revslider_j',
-					'revslider' => array( 'Photography1-About-us.zip', 'Photography1-Fullscreen.zip', 'Photography1-Home.zip', 'Photography1-Kenburns.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'photography2'         => array(
-					'alt'       => 'Photography 2',
-					'img'       => $demo_img_site . '/demos/demo_photography_2.jpg',
-					'filter'    => 'business portfolio all elementor revslider_j',
-					'revslider' => array( 'Photography2-aboutus.zip', 'Photography2-Fullscreen.zip', 'Photography2-Home.zip', 'Photography2-Kenburns.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'photography3'         => array(
-					'alt'       => 'Photography 3',
-					'img'       => $demo_img_site . '/demos/demo_photography_3.jpg',
-					'filter'    => 'business portfolio all elementor revslider_j',
-					'revslider' => array( 'Photography3-AboutUs.zip', 'Photography3-Fullscreen.zip', 'Photography3-Home.zip', 'Photography3-Home_2.zip', 'Photography3-Kenburns.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
+				// 'photography1'         => array(
+				// 	'alt'       => 'Photography 1',
+				// 	'img'       => $demo_img_site . '/demos/demo_photography_1.jpg',
+				// 	'filter'    => 'business portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'Photography1-About-us.zip', 'Photography1-Fullscreen.zip', 'Photography1-Home.zip', 'Photography1-Kenburns.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'photography2'         => array(
+				// 	'alt'       => 'Photography 2',
+				// 	'img'       => $demo_img_site . '/demos/demo_photography_2.jpg',
+				// 	'filter'    => 'business portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'Photography2-aboutus.zip', 'Photography2-Fullscreen.zip', 'Photography2-Home.zip', 'Photography2-Kenburns.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'photography3'         => array(
+				// 	'alt'       => 'Photography 3',
+				// 	'img'       => $demo_img_site . '/demos/demo_photography_3.jpg',
+				// 	'filter'    => 'business portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'Photography3-AboutUs.zip', 'Photography3-Fullscreen.zip', 'Photography3-Home.zip', 'Photography3-Home_2.zip', 'Photography3-Kenburns.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
 				'business-consulting'  => array(
 					'alt'       => 'Business Consulting',
 					'img'       => $demo_img_site . '/demos/demo_busi_cons.jpg',
@@ -304,31 +328,31 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'revslider' => array( 'home-BC.zip' ),
 					'plugins'   => array( 'js_composer', 'leadin' ),
 				),
-				'gym'                  => array(
-					'alt'       => 'Gym',
-					'img'       => $demo_img_site . '/demos/demo_gym.jpg',
-					'filter'    => 'business all elementor',
-					'revslider' => array( 'home-gym.zip' ),
-					'plugins'   => array( 'js_composer', 'instagram-slider-widget' ),
-				),
-				'event'                => array(
-					'alt'     => 'Event',
-					'img'     => $demo_img_site . '/demos/event.jpg',
-					'filter'  => 'business all elementor',
-					'plugins' => array( 'js_composer' ),
-				),
+				// 'gym'                  => array(
+				// 	'alt'       => 'Gym',
+				// 	'img'       => $demo_img_site . '/demos/demo_gym.jpg',
+				// 	'filter'    => 'business all elementor',
+				// 	'revslider' => array( 'home-gym.zip' ),
+				// 	'plugins'   => array( 'js_composer', 'instagram-slider-widget' ),
+				// ),
+				// 'event'                => array(
+				// 	'alt'     => 'Event',
+				// 	'img'     => $demo_img_site . '/demos/event.jpg',
+				// 	'filter'  => 'business all elementor',
+				// 	'plugins' => array( 'js_composer' ),
+				// ),
 				'resume'               => array(
 					'alt'     => 'Resume',
 					'img'     => $demo_img_site . '/demos/demo_resume.jpg',
 					'filter'  => 'business onepage portfolio all elementor',
 					'plugins' => array( 'js_composer' ),
 				),
-				'church'               => array(
-					'alt'     => 'Church',
-					'img'     => $demo_img_site . '/demos/demo_church.jpg',
-					'filter'  => 'business all elementor',
-					'plugins' => array( 'js_composer', 'advanced-custom-fields' ),
-				),
+				// 'church'               => array(
+				// 	'alt'     => 'Church',
+				// 	'img'     => $demo_img_site . '/demos/demo_church.jpg',
+				// 	'filter'  => 'business all elementor',
+				// 	'plugins' => array( 'js_composer', 'advanced-custom-fields' ),
+				// ),
 				'finance'              => array(
 					'alt'     => 'Finance',
 					'img'     => $demo_img_site . '/demos/finance.jpg',
@@ -341,12 +365,12 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'  => 'business onepage portfolio all elementor',
 					'plugins' => array( 'js_composer' ),
 				),
-				'app-landing'          => array(
-					'alt'     => 'App Landing',
-					'img'     => $demo_img_site . '/demos/demo_applanding.jpg',
-					'filter'  => 'business onepage all elementor',
-					'plugins' => array( 'js_composer' ),
-				),
+				// 'app-landing'          => array(
+				// 	'alt'     => 'App Landing',
+				// 	'img'     => $demo_img_site . '/demos/demo_applanding.jpg',
+				// 	'filter'  => 'business onepage all elementor',
+				// 	'plugins' => array( 'js_composer' ),
+				// ),
 				'real-estate'          => array(
 					'alt'     => 'Real Estate',
 					'img'     => $demo_img_site . '/demos/real-estate.jpg',
@@ -365,7 +389,7 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'  => 'business all elementor',
 					'plugins' => array( 'js_composer' ),
 				),
-				'seo'                  => array(
+		/*		'seo'                  => array(
 					'alt'     => 'SEO',
 					'img'     => $demo_img_site . '/demos/demo_seo.jpg',
 					'filter'  => 'business all onepage elementor',
@@ -404,8 +428,8 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'    => 'business all onepage elementor',
 					'revslider' => array( 'home-band.zip' ),
 					'plugins'   => array( 'js_composer' ),
-				),
-				'classic-one-page'     => array(
+				), */
+	/*			'classic-one-page'     => array(
 					'alt'       => 'Classic One Page',
 					'img'       => $demo_img_site . '/demos/classic_one_page.jpg',
 					'filter'    => 'classic onepage elementor',
@@ -439,7 +463,7 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'    => 'classic elementor revslider_j',
 					'revslider' => array( 'full-width-video.zip', 'home-classic-video-light.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
-				),
+				), */
 				'corporate1'           => array(
 					'alt'       => 'Corporate 1',
 					'img'       => $demo_img_site . '/demos/corporate_1.jpg',
@@ -447,7 +471,7 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'revslider' => array( 'full-width-video.zip', 'home-corporate1.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
 				),
-				'corporate2'           => array(
+	/*			'corporate2'           => array(
 					'alt'       => 'Corporate 2',
 					'img'       => $demo_img_site . '/demos/corporate_2.jpg',
 					'filter'    => 'classic elementor revslider_j',
@@ -488,43 +512,43 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'    => 'classic elementor revslider_j',
 					'revslider' => array( 'full-width-video.zip', 'home-corporate7.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
-				),
+				),*/
 				'corporate8'           => array(
-					'alt'       => 'Corporate 8',
+					'alt'       => 'Corporate 2',
 					'img'       => $demo_img_site . '/demos/corporate_8.jpg',
 					'filter'    => 'classic elementor',
 					'revslider' => array( 'full-width-video.zip', 'home-corporate8.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
 				),
-				'corporate9'           => array(
-					'alt'       => 'Corporate 9',
-					'img'       => $demo_img_site . '/demos/corporate_9.jpg',
-					'filter'    => 'classic elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'home-corporate9.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'corporate10'          => array(
-					'alt'       => 'Corporate 10',
-					'img'       => $demo_img_site . '/demos/corporate_10.jpg',
-					'filter'    => 'classic elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'home-corporate10.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
+				// 'corporate9'           => array(
+				// 	'alt'       => 'Corporate 9',
+				// 	'img'       => $demo_img_site . '/demos/corporate_9.jpg',
+				// 	'filter'    => 'classic elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'home-corporate9.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'corporate10'          => array(
+				// 	'alt'       => 'Corporate 10',
+				// 	'img'       => $demo_img_site . '/demos/corporate_10.jpg',
+				// 	'filter'    => 'classic elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'home-corporate10.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
 				'corporate11'          => array(
-					'alt'       => 'Corporate 11',
+					'alt'       => 'Corporate 3',
 					'img'       => $demo_img_site . '/demos/corporate_11.jpg',
 					'filter'    => 'classic elementor revslider_j',
 					'revslider' => array( 'full-width-video.zip', 'home-corporate11.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
 				),
 				'corporate12'          => array(
-					'alt'       => 'Corporate 12',
+					'alt'       => 'Corporate 4',
 					'img'       => $demo_img_site . '/demos/corporate_12.jpg',
 					'filter'    => 'classic elementor revslider_j',
 					'revslider' => array( 'full-width-video.zip', 'home-corporate12.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
 				),
-				'corporate13'          => array(
+		/*		'corporate13'          => array(
 					'alt'       => 'Corporate 13',
 					'img'       => $demo_img_site . '/demos/corporate_13.jpg',
 					'filter'    => 'classic elementor revslider_j',
@@ -586,9 +610,9 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'filter'    => 'classic elementor revslider_j',
 					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
 					'plugins'   => array( 'js_composer' ),
-				),
+				), */
 				'corporate21'          => array(
-					'alt'     => 'Corporate 21',
+					'alt'     => 'Corporate 5',
 					'img'     => $demo_img_site . '/demos/corporate21.jpg',
 					'filter'  => 'classic elementor',
 					'plugins' => array( 'js_composer' ),
@@ -597,386 +621,392 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					'alt'     => 'Shop 1',
 					'img'     => $demo_img_site . '/demos/shop1.jpg',
 					'filter'  => 'shop elementor fse soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop2'                => array(
 					'alt'     => 'Shop 2',
 					'img'     => $demo_img_site . '/demos/shop2.jpg',
 					'filter'  => 'shop elementor fse soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop3'                => array(
 					'alt'     => 'Shop 3',
 					'img'     => $demo_img_site . '/demos/shop3.jpg',
 					'filter'  => 'shop elementor fse soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop4'                => array(
 					'alt'     => 'Shop 4',
 					'img'     => $demo_img_site . '/demos/shop4.jpg',
 					'filter'  => 'shop elementor fse soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
+				'shop47'               => array(
+					'alt'     => 'Shop 47',
+					'img'     => $demo_img_site . '/demos/shop47.jpg',
+					'filter'  => 'shop elementor soft has-badge badge-new',
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
+				),				
 				'shop45'               => array(
 					'alt'     => 'Shop 45',
 					'img'     => $demo_img_site . '/demos/shop45.jpg',
 					'filter'  => 'shop elementor soft has-badge badge-new',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'customer-reviews-woocommerce', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop46'               => array(
 					'alt'     => 'Shop 46',
 					'img'     => $demo_img_site . '/demos/shop46.jpg',
 					'filter'  => 'shop elementor soft has-badge badge-new',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'customer-reviews-woocommerce', 'contact-form-7' ),
 				),
 				'shop43'               => array(
 					'alt'     => 'Shop 43',
 					'img'     => $demo_img_site . '/demos/shop43.jpg',
 					'filter'  => 'shop elementor soft has-badge badge-new',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop44'               => array(
 					'alt'     => 'Shop 44',
 					'img'     => $demo_img_site . '/demos/shop44.jpg',
 					'filter'  => 'shop elementor soft has-badge badge-new',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop35'               => array(
 					'alt'     => 'Shop 35 (Grocery 1)',
 					'img'     => $demo_img_site . '/demos/shop35.jpg',
 					'filter'  => 'shop elementor fse soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop36'               => array(
 					'alt'     => 'Shop 36 (Marketplace 2)',
 					'img'     => $demo_img_site . '/demos/shop36.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),				
 				'shop14'               => array(
 					'alt'     => 'Shop 14',
 					'img'     => $demo_img_site . '/demos/shop14.jpg',
 					'filter'  => 'shop elementor soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),	
 				'shop32'               => array(
 					'alt'     => 'Shop 32',
 					'img'     => $demo_img_site . '/demos/shop32.jpg',
 					'filter'  => 'shop elementor soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop33'               => array(
 					'alt'     => 'Shop 33',
 					'img'     => $demo_img_site . '/demos/shop33.jpg',
 					'filter'  => 'shop elementor soft',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),		
 				'shop40'               => array(
 					'alt'     => 'Shop 40 (Grocery 2)',
 					'img'     => $demo_img_site . '/demos/shop40.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),									
 				'shop5'                => array(
 					'alt'     => 'Shop 5',
 					'img'     => $demo_img_site . '/demos/shop5.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop6'                => array(
 					'alt'     => 'Shop 6',
 					'img'     => $demo_img_site . '/demos/shop6.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop7'                => array(
 					'alt'     => 'Shop 7',
 					'img'     => $demo_img_site . '/demos/shop7.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop8'                => array(
 					'alt'     => 'Shop 8',
 					'img'     => $demo_img_site . '/demos/shop8.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop9'                => array(
 					'alt'     => 'Shop 9',
 					'img'     => $demo_img_site . '/demos/shop9.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop10'               => array(
 					'alt'     => 'Shop 10',
 					'img'     => $demo_img_site . '/demos/shop10.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop11'               => array(
 					'alt'     => 'Shop 11',
 					'img'     => $demo_img_site . '/demos/shop11.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop12'               => array(
 					'alt'     => 'Shop 12',
 					'img'     => $demo_img_site . '/demos/shop12.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop13'               => array(
 					'alt'     => 'Shop 13',
 					'img'     => $demo_img_site . '/demos/shop13.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop15'               => array(
 					'alt'     => 'Shop 15',
 					'img'     => $demo_img_site . '/demos/shop15.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop16'               => array(
 					'alt'     => 'Shop 16 (Parallax)',
 					'img'     => $demo_img_site . '/demos/shop16.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop17'               => array(
 					'alt'     => 'Shop 17',
 					'img'     => $demo_img_site . '/demos/shop17.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop18'               => array(
 					'alt'     => 'Shop 18',
 					'img'     => $demo_img_site . '/demos/shop18.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop19'               => array(
 					'alt'     => 'Shop 19',
 					'img'     => $demo_img_site . '/demos/shop19.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop20'               => array(
 					'alt'     => 'Shop 20',
 					'img'     => $demo_img_site . '/demos/shop20.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop21'               => array(
 					'alt'     => 'Shop 21',
 					'img'     => $demo_img_site . '/demos/shop21.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop22'               => array(
 					'alt'     => 'Shop 22 (Marketplace, Dokan Lite)',
 					'img'     => $demo_img_site . '/demos/shop22.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'dokan-lite', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'dokan-lite', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop22-wcfm'          => array(
 					'alt'     => 'Shop 22 (Marketplace, WCFM)',
 					'img'     => $demo_img_site . '/demos/shop22.jpg',
 					'filter'  => 'shop',
-					'plugins' => array( 'js_composer', 'woocommerce', 'wc-multivendor-marketplace', 'wc-frontend-manager', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'wc-multivendor-marketplace', 'wc-frontend-manager', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop23'               => array(
 					'alt'     => 'Shop 23 (Baby Shop)',
 					'img'     => $demo_img_site . '/demos/shop23.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop24'               => array(
 					'alt'     => 'Shop 24 (Digital Product)',
 					'img'     => $demo_img_site . '/demos/shop24.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop25'               => array(
 					'alt'     => 'Shop 25 (Book Store)',
 					'img'     => $demo_img_site . '/demos/shop25.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop26'               => array(
 					'alt'     => 'Shop 26',
 					'img'     => $demo_img_site . '/demos/shop26.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop27'               => array(
 					'alt'     => 'Shop 27 (Bike Store)',
 					'img'     => $demo_img_site . '/demos/shop27.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'instagram-slider-widget', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'instagram-slider-widget', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop28'               => array(
 					'alt'     => 'Shop 28 (Single Product)',
 					'img'     => $demo_img_site . '/demos/shop28.jpg',
 					'filter'  => 'shop onepage elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop29'               => array(
 					'alt'     => 'Shop 29',
 					'img'     => $demo_img_site . '/demos/shop29.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'instagram-slider-widget', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'instagram-slider-widget', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop30'               => array(
 					'alt'     => 'Shop 30',
 					'img'     => $demo_img_site . '/demos/shop30.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop31'               => array(
 					'alt'     => 'Shop 31 (Game Store)',
 					'img'     => $demo_img_site . '/demos/shop31.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop34'               => array(
 					'alt'     => 'Shop 34',
 					'img'     => $demo_img_site . '/demos/shop34.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop37'               => array(
 					'alt'     => 'Shop 37',
 					'img'     => $demo_img_site . '/demos/shop37.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop38'               => array(
 					'alt'     => 'Shop 38 (Medical Shop)',
 					'img'     => $demo_img_site . '/demos/shop38.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop39'               => array(
 					'alt'     => 'Shop 39 (Wine Shop)',
 					'img'     => $demo_img_site . '/demos/shop39.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop41'               => array(
 					'alt'     => 'Shop 41 (Grocery 3)',
 					'img'     => $demo_img_site . '/demos/shop41.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop42'               => array(
 					'alt'     => 'Shop 42',
 					'img'     => $demo_img_site . '/demos/shop42.jpg',
 					'filter'  => 'shop elementor',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop1-dark'           => array(
 					'alt'     => 'Shop 1 Dark',
 					'img'     => $demo_img_site . '/demos/shop1-dark.jpg',
 					'filter'  => 'shop',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop2-dark'           => array(
 					'alt'     => 'Shop 2 Dark',
 					'img'     => $demo_img_site . '/demos/shop2-dark.jpg',
 					'filter'  => 'shop',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
 				'shop4-dark'           => array(
 					'alt'     => 'Shop 4 Dark',
 					'img'     => $demo_img_site . '/demos/shop4-dark.jpg',
 					'filter'  => 'shop',
-					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs' ),
+					'plugins' => array( 'js_composer', 'woocommerce', 'alpus-aprs', 'yith-woocommerce-wishlist', 'contact-form-7' ),
 				),
-				'dark'                 => array(
-					'alt'       => 'Dark Original',
-					'img'       => $demo_img_site . '/demos/dark_original.jpg',
-					'filter'    => 'classic',
-					'revslider' => array( 'full-width-video.zip', 'home-dark.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'rtl'                  => array(
-					'alt'       => 'RTL Original',
-					'img'       => $demo_img_site . '/demos/rtl_original.jpg',
-					'filter'    => 'classic elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'home-rtl.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'blog1'                => array(
-					'alt'       => 'Blog 1',
-					'img'       => $demo_img_site . '/demos/blog1.jpg',
-					'filter'    => 'blog all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer', 'dynamic-featured-image' ),
-				),
-				'blog2'                => array(
-					'alt'       => 'Blog 2',
-					'img'       => $demo_img_site . '/demos/blog2.jpg',
-					'filter'    => 'blog all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'blog3'                => array(
-					'alt'       => 'Blog 3',
-					'img'       => $demo_img_site . '/demos/blog3.jpg',
-					'filter'    => 'blog all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'blog4'                => array(
-					'alt'       => 'Blog 4',
-					'img'       => $demo_img_site . '/demos/blog4.jpg',
-					'filter'    => 'blog all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'blog5'                => array(
-					'alt'       => 'Blog 5',
-					'img'       => $demo_img_site . '/demos/blog5.jpg',
-					'filter'    => 'blog all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer', 'dynamic-featured-image' ),
-				),
-				'portfolio1'           => array(
-					'alt'       => 'Portfolio 1',
-					'img'       => $demo_img_site . '/demos/portfolio1.jpg',
-					'filter'    => 'portfolio all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'portfolio2'           => array(
-					'alt'       => 'Portfolio 2',
-					'img'       => $demo_img_site . '/demos/portfolio2.jpg',
-					'filter'    => 'portfolio all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'portfolio3'           => array(
-					'alt'       => 'Portfolio 3',
-					'img'       => $demo_img_site . '/demos/portfolio3.jpg',
-					'filter'    => 'portfolio all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'portfolio4'           => array(
-					'alt'       => 'Portfolio 4',
-					'img'       => $demo_img_site . '/demos/portfolio4.jpg',
-					'filter'    => 'portfolio all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
-				'portfolio5'           => array(
-					'alt'       => 'Portfolio 5',
-					'img'       => $demo_img_site . '/demos/portfolio5.jpg',
-					'filter'    => 'portfolio all elementor revslider_j',
-					'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
-					'plugins'   => array( 'js_composer' ),
-				),
+				// 'dark'                 => array(
+				// 	'alt'       => 'Dark Original',
+				// 	'img'       => $demo_img_site . '/demos/dark_original.jpg',
+				// 	'filter'    => 'classic',
+				// 	'revslider' => array( 'full-width-video.zip', 'home-dark.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'rtl'                  => array(
+				// 	'alt'       => 'RTL Original',
+				// 	'img'       => $demo_img_site . '/demos/rtl_original.jpg',
+				// 	'filter'    => 'classic elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'home-rtl.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'blog1'                => array(
+				// 	'alt'       => 'Blog 1',
+				// 	'img'       => $demo_img_site . '/demos/blog1.jpg',
+				// 	'filter'    => 'blog all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer', 'dynamic-featured-image' ),
+				// ),
+				// 'blog2'                => array(
+				// 	'alt'       => 'Blog 2',
+				// 	'img'       => $demo_img_site . '/demos/blog2.jpg',
+				// 	'filter'    => 'blog all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'blog3'                => array(
+				// 	'alt'       => 'Blog 3',
+				// 	'img'       => $demo_img_site . '/demos/blog3.jpg',
+				// 	'filter'    => 'blog all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'blog4'                => array(
+				// 	'alt'       => 'Blog 4',
+				// 	'img'       => $demo_img_site . '/demos/blog4.jpg',
+				// 	'filter'    => 'blog all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'blog5'                => array(
+				// 	'alt'       => 'Blog 5',
+				// 	'img'       => $demo_img_site . '/demos/blog5.jpg',
+				// 	'filter'    => 'blog all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer', 'dynamic-featured-image' ),
+				// ),
+				// 'portfolio1'           => array(
+				// 	'alt'       => 'Portfolio 1',
+				// 	'img'       => $demo_img_site . '/demos/portfolio1.jpg',
+				// 	'filter'    => 'portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'portfolio2'           => array(
+				// 	'alt'       => 'Portfolio 2',
+				// 	'img'       => $demo_img_site . '/demos/portfolio2.jpg',
+				// 	'filter'    => 'portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'portfolio3'           => array(
+				// 	'alt'       => 'Portfolio 3',
+				// 	'img'       => $demo_img_site . '/demos/portfolio3.jpg',
+				// 	'filter'    => 'portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'portfolio4'           => array(
+				// 	'alt'       => 'Portfolio 4',
+				// 	'img'       => $demo_img_site . '/demos/portfolio4.jpg',
+				// 	'filter'    => 'portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
+				// 'portfolio5'           => array(
+				// 	'alt'       => 'Portfolio 5',
+				// 	'img'       => $demo_img_site . '/demos/portfolio5.jpg',
+				// 	'filter'    => 'portfolio all elementor revslider_j',
+				// 	'revslider' => array( 'full-width-video.zip', 'media-gallery.zip' ),
+				// 	'plugins'   => array( 'js_composer' ),
+				// ),
 			);
 		}
 
@@ -2053,6 +2083,7 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					if ( ! Porto()->is_registered() ) {
 						echo '<form action="" method="post">';
 						?>
+							<div style="margin-top: 10px;"><?php echo sprintf( esc_html__( 'Please login to %1$ssupport site%2$s and can reset your license %3$shere%2$s from current site domain.', 'porto' ), '<a href="https://www.portotheme.com/support/">', '</a>', '<a href="https://www.portotheme.com/support/reset-sites/">' ); ?></div>
 							<p style="margin-bottom: 0;"><?php esc_html_e( 'Where can I find my purchase code?', 'porto' ); ?></p>
 							<ol>
 								<?php /* translators: $1: opening A tag which has link to the Themeforest downloads page $2: closing A tag */ ?>
@@ -3449,6 +3480,10 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					}
 					update_option( '_elementor_settings_update_time', time() );
 					do_action( 'porto_admin_save_theme_settings', true );
+					
+					if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '3.17.0' ) >= 0 ) {
+						update_option( \Elementor\Plugin::$instance->experiments->get_feature_option_key( 'block_editor_assets_optimize' ), \Elementor\Plugin::$instance->experiments::STATE_INACTIVE );
+					}
 				} elseif ( defined( 'VCV_VERSION' ) && 0 === strpos( $demo, 'vc-' ) ) {
 					$optionsHelper = vchelper( 'Options' );
 					$optionsHelper->deleteTransient( 'vcv:settings:factoryReset:allow' );
@@ -3505,6 +3540,26 @@ if ( ! class_exists( 'Porto_Theme_Setup_Wizard' ) ) {
 					$wpforms_settings['disable-css'] = '3';
 					update_option( 'wpforms_settings', $wpforms_settings );
 				}
+				
+				if ( defined( 'PORTO_BUILDERS_PATH' ) ) {
+					global $wpdb;
+					$gutenberg_posts = $wpdb->get_results( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type not in (%s, %s) AND post_status = 'publish' AND post_content LIKE '%<!-- wp:%' LIMIT 200", 'revision', 'attachment' ) );
+					if ( ! empty( $gutenberg_posts ) ) {
+						include_once PORTO_BUILDERS_PATH . 'elements/type/init.php';
+						if ( class_exists( 'PortoBuildersType' ) ) {
+							$tb_ins = PortoBuildersType::get_instance();
+				
+							foreach ( $gutenberg_posts as $p ) {
+								$gutenberg_post = get_post( $p->ID );
+								if ( $gutenberg_post && ! is_wp_error( $gutenberg_post ) ) {
+									$tb_ins->save_meta_values( (int) $p->ID, $gutenberg_post );
+									do_action( 'porto_trigger_generate_post_css', (int) $p->ID, $gutenberg_post );
+								}
+							}
+						}
+					}
+				}
+
 			} else {
 				// Import widgets
 				$demo_path   = $this->get_demo_file( $demo );

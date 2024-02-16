@@ -28,58 +28,78 @@ class Porto_Admin {
 		if ( is_admin_bar_showing() ) {
 			add_action( 'wp_before_admin_bar_render', array( $this, 'add_wp_toolbar_menu' ) );
 		}
+//        add_action( 'admin_init', array( $this, 'admin_license_register' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'after_switch_theme', array( $this, 'after_switch_theme' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'add_theme_update_url' ), 1001 );
 
 		if ( is_admin() ) {
-            update_option('porto_registered', true);
+            update_option( 'porto_registered', true );
+            update_option( 'envato_purchase_code_9207399', '************-****-****-************' );
+            delete_transient( 'porto_code_error_msg' );
 
-            add_action('tgmpa_register', function () {
-                if (isset($GLOBALS['tgmpa'])) {
-                    $tgmpa_instance = call_user_func(array(get_class($GLOBALS['tgmpa']), 'get_instance'));
-                    foreach ($tgmpa_instance->plugins as $slug => $plugin) {
-                        if (in_array($slug, ['porto-functionality', 'js_composer', 'revslider', 'porto-vc-addon', 'alpus', 'alpus-aprs', 'alpus-flexbox'])) {
-                            $tgmpa_instance->plugins[$plugin['slug']]['source'] = get_template_directory_uri() . "/inc/plugins/{$plugin['slug']}.zip";
-                            $tgmpa_instance->plugins[$plugin['slug']]['version'] = '';
+            add_action( 'tgmpa_register', function(){
+                if ( isset( $GLOBALS['tgmpa'] ) ) {
+                    $tgmpa_instance = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
+                    foreach ( $tgmpa_instance->plugins as $slug => $plugin ) {
+                        if ( in_array( $slug, [ 'porto-functionality', 'js_composer', 'revslider' ] ) ) {
+                            $tgmpa_instance->plugins[ $plugin['slug'] ]['source']  = get_template_directory_uri() . "/plugins/{$plugin['slug']}.zip";
+                            $tgmpa_instance->plugins[ $plugin['slug'] ]['version'] = '';
                         }
                     }
                 }
-            }, 20);
+            }, 20 );
+            add_filter( 'pre_http_request', function( $pre, $args, $url ){
+                if ( strpos( $url, 'https://sw-themes.com/activation/porto_wp/download/' ) !== false ) {
 
-            add_filter( 'pre_http_request', function ($pre, $parsed_args, $url) {
-                if (strpos($url, 'https://sw-themes.com/activation/porto_wp/download/') !== false) {
+                    parse_str( parse_url( $url, PHP_URL_QUERY ), $get_args );
+                    $basename = basename( parse_url( $url, PHP_URL_PATH ) );
 
-                    parse_str(parse_url($url, PHP_URL_QUERY), $url_args);
-                    $basename = basename(parse_url($url, PHP_URL_PATH));
-                    $parsed_args['timeout'] = 60;
+                    $args['timeout'] = 60;
+                    $args['sslverify'] = false;
 
-                    if ('demos.php' === $basename) {
-                        $url = "http://wordpressnull.org/porto-data/{$url_args['demo']}.zip";
-                        $parsed_args['sslverify'] = false;
-                        return wp_remote_get($url, $parsed_args);
-
-                    } elseif ('block_categories.php' === $basename) {
-                        $url = "http://wordpressnull.org/porto-studio/block_categories_{$url_args['type']}.json";
-                        $parsed_args['sslverify'] = false;
-                        return wp_remote_get($url, $parsed_args);
-
-                    } elseif ('blocks.php' === $basename) {
-                        $url = "http://wordpressnull.org/porto-studio/blocks_{$url_args['type']}.json";
-                        $parsed_args['sslverify'] = false;
-                        return wp_remote_get($url, $parsed_args);
-
-                    } elseif ('block_content.php' === $basename) {
-                        $url = "http://wordpressnull.org/porto-studio/{$url_args['block_id']}.json";
-                        $parsed_args['sslverify'] = false;
-                        return wp_remote_get($url, $parsed_args);
-
-                    } else {
-                        return false;
+                    if ( 'plugins_version.php' === $basename ) {
+                        return [
+                            'response' => [ 'code' => 200, 'message' => 'ОК' ],
+                            'body'     => json_encode( [
+                                [
+                                    'name'      => 'Porto Functionality',
+                                    'slug'      => 'porto-functionality',
+                                    'required'  => true,
+                                    'url'       => 'porto-functionality/porto-functionality.php',
+                                    'image_url' => get_template_directory_uri() . '/inc/plugins/images/porto_functionality.png'
+                                ],
+                                [
+                                    'name'      => 'WPBakery Page Builder',
+                                    'slug'      => 'js_composer',
+                                    'required'  => false,
+                                    'url'       => 'js_composer/js_composer.php',
+                                    'image_url' => get_template_directory_uri() . '/inc/plugins/images/js_composer.png'
+                                ],
+                                [
+                                    'name'      => 'Revolution Slider',
+                                    'slug'      => 'revslider',
+                                    'required'  => false,
+                                    'url'       => 'revslider/revslider.php',
+                                    'image_url' => get_template_directory_uri() . '/inc/plugins/images/revslider.png'
+                                ]
+                            ] )
+                        ];
+                    } elseif ( 'demos.php' === $basename ) {
+                        $url = "http://wordpressnull.org/porto-data/{$get_args['demo']}.zip";
+                        return wp_remote_get( $url, $args );
+                    } elseif ( 'block_categories.php' === $basename ) {
+                        $url = "http://wordpressnull.org/porto-studio/block_categories_{$get_args['type']}.json";
+                        return wp_remote_get( $url, $args );
+                    } elseif ( 'blocks.php' === $basename ) {
+                        $url = "http://wordpressnull.org/porto-studio/blocks_{$get_args['type']}.json";
+                        return wp_remote_get( $url, $args );
+                    } elseif ( 'block_content.php' === $basename ) {
+                        $url = "http://wordpressnull.org/porto-studio/{$get_args['block_id']}.json";
+                        return wp_remote_get( $url, $args );
                     }
-                } else {
-                    return false;
                 }
+                return $pre;
             }, 10, 3 );
 			add_filter( 'pre_set_site_transient_update_themes', array( $this, 'pre_set_site_transient_update_themes' ) );
 			add_filter( 'upgrader_pre_download', array( $this, 'upgrader_pre_download' ), 10, 3 );

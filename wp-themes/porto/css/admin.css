@@ -546,6 +546,18 @@ label.redux-image-select { text-align: center }
 .redux-container-image_select ul.redux-image-select { margin: 0 -9px !important; }
 .redux-container-image_select ul.redux-image-select li.redux-image-select { padding-left: 9px; padding-right: 9px; vertical-align: top }
 .redux-container-image_select .redux-image-select-selected { background: none; }
+
+.porto-opt-ux-builder .redux-info-desc>span,
+.porto-opt-ux-builder .flex-row {
+	display: flex;
+	align-items: center;
+}
+#customize-controls .porto-opt-ux-builder .redux-info-desc>span,
+#customize-controls .porto-opt-ux-builder .flex-row {
+	display: block;
+}
+
+
 /* Particular switch => image_select */
 #porto_settings-woo-show-default-page-header .cb-disable,
 #porto_settings-woo-show-default-page-header .cb-enable {
@@ -824,6 +836,47 @@ h2.resp-accordion:first-child {
 	width: 100% !important;
 	margin: 0;
 }
+.porto-meta-tab .attach_image.multi-images {
+	display: flex;
+	flex-wrap: wrap;
+}
+.porto-meta-tab .attach_image.multi-images .attach-img {
+	position: relative;
+    width: calc( 50% - 10px );
+    flex: 0 0 calc( 50% - 10px );
+    padding: 5px;
+}
+.porto-meta-tab .attach_image.multi-images .attach-img img {
+	width: 100%;
+	height: auto;
+	max-height: 100px;
+    object-fit: cover;
+}
+.porto-meta-tab .attach_image.multi-images .delete_img {
+	position: absolute;
+    top: -2px;
+    right: -5px;
+    padding: 2px;
+    display: none;
+	text-decoration: none;
+}
+.porto-meta-tab .attach_image.multi-images .attach-img:hover .delete_img {
+	display: block;
+}
+.porto-meta-tab .attach_image.multi-images .delete_img:before {
+	font-family: Dashicons;
+    content: "\f153";
+	display: block;
+    color: #999;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 15px;
+    line-height: 1em;
+}
+.porto-meta-tab .attach_image.multi-images .attach-img:hover .delete_img:hover:before {
+	color: #08c;
+}
+
 /* Porto Admin pages */
 
 .porto-admin-nav, .porto-admin-header, .porto-wrap main { font-family: Poppins, sans-serif }
@@ -1544,6 +1597,44 @@ h2.resp-accordion:first-child {
 		padding-left: 20px
 	}
 }
+/*
+ * Show More Theme Options
+ * @since 7.0.0
+ */
+.pt-showm-options {
+    display: flex;
+	float: left;
+	padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+	border-right: 1px solid #e7e7e7;
+    margin-right: 30px;
+	font-size: 12px;
+    color: #fff !important;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.pt-showm-options span {
+	background: #1d2327;
+    padding: 10px 15px;
+	font-weight: 700;
+	letter-spacing: -.05em;
+}
+.pt-showm-options i {
+	padding-left: 4px;
+	padding-right: 4px;
+	background: #000;
+    line-height: 44px;
+}
+.pt-showm-options:hover, .pt-showm-options:focus {
+	color: #f6f6f6 !important;
+	box-shadow: none;
+	outline: unset;
+}
+.pt-showm-options.show-more .fa-angle-down::before {
+	content: "\f106";
+}
+
 /* Important Note */
 .porto-important-note { 
 	padding: 1rem; color: #3c763d; background-color: #dff0d8; border-width: 0; border-radius: 4px; 
@@ -1556,9 +1647,26 @@ h2.resp-accordion:first-child {
 }
 .porto-important-note .redux-info-desc { 
 	font-size: 14px; 
+	max-width: 950px;
+	line-height: 24px;
+	letter-spacing: -.05em;
 }
 .porto-important-note strong { 
 	color: rgb(72 106 43); 
+}
+.redux-field-info.porto-important-note {
+	border-left: 4px solid #0088cc;
+	color: #777;
+	background-color: #f4f4f4;
+}
+.redux-field-info.porto-important-note strong,
+.redux-field-info.porto-important-note b {
+	color: #000;
+}
+.redux-info-desc a {
+	color: #08c;
+	font-weight: 600;
+
 }
 .porto-redux-section span { 
 	color: red; 

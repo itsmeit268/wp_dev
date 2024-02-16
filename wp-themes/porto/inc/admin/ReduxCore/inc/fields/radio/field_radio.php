@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'ReduxFramework_radio' ) ) {
+	#[\AllowDynamicProperties]
 	class ReduxFramework_radio {
 
 		/**
