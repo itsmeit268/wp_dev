@@ -57,9 +57,10 @@ class Bunyad_Customizer_Controls_FontFamily extends Bunyad_Customizer_Controls_S
 		$google_fonts = ob_get_clean();
 		$google_fonts = json_decode($google_fonts, true);
 
-		$fonts = [
-			'google' => $google_fonts,
-			'global' => [
+		$global_fonts = [];
+		$configs = (array) Bunyad::options()->get_config('customizer');
+		if (!empty($configs['font_aliases'])) {
+			$global_fonts = [
 				[
 					'label' => esc_html('Primary Font', 'bunyad-admin'),
 					'value' => '_primary',
@@ -75,7 +76,12 @@ class Bunyad_Customizer_Controls_FontFamily extends Bunyad_Customizer_Controls_S
 					'value' => '_tertiary',
 					'group' => 'global'
 				],
-			],
+			];
+		}
+
+		$fonts = [
+			'google' => $google_fonts,
+			'global' => $global_fonts,
 			'system' => [
 				[
 					'label' => esc_html('Sans-Serif Stack', 'bunyad-admin'),

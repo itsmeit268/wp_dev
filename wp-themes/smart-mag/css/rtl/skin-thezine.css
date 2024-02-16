@@ -16,7 +16,6 @@
   --feat-grid-title-m: 19px;
   --feat-grid-title-l: 26px;
 }
-
 @media (min-width: 1201px) {
   :root {
     --sidebar-width: 375px;
@@ -47,7 +46,6 @@
 .loop-grid {
   --grid-row-gap: 30px;
 }
-
 .loop-grid-lg {
   --grid-row-gap: 45px;
 }
@@ -63,14 +61,12 @@
 .post-meta {
   font-size: 11px;
 }
-
 .post-meta .post-author > a {
   text-transform: uppercase;
   color: var(--c-main);
   font-weight: 600;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
-
 .post-meta .main-stars {
   font-size: 16px;
 }
@@ -103,7 +99,6 @@
 .feat-grid-d {
   --grid-gap: 4px;
 }
-
 .feat-grid-d .item-small,
 .feat-grid-d .item-medium {
   --g-overlay-content-pad: 20px 17px;

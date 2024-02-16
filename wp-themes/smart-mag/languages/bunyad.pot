@@ -2,14 +2,14 @@
 # This file is distributed under the ThemeForest Split Licence.
 msgid ""
 msgstr ""
-"Project-Id-Version: SmartMag 9.3.0\n"
+"Project-Id-Version: SmartMag 9.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/smart-mag\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-19T01:17:04+00:00\n"
+"POT-Creation-Date: 2023-11-22T00:18:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.0\n"
 "X-Domain: bunyad\n"
@@ -33,7 +33,7 @@ msgid "https://theme-sphere.com"
 msgstr ""
 
 #: blocks/breadcrumbs/breadcrumbs.php:54
-#: admin/options/layout-main.php:450
+#: admin/options/layout-main.php:460
 #: packages/blocks/breadcrumbs/breadcrumbs.php:54
 msgctxt "breadcrumbs"
 msgid "You are at:"
@@ -127,16 +127,26 @@ msgctxt "Post Meta"
 msgid "%s Article Views"
 msgstr ""
 
-#: inc/reviews/review.php:127
+#: inc/reviews/metabox/form.php:84
+#: inc/reviews/module.php:155
+msgid "The Good"
+msgstr ""
+
+#: inc/reviews/metabox/form.php:104
+#: inc/reviews/module.php:156
+msgid "The Bad"
+msgstr ""
+
+#: inc/reviews/review.php:159
 msgid "User Ratings"
 msgstr ""
 
-#: inc/reviews/review.php:128
+#: inc/reviews/review.php:160
 msgid "%s Votes"
 msgstr ""
 
 #: inc/social-share.php:28
-#: widgets/widget-social-follow.php:144
+#: inc/social-share.php:121
 #: inc/social.php:42
 #: partials/author.php:20
 msgid "Facebook"
@@ -155,7 +165,7 @@ msgid "Share on X (Twitter)"
 msgstr ""
 
 #: inc/social-share.php:42
-#: widgets/widget-social-follow.php:160
+#: inc/social-share.php:137
 #: inc/social.php:57
 #: partials/author.php:22
 msgid "Pinterest"
@@ -166,7 +176,7 @@ msgid "Share on Pinterest"
 msgstr ""
 
 #: inc/social-share.php:50
-#: widgets/widget-social-follow.php:192
+#: inc/social-share.php:169
 #: inc/social.php:93
 #: partials/author.php:26
 msgid "LinkedIn"
@@ -197,7 +207,7 @@ msgstr ""
 
 #: inc/social-share.php:71
 #: comments.php:108
-#: inc/integrations/woocommerce.php:244
+#: inc/integrations/woocommerce.php:241
 msgid "Email"
 msgstr ""
 
@@ -206,7 +216,7 @@ msgid "Share via Email"
 msgstr ""
 
 #: inc/social-share.php:78
-#: widgets/widget-social-follow.php:240
+#: inc/social-share.php:217
 #: inc/social.php:153
 msgid "WhatsApp"
 msgstr ""
@@ -216,7 +226,7 @@ msgid "Share on WhatsApp"
 msgstr ""
 
 #: inc/social-share.php:87
-#: widgets/widget-social-follow.php:216
+#: inc/social-share.php:193
 #: inc/social.php:128
 msgid "Reddit"
 msgstr ""
@@ -226,7 +236,7 @@ msgid "Share on Reddit"
 msgstr ""
 
 #: inc/social-share.php:94
-#: widgets/widget-social-follow.php:232
+#: inc/social-share.php:209
 #: inc/social.php:138
 msgid "Telegram"
 msgstr ""
@@ -235,30 +245,77 @@ msgstr ""
 msgid "Share on Telegram"
 msgstr ""
 
-#: lib/posts.php:546
+#: inc/social-share.php:101
+#: inc/social-share.php:102
+msgid "Copy Link"
+msgstr ""
+
+#: inc/social-share.php:129
+#: inc/social.php:47
+#: partials/author.php:21
+msgid "X (Twitter)"
+msgstr ""
+
+#: inc/social-share.php:145
+#: inc/social.php:52
+#: partials/author.php:23
+msgid "Instagram"
+msgstr ""
+
+#: inc/social-share.php:153
+#: inc/social.php:78
+msgid "YouTube"
+msgstr ""
+
+#: inc/social-share.php:161
+#: inc/social.php:108
+msgid "Vimeo"
+msgstr ""
+
+#: inc/social-share.php:177
+msgid "Soundcloud"
+msgstr ""
+
+#: inc/social-share.php:185
+#: inc/social.php:143
+msgid "Twitch"
+msgstr ""
+
+#: inc/social-share.php:201
+#: inc/social.php:133
+msgid "TikTok"
+msgstr ""
+
+#: lib/posts.php:553
 msgctxt "pagination"
 msgid "Next"
 msgstr ""
 
-#: lib/posts.php:547
+#: lib/posts.php:554
 msgctxt "pagination"
 msgid "Previous"
 msgstr ""
 
-#: lib/posts.php:720
+#: lib/posts.php:727
 #: admin/options/posts-listings.php:57
-#: inc/theme.php:290
+#: inc/theme.php:291
 msgid "Read More"
 msgstr ""
 
 #: social-share/views/social-share-b.php:23
 #: social-share/views/social-share-float.php:22
-#: admin/options/posts-single.php:815
-#: admin/options/posts-single.php:1050
+#: admin/options/posts-single.php:729
+#: admin/options/posts-single.php:1061
 msgid "Share"
 msgstr ""
 
-#: social-share/views/social-share-b.php:114
+#: social-share/views/social-share-b.php:123
+#: social-share/views/social-share-float.php:76
+#: social-share/views/social-share.php:48
+msgid "Link copied successfully!"
+msgstr ""
+
+#: social-share/views/social-share-b.php:134
 msgid "Show More Social Sharing"
 msgstr ""
 
@@ -327,42 +384,6 @@ msgctxt "bbPress"
 msgid "Favorites"
 msgstr ""
 
-#: widgets/widget-social-follow.php:152
-#: inc/social.php:47
-#: partials/author.php:21
-msgid "X (Twitter)"
-msgstr ""
-
-#: widgets/widget-social-follow.php:168
-#: inc/social.php:52
-#: partials/author.php:23
-msgid "Instagram"
-msgstr ""
-
-#: widgets/widget-social-follow.php:176
-#: inc/social.php:78
-msgid "YouTube"
-msgstr ""
-
-#: widgets/widget-social-follow.php:184
-#: inc/social.php:108
-msgid "Vimeo"
-msgstr ""
-
-#: widgets/widget-social-follow.php:200
-msgid "Soundcloud"
-msgstr ""
-
-#: widgets/widget-social-follow.php:208
-#: inc/social.php:143
-msgid "Twitch"
-msgstr ""
-
-#: widgets/widget-social-follow.php:224
-#: inc/social.php:133
-msgid "TikTok"
-msgstr ""
-
 #: widgets/widget-tabbed-recent.php:273
 msgid "Posts:"
 msgstr ""
@@ -400,7 +421,7 @@ msgstr ""
 msgid "Go to Homepage"
 msgstr ""
 
-#: admin/options-short.php:2157
+#: admin/options-short.php:2253
 #: admin/options/archives.php:150
 msgid "Browsing: %s"
 msgstr ""
@@ -410,7 +431,17 @@ msgstr ""
 msgid "Trending"
 msgstr ""
 
-#: admin/options/posts-single.php:1280
+#: admin/options/posts-single.php:1259
+#: partials/single/modern-header.php:102
+msgid "Follow Us"
+msgstr ""
+
+#: admin/options/posts-single.php:1342
+#: partials/single/social-share-bot.php:16
+msgid "Follow on %s"
+msgstr ""
+
+#: admin/options/posts-single.php:1383
 #: partials/single/related-posts.php:10
 msgid "Related *Posts*"
 msgstr ""
@@ -550,7 +581,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #: comments.php:98
-#: inc/integrations/woocommerce.php:234
+#: inc/integrations/woocommerce.php:231
 msgid "Name"
 msgstr ""
 
@@ -576,7 +607,7 @@ msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out 
 msgstr ""
 
 #: comments.php:153
-#: inc/integrations/woocommerce.php:253
+#: inc/integrations/woocommerce.php:250
 msgid "Your Comment"
 msgstr ""
 
@@ -596,70 +627,70 @@ msgstr ""
 msgid "Login with %s"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:212
+#: inc/integrations/woocommerce.php:209
 msgctxt "woocommerce"
 msgid "Your Rating:"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:213
+#: inc/integrations/woocommerce.php:210
 msgctxt "woocommerce"
 msgid "Rate&hellip;"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:214
+#: inc/integrations/woocommerce.php:211
 msgctxt "woocommerce"
 msgid "Perfect"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:215
+#: inc/integrations/woocommerce.php:212
 msgctxt "woocommerce"
 msgid "Good"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:216
+#: inc/integrations/woocommerce.php:213
 msgctxt "woocommerce"
 msgid "Average"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:217
+#: inc/integrations/woocommerce.php:214
 msgctxt "woocommerce"
 msgid "Not that bad"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:218
+#: inc/integrations/woocommerce.php:215
 msgctxt "woocommerce"
 msgid "Very Poor"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:227
+#: inc/integrations/woocommerce.php:224
 msgctxt "woocommerce"
 msgid "Add a review"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:227
+#: inc/integrations/woocommerce.php:224
 msgctxt "woocommerce"
 msgid "Be the first to review"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:304
+#: inc/integrations/woocommerce.php:301
 msgid "View Cart"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:312
+#: inc/integrations/woocommerce.php:309
 msgid "Shopping Cart"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:385
+#: inc/integrations/woocommerce.php:382
 msgctxt "woocommerce"
 msgid "Qty"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:393
+#: inc/integrations/woocommerce.php:390
 msgctxt "woocommerce"
 msgid "Price"
 msgstr ""
 
-#: inc/integrations/woocommerce.php:401
+#: inc/integrations/woocommerce.php:398
 msgctxt "woocommerce"
 msgid "Total"
 msgstr ""
@@ -709,11 +740,19 @@ msgstr ""
 msgid "Threads"
 msgstr ""
 
-#: inc/theme.php:133
-msgid "Ad Blocker Enabled!"
+#: inc/social.php:171
+msgid "Flipboard"
+msgstr ""
+
+#: inc/social.php:177
+msgid "Google News"
 msgstr ""
 
 #: inc/theme.php:134
+msgid "Ad Blocker Enabled!"
+msgstr ""
+
+#: inc/theme.php:135
 msgid "Our website is made possible by displaying online advertisements to our visitors. Please support us by disabling your Ad Blocker."
 msgstr ""
 
@@ -855,6 +894,10 @@ msgstr ""
 #: partials/header/mega-menu/category-b.php:67
 msgctxt "Categories Mega Menu"
 msgid "Recent"
+msgstr ""
+
+#: partials/header/off-canvas-menu.php:44
+msgid "Close Menu"
 msgstr ""
 
 #: partials/header/scheme-switch.php:17

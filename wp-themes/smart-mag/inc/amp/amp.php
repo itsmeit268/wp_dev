@@ -19,6 +19,9 @@ class Bunyad_Theme_Amp
 	 */
 	public $var_map = [];
 
+	/**
+	 * Menu amp-bind state data to output
+	 */
 	protected $menu_state = [];
 
 	public function __construct()

@@ -68,7 +68,8 @@ if (Bunyad::options()->single_featured_shadow && get_post_format() !== 'audio') 
 				 * Normal featured image
 				 */
 		
-				$caption = get_post(get_post_thumbnail_id())->post_excerpt;
+				$thumb   = get_post(get_post_thumbnail_id());
+				$caption = $thumb ? $thumb->post_excerpt : '';
 				$url     = get_permalink();
 				
 				// on single page? link to image

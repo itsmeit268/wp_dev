@@ -331,7 +331,7 @@ $meta_design = [
 		'type'  => 'color',
 		'style' => 'inline-sm',
 		'css'   => [
-			'.s-dark' => ['props' => ['--c-post-meta' => '%s']]
+			'.s-dark, .s-light .block-wrap.s-dark' => ['props' => ['--c-post-meta' => '%s']]
 		],
 		'group'      => '_g_meta_design',
 	],

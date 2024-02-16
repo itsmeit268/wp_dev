@@ -94,7 +94,17 @@ $fields = [
 				'main'   => [],
 				'global' => [],
 			],
-			'vars' => ['props' => ['--wrap-padding' => '%spx']],
+			'vars' => [
+				'all' => ['props' => ['--wrap-padding' => '%spx']],
+			],
+			':root' => [
+				'all' => [],
+				// Limit on low widths to 5vw max.
+				'@media (min-width: 940px) and (max-width: 1300px)' => [
+					'props' => ['--wrap-padding' => 'min(%spx, 5vw)'],
+					'value_key' => 'main'
+				]
+			]
 
 		],
 		'context' => [['key' => 'custom_width', 'value' => 1]]

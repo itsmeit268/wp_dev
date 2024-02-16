@@ -15,7 +15,6 @@
   --feat-grid-title-m: 19px;
   --feat-grid-title-l: 26px;
 }
-
 @media (min-width: 1201px) {
   :root {
     --sidebar-width: 375px;

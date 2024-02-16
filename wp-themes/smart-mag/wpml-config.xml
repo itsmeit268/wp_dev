@@ -1,14 +1,19 @@
 <wpml-config>
 <custom-fields>
+ <custom-field action="copy-once">_bunyad_page_title</custom-field>
+ <custom-field action="copy-once">_bunyad_page_spacious</custom-field>
+ <custom-field action="copy-once">_bunyad_hide_breadcrumbs</custom-field>
+ <custom-field action="copy-once">_bunyad_layout_style</custom-field>
+ <custom-field action="copy-once">_bunyad_layout_template</custom-field>
+ <custom-field action="copy-once">_bunyad_layout_spacious</custom-field>
+ <custom-field action="copy-once">_bunyad_content_slider</custom-field>
+ <custom-field action="copy-once">_bunyad_featured_video</custom-field>
+ <custom-field action="translate">_bunyad_sub_title</custom-field>
  <custom-field action="copy">_bunyad_review_overall</custom-field>
  <custom-field action="copy">_bunyad_review_type</custom-field>
  <custom-field action="copy">_bunyad_review_pos</custom-field>
  <custom-field action="copy">_bunyad_review_percent</custom-field>
  <custom-field action="copy">_bunyad_reviews</custom-field>
- <custom-field action="copy">_bunyad_page_title</custom-field>
- <custom-field action="copy">_bunyad_layout_style</custom-field>
- <custom-field action="copy">_bunyad_featured_video</custom-field>
- <custom-field action="copy">_bunyad_featured_slider</custom-field>
  <custom-field action="translate">_bunyad_review_heading</custom-field>
  <custom-field action="translate">_bunyad_review_verdict</custom-field>
  <custom-field action="translate">_bunyad_review_verdict_text</custom-field>
@@ -43,6 +48,10 @@
  <custom-field action="copy">_bunyad_criteria_rating_13</custom-field>
  <custom-field action="copy">_bunyad_criteria_rating_14</custom-field>
  <custom-field action="copy">_bunyad_criteria_rating_15</custom-field>
+ <custom-field action="translate">_bunyad_review_pros_title</custom-field>
+ <custom-field action="translate">_bunyad_review_cons_title</custom-field>
+ <custom-field action="translate">_bunyad_review_pros</custom-field>
+ <custom-field action="translate">_bunyad_review_cons</custom-field>
 </custom-fields>
 <admin-texts>
 	<key name="smartmag_theme_options">
@@ -63,6 +72,8 @@
 	  <key name="header_text4" />
 	  <key name="post_read_more_text" />
 	  <key name="share_float_text" />
+	  <key name="single_follow_top_label" />
+	  <key name="single_follow_bot_format" />
   	  <key name="related_posts_heading" />
 	  <key name="header_ticker_heading" />
 	  <key name="page_404_title" />

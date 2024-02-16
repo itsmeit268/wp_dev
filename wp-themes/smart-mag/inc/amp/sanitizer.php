@@ -5,11 +5,7 @@ class Bunyad_Theme_Amp_Sanitizer extends AMP_Base_Sanitizer
 
 	protected $xpath;
 	protected $body;
-
-	/**
-	 * Menu amp-bind state data to output
-	 */
-	public $menu_state;
+	
 	protected $bind_attr_prefix;
 
 	/**

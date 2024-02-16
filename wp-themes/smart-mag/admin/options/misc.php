@@ -4,7 +4,7 @@
  */
 
 $social_profiles = [];
-foreach ($_common['social_services'] as $key => $label) {
+foreach ($_common['social_services_ext'] as $key => $label) {
 	$social_profiles[] = [
 		'name'   => 'social_profiles['. $key .']',
 		'value'  => $key === 'rss' ? get_bloginfo('rss2_url') : '',

@@ -77,6 +77,7 @@
                 medium: "@media (min-width: 768px) and (max-width: 940px)",
                 small: "@media (max-width: 767px)"
             };
+            this.fontAliases = {};
             this.deviceKeys = Object.keys(this.queryMap).filter(k => ![ "root" ].includes(k));
             this.css = [];
             this.cssRoot = [];
@@ -103,11 +104,7 @@
                     georgia: fallbacks["serif"],
                     monospace: "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace"
                 };
-                const references = {
-                    _primary: "var(--body-font)",
-                    _secondary: "var(--ui-font)",
-                    _tertiary: "var(--tertiary-font)"
-                };
+                const references = this.fontAliases;
                 let fontFamily = value;
                 let fallback = element.fallback_stack || "sans-serif";
                 const isSystemFont = fontFamily in systemFonts;
@@ -426,6 +423,7 @@
                 cssGenerator.settingPrefix = message.settingPrefix;
                 cssGenerator.controlPrefix = message.controlPrefix;
                 cssGenerator.elements = message.elements;
+                cssGenerator.fontAliases = message.fontAliases;
                 bindSettings(message.elements, message.settingPrefix);
             });
             api.preview.bind("bunyad-control-state", control => {

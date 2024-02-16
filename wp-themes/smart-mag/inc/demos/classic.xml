@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.2" created="2023-07-05 12:49" -->
+	<!-- generator="WordPress/6.4.1" created="2023-11-21 21:45" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>SmartMag Classic</title>
 	<link>https://smartmag.theme-sphere.com/classic/</link>
 	<description>Premium Content</description>
-	<pubDate>Wed, 05 Jul 2023 12:49:02 +0000</pubDate>
+	<pubDate>Tue, 21 Nov 2023 21:45:15 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://smartmag.theme-sphere.com/</wp:base_site_url>
@@ -477,7 +477,7 @@
 <wp:tag_description><![CDATA[test]]></wp:tag_description>
 	</wp:tag>
 			
-	<generator>https://wordpress.org/?v=6.2.2</generator>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
 
 		<item>
 		<title><![CDATA[30610_424540099523_672284523_5683895_7481992_n]]></title>

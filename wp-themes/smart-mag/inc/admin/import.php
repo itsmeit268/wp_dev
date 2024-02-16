@@ -337,6 +337,40 @@ class Bunyad_Theme_Admin_Import
 					'sphere-post-views' => $plugins['sphere-post-views']
 				]
 			],
+
+			'digital-hub' => [
+				'demo_name'          => 'DigitalHub',
+				'demo_description'   => 'DigitalHub Demo.',
+				'demo_url'           => 'https://smartmag.theme-sphere.com/digital-hub/',
+				'depends'            =>  $required_plugins + [
+					'sphere-post-views' => $plugins['sphere-post-views']
+				]
+			],
+
+			'city-today' => [
+				'demo_name'          => 'CityToday',
+				'demo_description'   => 'CityToday Demo.',
+				'demo_url'           => 'https://smartmag.theme-sphere.com/city-today/',
+				'depends'            =>  $required_plugins,
+			],
+
+			'everyday-news' => [
+				'demo_name'          => 'EverydayNews',
+				'demo_description'   => 'EverydayNews Demo.',
+				'demo_url'           => 'https://smartmag.theme-sphere.com/everyday-news/',
+				'depends'            =>  $required_plugins + [
+					'sphere-post-views' => $plugins['sphere-post-views']
+				]
+			],
+
+			'world-mag' => [
+				'demo_name'          => 'WorldMag',
+				'demo_description'   => 'WorldMag Demo.',
+				'demo_url'           => 'https://smartmag.theme-sphere.com/world-mag/',
+				'depends'            =>  $required_plugins + [
+					'sphere-post-views' => $plugins['sphere-post-views']
+				]
+			],
 		];
 
 		foreach ($this->demos as $key => $demo) {
@@ -653,7 +687,7 @@ class Bunyad_Theme_Admin_Import
 		// Prompt for plugin activation
 		$control->text = sprintf(
 			esc_html__('Please install and activate the required plugin "Bunyad Demo Import" from %1$sthis page%2$s.', 'bunyad-admin'), 
-			'<a href="' . esc_url(admin_url('themes.php?page=tgmpa-install-plugins')) .'">',
+			'<a href="' . esc_url(admin_url('admin.php?page=tgmpa-install-plugins')) .'">',
 			'</a>'
 		);
 	}

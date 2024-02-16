@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.2" created="2023-07-05 12:50" -->
+	<!-- generator="WordPress/6.4.1" created="2023-11-21 21:46" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -27,13 +27,13 @@
 
 <channel>
 	<title>SmartMag DigiTech</title>
-	<link>https://sm-dev.theme-sphere.com/digi-tech/</link>
+	<link>https://smartmag.theme-sphere.com/digi-tech/</link>
 	<description>Premium Theme Demo</description>
-	<pubDate>Wed, 05 Jul 2023 12:50:22 +0000</pubDate>
+	<pubDate>Tue, 21 Nov 2023 21:46:25 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://smartmag.theme-sphere.com/</wp:base_site_url>
-	<wp:base_blog_url>https://sm-dev.theme-sphere.com/digi-tech/</wp:base_blog_url>
+	<wp:base_blog_url>https://smartmag.theme-sphere.com/digi-tech/</wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[abcdef@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Shane Doe]]></wp:author_display_name><wp:author_first_name><![CDATA[Shane]]></wp:author_first_name><wp:author_last_name><![CDATA[Doe]]></wp:author_last_name></wp:author>
 
@@ -228,7 +228,7 @@
 		<wp:term_name><![CDATA[section]]></wp:term_name>
 	</wp:term>
 		
-	<generator>https://wordpress.org/?v=6.2.2</generator>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
 
 		<item>
 		<title><![CDATA[digitech-logo-02]]></title>
@@ -32319,6 +32319,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[bbconv_not_converted]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
+		<wp:meta_value><![CDATA[c5a70ff591739e34d70c912b02989d2ffd522b87]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>

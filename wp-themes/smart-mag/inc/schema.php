@@ -64,7 +64,7 @@ class Bunyad_Theme_Schema
 	 */
 	public function review()
 	{
-		if (!is_single() || !Bunyad::posts()->meta('reviews')) {
+		if (!is_single() || !Bunyad::options()->review_schema || !Bunyad::posts()->meta('reviews') || !Bunyad::reviews()) {
 			return;
 		}
 		
@@ -161,7 +161,18 @@ class Bunyad_Theme_Schema
 		}
 
 		/**
+		 * Add Pros and Cons.
+		 */
+		$pros_cons = Bunyad::reviews()->get_pros_cons();
+		if ($pros_cons) {
+			$schema['positiveNotes'] = $this->get_items_list($pros_cons['pros']);
+			$schema['negativeNotes'] = $this->get_items_list($pros_cons['cons']);		
+		}
+
+		/**
 		 * Additional per schema type changes.
+		 * 
+		 * NOTE: This should be the last code block as some cases need to nest $schema in review.
 		 */
 		switch ($schema_type) {
 
@@ -189,6 +200,7 @@ class Bunyad_Theme_Schema
 					'name'        => $item_name,
 					'description' => $description,
 					'review'      => $schema,
+					'offers'      => $this->get_offers(),
 				];
 
 				if (Bunyad::posts()->meta('review_item_author')) {
@@ -198,9 +210,43 @@ class Bunyad_Theme_Schema
 				}
 
 				break;
+
+			// Software App needs offers. Optional OS and Category.
+			case 'SoftwareApplication':
+				$schema['itemReviewed'] += [
+					'operatingSystem'     => Bunyad::posts()->meta('review_item_os'),
+					'applicationCategory' => Bunyad::posts()->meta('review_item_app_cat'),
+					'offers' => $this->get_offers()
+				];
+				
+				break;
 		}
 
 		echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES) . "</script>\n";
+	}
+
+	/**
+	 * Get an item list - used for pros and cons.
+	 *
+	 * @param array $items
+	 * @return array
+	 */
+	public function get_items_list($items) 
+	{
+		$list  = [];
+		$count = 1;
+		foreach ((array) $items as $item) {
+			$list[] = [
+				'@type'    => 'ListItem',
+				'position' => ($count++),
+				'name'     => $item
+			];
+		}
+
+		return [
+			'@type' => 'ItemList',
+			'itemListElement' => $list,
+		];
 	}
 
 	/**
@@ -280,6 +326,23 @@ class Bunyad_Theme_Schema
 		}
 		
 		return $data;
+	}
+
+	/**
+	 * Get the offer for SoftwareApplication or Product.
+	 */
+	public function get_offers()
+	{
+		$price = Bunyad::posts()->meta('review_item_price');
+		if ($price) {
+			return [
+				'@type'         => 'Offer',
+				'priceCurrency' => Bunyad::meta('review_item_curency') ?: 'USD',
+				'price'         => $price
+			];
+		}
+
+		return [];
 	}
 }
 

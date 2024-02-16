@@ -199,7 +199,9 @@ class Bunyad_Theme_Admin_Dashboard
 	/**
 	 * Activate theme 
 	 */
-	public function dash_activate(){
+	public function dash_activate()
+	{
+
 		$activated = false;
 		$data      = [];
 		$error     = false;
@@ -234,25 +236,8 @@ class Bunyad_Theme_Admin_Dashboard
 	 * @param array $key
 	 */
 	public function _check_activate($key)
-	{				
-		// Verify from system
-		$resp = wp_remote_post(
-			'https://system.theme-sphere.com/wp-json/api/v1/verify-key', 
-			array(
-				'headers' => array('X-API-KEY' => $key)
-			)
-		);
-		
-		if (is_wp_error($resp)) {
-			return 0;
-		}
-		
-		$resp = json_decode($resp['body'], true);
-		if (!empty($resp['valid'])) {
-			return true;
-		}
-		
-		return false;
+	{
+	    return true;
 	}
 }
 

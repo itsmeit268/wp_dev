@@ -170,6 +170,9 @@ class Bunyad_Theme_Updates
 				'dismiss-link' => true,
 			];
 		}
+		else if (!Bunyad::options()->theme_updates) {
+			$message .= '<p><strong>One-Click Updates Disabled:</strong> To enable one-click updates, go to Customize and tick "Enable One-Click Updates" in Misc section.</p>';
+		}
 		else {
 			$message .= sprintf(
 				'<p><strong>One-Click Updates Disabled:</strong> To enable one-click updates, please make sure to %s and then visit the Dashboard > Updates page twice.</p>',

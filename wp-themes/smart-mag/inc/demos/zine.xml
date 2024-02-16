@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.2" created="2023-07-05 12:49" -->
+	<!-- generator="WordPress/6.4.1" created="2023-11-21 21:45" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>SmartMag Zine</title>
 	<link>https://smartmag.theme-sphere.com/zine/</link>
 	<description>Premium Theme Demo</description>
-	<pubDate>Wed, 05 Jul 2023 12:49:05 +0000</pubDate>
+	<pubDate>Tue, 21 Nov 2023 21:45:18 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://smartmag.theme-sphere.com/</wp:base_site_url>
@@ -550,7 +550,7 @@
 		<wp:term_name><![CDATA[page]]></wp:term_name>
 	</wp:term>
 		
-	<generator>https://wordpress.org/?v=6.2.2</generator>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
 
 		<item>
 		<title><![CDATA[3874418485_26e0893ff4_z]]></title>
@@ -9162,7 +9162,7 @@ And some info to be added here.
 		<guid isPermaLink="false">https://smartmag.theme-sphere.com/zine/post-multi-page-slideshow/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:image {"id":2144} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/1-x1VVin4ERPmJPBhiXTft__DSC0927-1030x579.jpg" alt="1-x1VVin4ERPmJPBhiXTft__DSC0927" class="wp-image-2144"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/1-x1VVin4ERPmJPBhiXTft__DSC0927-1030x579.jpg" alt="1-x1VVin4ERPmJPBhiXTft__DSC0927" class="wp-image-2144"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -9186,7 +9186,7 @@ And some info to be added here.
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2151} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/DeathtoStock_Vday6-1030x579.jpg" alt="DeathtoStock_Vday6" class="wp-image-2151"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/DeathtoStock_Vday6-1030x579.jpg" alt="DeathtoStock_Vday6" class="wp-image-2151"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -9210,7 +9210,7 @@ And some info to be added here.
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2148} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/323207352_99cfa642d7_o-1030x579.jpg" alt="323207352_99cfa642d7_o" class="wp-image-2148"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/323207352_99cfa642d7_o-1030x579.jpg" alt="323207352_99cfa642d7_o" class="wp-image-2148"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -9234,7 +9234,7 @@ And some info to be added here.
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2147} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/picjumbo.com_IMG_2565-1030x579.jpg" alt="picjumbo.com_IMG_2565" class="wp-image-2147"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/picjumbo.com_IMG_2565-1030x579.jpg" alt="picjumbo.com_IMG_2565" class="wp-image-2147"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -9258,7 +9258,7 @@ And some info to be added here.
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2146} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/9860630876_3cf5c9b95a_k-1030x579.jpg" alt="9860630876_3cf5c9b95a_k" class="wp-image-2146"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/9860630876_3cf5c9b95a_k-1030x579.jpg" alt="9860630876_3cf5c9b95a_k" class="wp-image-2146"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -9282,7 +9282,7 @@ And some info to be added here.
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2149} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/5518516077_89672604af_o-1030x579.jpg" alt="5518516077_89672604af_o" class="wp-image-2149"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/5518516077_89672604af_o-1030x579.jpg" alt="5518516077_89672604af_o" class="wp-image-2149"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -11061,8 +11061,8 @@ And some info to be added here.
 		<category domain="post_tag" nicename="fashion"><![CDATA[fashion]]></category>
 		<category domain="post_tag" nicename="fitness"><![CDATA[fitness]]></category>
 		<category domain="post_tag" nicename="leisure"><![CDATA[leisure]]></category>
-		<category domain="post_tag" nicename="lifestyle"><![CDATA[lifestyle]]></category>
 		<category domain="category" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
+		<category domain="post_tag" nicename="lifestyle"><![CDATA[lifestyle]]></category>
 		<category domain="category" nicename="opinion"><![CDATA[Opinion]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -13715,6 +13715,10 @@ This e-mail was sent from a contact form on SmartMag Trendy (https://smartmag.th
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_locale]]></wp:meta_key>
 		<wp:meta_value><![CDATA[en_US]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
+		<wp:meta_value><![CDATA[7d33b90cba1e5da7900dfab236bf858af4af7927]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 				</channel>

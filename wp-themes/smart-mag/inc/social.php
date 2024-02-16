@@ -162,6 +162,20 @@ class Bunyad_Theme_Social
 				'icon'  => 'tsi tsi-threads',
 				'label' => esc_html__('Threads', 'bunyad')
 			],
+
+			// Partially supported services for some areas.
+
+			'flipboard' => [
+				// 'icon'  => 'tsi tsi-flipboard',
+				'icon_svg_og' => 'og-flipboard',
+				'label' => esc_html__('Flipboard', 'bunyad')
+			],
+
+			'google-news' => [
+				// 'icon'  => 'tsi tsi-google-news',
+				'icon_svg_og' => 'og-google-news',
+				'label' => esc_html__('Google News', 'bunyad')
+			],
 		];
 		
 		return apply_filters('bunyad_social_services', $services);

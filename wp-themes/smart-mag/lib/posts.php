@@ -78,6 +78,14 @@ class Bunyad_Posts
 		
 		$text = strip_shortcodes(apply_filters('bunyad_excerpt_pre_strip_shortcodes', $text));
 		$text = str_replace(']]>', ']]&gt;', $text);
+
+		// Matches wp_trim_excerpt()
+		if (has_blocks()) {
+			$text = excerpt_remove_blocks($text);
+			if (function_exists('excerpt_remove_footnotes')) {
+				$text = excerpt_remove_footnotes($text);
+			}
+		}
 		
 		// Has <!--more--> teaser to use as excerpt?
 		$post = get_post();
@@ -85,7 +93,6 @@ class Bunyad_Posts
 			$excerpt = $text;
 		}
 		else {
-			
 			// Get plaintext excerpt trimmed to right length
 			$excerpt = wp_trim_words($text, $length, apply_filters('bunyad_excerpt_hellip', '&hellip;') . ($add_more !== false ? $this->excerpt_read_more() : '')); 
 		}

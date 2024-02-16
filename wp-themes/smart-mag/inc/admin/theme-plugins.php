@@ -8,7 +8,7 @@ return [
 		'slug'     => 'sphere-core',
 		'source'   => get_template_directory() . '/lib/vendor/plugins/sphere-core.zip',
 		'required' => true,
-		'version'  => /*@version:sphere-core*/ '1.6.3'
+		'version'  => /*@version:sphere-core*/ '1.6.6'
 	],
 
 	[
@@ -16,14 +16,14 @@ return [
 		'slug'     => 'smartmag-core',
 		'source'   => get_template_directory() . '/lib/vendor/plugins/smartmag-core.zip',
 		'required' => true,
-		'version'  => /*@version:smartmag-core*/ '1.4.3'
+		'version'  => /*@version:smartmag-core*/ '1.4.6'
 	],
 
 	[
 		'name'     => 'Elementor Page Builder',
 		'slug'     => 'elementor',
 		'required' => true,
-		'version'  => '3.6.0',
+		'version'  => '3.16.2',
 	],		
 	
 	[
@@ -80,7 +80,7 @@ return [
 		'required'     => false,
 		'optional'     => true,
 		'source'       => get_template_directory() . '/lib/vendor/plugins/bunyad-amp.zip', // The plugin source
-		'version'      => /*@version:bunyad-amp*/ '2.4.1',
+		'version'      => /*@version:bunyad-amp*/ '2.4.2',
 		'external_url' => 'https://theme-sphere.com/docs/smartmag/#amp'
 	],
 	[

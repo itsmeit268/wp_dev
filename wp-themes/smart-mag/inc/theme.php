@@ -65,16 +65,17 @@ class Bunyad_Theme_SmartMag
 		 * @see Bunyad::get()
 		 */
 		//require_once locate_template('inc/block.php');
-		require_once get_theme_file_path('blocks/helpers.php');		
+		require_once get_theme_file_path('blocks/helpers.php');
 		require_once get_theme_file_path('inc/navigation.php');
+		require_once get_theme_file_path('inc/customizer.php');
 		require_once get_theme_file_path('inc/custom-css.php');
 		require_once get_theme_file_path('inc/schema.php');
 		require_once get_theme_file_path('inc/media.php');
 		require_once get_theme_file_path('inc/amp/amp.php');
 		require_once get_theme_file_path('inc/custom-codes.php');
-		require_once get_theme_file_path('inc/customizer.php');
 		require_once get_theme_file_path('inc/archives.php');
 		require_once get_theme_file_path('inc/dark-mode.php');
+		require_once get_theme_file_path('inc/icons.php');
 
 		// Authentication related functionality.
 		require_once get_theme_file_path('inc/authenticate.php');
@@ -301,9 +302,11 @@ class Bunyad_Theme_SmartMag
 			add_filter('elementor/frontend/print_google_fonts', '__return_false');
 		}
 
-		// Sphere core alias for legacy.
 		if (class_exists('\Sphere\Core\Plugin')) {
-			Bunyad::register('social-follow', ['object' => \Sphere\Core\Plugin::get('social-follow')]);
+			Bunyad::register(
+				'social-follow', 
+				['object' => \Sphere\Core\Plugin::get('social-follow')]
+			);
 		}
 	}
 	

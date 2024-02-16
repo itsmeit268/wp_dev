@@ -73,6 +73,27 @@ $_common['social_services'] = [
 	'rss'        => esc_html__('RSS', 'bunyad-admin'),
 ];
 
+$_common['social_services_ext'] = [
+	'google-news'  => esc_html__('Google News', 'bunyad-admin'),
+	'flipboard'    => esc_html__('Flipboard', 'bunyad-admin'),
+] + $_common['social_services'];
+
+// $_common['social_follow_services'] = [
+// 	'google-news'  => esc_html__('Google News', 'bunyad-admin'),
+// 	'flipboard'    => esc_html__('Flipboard', 'bunyad-admin'),
+// 	'facebook'   => esc_html__('Facebook', 'bunyad-admin'),
+// 	'twitter'    => esc_html__('X (Twitter)', 'bunyad-admin'),
+// 	'instagram'  => esc_html__('Instagram', 'bunyad-admin'),
+// 	'pinterest'  => esc_html__('Pinterest', 'bunyad-admin'),
+// 	'youtube'    => esc_html__('Youtube', 'bunyad-admin'),
+// 	'linkedin'   => esc_html__('LinkedIn', 'bunyad-admin'),
+// 	'soundcloud' => esc_html__('SoundCloud', 'bunyad-admin'),
+// 	'tiktok'     => esc_html__('TikTok', 'bunyad-admin'),
+// 	'twitch'     => esc_html__('Twitch', 'bunyad-admin'),
+// 	'telegram'   => esc_html__('Telegram', 'bunyad-admin'),
+// 	'whatsapp'   => esc_html__('WhatsApp', 'bunyad-admin'),
+// ];
+
 $_common['social_share_services'] = [
 	'facebook'  => esc_html__('Facebook', 'bunyad-admin'),
 	'twitter'   => esc_html__('X (Twitter)', 'bunyad-admin'),
@@ -84,6 +105,7 @@ $_common['social_share_services'] = [
 	'telegram'  => esc_html__('Telegram', 'bunyad-admin'),
 	'whatsapp'  => esc_html__('WhatsApp', 'bunyad-admin'),
 	'email'     => esc_html__('Email', 'bunyad-admin'),
+	'link'      => esc_html__('Copy Link', 'bunyad-admin'),
 ];
 
 $_common['header_widths'] = [

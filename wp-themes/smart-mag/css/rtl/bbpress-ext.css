@@ -359,7 +359,7 @@ div.bbp-template-notice.info {
 .single-post .bbp-admin-links {
   float: none;
   color: var(--c-contrast-400);
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
 }
 
 .single-post .bbp-admin-links a {
@@ -431,7 +431,6 @@ div.bbp-template-notice.info {
 .bbp-user-section {
   font-size: 13px;
 }
-
 .bbp-user-section > h3 {
   margin-bottom: 12px;
 }
@@ -478,12 +477,10 @@ div.bbp-template-notice.info {
   display: flex;
   width: 100%;
 }
-
 #bbp-topic-search-form input[type=submit] {
   margin-right: 15px;
   flex-grow: 0;
 }
-
 #bbp-topic-search-form input {
   flex: 1 1 auto;
 }

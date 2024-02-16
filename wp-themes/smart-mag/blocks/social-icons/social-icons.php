@@ -25,7 +25,15 @@ class SocialIcons extends Block
 			],
 			'links' => [],
 			'class' => '',
+			'links_class' => 'service',
 			'brand_colors' => false,
+			
+			// Custom labels
+			'show_labels'   => false,
+			'labels_format' => '',
+
+			// 'svg_og' or empty.
+			'icons_type'  => '',
 		];
 
 		return $props;
@@ -77,11 +85,13 @@ class SocialIcons extends Block
 				break;
 		}
 
+		$label_class = $this->props['show_labels'] ? 's-label' : 'visuallyhidden';
+
 		?>
 
 		<div class="<?php echo esc_attr(join(' ', $classes)); ?>">
 		
-			<?php		
+			<?php
 			foreach ($this->props['services'] as $key):
 				if (!isset($services_data[$key])) {
 					continue;
@@ -93,14 +103,22 @@ class SocialIcons extends Block
 				$link_class = [
 					// link for backward compatibility.
 					'link',
-					'service',
+					$this->props['links_class'],
 					's-' . $key
 				];
+
+				// Label text format.
+				$label_text = sprintf(
+					$this->props['labels_format'] ?: '%s',
+					$service['label']
+				);
 			?>
 
 				<a href="<?php echo esc_url($url); ?>" class="<?php echo esc_attr(join(' ', $link_class)); ?>" target="_blank" rel="nofollow noopener">
-					<i class="icon <?php echo esc_attr($service['icon']); ?>"></i>
-					<span class="visuallyhidden"><?php echo esc_html($service['label']); ?></span>
+					<?php echo $this->get_icon($service); // sanitized icon ?>
+					<span class="<?php echo esc_attr($label_class); ?>"><?php 
+						echo esc_html($label_text); 
+					?></span>
 				</a>
 									
 			<?php endforeach; ?>
@@ -108,5 +126,23 @@ class SocialIcons extends Block
 		</div>
 
 		<?php
+	}
+
+	/**
+	 * Returns pre-sanitized icon.
+	 *
+	 * @param array $service
+	 * @return string
+	 */
+	public function get_icon($service)
+	{
+		if ($this->props['icons_type'] === 'svg_og' && isset($service['icon_svg_og'])) {
+			return Bunyad::icons()->get_svg($service['icon_svg_og']);
+		}
+		else if (isset($service['icon'])) {
+			return sprintf('<i class="icon %s"></i>', $service['icon']);
+		}
+
+		return '';
 	}
 }

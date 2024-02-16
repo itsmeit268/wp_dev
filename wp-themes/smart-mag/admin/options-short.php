@@ -1698,6 +1698,75 @@ return array (
       'small' => '',
     ),
   ),
+  'single_share_float' => 
+  array (
+    'name' => 'single_share_float',
+    'value' => 1,
+  ),
+  'share_float_label' => 
+  array (
+    'name' => 'share_float_label',
+    'value' => 1,
+    'context' => 
+    array (
+      0 => 
+      array (
+        'key' => 'single_share_float',
+        'value' => 1,
+      ),
+    ),
+  ),
+  'share_float_text' => 
+  array (
+    'name' => 'share_float_text',
+    'value' => '',
+    'context' => 
+    array (
+      0 => 
+      array (
+        'key' => 'single_share_float',
+        'value' => 1,
+      ),
+      1 => 
+      array (
+        'key' => 'share_float_label',
+        'value' => 1,
+      ),
+    ),
+  ),
+  'share_float_style' => 
+  array (
+    'name' => 'share_float_style',
+    'value' => 'b',
+    'context' => 
+    array (
+      0 => 
+      array (
+        'key' => 'single_share_float',
+        'value' => 1,
+      ),
+    ),
+  ),
+  'share_float_services' => 
+  array (
+    'name' => 'share_float_services',
+    'value' => 
+    array (
+      0 => 'facebook',
+      1 => 'twitter',
+      2 => 'linkedin',
+      3 => 'pinterest',
+      4 => 'email',
+    ),
+    'context' => 
+    array (
+      'control' => 
+      array (
+        'key' => 'single_share_float',
+        'value' => 1,
+      ),
+    ),
+  ),
   'single_share_top' => 
   array (
     'name' => 'single_share_top',
@@ -1805,6 +1874,54 @@ return array (
       ),
     ),
   ),
+  'single_follow_top' => 
+  array (
+    'name' => 'single_follow_top',
+    'value' => 0,
+    'context' => 
+    array (
+      0 => 
+      array (
+        'key' => 'single_share_top',
+        'value' => 1,
+      ),
+      1 => 
+      array (
+        'key' => 'single_share_top_location',
+        'value' => '',
+      ),
+    ),
+  ),
+  'single_follow_top_label' => 
+  array (
+    'name' => 'single_follow_top_label',
+    'value' => '',
+    'context' => 
+    array (
+      0 => 
+      array (
+        'key' => 'single_follow_top',
+        'value' => 1,
+      ),
+    ),
+  ),
+  'single_follow_top_services' => 
+  array (
+    'name' => 'single_follow_top_services',
+    'value' => 
+    array (
+      0 => 'google-news',
+      1 => 'flipboard',
+    ),
+    'context' => 
+    array (
+      0 => 
+      array (
+        'key' => 'single_follow_top',
+        'value' => 1,
+      ),
+    ),
+  ),
   'single_share_bot' => 
   array (
     'name' => 'single_share_bot',
@@ -1831,71 +1948,45 @@ return array (
       ),
     ),
   ),
-  'single_share_float' => 
+  'single_follow_bot' => 
   array (
-    'name' => 'single_share_float',
-    'value' => 1,
-  ),
-  'share_float_label' => 
-  array (
-    'name' => 'share_float_label',
-    'value' => 1,
+    'name' => 'single_follow_bot',
+    'value' => 0,
     'context' => 
     array (
       0 => 
       array (
-        'key' => 'single_share_float',
+        'key' => 'single_share_bot',
         'value' => 1,
       ),
     ),
   ),
-  'share_float_text' => 
+  'single_follow_bot_format' => 
   array (
-    'name' => 'share_float_text',
+    'name' => 'single_follow_bot_format',
     'value' => '',
     'context' => 
     array (
       0 => 
       array (
-        'key' => 'single_share_float',
-        'value' => 1,
-      ),
-      1 => 
-      array (
-        'key' => 'share_float_label',
+        'key' => 'single_follow_bot',
         'value' => 1,
       ),
     ),
   ),
-  'share_float_style' => 
+  'single_follow_bot_services' => 
   array (
-    'name' => 'share_float_style',
-    'value' => 'b',
+    'name' => 'single_follow_bot_services',
+    'value' => 
+    array (
+      0 => 'google-news',
+      1 => 'flipboard',
+    ),
     'context' => 
     array (
       0 => 
       array (
-        'key' => 'single_share_float',
-        'value' => 1,
-      ),
-    ),
-  ),
-  'share_float_services' => 
-  array (
-    'name' => 'share_float_services',
-    'value' => 
-    array (
-      0 => 'facebook',
-      1 => 'twitter',
-      2 => 'linkedin',
-      3 => 'pinterest',
-      4 => 'email',
-    ),
-    'context' => 
-    array (
-      'control' => 
-      array (
-        'key' => 'single_share_float',
+        'key' => 'single_follow_bot',
         'value' => 1,
       ),
     ),
@@ -2006,6 +2097,11 @@ return array (
   'user_rating' => 
   array (
     'name' => 'user_rating',
+    'value' => 1,
+  ),
+  'review_schema' => 
+  array (
+    'name' => 'review_schema',
     'value' => 1,
   ),
   'review_scale' => 
@@ -2190,6 +2286,16 @@ return array (
   array (
     'name' => 'category_slider_number',
     'value' => 5,
+  ),
+  'social_profiles[google-news]' => 
+  array (
+    'name' => 'social_profiles[google-news]',
+    'value' => '',
+  ),
+  'social_profiles[flipboard]' => 
+  array (
+    'name' => 'social_profiles[flipboard]',
+    'value' => '',
   ),
   'social_profiles[facebook]' => 
   array (

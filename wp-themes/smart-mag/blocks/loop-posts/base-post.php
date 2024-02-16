@@ -554,7 +554,7 @@ class BasePost
 
 		extract($options, EXTR_SKIP);
 
-		// Calculations for raidus and dash-offset.
+		// Calculations for radius and dash-offset.
 		$norm_radius    = $radius - $stroke / 2;
 		$circumference  = $norm_radius * 2 * pi();
 

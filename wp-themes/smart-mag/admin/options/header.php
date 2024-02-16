@@ -184,6 +184,16 @@ $fields_presets = [
 				'image'   => get_template_directory_uri() . '/admin/images/header-smart-post-thumb.jpg',
 				'preview' => get_template_directory_uri() . '/admin/images/header-smart-post.jpg',
 			],
+			'world-mag'   => [
+				'label'   => esc_html__('Compact (WorldMag)', 'bunyad-admin'),
+				'image'   => get_template_directory_uri() . '/admin/images/header-world-mag-thumb.jpg',
+				'preview' => get_template_directory_uri() . '/admin/images/header-world-mag.jpg',
+			],
+			'everyday-news'   => [
+				'label'   => esc_html__('Colorul Mixed (EverydayNews)', 'bunyad-admin'),
+				'image'   => get_template_directory_uri() . '/admin/images/header-everyday-news-thumb.jpg',
+				'preview' => get_template_directory_uri() . '/admin/images/header-everyday-news.jpg',
+			],
 		],
 		'transport' => 'postMessage',
 		'json_data' => 'admin/options/header/presets-data.php',

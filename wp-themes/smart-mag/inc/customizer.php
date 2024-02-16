@@ -8,6 +8,8 @@ class Bunyad_Theme_Customizer
 
 	public function __construct()
 	{
+		add_filter('bunyad_customizer_font_aliases', [$this, '_font_aliases']);
+
 		require_once get_template_directory() . '/inc/core/customizer/module.php';
 		$this->module = new Bunyad_Customizer_Module;
 
@@ -45,6 +47,30 @@ class Bunyad_Theme_Customizer
 			['bunyad-customizer-controls'],
 			Bunyad::options()->get_config('theme_version')
 		);
+	}
+
+	/**
+	 * Filter Callback: Fonts aliases for customizer.
+	 *
+	 * @param array $value
+	 * @return array
+	 */
+	public function _font_aliases($value)
+	{
+		return array_replace((array) $value, [
+			'_primary'   => [
+				'css' => 'var(--body-font)', 
+				'ref' => 'css_font_text'
+			],
+			'_secondary' => [
+				'css' => 'var(--ui-font)',
+				'ref' => 'css_font_secondary'
+			],
+			'_tertiary' => [
+				'css' => 'var(--tertiary-font)',
+				'ref' => 'css_font_tertiary'
+			],
+		]);
 	}
 
 	/**

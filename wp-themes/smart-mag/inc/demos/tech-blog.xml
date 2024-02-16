@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.2" created="2023-07-05 12:50" -->
+	<!-- generator="WordPress/6.4.1" created="2023-11-21 21:46" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -27,13 +27,13 @@
 
 <channel>
 	<title>SmartMag TechBlog</title>
-	<link>https://sm-dev.theme-sphere.com/tech-blog/</link>
+	<link>https://smartmag.theme-sphere.com/tech-blog/</link>
 	<description>Premium Theme Demo</description>
-	<pubDate>Wed, 05 Jul 2023 12:50:37 +0000</pubDate>
+	<pubDate>Tue, 21 Nov 2023 21:46:38 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://smartmag.theme-sphere.com/</wp:base_site_url>
-	<wp:base_blog_url>https://sm-dev.theme-sphere.com/tech-blog/</wp:base_blog_url>
+	<wp:base_blog_url>https://smartmag.theme-sphere.com/tech-blog/</wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[abcdef@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Shane Doe]]></wp:author_display_name><wp:author_first_name><![CDATA[Shane]]></wp:author_first_name><wp:author_last_name><![CDATA[Doe]]></wp:author_last_name></wp:author>
 
@@ -218,7 +218,7 @@
 		<wp:term_name><![CDATA[section]]></wp:term_name>
 	</wp:term>
 		
-	<generator>https://wordpress.org/?v=6.2.2</generator>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
 
 		<item>
 		<title><![CDATA[Top-Mid]]></title>
@@ -3790,8 +3790,8 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="category" nicename="featured"><![CDATA[Featured]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
@@ -4264,8 +4264,8 @@
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="peoples-favorite"><![CDATA[People's Favorite]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -5868,8 +5868,8 @@
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="peoples-favorite"><![CDATA[People's Favorite]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -6405,8 +6405,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="peoples-favorite"><![CDATA[People's Favorite]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -6943,10 +6943,10 @@
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="peoples-favorite"><![CDATA[People's Favorite]]></category>
-		<category domain="category" nicename="example-3"><![CDATA[Phones]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
+		<category domain="category" nicename="example-3"><![CDATA[Phones]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -7485,8 +7485,8 @@
 		<category domain="category" nicename="editors-picks"><![CDATA[Editor's Picks]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -8581,8 +8581,8 @@
 		<category domain="category" nicename="editors-picks"><![CDATA[Editor's Picks]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -9135,8 +9135,8 @@
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="category" nicename="editors-picks"><![CDATA[Editor's Picks]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
@@ -10833,8 +10833,8 @@
 		<category domain="category" nicename="featured"><![CDATA[Featured]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -11341,8 +11341,8 @@
 		<category domain="category" nicename="featured"><![CDATA[Featured]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -15473,8 +15473,8 @@
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="trending-videos"><![CDATA[Trending Videos]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -16454,8 +16454,8 @@
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="trending-videos"><![CDATA[Trending Videos]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -17961,8 +17961,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="new-gadgets"><![CDATA[New Gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -18960,8 +18960,8 @@
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="trending-videos"><![CDATA[Trending Videos]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -19490,8 +19490,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="new-gadgets"><![CDATA[New Gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -19986,8 +19986,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="new-gadgets"><![CDATA[New Gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -20490,8 +20490,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="new-gadgets"><![CDATA[New Gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -20990,8 +20990,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="new-gadgets"><![CDATA[New Gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -21501,8 +21501,8 @@
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="trending-videos"><![CDATA[Trending Videos]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -22067,8 +22067,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="new-gadgets"><![CDATA[New Gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -22180,7 +22180,7 @@
 		<wp:meta_key><![CDATA[_bunyad_review_verdict_text]]></wp:meta_key>
 		<wp:meta_value><![CDATA[The Google Pixel 4A currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
 
-So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements have been upgraded. This is what we call a big boost.]]></wp:meta_value>
+So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements upgraded.]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_overall]]></wp:meta_key>
@@ -22253,6 +22253,14 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_wordproof_timestamp]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_cons]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Lackluster Audio and tiny speaker";i:1;s:24:"Still ridiculously large";i:2;s:33:"Can't render the brightest colors";i:3;s:23:"Missing dedicated ports";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_pros]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Modern and fresh yet sleek design";i:1;s:21:"Improved battery life";i:2;s:25:"Performance of M3 Chipset";i:3;s:28:"Designed for a larger screen";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -22561,8 +22569,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="new-gadgets"><![CDATA[New Gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
@@ -22678,7 +22686,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:meta_key><![CDATA[_bunyad_review_verdict_text]]></wp:meta_key>
 		<wp:meta_value><![CDATA[The Google Pixel 4A currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
 
-So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements have been upgraded. This is what we call a big boost.]]></wp:meta_value>
+So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements upgraded.]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_overall]]></wp:meta_key>
@@ -22751,6 +22759,14 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_wordproof_timestamp]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_cons]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Lackluster Audio and tiny speaker";i:1;s:24:"Still ridiculously large";i:2;s:33:"Can't render the brightest colors";i:3;s:23:"Missing dedicated ports";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_pros]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Modern and fresh yet sleek design";i:1;s:21:"Improved battery life";i:2;s:25:"Performance of M3 Chipset";i:3;s:28:"Designed for a larger screen";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -23443,8 +23459,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<category domain="category" nicename="featured-reviews"><![CDATA[Featured Reviews]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -23507,9 +23523,9 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_verdict_text]]></wp:meta_key>
-		<wp:meta_value><![CDATA[The Samsung Demo Phone currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
+		<wp:meta_value><![CDATA[The Google Pixel 4A currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
 
-So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements have been upgraded. This is what we call a big boost.]]></wp:meta_value>
+So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements upgraded.]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_overall]]></wp:meta_key>
@@ -23586,6 +23602,14 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_criteria_rating_5]]></wp:meta_key>
 		<wp:meta_value><![CDATA[7]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_cons]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Lackluster Audio and tiny speaker";i:1;s:24:"Still ridiculously large";i:2;s:33:"Can't render the brightest colors";i:3;s:23:"Missing dedicated ports";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_pros]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Modern and fresh yet sleek design";i:1;s:21:"Improved battery life";i:2;s:25:"Performance of M3 Chipset";i:3;s:28:"Designed for a larger screen";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -25989,8 +26013,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<category domain="category" nicename="featured-reviews"><![CDATA[Featured Reviews]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -26113,9 +26137,9 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_verdict_text]]></wp:meta_key>
-		<wp:meta_value><![CDATA[The Samsung Demo Phone currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
+		<wp:meta_value><![CDATA[The Google Pixel 4A currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
 
-So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements have been upgraded. This is what we call a big boost.]]></wp:meta_value>
+So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements upgraded.]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_overall]]></wp:meta_key>
@@ -26196,6 +26220,14 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_criteria_rating_4]]></wp:meta_key>
 		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_cons]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Lackluster Audio and tiny speaker";i:1;s:24:"Still ridiculously large";i:2;s:33:"Can't render the brightest colors";i:3;s:23:"Missing dedicated ports";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_pros]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Modern and fresh yet sleek design";i:1;s:21:"Improved battery life";i:2;s:25:"Performance of M3 Chipset";i:3;s:28:"Designed for a larger screen";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -26506,8 +26538,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -26927,8 +26959,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
@@ -28779,8 +28811,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
-		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="category" nicename="example-3"><![CDATA[Phones]]></category>
+		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -29269,8 +29301,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
@@ -29764,8 +29796,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
@@ -30716,8 +30748,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -31175,8 +31207,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -31621,8 +31653,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="category" nicename="featured-reviews"><![CDATA[Featured Reviews]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
@@ -31759,9 +31791,9 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_verdict_text]]></wp:meta_key>
-		<wp:meta_value><![CDATA[The Samsung Demo Phone currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
+		<wp:meta_value><![CDATA[The Google Pixel 4A currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
 
-So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements have been upgraded. This is what we call a big boost.]]></wp:meta_value>
+So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements upgraded.]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_overall]]></wp:meta_key>
@@ -31769,7 +31801,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_user_rating]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:3:{s:5:"votes";a:6:{i:1610648659;a:1:{i:0;d:6.800000000000001;}i:1610720889;a:1:{i:0;d:8.6;}i:1648142550;a:1:{i:0;d:1;}i:1650216649;a:1:{i:0;d:8;}i:1650729870;a:1:{i:0;d:8.9;}i:1664319261;a:1:{i:0;d:1.1;}}s:7:"overall";d:5.733333333333333;s:5:"count";i:6;}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:3:{s:5:"votes";a:7:{i:1610648659;a:1:{i:0;d:6.800000000000001;}i:1610720889;a:1:{i:0;d:8.6;}i:1648142550;a:1:{i:0;d:1;}i:1650216649;a:1:{i:0;d:8;}i:1650729870;a:1:{i:0;d:8.9;}i:1664319261;a:1:{i:0;d:1.1;}i:1700594134;a:1:{i:0;d:0.6;}}s:7:"overall";d:5;s:5:"count";i:7;}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
@@ -31806,6 +31838,14 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2022-11-19]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_cons]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Lackluster Audio and tiny speaker";i:1;s:24:"Still ridiculously large";i:2;s:33:"Can't render the brightest colors";i:3;s:23:"Missing dedicated ports";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_pros]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Modern and fresh yet sleek design";i:1;s:21:"Improved battery life";i:2;s:25:"Performance of M3 Chipset";i:3;s:28:"Designed for a larger screen";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -32115,8 +32155,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="category" nicename="featured-reviews"><![CDATA[Featured Reviews]]></category>
-		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[Gadgets]]></category>
+		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
@@ -32257,9 +32297,9 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_verdict_text]]></wp:meta_key>
-		<wp:meta_value><![CDATA[The Samsung Demo Phone currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
+		<wp:meta_value><![CDATA[The Google Pixel 4A currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
 
-So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements have been upgraded. This is what we call a big boost.]]></wp:meta_value>
+So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements upgraded.]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_overall]]></wp:meta_key>
@@ -32267,7 +32307,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_user_rating]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:3:{s:5:"votes";a:6:{i:1610648659;a:1:{i:0;d:6.800000000000001;}i:1610720889;a:1:{i:0;d:8.6;}i:1648142550;a:1:{i:0;d:1;}i:1650216649;a:1:{i:0;d:8;}i:1650729870;a:1:{i:0;d:8.9;}i:1664319261;a:1:{i:0;d:1.1;}}s:7:"overall";d:5.733333333333333;s:5:"count";i:6;}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:3:{s:5:"votes";a:8:{i:1610648659;a:1:{i:0;d:6.800000000000001;}i:1610720889;a:1:{i:0;d:8.6;}i:1648142550;a:1:{i:0;d:1;}i:1650216649;a:1:{i:0;d:8;}i:1650729870;a:1:{i:0;d:8.9;}i:1664319261;a:1:{i:0;d:1.1;}i:1700594150;a:1:{i:0;d:10;}i:1700597565;a:1:{i:0;d:1.2;}}s:7:"overall";d:5.7;s:5:"count";i:8;}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
@@ -32304,6 +32344,14 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_date]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2022-11-19]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_cons]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Lackluster Audio and tiny speaker";i:1;s:24:"Still ridiculously large";i:2;s:33:"Can't render the brightest colors";i:3;s:23:"Missing dedicated ports";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_pros]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Modern and fresh yet sleek design";i:1;s:21:"Improved battery life";i:2;s:25:"Performance of M3 Chipset";i:3;s:28:"Designed for a larger screen";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -33001,8 +33049,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -33882,8 +33930,8 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -34272,7 +34320,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:meta_key><![CDATA[_bunyad_review_verdict_text]]></wp:meta_key>
 		<wp:meta_value><![CDATA[The Google Pixel 4A currently tops our rank of the greatest Samsung phones available, beating even the pricier iPhone Ultra Max Mega.
 
-So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements have been upgraded. This is what we call a big boost.]]></wp:meta_value>
+So unsurprisingly this is an absolutely fantastic phone. The design isn't massively changed from the previous generation, but most other elements upgraded.]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bunyad_review_overall]]></wp:meta_key>
@@ -34345,6 +34393,14 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_yoast_wpseo_wordproof_timestamp]]></wp:meta_key>
 		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_cons]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Lackluster Audio and tiny speaker";i:1;s:24:"Still ridiculously large";i:2;s:33:"Can't render the brightest colors";i:3;s:23:"Missing dedicated ports";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bunyad_review_pros]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:4:{i:0;s:33:"Modern and fresh yet sleek design";i:1;s:21:"Improved battery life";i:2;s:25:"Performance of M3 Chipset";i:3;s:28:"Designed for a larger screen";}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -34475,6 +34531,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[bbconv_not_converted]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
+		<wp:meta_value><![CDATA[d711c4c27c8d55c076ec84024b1437a417c2b9d7]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -35269,8 +35329,8 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -35732,8 +35792,8 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
@@ -36374,7 +36434,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 		<guid isPermaLink="false">https://smartmag.theme-sphere.com/tech-blog/post-multi-page-slideshow/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:image {"id":2144} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/1-x1VVin4ERPmJPBhiXTft__DSC0927-1030x579.jpg" alt="1-x1VVin4ERPmJPBhiXTft__DSC0927" class="wp-image-2144"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/1-x1VVin4ERPmJPBhiXTft__DSC0927-1030x579.jpg" alt="1-x1VVin4ERPmJPBhiXTft__DSC0927" class="wp-image-2144"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -36398,7 +36458,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2151} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/DeathtoStock_Vday6-1030x579.jpg" alt="DeathtoStock_Vday6" class="wp-image-2151"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/DeathtoStock_Vday6-1030x579.jpg" alt="DeathtoStock_Vday6" class="wp-image-2151"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -36422,7 +36482,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2148} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/323207352_99cfa642d7_o-1030x579.jpg" alt="323207352_99cfa642d7_o" class="wp-image-2148"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/323207352_99cfa642d7_o-1030x579.jpg" alt="323207352_99cfa642d7_o" class="wp-image-2148"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -36446,7 +36506,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2147} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/picjumbo.com_IMG_2565-1030x579.jpg" alt="picjumbo.com_IMG_2565" class="wp-image-2147"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/picjumbo.com_IMG_2565-1030x579.jpg" alt="picjumbo.com_IMG_2565" class="wp-image-2147"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -36470,7 +36530,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2146} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/9860630876_3cf5c9b95a_k-1030x579.jpg" alt="9860630876_3cf5c9b95a_k" class="wp-image-2146"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/9860630876_3cf5c9b95a_k-1030x579.jpg" alt="9860630876_3cf5c9b95a_k" class="wp-image-2146"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -36494,7 +36554,7 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2149} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/5518516077_89672604af_o-1030x579.jpg" alt="5518516077_89672604af_o" class="wp-image-2149"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/5518516077_89672604af_o-1030x579.jpg" alt="5518516077_89672604af_o" class="wp-image-2149"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -36530,8 +36590,8 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 										<category domain="post_tag" nicename="culture"><![CDATA[culture]]></category>
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -36902,8 +36962,8 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 		<category domain="post_tag" nicename="gadgets"><![CDATA[gadgets]]></category>
 		<category domain="post_tag" nicename="phones"><![CDATA[phones]]></category>
 		<category domain="post_format" nicename="post-format-audio"><![CDATA[Audio]]></category>
-		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 		<category domain="category" nicename="example-1"><![CDATA[Technology]]></category>
+		<category domain="post_tag" nicename="technology"><![CDATA[technology]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>

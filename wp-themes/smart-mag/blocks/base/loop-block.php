@@ -332,6 +332,10 @@ class LoopBlock extends Block
 				$this->get_query_props()
 			);
 		}
+		else if (isset($props['query_type']) && $props['query_type'] === 'section') {
+			// section_query doesn't exist, so remove it.
+			$props['query_type'] = 'custom';
+		}
 
 		return $props;
 	}

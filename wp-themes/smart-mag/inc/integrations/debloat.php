@@ -1,6 +1,5 @@
 <?php
 namespace SmartMag\Integrations;
-use \Bunyad;
 
 /**
  * Integration with debloat plugin.
@@ -92,6 +91,10 @@ class Debloat
 					'.fade-in-*',
 					'.has-scrollbar',
 					'.touch',
+
+					// Relevant to snackbars.
+					'.ts-snackbar*',
+					'.tsi-close'
 				],
 			],
 			[

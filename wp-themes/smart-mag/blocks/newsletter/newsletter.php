@@ -161,6 +161,10 @@ class Newsletter extends Block
 	 */
 	public function render() 
 	{
+		if (class_exists('\SmartMag_Core') && empty(\SmartMag_Core::instance()->theme_supports['blocks'])) {
+			return;
+		}
+
 		// Setup classes.
 		$this->props['classes'] = [
 			'spc-newsletter',

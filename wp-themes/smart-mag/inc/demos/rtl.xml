@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.2" created="2023-07-05 12:50" -->
+	<!-- generator="WordPress/6.4.1" created="2023-11-21 21:46" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -27,13 +27,13 @@
 
 <channel>
 	<title>SmartMag RTL</title>
-	<link>https://sm-dev.theme-sphere.com/rtl/</link>
+	<link>https://smartmag.theme-sphere.com/rtl/</link>
 	<description>Premium Theme Demo</description>
-	<pubDate>Wed, 05 Jul 2023 12:50:32 +0000</pubDate>
-	<language>ar</language>
+	<pubDate>Tue, 21 Nov 2023 21:46:30 +0000</pubDate>
+	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://smartmag.theme-sphere.com/</wp:base_site_url>
-	<wp:base_blog_url>https://sm-dev.theme-sphere.com/rtl/</wp:base_blog_url>
+	<wp:base_blog_url>https://smartmag.theme-sphere.com/rtl/</wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[abcdef@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Shane Doe]]></wp:author_display_name><wp:author_first_name><![CDATA[Shane]]></wp:author_first_name><wp:author_last_name><![CDATA[Doe]]></wp:author_last_name></wp:author>
 	<wp:author><wp:author_id>248</wp:author_id><wp:author_login><![CDATA[arabic]]></wp:author_login><wp:author_email><![CDATA[abcd.e.f@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[احمد فارس]]></wp:author_display_name><wp:author_first_name><![CDATA[احمد]]></wp:author_first_name><wp:author_last_name><![CDATA[فارس]]></wp:author_last_name></wp:author>
@@ -492,7 +492,7 @@
 		<wp:term_name><![CDATA[section]]></wp:term_name>
 	</wp:term>
 		
-	<generator>https://wordpress.org/?v=6.2.2</generator>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
 
 		<item>
 		<title><![CDATA[Depositphotos_234976802_xl-2015]]></title>
@@ -4055,7 +4055,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="example-3"><![CDATA[التكنولوجيا]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -5364,7 +5364,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="example-3"><![CDATA[التكنولوجيا]]></category>
 		<category domain="category" nicename="cars"><![CDATA[سيارات]]></category>
 						<wp:postmeta>
@@ -6655,7 +6655,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-audio"><![CDATA[صوت]]></category>
+										<category domain="post_format" nicename="post-format-audio"><![CDATA[Audio]]></category>
 		<category domain="category" nicename="example-2"><![CDATA[الرياضة]]></category>
 		<category domain="post_tag" nicename="featured"><![CDATA[المتميز]]></category>
 						<wp:postmeta>
@@ -7044,7 +7044,7 @@
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="example-4"><![CDATA[الصحة]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -16287,7 +16287,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="economy"><![CDATA[اقتصاد]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -19447,7 +19447,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="antarctica"><![CDATA[أنتاركتيكا]]></category>
 		<category domain="category" nicename="exploration"><![CDATA[استكشاف]]></category>
 						<wp:postmeta>
@@ -20119,7 +20119,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="antarctica"><![CDATA[أنتاركتيكا]]></category>
 		<category domain="category" nicename="exploration"><![CDATA[استكشاف]]></category>
 						<wp:postmeta>
@@ -21335,7 +21335,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-gallery"><![CDATA[معرض]]></category>
+										<category domain="post_format" nicename="post-format-gallery"><![CDATA[Gallery]]></category>
 		<category domain="category" nicename="fifa"><![CDATA[كأس العالم قطر]]></category>
 		<category domain="category" nicename="football"><![CDATA[كرة قدم]]></category>
 						<wp:postmeta>
@@ -25643,7 +25643,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="football"><![CDATA[كرة قدم]]></category>
 		<category domain="category" nicename="%d9%85%d8%a8%d8%a7%d8%b1%d9%8a%d8%a7%d8%aa"><![CDATA[مباريات اليوم]]></category>
 						<wp:postmeta>
@@ -26028,7 +26028,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="example-3"><![CDATA[التكنولوجيا]]></category>
 		<category domain="category" nicename="security"><![CDATA[حماية]]></category>
 						<wp:postmeta>
@@ -26413,7 +26413,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="post_format" nicename="post-format-video"><![CDATA[فيديو]]></category>
+										<category domain="post_format" nicename="post-format-video"><![CDATA[Video]]></category>
 		<category domain="category" nicename="example-3"><![CDATA[التكنولوجيا]]></category>
 		<category domain="category" nicename="cars"><![CDATA[سيارات]]></category>
 						<wp:postmeta>
@@ -26777,6 +26777,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[bbconv_not_converted]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
+		<wp:meta_value><![CDATA[37e0a7cc5b52868f93186e9f3fa38c91a7390691]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>

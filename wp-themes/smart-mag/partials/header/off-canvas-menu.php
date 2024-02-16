@@ -40,7 +40,10 @@ if (!has_nav_menu('smartmag-mobile') && Bunyad::amp()->active()) {
 <div <?php Bunyad::markup()->attribs('off-canvas', ['class' => $classes]); ?> id="off-canvas">
 
 	<div class="off-canvas-head">
-		<a href="#" class="close"><i class="tsi tsi-times"></i></a>
+		<a href="#" class="close">
+			<span class="visuallyhidden"><?php esc_html_e('Close Menu', 'bunyad'); ?></span>
+			<i class="tsi tsi-times"></i>
+		</a>
 
 		<div class="ts-logo">
 			<?php

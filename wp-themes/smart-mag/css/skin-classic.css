@@ -28,7 +28,6 @@
   --block-wrap-mb: 42px;
   --footer-mt: 50px;
 }
-
 @media (min-width: 1201px) {
   :root {
     --sidebar-width: 376px;
@@ -83,20 +82,16 @@
   background: rgba(var(--c-rgba), 0.03);
   border-right: 0;
 }
-
 .s-dark .mega-menu-b .sub-cats {
   background: #1e2935;
 }
-
 .site-s-dark .mega-menu-b .sub-cats {
   background: #1e1e1e;
 }
-
 .mega-menu-b .sub-cats li a:not(._) {
   font-size: 13px;
   text-transform: uppercase;
 }
-
 .mega-menu-b .grid-post .post-meta .meta-above {
   background: #ddd;
 }
@@ -126,7 +121,6 @@
 .post-title a {
   --c-a-hover: var(--c-links);
 }
-
 .post-title a:hover {
   text-decoration: underline;
 }
@@ -135,26 +129,21 @@
   font-size: 11px;
   color: var(--c-contrast-400);
 }
-
 .post-meta-items {
   text-transform: uppercase;
 }
-
 .post-meta .meta-above {
   display: flex;
 }
-
 .post-meta .meta-above .has-icon:not(:first-child) {
   margin-left: auto;
 }
-
 .post-meta .post-author > a {
   text-transform: uppercase;
   color: var(--c-main);
   font-weight: 400;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
-
 .post-meta .main-stars {
   font-size: 16px;
 }
@@ -195,11 +184,9 @@
 .loop-grid {
   --grid-row-gap: 30px;
 }
-
 .loop-grid-lg {
   --grid-row-gap: 50px;
 }
-
 .loop + .main-pagination {
   margin-top: 40px;
 }
@@ -215,19 +202,17 @@
   background: var(--c-contrast-50);
   line-height: 26px;
 }
-
 .grid-post .post-title {
   position: relative;
   padding-left: 14px;
 }
-
 .grid-post .post-title:before {
   content: " ";
   display: block;
   float: left;
   position: absolute;
   left: 0;
-  top: .1em;
+  top: 0.1em;
   height: 18px;
   border-left: 3px solid var(--c-main);
 }
@@ -243,7 +228,6 @@
 .block-highlights .loop-small {
   margin-top: 22px;
 }
-
 .block-highlights .loop-small-b {
   margin-top: 14px;
   padding-top: 12px;
@@ -268,11 +252,9 @@
   font-size: 12px;
   --c-a: var(--c-contrast-600);
 }
-
 .breadcrumbs-b:not(.is-full-width) > .inner {
   padding: 14px 25px;
 }
-
 .s-light .breadcrumbs-b {
   color: #8d97a1;
 }
@@ -280,7 +262,6 @@
 .main-sidebar .block-head {
   --space-below: 30px;
 }
-
 .main-sidebar .widget {
   margin-bottom: 38px;
 }
@@ -307,12 +288,11 @@
 .author-info .description {
   font-size: 13px;
 }
-
 .author-info .bio {
   margin-top: 10px;
 }
 
-.author-info [rel="author"] {
+.author-info [rel=author] {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.5;
@@ -336,17 +316,13 @@
   --space-below: 35px;
   padding-bottom: 10px;
 }
-
 .s-dark .upper-footer .block-head-h {
   --c-block: var(--c-contrast-800);
 }
-
 .upper-footer .block-head-h .heading {
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
   font-size: 14px;
 }
-
-.upper-footer.s-dark,
-.s-dark .upper-footer {
+.upper-footer.s-dark, .s-dark .upper-footer {
   color: #eee;
 }

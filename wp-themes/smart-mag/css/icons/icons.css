@@ -2,8 +2,8 @@
 	font-family: 'ts-icons';
 	/* Note: Version sync with optimize */
 	src:
-		url('fonts/ts-icons.woff2?v2.5') format('woff2'),
-		url('fonts/ts-icons.woff?v2.5') format('woff');
+		url('fonts/ts-icons.woff2?v2.7') format('woff2'),
+		url('fonts/ts-icons.woff?v2.7') format('woff');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -82,6 +82,10 @@
 
 .tsi-eye:before {
 	content: "\e907";
+}
+
+.tsi-link:before {
+	content: "\e90b";
 }
 
 .tsi-share1:before {

@@ -43,7 +43,8 @@ $props = array_replace([
 						/**
 						 * Normal featured image when no post format
 						 */
-						$caption = get_post(get_post_thumbnail_id())->post_excerpt;
+						$thumb   = get_post(get_post_thumbnail_id());
+						$caption = $thumb ? $thumb->post_excerpt : '';
 						$url     = get_permalink();
 						
 						// On single page? Link to image

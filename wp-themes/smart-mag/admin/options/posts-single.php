@@ -693,6 +693,252 @@ $fields_design = [
  */
 $fields_social = [
 	/**
+	 * Group: Sticky Social
+	 */
+	[
+		'name'  => '_g_share_float',
+		'label' => esc_html__('Sticky Social Share', 'bunyad-admin'),
+		'type'  => 'group',
+		'style' => 'collapsible',
+	],
+
+	[
+		'name'  => 'single_share_float',
+		'label' => esc_html__('Enable Sticky Social Buttons', 'bunyad-admin'),
+		'value' => 1,
+		'desc'  => 'Show floating/sticky social buttons on left of the posts.',
+		'type'  => 'toggle',
+		'style' => 'inline-sm',
+		'group' => '_g_share_float',
+	],
+
+	[
+		'name'    => 'share_float_label',
+		'label'   => esc_html__('Show Share Text', 'bunyad-admin'),
+		'desc'    => '',
+		'value'   => 1,
+		'type'    => 'toggle',
+		'style'   => 'inline-sm',
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group'   => '_g_share_float',
+	],
+	[
+		'name'    => 'share_float_text',
+		'label'   => esc_html__('Share Text', 'bunyad-admin'),
+		'value'   => '',
+		'placeholder' => esc_html__('Share', 'bunyad'),
+		'desc'    => '',
+		'type'    => 'text',
+		'style'   => 'inline-sm',
+		'context' => [
+			['key' => 'single_share_float', 'value' => 1],
+			['key' => 'share_float_label', 'value' => 1]
+		],
+		'group'   => '_g_share_float',
+	],
+
+	[
+		'name'    => 'share_float_style',
+		'label'   => esc_html__('Share Style', 'bunyad-admin'),
+		'value'   => 'b',
+		'type'    => 'select',
+		'options' => [
+			'a' => esc_html__('A: Squares', 'bunyad-admin'),
+			'b' => esc_html__('B: Circles', 'bunyad-admin'),
+			'c' => esc_html__('C: Circles BG Color', 'bunyad-admin'),
+			'd' => esc_html__('D: Squares BG Color', 'bunyad-admin'),
+			'e' => esc_html__('E: Squares Light / Monochrome', 'bunyad-admin'),
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group'   => '_g_share_float',
+	],
+
+	[
+		'name'    => '_n_share_float',
+		'type'    => 'message',
+		'label'   => '',
+		'text'    => 'There are customizations active that may change the look of the selected style. <a href="#" class="preset-reset">Click here</a> to reset them to defaults.',
+		'style'   => 'message-alert',
+		'classes' => 'bunyad-cz-hidden',
+		'group' => '_g_share_float',
+	],
+
+	[
+		'name'    => 'share_float_services',
+		'label'   => esc_html__('Share Services', 'bunyad-admin'),
+		'desc'    => '',
+		'value'   => ['facebook', 'twitter', 'linkedin', 'pinterest', 'email'],
+		'type'    => 'checkboxes',
+		'style'   => 'sortable',
+		'options' => $_common['social_share_services'],
+		'context' => ['control' => ['key' => 'single_share_float', 'value' => 1]],
+		'group'   => '_g_share_float',
+	],
+
+	[
+		'name'       => 'css_share_float_typo',
+		'label'      => esc_html__('Share Typography', 'bunyad-admin'),
+		'desc'       => '',
+		'value'      => '',
+		'type'       => 'group',
+		'group_type' => 'typography',
+		'style'      => 'edit',
+		'devices'    => false,
+		'controls'   => ['size', 'weight', 'line_height', 'transform'],
+		'css'        => '.post-share-float .share-text',
+		'context'    => [['key' => 'single_share_float', 'value' => 1]],
+		'group'      => '_g_share_float',
+	],
+	[
+		'name'    => 'css_share_float_width',
+		'label'   => esc_html__('Services Width', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'number',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service' => ['props' => ['width' => '%spx']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+	[
+		'name'    => 'css_share_float_height',
+		'label'   => esc_html__('Services Height', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'number',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service' => ['props' => ['height' => '%spx']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+	[
+		'name'    => 'css_share_float_spacing',
+		'label'   => esc_html__('Spacing Between', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'number',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service' => ['props' => ['margin-bottom' => '%spx']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+
+	[
+		'name'    => 'css_share_float_radius',
+		'label'   => esc_html__('Roundness', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'number',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service' => ['props' => ['border-radius' => '%spx']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+
+	[
+		'name'    => 'css_share_float_icon_size',
+		'label'   => esc_html__('Icon Size', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'number',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service' => ['props' => ['font-size' => '%spx']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+	[
+		'name'    => 'css_share_float_color',
+		'label'   => esc_html__('Icons Color', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'color',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service:not(:hover)' => ['props' => ['color' => '%s']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+	[
+		'name'    => 'css_share_float_color_sd',
+		'label'   => esc_html__('Dark: Icons Color', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'color',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.s-dark .post-share-float service:not(:hover)' => ['props' => ['color' => '%s']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+
+	[
+		'name'    => 'css_share_float_color_hov',
+		'label'   => esc_html__('Icons Hover', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'color',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service:hover' => ['props' => ['color' => '%s']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+	[
+		'name'    => 'css_share_float_color_hov_sd',
+		'label'   => esc_html__('Dark: Icons Hover', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'color',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.s-dark .post-share-float .service:hover' => ['props' => ['color' => '%s']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+
+	[
+		'name'    => 'css_share_float_bg',
+		'label'   => esc_html__('Icons Background', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'color',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service' => ['props' => ['background-color' => '%s']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+	[
+		'name'    => 'css_share_float_bg_sd',
+		'label'   => esc_html__('Dark: Icons Background', 'bunyad-admin'),
+		'value'   => '',
+		'desc'    => '',
+		'type'    => 'color',
+		'style'   => 'inline-sm',
+		'css'     => [
+			'.post-share-float .service' => ['props' => ['background-color' => '%s']],
+		],
+		'context' => [['key' => 'single_share_float', 'value' => 1]],
+		'group' => '_g_share_float',
+	],
+
+
+	/**
 	 * Group: Social Share Top
 	 */
 	[
@@ -983,6 +1229,59 @@ $fields_social = [
 	],
 
 	/**
+	 * Group: Social Follow Top
+	 */
+	[
+		'name'  => '_g_single_follow_top',
+		'label' => esc_html__('Top Social Follow', 'bunyad-admin'),
+		'type'  => 'group',
+		'desc'  => 'Show social follow next to top social share. Only available when Top Social Share is enabled and is not the right-aligned style.',
+		'style' => 'collapsible',
+	],
+	[
+		'name'  => 'single_follow_top',
+		'label' => esc_html__('Show Follow Buttons', 'bunyad-admin'),
+		'value' => 0,
+		'desc'  => '',
+		'type'  => 'toggle',
+		'style' => 'inline-sm',
+		'context' => [
+			['key' => 'single_share_top', 'value' => 1],
+			['key' => 'single_share_top_location', 'value' => ''],
+		],
+		'group' => '_g_single_follow_top',
+	],
+	[
+		'name'  => 'single_follow_top_label',
+		'label' => esc_html__('Follow Label', 'bunyad-admin'),
+		'value' => '',
+		'desc'  => '',
+		'placeholder' => esc_html__('Follow Us', 'bunyad'),
+		'type'  => 'text',
+		'style' => 'inline-sm',
+		'context' => [
+			['key' => 'single_follow_top', 'value' => 1],
+			// ['key' => 'single_share_top_location', 'value' => ''],
+		],
+		'group' => '_g_single_follow_top',
+	],
+	[
+		'name'    => 'single_follow_top_services',
+		'label'   => esc_html__('Services', 'bunyad-admin'),
+		'value'   => ['google-news', 'flipboard'],
+		'desc'    => '',
+		'type'    => 'checkboxes',
+		'style'   => 'sortable',
+		'options' => $_common['social_services_ext'],
+		'context' => [
+			['key' => 'single_follow_top', 'value' => 1],
+			// ['key' => 'single_share_top', 'value' => 1],
+			// ['key' => 'single_share_top_location', 'value' => ''],
+		],
+		'group'   => '_g_single_follow_top',
+	],
+
+	/**
 	 * Group: Social Share Bottom
 	 */
 	[
@@ -1014,248 +1313,52 @@ $fields_social = [
 	],
 
 	/**
-	 * Group: Sticky Social
+	 * Group: Social Follow Inline
 	 */
 	[
-		'name'  => '_g_share_float',
-		'label' => esc_html__('Sticky Social Share', 'bunyad-admin'),
+		'name'  => '_g_single_follow_bot',
+		'label' => esc_html__('Bottom Social Follow', 'bunyad-admin'),
 		'type'  => 'group',
+		'desc'  => 'Show large social follow buttons. Recommended: Only <strong>2</strong> buttons, best for Flipboard and Google News.',
 		'style' => 'collapsible',
 	],
-
 	[
-		'name'  => 'single_share_float',
-		'label' => esc_html__('Enable Sticky Social Buttons', 'bunyad-admin'),
-		'value' => 1,
-		'desc'  => 'Show floating/sticky social buttons on left of the posts.',
+		'name'  => 'single_follow_bot',
+		'label' => esc_html__('Show Follow Buttons', 'bunyad-admin'),
+		'value' => 0,
+		'desc'  => '',
 		'type'  => 'toggle',
 		'style' => 'inline-sm',
-		'group' => '_g_share_float',
-	],
-
-	[
-		'name'    => 'share_float_label',
-		'label'   => esc_html__('Show Share Text', 'bunyad-admin'),
-		'desc'    => '',
-		'value'   => 1,
-		'type'    => 'toggle',
-		'style'   => 'inline-sm',
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group'   => '_g_share_float',
-	],
-	[
-		'name'    => 'share_float_text',
-		'label'   => esc_html__('Share Text', 'bunyad-admin'),
-		'value'   => '',
-		'placeholder' => esc_html__('Share', 'bunyad'),
-		'desc'    => '',
-		'type'    => 'text',
-		'style'   => 'inline-sm',
 		'context' => [
-			['key' => 'single_share_float', 'value' => 1],
-			['key' => 'share_float_label', 'value' => 1]
+			['key' => 'single_share_bot', 'value' => 1],
 		],
-		'group'   => '_g_share_float',
+		'group' => '_g_single_follow_bot',
 	],
-
 	[
-		'name'    => 'share_float_style',
-		'label'   => esc_html__('Share Style', 'bunyad-admin'),
-		'value'   => 'b',
-		'type'    => 'select',
-		'options' => [
-			'a' => esc_html__('A: Squares', 'bunyad-admin'),
-			'b' => esc_html__('B: Circles', 'bunyad-admin'),
-			'c' => esc_html__('C: Circles BG Color', 'bunyad-admin'),
-			'd' => esc_html__('D: Squares BG Color', 'bunyad-admin'),
-			'e' => esc_html__('E: Squares Light / Monochrome', 'bunyad-admin'),
+		'name'  => 'single_follow_bot_format',
+		'label' => esc_html__('Text Format', 'bunyad-admin'),
+		'value' => '',
+		'desc'  => '',
+		'placeholder' => esc_html__('Follow on %s', 'bunyad'),
+		'type'  => 'text',
+		'style' => 'inline-sm',
+		'context' => [
+			['key' => 'single_follow_bot', 'value' => 1],
 		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group'   => '_g_share_float',
+		'group' => '_g_single_follow_bot',
 	],
-
 	[
-		'name'    => '_n_share_float',
-		'type'    => 'message',
-		'label'   => '',
-		'text'    => 'There are customizations active that may change the look of the selected style. <a href="#" class="preset-reset">Click here</a> to reset them to defaults.',
-		'style'   => 'message-alert',
-		'classes' => 'bunyad-cz-hidden',
-		'group' => '_g_share_float',
-	],
-
-	[
-		'name'    => 'share_float_services',
-		'label'   => esc_html__('Share Services', 'bunyad-admin'),
+		'name'    => 'single_follow_bot_services',
+		'label'   => esc_html__('Services', 'bunyad-admin'),
+		'value'   => ['google-news', 'flipboard'],
 		'desc'    => '',
-		'value'   => ['facebook', 'twitter', 'linkedin', 'pinterest', 'email'],
 		'type'    => 'checkboxes',
 		'style'   => 'sortable',
-		'options' => $_common['social_share_services'],
-		'context' => ['control' => ['key' => 'single_share_float', 'value' => 1]],
-		'group'   => '_g_share_float',
-	],
-
-	[
-		'name'       => 'css_share_float_typo',
-		'label'      => esc_html__('Share Typography', 'bunyad-admin'),
-		'desc'       => '',
-		'value'      => '',
-		'type'       => 'group',
-		'group_type' => 'typography',
-		'style'      => 'edit',
-		'devices'    => false,
-		'controls'   => ['size', 'weight', 'line_height', 'transform'],
-		'css'        => '.post-share-float .share-text',
-		'context'    => [['key' => 'single_share_float', 'value' => 1]],
-		'group'      => '_g_share_float',
-	],
-	[
-		'name'    => 'css_share_float_width',
-		'label'   => esc_html__('Services Width', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'number',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service' => ['props' => ['width' => '%spx']],
+		'options' => $_common['social_services_ext'],
+		'context' => [
+			['key' => 'single_follow_bot', 'value' => 1],
 		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-	[
-		'name'    => 'css_share_float_height',
-		'label'   => esc_html__('Services Height', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'number',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service' => ['props' => ['height' => '%spx']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-	[
-		'name'    => 'css_share_float_spacing',
-		'label'   => esc_html__('Spacing Between', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'number',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service' => ['props' => ['margin-bottom' => '%spx']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-
-	[
-		'name'    => 'css_share_float_radius',
-		'label'   => esc_html__('Roundness', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'number',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service' => ['props' => ['border-radius' => '%spx']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-
-	[
-		'name'    => 'css_share_float_icon_size',
-		'label'   => esc_html__('Icon Size', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'number',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service' => ['props' => ['font-size' => '%spx']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-	[
-		'name'    => 'css_share_float_color',
-		'label'   => esc_html__('Icons Color', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'color',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service:not(:hover)' => ['props' => ['color' => '%s']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-	[
-		'name'    => 'css_share_float_color_sd',
-		'label'   => esc_html__('Dark: Icons Color', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'color',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.s-dark .post-share-float service:not(:hover)' => ['props' => ['color' => '%s']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-
-	[
-		'name'    => 'css_share_float_color_hov',
-		'label'   => esc_html__('Icons Hover', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'color',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service:hover' => ['props' => ['color' => '%s']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-	[
-		'name'    => 'css_share_float_color_hov_sd',
-		'label'   => esc_html__('Dark: Icons Hover', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'color',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.s-dark .post-share-float .service:hover' => ['props' => ['color' => '%s']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-
-	[
-		'name'    => 'css_share_float_bg',
-		'label'   => esc_html__('Icons Background', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'color',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service' => ['props' => ['background-color' => '%s']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
-	],
-	[
-		'name'    => 'css_share_float_bg_sd',
-		'label'   => esc_html__('Dark: Icons Background', 'bunyad-admin'),
-		'value'   => '',
-		'desc'    => '',
-		'type'    => 'color',
-		'style'   => 'inline-sm',
-		'css'     => [
-			'.post-share-float .service' => ['props' => ['background-color' => '%s']],
-		],
-		'context' => [['key' => 'single_share_float', 'value' => 1]],
-		'group' => '_g_share_float',
+		'group'   => '_g_single_follow_bot',
 	],
 ];
 
@@ -1388,7 +1491,6 @@ $fields_modern = [
 			'.s-head-modern-a .post-title' => ['props' => ['font-size' => '%dpx']],
 		],
 	],
-
 	[
 		'name'       => 'css_single_modern_subtitle',
 		'label'      => esc_html__('Subtitle Typography', 'bunyad-admin'),
@@ -1440,6 +1542,7 @@ $fields_modern = [
 		'value'   => '',
 		'desc'    => '',
 		'type'    => 'number',
+		'classes' => 'sep-top',
 		'style'   => 'inline-sm',
 		'css'     => [
 			// '.s-post-modern .entry-content' => [
@@ -1457,6 +1560,29 @@ $fields_modern = [
 					'justify-self' => 'center'
 				]
 			]
+		],
+	],
+
+	[
+		'name'    => 'css_single_modern_title_margins',
+		'label'   => esc_html__('Title Margins', 'bunyad-admin'),
+		'desc'    => '',
+		'value'   => '',
+		'type'    => 'dimensions',
+		'devices' => true,
+		'css'     => [
+			'.s-head-modern-a .post-title' => ['dimensions' => 'margin'],
+		],
+	],
+	[
+		'name'    => 'css_single_modern_meta_margins',
+		'label'   => esc_html__('Meta Below Margins', 'bunyad-admin'),
+		'desc'    => '',
+		'value'   => '',
+		'type'    => 'dimensions',
+		'devices' => true,
+		'css'     => [
+			'.s-head-modern-a .meta-below' => ['dimensions' => 'margin'],
 		],
 	],
 ];
@@ -1637,6 +1763,14 @@ $options['posts-single'] = [
 				],
 
 				[
+					'name'  => 'review_schema',
+					'value' => 1,
+					'label' => esc_html__('Enable Review Schema', 'bunyad-admin'),
+					'desc'  => esc_html__('This feature adds a user rating area below criterion to allow readers to click and vote.', 'bunyad-admin'),
+					'type'  => 'checkbox'
+				],
+
+				[
 					'name'    => 'css_review_verdict_radius',
 					'label'   => esc_html__('Verdict Box Roundness', 'bunyad-admin'),
 					'value'   => '',
@@ -1694,6 +1828,18 @@ $options['posts-single'] = [
 					'style'      => 'edit',
 					'controls'   => ['size', 'weight', 'transform'],
 					'css'        => '.review-box .label'
+				],
+
+				[
+					'name'       => 'css_review_pros_cons_typo',
+					'label'      => esc_html__('Pros/Cons Typography', 'bunyad-admin'),
+					'value'      => '',
+					'desc'       => '',
+					'type'       => 'group',
+					'group_type' => 'typography',
+					'style'      => 'edit',
+					'controls'   => ['size', 'weight', 'transform'],
+					'css'        => '.review-pros-cons li'
 				],
 
 				[

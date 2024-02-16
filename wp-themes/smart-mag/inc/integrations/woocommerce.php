@@ -23,9 +23,6 @@ class Woocommerce
 	 */
 	public function init()
 	{
-		// New product gallery
-		add_theme_support('wc-product-gallery-lightbox');
-		add_theme_support('wc-product-gallery-slider');
 		
 		// New product gallery
 		add_theme_support('wc-product-gallery-lightbox');

@@ -10,7 +10,6 @@
   margin: 0 0 -1px 0;
   clear: both;
 }
-
 .post-content .sc-tabs li {
   padding-left: 0;
   margin-bottom: 0;
@@ -222,12 +221,10 @@ a.sc-button:hover {
 .sc-list .fa-ul {
   margin-left: 0;
 }
-
 .sc-list .fa-ul,
 .sc-list .fa-ul ul {
   list-style-type: none;
 }
-
 .sc-list .fa-ul .fa {
   margin-left: -21px;
   width: 2em;

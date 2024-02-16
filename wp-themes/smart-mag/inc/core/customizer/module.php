@@ -7,6 +7,9 @@ use Bunyad\Util;
  */
 class Bunyad_Customizer_Module
 {
+	// Customizer module configurations. 
+	protected $configs = [];
+
 	public $option_key;
 	protected $contexts;
 	protected $options;
@@ -23,6 +26,8 @@ class Bunyad_Customizer_Module
 
 	public function __construct()
 	{
+		$this->configs = (array) Bunyad::options()->get_config('customizer');
+
 		// Register the customizer.
 		add_action('customize_register', [$this, 'register'], 11);
 
@@ -112,7 +117,13 @@ class Bunyad_Customizer_Module
 			'settingPrefix' => $this->option_key,
 			'controlPrefix' => 'bunyad_',
 			'theme'         => Bunyad::options()->get_config('theme_prefix'),
-			'elements'      => $elements
+			'elements'      => $elements,
+			'fontAliases'   => array_map(
+				static function($value) {
+					return $value['css'];
+				},
+				apply_filters('bunyad_customizer_font_aliases', [])
+			)
 		]);
 
 		wp_localize_script('bunyad-customizer-controls', 'Bunyad_CZ_Data', $data);

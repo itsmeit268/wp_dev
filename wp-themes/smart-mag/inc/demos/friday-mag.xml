@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.2.2" created="2023-07-05 12:50" -->
+	<!-- generator="WordPress/6.4.1" created="2023-11-21 21:46" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -27,13 +27,13 @@
 
 <channel>
 	<title>SmartMag FridayMag</title>
-	<link>https://sm-dev.theme-sphere.com/friday-mag/</link>
+	<link>https://smartmag.theme-sphere.com/friday-mag/</link>
 	<description>Premium Theme Demo</description>
-	<pubDate>Wed, 05 Jul 2023 12:50:39 +0000</pubDate>
+	<pubDate>Tue, 21 Nov 2023 21:46:41 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://smartmag.theme-sphere.com/</wp:base_site_url>
-	<wp:base_blog_url>https://sm-dev.theme-sphere.com/friday-mag/</wp:base_blog_url>
+	<wp:base_blog_url>https://smartmag.theme-sphere.com/friday-mag/</wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[abcdef@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Shane Doe]]></wp:author_display_name><wp:author_first_name><![CDATA[Shane]]></wp:author_first_name><wp:author_last_name><![CDATA[Doe]]></wp:author_last_name></wp:author>
 
@@ -340,7 +340,7 @@
 		<wp:term_name><![CDATA[section]]></wp:term_name>
 	</wp:term>
 		
-	<generator>https://wordpress.org/?v=6.2.2</generator>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
 
 		<item>
 		<title><![CDATA[akhil-yerabati-Q2uV5TkjNz8-unsplash]]></title>
@@ -29349,6 +29349,10 @@ This e-mail was sent from a contact form on [_site_title] ([_site_url])";s:18:"a
 		<wp:meta_key><![CDATA[bbconv_not_converted]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
+		<wp:meta_value><![CDATA[3c0bee4e872ae2d72b013450afc427671fd7e2b1]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Custom Styles]]></title>
@@ -31322,7 +31326,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<guid isPermaLink="false">https://smartmag.theme-sphere.com/friday-mag/post-multi-page-slideshow/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:image {"id":2144} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/1-x1VVin4ERPmJPBhiXTft__DSC0927-1030x579.jpg" alt="1-x1VVin4ERPmJPBhiXTft__DSC0927" class="wp-image-2144"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/1-x1VVin4ERPmJPBhiXTft__DSC0927-1030x579.jpg" alt="1-x1VVin4ERPmJPBhiXTft__DSC0927" class="wp-image-2144"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -31346,7 +31350,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2151} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/DeathtoStock_Vday6-1030x579.jpg" alt="DeathtoStock_Vday6" class="wp-image-2151"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/DeathtoStock_Vday6-1030x579.jpg" alt="DeathtoStock_Vday6" class="wp-image-2151"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -31370,7 +31374,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2148} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/323207352_99cfa642d7_o-1030x579.jpg" alt="323207352_99cfa642d7_o" class="wp-image-2148"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/323207352_99cfa642d7_o-1030x579.jpg" alt="323207352_99cfa642d7_o" class="wp-image-2148"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -31394,7 +31398,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2147} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/picjumbo.com_IMG_2565-1030x579.jpg" alt="picjumbo.com_IMG_2565" class="wp-image-2147"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/picjumbo.com_IMG_2565-1030x579.jpg" alt="picjumbo.com_IMG_2565" class="wp-image-2147"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -31418,7 +31422,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2146} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/9860630876_3cf5c9b95a_k-1030x579.jpg" alt="9860630876_3cf5c9b95a_k" class="wp-image-2146"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/9860630876_3cf5c9b95a_k-1030x579.jpg" alt="9860630876_3cf5c9b95a_k" class="wp-image-2146"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -31442,7 +31446,7 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 <!-- /wp:nextpage -->
 
 <!-- wp:image {"id":2149} -->
-<figure class="wp-block-image"><img src="http://theme-sphere.com/smart-mag/wp-content/uploads/2013/12/5518516077_89672604af_o-1030x579.jpg" alt="5518516077_89672604af_o" class="wp-image-2149"/></figure>
+<figure class="wp-block-image"><img src="https://smartmag.theme-sphere.com/classic/wp-content/uploads/sites/3/2013/12/5518516077_89672604af_o-1030x579.jpg" alt="5518516077_89672604af_o" class="wp-image-2149"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
@@ -31760,9 +31764,9 @@ So unsurprisingly this is an absolutely fantastic phone. The design isn't massiv
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="health"><![CDATA[Health]]></category>
+										<category domain="post_tag" nicename="health"><![CDATA[Health]]></category>
+		<category domain="category" nicename="health"><![CDATA[Health]]></category>
 		<category domain="category" nicename="health-new"><![CDATA[Health]]></category>
-		<category domain="post_tag" nicename="health"><![CDATA[Health]]></category>
 		<category domain="post_format" nicename="post-format-audio"><![CDATA[Audio]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>

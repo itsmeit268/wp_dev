@@ -94,6 +94,16 @@ $classes = array_merge($props['classes'], [
 		$meta->render();
 
 		if ($render_social === 'below') {
+			if (Bunyad::options()->single_follow_top) {
+				$social_args += [
+					'follow_active'   => Bunyad::options()->single_follow_top_services,
+					'follow_label'    => Bunyad::options()->get_or(
+						'single_follow_top_label',
+						esc_html__('Follow Us', 'bunyad')
+					)
+				];
+			}
+
 			// See plugins/smartmag-core/social-share/views/social-share-b.php
 			Bunyad::get('smartmag_social')->render('social-share-b', $social_args);
 		}

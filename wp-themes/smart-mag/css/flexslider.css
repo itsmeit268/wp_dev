@@ -169,7 +169,7 @@
 .flex-control-thumbs img {
   width: 100%;
   display: block;
-  opacity: .7;
+  opacity: 0.7;
   cursor: pointer;
 }
 

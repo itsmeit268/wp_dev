@@ -130,7 +130,7 @@ class Bunyad_Customizer_Css_Generator
 			$valid_elements[] = [$element, $value];
 		}
 
-		return $valid_elements;
+		return apply_filters('bunyad_css_generator_valid_elements', $valid_elements);
 	}
 
 	/**
@@ -167,20 +167,7 @@ class Bunyad_Customizer_Css_Generator
 			];
 
 			// @todo fix: this filter will not apply on live preview in the customizer.
-			$references = apply_filters('bunyad_css_generator_font_refs', [
-				'_primary'   => [
-					'css' => 'var(--body-font)', 
-					'ref' => 'css_font_text'
-				],
-				'_secondary' => [
-					'css' => 'var(--ui-font)',
-					'ref' => 'css_font_secondary'
-				],
-				'_tertiary' => [
-					'css' => 'var(--tertiary-font)',
-					'ref' => 'css_font_tertiary'
-				],
-			]);
+			$references = apply_filters('bunyad_customizer_font_aliases', []);
 
 			$font_family    = $value;
 			$fallback       = stripos($font_family, 'serif') !== false ? 'serif' : 'sans-serif';
