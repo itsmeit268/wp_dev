@@ -21,7 +21,7 @@ $data_slider         = '';
 $inner_wrapper_class = 'penci-block_content pcsl-inner penci-clearfix';
 $inner_wrapper_class .= ' pcsl-' . $atts['testitype'];
 if ( 'crs' == $atts['testitype'] ) {
-	$inner_wrapper_class .= ' penci-owl-carousel penci-owl-carousel-slider';
+	$inner_wrapper_class .= ' penci-owl-carousel penci-owl-carousel-slider swiper';
 }
 
 $inner_wrapper_class .= ' pcsl-col-' . $atts['columns'];
@@ -30,6 +30,7 @@ $inner_wrapper_class .= ' pcsl-mobcol-' . $atts['mcolumns'];
 
 $css_class .= ' ' . apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 $block_id  = Penci_Vc_Helper::get_unique_id_block( 'testimonails' );
+$item_class = 'normal-item';
 if ( 'crs' == $atts['testitype'] ) {
 	$data_slider = 'yes' == $atts['showdots'] ? ' data-dots="true"' : '';
 	$data_slider .= 'yes' == $atts['shownav'] ? ' data-nav="true"' : '';
@@ -38,12 +39,15 @@ if ( 'crs' == $atts['testitype'] ) {
 	$data_slider .= 'data-autotime="' . ( $atts['auto_time'] ? intval( $atts['auto_time'] ) : '4000' ) . '"';
 	$data_slider .= 'data-speed="' . ( $atts['speed'] ? intval( $atts['speed'] ) : '800' ) . '"';
 	$data_slider .= ' data-desktop="' . ( $atts['slider_item'] ? $atts['slider_item'] : 1 ) . '"';
-	$data_slider .= ' data-margin="30"';
+	$data_slider .= ' data-item="' . ( $atts['slider_item'] ? $atts['slider_item'] : 1 ) . '"';
 }
 ?>
     <div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $css_class ); ?>">
         <div class="<?php echo $inner_wrapper_class; ?>" <?php echo $data_slider; ?>>
 			<?php
+			if ( 'crs' == $atts['testitype'] ) {
+				echo '<div class="swiper-wrapper">';
+			}
 			foreach ( (array) $testimonails as $_testi ) {
 				$_testi_image   = isset( $_testi['testi_image'] ) ? $_testi['testi_image'] : '';
 				$_testi_name    = isset( $_testi['testi_name'] ) ? $_testi['testi_name'] : '';
@@ -53,8 +57,11 @@ if ( 'crs' == $atts['testitype'] ) {
 				$_testi_rating  = isset( $_testi['testi_rating'] ) ? $_testi['testi_rating'] : '';
 
 				if ( $_testi_name || $_testi_company || $_testi_desc ) {
+					if ( 'crs' == $atts['testitype'] ) {
+						echo '<div class="swiper-slide">';
+					}
 					?>
-                    <div class="pcsl-item penci-testimonail">
+                    <div class="pcsl-item penci-testimonail <?php echo $item_class;?>">
 						<?php
 
 						if ( 's2' == $atts['style'] ) {
@@ -112,6 +119,13 @@ if ( 'crs' == $atts['testitype'] ) {
 					<?php
 				}
 
+				if ( 'crs' == $atts['testitype'] ) {
+					echo '</div>';
+				}
+
+			}
+			if ( 'crs' == $atts['testitype'] ) {
+				echo '</div>';
 			}
 			?>
         </div>

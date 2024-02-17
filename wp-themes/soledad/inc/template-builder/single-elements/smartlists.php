@@ -6,10 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class PenciSingleSmartLists extends \Elementor\Widget_Base {
 
-	public function get_name() {
-		return 'penci-single-smartlists';
-	}
-
 	public function get_title() {
 		return esc_html__( 'Post - Smart Lists', 'soledad' );
 	}
@@ -28,6 +24,10 @@ class PenciSingleSmartLists extends \Elementor\Widget_Base {
 
 	protected function get_html_wrapper_class() {
 		return 'pcsml-el elementor-widget-' . $this->get_name();
+	}
+
+	public function get_name() {
+		return 'penci-single-smartlists';
 	}
 
 	protected function register_controls() {
@@ -164,6 +164,20 @@ class PenciSingleSmartLists extends \Elementor\Widget_Base {
 			'options'     => [
 				'style-1' => 'Style 1',
 				'style-2' => 'Style 2'
+			]
+		] );
+
+		$this->add_control( 'heading_style', [
+			'label'       => esc_html__( 'Heading Style', 'soledad' ),
+			'type'        => \Elementor\Controls_Manager::SELECT,
+			'default'     => 'style-1',
+			'options'     => [
+				'style-1' => 'Style 1',
+				'style-2' => 'Style 2',
+				'style-3' => 'Style 3',
+				'style-4' => 'Style 4',
+				'style-5' => 'Style 5',
+				'style-6' => 'Style 6',
 			]
 		] );
 
@@ -417,107 +431,6 @@ class PenciSingleSmartLists extends \Elementor\Widget_Base {
 
 	}
 
-	protected function render() {
-
-		if ( penci_elementor_is_edit_mode() ) {
-			$this->preview_content();
-		} else {
-			$this->builder_content();
-		}
-
-	}
-
-	protected function preview_content() {
-		$settings            = $this->get_settings_for_display();
-		$block_style         = $settings['block_style'];
-		$placeholder1        = $this->random_image_url();
-		$placeholder2        = $this->random_image_url();
-		$placeholder3        = $this->random_image_url();
-		$placeholder_content = '
-                    <h3>The New Ways</h3>
-                        <p><img class="alignnone wp-image-' . $placeholder1['id'] . ' size-full" src="' . $placeholder1['url'] . '" alt="" /></p>
-                        <p>Focused on quality and innovation, our designers work closely with their clients to craft unique and highly unique fashion pieces.</p>
-                    <h3>Chat with The Content</h3>
-                         <p><img class="alignnone wp-image-' . $placeholder2['id'] . ' size-full" src="' . $placeholder2['url'] . '" alt="" /></p>
-                        <p>Our extensive catalogue consists of the very latest fashion clothing and accessories from the most fashionable designers in the world. Focusing on quality and innovation, our designers work closely with their clients to craft unique and highly unique fashion pieces.</p>
-                    <h3>#1 WordPress Theme</h3>
-                    <p><img class="alignnone wp-image-' . $placeholder3['id'] . ' size-full" src="' . $placeholder3['url'] . '" alt="" /></p>
-                    <p>We offer an excellent range of dresswear, accessories and footwear, in a wide variety of styles. </p>
-                    [penci_end_smart_list]
-                
-                    <p>Sample Content after smart list end. Our goal is to provide you with an excellent, flexible and adaptable shopping experience. We believe that your shopping experience is one of the most vital aspects for your overall success and we are passionate about taking care of our clients and serving them with quality, dependable products. We have our website, Facebook page, Instagram account and various social media channels where we are continually improving our products and services. We also have an active online store of our own. </p>
-                ';
-		?>
-        <div class="post-entry <?php echo 'blockquote-' . $block_style; ?>">
-            <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
-
-				<?php do_action( 'penci_action_before_the_content' ); ?>
-
-				<?php
-				$placeholder_content = str_replace( ']]>', ']]&gt;', $placeholder_content );
-				$smart_list_content  = penci_smartlists( [
-					'style'               => $settings['smartlists_style'],
-					'content'             => $placeholder_content,
-					'order'               => $settings['smartlists_order'],
-					'h'                   => $settings['smartlists_h'],
-					'extract_first_image' => true,
-					'sm_title_tag'        => $settings['smartlists_heading_tag'] ? $settings['smartlists_heading_tag'] : $settings['smartlists_h'],
-					'sm_ad'               => '',
-					'first_image_size'    => $settings['smartlists_img_size'],
-					'first_image_msize'   => $settings['smartlists_img_msize'],
-					'disablelazy'         => false,
-				] );
-				echo $smart_list_content;
-				?>
-
-				<?php do_action( 'penci_action_after_the_content' ); ?>
-
-                <div class="penci-single-link-pages">
-					<?php wp_link_pages(); ?>
-                </div>
-            </div>
-        </div>
-		<?php
-	}
-
-	protected function builder_content() {
-		$settings    = $this->get_settings_for_display();
-		$block_style = $settings['block_style'];
-		?>
-        <div class="post-entry <?php echo 'blockquote-' . $block_style; ?>">
-            <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
-
-				<?php do_action( 'penci_action_before_the_content' ); ?>
-
-				<?php
-				$content = strip_shortcodes( get_the_content() );
-				$content = apply_filters( 'the_content', $content );
-				$content = str_replace( ']]>', ']]&gt;', $content );
-				remove_filter( 'the_content', 'penci_insert_post_content_ads' );
-				$smart_list_content = penci_smartlists( [
-					'style'               => $settings['smartlists_style'],
-					'content'             => $content,
-					'order'               => $settings['smartlists_order'],
-					'h'                   => $settings['smartlists_h'],
-					'extract_first_image' => true,
-					'sm_title_tag'        => $settings['smartlists_heading_tag'] ? $settings['smartlists_heading_tag'] : $settings['smartlists_h'],
-					'first_image_size'    => $settings['smartlists_img_size'],
-					'first_image_msize'   => $settings['smartlists_img_msize'],
-					'disablelazy'         => false,
-				] );
-				echo $smart_list_content;
-				?>
-
-				<?php do_action( 'penci_action_after_the_content' ); ?>
-
-                <div class="penci-single-link-pages">
-					<?php wp_link_pages(); ?>
-                </div>
-            </div>
-        </div>
-		<?php
-	}
-
 	/**
 	 * Get image sizes.
 	 *
@@ -568,6 +481,70 @@ class PenciSingleSmartLists extends \Elementor\Widget_Base {
 		return $image_sizes;
 	}
 
+	protected function render() {
+
+		if ( penci_elementor_is_edit_mode() ) {
+			$this->preview_content();
+		} else {
+			$this->builder_content();
+		}
+
+	}
+
+	protected function preview_content() {
+		$settings            = $this->get_settings_for_display();
+		$block_style         = $settings['block_style'];
+		$heading_style       = $settings['heading_style'];
+		$placeholder1        = $this->random_image_url();
+		$placeholder2        = $this->random_image_url();
+		$placeholder3        = $this->random_image_url();
+		$placeholder_content = '
+                    <h3>The New Ways</h3>
+                        <p><img class="alignnone wp-image-' . $placeholder1['id'] . ' size-full" src="' . $placeholder1['url'] . '" alt="" /></p>
+                        <p>Focused on quality and innovation, our designers work closely with their clients to craft unique and highly unique fashion pieces.</p>
+                    <h3>Chat with The Content</h3>
+                         <p><img class="alignnone wp-image-' . $placeholder2['id'] . ' size-full" src="' . $placeholder2['url'] . '" alt="" /></p>
+                        <p>Our extensive catalogue consists of the very latest fashion clothing and accessories from the most fashionable designers in the world. Focusing on quality and innovation, our designers work closely with their clients to craft unique and highly unique fashion pieces.</p>
+                    <h3>#1 WordPress Theme</h3>
+                    <p><img class="alignnone wp-image-' . $placeholder3['id'] . ' size-full" src="' . $placeholder3['url'] . '" alt="" /></p>
+                    <p>We offer an excellent range of dresswear, accessories and footwear, in a wide variety of styles. </p>
+                    [penci_end_smart_list]
+                
+                    <p>Sample Content after smart list end. Our goal is to provide you with an excellent, flexible and adaptable shopping experience. We believe that your shopping experience is one of the most vital aspects for your overall success and we are passionate about taking care of our clients and serving them with quality, dependable products. We have our website, Facebook page, Instagram account and various social media channels where we are continually improving our products and services. We also have an active online store of our own. </p>
+                ';
+		?>
+        <div class="post-entry <?php echo 'blockquote-' . $block_style; ?> <?php echo 'heading-' . $heading_style; ?>">
+            <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
+
+				<?php do_action( 'penci_action_before_the_content' ); ?>
+
+				<?php
+				$placeholder_content = str_replace( ']]>', ']]&gt;', $placeholder_content );
+				$smart_list_content  = penci_smartlists( [
+					'style'               => $settings['smartlists_style'],
+					'content'             => $placeholder_content,
+					'order'               => $settings['smartlists_order'],
+					'h'                   => $settings['smartlists_h'],
+					'extract_first_image' => true,
+					'sm_title_tag'        => $settings['smartlists_heading_tag'] ? $settings['smartlists_heading_tag'] : $settings['smartlists_h'],
+					'sm_ad'               => '',
+					'first_image_size'    => $settings['smartlists_img_size'],
+					'first_image_msize'   => $settings['smartlists_img_msize'],
+					'disablelazy'         => false,
+				] );
+				echo $smart_list_content;
+				?>
+
+				<?php do_action( 'penci_action_after_the_content' ); ?>
+
+                <div class="penci-single-link-pages">
+					<?php wp_link_pages(); ?>
+                </div>
+            </div>
+        </div>
+		<?php
+	}
+
 	public function random_image_url() {
 		$id          = 0;
 		$url         = get_template_directory_uri() . '/inc/template-builder/placeholder.php?w=1920&h=800';
@@ -578,5 +555,44 @@ class PenciSingleSmartLists extends \Elementor\Widget_Base {
 		}
 
 		return [ 'url' => $url, 'id' => $id ];
+	}
+
+	protected function builder_content() {
+		$settings      = $this->get_settings_for_display();
+		$block_style   = $settings['block_style'];
+		$heading_style = $settings['heading_style'];
+		?>
+        <div class="post-entry <?php echo 'blockquote-' . $block_style; ?> <?php echo 'heading-' . $heading_style; ?>">
+            <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
+
+				<?php do_action( 'penci_action_before_the_content' ); ?>
+
+				<?php
+				$content = strip_shortcodes( get_the_content() );
+				$content = apply_filters( 'the_content', $content );
+				$content = str_replace( ']]>', ']]&gt;', $content );
+				remove_filter( 'the_content', 'penci_insert_post_content_ads' );
+				$smart_list_content = penci_smartlists( [
+					'style'               => $settings['smartlists_style'],
+					'content'             => $content,
+					'order'               => $settings['smartlists_order'],
+					'h'                   => $settings['smartlists_h'],
+					'extract_first_image' => true,
+					'sm_title_tag'        => $settings['smartlists_heading_tag'] ? $settings['smartlists_heading_tag'] : $settings['smartlists_h'],
+					'first_image_size'    => $settings['smartlists_img_size'],
+					'first_image_msize'   => $settings['smartlists_img_msize'],
+					'disablelazy'         => false,
+				] );
+				echo $smart_list_content;
+				?>
+
+				<?php do_action( 'penci_action_after_the_content' ); ?>
+
+                <div class="penci-single-link-pages">
+					<?php wp_link_pages(); ?>
+                </div>
+            </div>
+        </div>
+		<?php
 	}
 }

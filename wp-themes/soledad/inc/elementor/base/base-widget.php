@@ -1087,7 +1087,7 @@ abstract class Base_Widget extends Widget_Base {
 			'default'   => '',
 			'selectors' => array(
 				'{{WRAPPER}} nav.woocommerce-pagination ul li a'                                                          => 'border-color: {{VALUE}};',
-				'{{WRAPPER}} .penci-owl-carousel-slider .owl-dot span, {{WRAPPER}} .penci-related-carousel .owl-dot span' => 'border-color: {{VALUE}};',
+				'{{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot span, {{WRAPPER}} .penci-related-carousel .penci-owl-dot span' => 'border-color: {{VALUE}};',
 				'{{WRAPPER}} .penci-woo-page-container .page-load-button .button'                                         => 'border-color: {{VALUE}};',
 			),
 		) );
@@ -1098,7 +1098,7 @@ abstract class Base_Widget extends Widget_Base {
 			'default'   => '',
 			'selectors' => array(
 				'body:not(.pcdm-enable) {{WRAPPER}} nav.woocommerce-pagination ul li a'                                                          => 'background-color: {{VALUE}};',
-				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel-slider .owl-dot span, {{WRAPPER}} .penci-related-carousel .owl-dot span' => 'background-color: {{VALUE}};'
+				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot span, {{WRAPPER}} .penci-related-carousel .penci-owl-dot span' => 'background-color: {{VALUE}};'
 			),
 		) );
 
@@ -1117,7 +1117,7 @@ abstract class Base_Widget extends Widget_Base {
 			'default'   => '',
 			'selectors' => array(
 				'{{WRAPPER}} nav.woocommerce-pagination ul li a:hover'                                                                => 'border-color: {{VALUE}};',
-				'{{WRAPPER}} .penci-owl-carousel-slider .owl-dot span:hover, {{WRAPPER}} .penci-related-carousel .owl-dot span:hover' => 'border-color: {{VALUE}};',
+				'{{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot span:hover, {{WRAPPER}} .penci-related-carousel .penci-owl-dot span:hover' => 'border-color: {{VALUE}};',
 				'{{WRAPPER}} .penci-woo-page-container .page-load-button .button:hover'                                               => 'border-color: {{VALUE}};',
 			),
 		) );
@@ -1128,7 +1128,7 @@ abstract class Base_Widget extends Widget_Base {
 			'default'   => '',
 			'selectors' => array(
 				'body:not(.pcdm-enable) {{WRAPPER}} nav.woocommerce-pagination ul li span.current'                                                                                    => 'color: {{VALUE}};',
-				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel-slider .owl-dot.active span, body:not(.pcdm-enable) {{WRAPPER}} .penci-related-carousel .owl-dot.active span' => 'background-color: {{VALUE}};',
+				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot.active span, body:not(.pcdm-enable) {{WRAPPER}} .penci-related-carousel .penci-owl-dot.active span' => 'background-color: {{VALUE}};',
 			),
 		) );
 
@@ -1138,7 +1138,7 @@ abstract class Base_Widget extends Widget_Base {
 			'default'   => '',
 			'selectors' => array(
 				'{{WRAPPER}} nav.woocommerce-pagination ul li span.current'                                                             => 'border-color: {{VALUE}};',
-				'{{WRAPPER}} .penci-owl-carousel-slider .owl-dot.active span, {{WRAPPER}} .penci-related-carousel .owl-dot.active span' => 'border-color: {{VALUE}};',
+				'{{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot.active span, {{WRAPPER}} .penci-related-carousel .penci-owl-dot.active span' => 'border-color: {{VALUE}};',
 			),
 		) );
 
@@ -1148,7 +1148,7 @@ abstract class Base_Widget extends Widget_Base {
 			'default'   => '',
 			'selectors' => array(
 				'body:not(.pcdm-enable) {{WRAPPER}} nav.woocommerce-pagination ul li span.current'                                                             => 'background-color: {{VALUE}};',
-				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel-slider .owl-dot.active span, {{WRAPPER}} .penci-related-carousel .owl-dot.active span' => 'background-color: {{VALUE}};',
+				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot.active span, {{WRAPPER}} .penci-related-carousel .penci-owl-dot.active span' => 'background-color: {{VALUE}};',
 			),
 		) );
 

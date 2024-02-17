@@ -584,11 +584,11 @@ if ( ! class_exists( 'Penci_Custom_CSS_Shortcode_Old' ) ):
 			) );
 
 			if ( $atts['_dot_color'] ) {
-				$css_custom .= $block_id . ' .owl-dots .owl-dot span{ border-color:' . esc_attr( $atts['_dot_color'] ) . ';background-color:' . esc_attr( $atts['_dot_color'] ) . ' }';
+				$css_custom .= $block_id . ' .penci-owl-dots .penci-owl-dot span{ border-color:' . esc_attr( $atts['_dot_color'] ) . ';background-color:' . esc_attr( $atts['_dot_color'] ) . ' }';
 			}
 			if ( $atts['dot_hcolor'] ) {
-				$css_custom .= $block_id . ' .owl-dots .owl-dot:hover span,';
-				$css_custom .= $block_id . ' .owl-dots .owl-dot.active span{ border-color:' . esc_attr( $atts['dot_hcolor'] ) . ';background-color:' . esc_attr( $atts['dot_hcolor'] ) . '}';
+				$css_custom .= $block_id . ' .penci-owl-dots .penci-owl-dot:hover span,';
+				$css_custom .= $block_id . ' .penci-owl-dots .penci-owl-dot.active span{ border-color:' . esc_attr( $atts['dot_hcolor'] ) . ';background-color:' . esc_attr( $atts['dot_hcolor'] ) . '}';
 			}
 
 

@@ -9,8 +9,9 @@ if ( ! isset ( $j ) ) {
 } else {
 	$j = $j;
 }
-$block_style = get_theme_mod( 'penci_blockquote_style' ) ? get_theme_mod( 'penci_blockquote_style' ) : 'style-1';
-$thumb_alt   = $thumb_title_html = '';
+$block_style   = get_theme_mod( 'penci_blockquote_style' ) ? get_theme_mod( 'penci_blockquote_style' ) : 'style-1';
+$heading_style = penci_get_heading_style();
+$thumb_alt     = $thumb_title_html = '';
 
 $post_class     = get_post_class( '', get_the_ID() );
 $standard_class = 'standard-article classic-pitem ' . esc_attr( implode( ' ', $post_class ) );
@@ -37,11 +38,11 @@ if ( has_post_thumbnail() ) {
             <div class="standard-top-meta author-post byline">
 				<?php if ( ! get_theme_mod( 'penci_standard_author' ) ) : ?>
                     <span class="author vcard"><?php echo penci_get_setting( 'penci_trans_written_by' ); ?> <?php if ( function_exists( 'coauthors_posts_links' ) ) :
-		                    penci_coauthors_posts_links();
-	                    else: ?>
+							penci_coauthors_posts_links();
+						else: ?>
                             <a class="author-url url fn n"
                                href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
-	                    <?php endif; ?></span>
+						<?php endif; ?></span>
 				<?php endif; ?>
 				<?php if ( penci_isshow_reading_time( $hide_readtime ) ) : ?>
                     <span class="penci-readtime"><?php penci_reading_time(); ?></span>
@@ -62,7 +63,7 @@ if ( has_post_thumbnail() ) {
                                 class="attachment-penci-full-thumb size-penci-full-thumb penci-lazy wp-post-image"
                                 width="<?php penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w' ); ?>"
                                 height="<?php penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h' ); ?>"
-                                src="<?php echo penci_holder_image_base( penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w',false ), penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h',false ) ); ?>" alt="<?php echo $thumb_alt; ?>"<?php echo $thumb_title_html; ?>
+                                src="<?php echo penci_holder_image_base( penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w', false ), penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h', false ) ); ?>" alt="<?php echo $thumb_alt; ?>"<?php echo $thumb_title_html; ?>
                                 data-src="<?php echo penci_get_featured_image_size( get_the_ID(), 'penci-full-thumb' ); ?>"><?php endif; ?>
                         </a>
 					<?php } else { ?>
@@ -113,24 +114,28 @@ if ( has_post_thumbnail() ) {
 				$autoplay = ! get_theme_mod( 'penci_standard_disable_autoplay_gallery' ) ? 'true' : 'false';
 				?>
                 <div class="standard-post-image classic-post-image">
-                    <div class="penci-owl-carousel penci-owl-carousel-slider penci-nav-visible"
+                    <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-nav-visible"
                          data-auto="<?php echo $autoplay; ?>">
-						<?php foreach ( $images as $image ) : ?>
+                        <div class="swiper-wrapper">
+							<?php foreach ( $images as $image ) : ?>
+                                <div class="swiper-slide swiper-mark-item">
+									<?php $the_image = wp_get_attachment_image_src( $image, 'penci-full-thumb' ); ?>
+									<?php $the_caption = get_post_field( 'post_excerpt', $image );
+									$image_alt         = penci_get_image_alt( $image, get_the_ID() );
+									$image_title_html  = penci_get_image_title( $image );
+									?>
+                                    <figure class="penci-swiper-mask item-link-relative penci-gallery-images"
+                                            alt="<?php the_title(); ?>"<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>>
+										<?php echo penci_get_ratio_img_format_gallery( $the_image ); ?>
+                                        <img src="<?php echo esc_url( $the_image[0] ); ?>"
+                                             width="<?php echo $the_image[1]; ?>"
+                                             height="<?php echo $the_image[2]; ?>"
+                                             alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?>>
+                                    </figure>
+                                </div>
 
-							<?php $the_image = wp_get_attachment_image_src( $image, 'penci-full-thumb' ); ?>
-							<?php $the_caption = get_post_field( 'post_excerpt', $image );
-							$image_alt         = penci_get_image_alt( $image, get_the_ID() );
-							$image_title_html  = penci_get_image_title( $image );
-							?>
-                            <figure class="item-link-relative penci-gallery-images"
-                                    alt="<?php the_title(); ?>"<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>>
-								<?php echo penci_get_ratio_img_format_gallery( $the_image ); ?>
-                                <img src="<?php echo esc_url( $the_image[0] ); ?>" width="<?php echo $the_image[1]; ?>"
-                                     height="<?php echo $the_image[2]; ?>"
-                                     alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?>>
-                            </figure>
-
-						<?php endforeach; ?>
+							<?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
 			<?php endif; ?>
@@ -157,7 +162,7 @@ if ( has_post_thumbnail() ) {
                                 class="attachment-penci-full-thumb size-penci-full-thumb penci-lazy wp-post-image"
                                 width="<?php penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w' ); ?>"
                                 height="<?php penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h' ); ?>"
-                                src="<?php echo penci_holder_image_base( penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w',false ), penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h',false ) ); ?>" alt="<?php echo $thumb_alt; ?>"<?php echo $thumb_title_html; ?>
+                                src="<?php echo penci_holder_image_base( penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w', false ), penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h', false ) ); ?>" alt="<?php echo $thumb_alt; ?>"<?php echo $thumb_title_html; ?>
                                 data-src="<?php echo penci_get_featured_image_size( get_the_ID(), 'penci-full-thumb' ); ?>"><?php endif; ?>
                         </a>
 					<?php } else { ?>
@@ -192,7 +197,7 @@ if ( has_post_thumbnail() ) {
                                 class="attachment-penci-full-thumb size-penci-full-thumb penci-lazy wp-post-image"
                                 width="<?php penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w' ); ?>"
                                 height="<?php penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h' ); ?>"
-                                src="<?php echo penci_holder_image_base( penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w',false ), penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h',false ) ); ?>" alt="<?php echo $thumb_alt; ?>"<?php echo $thumb_title_html; ?>
+                                src="<?php echo penci_holder_image_base( penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'w', false ), penci_get_image_data_based_post_id( get_the_ID(), 'penci-full-thumb', 'h', false ) ); ?>" alt="<?php echo $thumb_alt; ?>"<?php echo $thumb_title_html; ?>
                                 data-src="<?php echo penci_get_featured_image_size( get_the_ID(), 'penci-full-thumb' ); ?>"><?php endif; ?>
                         </a>
 					<?php } else { ?>
@@ -209,7 +214,7 @@ if ( has_post_thumbnail() ) {
 
     <div class="standard-content">
         <div class="standard-main-content entry-content">
-            <div class="post-entry standard-post-entry classic-post-entry <?php echo 'blockquote-' . $block_style; ?>">
+            <div class="post-entry standard-post-entry classic-post-entry <?php echo 'blockquote-' . $block_style; ?> <?php echo $heading_style; ?>">
 				<?php if ( get_theme_mod( 'penci_standard_auto_excerpt' ) || isset( $atts['wpblock'] ) ) { ?>
 					<?php
 					$default_excerpt         = get_theme_mod( 'penci_post_excerpt_length', 30 );

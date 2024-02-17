@@ -745,6 +745,17 @@ class PenciProductTabs extends Base_Widget {
 			]
 		);
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control(
 			'autoplay',
 			[

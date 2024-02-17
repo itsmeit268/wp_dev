@@ -10,7 +10,7 @@ $post_thumb_size_mobile = ! empty( $post_thumb_size_mobile ) ? $post_thumb_size_
 
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
+    <div class="item swiper-slide">
 	    <?php do_action( 'penci_bookmark_post' ); ?>
 		<?php if ( ! $disable_lazyload ) { ?>
             <a class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
@@ -23,7 +23,7 @@ $post_thumb_size_mobile = ! empty( $post_thumb_size_mobile ) ? $post_thumb_size_
 		<?php } ?>
         <div class="penci-slider4-overlay">
             <a class="overlay-link"
-               aria-label="<?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), 6, '...' ); ?>"
+               aria-label="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
                href="<?php the_permalink(); ?>"></a>
             <div class="penci-featured-content">
                 <div class="feat-text<?php if ( $meta_date_hide ): echo ' slider-hide-date'; endif; ?>">

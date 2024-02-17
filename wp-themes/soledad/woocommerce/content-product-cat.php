@@ -12,6 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
+ * @version 4.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,9 +29,11 @@ if ( ! in_array( $style, array( 'default', 'carousel' ) ) && $total - $index > 1
 	$after_item = ( $loop_by - 1 == $index % $loop_by ) ? '</ul><ul>' : '';
 }
 
+$item_class = $style == 'carousel' ? 'swiper-slide' : 'normal-item';
+
 echo $before_item;
 ?>
-    <li <?php wc_product_cat_class( '', $category ); ?>>
+    <li <?php wc_product_cat_class( $item_class, $category ); ?>>
         <div class="penci-product-cat-loop">
 		    <?php
 			/**

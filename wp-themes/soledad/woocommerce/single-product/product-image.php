@@ -67,11 +67,11 @@ $thumbnail_fig_class = $slider ? 'splide__slide woocommerce-product-thumbnail' :
 		<?php if ( $slider ): ?>
 
         <div class="penci-product-gallery-slider splide <?php echo esc_attr( $img_width ); ?>">
-            <div class="penci-product-gallery-items splide__track">
-                <div class="splide__list penci-gallery-image-list">
+            <div class="penci-product-gallery-items swiper splide__track">
+                <div class="splide__list penci-gallery-image-list swiper-wrapper">
 					<?php endif; ?>
                     <figure data-slide_item="0" data-attr_id="<?php echo esc_attr( $post_thumbnail_id ); ?>"
-                         class="splide__slide splide__slide-<?php echo esc_attr( $post_thumbnail_id ); ?> woocommerce-product-gallery__wrapper">
+                            class="swiper-slide splide__slide splide__slide-<?php echo esc_attr( $post_thumbnail_id ); ?> woocommerce-product-gallery__wrapper">
 						<?php
 						if ( $post_thumbnail_id ) {
 							$html = penci_get_gallery_image_html( $post_thumbnail_id, true );
@@ -89,7 +89,7 @@ $thumbnail_fig_class = $slider ? 'splide__slide woocommerce-product-thumbnail' :
 						$slide = 1;
 						foreach ( $attachment_ids as $attachment_id ) {
 
-							echo '<figure data-slide_item="' . $slide ++ . '" data-attr_id="' . esc_attr( $attachment_id ) . '" class="splide__slide splide__slide-' . esc_attr( $attachment_id ) . ' woocommerce-product-gallery__wrapper">';
+							echo '<figure data-slide_item="' . $slide ++ . '" data-attr_id="' . esc_attr( $attachment_id ) . '" class="swiper-slide splide__slide splide__slide-' . esc_attr( $attachment_id ) . ' woocommerce-product-gallery__wrapper">';
 
 							if ( $attachment_id ) {
 								$html = penci_get_gallery_image_html( $attachment_id, true );
@@ -117,14 +117,15 @@ $thumbnail_fig_class = $slider ? 'splide__slide woocommerce-product-thumbnail' :
 				<?php if ( $slider ):
 				array_unshift( $attachment_ids, $product->get_image_id() );
 				?>
-                <div class="splide__track">
-                    <div class="penci-thumbnail-image-list splide__list" data-total-slides="<?php echo count( $attachment_ids ); ?>">
+                <div class="splide__track swiper penci-thumbnail-image-wrapper">
+                    <div class="penci-thumbnail-image-list splide__list swiper-wrapper"
+                         data-total-slides="<?php echo count( $attachment_ids ); ?>">
 						<?php
 						endif;
 						if ( $attachment_ids && $product->get_image_id() ) {
 							$item_count = 0;
 							foreach ( $attachment_ids as $attachment_id ) {
-								echo '<figure class="item-' . $item_count . ' ' . esc_attr( $thumbnail_fig_class ) . '">';
+								echo '<figure class="swiper-slide item-' . $item_count . ' ' . esc_attr( $thumbnail_fig_class ) . '">';
 								echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', penci_get_gallery_image_html( $attachment_id, $slider ? false : true, $slider ), $attachment_id );
 								echo '</figure>';
 								$item_count ++;

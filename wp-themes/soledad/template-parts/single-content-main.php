@@ -5,6 +5,7 @@
  * @since 1.0
  */
 $block_style = get_theme_mod( 'penci_blockquote_style' ) ? get_theme_mod( 'penci_blockquote_style' ) : 'style-1';
+$heading_style = penci_get_heading_style();
 $thumb_alt   = $thumb_title_html = '';
 
 if ( has_post_thumbnail() ) {
@@ -73,7 +74,7 @@ $single_style = penci_get_single_style();
 	}
 	?>
 
-    <div class="post-entry <?php echo 'blockquote-' . $block_style; ?>">
+    <div class="post-entry <?php echo $heading_style; ?> <?php echo 'blockquote-' . $block_style; ?>">
         <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
 
 			<?php do_action( 'penci_action_before_the_content' ); ?>

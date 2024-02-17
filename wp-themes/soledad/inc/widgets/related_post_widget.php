@@ -84,6 +84,7 @@ if ( ! class_exists( 'penci_related_news_widget' ) ) {
 					}
 
 					$rand = rand( 1000, 10000 );
+
 					?>
                     <ul id="penci-relatedwg-<?php echo sanitize_text_field( $rand ); ?>"
                         data-settings='<?php echo json_encode( $instance ); ?>' data-paged="1"
@@ -205,6 +206,7 @@ if ( ! class_exists( 'penci_related_news_widget' ) ) {
                     </ul>
 
 					<?php
+
 					if ( isset( $instance['ajaxnav'] ) && $instance['ajaxnav'] == 'btn' ) {
 						?>
                         <div class="penci-pagination penci-ajax-more pcwg-lposts">

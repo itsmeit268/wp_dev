@@ -14,16 +14,18 @@ $image_size_mobile = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_the
 
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
-	    <?php do_action( 'penci_bookmark_post' ); ?>
+
+    <div class="item swiper-slide swiper-mark-item">
+    	
+		<?php do_action( 'penci_bookmark_post' ); ?>
 		<?php if ( ! get_theme_mod( 'penci_disable_lazyload_slider' ) ) { ?>
-            <a class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
+            <div class="penci-swiper-mask penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
                data-bgset="<?php echo penci_image_srcset( get_the_ID(), $image_size, $image_size_mobile ); ?>"
-               href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
+               data-href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 		<?php } else { ?>
-            <a class="penci-image-holder"
+            <div class="penci-swiper-mask penci-image-holder"
                style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), penci_is_mobile() ? $image_size_mobile : $image_size ); ?>');"
-               href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
+               data-href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 		<?php } ?>
 		<?php if ( ! get_theme_mod( 'penci_featured_center_box' ) ): ?>
             <div class="penci-featured-content">
@@ -53,7 +55,9 @@ $image_size_mobile = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_the
                 </div>
             </div>
 		<?php endif; ?>
+		</div>
     </div>
+
 	<?php $list_post_ids[] = get_the_ID(); ?>
 <?php endwhile;
 	wp_reset_postdata(); endif; ?>

@@ -22,7 +22,7 @@
 <div id="penci-custom-fonts" class="gt-tab-pane gt-is-active penci-dashboard-wapper">
 
 	<form method="post" action="options.php">
-		<?php wp_nonce_field( 'penci_update_options', 'nonce' ); ?>
+
 		<table class="widefat penci-table-options" cellspacing="0">
 			<thead>
 			<tr><th colspan="4">
@@ -327,7 +327,7 @@
 			</tbody>
 		</table>
 		<input type="hidden" name="_page" value="soledad_custom_fonts">
-
+		<?php wp_nonce_field( 'penci_update_options', 'idz' ); ?>
 		<?php submit_button(); ?>
 
 	</form>

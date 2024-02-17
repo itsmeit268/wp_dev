@@ -22,7 +22,8 @@ class Penci_Gutenberg_Soledad_Blockquote {
 		}
 		
 		$block_style = get_theme_mod('penci_blockquote_style') ? get_theme_mod('penci_blockquote_style') : 'style-1';
-		$output = '<div class="penci-wpblock blockquote-' . $block_style . '">';
+		$heading_style = penci_get_heading_style();
+		$output = '<div class="penci-wpblock ' . $heading_style . ' blockquote-' . $block_style . '">';
 		$output .= Penci_Soledad_Gutenberg::message( 'Penci Block Quote', esc_html__( 'Click to edit this block', 'soledad' ) );
 		$output .=  do_shortcode( '[blockquote  ' . $param . ']' . ( $attributes['content'] ? $attributes['content'] : '' ) . '[/blockquote]' );
 		$output .= '</div><!--endpenci-block-->';

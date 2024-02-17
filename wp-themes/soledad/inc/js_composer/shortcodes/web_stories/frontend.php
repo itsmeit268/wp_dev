@@ -18,7 +18,7 @@ $block_id_selector2 = 'body:not(.pcdm-enable) #' . $block_id;
 echo '<style>';
 if ( $atts['columns'] ) {
 	echo $block_id_selector . ' .pc-wstories-wrapper .pc-wstories-list.grid .pc-webstory-item{width:calc(100% / ' . $atts['columns'] . ')}';
-	echo $block_id_selector . ' .pc-wstories-wrapper .pc-wstories-list.slider:not(.owl-loaded) .pc-webstory-item{width:calc(100% / ' . $atts['columns'] . ')}';
+	echo $block_id_selector . ' .pc-wstories-wrapper .pc-wstories-list.slider:not(.penci-owl-loaded) .pc-webstory-item{width:calc(100% / ' . $atts['columns'] . ')}';
 }
 if ( $atts['iboradius'] ) {
 	echo $block_id_selector . ' .pc-wstories-wrapper .pc-webstory-thumb-wrapper, '. $block_id_selector .' .pc-wstories-wrapper .pc-webstory-thumb{border-radius:' . $atts['iboradius'] . 'px;}';

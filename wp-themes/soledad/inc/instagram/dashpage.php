@@ -64,7 +64,7 @@ class InstgramSettingPages {
 
 	public function dashboard_content() {
 		$current_user          = wp_get_current_user();
-		$instagram_api         = 'https://api.instagram.com/oauth/authorize?client_id=423965861585747&redirect_uri=https://connect.smashballoon.com/auth/ig/instagram-basic-display-redirect.php&response_type=code&scope=user_profile,user_media&state={\'{url={\'{url=' . admin_url( 'admin.php?page=sb-instagram-feed' ) . '}\'},user=' . $current_user->user_email . ',opt=in,sbi_con=9648f35da8}\'}';
+		$instagram_api         = 'https://api.instagram.com/oauth/authorize?client_id=423965861585747&redirect_uri=https://connect-ig.smashballoon.com/instagram-basic-display-redirect.php&response_type=code&scope=user_profile,user_media&state={\'{url={\'{url=' . admin_url( 'admin.php?page=sb-instagram-feed' ) . '}\'},user=' . $current_user->user_email . ',opt=in,sbi_con=debd5a1d4c}\'}';
 		$instagram_token       = get_option( 'penci_options[penci_instagram]' );
 		$instagram_label       = __( 'You\'ve not connected to any Instagram Account.', 'soledad' );
 		$instagram_description = sprintf( __( 'You can <a class="%1$s" href="%2$s" target="_blank">click here</a> to connect to your Instagram account.', 'soledad' ), 'penci_instagram_access_token instagram', $instagram_api );

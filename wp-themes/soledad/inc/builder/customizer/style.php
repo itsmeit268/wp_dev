@@ -844,9 +844,13 @@ function penci_builder_customizer_css() {
 			'border-color'     => '.pc-builder-element.pc-main-menu .penci-dropdown-menu,.pc-builder-element.pc-main-menu .navigation .menu .sub-menu, .pc-builder-element.pc-main-menu .navigation ul.menu > li.megamenu > ul.sub-menu,.pc-builder-element.pc-main-menu .navigation ul.menu ul.sub-menu li > a, .pc-builder-element.pc-builder-menu.pc-main-menu .navigation.menu-style-1 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.cat-active',
 			'background-color' => '.pc-builder-element.pc-main-menu .menu-style-2 .penci-megamenu:not(.penci-block-mega) .penci-content-megamenu .penci-mega-latest-posts .penci-mega-post:before,.pc-builder-element.pc-main-menu .navigation ul.menu > li.megamenu > ul.sub-menu > li:before, .pc-builder-element.pc-main-menu .navigation.menu-style-2 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.all-style:before, .pc-builder-element.pc-main-menu .navigation.menu-style-2 .penci-megamenu .penci-mega-child-categories:after, .pc-builder-element.pc-main-menu .navigation .penci-megamenu .penci-mega-child-categories:after',
 			'border-top-color' => '.pc-builder-element.pc-main-menu .navigation.menu-style-2 .menu .sub-menu',
+			'border-bottom-color' => '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu:before',
+			'border-right-color' => '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:before',
 		),
 		'penci_header_pb_main_menu_penci_submenu_bgcolor'  => array(
 			'background-color' => '.pc-builder-element.pc-main-menu .navigation ul.menu > li.megamenu > ul.sub-menu, .pc-builder-element.pc-main-menu .navigation .menu .sub-menu, .pc-builder-element.pc-main-menu .navigation .menu .children',
+			'border-bottom-color' => '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu:after',
+			'border-right-color' => '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:after',
 		),
 		'penci_header_pb_main_menu_drop_border_style2'     => array(
 			'background-color' => '.pc-builder-element.pc-main-menu .navigation.menu-style-2 ul.menu ul:before',
@@ -894,9 +898,13 @@ function penci_builder_customizer_css() {
 			'border-color'     => '.pc-builder-element.pc-second-menu .penci-dropdown-menu,.pc-builder-element.pc-second-menu .navigation .menu .sub-menu, .pc-builder-element.pc-second-menu .navigation ul.menu > li.megamenu > ul.sub-menu,.pc-builder-element.pc-second-menu .navigation ul.menu ul.sub-menu li > a, .pc-builder-element.pc-builder-menu.pc-second-menu .navigation.menu-style-1 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.cat-active',
 			'background-color' => '.pc-builder-element.pc-second-menu .menu-style-2 .penci-megamenu:not(.penci-block-mega) .penci-content-megamenu .penci-mega-latest-posts .penci-mega-post:before,.pc-builder-element.pc-second-menu .navigation ul.menu > li.megamenu > ul.sub-menu > li:before, .pc-builder-element.pc-second-menu .navigation.menu-style-2 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.all-style:before, .pc-builder-element.pc-second-menu .navigation.menu-style-2 .penci-megamenu .penci-mega-child-categories:after, .pc-builder-element.pc-second-menu .navigation .penci-megamenu .penci-mega-child-categories:after',
 			'border-top-color' => '.pc-builder-element.pc-second-menu .navigation.menu-style-2 .menu .sub-menu',
+			'border-bottom-color' => '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu:before',
+			'border-right-color' => '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:before',
 		),
 		'penci_header_pb_second_menu_penci_submenu_bgcolor' => array(
 			'background-color' => '.pc-builder-element.pc-second-menu .navigation ul.menu > li.megamenu > ul.sub-menu, .pc-builder-element.pc-second-menu .navigation .menu .sub-menu, .pc-builder-element.pc-second-menu .navigation .menu .children',
+			'border-bottom-color' => '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu:after',
+			'border-right-color' => '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:after',
 		),
 		'penci_header_pb_second_menu_drop_border_style2'   => array(
 			'background-color' => '.pc-builder-element.pc-second-menu .navigation.menu-style-2 ul.menu ul.sub-menu:before',
@@ -944,9 +952,13 @@ function penci_builder_customizer_css() {
 			'border-color'     => '.pc-builder-element.pc-third-menu .penci-dropdown-menu,.pc-builder-element.pc-third-menu .navigation .menu .sub-menu, .pc-builder-element.pc-third-menu .navigation ul.menu > li.megamenu > ul.sub-menu,.pc-builder-element.pc-third-menu .navigation ul.menu ul.sub-menu li > a, .pc-builder-element.pc-builder-menu.pc-third-menu .navigation.menu-style-1 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.cat-active',
 			'background-color' => '.pc-builder-element.pc-third-menu .navigation ul.menu > li.megamenu > ul.sub-menu > li:before, .pc-builder-element.pc-third-menu .navigation.menu-style-2 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.all-style:before,.pc-builder-element.pc-third-menu .menu-style-2 .penci-megamenu:not(.penci-block-mega) .penci-content-megamenu .penci-mega-latest-posts .penci-mega-post:before, .pc-builder-element.pc-third-menu .navigation.menu-style-2 .penci-megamenu .penci-mega-child-categories:after, .pc-builder-element.pc-third-menu .navigation .penci-megamenu .penci-mega-child-categories:after',
 			'border-top-color' => '.pc-builder-element.pc-third-menu .navigation.menu-style-2 .menu .sub-menu',
+			'border-bottom-color' => '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu:before',
+			'border-right-color' => '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:before',
 		),
 		'penci_header_pb_third_menu_penci_submenu_bgcolor' => array(
 			'background-color' => '.pc-builder-element.pc-third-menu .navigation ul.menu > li.megamenu > ul.sub-menu, .pc-builder-element.pc-third-menu .navigation .menu .sub-menu, .pc-builder-element.pc-third-menu .navigation .menu .children',
+			'border-bottom-color' => '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu:after',
+			'border-right-color' => '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:after',
 		),
 		'penci_header_pb_third_menu_drop_border_style2'    => array(
 			'background-color' => '.pc-builder-element.pc-third-menu .navigation.menu-style-2 ul.menu ul.sub-menu:before',

@@ -18,7 +18,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 	}
 
 	public function get_title() {
-		return penci_get_theme_name('Penci').' '.esc_html__( ' Fullwidth Hero Overlay', 'soledad' );
+		return penci_get_theme_name( 'Penci' ) . ' ' . esc_html__( ' Fullwidth Hero Overlay', 'soledad' );
 	}
 
 	public function get_icon() {
@@ -34,7 +34,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 	}
 
 	protected function register_controls() {
-		
+
 
 		// Section general
 		$this->start_controls_section(
@@ -43,7 +43,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
-		
+
 		$this->add_responsive_control(
 			'container_width',
 			[
@@ -157,7 +157,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 				'options' => $this->get_list_image_sizes( true ),
 			)
 		);
-		
+
 		$this->add_responsive_control(
 			'img_ratio', array(
 				'label'     => __( 'Image Ratio for Small Posts', 'soledad' ),
@@ -235,7 +235,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 				'default' => '',
 			)
 		);
-		
+
 		$this->add_control(
 			'title_blength', array(
 				'label'   => __( 'Custom Title Words Length for Big Post', 'soledad' ),
@@ -246,7 +246,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 				'default' => '',
 			)
 		);
-		
+
 		$this->add_control(
 			'show_bicon', array(
 				'label'        => __( 'Hide Post Format Icon on Big Post?', 'soledad' ),
@@ -317,6 +317,17 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 			)
 		);
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control(
 			'autoplay', array(
 				'label'   => __( 'Autoplay', 'soledad' ),
@@ -327,9 +338,10 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 
 		$this->add_control(
 			'loop', array(
-				'label'   => __( 'Carousel Loop', 'soledad' ),
-				'type'    => Controls_Manager::SWITCHER,
-				'default' => 'yes',
+				'label'     => __( 'Carousel Loop', 'soledad' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'yes',
+				'condition' => [ 'carousel_slider_effect' => 'default' ],
 			)
 		);
 		$this->add_control(
@@ -696,7 +708,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
-		
+
 		$this->add_control(
 			'sitem_bg',
 			array(
@@ -946,14 +958,14 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 				),
 			)
 		);
-		
+
 		$this->add_responsive_control(
 			'small_post_post_vspacing', array(
 				'description' => __( 'This option does not apply when small posts showing as slider', 'soledad' ),
-				'label'     => __( 'Vertical Spacing Between each Posts', 'soledad' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array( 'px' => array( 'min' => 0, 'max' => 200, ) ),
-				'selectors' => array(
+				'label'       => __( 'Vertical Spacing Between each Posts', 'soledad' ),
+				'type'        => Controls_Manager::SLIDER,
+				'range'       => array( 'px' => array( 'min' => 0, 'max' => 200, ) ),
+				'selectors'   => array(
 					'{{WRAPPER}} .pc-fho-wrap' => '--vgap: {{SIZE}}px;',
 				),
 			)
@@ -1052,15 +1064,18 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 	protected function render() {
 		$settings = $this->get_settings();
 
-		$original_postype   = $settings['posts_post_type'];
+		$original_postype = $settings['posts_post_type'];
 
-		if ( in_array($original_postype,['current_query','related_posts']) && penci_elementor_is_edit_mode() && penci_is_builder_template() ) {
+		if ( in_array( $original_postype, [
+				'current_query',
+				'related_posts'
+			] ) && penci_elementor_is_edit_mode() && penci_is_builder_template() ) {
 			$settings['posts_post_type'] = 'post';
 		}
 
 		//query
-		$args           = Query_Control::get_query_args( 'posts', $settings );
-		$args['paged']  = max( get_query_var( 'paged' ), get_query_var( 'page' ), 1 );
+		$args          = Query_Control::get_query_args( 'posts', $settings );
+		$args['paged'] = max( get_query_var( 'paged' ), get_query_var( 'page' ), 1 );
 		if ( $original_postype == 'current_query' ) {
 			$paged  = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 			$ppp    = $settings['posts_per_page'] ? $settings['posts_per_page'] : get_option( 'posts_per_page' );
@@ -1097,7 +1112,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 		$post_meta        = $settings['post_meta'] ? $settings['post_meta'] : array();
 		$primary_cat      = $settings['primary_cat'] ? $settings['primary_cat'] : '';
 		$title_length     = $settings['title_length'] ? $settings['title_length'] : '';
-		$title_blength     = $settings['title_blength'] ? $settings['title_blength'] : $title_length;
+		$title_blength    = $settings['title_blength'] ? $settings['title_blength'] : $title_length;
 		$mobile_column    = isset( $settings['mb_column'] ) && $settings['mb_column'] ? $settings['mb_column'] : 1;
 		$tablet_column    = isset( $settings['tab_column'] ) && $settings['tab_column'] ? $settings['tab_column'] : 2;
 
@@ -1117,7 +1132,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 		if ( $slider ) {
 			$data_slider_class = ' penci-owl-carousel penci-owl-carousel-slider';
 			$data_slider       .= $settings['showdots'] ? ' data-dots="true"' : '';
-			$data_slider       .= 'yes' == $settings['shownav']  ? ' data-nav="false"' : ' data-nav="true"';
+			$data_slider       .= 'yes' == $settings['shownav'] ? ' data-nav="false"' : ' data-nav="true"';
 			$data_slider       .= ! $settings['loop'] ? ' data-loop="true"' : '';
 			$data_slider       .= ' data-auto="' . ( 'yes' == $settings['autoplay'] ? 'true' : 'false' ) . '"';
 			$data_slider       .= $settings['auto_time'] ? ' data-autotime="' . $settings['auto_time'] . '"' : ' data-autotime="4000"';
@@ -1128,6 +1143,7 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 			$data_slider .= ' data-tablet="' . ( isset( $settings['tab_column'] ) && $settings['tab_column'] ? $settings['tab_column'] : '2' ) . '"';
 			$data_slider .= ' data-tabsmall="' . ( isset( $settings['tab_column'] ) && $settings['tab_column'] ? $settings['tab_column'] : '2' ) . '"';
 			$data_slider .= ' data-mobile="' . ( isset( $settings['mb_column'] ) && $settings['mb_column'] ? $settings['mb_column'] : '1' ) . '"';
+			$data_slider .= ' data-ceffect="' . $settings['carousel_slider_effect'] . '"';
 		}
 
 		if ( $pc_fwhro_query->have_posts() ) {
@@ -1141,37 +1157,39 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
                                 <div class="pc-fho-mp pc-fho-content penci-lazy"
                                      data-bgset="<?php echo penci_get_featured_image_size( get_the_ID(), $main_thumbnail ); ?>">
                                     <div class="pc-fho-mpct">
-										<?php if ( 'yes' != $settings['show_bicon'] ){ ?>
-                                        <div class="pc-fho-mi">
-                                            <div class="pc-fho-mi-i">
-												<?php if ( has_post_format( 'video' ) ) : ?>
-                                                    <a href="<?php the_permalink() ?>" class="icon-post-format"
-                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-play' ); ?></a>
-												<?php endif; ?>
-												<?php if ( has_post_format( 'gallery' ) ) : ?>
-                                                    <a href="<?php the_permalink() ?>" class="icon-post-format"
-                                                       aria-label="Icon"><?php penci_fawesome_icon( 'penciicon-gallery' ); ?></a>
-												<?php endif; ?>
-												<?php if ( has_post_format( 'audio' ) ) : ?>
-                                                    <a href="<?php the_permalink() ?>" class="icon-post-format"
-                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-music' ); ?></a>
-												<?php endif; ?>
-												<?php if ( has_post_format( 'link' ) ) : ?>
-                                                    <a href="<?php the_permalink() ?>" class="icon-post-format"
-                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-link' ); ?></a>
-												<?php endif; ?>
-												<?php if ( has_post_format( 'quote' ) ) : ?>
-                                                    <a href="<?php the_permalink() ?>" class="icon-post-format"
-                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-quote-left' ); ?></a>
-												<?php endif; ?>
-												<?php if ( ! get_post_format() ) : ?>
-                                                    <a href="<?php the_permalink() ?>" class="icon-post-format"
-                                                       aria-label="Icon"><?php penci_fawesome_icon( 'penciicon-newspaper' ); ?></a>
-												<?php endif; ?>
+										<?php if ( 'yes' != $settings['show_bicon'] ) { ?>
+                                            <div class="pc-fho-mi">
+                                                <div class="pc-fho-mi-i">
+													<?php if ( has_post_format( 'video' ) ) : ?>
+                                                        <a href="<?php the_permalink() ?>" class="icon-post-format"
+                                                           aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-play' ); ?></a>
+													<?php endif; ?>
+													<?php if ( has_post_format( 'gallery' ) ) : ?>
+                                                        <a href="<?php the_permalink() ?>" class="icon-post-format"
+                                                           aria-label="Icon"><?php penci_fawesome_icon( 'penciicon-gallery' ); ?></a>
+													<?php endif; ?>
+													<?php if ( has_post_format( 'audio' ) ) : ?>
+                                                        <a href="<?php the_permalink() ?>" class="icon-post-format"
+                                                           aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-music' ); ?></a>
+													<?php endif; ?>
+													<?php if ( has_post_format( 'link' ) ) : ?>
+                                                        <a href="<?php the_permalink() ?>" class="icon-post-format"
+                                                           aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-link' ); ?></a>
+													<?php endif; ?>
+													<?php if ( has_post_format( 'quote' ) ) : ?>
+                                                        <a href="<?php the_permalink() ?>" class="icon-post-format"
+                                                           aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-quote-left' ); ?></a>
+													<?php endif; ?>
+													<?php if ( ! get_post_format() ) : ?>
+                                                        <a href="<?php the_permalink() ?>" class="icon-post-format"
+                                                           aria-label="Icon"><?php penci_fawesome_icon( 'penciicon-newspaper' ); ?></a>
+													<?php endif; ?>
+                                                </div>
                                             </div>
-                                        </div>
 										<?php } ?>
-                                        <div class="pc-fho-mc<?php if ( 'yes' == $settings['show_bicon'] ){ echo ' bct-fullwidth'; } ?>">
+                                        <div class="pc-fho-mc<?php if ( 'yes' == $settings['show_bicon'] ) {
+											echo ' bct-fullwidth';
+										} ?>">
 											<?php if ( in_array( 'cat', $post_meta ) ) : ?>
                                                 <div class="cat pc-fho-main-cat pc-fho-cat">
 													<?php penci_category( '', $primary_cat ); ?>
@@ -1180,12 +1198,12 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
                                             <div class="pc-fho-mt">
                                                 <h3>
                                                     <a href="<?php the_permalink(); ?>">
-													<?php if ( ! $title_blength ) {
-														the_title();
-													} else {
-														echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $title_blength, '...' );
-													} ?>
-													</a>
+														<?php if ( ! $title_blength ) {
+															the_title();
+														} else {
+															echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $title_blength, '...' );
+														} ?>
+                                                    </a>
                                                 </h3>
                                             </div>
 											<?php if ( count( array_intersect( array(
@@ -1237,117 +1255,119 @@ class PenciFullwidthHeroOverlay extends Base_Widget {
 							endwhile; ?>
                             <div class="pc-fho-msli-wrapper">
                                 <div class="pc-fho-msli pc-fho-content tablet-columns-<?php echo $tablet_column; ?> mobile-columns-<?php echo $mobile_column; ?> columns-<?php echo $settings['column']; ?>">
-                                    <div class="pc-fho-msli-inner-ct<?php echo $data_slider_class; ?>" <?php echo $data_slider; ?>>
-										<?php while ( $pc_fwhro_query->have_posts() ) : $pc_fwhro_query->the_post(); ?>
-                                            <div class="pc-fho-li">
-                                                <div class="pc-fho-li-ct-inner-wrap">
-                                                    <div class="pc-fho-list-img pcbg-thumb">
-														<?php
-														do_action('penci_bookmark_post',get_the_ID(),'small');
-														/* Display Review Piechart  */
-														if ( 'yes' == $settings['show_reviewpie'] && function_exists( 'penci_display_piechart_review_html' ) ) {
-															penci_display_piechart_review_html( get_the_ID(), 'small' );
-														}
-														?>
-														<?php if ( 'yes' == $settings['show_formaticon'] ): ?>
-															<?php if ( has_post_format( 'video' ) ) : ?>
-                                                                <a href="<?php the_permalink() ?>"
-                                                                   class="icon-post-format"
-                                                                   aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-play' ); ?></a>
+                                    <div class="pc-fho-msli-inner-ct swiper <?php echo $data_slider_class; ?>" <?php echo $data_slider; ?>>
+                                        <div class="swiper-wrapper">
+											<?php while ( $pc_fwhro_query->have_posts() ) : $pc_fwhro_query->the_post(); ?>
+                                                <div class="pc-fho-li swiper-slide">
+                                                    <div class="pc-fho-li-ct-inner-wrap">
+                                                        <div class="pc-fho-list-img pcbg-thumb">
+															<?php
+															do_action( 'penci_bookmark_post', get_the_ID(), 'small' );
+															/* Display Review Piechart  */
+															if ( 'yes' == $settings['show_reviewpie'] && function_exists( 'penci_display_piechart_review_html' ) ) {
+																penci_display_piechart_review_html( get_the_ID(), 'small' );
+															}
+															?>
+															<?php if ( 'yes' == $settings['show_formaticon'] ): ?>
+																<?php if ( has_post_format( 'video' ) ) : ?>
+                                                                    <a href="<?php the_permalink() ?>"
+                                                                       class="icon-post-format"
+                                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-play' ); ?></a>
+																<?php endif; ?>
+																<?php if ( has_post_format( 'gallery' ) ) : ?>
+                                                                    <a href="<?php the_permalink() ?>"
+                                                                       class="icon-post-format"
+                                                                       aria-label="Icon"><?php penci_fawesome_icon( 'penciicon-gallery' ); ?></a>
+																<?php endif; ?>
+																<?php if ( has_post_format( 'audio' ) ) : ?>
+                                                                    <a href="<?php the_permalink() ?>"
+                                                                       class="icon-post-format"
+                                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-music' ); ?></a>
+																<?php endif; ?>
+																<?php if ( has_post_format( 'link' ) ) : ?>
+                                                                    <a href="<?php the_permalink() ?>"
+                                                                       class="icon-post-format"
+                                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-link' ); ?></a>
+																<?php endif; ?>
+																<?php if ( has_post_format( 'quote' ) ) : ?>
+                                                                    <a href="<?php the_permalink() ?>"
+                                                                       class="icon-post-format"
+                                                                       aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-quote-left' ); ?></a>
+																<?php endif; ?>
 															<?php endif; ?>
-															<?php if ( has_post_format( 'gallery' ) ) : ?>
-                                                                <a href="<?php the_permalink() ?>"
-                                                                   class="icon-post-format"
-                                                                   aria-label="Icon"><?php penci_fawesome_icon( 'penciicon-gallery' ); ?></a>
-															<?php endif; ?>
-															<?php if ( has_post_format( 'audio' ) ) : ?>
-                                                                <a href="<?php the_permalink() ?>"
-                                                                   class="icon-post-format"
-                                                                   aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-music' ); ?></a>
-															<?php endif; ?>
-															<?php if ( has_post_format( 'link' ) ) : ?>
-                                                                <a href="<?php the_permalink() ?>"
-                                                                   class="icon-post-format"
-                                                                   aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-link' ); ?></a>
-															<?php endif; ?>
-															<?php if ( has_post_format( 'quote' ) ) : ?>
-                                                                <a href="<?php the_permalink() ?>"
-                                                                   class="icon-post-format"
-                                                                   aria-label="Icon"><?php penci_fawesome_icon( 'fas fa-quote-left' ); ?></a>
-															<?php endif; ?>
-														<?php endif; ?>
-														<?php if ( 'yes' != $settings['disable_lazy'] ) { ?>
-                                                            <a href="<?php the_permalink(); ?>"
-                                                               class="penci-image-holder penci-lazy"
-                                                               data-bgset="<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>">
-															   <span class="pc-fho-slolay"></span>
-                                                            </a>
-														<?php } else { ?>
-                                                            <a href="<?php the_permalink(); ?>"
-                                                               class="penci-image-holder"
-                                                               style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>');<?php if ( 'yes' == $settings['nocrop'] ) {
-																   echo 'padding-bottom: ' . penci_get_featured_image_padding_markup( get_the_ID(), $thumbnail, true ) . '%';
-															   } ?>">
-															   <span class="pc-fho-slolay"></span>
-                                                            </a>
-														<?php } ?>
-                                                    </div>
-                                                    <div class="pc-fho-li-ct-wrap">
-														<?php if ( in_array( 'cat', $post_meta ) ) : ?>
-                                                            <div class="cat pc-fho-list-cat pc-fho-cat">
-																<?php penci_category( '', $primary_cat ); ?>
-                                                            </div>
-														<?php endif; ?>
-                                                        <div class="pc-fho-lt">
-                                                            <h3>
-                                                                <a href="<?php the_permalink(); ?>"><?php if ( ! $title_length ) {
-																		the_title();
-																	} else {
-																		echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $title_length, '...' );
-																	} ?></a></h3>
+															<?php if ( 'yes' != $settings['disable_lazy'] ) { ?>
+                                                                <a href="<?php the_permalink(); ?>"
+                                                                   class="penci-image-holder penci-lazy"
+                                                                   data-bgset="<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>">
+                                                                    <span class="pc-fho-slolay"></span>
+                                                                </a>
+															<?php } else { ?>
+                                                                <a href="<?php the_permalink(); ?>"
+                                                                   class="penci-image-holder"
+                                                                   style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>');<?php if ( 'yes' == $settings['nocrop'] ) {
+																	   echo 'padding-bottom: ' . penci_get_featured_image_padding_markup( get_the_ID(), $thumbnail, true ) . '%';
+																   } ?>">
+                                                                    <span class="pc-fho-slolay"></span>
+                                                                </a>
+															<?php } ?>
                                                         </div>
-														<?php if ( count( array_intersect( array(
-																'author',
-																'date',
-																'comment',
-																'views',
-																'reading'
-															), $post_meta ) ) > 0 ) { ?>
-                                                            <div class="grid-post-box-meta pc-fho-lm">
-																<?php if ( in_array( 'author', $post_meta ) ) : ?>
-                                                                    <span class="pfw-date-author author-italic">
+                                                        <div class="pc-fho-li-ct-wrap">
+															<?php if ( in_array( 'cat', $post_meta ) ) : ?>
+                                                                <div class="cat pc-fho-list-cat pc-fho-cat">
+																	<?php penci_category( '', $primary_cat ); ?>
+                                                                </div>
+															<?php endif; ?>
+                                                            <div class="pc-fho-lt">
+                                                                <h3>
+                                                                    <a href="<?php the_permalink(); ?>"><?php if ( ! $title_length ) {
+																			the_title();
+																		} else {
+																			echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $title_length, '...' );
+																		} ?></a></h3>
+                                                            </div>
+															<?php if ( count( array_intersect( array(
+																	'author',
+																	'date',
+																	'comment',
+																	'views',
+																	'reading'
+																), $post_meta ) ) > 0 ) { ?>
+                                                                <div class="grid-post-box-meta pc-fho-lm">
+																	<?php if ( in_array( 'author', $post_meta ) ) : ?>
+                                                                        <span class="pfw-date-author author-italic">
 												<?php echo penci_get_setting( 'penci_trans_by' ); ?> <a class="url fn n"
                                                                                                         href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
 											</span>
-																<?php endif; ?>
-																<?php if ( in_array( 'date', $post_meta ) ) : ?>
-                                                                    <span class="pfw-date"><?php penci_soledad_time_link(); ?></span>
-																<?php endif; ?>
-																<?php if ( in_array( 'comment', $post_meta ) ) : ?>
-                                                                    <span class="pfw-comment">
+																	<?php endif; ?>
+																	<?php if ( in_array( 'date', $post_meta ) ) : ?>
+                                                                        <span class="pfw-date"><?php penci_soledad_time_link(); ?></span>
+																	<?php endif; ?>
+																	<?php if ( in_array( 'comment', $post_meta ) ) : ?>
+                                                                        <span class="pfw-comment">
 												<a href="<?php comments_link(); ?> "><?php comments_number( '0 ' . penci_get_setting( 'penci_trans_comment' ), '1 ' . penci_get_setting( 'penci_trans_comment' ), '% ' . penci_get_setting( 'penci_trans_comments' ) ); ?></a>
 											</span>
-																<?php endif; ?>
-																<?php
-																if ( in_array( 'views', $post_meta ) ) {
-																	echo '<span class="pfw-views">';
-																	echo penci_get_post_views( get_the_ID() );
-																	echo ' ' . penci_get_setting( 'penci_trans_countviews' );
-																	echo '</span>';
-																}
-																?>
-																<?php
-																$hide_readtime = in_array( 'reading', $post_meta ) ? false : true;
-																if ( penci_isshow_reading_time( $hide_readtime ) ): ?>
-                                                                    <span class="pfw-readtime"><?php penci_reading_time(); ?></span>
-																<?php endif; ?>
-                                                            </div>
-														<?php } ?>
+																	<?php endif; ?>
+																	<?php
+																	if ( in_array( 'views', $post_meta ) ) {
+																		echo '<span class="pfw-views">';
+																		echo penci_get_post_views( get_the_ID() );
+																		echo ' ' . penci_get_setting( 'penci_trans_countviews' );
+																		echo '</span>';
+																	}
+																	?>
+																	<?php
+																	$hide_readtime = in_array( 'reading', $post_meta ) ? false : true;
+																	if ( penci_isshow_reading_time( $hide_readtime ) ): ?>
+                                                                        <span class="pfw-readtime"><?php penci_reading_time(); ?></span>
+																	<?php endif; ?>
+                                                                </div>
+															<?php } ?>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-										<?php endwhile;
-										wp_reset_postdata(); ?>
+											<?php endwhile;
+											wp_reset_postdata(); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div><!--.pc-fho-msli-->

@@ -71,7 +71,7 @@ jQuery(document).ready(function ($) {
                     wrapper.removeClass('loading-posts pcftaj-ld');
                     $this.removeClass('loading-posts');
                     $navthis.removeClass('loading-posts');
-                    $('.pcsl-crs').owlCarousel();
+                    $('body').trigger( 'penci_swiper_sliders' );
 
                     var maxp = undefined;
                     if (wrapId == 'default') {
@@ -92,6 +92,9 @@ jQuery(document).ready(function ($) {
 
                     var o = 0;
                     $wrap_content_id.find('.pcsl-item').each(function () {
+                        if ( $(this).hasClass('swiper-slide') ) {
+                            return;
+                        }
                         o++;
                         $(this).addClass('penci-ajrs-animate').attr('style', 'animation-delay:' + o / 10 + 's')
                     });
@@ -147,85 +150,6 @@ jQuery(document).ready(function ($) {
 
                                 $(".penci-wrapper-smalllist").fitVids();
 
-                                $('.pcsl-crs').each(function () {
-                                    var $this = $(this),
-                                        $auto = false,
-                                        $autotime = $this.data('autotime'),
-                                        $speed = $this.data('speed'),
-                                        $loop = $this.data('loop'),
-                                        $item = 1,
-                                        $nav = true,
-                                        $dots = false,
-                                        $rtl = false,
-                                        $items_desktop = 1,
-                                        $items_tablet = 1,
-                                        $items_tabsmall = 1;
-
-                                    if ($('html').attr('dir') === 'rtl') {
-                                        $rtl = true;
-                                    }
-                                    if ($this.attr('data-auto') === 'true') {
-                                        $auto = true;
-                                    }
-                                    if ($this.attr('data-nav') === 'false') {
-                                        $nav = false;
-                                    }
-                                    if ($this.attr('data-dots') === 'true') {
-                                        $dots = true;
-                                    }
-                                    if ($this.attr('data-item')) {
-                                        $item = parseInt($this.data('item'));
-                                    }
-                                    if ($this.attr('data-desktop')) {
-                                        $items_desktop = parseInt($this.data('desktop'));
-                                    }
-                                    if ($this.attr('data-tablet')) {
-                                        $items_tablet = parseInt($this.data('tablet'));
-                                    }
-                                    if ($this.attr('data-tabsmall')) {
-                                        $items_tabsmall = parseInt($this.data('tabsmall'));
-                                    }
-
-                                    var owl_args = {
-                                        rtl: $rtl,
-                                        loop: $loop,
-                                        margin: 0,
-                                        items: $item,
-                                        navSpeed: $speed,
-                                        dotsSpeed: $speed,
-                                        nav: $nav,
-                                        slideBy: $item,
-                                        mouseDrag: false,
-                                        lazyLoad: true,
-                                        dots: $dots,
-                                        navText: ['<i class="penciicon-left-chevron"></i>', '<i class="penciicon-right-chevron"></i>'],
-                                        autoplay: $auto,
-                                        autoplayTimeout: $autotime,
-                                        autoplayHoverPause: true,
-                                        autoplaySpeed: $speed,
-                                        responsive: {
-                                            0: {
-                                                items: 1
-                                            },
-                                            480: {
-                                                items: $items_tabsmall,
-                                                slideBy: $items_tabsmall
-                                            },
-                                            768: {
-                                                items: $items_tablet,
-                                                slideBy: $items_tablet
-                                            },
-                                            1170: {
-                                                items: $items_desktop,
-                                                slideBy: $items_desktop
-                                            }
-                                        }
-                                    }
-
-                                    $this.imagesLoaded(function () {
-                                        $this.owlCarousel(owl_args);
-                                    });
-                                });
 
                                 if ($().easyPieChart) {
                                     $('.penci-piechart').each(function () {

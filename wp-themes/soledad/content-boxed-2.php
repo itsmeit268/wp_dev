@@ -51,11 +51,11 @@ if ( ( $show_sidebar && ( $x % 2 == 0 ) ) || ( ! $show_sidebar && ( $x % 3 == 2 
                         <div class="grid-post-box-meta">
 							<?php if ( ! get_theme_mod( 'penci_grid_author' ) ) : ?>
                                 <span class="otherl-date-author author-italic author vcard"><?php echo penci_get_setting( 'penci_trans_by' ); ?> <?php if ( function_exists( 'coauthors_posts_links' ) ) :
-		                                penci_coauthors_posts_links();
-	                                else: ?>
+										penci_coauthors_posts_links();
+									else: ?>
                                         <a class="author-url url fn n"
                                            href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
-	                                <?php endif; ?></span>
+									<?php endif; ?></span>
 							<?php endif; ?>
 							<?php if ( ! get_theme_mod( 'penci_grid_date' ) ) : ?>
                                 <span class="otherl-date"><?php penci_soledad_time_link(); ?></span>
@@ -144,11 +144,11 @@ if ( ( $show_sidebar && ( $x % 2 == 0 ) ) || ( ! $show_sidebar && ( $x % 3 == 2 
                         <div class="grid-post-box-meta">
 							<?php if ( ! get_theme_mod( 'penci_grid_author' ) ) : ?>
                                 <span class="otherl-date-author author-italic author vcard"><?php echo penci_get_setting( 'penci_trans_by' ); ?> <?php if ( function_exists( 'coauthors_posts_links' ) ) :
-		                                penci_coauthors_posts_links();
-	                                else: ?>
+										penci_coauthors_posts_links();
+									else: ?>
                                         <a class="author-url url fn n"
                                            href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
-	                                <?php endif; ?></span>
+									<?php endif; ?></span>
 							<?php endif; ?>
 							<?php if ( ! get_theme_mod( 'penci_grid_date' ) ) : ?>
                                 <span class="otherl-date"><?php penci_soledad_time_link(); ?></span>

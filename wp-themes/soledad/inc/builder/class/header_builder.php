@@ -541,6 +541,7 @@ class HeaderBuilder {
 					'name_admin_bar' => _x( 'Header Builder', 'Add New on Toolbar', 'textdomain' ),
 					'edit_item'      => __( 'Edit Header', 'soledad' ),
 					'view_item'      => __( 'Preview Header', 'soledad' ),
+					'add_new'   	 => __( 'Add New Header', 'soledad' ),
 					'add_new_item'   => __( 'Add New Header', 'soledad' ),
 					'new_item'       => __( 'Add New Header', 'soledad' ),
 				),

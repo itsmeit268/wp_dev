@@ -14,27 +14,30 @@ if ( ! isset ( $j ) ) {
 			<?php $images = get_post_meta( get_the_ID(), '_format_gallery_images', true ); ?>
 			<?php if ( $images ) : ?>
                 <div class="thumbnail">
-                    <div class="penci-owl-carousel penci-owl-carousel-slider penci-nav-visible" data-auto="true">
-						<?php foreach ( $images as $image ) : ?>
+                    <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-nav-visible" data-auto="true">
+                        <div class="swiper-wrapper">
+							<?php foreach ( $images as $image ) : ?>
+                                <div class="swiper-slide swiper-mark-item">
+									<?php $the_image = wp_get_attachment_image_src( $image, penci_featured_images_size() ); ?>
+									<?php $the_caption = get_post_field( 'post_excerpt', $image ); ?>
 
-							<?php $the_image = wp_get_attachment_image_src( $image, penci_featured_images_size() ); ?>
-							<?php $the_caption = get_post_field( 'post_excerpt', $image ); ?>
+									<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
+                                        <figure class="penci-swiper-mask penci-image-holder penci-lazy"
+											<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
+                                                data-bgset="<?php echo esc_url( $the_image[0] ); ?>">
+                                        </figure>
+									<?php } else { ?>
+                                        <figure class="penci-swiper-mask penci-image-holder"
+											<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
+                                                style="background-image: url('<?php echo esc_url( $the_image[0] ); ?>');">
+                                        </figure>
+									<?php } ?>
+                                </div>
 
-							<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
-                                <figure class="penci-image-holder penci-lazy"
-                                        <?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
-                                        data-bgset="<?php echo penci_image_srcset( get_the_ID() ); ?>">
-                                </figure>
-							<?php } else { ?>
-                                <figure class="penci-image-holder"
-                                        <?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
-                                        style="background-image: url('<?php echo esc_url( $the_image[0] ); ?>');">
-                                </figure>
-							<?php } ?>
-
-						<?php endforeach; ?>
+							<?php endforeach; ?>
+                        </div>
                     </div>
-                    <?php do_action( 'penci_bookmark_post' ); ?>
+					<?php do_action( 'penci_bookmark_post' ); ?>
                 </div>
 			<?php endif; ?>
 
@@ -99,11 +102,11 @@ if ( ! isset ( $j ) ) {
                 <div class="grid-post-box-meta">
 					<?php if ( ! get_theme_mod( 'penci_grid_author' ) ) : ?>
                         <span class="otherl-date-author author-italic author vcard"><?php echo penci_get_setting( 'penci_trans_by' ); ?> <?php if ( function_exists( 'coauthors_posts_links' ) ) :
-		                        penci_coauthors_posts_links();
-	                        else: ?>
+								penci_coauthors_posts_links();
+							else: ?>
                                 <a class="author-url url fn n"
                                    href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
-	                        <?php endif; ?></span>
+							<?php endif; ?></span>
 					<?php endif; ?>
 					<?php if ( ! get_theme_mod( 'penci_grid_date' ) ) : ?>
                         <span class="otherl-date"><?php penci_soledad_time_link(); ?></span>
@@ -129,8 +132,8 @@ if ( ! isset ( $j ) ) {
 
 		<?php if ( get_the_excerpt() && ! get_theme_mod( 'penci_grid_remove_excerpt' ) ): ?>
             <div class="item-content entry-content">
-				<?php 
-				if( get_theme_mod( 'penci_excerptcharac' ) ){
+				<?php
+				if ( get_theme_mod( 'penci_excerptcharac' ) ) {
 					the_excerpt();
 				} else {
 					$excerpt_length = get_theme_mod( 'penci_post_excerpt_length', 30 );

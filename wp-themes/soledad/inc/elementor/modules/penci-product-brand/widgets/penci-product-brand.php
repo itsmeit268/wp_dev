@@ -261,6 +261,17 @@ class PenciProductBrand extends Base_Widget {
 			],
 		] );
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control( 'wrap', [
 			'label'        => esc_html__( 'Slider loop', 'soledad' ),
 			'type'         => Controls_Manager::SWITCHER,
@@ -353,7 +364,7 @@ class PenciProductBrand extends Base_Widget {
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => array(
-				'{{WRAPPER}} .penci-owl-carousel-slider .owl-dot span' => 'border-color: {{VALUE}};',
+				'{{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot span' => 'border-color: {{VALUE}};',
 			),
 			'condition' => [
 				'style' => 'carousel',
@@ -365,7 +376,7 @@ class PenciProductBrand extends Base_Widget {
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => array(
-				'{{WRAPPER}} .penci-owl-carousel-slider .owl-dot span' => 'background-color: {{VALUE}};',
+				'{{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot span' => 'background-color: {{VALUE}};',
 			),
 			'condition' => [
 				'style' => 'carousel',
@@ -377,7 +388,7 @@ class PenciProductBrand extends Base_Widget {
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => array(
-				'{{WRAPPER}} .penci-owl-carousel-slider .owl-dot.active span' => 'border-color: {{VALUE}};',
+				'{{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot.active span' => 'border-color: {{VALUE}};',
 			),
 			'condition' => [
 				'style' => 'carousel',
@@ -389,7 +400,7 @@ class PenciProductBrand extends Base_Widget {
 			'type'      => Controls_Manager::COLOR,
 			'default'   => '',
 			'selectors' => array(
-				'{{WRAPPER}} .penci-owl-carousel-slider .owl-dot.active span' => 'background-color: {{VALUE}};',
+				'{{WRAPPER}} .penci-owl-carousel-slider .penci-owl-dot.active span' => 'background-color: {{VALUE}};',
 			),
 			'condition' => [
 				'style' => 'carousel',
@@ -471,7 +482,7 @@ class PenciProductBrand extends Base_Widget {
 			$settings['scroll_per_page'] = 'yes';
 			$settings['carousel_id']     = $carousel_id;
 
-			$this->add_render_attribute( 'items_wrapper', 'class', 'penci-owl-carousel penci-owl-carousel-slider ' );
+			$this->add_render_attribute( 'items_wrapper', 'class', 'swiper penci-owl-carousel penci-owl-carousel-slider ' );
 			$this->add_render_attribute( 'wrapper', 'class', 'penci-carousel-container' );
 
 			$this->add_render_attribute( 'items_wrapper', 'data-item', isset( $settings['slides_per_view'] ) ? $settings['slides_per_view'] : 3 );
@@ -479,9 +490,11 @@ class PenciProductBrand extends Base_Widget {
 			$this->add_render_attribute( 'items_wrapper', 'data-dots', $settings['hide_pagination_control'] );
 			$this->add_render_attribute( 'items_wrapper', 'data-nav', $settings['hide_prev_next_buttons'] );
 			$this->add_render_attribute( 'items_wrapper', 'data-loop', $settings['wrap'] );
+			$this->add_render_attribute( 'items_wrapper', 'data-ceffect', $settings['carousel_slider_effect'] );
 			$this->add_render_attribute( 'items_wrapper', 'data-auto', $settings['autoplay'] );
 			$this->add_render_attribute( 'items_wrapper', 'data-speed', $settings['speed'] );
 			$this->add_render_attribute( 'items_wrapper', 'data-lazy', $settings['scroll_carousel_init'] );
+			$this->add_render_attribute( 'items', 'class', 'swiper-slide' );
 
 			if ( 'yes' === $settings['scroll_carousel_init'] ) {
 				$this->add_render_attribute( 'wrapper', 'class', 'scroll-init' );
@@ -542,6 +555,9 @@ class PenciProductBrand extends Base_Widget {
 
             <div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
                 <div <?php echo $this->get_render_attribute_string( 'items_wrapper' ); ?>>
+					<?php if ( 'carousel' === $settings['style'] ) {
+						echo '<div class="swiper-wrapper">';
+					} ?>
 					<?php if ( ! is_wp_error( $brands ) && count( $brands ) > 0 ) : ?>
 						<?php foreach ( $brands as $key => $brand ) : ?>
 							<?php
@@ -569,6 +585,9 @@ class PenciProductBrand extends Base_Widget {
                             </div>
 						<?php endforeach; ?>
 					<?php endif; ?>
+					<?php if ( 'carousel' === $settings['style'] ) {
+						echo '</div>';
+					} ?>
                 </div>
             </div>
         </div>

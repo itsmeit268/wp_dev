@@ -376,5 +376,49 @@ $options[] = array(
 	'default'  => '10px',
 	'sanitize' => 'sanitize_text_field',
 );
-
+$options[] = array(
+	'label' => __( 'General Slider Options', 'soledad' ),
+	'id'    => 'slider_option_heading_01',
+	'type'  => 'soledad-fw-header',
+);
+$options[] = array(
+	'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+	'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+	'id'          => 'penci_carousel_slider_effect',
+	'type'        => 'soledad-fw-select',
+	'choices'     => array(
+		'default' => 'Default',
+		'swing'   => 'Swing',
+	),
+	'default'     => 'swing',
+	'sanitize'    => 'penci_sanitize_choices_field',
+);
+$options[] = array(
+	'label'       => __( 'General Slider Effect', 'soledad' ),
+	'id'          => 'penci_single_slider_effect',
+	'description' => __( 'Some sliders do not support all effects listed below.', 'soledad' ),
+	'type'        => 'soledad-fw-select',
+	'choices'     => array(
+		'fade'      => 'Fade',
+		'slide'     => 'Slide',
+		'coverflow' => 'Coverflow',
+		'flip'      => 'Flip',
+		'cards'     => 'Cards',
+		'creative'  => 'Creative',
+	),
+	'default'     => 'creative',
+	'sanitize'    => 'penci_sanitize_choices_field',
+);
+$options[] = array(
+	'label' => __( 'Sponsored Posts Options', 'soledad' ),
+	'id'    => 'slider_option_heading_09',
+	'type'  => 'soledad-fw-header',
+);
+$options[] = array(
+	'label'    => __( 'Show Prefix Text Before Post Title', 'soledad' ),
+	'id'       => 'penci_sponsored_prefix',
+	'type'     => 'soledad-fw-toggle',
+	'default'  => true,
+	'sanitize' => 'penci_sanitize_checkbox_field',
+);
 return $options;

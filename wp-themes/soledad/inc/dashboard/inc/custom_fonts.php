@@ -1,94 +1,17 @@
 <?php
 if ( ! function_exists( 'penci_soledad_add_custom_fonts' ) ) {
 	function penci_soledad_add_custom_fonts() {
-		$font_1      = penci_get_option( 'soledad_custom_font1' );
-		$fontfamily1 = penci_get_option( 'soledad_custom_fontfamily1' );
-		$font_2      = penci_get_option( 'soledad_custom_font2' );
-		$fontfamily2 = penci_get_option( 'soledad_custom_fontfamily2' );
-		$font_3      = penci_get_option( 'soledad_custom_font3' );
-		$fontfamily3 = penci_get_option( 'soledad_custom_fontfamily3' );
-
-		$font_4      = penci_get_option( 'soledad_custom_font4' );
-		$fontfamily4 = penci_get_option( 'soledad_custom_fontfamily4' );
-
-		$font_5      = penci_get_option( 'soledad_custom_font5' );
-		$fontfamily5 = penci_get_option( 'soledad_custom_fontfamily5' );
-
-		$font_6      = penci_get_option( 'soledad_custom_font6' );
-		$fontfamily6 = penci_get_option( 'soledad_custom_fontfamily6' );
-
-		$font_7      = penci_get_option( 'soledad_custom_font7' );
-		$fontfamily7 = penci_get_option( 'soledad_custom_fontfamily7' );
-
-		$font_8      = penci_get_option( 'soledad_custom_font8' );
-		$fontfamily8 = penci_get_option( 'soledad_custom_fontfamily8' );
-
-		$font_9      = penci_get_option( 'soledad_custom_font9' );
-		$fontfamily9 = penci_get_option( 'soledad_custom_fontfamily9' );
-
-		$font_10      = penci_get_option( 'soledad_custom_font10' );
-		$fontfamily10 = penci_get_option( 'soledad_custom_fontfamily10' );
 
 		$output = '';
 
-		if ( $font_1 && $fontfamily1 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily1 ), esc_attr( $fontfamily1 ), esc_attr( $font_1 )
-			);
-		}
-
-		if ( $font_2 && $fontfamily2 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily2 ), esc_attr( $fontfamily2 ), esc_attr( $font_2 )
-			);
-		}
-
-		if ( $font_3 && $fontfamily3 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily3 ), esc_attr( $fontfamily3 ), esc_attr( $font_3 )
-			);
-		}
-
-		if ( $font_4 && $fontfamily4 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily4 ), esc_attr( $fontfamily4 ), esc_attr( $font_4 )
-			);
-		}
-
-		if ( $font_5 && $fontfamily5 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily5 ), esc_attr( $fontfamily5 ), esc_attr( $font_5 )
-			);
-		}
-
-		if ( $font_6 && $fontfamily6 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily6 ), esc_attr( $fontfamily6 ), esc_attr( $font_6 )
-			);
-		}
-
-		if ( $font_7 && $fontfamily7 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily7 ), esc_attr( $fontfamily7 ), esc_attr( $font_7 )
-			);
-		}
-
-		if ( $font_8 && $fontfamily8 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily8 ), esc_attr( $fontfamily8 ), esc_attr( $font_8 )
-			);
-		}
-
-		if ( $font_9 && $fontfamily9 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily9 ), esc_attr( $fontfamily9 ), esc_attr( $font_9 )
-			);
-		}
-
-		if ( $font_10 && $fontfamily10 ) {
-			$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
-				esc_attr( $fontfamily10 ), esc_attr( $fontfamily10 ), esc_attr( $font_10 )
-			);
+		for ($x = 1; $x <= 10; $x++) {
+			$font_file = penci_get_option( 'soledad_custom_font'.$x );
+			$font_name = penci_get_option( 'soledad_custom_fontfamily'.$x );
+			if ( $font_file && $font_name ) {
+				$output .= sprintf( ' @font-face {font-family: "%s";font-display: swap;src: local("%s"), url("%s") format("woff");}',
+					esc_attr( $font_name ), esc_attr( $font_name ), esc_url( $font_file )
+				);
+			}
 		}
 
 		echo $output;

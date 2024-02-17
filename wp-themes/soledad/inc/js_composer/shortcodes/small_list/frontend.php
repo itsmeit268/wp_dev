@@ -31,7 +31,7 @@ if ( penci_is_mobile() ) {
 $inner_wrapper_class = 'pcsl-inner penci-clearfix';
 $inner_wrapper_class .= ' pcsl-' . $type;
 if ( 'crs' == $type ) {
-	$inner_wrapper_class .= ' penci-owl-carousel penci-owl-carousel-slider';
+	$inner_wrapper_class .= ' penci-owl-carousel penci-owl-carousel-slider swiper';
 }
 if ( 'nlist' == $type ) {
 	$column     = '1';
@@ -69,9 +69,9 @@ if ( 'yes' == $settings['ver_border'] ) {
 
 $data_slider = '';
 if ( 'crs' == $type ) {
-	$data_slider .= $settings['showdots'] ? ' data-dots="true"' : '';
-	$data_slider .= ! $settings['shownav'] ? ' data-nav="true"' : '';
-	$data_slider .= ! $settings['loop'] ? ' data-loop="true"' : '';
+	$data_slider .= $settings['showdots'] == 'yes' ? ' data-dots="true"' : '';
+	$data_slider .= $settings['shownav'] == 'yes' ? ' data-nav="true"' : '';
+	$data_slider .= $settings['loop'] == 'yes' ? ' data-loop="true"' : '';
 	$data_slider .= ' data-auto="' . ( 'yes' == $settings['autoplay'] ? 'true' : 'false' ) . '"';
 	$data_slider .= $settings['auto_time'] ? ' data-autotime="' . $settings['auto_time'] . '"' : ' data-autotime="4000"';
 	$data_slider .= $settings['speed'] ? ' data-speed="' . $settings['speed'] . '"' : ' data-speed="600"';
@@ -195,10 +195,18 @@ $block_id = Penci_Vc_Helper::get_unique_id_block( 'small_list' );
 				?>
                 <div class="penci-smalllist pcsl-wrapper pwsl-id-default">
                     <div class="<?php echo $inner_wrapper_class; ?>"<?php echo $data_slider; ?>>
-						<?php while ( $query_smalllist->have_posts() ) : $query_smalllist->the_post(); ?>
+
+						<?php
+						$item_class = ' normal-item';
+						if ( 'crs' == $type ) {
+							echo '<div class="swiper-wrapper">';
+							$item_class = ' swiper-slide';
+						}
+						while ( $query_smalllist->have_posts() ) : $query_smalllist->the_post(); ?>
                             <div class="pcsl-item<?php if ( 'yes' == $settings['hide_thumb'] || ! has_post_thumbnail() ) {
 								echo ' pcsl-nothumb';
-							} ?>">
+							}
+							echo $item_class; ?>">
                                 <div class="pcsl-itemin">
                                     <div class="pcsl-iteminer">
 										<?php if ( in_array( 'date', $post_meta ) && 'nlist' == $type ) { ?>
@@ -210,7 +218,7 @@ $block_id = Penci_Vc_Helper::get_unique_id_block( 'small_list' );
 										<?php if ( 'yes' != $settings['hide_thumb'] && has_post_thumbnail() ) { ?>
                                             <div class="pcsl-thumb">
 												<?php
-												do_action( 'penci_bookmark_post', get_the_ID(),'small' );
+												do_action( 'penci_bookmark_post', get_the_ID(), 'small' );
 												/* Display Review Piechart  */
 												if ( 'yes' == $settings['show_reviewpie'] && function_exists( 'penci_display_piechart_review_html' ) ) {
 													penci_display_piechart_review_html( get_the_ID(), 'small' );
@@ -314,13 +322,13 @@ $block_id = Penci_Vc_Helper::get_unique_id_block( 'small_list' );
 													if ( penci_isshow_reading_time( $hide_readtime ) ): ?>
                                                         <span class="sl-readtime"><?php penci_reading_time(); ?></span>
 													<?php endif; ?>
-	                                                <?php echo penci_show_custom_meta_fields( [
-		                                                'validator' => $settings['cspost_enable'],
-		                                                'keys'      => $settings['cspost_cpost_meta'],
-		                                                'acf'       => $settings['cspost_cpost_acf_meta'],
-		                                                'label' 	=> $settings['cspost_cpost_meta_label'],
-		                                                'divider' 	=> $settings['cspost_cpost_meta_divider'],
-	                                                ] ); ?>
+													<?php echo penci_show_custom_meta_fields( [
+														'validator' => $settings['cspost_enable'],
+														'keys'      => $settings['cspost_cpost_meta'],
+														'acf'       => $settings['cspost_cpost_acf_meta'],
+														'label'     => $settings['cspost_cpost_meta_label'],
+														'divider'   => $settings['cspost_cpost_meta_divider'],
+													] ); ?>
                                                 </div>
 											<?php } ?>
 
@@ -359,7 +367,11 @@ $block_id = Penci_Vc_Helper::get_unique_id_block( 'small_list' );
                                     </div>
                                 </div>
                             </div>
-						<?php endwhile; ?>
+						<?php endwhile;
+						if ( 'crs' == $type ) {
+							echo '</div>';
+						}
+						?>
                     </div>
 
 					<?php
@@ -472,9 +484,9 @@ $block_id = Penci_Vc_Helper::get_unique_id_block( 'small_list' );
 <?php
 wp_reset_postdata();
 
-$block_id_css = '#' . $block_id;
+$block_id_css  = '#' . $block_id;
 $block_id_css2 = '#' . $block_id;
-$css_custom   = Penci_Vc_Helper::get_heading_block_css( $block_id_css, $settings );
+$css_custom    = Penci_Vc_Helper::get_heading_block_css( $block_id_css, $settings );
 
 if ( $settings['title_color'] ) {
 	$css_custom .= $block_id_css2 . ' .pcsl-content .pcsl-title a{ color: ' . esc_attr( $settings['title_color'] ) . '; }';

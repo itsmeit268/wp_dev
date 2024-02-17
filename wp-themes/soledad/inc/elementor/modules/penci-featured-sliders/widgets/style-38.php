@@ -10,7 +10,7 @@ if ( $penci_is_mobile ) {
 }
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
+    <div class="item swiper-slide">
 	    <?php do_action( 'penci_bookmark_post' ); ?>
         <a class="penci-slider38-overlay" href="<?php the_permalink(); ?>"></a>
         <a class="penci-image-holder"

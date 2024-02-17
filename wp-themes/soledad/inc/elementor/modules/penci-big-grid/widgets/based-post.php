@@ -77,7 +77,9 @@ echo $is_big_item . penci_big_grid_count_classes( $bg, $biggid_style ); ?>">
                             <div class="pcbg-heading item-hover">
                                 <h3 class="pcbg-title"<?php if ( $title_length ): echo ' title="' . wp_strip_all_tags( get_the_title() ) . '"'; endif; ?>>
                                     <a href="<?php the_permalink(); ?>">
-										<?php if ( ! $title_length ) {
+										<?php
+										
+                                        if ( ! $title_length ) {
 											the_title();
 										} else {
 											echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $title_length, '...' );

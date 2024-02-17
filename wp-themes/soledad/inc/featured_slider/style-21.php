@@ -15,7 +15,7 @@ $image_size_big      = get_theme_mod( 'featured_slider_imgbig' ) ? get_theme_mod
 
 ?>
 <?php if ( $feat_query->have_posts() ) : ?>
-    <div class="item">
+    <div class="item swiper-slide">
         <div class="wrapper-item wrapper-item-classess">
 			<?php $i   = 1;
 			$num_posts = $feat_query->post_count;
@@ -42,7 +42,7 @@ $image_size_big      = get_theme_mod( 'featured_slider_imgbig' ) ? get_theme_mod
 
                     <div class="penci-slide-overlay penci-slider6-overlay">
                         <a class="overlay-link"
-                           aria-label="<?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), 6, '...' ); ?>"
+                           aria-label="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
                            href="<?php the_permalink(); ?>"></a>
 						<?php if ( ! get_theme_mod( 'penci_featured_slider_icons' ) && ( has_post_format( 'video' ) || has_post_format( 'audio' ) || has_post_format( 'link' ) || has_post_format( 'quote' ) || has_post_format( 'gallery' ) ) ): ?>
                             <a href="<?php the_permalink(); ?>"
@@ -92,7 +92,7 @@ $image_size_big      = get_theme_mod( 'featured_slider_imgbig' ) ? get_theme_mod
                     </div>
                 </div>
 
-				<?php if ( $i % 5 == 0 && $i > 1 && $i < $num_posts ): echo '</div></div><div class="item"><div class="wrapper-item wrapper-item-classess">'; endif; ?>
+				<?php if ( $i % 5 == 0 && $i > 1 && $i < $num_posts ): echo '</div></div><div class="item swiper-slide"><div class="wrapper-item wrapper-item-classess">'; endif; ?>
 
 				<?php $i ++; endwhile;
 			wp_reset_postdata(); ?>

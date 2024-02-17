@@ -512,10 +512,11 @@ body.pcdm-enable.pcdark-mode .wp-block-categories .category-item-count {
     color: var(--pctext-cl);
 }
 body.pcdm-enable.pcdark-mode .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+body.pcdm-enable.pcdark-mode .header-standard.standard-overlay-meta,
 body.pcdm-enable.pcdark-mode .post-entry .wp-block-file a.wp-block-file__button {
     background-color: var(--pctext-cl);
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider .owl-dot span {
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider .penci-owl-dot span {
     background-color: var(--pcbg-cl);
     border-color: var(--pctext-cl);
 }
@@ -856,8 +857,8 @@ body.pcdm-enable.pcdark-mode.woocommerce .woocommerce-message {
 }
 body.pcdm-enable.pcdark-mode .penci-slider ol.penci-control-nav li a.penci-active,
 body.pcdm-enable.pcdark-mode .penci-slider ol.penci-control-nav li a:hover,
-body.pcdm-enable.pcdark-mode .penci-related-carousel .owl-dot.active span,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider .owl-dot.active span {
+body.pcdm-enable.pcdark-mode .penci-related-carousel .penci-owl-dot.active span,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider .penci-owl-dot.active span {
     border-color: var(--pcborder-cl);
 }
 body.pcdm-enable.pcdark-mode.woocommerce .woocommerce-message:before,
@@ -959,13 +960,13 @@ body.pcdm-enable.pcdark-mode .headline-title.nticker-style-3:after {
 body.pcdm-enable.pcdark-mode .headline-title {
     color: var(--pctext-cl);
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-prev,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-next,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-prev,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-next,
 body.pcdm-enable.pcdark-mode .penci-trending-nav a {
     color: var(--pctext-cl);
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-prev:hover,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-next:hover,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-prev:hover,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-next:hover,
 body.pcdm-enable.pcdark-mode .penci-trending-nav a:hover {
     color: var(--pctext-cl);
 }
@@ -1660,8 +1661,8 @@ body.pcdm-enable.pcdark-mode .penci-video_playlist .penci-custom-scroll::-webkit
 body.pcdm-enable.pcdark-mode .penci-video_playlist .penci-playlist-title {
     background-color: var(--pcbg-cl);
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span {
+body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span {
     border-color: var(--pcaccent-cl);
 }
 body.pcdm-enable.pcdark-mode .footer-subscribe {
@@ -1791,8 +1792,8 @@ body.pcdm-enable.pcdark-mode .footer-widget-wrapper .penci-tweets-widget-content
 body.pcdm-enable.pcdark-mode .footer-widget-wrapper .penci-tweets-widget-content .tweet-intents-inner:after {
     background-color: var(--pcbg-cl);
 }
-body.pcdm-enable.pcdark-mode .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span,
-body.pcdm-enable.pcdark-mode .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span {
+body.pcdm-enable.pcdark-mode .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span,
+body.pcdm-enable.pcdark-mode .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span {
     border-color: var(--pcborder-cl);
     background: var(--pcbg-cl);
 }
@@ -2551,8 +2552,8 @@ body.pcdm-enable.pcdark-mode .post-pagination h5:hover {
 body.pcdm-enable.pcdark-mode .penci-topbar-ctext * {
     color: inherit;
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-prev,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-next {
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-prev,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-next {
     color: var(--pcmeta-cl);
 }
 body.pcdm-enable.pcdark-mode .penci-trending-nav a {
@@ -2665,8 +2666,8 @@ body.pcdm-enable.pcdark-mode .header-social a:hover i {
 body.pcdm-enable.pcdark-mode .dark-layout-enabled .featured-area.featured-video {
     background-color: #2d2d2d;
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel .owl-nav .owl-prev,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel .owl-nav .owl-next {
+body.pcdm-enable.pcdark-mode .penci-owl-carousel .penci-owl-nav .owl-prev,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel .penci-owl-nav .owl-next {
     color: var(--pctext-cl);
     background-color: var(--pcbg-cl);
 }
@@ -3497,8 +3498,8 @@ body.pcdm-enable.pcdark-mode .penci-carousel button.slick-prev,
 body.pcdm-enable.pcdark-mode .penci-carousel button.slick-next {
     color: var(--pcl-cl);
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider .owl-dot.active span,
-body.pcdm-enable.pcdark-mode .penci-related-carousel .owl-dot.active span {
+body.pcdm-enable.pcdark-mode .penci-owl-carousel-slider .penci-owl-dot.active span,
+body.pcdm-enable.pcdark-mode .penci-related-carousel .penci-owl-dot.active span {
     border-color: var(--pcaccent-cl);
     background-color: var(--pcaccent-cl);
 }
@@ -3704,10 +3705,10 @@ body.pcdm-enable.pcdark-mode .penci_post-slider-sc .penci-post-slider-style-3 .p
 body.pcdm-enable.pcdark-mode .penci-widget-slide-detail .slide-item-date {
     color: var(--pctext-cl);
 }
-body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-1 .owl-nav .owl-prev,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-1 .owl-nav .owl-next,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-2 .owl-nav .owl-prev,
-body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-2 .owl-nav .owl-next {
+body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-1 .penci-owl-nav .owl-prev,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-1 .penci-owl-nav .owl-next,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-2 .penci-owl-nav .owl-prev,
+body.pcdm-enable.pcdark-mode .penci-owl-carousel.penci-widget-slider.penci-post-slider-style-2 .penci-owl-nav .owl-next {
     color: var(--pctext-cl);
 }
 body.pcdm-enable.pcdark-mode .widget .penci-widget-slider.penci-post-slider-style-3 .penci-widget-slide-detail h4 a {

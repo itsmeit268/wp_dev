@@ -715,9 +715,13 @@
         'setting(penci_header_pb_main_menu_section)(penci_header_pb_main_menu_penci_submenu_bordercolor)': {
             'border-color': '.pc-builder-element.pc-main-menu .penci-dropdown-menu,.pc-builder-element.pc-main-menu .navigation .menu .sub-menu, .pc-builder-element.pc-main-menu .navigation ul.menu > li.megamenu > ul.sub-menu,.pc-builder-element.pc-main-menu .navigation ul.menu ul.sub-menu li > a, .pc-builder-element.pc-builder-menu.pc-main-menu .navigation.menu-style-1 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.cat-active',
             'background-color': '.pc-builder-element.pc-main-menu .menu-style-2 .penci-megamenu .penci-content-megamenu .penci-mega-latest-posts .penci-mega-post:before,.pc-builder-element.pc-main-menu .navigation ul.menu > li.megamenu > ul.sub-menu > li:before, .pc-builder-element.pc-main-menu .navigation.menu-style-2 .penci-megamenu .penci-mega-child-categories a.all-style:before, .pc-builder-element.pc-main-menu .navigation .penci-megamenu .penci-mega-child-categories:after',
-            'border-top-color': '.pc-builder-element.pc-main-menu .navigation.menu-style-2 .menu .sub-menu'
+            'border-top-color': '.pc-builder-element.pc-main-menu .navigation.menu-style-2 .menu .sub-menu',
+            'border-bottom-color': '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu:before',
+            'border-right-color': '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:before',
         },
         'setting(penci_header_pb_main_menu_section)(penci_header_pb_main_menu_penci_submenu_bgcolor)': {
+            'border-bottom-color': '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu:after',
+            'border-right-color': '.pc-builder-element.pc-main-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:after',
             'background-color': '.pc-builder-element.pc-main-menu .navigation ul.menu > li.megamenu > ul.sub-menu, .pc-builder-element.pc-main-menu .navigation .menu .sub-menu, .pc-builder-element.pc-main-menu .navigation .menu .children'
         },
         'setting(penci_header_pb_main_menu_section)(penci_header_pb_main_menu_drop_border_style2)': {
@@ -765,9 +769,13 @@
         'setting(penci_header_pb_second_menu_section)(penci_header_pb_second_menu_penci_submenu_bordercolor)': {
             'border-color': '.pc-builder-element.pc-second-menu .penci-dropdown-menu,.pc-builder-element.pc-second-menu .navigation .menu .sub-menu, .pc-builder-element.pc-second-menu .navigation ul.menu > li.megamenu > ul.sub-menu,.pc-builder-element.pc-second-menu .navigation ul.menu ul.sub-menu li > a, .pc-builder-element.pc-builder-menu.pc-second-menu .navigation.menu-style-1 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.cat-active',
             'background-color': '.pc-builder-element.pc-second-menu .menu-style-2 .penci-megamenu .penci-content-megamenu .penci-mega-latest-posts .penci-mega-post:before,.pc-builder-element.pc-second-menu .navigation ul.menu > li.megamenu > ul.sub-menu > li:before, .pc-builder-element.pc-second-menu .navigation.menu-style-2 .penci-megamenu .penci-mega-child-categories a.all-style:before, .pc-builder-element.pc-second-menu .navigation .penci-megamenu .penci-mega-child-categories:after',
-            'border-top-color': '.pc-builder-element.pc-second-menu .navigation.menu-style-2 .menu .sub-menu'
+            'border-top-color': '.pc-builder-element.pc-second-menu .navigation.menu-style-2 .menu .sub-menu',
+            'border-bottom-color': '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu:before',
+            'border-right-color': '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:before',
         },
         'setting(penci_header_pb_second_menu_section)(penci_header_pb_second_menu_penci_submenu_bgcolor)': {
+            'border-bottom-color': '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu:after',
+            'border-right-color': '.pc-builder-element.pc-second-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:after',
             'background-color': '.pc-builder-element.pc-second-menu .navigation ul.menu > li.megamenu > ul.sub-menu, .pc-builder-element.pc-second-menu .navigation .menu .sub-menu, .pc-builder-element.pc-second-menu .navigation .menu .children'
         },
         'setting(penci_header_pb_second_menu_section)(penci_header_pb_second_menu_drop_border_style2)': {
@@ -815,9 +823,13 @@
         'setting(penci_header_pb_third_menu_section)(penci_header_pb_third_menu_penci_submenu_bordercolor)': {
             'border-color': '.pc-builder-element.pc-third-menu .penci-dropdown-menu,.pc-builder-element.pc-third-menu .navigation .menu .sub-menu, .pc-builder-element.pc-third-menu .navigation ul.menu > li.megamenu > ul.sub-menu,.pc-builder-element.pc-third-menu .navigation ul.menu ul.sub-menu li > a, .pc-builder-element.pc-builder-menu.pc-third-menu .navigation.menu-style-1 .penci-megamenu:not(.penci-block-mega) .penci-mega-child-categories a.cat-active',
             'background-color': '.pc-builder-element.pc-third-menu .menu-style-2 .penci-megamenu .penci-content-megamenu .penci-mega-latest-posts .penci-mega-post:before,.pc-builder-element.pc-third-menu .navigation ul.menu > li.megamenu > ul.sub-menu > li:before, .pc-builder-element.pc-third-menu .navigation.menu-style-2 .penci-megamenu .penci-mega-child-categories a.all-style:before,.pc-builder-element.pc-third-menu .navigation .penci-megamenu .penci-mega-child-categories:after',
-            'border-top-color': '.pc-builder-element.pc-third-menu .navigation.menu-style-2 .menu .sub-menu'
+            'border-top-color': '.pc-builder-element.pc-third-menu .navigation.menu-style-2 .menu .sub-menu',
+            'border-bottom-color': '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu:before',
+            'border-right-color': '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:before',
         },
         'setting(penci_header_pb_third_menu_section)(penci_header_pb_third_menu_penci_submenu_bgcolor)': {
+            'border-bottom-color': '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu:after',
+            'border-right-color': '.pc-builder-element.pc-third-menu .navigation.menu-style-3 .menu .sub-menu .sub-menu:after',
             'background-color': '.pc-builder-element.pc-third-menu .navigation ul.menu > li.megamenu > ul.sub-menu, .pc-builder-element.pc-third-menu .navigation .menu .sub-menu, .pc-builder-element.pc-third-menu .navigation .menu .children'
         },
         'setting(penci_header_pb_third_menu_section)(penci_header_pb_third_menu_drop_border_style2)': {
@@ -2864,145 +2876,6 @@
         });
     }
 
-    PENCI.owl_slider = function () {
-        if ($().owlCarousel) {
-            $('.penci-owl-carousel-slider').each(function () {
-                var $this = $(this),
-                    $parent = $this.parent(),
-                    $auto = true,
-                    $dots = false,
-                    $nav = true,
-                    $loop = true,
-                    $rtl = false,
-                    $dataauto = $this.data('auto'),
-                    $items_desktop = 1,
-                    $items_tablet = 1,
-                    $items_tabsmall = 1,
-                    $items_mobile = 1,
-                    $speed = 600,
-                    $item = 1,
-                    $margin = 0,
-                    $autotime = 5000,
-                    $datalazy = false;
-
-                if ($('html').attr('dir') === 'rtl') {
-                    $rtl = true;
-                }
-                if ($this.attr('data-dots') === 'true') {
-                    $dots = true;
-                }
-                if ($this.attr('data-loop') === 'false') {
-                    $loop = false;
-                }
-                if ($this.attr('data-nav') === 'false') {
-                    $nav = false;
-                }
-
-                if ($this.attr('data-margin')) {
-                    $margin = parseInt($this.data('margin'));
-                }
-                if ($this.attr('data-desktop')) {
-                    $items_desktop = parseInt($this.data('desktop'));
-                }
-                if ($this.attr('data-tablet')) {
-                    $items_tablet = parseInt($this.data('tablet'));
-                }
-                if ($this.attr('data-tabsmall')) {
-                    $items_tabsmall = parseInt($this.data('tabsmall'));
-                }
-                if ($this.attr('data-mobile')) {
-                    $items_mobile = parseInt($this.data('mobile'));
-                }
-                if ($this.attr('data-speed')) {
-                    $speed = parseInt($this.data('speed'));
-                }
-                if ($this.attr('data-autotime')) {
-                    $autotime = parseInt($this.data('autotime'));
-                }
-                if ($this.attr('data-item')) {
-                    $item = parseInt($this.data('item'));
-                }
-                if ($this.attr('data-lazy')) {
-                    $datalazy = true;
-                }
-
-                var owl_args = {
-                    loop: $loop,
-                    rtl: $rtl,
-                    margin: $margin,
-                    items: $item,
-                    slideBy: $item,
-                    lazyLoad: $datalazy,
-                    navSpeed: $speed,
-                    dotsSpeed: $speed,
-                    nav: $nav,
-                    dots: $dots,
-                    navText: ['<i class="penciicon-left-chevron"></i>', '<i class="penciicon-right-chevron"></i>'],
-                    autoplay: $dataauto,
-                    autoplayTimeout: $autotime,
-                    autoHeight: true,
-                    autoplayHoverPause: true,
-                    autoplaySpeed: $speed,
-                    responsive: {
-                        0: {
-                            items: $items_mobile,
-                            slideBy: $items_mobile
-                        },
-                        480: {
-                            items: $items_tabsmall,
-                            slideBy: $items_tabsmall
-                        },
-                        768: {
-                            items: $items_tablet,
-                            slideBy: $items_tablet
-                        },
-                        1170: {
-                            items: $items_desktop,
-                            slideBy: $items_desktop
-                        }
-                    }
-                };
-
-                var amimation = $this.attr('data-anim');
-                if (typeof amimation !== typeof undefined && amimation !== false) {
-                    var $animIn = false,
-                        $animOut = false,
-                        $anim = $this.data('anim');
-
-                    if ($anim === 'slideInUp') {
-                        $animIn = 'slideInUp';
-                        $animOut = 'slideOutUp';
-                    } else if ($anim === 'slideInRight') {
-                        $animIn = 'TickerslideInRight';
-                        $animOut = 'TickerslideOutRight';
-                    } else if ($anim === 'fadeIn') {
-                        $animIn = 'fadeIn';
-                        $animOut = 'fadeOut';
-                    }
-                    owl_args['animateOut'] = $animOut;
-                    owl_args['animateIn'] = $animIn;
-                }
-
-                $this.owlCarousel(owl_args);
-
-                if ($parent.hasClass('penci-topbar-trending')) {
-                    var $customNext = $parent.find(".penci-slider-next"),
-                        $customPrev = $parent.find(".penci-slider-prev");
-                    $customNext.on('click', function (ev) {
-                        ev.preventDefault();
-                        $this.trigger("next.owl.carousel");
-                        return false;
-                    });
-                    $customPrev.on('click', function (ev) {
-                        ev.preventDefault();
-                        $this.trigger("prev.owl.carousel");
-                        return false;
-                    });
-                }
-            });
-        }	// if owlcarousel
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
         var hasSelectiveRefresh = (
             'undefined' !== typeof wp &&
@@ -3017,21 +2890,21 @@
                 PENCI.mobile_menu();
                 PENCI.main_menu();
                 PENCI.general();
-                PENCI.owl_slider();
+                $( 'body' ).trigger( 'el_featured_slider');
             });
             wp.customize.selectiveRefresh.bind('render-partials-response', function (placement) {
                 PENCI.sticky_header();
                 PENCI.mobile_menu();
                 PENCI.main_menu();
                 PENCI.general();
-                PENCI.owl_slider();
+                $( 'body' ).trigger( 'el_featured_slider');
             });
             wp.customize.selectiveRefresh.bind('partial-content-moved', function (placement) {
                 PENCI.sticky_header();
                 PENCI.mobile_menu();
                 PENCI.main_menu();
                 PENCI.general();
-                PENCI.owl_slider();
+                $( 'body' ).trigger( 'el_featured_slider');
             });
         }
     });

@@ -3,7 +3,6 @@
 namespace PenciSoledadElementor\Modules\PenciCustomSliders\Widgets;
 
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use PenciSoledadElementor\Base\Base_Widget;
@@ -673,6 +672,31 @@ class PenciCustomSliders extends Base_Widget {
 			)
 		);
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
+		$this->add_control( 'single_slider_effect', array(
+			'label'   => __( 'General Slider Effect', 'soledad' ),
+			'type'    => Controls_Manager::SELECT,
+			'default' => get_theme_mod( 'penci_single_slider_effect', 'creative' ),
+			'options' => array(
+				'slide'     => 'Slide',
+				'fade'      => 'Fade',
+				'coverflow' => 'Coverflow',
+				'flip'      => 'Flip',
+				'cards'     => 'Cards',
+				'creative'  => 'Creative',
+			),
+		) );
+
 		$this->add_control(
 			'autoplay', array(
 				'label'   => __( 'Autoplay', 'soledad' ),
@@ -682,9 +706,10 @@ class PenciCustomSliders extends Base_Widget {
 		);
 		$this->add_control(
 			'loop', array(
-				'label'   => __( 'Slider Loop', 'soledad' ),
-				'type'    => Controls_Manager::SWITCHER,
-				'default' => 'yes',
+				'label'     => __( 'Slider Loop', 'soledad' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'yes',
+				'condition' => [ 'carousel_slider_effect' => 'default' ],
 			)
 		);
 		$this->add_control(
@@ -1328,7 +1353,7 @@ class PenciCustomSliders extends Base_Widget {
 			Group_Control_Typography::get_type(), array(
 				'name'      => 'dots_number_typo',
 				'label'     => __( 'Typography for Number', 'soledad' ),
-				'selector'  => '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .owl-dot span',
+				'selector'  => '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .penci-owl-dot span',
 				'condition' => [ 'showdots_type' => 'number' ],
 			)
 		);
@@ -1336,28 +1361,28 @@ class PenciCustomSliders extends Base_Widget {
 			'label'     => __( 'Number Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'number' ],
-			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .owl-dot span' => 'color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .penci-owl-dot span' => 'color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_line_bgcolor', array(
 			'label'     => __( 'Line Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'number' ],
-			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .owl-dot span:after' => 'background-color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .penci-owl-dot span:after' => 'background-color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_number_acolor', array(
 			'label'     => __( 'Number Active Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'number' ],
-			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .owl-dot.active span' => 'color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .penci-owl-dot.active span' => 'color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_line_bgacolor', array(
 			'label'     => __( 'Line Active Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'number' ],
-			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .owl-dot.active span:after' => 'background-color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel.pcdots-number .penci-owl-dot.active span:after' => 'background-color: {{VALUE}};' ),
 		) );
 
 		// dots style
@@ -1366,28 +1391,28 @@ class PenciCustomSliders extends Base_Widget {
 			'label'     => __( 'Dot Background Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'dots' ],
-			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-custom-slides .penci-owl-carousel .owl-dot span,body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .owl-dot span' => 'background-color: {{VALUE}};' ),
+			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-custom-slides .penci-owl-carousel .penci-owl-dot span,body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .penci-owl-dot span' => 'background-color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_bd_color', array(
 			'label'     => __( 'Dot Borders Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'dots' ],
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-dot span' => 'border-color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-dot span' => 'border-color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_bga_color', array(
 			'label'     => __( 'Dot Borders Active Background Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'dots' ],
-			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .owl-dot.active span,body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .owl-dot.active span' => 'background-color: {{VALUE}};' ),
+			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .penci-owl-dot.active span,body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .penci-owl-dot.active span' => 'background-color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_bda_color', array(
 			'label'     => __( 'Dot Borders Active Background Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'condition' => [ 'showdots_type' => 'dots' ],
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-dot.active span' => 'border-color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-dot.active span' => 'border-color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_cs_w', array(
@@ -1395,7 +1420,7 @@ class PenciCustomSliders extends Base_Widget {
 			'condition' => [ 'showdots_type' => 'dots' ],
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => array( 'px' => array( 'min' => 5, 'max' => 200, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-dot span' => 'width: {{SIZE}}px;height: {{SIZE}}px;' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-dot span' => 'width: {{SIZE}}px;height: {{SIZE}}px;' ),
 		) );
 
 		$this->add_control( 'dots_csbd_w', array(
@@ -1403,7 +1428,7 @@ class PenciCustomSliders extends Base_Widget {
 			'condition' => [ 'showdots_type' => 'dots' ],
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => array( 'px' => array( 'min' => 1, 'max' => 100, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-dot span' => 'border-width: {{SIZE}}px;' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-dot span' => 'border-width: {{SIZE}}px;' ),
 		) );
 
 		$this->add_control( 'dots_csspc_w', array(
@@ -1411,7 +1436,7 @@ class PenciCustomSliders extends Base_Widget {
 			'condition' => [ 'showdots_type' => 'dots' ],
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => array( 'px' => array( 'min' => 1, 'max' => 100, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel .owl-dot,{{WRAPPER}} .penci-owl-carousel .owl-dot' => 'margin-left: {{SIZE}}px;margin-right: {{SIZE}}px;' ),
+			'selectors' => array( '{{WRAPPER}} .penci-custom-slides .penci-owl-carousel .penci-owl-dot,{{WRAPPER}} .penci-owl-carousel .penci-owl-dot' => 'margin-left: {{SIZE}}px;margin-right: {{SIZE}}px;' ),
 		) );
 
 		$this->add_control( 'heading_prenex_style', array(
@@ -1423,46 +1448,46 @@ class PenciCustomSliders extends Base_Widget {
 		$this->add_control( 'dots_nxpv_color', array(
 			'label'     => __( 'Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-nav .owl-prev, {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-next' => 'color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-prev, {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-next' => 'color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_nxpv_hcolor', array(
 			'label'     => __( 'Hover Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-nav .owl-prev:hover, {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-next:hover' => 'color: {{VALUE}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-prev:hover, {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-next:hover' => 'color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_nxpv_bgcolor', array(
 			'label'     => __( 'Background Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
-			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-prev, body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-next' => 'background-color: {{VALUE}};' ),
+			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-prev, body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-next' => 'background-color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_nxpv_hbgcolor', array(
 			'label'     => __( 'Hover Background Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
-			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-prev:hover, body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-next:hover' => 'background-color: {{VALUE}};' ),
+			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-prev:hover, body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-next:hover' => 'background-color: {{VALUE}};' ),
 		) );
 
 		$this->add_control( 'dots_nxpv_sizes', array(
 			'label'     => __( 'Button Size', 'soledad' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => array( 'px' => array( 'min' => 1, 'max' => 100, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-nav .owl-prev, {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-next' => 'width: {{SIZE}}px;height: {{SIZE}}px;line-height: {{SIZE}}px;margin-top:0;transform:translateY(-50%);' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-prev, {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-next' => 'width: {{SIZE}}px;height: {{SIZE}}px;line-height: {{SIZE}}px;margin-top:0;transform:translateY(-50%);' ),
 		) );
 
 		$this->add_control( 'dots_nxpv_isizes', array(
 			'label'     => __( 'Icon Size', 'soledad' ),
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => array( 'px' => array( 'min' => 1, 'max' => 100, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-nav .owl-prev i, {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-next i' => 'font-size: {{SIZE}}px;' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-prev i, {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-next i' => 'font-size: {{SIZE}}px;' ),
 		) );
 
 		$this->add_control( 'dots_nxpv_bdradius', array(
 			'label'     => __( 'Button Border Radius', 'soledad' ),
 			'type'      => Controls_Manager::DIMENSIONS,
 			'range'     => array( 'px' => array( 'min' => 1, 'max' => 100, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-nav .owl-prev, {{WRAPPER}} .penci-owl-carousel .owl-nav .owl-next' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-prev, {{WRAPPER}} .penci-owl-carousel .penci-owl-nav .owl-next' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};' ),
 		) );
 
 		$this->add_responsive_control( 'dots_nxpv_margin', array(
@@ -1470,7 +1495,7 @@ class PenciCustomSliders extends Base_Widget {
 			'condition' => [ 'showdots' => 'yes' ],
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => array( 'px' => array( 'min' => 1, 'max' => 100, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .owl-dots' => 'bottom: {{SIZE}}px;' ),
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel .penci-owl-dots' => 'bottom: {{SIZE}}px;' ),
 		) );
 
 		$this->end_controls_section();
@@ -1492,7 +1517,8 @@ class PenciCustomSliders extends Base_Widget {
 		$data_slider = penci_get_data_slider( $settings );
 
 		echo '<div class="penci-block-vc penci-custom-slides' . $fullscreen . '">';
-		echo '<div class="penci-block_content penci-slides-wrap penci-owl-carousel penci-owl-carousel-slider' . $dots_style . '" ' . $data_slider . '>';
+		echo '<div class="penci-block_content penci-slides-wrap swiper penci-owl-carousel penci-owl-carousel-slider' . $dots_style . '" ' . $data_slider . '>';
+		echo '<div class="swiper-wrapper">';
 
 		$slide_count = 0;
 
@@ -1512,7 +1538,7 @@ class PenciCustomSliders extends Base_Widget {
 				}
 			}
 
-			echo '<div class="elementor-repeater-item-' . $slide['_id'] . ' penci-ctslide-wrap">';
+			echo '<div class="swiper-slide elementor-repeater-item-' . $slide['_id'] . ' penci-ctslide-wrap">';
 			echo '<div class="penci-custom-slide">';
 
 			$ken_class = '';
@@ -1612,6 +1638,6 @@ class PenciCustomSliders extends Base_Widget {
 			$slide_count ++;
 		}
 
-		echo '</div></div>';
+		echo '</div></div></div>';
 	}
 }

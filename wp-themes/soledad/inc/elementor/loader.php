@@ -8,13 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Loader {
 	private static $_instance;
-
 	public $modules_manager;
-
+	protected $font_types = [];
 	private $classes_aliases = array(
-		'PenciSoledadElementor\Modules\PanelPostsControl\Module'                       => 'PenciSoledadElementor\Modules\QueryControl\Module',
+		'PenciSoledadElementor\Modules\PanelPostsControl\Module'                             => 'PenciSoledadElementor\Modules\QueryControl\Module',
 		'PenciSoledadElementor\Modules\PanelPostsControl\Controls\Penci_Group_Control_Posts' => 'PenciSoledadElementor\Modules\QueryControl\Controls\Penci_Group_Control_Posts',
-		'PenciSoledadElementor\Modules\PanelPostsControl\Controls\Query'               => 'PenciSoledadElementor\Modules\QueryControl\Controls\Query',
+		'PenciSoledadElementor\Modules\PanelPostsControl\Controls\Query'                     => 'PenciSoledadElementor\Modules\QueryControl\Controls\Query',
 	);
 
 	/**
@@ -38,7 +37,6 @@ class Loader {
 		add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
 		add_action( 'elementor/elements/categories_registered', array( $this, 'widget_categories' ) );
 		add_action( 'elementor/editor/after_enqueue_styles', array( $this, 'enqueue_editor_styles' ) );
-		//add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'enqueue_editor_scripts' ));
 		add_action( 'elementor/frontend/before_register_scripts', array( $this, 'register_frontend_scripts' ) );
 
 		//handle select2 ajax search
@@ -47,6 +45,14 @@ class Loader {
 
 		add_action( 'wp_ajax_penci_select2_get_title', [ $this, 'select2_ajax_get_posts_value_titles' ] );
 		add_action( 'wp_ajax_nopriv_penci_select2_get_title', [ $this, 'select2_ajax_get_posts_value_titles' ] );
+
+		//custom font
+		add_filter( 'elementor/fonts/groups', [ $this, 'register_fonts_groups' ] );
+		add_filter( 'elementor/fonts/additional_fonts', [ $this, 'register_fonts_in_control' ] );
+
+		if ( ! isset( $_GET['action'] ) && ! is_admin() ) {
+			add_action( 'wp_body_open', [ $this, 'elementor_pro_header' ] );
+		}
 	}
 
 	/**
@@ -55,6 +61,51 @@ class Loader {
 
 	public static function elementor() {
 		return \Elementor\Plugin::$instance;
+	}
+
+	public static function elementor_pro_header() {
+
+		if ( function_exists( 'elementor_theme_do_location' ) && ( elementor_theme_do_location( 'header' ) || elementor_theme_do_location( 'footer' ) ) ) {
+			$header_layout       = 'penci-elementor-pro-header';
+			$penci_hide_header   = $show_page_title = false;
+			$header_search_style = get_theme_mod( 'penci_topbar_search_style', 'default' );
+			if ( is_page() ) {
+				$penci_hide_header = get_post_meta( get_the_ID(), 'penci_page_hide_header', true );
+
+				$show_page_title  = get_theme_mod( 'penci_pheader_show' );
+				$penci_page_title = get_post_meta( get_the_ID(), 'penci_pmeta_page_title', true );
+
+				$pheader_show = isset( $penci_page_title['pheader_show'] ) ? $penci_page_title['pheader_show'] : '';
+				if ( 'enable' == $pheader_show ) {
+					$show_page_title = true;
+				} elseif ( 'disable' == $pheader_show ) {
+					$show_page_title = false;
+				}
+			} else if ( is_single() ) {
+				$penci_hide_header = penci_is_hide_header();
+			}
+			$class_wrapper_boxed = 'elementor-custom-header-template wrapper-boxed header-style-' . esc_attr( $header_layout );
+			if ( get_theme_mod( 'penci_body_boxed_layout' ) && ! get_theme_mod( 'penci_vertical_nav_show' ) ) {
+				$class_wrapper_boxed .= ' enable-boxed';
+			}
+			if ( get_theme_mod( 'penci_enable_dark_layout' ) ) {
+				$class_wrapper_boxed .= ' dark-layout-enabled';
+			}
+			if ( $penci_hide_header ) {
+				$class_wrapper_boxed .= ' penci-page-hide-header';
+			}
+			if ( get_theme_mod( 'penci_header_logo_mobile_center' ) ) {
+				$class_wrapper_boxed .= ' penci-hlogo-center';
+			}
+
+			$class_wrapper_boxed .= ' header-search-style-' . esc_attr( $header_search_style );
+
+			if ( $show_page_title && ! is_home() && ! is_front_page() ) {
+				get_template_part( 'template-parts/page-header' );
+			}
+
+			echo '<div id="soledad_wrapper" class="' . $class_wrapper_boxed . '">';
+		}
 	}
 
 	/**
@@ -66,6 +117,25 @@ class Loader {
 		}
 
 		return self::$_instance;
+	}
+
+	public function register_fonts_groups( $font_groups ) {
+		$new_groups = [];
+
+		$new_groups['penci_custom_fonts'] = __( 'Penci Custom Fonts', 'soledad' );
+
+		return array_replace( $new_groups, $font_groups );
+	}
+
+	public function register_fonts_in_control( $fonts ) {
+
+		for ( $x = 1; $x <= 10; $x ++ ) {
+			if ( penci_get_option( 'soledad_custom_font' . $x ) && penci_get_option( 'soledad_custom_fontfamily' . $x ) ) {
+				$fonts[ penci_get_option( 'soledad_custom_fontfamily' . $x ) ] = 'penci_custom_fonts';
+			}
+		}
+
+		return $fonts;
 	}
 
 	/**
@@ -95,11 +165,11 @@ class Loader {
 
 		if ( ! class_exists( $class_to_load ) ) {
 			$filename = strtolower( preg_replace( array(
-						'/^' . __NAMESPACE__ . '\\\/',
-						'/([a-z])([A-Z])/',
-						'/_/',
-						'/\\\/'
-					), array( '', '$1-$2', '-', DIRECTORY_SEPARATOR ), $class_to_load ) );
+				'/^' . __NAMESPACE__ . '\\\/',
+				'/([a-z])([A-Z])/',
+				'/_/',
+				'/\\\/'
+			), array( '', '$1-$2', '-', DIRECTORY_SEPARATOR ), $class_to_load ) );
 			$filename = PENCI_ELEMENTOR_PATH . $filename . '.php';
 
 			if ( is_readable( $filename ) ) {
@@ -117,9 +187,9 @@ class Loader {
 		$category_prefix = 'penci-';
 
 		$elements_manager->add_category( $category_prefix . 'archive-builder', [
-				'title' => '[PenciDesign] Archive Builder',
-				'icon'  => 'fa fa-plug',
-			] );
+			'title' => '[PenciDesign] Archive Builder',
+			'icon'  => 'fa fa-plug',
+		] );
 
 		// Hack into the private $categories member, and reorder it so our stuff is at the top
 		$reorder_cats = function () use ( $category_prefix ) {
@@ -210,12 +280,12 @@ class Loader {
 		switch ( $source_name ) {
 			case 'taxonomy':
 				$post_list = wp_list_pluck( get_terms( $post_type, [
-						'hide_empty' => false,
-						'orderby'    => 'name',
-						'order'      => 'ASC',
-						'search'     => $search,
-						'number'     => '10',
-					] ), 'name', 'term_id' );
+					'hide_empty' => false,
+					'orderby'    => 'name',
+					'order'      => 'ASC',
+					'search'     => $search,
+					'number'     => '10',
+				] ), 'name', 'term_id' );
 				break;
 			default:
 				$post_list = $this->get_query_post_list( $post_type, 10, $search );
@@ -279,11 +349,11 @@ class Loader {
 		switch ( $source_name ) {
 			case 'taxonomy':
 				$response = wp_list_pluck( get_terms( sanitize_text_field( $_POST['post_type'] ), [
-						'hide_empty' => false,
-						'orderby'    => 'name',
-						'order'      => 'ASC',
-						'include'    => implode( ',', $ids ),
-					] ), 'name', 'term_id' );
+					'hide_empty' => false,
+					'orderby'    => 'name',
+					'order'      => 'ASC',
+					'include'    => implode( ',', $ids ),
+				] ), 'name', 'term_id' );
 				break;
 			default:
 				$post_info = get_posts( [

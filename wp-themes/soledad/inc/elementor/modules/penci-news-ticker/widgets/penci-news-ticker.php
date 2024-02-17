@@ -364,12 +364,14 @@ class PenciNewsTicker extends Base_Widget {
 					<a class="penci-slider-prev" href="#" aria-label="Previous"><?php penci_fawesome_icon('fas fa-angle-left'); ?></a>
 					<a class="penci-slider-next" href="#" aria-label="Next"><?php penci_fawesome_icon('fas fa-angle-right'); ?></a>
 				</span>
-				<div class="penci-owl-carousel penci-owl-carousel-slider penci-headline-posts" data-auto="<?php echo $auto_play; ?>" data-nav="false" data-autotime="<?php echo $auto_time; ?>" data-speed="<?php echo $auto_speed; ?>" data-anim="<?php echo $animation; ?>">
+				<div class="penci-owl-carousel swiper penci-owl-carousel-slider penci-headline-posts" data-auto="<?php echo $auto_play; ?>" data-nav="false" data-autotime="<?php echo $auto_time; ?>" data-speed="<?php echo $auto_speed; ?>" data-anim="<?php echo $animation; ?>">
+					<div class="swiper-wrapper">
 					<?php while( $news->have_posts() ): $news->the_post(); ?>
-						<div>
+						<div class="swiper-slide">
 							<a class="penci-topbar-post-title" href="<?php the_permalink(); ?>"><?php echo sanitize_text_field( wp_trim_words( get_the_title(), $title_length, '...' ) ); ?></a>
 						</div>
 					<?php endwhile; wp_reset_postdata(); ?>
+					</div>
 				</div>
 			<?php endif; /* End check if no posts */?>
 		</div>

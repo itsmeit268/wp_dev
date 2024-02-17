@@ -8,7 +8,13 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 				add_action( 'wp_ajax_penci_social_save_order', array( $this, 'save_order' ) );
 				add_action( 'wp_ajax_soledad_add_social', array( $this, 'soledad_add_social' ) );
 				add_action( 'wp_ajax_soledad_remove_social', array( $this, 'soledad_remove_social' ) );
+				add_action( 'admin_enqueue_scripts', array( $this, 'admin_src' ) );
 			}
+		}
+
+		public function admin_src() {
+			wp_enqueue_style( 'wp-color-picker' );
+			wp_enqueue_script( 'wp-color-picker' );
 		}
 
 		public function soledad_remove_social() {
@@ -46,6 +52,7 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 			$name     = isset( $_POST['name'] ) ? $_POST['name'] : '';
 			$url      = isset( $_POST['url'] ) ? esc_url( $_POST['url'] ) : '';
 			$icon     = isset( $_POST['icon'] ) ? $_POST['icon'] : '';
+			$color    = isset( $_POST['color'] ) ? $_POST['color'] : '';
 			$field_id = '_pccs_' . strtolower( sanitize_text_field( $name ) );
 
 			$custom_socials = get_option( 'penci_custom_socials', array() );
@@ -60,9 +67,10 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 			}
 
 			$custom_socials[ $field_id ] = array(
-				'name' => $name,
-				'url'  => $url,
-				'icon' => $icon,
+				'name'  => $name,
+				'url'   => $url,
+				'icon'  => $icon,
+				'color' => $color,
 			);
 
 			if ( update_option( 'penci_custom_socials', $custom_socials ) ) {
@@ -72,6 +80,7 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 						'name'    => $name,
 						'url'     => $url,
 						'id'      => $field_id,
+						'color'   => $color,
 						'img'     => wp_get_attachment_image( $icon ),
 						'message' => esc_html__( 'Social name add successfully.', 'soledad' ),
 					)
@@ -168,43 +177,59 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 				</div>
 				<div class="penci-new-social-wrapper">
 					<h2><?php _e( 'Add new social item', 'soledad' ); ?></h2>
-										<form>
+					<form>
 
 						<?php wp_nonce_field( 'ajax-nonce', 'penci_ajax_processor_nonce' ); ?>
 
 						<div style="display: flex;flex-wrap: wrap;flex-direction: revert;justify-content: space-between;">
-						<div class="penci-form-field" style="flex-basis:20%">
-							
-							<input class="social_name" name="social_name" type="text" id="social_name" value=""
+							<div class="penci-form-field" style="flex-basis:20%">
+
+								<input class="social_name" name="social_name" type="text" id="social_name" value=""
 										placeholder="Social Name">
-										</div>
-										<div class="penci-form-field"  style="flex-basis:50%">
+							</div>
+							<div class="penci-form-field" style="flex-basis:20%">
 
-							
-							<input class="social_url" name="social_url" type="url" id="social_url" value=""
+
+								<input class="social_url" name="social_url" type="url" id="social_url" value=""
 										placeholder="Social URL">
-										</div>
-										<div class="penci-form-field">
+							</div>
 
-										<?php
-										$default_image = get_template_directory_uri() . '/images/nothumb.jpg';
-										?>
+							<div class="penci-form-field" style="flex-basis:30%">
 
-										<img data-placeholder="<?php echo $default_image; ?>" src="<?php echo $default_image; ?>" alt="" class="penci-placeholder-img"/>
+								<input class="social_color" name="social_color" type="text" id="social_color" value=""
+										placeholder="">
+								<script>
+									jQuery(document).ready(function ($) {
 
-							
-							<button class="button button-alt penci-add-icon"
-									data-type="add"><?php _e( 'Upoad Icon', 'soledad' ); ?></button>
-									<input type="hidden" class="penci-icon-id" name="penci-icon-id">
-										</div>
+									$('.penci-form-field #social_color').wpColorPicker()
 
-										<div class="penci-form-field">
+									})
+								</script>
+							</div>
 
-							<button class="button button-primary penci-add-social"
-									data-type="add"><?php _e( '+ Add Social Item', 'soledad' ); ?></button>
+							<div class="penci-form-field">
 
-							
-										</div>
+								<?php
+								$default_image = get_template_directory_uri() . '/images/nothumb.jpg';
+								?>
+
+								<img data-placeholder="<?php echo $default_image; ?>"
+									src="<?php echo $default_image; ?>" alt="" class="penci-placeholder-img"/>
+
+
+								<button class="button button-alt penci-add-icon"
+										data-type="add"><?php _e( 'Upoad Icon', 'soledad' ); ?></button>
+								<input type="hidden" class="penci-icon-id" name="penci-icon-id">
+							</div>
+
+
+							<div class="penci-form-field">
+
+								<button class="button button-primary penci-add-social"
+										data-type="add"><?php _e( '+ Add Social Item', 'soledad' ); ?></button>
+
+
+							</div>
 						</div>
 
 						<div class="notes" style="margin-top: 6px;">
@@ -216,6 +241,7 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 								<th>Name</th>
 								<th>URL</th>
 								<th>Icon</th>
+								<th>Color</th>
 								<th>Delete</th>
 							</tr>
 
@@ -232,9 +258,10 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 								<?php
 								foreach ( (array) $socials as $slug => $social_data ) :
 
-									$name = isset( $social_data['name'] ) ? $social_data['name'] : $slug;
-									$img  = isset( $social_data['icon'] ) ? $social_data['icon'] : '';
-									$url  = isset( $social_data['url'] ) ? $social_data['url'] : '';
+									$name  = isset( $social_data['name'] ) ? $social_data['name'] : $slug;
+									$img   = isset( $social_data['icon'] ) ? $social_data['icon'] : '';
+									$url   = isset( $social_data['url'] ) ? $social_data['url'] : '';
+									$color = isset( $social_data['color'] ) ? $social_data['color'] : '';
 									?>
 
 									<tr>
@@ -242,7 +269,10 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 
 										<td><?php echo esc_html( $url ); ?></td>
 
+
 										<td><?php echo wp_get_attachment_image( $img ); ?></td>
+
+										<td><span aria-label="<?php echo esc_attr( $color ); ?>" class="social-colors-init" style="background-color: <?php echo esc_attr( $color ); ?>;"></span></td>
 
 										<td>
 											<button class="button button-small penci-remove-social" data-type="remove"
@@ -268,24 +298,28 @@ if ( ! class_exists( 'Penci_Social_Order' ) ) {
 				<span><?php _e( 'Updated successfully', 'soledad' ); ?></span>
 			</div>
 			<script>
-				Sortable.create( penci_soledad_social_order_list, {
+				Sortable.create(penci_soledad_social_order_list, {
 				store: {
-					set: function( sortable ) {
+					set: function (sortable) {
 					var order = sortable.toArray(),
-						nonce = jQuery('[name="penci_ajax_processor_order_nonce"]').val();
-					jQuery.ajax( {
+						nonce = jQuery('[name="penci_ajax_processor_order_nonce"]').val()
+					jQuery.ajax({
 						method: 'POST',
 						url: ajaxurl,
-						data: {_wpnonce: nonce,action: 'penci_social_save_order', penci_soledad_social_order_list: order},
-					} ).done( function( msg ) {
-						jQuery('.penci_soledad_social_order_update').fadeIn();
+						data: {
+						_wpnonce: nonce,
+						action: 'penci_social_save_order',
+						penci_soledad_social_order_list: order,
+						},
+					}).done(function (msg) {
+						jQuery('.penci_soledad_social_order_update').fadeIn()
 						setTimeout(function () {
-						jQuery('.penci_soledad_social_order_update').fadeOut();
-						}, 1200);
-					} );
+						jQuery('.penci_soledad_social_order_update').fadeOut()
+						}, 1200)
+					})
 					},
 				},
-				} );
+				})
 			</script>
 			<?php
 		}

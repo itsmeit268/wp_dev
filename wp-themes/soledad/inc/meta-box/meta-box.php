@@ -112,6 +112,24 @@ class Penci_Add_Custom_Metabox_Class {
 	public function __construct() {
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
 		add_action( 'save_post', array( $this, 'save' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scr' ) );
+	}
+
+	public function admin_scr() {
+		wp_enqueue_style( 'penci-adm-select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', array(), PENCI_SOLEDAD_VERSION );
+		wp_enqueue_script( 'penci-adm-select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array( 'jquery' ), PENCI_SOLEDAD_VERSION, true );
+		wp_enqueue_script( 'penci-adm-users', get_template_directory_uri() . '/js/get_user.js', array(
+			'jquery',
+			'penci-adm-select2'
+		), PENCI_SOLEDAD_VERSION, true );
+		wp_localize_script(
+			'penci-adm-users',
+			'penci_adm_users',
+			array(
+				'ajax'  => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'nonce' => wp_create_nonce( 'penci-adm-users' ),
+			)
+		);
 	}
 
 	/**
@@ -246,6 +264,14 @@ class Penci_Add_Custom_Metabox_Class {
 				update_post_meta( $post_id, 'penci_toc_enable', $_POST['penci_toc_enable'] );
 			}
 
+			if ( isset( $_POST['penci_extra_author'] ) ) {
+				update_post_meta( $post_id, 'penci_extra_author', $_POST['penci_extra_author'] );
+			}
+
+			if ( isset( $_POST['penci_extra_author_id'] ) ) {
+				update_post_meta( $post_id, 'penci_extra_author_id', $_POST['penci_extra_author_id'] );
+			}
+
 			if ( isset( $_POST['penci_post_hide_featuimg'] ) ) {
 				update_post_meta( $post_id, 'penci_post_hide_featuimg', $_POST['penci_post_hide_featuimg'] );
 			}
@@ -264,6 +290,22 @@ class Penci_Add_Custom_Metabox_Class {
 
 			if ( isset( $_POST['penci_single_builder_layout'] ) ) {
 				update_post_meta( $post_id, 'penci_single_builder_layout', $_POST['penci_single_builder_layout'] );
+			}
+
+			if ( isset( $_POST['penci_sponsored_post'] ) ) {
+				update_post_meta( $post_id, 'penci_sponsored_post', $_POST['penci_sponsored_post'] );
+			}
+
+			if ( isset( $_POST['penci_sponsored_logo'] ) ) {
+				update_post_meta( $post_id, 'penci_sponsored_logo', $_POST['penci_sponsored_logo'] );
+			}
+
+			if ( isset( $_POST['penci_sponsored_url'] ) ) {
+				update_post_meta( $post_id, 'penci_sponsored_url', $_POST['penci_sponsored_url'] );
+			}
+
+			if ( isset( $_POST['penci_sponsored_redirect'] ) ) {
+				update_post_meta( $post_id, 'penci_sponsored_redirect', $_POST['penci_sponsored_redirect'] );
 			}
 
 			$count_key  = penci_get_postviews_key();
@@ -359,18 +401,24 @@ class Penci_Add_Custom_Metabox_Class {
 		$single_style   = get_post_meta( $post->ID, 'penci_single_style', true );
 		$hide_featuimg  = get_post_meta( $post->ID, 'penci_post_hide_featuimg', true );
 
-		$hide_header             = get_post_meta( $post->ID, 'penci_page_hide_header', true );
-		$hide_footer             = get_post_meta( $post->ID, 'penci_page_hide_footer', true );
-		$pfeatured_image_ratio   = get_post_meta( $post->ID, 'penci_pfeatured_image_ratio', true );
-		$penci_reading_time      = get_post_meta( $post->ID, 'penci_reading_time', true );
-		$enable_parallax         = get_post_meta( $post->ID, 'penci_enable_jarallax_single', true );
-		$penci_toc_enable        = get_post_meta( $post->ID, 'penci_toc_enable', true );
-		$page_sidebar            = get_post_meta( $post->ID, 'penci_sidebar_page_pos', true );
-		$headerbd_layout         = get_post_meta( $post->ID, 'penci_header_builder_layout', true );
-		$footerbd_layout         = get_post_meta( $post->ID, 'penci_footer_builder_layout', true );
-		$singlebd_layout         = get_post_meta( $post->ID, 'penci_single_builder_layout', true );
-		$penci_post_critical_css = get_post_meta( $post->ID, 'penci_post_critical_css', true );
-		$penci_cpost_title       = get_post_meta( $post->ID, 'penci_cpost_title', true );
+		$hide_header              = get_post_meta( $post->ID, 'penci_page_hide_header', true );
+		$hide_footer              = get_post_meta( $post->ID, 'penci_page_hide_footer', true );
+		$pfeatured_image_ratio    = get_post_meta( $post->ID, 'penci_pfeatured_image_ratio', true );
+		$penci_reading_time       = get_post_meta( $post->ID, 'penci_reading_time', true );
+		$enable_parallax          = get_post_meta( $post->ID, 'penci_enable_jarallax_single', true );
+		$penci_toc_enable         = get_post_meta( $post->ID, 'penci_toc_enable', true );
+		$penci_extra_author       = get_post_meta( $post->ID, 'penci_extra_author', true );
+		$penci_extra_author_id    = get_post_meta( $post->ID, 'penci_extra_author_id', true );
+		$page_sidebar             = get_post_meta( $post->ID, 'penci_sidebar_page_pos', true );
+		$headerbd_layout          = get_post_meta( $post->ID, 'penci_header_builder_layout', true );
+		$footerbd_layout          = get_post_meta( $post->ID, 'penci_footer_builder_layout', true );
+		$singlebd_layout          = get_post_meta( $post->ID, 'penci_single_builder_layout', true );
+		$penci_post_critical_css  = get_post_meta( $post->ID, 'penci_post_critical_css', true );
+		$penci_cpost_title        = get_post_meta( $post->ID, 'penci_cpost_title', true );
+		$penci_sponsored_url      = get_post_meta( $post->ID, 'penci_sponsored_url', true );
+		$penci_sponsored_post     = get_post_meta( $post->ID, 'penci_sponsored_post', true );
+		$penci_sponsored_redirect = get_post_meta( $post->ID, 'penci_sponsored_redirect', true );
+		$penci_sponsored_logo     = get_post_meta( $post->ID, 'penci_sponsored_logo', true );
 
 
 		$post_type_allow = penci_post_types_allow_meta_boxes();
@@ -534,6 +582,9 @@ class Penci_Add_Custom_Metabox_Class {
                             <option value="style-38" <?php selected( $slider, 'style-38' ); ?>>Posts Featured Slider
                                 Style 38
                             </option>
+                            <option value="style-40" <?php selected( $slider, 'style-40' ); ?>>Posts Featured Slider
+                                Style 39
+                            </option>
                             <option value="video" <?php selected( $slider, 'video' ); ?>>Featured Video Background
                             </option>
                         </select>
@@ -685,18 +736,22 @@ class Penci_Add_Custom_Metabox_Class {
 
                     <h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Custom Post Title on Single Post
                         Page</h2>
-                    <p class="description">You can enter a custom post title to be displayed on the single post page that is different from the post title shown on archive pages.</strong></p>
+                    <p class="description">You can enter a custom post title to be displayed on the single post page
+                        that is different from the post title shown on archive pages.</strong></p>
                 </div>
                 <div class="pcmt-control">
-                    <textarea style="width: 100%; height: 50px;" placeholder="Enter the custom single post title" id="penci_cpost_title"
-                                 name="penci_cpost_title"><?php echo $penci_cpost_title; ?></textarea>
+                    <textarea style="width: 100%; height: 50px;" placeholder="Enter the custom single post title"
+                              id="penci_cpost_title"
+                              name="penci_cpost_title"><?php echo $penci_cpost_title; ?></textarea>
                 </div>
             </div>
             <div class="pcmt-control-wrapper">
                 <div class="pcmt-title">
 
                     <h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Reading Time</h2>
-                    <p class="description">Please fill in the estimated reading time for this post. For example: 3 mins<br>If you want to set a default reading time value for all posts, you can do so by going to <strong>Customize > General >
+                    <p class="description">Please fill in the estimated reading time for this post. For example: 3
+                        mins<br>If you want to set a default reading time value for all posts, you can do so by going to
+                        <strong>Customize > General >
                             General Settings > Set A Default Reading Time Value</strong></p>
                 </div>
                 <div class="pcmt-control">
@@ -807,7 +862,10 @@ class Penci_Add_Custom_Metabox_Class {
                 <div class="pcmt-title">
                     <h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Custom Aspect Ratio for Featured
                         Image of This Post?</h2>
-                    <p class="description">The aspect ratio of an element describes the proportional relationship between its width and height, for example, 3:2 (width:height). The default aspect ratio is 3:2<br>Please note that this option does not apply when parallax images are enabled or for Single Post Styles 1 & 2.</p>
+                    <p class="description">The aspect ratio of an element describes the proportional relationship
+                        between its width and height, for example, 3:2 (width:height). The default aspect ratio is
+                        3:2<br>Please note that this option does not apply when parallax images are enabled or for
+                        Single Post Styles 1 & 2.</p>
                 </div>
                 <div class="pcmt-control">
                     <p><input placeholder="Enter the custom aspect ratio here"
@@ -890,6 +948,115 @@ class Penci_Add_Custom_Metabox_Class {
                     </p>
                 </div>
             </div>
+
+            <div class="pcmt-control-wrapper">
+                <div class="pcmt-title">
+                    <h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Extra Author Action for This
+                        Post</h2>
+                </div>
+                <div class="pcmt-control" style="flex-direction: column;">
+                    <div class="pcmt-child-control" style="width: 100%;">
+                        <label for="penci_extra_author" style="font-weightl:bold;display:block;margin-bottom:10px;">Select
+                            Action</label>
+                        <p class="select-button-type">
+                            <select id="penci_extra_author" name="penci_extra_author">
+                                <option <?php selected( $penci_extra_author, 'updated_by' ); ?>
+                                        value="updated_by"><?php _e( 'Updated By', 'soledad' ); ?></option>
+                                <option <?php selected( $penci_extra_author, 'reviewed_by' ); ?>
+                                        value="reviewed_by"><?php _e( 'Reviewed By', 'soledad' ); ?></option>
+                                <option <?php selected( $penci_extra_author, 'edited_by' ); ?>
+                                        value="edited_by"><?php _e( 'Edited By', 'soledad' ); ?></option>
+                                <option <?php selected( $penci_extra_author, 'revised_by' ); ?>
+                                        value="revised_by"><?php _e( 'Revised By', 'soledad' ); ?></option>
+                            </select>
+                        </p>
+                    </div>
+					<?php
+					$user_lists = get_users( [ 'role__not_in' => [ 'subscriber', 'customer' ] ] );
+					$total_user = count( $user_lists );
+					?>
+                    <div class="pcmt-child-control" style="width: 100%;">
+                        <label for="penci_extra_author_id" style="font-weightl:bold;display:block;margin-bottom:10px;">Action
+                            By</label>
+						<?php if ( $total_user < 10 ): ?>
+                            <select data-value="<?php echo $penci_extra_author_id; ?>" id="penci_extra_author_id"
+                                    name="penci_extra_author_id">
+                                <option value=""><?php _e( '-- Select User --', 'soledad' ); ?></option>
+								<?php foreach ( $user_lists as $id => $user ): ?>
+                                    <option <?php selected( $penci_extra_author_id, $user->ID ); ?>
+                                            value="<?php echo $user->ID; ?>"><?php echo $user->display_name; ?></option>
+								<?php endforeach; ?>
+                            </select>
+						<?php else: ?>
+                            <div style="min-width:270px;">
+                                <select class="penci_extra_author_ajax_id" id="penci_extra_author_id"
+                                        name="penci_extra_author_id">
+                                    <option value=""></option>
+									<?php if ( $penci_extra_author_id ): ?>
+                                        <option selected="selected"
+                                                value="<?php echo $penci_extra_author_id; ?>"><?php echo get_the_author_meta( 'display_name', $penci_extra_author_id ); ?></option>
+									<?php endif; ?>
+                                </select>
+                            </div>
+						<?php endif; ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pcmt-control-wrapper">
+                <div class="pcmt-title">
+                    <h2 style="font-weight: 600; font-size: 14px; padding-left: 0;">Sponsored Post</h2>
+                </div>
+                <div class="pcmt-control" style="flex-direction: column;">
+                    <div class="pcmt-child-control" style="width: 100%;">
+                        <label for="penci_sponsored_post" style="font-weightl:bold;display:block;margin-bottom:10px;">Sponsored
+                            Post</label>
+                        <p class="select-button-type">
+                            <select id="penci_sponsored_post" name="penci_sponsored_post">
+                                <option <?php selected( $penci_sponsored_post, '' ); ?>
+                                        value=""><?php _e( 'Disable', 'soledad' ); ?></option>
+                                <option <?php selected( $penci_sponsored_post, 'enable' ); ?>
+                                        value="enable"><?php _e( 'Enable', 'soledad' ); ?></option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="pcmt-child-control" style="width: 100%;">
+                        <label for="penci_sponsored_logo" style="font-weightl:bold;display:block;margin-bottom:10px;">Sponsor
+                            Logo</label>
+                        <div class="form-input-wrapper">
+							<?php
+							get_template_part( 'inc/templates/upload_form', '', array(
+								'id'      => 'penci_sponsored_logo',
+								'class'   => '',
+								'name'    => 'penci_sponsored_logo',
+								'source'  => isset( $penci_sponsored_logo ) ? $penci_sponsored_logo : '',
+								'button'  => 'btn-single-image',
+								'multi'   => false,
+								'maxsize' => apply_filters( 'penci_maxsize_upload_profile_picture', '2mb' )
+							) );
+							?>
+                        </div>
+                    </div>
+                    <div class="pcmt-child-control" style="width: 100%;">
+                        <label for="penci_sponsored_post" style="font-weightl:bold;display:block;margin-bottom:10px;">Sponsor URL:</label>
+                        <input value="<?php echo $penci_sponsored_url; ?>" type="url" name="penci_sponsored_url"
+                               id="penci_sponsored_url">
+                    </div>
+                    <div class="pcmt-child-control" style="width: 100%;">
+                        <label for="penci_sponsored_redirect"
+                               style="font-weightl:bold;display:block;margin-bottom:10px;">Directly Redirect</label>
+                        <p class="select-button-type">
+                            <select id="penci_sponsored_redirect" name="penci_sponsored_redirect">
+                                <option <?php selected( $penci_sponsored_redirect, '' ); ?>
+                                        value=""><?php _e( 'Disable', 'soledad' ); ?></option>
+                                <option <?php selected( $penci_sponsored_redirect, 'enable' ); ?>
+                                        value="enable"><?php _e( 'Enable', 'soledad' ); ?></option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
 			<?php if ( get_theme_mod( 'penci_speed_remove_css' ) ): ?>
                 <div class="pcmt-control-wrapper">
                     <div class="pcmt-title">

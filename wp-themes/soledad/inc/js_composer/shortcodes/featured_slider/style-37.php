@@ -18,7 +18,7 @@ $penci_is_mobile  = penci_is_mobile();
 			$thumb_mobile = ! empty( $post_thumb_size_mobile ) ? $post_thumb_size_mobile : 'penci-masonry-thumb';
 
 		?>
-        <div class="item">
+        <div class="item swiper-slide">
             <div class="penci-item-mag penci-item-<?php if ( $i != $number_last && $i != $num_posts ) {
 				echo '1';
 			} else {
@@ -36,7 +36,7 @@ $penci_is_mobile  = penci_is_mobile();
 				<?php } ?>
                 <div class="penci-slide-overlay penci-slider6-overlay penci-slider37-overlay">
                     <a class="overlay-link"
-                       aria-label="<?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), 6, '...' ); ?>"
+                       aria-label="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
                        href="<?php the_permalink(); ?>"></a>
 					<?php if ( ! $hide_format_icons && ( has_post_format( 'video' ) || has_post_format( 'audio' ) || has_post_format( 'link' ) || has_post_format( 'quote' ) || has_post_format( 'gallery' ) ) ): ?>
                         <a href="<?php the_permalink(); ?>"

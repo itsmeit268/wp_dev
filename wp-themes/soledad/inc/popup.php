@@ -47,7 +47,7 @@ class PenciPopup {
 		} elseif ( $popup_block ) {
 			$popup_block_id = get_page_by_path( $popup_block, OBJECT, 'penci-block' )->ID;
 			$class          = 'block-content';
-			if ( did_action( 'elementor/loaded' ) && \Elementor\Plugin::$instance->documents->get( $popup_block_id )->is_built_with_elementor() ) {
+			if ( $popup_block_id && did_action( 'elementor/loaded' ) && \Elementor\Plugin::$instance->documents->get( $popup_block_id )->is_built_with_elementor() ) {
 				$popup_render_content .= penci_get_elementor_content( $popup_block_id );
 			} else {
 				$popup_render_content .= do_shortcode( get_post( $popup_block_id )->post_content );
@@ -68,6 +68,78 @@ class PenciPopup {
 			echo '<div id="penci-popup-' . esc_attr( $version ) . '" class="mfp-with-anim penci-popup-content ' . $class . ' ' . $animation . '">' . $popup_render_content . '</div>';
 			wp_reset_postdata();
 		}
+	}
+
+	public function should_display_popup() {
+		$return = true;
+
+		$popup_search = get_theme_mod( 'penci_popup_exclude_search' );
+		$popup_404    = get_theme_mod( 'penci_popup_exclude_404' );
+
+		if ( is_single() || is_page() || is_singular() || is_home() || is_front_page() ) {
+			$return = $this->should_display_singular_popup();
+		} else if ( is_tax() || is_category() || is_tag() ) {
+			$return = $this->should_display_archive_popup();
+		}
+
+		if ( ( is_search() && $popup_search ) || ( is_404() && $popup_404 ) ) {
+			$return = false;
+		}
+
+		return $return;
+	}
+
+	public function should_display_singular_popup() {
+		global $post;
+		$post_type = get_post_type();
+		$post_id   = $post->ID;
+
+		$homepage = get_theme_mod( 'penci_popup_exclude_homepages' );
+		$blogpage = get_theme_mod( 'penci_popup_exclude_blog' );
+
+		$ex = get_theme_mod( 'penci_popup_ex_singular_ids' ) ? explode( ',', get_theme_mod( 'penci_popup_ex_singular_ids' ) ) : '';
+		$in = get_theme_mod( 'penci_popup_in_singular_ids' ) ? explode( ',', get_theme_mod( 'penci_popup_in_singular_ids' ) ) : '';
+
+		$show = false;
+
+		if ( is_singular( $post_type ) ) {
+			$show = get_theme_mod( 'penci_popup_show_' . $post_type );
+		}
+
+		if ( is_singular() && is_array( $ex ) && in_array( $post_id, $ex ) ) {
+			$show = false;
+		}
+
+		if ( is_array( $in ) && is_singular() ) {
+			$show = false;
+		}
+
+		if ( is_singular() && is_array( $in ) && in_array( $post_id, $in ) ) {
+			$show = true;
+		}
+
+		if ( is_home() || is_front_page() ) {
+			$show = true;
+		}
+
+		if ( is_home() && $homepage && is_front_page() || ( is_front_page() && $homepage ) ) {
+			$show = false;
+		} else if ( is_home() && $blogpage ) {
+			$show = false;
+		}
+
+		return $show;
+	}
+
+	public function should_display_archive_popup() {
+		$tax  = get_queried_object();
+		$show = false;
+
+		if ( isset( $tax->taxonomy ) && $tax->taxonomy ) {
+			$show = get_theme_mod( 'penci_popup_archive_' . $tax->taxonomy );
+		}
+
+		return $show;
 	}
 
 	public function popup_style() {
@@ -145,78 +217,6 @@ class PenciPopup {
 		}
 		echo '}}';
 
-	}
-
-	public function should_display_popup() {
-		$return = true;
-
-		$popup_search = get_theme_mod( 'penci_popup_exclude_search' );
-		$popup_404    = get_theme_mod( 'penci_popup_exclude_404' );
-
-		if ( is_single() || is_page() || is_singular() || is_home() || is_front_page() ) {
-			$return = $this->should_display_singular_popup();
-		} else if ( is_tax() || is_category() || is_tag() ) {
-			$return = $this->should_display_archive_popup();
-		}
-
-		if ( ( is_search() && $popup_search ) || ( is_404() && $popup_404 ) ) {
-			$return = false;
-		}
-
-		return $return;
-	}
-
-	public function should_display_archive_popup() {
-		$tax  = get_queried_object();
-		$show = false;
-
-		if ( isset( $tax->taxonomy ) && $tax->taxonomy ) {
-			$show = get_theme_mod( 'penci_popup_archive_' . $tax->taxonomy );
-		}
-
-		return $show;
-	}
-
-	public function should_display_singular_popup() {
-		global $post;
-		$post_type = get_post_type();
-		$post_id   = $post->ID;
-
-		$homepage = get_theme_mod( 'penci_popup_exclude_homepages' );
-		$blogpage = get_theme_mod( 'penci_popup_exclude_blog' );
-
-		$ex = get_theme_mod( 'penci_popup_ex_singular_ids' ) ? explode( ',', get_theme_mod( 'penci_popup_ex_singular_ids' ) ) : '';
-		$in = get_theme_mod( 'penci_popup_in_singular_ids' ) ? explode( ',', get_theme_mod( 'penci_popup_in_singular_ids' ) ) : '';
-
-		$show = false;
-
-		if ( is_singular( $post_type ) ) {
-			$show = get_theme_mod( 'penci_popup_show_' . $post_type );
-		}
-
-		if ( is_singular() && is_array( $ex ) && in_array( $post_id, $ex ) ) {
-			$show = false;
-		}
-
-		if ( is_array( $in ) && is_singular() ) {
-			$show = false;
-		}
-
-		if ( is_singular() && is_array( $in ) && in_array( $post_id, $in ) ) {
-			$show = true;
-		}
-
-		if ( is_home() || is_front_page() ) {
-			$show = true;
-		}
-
-		if ( is_home() && $homepage && is_front_page() || ( is_front_page() && $homepage ) ) {
-			$show = false;
-		} else if ( is_home() && $blogpage ) {
-			$show = false;
-		}
-
-		return $show;
 	}
 
 	public function penci_spacing_extract_data( $number = '', $out = '' ) {

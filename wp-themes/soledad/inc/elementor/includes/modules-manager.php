@@ -39,6 +39,7 @@ final class Manager {
 			'penci-button-popup',
 			'penci-posts-slider',
 			'penci-recent-posts',
+			'penci-stylisted-articles-count',
 			'penci-instagram',
 			'penci-pintersest',
 			'penci-social-media',

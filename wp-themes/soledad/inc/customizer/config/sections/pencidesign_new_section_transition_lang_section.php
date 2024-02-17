@@ -143,6 +143,13 @@ $options[] = array(
 	'type'     => 'soledad-fw-text',
 );
 $options[] = array(
+	'default'  => 'Sorry, No more posts',
+	'sanitize' => 'sanitize_text_field',
+	'label'    => __( 'Text: "Sorry, No more posts"', 'soledad' ),
+	'id'       => 'penci_trans_no_more_posts',
+	'type'     => 'soledad-fw-text',
+);
+$options[] = array(
 	'default'  => 'Sorry, No more items',
 	'sanitize' => 'sanitize_text_field',
 	'label'    => __( 'Text: "Sorry, No more items"', 'soledad' ),
@@ -182,6 +189,34 @@ $options[] = array(
 	'sanitize' => 'sanitize_text_field',
 	'label'    => __( 'Text: "written by"', 'soledad' ),
 	'id'       => 'penci_trans_written_by',
+	'type'     => 'soledad-fw-text',
+);
+$options[] = array(
+	'default'  => 'Updated by',
+	'sanitize' => 'sanitize_text_field',
+	'label'    => __( 'Text: "Updated by"', 'soledad' ),
+	'id'       => 'penci_trans_updated_by',
+	'type'     => 'soledad-fw-text',
+);
+$options[] = array(
+	'default'  => 'Reviewed by',
+	'sanitize' => 'sanitize_text_field',
+	'label'    => __( 'Text: "Reviewed by"', 'soledad' ),
+	'id'       => 'penci_trans_reviewed_by',
+	'type'     => 'soledad-fw-text',
+);
+$options[] = array(
+	'default'  => 'Edited by',
+	'sanitize' => 'sanitize_text_field',
+	'label'    => __( 'Text: "Edited by"', 'soledad' ),
+	'id'       => 'penci_trans_edited_by',
+	'type'     => 'soledad-fw-text',
+);
+$options[] = array(
+	'default'  => 'Revised by',
+	'sanitize' => 'sanitize_text_field',
+	'label'    => __( 'Text: "Revised by"', 'soledad' ),
+	'id'       => 'penci_trans_revised_by',
 	'type'     => 'soledad-fw-text',
 );
 $options[] = array(
@@ -277,6 +312,20 @@ $options[] = array(
 	'sanitize' => 'sanitize_text_field',
 	'label'    => __( 'Text: "Reset"', 'soledad' ),
 	'id'       => 'penci_trans_reset',
+	'type'     => 'soledad-fw-text',
+);
+$options[] = array(
+	'default'  => 'Sponsored',
+	'sanitize' => 'sanitize_text_field',
+	'label'    => __( 'Text: "Sponsored"', 'soledad' ),
+	'id'       => 'penci_trans_sponsored',
+	'type'     => 'soledad-fw-text',
+);
+$options[] = array(
+	'default'  => 'Sponsored by:',
+	'sanitize' => 'sanitize_text_field',
+	'label'    => __( 'Text: "Sponsored by:"', 'soledad' ),
+	'id'       => 'penci_trans_sponsored_by',
 	'type'     => 'soledad-fw-text',
 );
 $options[] = array(
@@ -516,9 +565,9 @@ $new_translates = array(
 	'penci_trans_my_account'      => __( 'My Account', 'soledad' ),
 	'penci_trans_edit_account'    => __( 'Edit Account', 'soledad' ),
 	'penci_trans_change_password' => __( 'Change Password', 'soledad' ),
-	'penci_trans_oldpassword'        => __( 'Old Password', 'soledad' ),
-	'penci_trans_newpassword'        => __( 'New Password', 'soledad' ),
-	'penci_trans_cpassword'          => __( 'Confirm Password', 'soledad' ),
+	'penci_trans_oldpassword'     => __( 'Old Password', 'soledad' ),
+	'penci_trans_newpassword'     => __( 'New Password', 'soledad' ),
+	'penci_trans_cpassword'       => __( 'Confirm Password', 'soledad' ),
 	'penci_trans_cimage'          => __( 'Choose Image', 'soledad' ),
 	'penci_trans_admedia'         => __( 'Add Media', 'soledad' ),
 	'penci_trans_insert'          => __( 'Insert', 'soledad' ),

@@ -93,11 +93,7 @@ if ( ! class_exists( 'penci_latest_news_widget' ) ) {
 			if ( 'post' == $ptype ) {
 				if ( isset( $instance['cats_id'] ) ) {
 					if ( ! empty( $cats_id ) && ! in_array( 'all', $cats_id ) ) {
-						$query['tax_query'][] = [
-							'taxonomy' => 'category',
-							'field'    => 'term_id',
-							'terms'    => $cats_id,
-						];
+						$query['category__in'] = $cats_id;
 					}
 				} else {
 					$term_name = get_cat_name( $categories );
@@ -110,11 +106,7 @@ if ( ! class_exists( 'penci_latest_news_widget' ) ) {
 
 				if ( ! empty( $tags_id ) ) {
 					if ( ! in_array( 'all', $tags_id ) ) {
-						$query['tax_query'][] = [
-							'taxonomy' => 'post_tag',
-							'field'    => 'term_id',
-							'terms'    => $tags_id,
-						];
+						$query['tag__in'] = $tags_id;
 					}
 				}
 			}
@@ -168,28 +160,31 @@ if ( ! class_exists( 'penci_latest_news_widget' ) ) {
 					echo ent2ncr( $before_title ) . $title . ent2ncr( $after_title );
 				}
 
-				$rand = rand( 1000, 10000 );
+				$rand          = rand( 1000, 10000 );
+				$data_settings = $instance;
+				unset( $data_settings['title'] );
 
 
 				?>
-                <ul <?php if ( isset( $instance['ajaxnav'] ) && $instance['ajaxnav'] ) {?>data-settings='<?php echo json_encode( $instance ); ?>' data-paged="1"
+                <ul <?php if ( isset( $instance['ajaxnav'] ) && $instance['ajaxnav'] ) { ?>data-settings='<?php echo json_encode( $data_settings ); ?>'
+                    data-paged="1"
                     data-action="penci_latest_news_widget_ajax"
                     data-mes="<?php echo penci_get_setting( 'penci_trans_no_more_posts' ); ?>"
                     data-max="<?php echo esc_attr( $loop->max_num_pages ); ?>"
-                 		<?php } ?>
+					<?php } ?>
                     id="penci-latestwg-<?php echo sanitize_text_field( $rand ); ?>"
                     class="side-newsfeed<?php if ( $twocolumn && ! $allfeatured ): echo ' penci-feed-2columns';
-					    if ( $featured ) {
-						    echo ' penci-2columns-featured';
-					    } else {
-						    echo ' penci-2columns-feed';
-					    } endif;
-				    if ( $showborder ) {
-					    echo ' penci-rcpw-hborders';
-				    }
-				    if ( $dotstyle ) {
-					    echo ' pctlst pctl-' . $dotstyle;
-				    } ?>">
+						if ( $featured ) {
+							echo ' penci-2columns-featured';
+						} else {
+							echo ' penci-2columns-feed';
+						} endif;
+					if ( $showborder ) {
+						echo ' penci-rcpw-hborders';
+					}
+					if ( $dotstyle ) {
+						echo ' pctlst pctl-' . $dotstyle;
+					} ?>">
 					<?php $num = 1;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
                         <li class="penci-feed<?php if ( ( ( $num == 1 ) && $featured ) || $allfeatured ): echo ' featured-news';
@@ -205,7 +200,7 @@ if ( ! class_exists( 'penci_latest_news_widget' ) ) {
 										<?php
 										$size_pie = 'small';
 										if ( ( ( $num == 1 ) && $featured ) || $allfeatured ): $size_pie = 'normal'; endif;
-										do_action( 'penci_bookmark_post', get_the_ID(),$size_pie );
+										do_action( 'penci_bookmark_post', get_the_ID(), $size_pie );
 										/* Display Review Piechart  */
 										if ( function_exists( 'penci_display_piechart_review_html' ) ) {
 
@@ -288,7 +283,8 @@ if ( ! class_exists( 'penci_latest_news_widget' ) ) {
 									<?php endif; ?>
 
                                     <h4 class="side-title-post">
-                                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
+                                        <a href="<?php the_permalink() ?>" rel="bookmark"
+                                           title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 											<?php
 											if ( ! $title_length || ! is_numeric( $title_length ) ) {
 												if ( $featured2 && ( ( ( $num == 1 ) && $featured ) || $allfeatured ) ) {
@@ -327,6 +323,7 @@ if ( ! class_exists( 'penci_latest_news_widget' ) ) {
 						<?php $num ++; endwhile; ?>
                 </ul>
 				<?php
+
 				if ( isset( $instance['ajaxnav'] ) && $instance['ajaxnav'] == 'btn' ) {
 					?>
                     <div class="penci-pagination penci-ajax-more pcwg-lposts">
@@ -457,7 +454,7 @@ if ( ! class_exists( 'penci_latest_news_widget' ) ) {
 				'twocolumn'      => false,
 				'featured2'      => false,
 				'postdate'       => false,
-				'icon'           => false
+				'icon'           => false,
 			);
 
 			return $defaults;

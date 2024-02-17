@@ -76,11 +76,7 @@ if ( ! class_exists( 'penci_slider_posts_news_widget' ) ) {
 			if ( 'post' == $ptype ) {
 				if ( isset( $instance['cats_id'] ) ) {
 					if ( ! empty( $cats_id ) && ! in_array( 'all', $cats_id ) ) {
-						$query['tax_query'][] = [
-							'taxonomy' => 'category',
-							'field'    => 'term_id',
-							'terms'    => $cats_id,
-						];
+						$query['category__in'] = $cats_id;
 					}
 				} else {
 					if ( $categories ) {
@@ -90,11 +86,7 @@ if ( ! class_exists( 'penci_slider_posts_news_widget' ) ) {
 
 				if ( ! empty( $tags_id ) ) {
 					if ( ! in_array( 'all', $tags_id ) ) {
-						$query['tax_query'][] = [
-							'taxonomy' => 'post_tag',
-							'field'    => 'term_id',
-							'terms'    => $tags_id,
-						];
+						$query['tag__in'] = $cats_id;
 					}
 				}
 			}
@@ -164,46 +156,48 @@ if ( ! class_exists( 'penci_slider_posts_news_widget' ) ) {
 				}
 				?>
                 <div id="penci-postslidewg-<?php echo sanitize_text_field( $rand ); ?>"
-                     class="penci-owl-carousel penci-owl-carousel-slider penci-widget-slider penci-post-slider-<?php echo $style; ?>"
+                     class="swiper penci-owl-carousel penci-owl-carousel-slider penci-widget-slider penci-post-slider-<?php echo $style; ?>"
                      data-lazy="true" data-auto="<?php echo $autoplaydata; ?>">
-					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                        <div class="penci-slide-widget">
-                            <div class="penci-slide-content">
-								<?php if ( $style != 'style-3' ) { ?>
-									<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
-                                        <span class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
-                                              data-bgset="<?php echo penci_image_srcset( get_the_ID(), penci_featured_images_size() ); ?>"
-                                              title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></span>
+                    <div class="swiper-wrapper">
+						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                            <div class="swiper-slide penci-slide-widget">
+                                <div class="penci-slide-content">
+									<?php if ( $style != 'style-3' ) { ?>
+										<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
+                                            <span class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
+                                                  data-bgset="<?php echo penci_image_srcset( get_the_ID(), penci_featured_images_size() ); ?>"
+                                                  title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></span>
+										<?php } else { ?>
+                                            <span class="penci-image-holder"
+                                                  style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), penci_featured_images_size() ); ?>');"
+                                                  title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></span>
+										<?php } ?>
+                                        <a href="<?php the_permalink() ?>" class="penci-widget-slider-overlay"
+                                           title="<?php the_title(); ?>"></a>
 									<?php } else { ?>
-                                        <span class="penci-image-holder"
-                                              style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), penci_featured_images_size() ); ?>');"
-                                              title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></span>
+										<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
+                                            <a href="<?php the_permalink() ?>" class="penci-image-holder penci-lazy"
+                                               data-bgset="<?php echo penci_image_srcset( get_the_ID(), penci_featured_images_size() ); ?>"
+                                               title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
+										<?php } else { ?>
+                                            <a href="<?php the_permalink() ?>" class="penci-image-holder"
+                                               style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), penci_featured_images_size() ); ?>')"
+                                               title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
+										<?php } ?>
 									<?php } ?>
-                                    <a href="<?php the_permalink() ?>" class="penci-widget-slider-overlay"
-                                       title="<?php the_title(); ?>"></a>
-								<?php } else { ?>
-									<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
-                                        <a href="<?php the_permalink() ?>" class="penci-image-holder penci-lazy"
-                                           data-bgset="<?php echo penci_image_srcset( get_the_ID(), penci_featured_images_size() ); ?>"
-                                           title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
-									<?php } else { ?>
-                                        <a href="<?php the_permalink() ?>" class="penci-image-holder"
-                                           style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), penci_featured_images_size() ); ?>')"
-                                           title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
-									<?php } ?>
-								<?php } ?>
-                                <div class="penci-widget-slide-detail">
-                                    <h4>
-                                        <a href="<?php the_permalink() ?>" rel="bookmark"
-                                           title="<?php the_title(); ?>"><?php echo sanitize_text_field( wp_trim_words( get_the_title(), 8, '...' ) ); ?></a>
-                                    </h4>
-									<?php if ( ! $date ): ?>
-                                        <span class="slide-item-date"><?php penci_soledad_time_link(); ?></span>
-									<?php endif; ?>
+                                    <div class="penci-widget-slide-detail">
+                                        <h4>
+                                            <a href="<?php the_permalink() ?>" rel="bookmark"
+                                               title="<?php the_title(); ?>"><?php echo sanitize_text_field( wp_trim_words( get_the_title(), 8, '...' ) ); ?></a>
+                                        </h4>
+										<?php if ( ! $date ): ?>
+                                            <span class="slide-item-date"><?php penci_soledad_time_link(); ?></span>
+										<?php endif; ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-					<?php endwhile; ?>
+						<?php endwhile; ?>
+                    </div>
                 </div>
 
 			<?php
@@ -312,9 +306,9 @@ if ( ! class_exists( 'penci_slider_posts_news_widget' ) ) {
 			$instance_title = $instance['title'] ? str_replace( '"', '&quot;', $instance['title'] ) : '';
 			?>
             <style>span.description {
-					font-style: italic;
-					font-size: 13px;
-				}</style>
+                    font-style: italic;
+                    font-size: 13px;
+                }</style>
             <!-- Widget Title: Text Input -->
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'soledad' ); ?></label>

@@ -6,10 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class PenciSingleMeta extends \Elementor\Widget_Base {
 
-	public function get_name() {
-		return 'penci-single-meta';
-	}
-
 	public function get_title() {
 		return esc_html__( 'Post - Meta', 'soledad' );
 	}
@@ -28,6 +24,10 @@ class PenciSingleMeta extends \Elementor\Widget_Base {
 
 	protected function get_html_wrapper_class() {
 		return 'pcsb-meta elementor-widget-' . $this->get_name();
+	}
+
+	public function get_name() {
+		return 'penci-single-meta';
 	}
 
 	protected function register_controls() {
@@ -90,6 +90,13 @@ class PenciSingleMeta extends \Elementor\Widget_Base {
 
 		$this->add_control( 'penci_single_meta_author', [
 			'label'     => esc_html__( 'Hide Author?', 'soledad' ),
+			'type'      => \Elementor\Controls_Manager::SWITCHER,
+			'label_on'  => __( 'Yes', 'soledad' ),
+			'label_off' => __( 'No', 'soledad' ),
+		] );
+
+		$this->add_control( 'penci_single_meta_author_update', [
+			'label'     => esc_html__( 'Show Latest Update Author?', 'soledad' ),
 			'type'      => \Elementor\Controls_Manager::SWITCHER,
 			'label_on'  => __( 'Yes', 'soledad' ),
 			'label_off' => __( 'No', 'soledad' ),
@@ -730,7 +737,7 @@ class PenciSingleMeta extends \Elementor\Widget_Base {
             ?>
             <?php penci_reading_time(); ?></span>
 			<?php endif; ?>
-	        <?php do_action( 'penci_single_meta_content' ); ?>
+			<?php do_action( 'penci_single_meta_content' ); ?>
         </div>
 		<?php
 	}
@@ -803,6 +810,7 @@ class PenciSingleMeta extends \Elementor\Widget_Base {
 	                    <?php } ?>
                     </span>
                 </span>
+				<?php penci_author_update_name( $settings['penci_single_meta_author_update'], $avatar, $avatarw ); ?>
 			<?php endif; ?>
 			<?php if ( ! $settings['penci_single_meta_date'] ) : ?>
                 <span class="pctmp-date-post">
@@ -854,7 +862,7 @@ class PenciSingleMeta extends \Elementor\Widget_Base {
             ?>
             <?php penci_reading_time(); ?></span>
 			<?php endif; ?>
-	        <?php do_action( 'penci_single_meta_content' ); ?>
+			<?php do_action( 'penci_single_meta_content' ); ?>
         </div>
 		<?php
 	}

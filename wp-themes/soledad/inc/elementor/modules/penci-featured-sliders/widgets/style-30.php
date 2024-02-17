@@ -10,7 +10,7 @@ $penci_is_mobile = penci_is_mobile();
 
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
+    <div class="item swiper-slide">
 	    <?php do_action( 'penci_bookmark_post' ); ?>
 		<?php if ( ! $disable_lazyload ) { ?>
             <a class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"

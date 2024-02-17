@@ -419,7 +419,6 @@ if ( ! function_exists( 'penci_woocommerce_style' ) ) {
 		wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/inc/woocommerce/css/build/woocommerce-layout.css', array(), PENCI_SOLEDAD_VERSION );
 		wp_enqueue_style( 'penci-woocommerce', get_template_directory_uri() . '/inc/woocommerce/css/penci-woocomerce.css', array(), PENCI_SOLEDAD_VERSION );
 
-		wp_enqueue_script( 'penci-slick' );
 		wp_enqueue_script( 'jquery.pjax', get_template_directory_uri() . '/inc/woocommerce/js/jquery.pjax.js', array(), PENCI_SOLEDAD_VERSION, true );
 		wp_enqueue_script( 'popper', get_template_directory_uri() . '/inc/woocommerce/js/popper.min.js', array(), PENCI_SOLEDAD_VERSION, true );
 		wp_enqueue_script( 'tooltip', get_template_directory_uri() . '/inc/woocommerce/js/tippy-bundle.umd.min.js', array( 'popper' ), PENCI_SOLEDAD_VERSION, true );
@@ -670,7 +669,8 @@ if ( ! function_exists( 'penci_get_gallery_image_html' ) ) {
 		$extra_class = $main_image ? 'pcw-gallery-main pcw-gallery' : 'pcw-gallery';
 
 		if ( $slider && isset( $thumbnail_src[0] ) ) {
-			$out = '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" data-thumb-alt="' . esc_attr( $alt_text ) . '" class="woocommerce-product-gallery__image ' . $extra_class . '">' . $image . '</div>';
+			$image_new = '<div class="penci-image-holder" style="background-image:url(' . $thumbnail_src[0] . ')"></div>';
+			$out       = '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" data-thumb-alt="' . esc_attr( $alt_text ) . '" class="woocommerce-product-gallery__image ' . $extra_class . '">' . $image . '</div>';
 		} elseif ( ! $slider && isset( $thumbnail_src[0] ) ) {
 			$out = '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" data-thumb-alt="' . esc_attr( $alt_text ) . '" class="woocommerce-product-gallery__image ' . $extra_class . '"><a href="' . esc_url( $full_src[0] ) . '">' . $image . '</a></div>';
 		}
@@ -1072,6 +1072,7 @@ if ( ! function_exists( 'penci_woocommerce_get_product_loop_class' ) ) {
 		$product_loop_icon_animation = $product_loop_icon_animation ? $product_loop_icon_animation : get_theme_mod( 'penci_woocommerce_product_icon_hover_animation', 'move-right' );
 		$product_loop_icon_alignment = penci_shop_product_round_style( $product_loop_icon_style, $product_loop_icon_position );
 
+
 		$product_loop_name     = penci_is_mobile() ? 'mobile' : $product_loop_name;
 		$default_product_style = get_theme_mod( 'penci_woocommerce_product_style', 'style-1' );
 		$product_style         = 'list' == $product_display_style ? 'list' : $product_style;
@@ -1080,7 +1081,6 @@ if ( ! function_exists( 'penci_woocommerce_get_product_loop_class' ) ) {
 			'cross-sells',
 			'related',
 			'wishlist',
-			//'mobile',
 		) ) ? $default_product_style : $product_style;
 
 		$product_style = 'custom' == $product_loop_name && 'list' == $product_display_style ? $product_display_style : $product_style;
@@ -1093,6 +1093,7 @@ if ( ! function_exists( 'penci_woocommerce_get_product_loop_class' ) ) {
 		$classes[] = 'icon-position-' . $product_loop_icon_position;
 		$classes[] = 'icon-animation-' . $product_loop_icon_animation;
 		$classes[] = 'icon-align-' . $product_loop_icon_alignment;
+
 
 		return implode( ' ', $classes );
 	}
@@ -2550,7 +2551,7 @@ if ( ! function_exists( 'penci_elementor_products_template' ) ) {
 			$speed           = $settings['speed'] ? $settings['speed'] : 500;
 			$scroll_per_page = 'true' == $settings['scroll_per_page'] ? $slides_per_view : 1;
 			$data_attr[]     = 'data-speed=\'' . $speed . '\'';
-			$data_attr[]     = 'data-item=\'' . $scroll_per_page . '\'';
+			$data_attr[]     = 'data-item=\'' . $slides_per_view . '\'';
 			$data_attr[]     = 'data-desktop=\'' . $slides_per_view . '\'';
 			$data_attr[]     = 'data-tablet=\'' . $tablet_items . '\'';
 			$data_attr[]     = 'data-tabsmall=\'' . $tablet_items . '\'';
@@ -2584,6 +2585,7 @@ if ( ! function_exists( 'penci_elementor_products_template' ) ) {
 		wc_set_loop_prop( 'pagination', $settings['pagination'] );
 		wc_set_loop_prop( 'loop_rating', $settings['product_rating'] );
 		wc_set_loop_prop( 'loop_categories', $settings['product_categories'] );
+		wc_set_loop_prop( 'layout', $settings['layout'] );
 
 		wc_set_loop_prop( 'penci_woo_settings', wp_json_encode( array_intersect_key( $settings, penci_custom_product_query_default_args() ) ) );
 
@@ -2612,7 +2614,7 @@ if ( ! function_exists( 'penci_elementor_products_template' ) ) {
 		$loop_wrapper_classes[] = 'columns-' . esc_attr( $columns );
 
 		if ( 'carousel' === $settings['layout'] ) {
-			$loop_wrapper_classes[] = 'penci-owl-carousel penci-owl-carousel-slider display-style-carousel';
+			$loop_wrapper_classes[] = 'penci-owl-carousel swiper penci-owl-carousel-slider display-style-carousel';
 		}
 
 		$classes[]              = $section_id;
@@ -2624,7 +2626,10 @@ if ( ! function_exists( 'penci_elementor_products_template' ) ) {
 			if ( $preloader ) {
 				echo '<div class="penci-products-preloader"><span class="penci-loading-icon"><span class="bubble"></span><span class="bubble"></span><span class="bubble"></span></span></div>';
 			}
-			echo '<ul ' . implode( ' ', $data_attr ) . ' data-columns="' . esc_attr( $columns ) . '" class="' . implode( ' ', $loop_wrapper_classes ) . '">';
+			echo '<ul ' . implode( ' ', $data_attr ) . ' data-item="' . esc_attr( $columns ) . '" data-columns="' . esc_attr( $columns ) . '" class="' . implode( ' ', $loop_wrapper_classes ) . '">';
+			if ( 'carousel' === $settings['layout'] ) {
+				echo '<div class="swiper-wrapper">';
+			}
 			while ( $products->have_posts() ) :
 				$products->the_post();
 				wc_get_template_part( 'content', 'product' );
@@ -2638,6 +2643,10 @@ if ( ! function_exists( 'penci_elementor_products_template' ) ) {
 			}
 		} else {
 			echo penci_woo_translate_text( 'penci_woo_trans_noproductfount' );
+		}
+
+		if ( 'carousel' === $settings['layout'] ) {
+			echo '</div>';
 		}
 
 		echo '</div>';
@@ -3161,7 +3170,7 @@ add_action( 'wp_footer', function () {
 
 		?>
         <script type="text/javascript" id="penci_post_viewed_ids">
-          Cookies.set( 'penci_product_viewed_ids', <?php echo json_encode( $post_ids );?>);
+			Cookies.set( 'penci_product_viewed_ids', <?php echo json_encode( $post_ids );?>)
         </script>
 		<?php
 	}

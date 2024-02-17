@@ -49,9 +49,34 @@ $main_params = array(
 			'Style 29' => 'style-29',
 			'Style 35' => 'style-35',
 			'Style 37' => 'style-37',
-			'Style 38' => 'style-38'
+			'Style 38' => 'style-38',
+			'Style 39' => 'style-40',
 		),
 		'param_name' => 'style',
+	),
+	array(
+		'type'        => 'dropdown',
+		'heading'     => __( 'Carousel Effect', 'soledad' ),
+		'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+		'value'       => array(
+			'Default ( Slide )' => 'default',
+			'Swing'             => 'swing',
+		),
+		'param_name'  => 'carousel_slider_effect',
+	),
+	array(
+		'type'        => 'dropdown',
+		'heading'     => __( 'Slider Effect', 'soledad' ),
+		'description' => __( 'Some sliders do not support all effects listed below. The Creative effect is functioning correctly on styles 1, 3, 29, 30, 35, and 36. Style 39 only supports the "Fade" effect.', 'soledad' ),
+		'value'       => array(
+			'Slide'     => 'slide',
+			'Fade'      => 'fade',
+			'Coverflow' => 'coverflow',
+			'Flip'      => 'flip',
+			'Cards'     => 'cards',
+			'Creative'  => 'creative',
+		),
+		'param_name'  => 'single_slider_effect',
 	),
 	array(
 		'type'       => 'penci_switch',

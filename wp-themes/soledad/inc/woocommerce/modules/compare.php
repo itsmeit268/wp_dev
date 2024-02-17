@@ -91,7 +91,7 @@ class penci_product_compare {
 			$class       = ' added';
 		}
 
-		echo '<a data-method="add" href="' . $url . '" class="button compare penci-compare' . $class . '" data-pID="' . $product_id . '">' . $button_text . '</a></span>';
+		echo '<a data-method="add" href="' . $url . '" class="button compare penci-compare' . $class . '" data-pID="' . $product_id . '">' . $button_text . '</a>';
 	}
 
 	function add_to_compare() {
@@ -228,7 +228,7 @@ class penci_product_compare {
 	public function compare_html_table() {
 		$user_fields        = get_theme_mod( 'penci_woocommerce_compare_fields' );
 		$products           = $this->get_compared_products_data();
-		$fields             = $this->get_compare_fields( $user_fields );
+		$fields             = $this->get_compare_fields( explode( ',', $user_fields ) );
 		$empty_compare_text = penci_woo_translate_text( 'penci_woocommerce_compare_empty_text' );
 		$check_class        = '';
 		$total_producs      = count( $products );

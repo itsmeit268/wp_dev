@@ -11,6 +11,9 @@ class Penci_Export_Init {
 	protected $demo_lists = array();
 
 	public function __construct() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'wp_ajax_penci_export_content', array( $this, 'export_content' ) );
 		add_action( 'wp_ajax_penci_import_content', array( $this, 'import_content' ) );
@@ -154,7 +157,6 @@ class Penci_Export_Init {
 			if ( $total_demo >= 1 ) {
 				$this->demo_list( $demo_lists_define, $total_demo );
 			}
-			$this->demo_import_form( $total_demo );
 		}
 	}
 

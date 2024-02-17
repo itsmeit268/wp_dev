@@ -1469,7 +1469,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	opacity: 1;
 }
 .slick-slider .slick-arrow:before {
-	content: "\f11b";
+	content: "\f11a";
 	font-family: 'penciicon';
 	font-size: 20px;
 }
@@ -1480,7 +1480,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	left: 15px;
 }
 .slick-slider .slick-arrow.slick-prev:before {
-	content: "\f11a";
+	content: "\f11b";
 }
 .slick-slider .slick-arrow.slick-prev {
 	right: 0;
@@ -1947,6 +1947,9 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 .penci-product-loop-image {
 	position: relative;
 	overflow: hidden;
+}
+.penci-product-loop-image > img {
+	display: none;
 }
 .penci-product-loop-image .penci-image-loader {
 	position: absolute;
@@ -3467,8 +3470,7 @@ div.quantity.hidden {
 	}
 	.woocommerce-product-gallery.thumbnail-right .penci-thumbnail-slider,
 	.woocommerce-product-gallery.thumbnail-left .penci-thumbnail-slider {
-		margin-top: -5px;
-		height: calc(100% + 5px);
+		height: 100%
 	}
 	.woocommerce-product-gallery.thumbnail-right.no-js .penci-thumbnail-slider,
 	.woocommerce-product-gallery.thumbnail-left.no-js .penci-thumbnail-slider {
@@ -3480,14 +3482,10 @@ div.quantity.hidden {
 	display: none;
 }
 .woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-slider {
-	margin: 10px -2.5px 0 -5px;
+	margin: 10px 0 0 0;
 }
 .woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-slider {
 	position: relative;
-}
-.woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-slider .splide__track figure {
-	padding-left: 5px;
-	padding-right: 5px;
 }
 .woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-slider .splide__track figure img {
 	width: auto;
@@ -3569,8 +3567,8 @@ div.quantity.hidden {
 	transition: all 0.3s;
 	opacity: 0.5;
 }
-.woocommerce-product-gallery .penci-thumbnail-slider .slick-current figure,
-.woocommerce-product-gallery .penci-thumbnail-slider figure.is-active {
+.woocommerce-product-gallery .penci-thumbnail-slider figure.swiper-slide-visible,
+.woocommerce-product-gallery .penci-thumbnail-slider figure.swiper-slide-thumb-active {
 	opacity: 1;
 }
 .woocommerce div.product div.images.thumbnail-right .woocommerce-product-gallery__trigger {
@@ -6514,13 +6512,13 @@ body.open-sidecart .penci-sidebar-cart-close {
 .penci-products-tabs.tabs-design-simple .products-tabs-title .img-wrapper {
 	margin-right: 10px
 }
-.penci-products-tabs.tabs-design-simple .owl-nav,
+.penci-products-tabs.tabs-design-simple .penci-owl-nav,
 .penci-products-tabs.tabs-design-simple .wrap-loading-arrow {
 	position: absolute;
 	top: -62px;
 	animation: ease-in-out .5s ease both .3s
 }
-.penci-products-tabs.tabs-design-simple .owl-nav > div,
+.penci-products-tabs.tabs-design-simple .penci-owl-nav > div,
 .penci-products-tabs.tabs-design-simple .wrap-loading-arrow > div {
 	position: static;
 	visibility: visible;
@@ -6531,13 +6529,13 @@ body.open-sidecart .penci-sidebar-cart-close {
 	pointer-events: visible;
 	opacity: 1;
 }
-.penci-products-tabs.tabs-design-simple .owl-nav > div:after,
+.penci-products-tabs.tabs-design-simple .penci-owl-nav > div:after,
 .penci-products-tabs.tabs-design-simple .wrap-loading-arrow > div:after {
 	font-size: 14px;
 	font-weight: 700;
 }
-.penci-products-tabs.tabs-design-simple .owl-nav > div[class*="prev"],
-.penci-products-tabs.tabs-design-simple .owl-nav > div[class*="next"],
+.penci-products-tabs.tabs-design-simple .penci-owl-nav > div[class*="prev"],
+.penci-products-tabs.tabs-design-simple .penci-owl-nav > div[class*="next"],
 .penci-products-tabs.tabs-design-simple .wrap-loading-arrow > div[class*="prev"],
 .penci-products-tabs.tabs-design-simple .wrap-loading-arrow > div[class*="next"] {
 	margin: 0;
@@ -6546,21 +6544,21 @@ body.open-sidecart .penci-sidebar-cart-close {
 .penci-products-tabs.tabs-design-simple .wrap-loading-arrow {
 	right: -10px
 }
-.penci-products-tabs.tabs-design-simple .owl-nav {
+.penci-products-tabs.tabs-design-simple .penci-owl-nav {
 	right: 0
 }
-.penci-products-tabs.tabs-design-simple .penci-carousel-spacing-30 .owl-nav {
+.penci-products-tabs.tabs-design-simple .penci-carousel-spacing-30 .penci-owl-nav {
 	right: 5px
 }
-.penci-products-tabs.tabs-design-simple .owl-loaded:after,
-.penci-products-tabs.tabs-design-simple .owl-loaded:before {
+.penci-products-tabs.tabs-design-simple .penci-owl-loaded:after,
+.penci-products-tabs.tabs-design-simple .penci-owl-loaded:before {
 	content: none
 }
 .penci-products-tabs.tabs-design-simple .penci-products-loader .penci-loader {
 	position: absolute;
 	top: 30px
 }
-.penci-products-tabs.tabs-design-simple .penci-tab-content.loading .owl-nav,
+.penci-products-tabs.tabs-design-simple .penci-tab-content.loading .penci-owl-nav,
 .penci-products-tabs.tabs-design-simple .penci-tab-content.loading .wrap-loading-arrow {
 	display: none
 }
@@ -6626,7 +6624,7 @@ body #main .penci-products-tabs .penci-tab-content-container.pre-load-content ul
 	animation: pencirotate 450ms infinite linear
 }
 @media only screen and (max-width: 1169px) {
-	.penci-products-tabs.tabs-design-simple .owl-nav > div,
+	.penci-products-tabs.tabs-design-simple .penci-owl-nav > div,
 	.penci-products-tabs.tabs-design-simple .wrap-loading-arrow > div {
 		justify-content: center
 	}
@@ -6683,11 +6681,11 @@ body #main .penci-products-tabs .penci-tab-content-container.pre-load-content ul
 		padding-top: 10px;
 		border-top: 2px solid #EAEAEA
 	}
-	.penci-products-tabs.tabs-design-simple .owl-nav,
+	.penci-products-tabs.tabs-design-simple .penci-owl-nav,
 	.penci-products-tabs.tabs-design-simple .wrap-loading-arrow {
 		top: -103px
 	}
-	.penci-products-tabs.tabs-design-simple .owl-carousel .owl-nav {
+	.penci-products-tabs.tabs-design-simple .owl-carousel .penci-owl-nav {
 		right: -5px
 	}
 }
@@ -7412,7 +7410,7 @@ li.product .penci-product-cats {
 	max-height: 60px;
 	display: inline-block;
 }
-.brands-carousel .owl-carousel:not(.owl-loaded),
+.brands-carousel .owl-carousel:not(.penci-owl-loaded),
 .brands-carousel .owl-stage {
 	display: flex;
 	align-items: center;
@@ -7459,7 +7457,7 @@ li.product .penci-product-cats {
 	border: 0;
 }
 .brands-style-bordered.brands-carousel .owl-stage-outer,
-.brands-style-bordered.brands-carousel .owl-carousel:not(.owl-loaded) {
+.brands-style-bordered.brands-carousel .owl-carousel:not(.penci-owl-loaded) {
 	border: 1px solid var(--pcpage_gbdr_cl);
 }
 .brands-style-bordered.brands-carousel .owl-stage-outer {
@@ -7482,7 +7480,7 @@ li.product .penci-product-cats {
 	padding-bottom: 10px;
 	border-bottom: 1px solid var(--pcpage_gbdr_cl);
 }
-.brands-style-bordered[data-hide_pagination_control="no"] .owl-carousel:not(.owl-loaded) {
+.brands-style-bordered[data-hide_pagination_control="no"] .owl-carousel:not(.penci-owl-loaded) {
 	padding-bottom: 0 !important;
 }
 .brands-hover-simple .brand-item img {
@@ -8821,11 +8819,10 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
 	flex-wrap: nowrap;
 	overflow: hidden;
 }
-.woocommerce ul.products.penci-owl-carousel.owl-loaded {
-	overflow: visible;
+.woocommerce ul.products.penci-owl-carousel.penci-owl-loaded {
 	flex-wrap: wrap;
 }
-.woocommerce ul.products.penci-owl-carousel.owl-loaded li.product {
+.woocommerce ul.products.penci-owl-carousel.penci-owl-loaded li.product {
 	width: 100%;
 }
 .select2-container .select2-selection--single .select2-selection__rendered {
@@ -9039,7 +9036,7 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
 .woocommerce-page ul.products ul.penci-woo-product-loop-categories.display-style-carousel.columns-2 li.product {
 	width: calc(50% - 15px);
 }
-.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel.owl-loaded {
+.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel.penci-owl-loaded {
 	flex-wrap: wrap;
 	overflow: visible;
 }
@@ -9048,10 +9045,10 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
 	padding: 1px;
 	margin-right: 30px;
 }
-.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel.owl-loaded li,
-.woocommerce ul.products ul.penci-woo-product-loop-categories.owl-loaded li.product,
-.woocommerce-page ul.products ul.penci-woo-product-loop-categories.owl-loaded li.product,
-.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel.owl-loaded li {
+.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel.penci-owl-loaded li,
+.woocommerce ul.products ul.penci-woo-product-loop-categories.penci-owl-loaded li.product,
+.woocommerce-page ul.products ul.penci-woo-product-loop-categories.penci-owl-loaded li.product,
+.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel.penci-owl-loaded li {
 	width: 100% !important;
 	max-width: unset;
 	padding: 1px;
@@ -9104,10 +9101,10 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
 		width: calc(50% - 10px) !important;
 		margin-right: 20px !important;
 	}
-	.woocommerce ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.owl-loaded li.product-category,
-	.woocommerce-page ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.owl-loaded li.product-category,
-	.woocommerce .penci_sidebar ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.owl-loaded li.product-category,
-	.woocommerce-page .penci_sidebar ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.owl-loaded li.product-category {
+	.woocommerce ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.penci-owl-loaded li.product-category,
+	.woocommerce-page ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.penci-owl-loaded li.product-category,
+	.woocommerce .penci_sidebar ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.penci-owl-loaded li.product-category,
+	.woocommerce-page .penci_sidebar ul.products.mobile-columns-2:not(.penci-owl-carousel):not(.product-list) ul.products.penci-woo-product-loop-categories.penci-owl-carousel.penci-owl-loaded li.product-category {
 		width: 100% !important;
 		margin-right: 0 !important;
 	}
@@ -9138,7 +9135,7 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
 	.woocommerce-page ul.products.columns-4:not(.display-style-carousel) > li.product:nth-child( 4n+4 ) {
 		margin-right: 0;
 	}
-	.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel:not(.owl-loaded) li {
+	.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel:not(.penci-owl-loaded) li {
 		margin-right: 30px !important;
 	}
 }
@@ -9195,7 +9192,7 @@ nav.woocommerce-MyAccount-navigation ul li a:hover {
 	.woocommerce-page .woocommerce-pagination ul.page-numbers li {
 		float: none;
 	}
-	.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel:not(.owl-loaded) li {
+	.woocommerce .products ul.penci-woo-product-loop-categories.display-style-carousel:not(.penci-owl-loaded) li {
 		margin-right: 30px !important;
 	}
 	body.woocommerce-cart .entry-content .woocommerce .woocommerce-cart-form, body.woocommerce-cart .entry-content .woocommerce .cart-collaterals {
@@ -9470,26 +9467,24 @@ body #main .elementor-widget-penci_products .pre-load-content .penci-custom-prod
 .quick-shop-wrapper .variations_form.has-selected-swatch {
 	margin-bottom: 40px;
 }
-.no-js .penci-thumbnail-slider.splide .penci-custom-thumbnail-nav {
-	display: none;
-}
-.no-js .penci-thumbnail-slider.splide .penci-thumbnail-image-list {
-	text-align: center;
-}
-.no-js .penci-thumbnail-slider.splide .penci-thumbnail-image-list figure {
+.penci-thumbnail-image-wrapper:not(.swiper-initialized) figure {
 	display: inline-block;
 	max-width: 100px;
+	max-height: 100px;
 	height: auto;
 	padding-bottom: 6px;
 	opacity: 1;
 }
-.no-js.woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-slider .splide__track .penci-thumbnail-image-list {
-	white-space: nowrap;
-	overflow: hidden;
-	max-height: 116px;
+.thumbnail-right .penci-thumbnail-image-wrapper figure,
+.thumbnail-left .penci-thumbnail-image-wrapper figure {
+	max-height: 107.8px;
 }
-.no-js.woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-slider .splide__track .penci-thumbnail-image-list figure {
-	max-width: 116px;
+.woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-image-wrapper figure {
+	max-width: 106px;
+	margin-right: 10px;
+}
+.penci-content-quickview .woocommerce-product-gallery.thumbnail-bottom .penci-thumbnail-image-wrapper figure {
+	max-width: 82.6px;
 }
 .woocommerce div.product div.images.no-js .woocommerce-product-gallery__wrapper:not(:first-child) {
 	display: none;
@@ -9526,6 +9521,11 @@ body #main .elementor-widget-penci_products .pre-load-content .penci-custom-prod
 	float: none;
 	flex-shrink: 0;
 }
+.products.penci-owl-carousel:not(.penci-owl-loaded) > .swiper-wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
 .woocommerce .slider > ul.products.columns-2 li,
 .slider > ul.products.penci-owl-carousel-slider.columns-2 li,
 .products.slider ul.products.penci-owl-carousel-slider.columns-2 li {
@@ -9551,12 +9551,12 @@ body #main .elementor-widget-penci_products .pre-load-content .penci-custom-prod
 .products.slider ul.products.penci-owl-carousel-slider.columns-6 li {
 	width: calc(16.6666666667% - 25px);
 }
-.woocommerce .slider > ul.products.penci-owl-carousel-slider.owl-loaded,
-.products.slider ul.products.penci-owl-carousel-slider.owl-loaded {
+.woocommerce .slider > ul.products.penci-owl-carousel-slider.penci-owl-loaded,
+.products.slider ul.products.penci-owl-carousel-slider.penci-owl-loaded {
 	flex-wrap: wrap;
 }
-.woocommerce .slider > ul.products.penci-owl-carousel-slider.owl-loaded li.product,
-.products.slider ul.products.penci-owl-carousel-slider.owl-loaded li.product {
+.woocommerce .slider > ul.products.penci-owl-carousel-slider.penci-owl-loaded li.product,
+.products.slider ul.products.penci-owl-carousel-slider.penci-owl-loaded li.product {
 	width: 100%;
 	margin-right: 0;
 	padding: 0;
@@ -9589,4 +9589,10 @@ body #main .elementor-widget-penci_products .pre-load-content .penci-custom-prod
 }
 .pc-proterm-description:empty {
 	display: none;
+}
+.woocommerce-no-js .woocommerce-tabs .woocommerce-Tabs-panel {
+	display: none;
+}
+.woocommerce-no-js .woocommerce-tabs .tabs + .woocommerce-Tabs-panel {
+	display: block;
 }

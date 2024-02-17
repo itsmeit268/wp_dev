@@ -12,6 +12,7 @@
  *
  * @see         https://docs.woocommerce.com/document/template-structure/
  * @package     WooCommerce\Templates
+ * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,6 +22,7 @@ $classes   = array();
 $classes[] = penci_woocommerce_get_product_loop_class();
 $classes[] = 'products mobile-columns-' . wc_get_loop_prop( 'mobile-columns' );
 $classes[] = 'columns-' . wc_get_loop_prop( 'columns' );
+$classes   = apply_filters( 'penci_woo_loop_start', $classes );
 ?>
-<ul data-columns="<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>"
+<ul data-item="<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>" data-columns="<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>"
     class="<?php echo implode( ' ', $classes ); ?>">

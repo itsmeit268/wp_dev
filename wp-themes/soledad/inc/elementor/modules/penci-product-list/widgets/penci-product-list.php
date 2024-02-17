@@ -219,7 +219,7 @@ class PenciProductList extends Base_Widget {
 					'bestselling'        => esc_html__( 'Bestsellers', 'soledad' ),
 					'ids'                => esc_html__( 'List of IDs', 'soledad' ),
 					'top_rated_products' => esc_html__( 'Top Rated Products', 'soledad' ),
-					'recent_viewed' => esc_html__( 'Recent Viewed Products', 'soledad' ),
+					'recent_viewed'      => esc_html__( 'Recent Viewed Products', 'soledad' ),
 				),
 			]
 		);
@@ -599,6 +599,17 @@ class PenciProductList extends Base_Widget {
 			)
 		);
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control(
 			'autoplay', array(
 				'label'   => __( 'Autoplay', 'soledad' ),
@@ -609,9 +620,10 @@ class PenciProductList extends Base_Widget {
 
 		$this->add_control(
 			'loop', array(
-				'label'   => __( 'Carousel Loop', 'soledad' ),
-				'type'    => Controls_Manager::SWITCHER,
-				'default' => 'yes',
+				'label'     => __( 'Carousel Loop', 'soledad' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'yes',
+				'condition' => [ 'carousel_slider_effect' => 'default' ],
 			)
 		);
 		$this->add_control(
@@ -954,10 +966,13 @@ class PenciProductList extends Base_Widget {
 			$thumbnail = $mthumb_size;
 		}
 
+		$item_class = 'normal-item';
+
 		$inner_wrapper_class = 'pcsl-inner penci-clearfix';
 		$inner_wrapper_class .= ' pcsl-' . $type;
 		if ( 'crs' == $type ) {
-			$inner_wrapper_class .= ' penci-owl-carousel penci-owl-carousel-slider';
+			$item_class          = 'swiper-slide';
+			$inner_wrapper_class .= ' swiper penci-owl-carousel penci-owl-carousel-slider';
 		}
 		$inner_wrapper_class .= ' pcsl-imgpos-' . $imgpos;
 		$inner_wrapper_class .= ' pcsl-col-' . $column;
@@ -968,8 +983,8 @@ class PenciProductList extends Base_Widget {
 		}
 		$data_slider = '';
 		if ( 'crs' == $type ) {
-			$data_slider .= $settings['showdots'] ? ' data-dots="true"' : '';
-			$data_slider .= ! $settings['shownav'] ? ' data-nav="true"' : '';
+			$data_slider .= $settings['showdots'] ? ' data-dots="true"' : ' data-dots="false"';
+			$data_slider .= $settings['shownav'] ? ' data-nav="true"' : ' data-nav="false"';
 			$data_slider .= ! $settings['loop'] ? ' data-loop="true"' : '';
 			$data_slider .= ' data-auto="' . ( 'yes' == $settings['autoplay'] ? 'true' : 'false' ) . '"';
 			$data_slider .= $settings['auto_time'] ? ' data-autotime="' . $settings['auto_time'] . '"' : ' data-autotime="4000"';
@@ -980,6 +995,7 @@ class PenciProductList extends Base_Widget {
 			$data_slider .= ' data-tablet="' . ( isset( $settings['tab_column'] ) && $settings['tab_column'] ? $settings['tab_column'] : '2' ) . '"';
 			$data_slider .= ' data-tabsmall="' . ( isset( $settings['tab_column'] ) && $settings['tab_column'] ? $settings['tab_column'] : '2' ) . '"';
 			$data_slider .= ' data-mobile="' . ( isset( $settings['mb_column'] ) && $settings['mb_column'] ? $settings['mb_column'] : '1' ) . '"';
+			$data_slider .= ' data-ceffect="' . $settings['carousel_slider_effect'] . '"';
 		}
 
 		// product query
@@ -1201,63 +1217,72 @@ class PenciProductList extends Base_Widget {
 				?>
                 <div class="penci-smalllist pcsl-wrapper">
                     <div class="<?php echo $inner_wrapper_class; ?>"<?php echo $data_slider; ?>>
-						<?php while ( $products->have_posts() ) : $products->the_post(); ?>
-                            <div class="pcsl-item<?php if ( 'yes' == $settings['hide_thumb'] || ! has_post_thumbnail() ) {
-								echo ' pcsl-nothumb';
-							} ?>">
-                                <div class="pcsl-itemin">
-                                    <div class="pcsl-iteminer">
-										<?php if ( 'yes' != $settings['hide_thumb'] && has_post_thumbnail() ) { ?>
-                                            <div class="pcsl-thumb">
-												<?php if ( 'yes' != $settings['disable_lazy'] ) { ?>
-                                                    <a href="<?php the_permalink(); ?>"
-                                                       class="penci-image-holder penci-lazy"<?php if ( 'yes' == $settings['nocrop'] ) {
-														echo ' style="padding-bottom: ' . penci_get_featured_image_padding_markup( get_the_ID(), $thumbnail, true ) . '%"';
-													} ?>
-                                                       data-bgset="<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>">
-                                                    </a>
-												<?php } else { ?>
-                                                    <a href="<?php the_permalink(); ?>" class="penci-image-holder"
-                                                       style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>');<?php if ( 'yes' == $settings['nocrop'] ) {
-														   echo 'padding-bottom: ' . penci_get_featured_image_padding_markup( get_the_ID(), $thumbnail, true ) . '%';
-													   } ?>">
-                                                    </a>
-												<?php } ?>
+						<?php if ( 'crs' == $type ) : ?>
+                        <div class="swiper-wrapper">
+							<?php endif; ?>
+							<?php while ( $products->have_posts() ) : $products->the_post(); ?>
+                                <div class="pcsl-item<?php if ( 'yes' == $settings['hide_thumb'] || ! has_post_thumbnail() ) {
+									echo ' pcsl-nothumb';
+								}
+								echo ' ' . $item_class; ?>">
+                                    <div class="pcsl-itemin">
+                                        <div class="pcsl-iteminer">
+											<?php if ( 'yes' != $settings['hide_thumb'] && has_post_thumbnail() ) { ?>
+                                                <div class="pcsl-thumb">
+													<?php if ( 'yes' != $settings['disable_lazy'] ) { ?>
+                                                        <a href="<?php the_permalink(); ?>"
+                                                           class="penci-image-holder penci-lazy"<?php if ( 'yes' == $settings['nocrop'] ) {
+															echo ' style="padding-bottom: ' . penci_get_featured_image_padding_markup( get_the_ID(), $thumbnail, true ) . '%"';
+														} ?>
+                                                           data-bgset="<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>">
+                                                        </a>
+													<?php } else { ?>
+                                                        <a href="<?php the_permalink(); ?>" class="penci-image-holder"
+                                                           style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $thumbnail ); ?>');<?php if ( 'yes' == $settings['nocrop'] ) {
+															   echo 'padding-bottom: ' . penci_get_featured_image_padding_markup( get_the_ID(), $thumbnail, true ) . '%';
+														   } ?>">
+                                                        </a>
+													<?php } ?>
+                                                </div>
+											<?php } ?>
+                                            <div class="pcsl-content">
+
+												<?php if ( $settings['product_cat'] !== 'on' ): ?>
+                                                    <div class="cat pcsl-cat">
+														<?php $this->product_categories_link(); ?>
+                                                    </div>
+												<?php endif; ?>
+
+                                                <div class="pcsl-title">
+                                                    <a href="<?php the_permalink(); ?>"><?php
+	                                                    
+                                                        if ( ! $title_length ) {
+															the_title();
+														} else {
+															echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $title_length, '...' );
+														} ?></a>
+                                                </div>
+
+												<?php if ( $settings['product_price'] !== 'on' ): ?>
+
+                                                    <div class="pcsl-price">
+														<?php woocommerce_template_loop_price(); ?>
+                                                    </div>
+												<?php endif; ?>
+
+												<?php if ( $settings['product_rating'] !== 'on' ): ?>
+                                                    <div class="pcsl-rating">
+														<?php woocommerce_template_loop_rating(); ?>
+                                                    </div>
+												<?php endif; ?>
                                             </div>
-										<?php } ?>
-                                        <div class="pcsl-content">
-
-											<?php if ( $settings['product_cat'] !== 'on' ): ?>
-                                                <div class="cat pcsl-cat">
-													<?php $this->product_categories_link(); ?>
-                                                </div>
-											<?php endif; ?>
-
-                                            <div class="pcsl-title">
-                                                <a href="<?php the_permalink(); ?>"><?php if ( ! $title_length ) {
-														the_title();
-													} else {
-														echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $title_length, '...' );
-													} ?></a>
-                                            </div>
-
-											<?php if ( $settings['product_price'] !== 'on' ): ?>
-
-                                                <div class="pcsl-price">
-													<?php woocommerce_template_loop_price(); ?>
-                                                </div>
-											<?php endif; ?>
-
-											<?php if ( $settings['product_rating'] !== 'on' ): ?>
-                                                <div class="pcsl-rating">
-													<?php woocommerce_template_loop_rating(); ?>
-                                                </div>
-											<?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-						<?php endwhile; ?>
+							<?php endwhile; ?>
+							<?php if ( 'crs' == $type ) : ?>
+                        </div>
+					<?php endif; ?>
                     </div>
                 </div>
 				<?php

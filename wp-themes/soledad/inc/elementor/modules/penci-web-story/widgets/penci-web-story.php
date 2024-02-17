@@ -207,7 +207,7 @@ class PenciWebStory extends Base_Widget {
 			'range'          => array( 'px' => array( 'min' => 2, 'max' => 12 ) ),
 			'selectors'      => [
 				'{{WRAPPER}} .pc-wstories-wrapper .pc-wstories-list.grid .pc-webstory-item'                    => 'width:calc(100% / {{SIZE}})',
-				'{{WRAPPER}} .pc-wstories-wrapper .pc-wstories-list.slider:not(.owl-loaded) .pc-webstory-item' => 'width:calc(100% / {{SIZE}})',
+				'{{WRAPPER}} .pc-wstories-wrapper .pc-wstories-list.slider:not(.penci-owl-loaded) .pc-webstory-item' => 'width:calc(100% / {{SIZE}})',
 			],
 		) );
 		$this->add_responsive_control( 'onerow_cw', array(
@@ -276,6 +276,16 @@ class PenciWebStory extends Base_Widget {
 			'condition' => array( 'layout' => 'slider' ),
 		) );
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'   => __( 'Carousel Slider Effect', 'soledad' ),
+			'type'    => Controls_Manager::SELECT,
+			'default' => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options' => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control( 'autoplay', array(
 			'label'   => __( 'Autoplay', 'soledad' ),
 			'type'    => Controls_Manager::SWITCHER,
@@ -286,6 +296,7 @@ class PenciWebStory extends Base_Widget {
 			'label'   => __( 'Carousel Loop', 'soledad' ),
 			'type'    => Controls_Manager::SWITCHER,
 			'default' => 'yes',
+			'condition' => [ 'carousel_slider_effect' => 'default' ],
 		) );
 		$this->add_control( 'auto_time', array(
 			'label'   => __( 'Carousel Auto Time ( 1000 = 1s )', 'soledad' ),

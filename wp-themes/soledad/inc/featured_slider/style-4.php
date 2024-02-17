@@ -12,7 +12,7 @@ $image_size          = get_theme_mod( 'featured_slider_imgsize' ) ? get_theme_mo
 $image_mobile_size = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_theme_mod( 'featured_slider_imgsize_mobile' ) : 'penci-masonry-thumb';
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
+    <div class="item swiper-slide">
 	    <?php do_action( 'penci_bookmark_post' ); ?>
 		<?php if ( ! get_theme_mod( 'penci_disable_lazyload_slider' ) ) { ?>
             <a class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
@@ -25,7 +25,7 @@ $image_mobile_size = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_the
 		<?php } ?>
         <div class="penci-slider4-overlay">
             <a class="overlay-link"
-               aria-label="<?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), 6, '...' ); ?>"
+               aria-label="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
                href="<?php the_permalink(); ?>"></a>
             <div class="penci-featured-content">
                 <div class="feat-text<?php if ( get_theme_mod( 'penci_featured_meta_date' ) ): echo ' slider-hide-date'; endif; ?>">

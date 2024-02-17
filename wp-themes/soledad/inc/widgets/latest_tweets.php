@@ -54,7 +54,7 @@ if ( ! class_exists( 'penci_latest_tweets_widget' ) ) {
 			$align    = isset( $instance['align'] ) ? $instance['align'] : '';
 			$style    = isset( $instance['style'] ) ? $instance['style'] : 'slider';
 			$number   = isset( $instance['number'] ) ? $instance['number'] : 5;
-			$classes  = 'slider' == $style ? 'penci-owl-carousel penci-owl-carousel-slider penci-tweets-slider' : 'penci-tweets-lists';
+			$classes  = 'slider' == $style ? 'swiper penci-owl-carousel penci-owl-carousel-slider penci-tweets-slider' : 'penci-tweets-lists';
 			if ( function_exists( 'penci_getTweets' ) ) {
 				$tweets = penci_getTweets( $number );
 

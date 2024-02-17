@@ -41,7 +41,7 @@ $upload_preview_wrapper = $wrapper = isset( $wrapper ) && ! empty( $wrapper ) ? 
         </div>
         <div id="<?php echo esc_attr( $button ); ?>" class="penci-upload-img-btn <?php echo $btn_class; ?>">
             <i class="fa fa-folder-open-o"></i>
-            <span><?php echo isset( $heading ) && $heading ? $heading : penci_get_setting( 'cimage' ); ?></span>
+            <span><?php echo isset( $heading ) && $heading ? $heading : penci_get_setting( 'penci_trans_cimage' ); ?></span>
         </div>
 	<?php else : ?>
 		<?php echo apply_filters( 'penci_enable_upload_msg', '' ); ?>
@@ -66,9 +66,9 @@ $upload_preview_wrapper = $wrapper = isset( $wrapper ) && ! empty( $wrapper ) ? 
                     }
 
                     file_frame = wp.media.frames.file_frame = wp.media({
-                        title: '<?php echo penci_get_setting( 'admedia' ); ?>',
+                        title: '<?php echo penci_get_setting( 'penci_trans_admedia' ); ?>',
                         button: {
-                            text: '<?php echo penci_get_setting( 'insert' ); ?>',
+                            text: '<?php echo penci_get_setting( 'penci_trans_insert' ); ?>',
                         },
                         library: {
                             type:

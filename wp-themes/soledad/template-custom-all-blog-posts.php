@@ -66,6 +66,7 @@ if ( in_array( $page_meta, array(
 	'style-36',
 	'style-37',
 	'style-38',
+	'style-40',
 	'video'
 ) ) ) {
 	if ( $page_meta == 'video' && get_theme_mod( 'penci_featured_video_url' ) ) {
@@ -187,12 +188,35 @@ if ( in_array( $page_meta, array(
 					'style-28'
 				) ) ): $slider_class .= ' penci-flat-overlay'; endif;
 
+			$slider_lib = 'elsl-' . $page_meta;;
+
+			$swiper = true;
+
+			if ( $page_meta == 'style-40' ) {
+				wp_enqueue_script( 'ff40' );
+				wp_enqueue_script( 'gsap' );
+				$slider_lib .= ' no-df-swiper';
+				$swiper     = false;
+			}
+
+			if ( $swiper ) {
+				$slider_lib .= ' swiper penci-owl-carousel';
+			}
+
 			echo '<div class="featured-area featured-' . $slider_class . '">' . $open_container;
 			if ( $page_meta == 'style-37' ):
 				echo '<div class="penci-featured-items-left">';
 			endif;
-			echo '<div class="penci-owl-carousel penci-owl-featured-area"' . $data_res . ' data-style="' . $page_meta . '" data-auto="' . $data_auto . '" data-autotime="' . $auto_time . '" data-speed="' . $auto_speed . '" data-loop="' . $data_loop . '">';
+			echo '<div class="' . $slider_lib . ' penci-owl-featured-area"' . $data_res . ' data-style="' . $page_meta . '" data-auto="' . $data_auto . '" data-autotime="' . $auto_time . '" data-speed="' . $auto_speed . '" data-loop="' . $data_loop . '">';
+			if ( $swiper ) {
+				echo '<div class="penci-owl-nav"><div class="owl-prev"><i class="penciicon-left-chevron"></i></div><div class="owl-next"><i class="penciicon-right-chevron"></i></div></div>';
+				echo '<div class="swiper-wrapper">';
+			}
+
 			get_template_part( 'inc/featured_slider/' . $page_meta );
+			if ( $swiper && $page_meta != 'style-37' ) {
+				echo '</div>';
+			}
 			echo '</div>';
 			echo $close_container . '</div>';
 		}

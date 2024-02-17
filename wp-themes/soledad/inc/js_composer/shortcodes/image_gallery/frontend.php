@@ -39,9 +39,6 @@ $css_class .= ' ' . apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to
 $slider_id      = rand( 1000, 100000 );
 $block_id       = 'penci-image_gallery_' . $slider_id;
 $thumbnail_html = '';
-if( $type == 'thumbnail-slider'){
-    wp_enqueue_script('penci-slick');
-}
 ?>
     <div data-sliderid="<?php echo esc_attr( $slider_id ); ?>" id="<?php echo esc_attr( $block_id ); ?>"
          class="<?php echo esc_attr( $css_class ); ?>">
@@ -113,13 +110,13 @@ if( $type == 'thumbnail-slider'){
 				}
 
 				if ( 'single-slider' == $style_gallery ) {
-					echo '<div class="penci-owl-carousel penci-owl-carousel-slider penci-nav-visible" data-auto="' . ( 'yes' == $slider_autoplay ? 'true' : 'false' ) . '" data-lazy="true">';
+					echo '<div class="penci-owl-carousel swiper penci-owl-carousel-slider penci-nav-visible" data-auto="' . ( 'yes' == $slider_autoplay ? 'true' : 'false' ) . '" data-lazy="true"><div class="swiper-wrapper">';
 				}
 
 				$posts = get_posts( array( 'include' => $images, 'post_type' => 'attachment' ) );
 
 				if ( $style_gallery == 'thumbnail-slider' ):
-					echo '<div class="penci-slick-carousel pcthumb-s-msl pcthumb-m-' . $slider_id . '">';
+					echo '<div data-id="pcthumb-m-' . $slider_id . '" class="swiper penci-slick-carousel pcthumb-s-msl pcthumb-m-' . $slider_id . '"><div class="swiper-wrapper">';
 				endif;
 
 
@@ -151,7 +148,7 @@ if( $type == 'thumbnail-slider'){
 						}
 
 						if ( 'single-slider' == $style_gallery || 'thumbnail-slider' == $style_gallery ) {
-							echo '<figure>';
+							echo '<figure class="swiper-slide">';
 							$get_masonry = wp_get_attachment_image_src( $imagePost->ID, 'penci-full-thumb' );
 							$thumbsize   = 'penci-full-thumb';
 						}
@@ -198,7 +195,7 @@ if( $type == 'thumbnail-slider'){
 
 						if ( $style_gallery == 'thumbnail-slider' ) {
 							$get_thumbnail_slider_img = wp_get_attachment_image_src( $imagePost->ID, 'thumbnail' );
-							$thumbnail_html           .= '<div class="pcgl-thumb-item"><div class="pcgl-thumb-item-img"><span class="penci-image-holder" style="background-image:url(' . $get_thumbnail_slider_img[0] . ')"></div></div>';
+							$thumbnail_html           .= '<div class="pcgl-thumb-item swiper-slide"><div class="pcgl-thumb-item-img"><span class="penci-image-holder" style="background-image:url(' . $get_thumbnail_slider_img[0] . ')"></div></div>';
 						}
 					}
 				}
@@ -207,9 +204,13 @@ if( $type == 'thumbnail-slider'){
 					echo '</div>';
 				}
 
-				if ( $style_gallery == 'thumbnail-slider' ) {
-					echo '<div class="pcthumb-s-csl pcgl-thumb-slider penci-slick-carousel pcthumb-c-' . $slider_id . '">' . $thumbnail_html . '</div>';
-					echo '<div class="penci-slick-carousel-top-nav"><div class="pcslick-nav-area"><div class="pcslick-nav"><button type="button" class="slick-prev"><i class="penciicon-left-chevron"></i></button><button type="button" class="slick-next"><i class="penciicon-right-chevron"></i></button></div><div class="slider-num"><span class="current">1</span>' . __( ' of ', 'soledad' ) . '<span class="total">' . count( $posts ) . '</span></div></div></div>';
+				if ( 'single-slider' == $style_gallery || 'thumbnail-slider' == $style_gallery ) {
+					echo '</div>';
+				}
+
+				if ($style_gallery == 'thumbnail-slider') {
+					$nav = '<div class="penci-slick-carousel-top-nav"><div class="pcslick-nav-area"><div class="pcslick-nav"><button type="button" class="slick-prev"><i class="penciicon-left-chevron"></i></button><button type="button" class="slick-next"><i class="penciicon-right-chevron"></i></button></div><div class="slider-num"><span class="current">1</span>' . __(' of ', 'soledad') . '<span class="total">' . count($posts) . '</span></div></div></div>';
+					echo '<div data-cols="7" data-total="'.count($posts).'" data-id="pcthumb-c-' . $slider_id . '" class="swiper pcthumb-s-csl pcgl-thumb-slider penci-slick-carousel pcthumb-c-' . $slider_id . '"><div class="swiper-wrapper">' . $thumbnail_html . '</div>'.$nav.'</div>';
 				}
 
 				echo '</div>';

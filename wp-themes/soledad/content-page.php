@@ -9,6 +9,7 @@
 $pagetitle   = get_post_meta( $post->ID, 'penci_page_display_title', true );
 $sharebox    = get_post_meta( $post->ID, 'penci_page_sharebox', true );
 $block_style = get_theme_mod( 'penci_blockquote_style' ) ? get_theme_mod( 'penci_blockquote_style' ) : 'style-1';
+$heading_style = penci_get_heading_style();
 
 $show_page_title = penci_is_pageheader();
 $flag_ptitle     = true;
@@ -61,7 +62,7 @@ if ( penci_is_mobile() ) {
         </div>
 	<?php endif; ?>
 
-    <div class="post-entry <?php echo 'blockquote-' . $block_style; ?><?php if ( get_theme_mod( 'penci_page_comments' ) && get_theme_mod( 'penci_page_share' ) ): echo ' page-has-margin'; endif; ?>">
+    <div class="post-entry <?php echo $heading_style; ?> <?php echo 'blockquote-' . $block_style; ?><?php if ( get_theme_mod( 'penci_page_comments' ) && get_theme_mod( 'penci_page_share' ) ): echo ' page-has-margin'; endif; ?>">
         <div class="inner-post-entry entry-content">
 			<?php the_content(); ?>
 			<?php wp_link_pages(); ?>

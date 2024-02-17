@@ -10,16 +10,15 @@ $penci_is_mobile = penci_is_mobile();
 
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
+    <div class="item swiper-slide swiper-mark-item">
 	    <?php do_action( 'penci_bookmark_post' ); ?>
 		<?php if ( ! $disable_lazyload ) { ?>
-            <a class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
+            <div class="penci-swiper-mask penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
                data-bgset="<?php echo penci_image_srcset( get_the_ID(), $post_thumb_size,$post_thumb_mobile_size ); ?>"
-               href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
-		<?php } else { ?>
-            <a class="penci-image-holder"
+               href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
+            <div class="penci-swiper-mask penci-image-holder"
                style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $penci_is_mobile ? $post_thumb_mobile_size : $post_thumb_size ); ?>');"
-               href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
+               href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 		<?php } ?>
 		<?php if ( ! $center_box ): ?>
             <div class="penci-featured-content-right">
@@ -72,6 +71,7 @@ $penci_is_mobile = penci_is_mobile();
                 </div>
             </div>
 		<?php endif; ?>
+        </div>
     </div>
 <?php endwhile;
 	wp_reset_postdata(); endif; ?>

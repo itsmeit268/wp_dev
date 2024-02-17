@@ -629,7 +629,7 @@ class PenciButtonPopup extends Base_Widget {
 			} else if ( 'block' == $popup_cstyle && $settings['popup_block'] ) {
 				$popup_render_content = '';
 				$popup_block_id       = get_page_by_path( $settings['popup_block'], OBJECT, 'penci-block' )->ID;
-				if ( did_action( 'elementor/loaded' ) && \Elementor\Plugin::$instance->documents->get( $popup_block_id )->is_built_with_elementor() ) {
+				if ( $popup_block_id && did_action( 'elementor/loaded' ) && \Elementor\Plugin::$instance->documents->get( $popup_block_id )->is_built_with_elementor() ) {
 					$popup_render_content .= penci_get_elementor_content( $popup_block_id );
 				} else {
 					$popup_render_content .= do_shortcode( get_post( $popup_block_id )->post_content );

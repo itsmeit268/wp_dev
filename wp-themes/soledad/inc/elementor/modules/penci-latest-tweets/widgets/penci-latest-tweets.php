@@ -138,7 +138,7 @@ class PenciLatestTweets extends Base_Widget {
 			'condition' => [ 'tweets_style' => 'slider' ],
 			'type'      => Controls_Manager::SLIDER,
 			'range'     => array( 'px' => array( 'min' => 0, 'max' => 500, ) ),
-			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .owl-dots' => 'margin-top: {{SIZE}}px!important;' )
+			'selectors' => array( '{{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .penci-owl-dots' => 'margin-top: {{SIZE}}px!important;' )
 		) );
 		$this->add_control( 'tweets_items_spacing', array(
 			'label'     => __( 'Spacing Between Tweets Items', 'soledad' ),
@@ -233,14 +233,14 @@ class PenciLatestTweets extends Base_Widget {
 			'condition' => [ 'tweets_style' => 'slider' ],
 			'label'     => __( 'Background Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
-			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot span' => 'border-color: {{VALUE}};background-color:{{VALUE}};' ),
+			'selectors' => array( 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot span' => 'border-color: {{VALUE}};background-color:{{VALUE}};' ),
 		) );
 		$this->add_control( 'tweets_dot_hcolor', array(
 			'condition' => [ 'tweets_style' => 'slider' ],
 			'label'     => __( 'Border and Background Active Color', 'soledad' ),
 			'type'      => Controls_Manager::COLOR,
 			'selectors' => array(
-				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span,' . 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span' => 'border-color: {{VALUE}};background-color:{{VALUE}};'
+				'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span,' . 'body:not(.pcdm-enable) {{WRAPPER}} .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span' => 'border-color: {{VALUE}};background-color:{{VALUE}};'
 			),
 		) );
 
@@ -264,7 +264,7 @@ class PenciLatestTweets extends Base_Widget {
 
 			$css_class = 'penci-latest-tweets-widget';
 			$style     = isset( $settings['tweets_style'] ) && $settings['tweets_style'] ? $settings['tweets_style'] : 'slider';
-			$classes   = 'slider' == $style ? 'penci-owl-carousel penci-owl-carousel-slider penci-tweets-slider' : 'penci-tweets-lists';
+			$classes   = 'slider' == $style ? 'penci-owl-carousel penci-owl-carousel-slider penci-tweets-slider swiper' : 'penci-tweets-lists';
 			?>
             <div class="<?php echo esc_attr( $css_class ); ?>">
 				<?php $this->markup_block_title( $settings, $this ); ?>
@@ -281,12 +281,18 @@ class PenciLatestTweets extends Base_Widget {
                                 <span class="icon-tweets"><?php penci_fawesome_icon( 'penciicon-x-twitter' ); ?></span>
 							<?php endif; ?>
                             <div class="<?php echo esc_attr( $classes ); ?>" data-dots="true"
-                                 data-nav="false" data-auto="<?php if ( $settings['tweets_dis_auto'] ) {
+                                 data-nav="false" data-seffect="slide" data-auto="<?php if ( $settings['tweets_dis_auto'] ) {
 								echo 'false';
 							} else {
 								echo 'true';
 							} ?>">
-								<?php foreach ( $tweets as $tweet ):
+								<?php
+								$item_class = 'normal-item';
+								if ( 'slider' == $style ) {
+									echo '<div class="swiper-wrapper">';
+									$item_class = 'swiper-slide';
+								}
+								foreach ( $tweets as $tweet ):
 									$date_array = explode( ' ', $tweet['created_at'] );
 									$tweet_id = $tweet['id_str'];
 									$tweet_text = $tweet['text'];
@@ -301,7 +307,7 @@ class PenciLatestTweets extends Base_Widget {
 										}
 									}
 									?>
-                                    <div class="penci-tweet">
+                                    <div class="penci-tweet <?php echo $item_class;?>">
 
 										<?php if ( $style == 'list' ):
 											$reply = '<i class="fa fa-reply" aria-hidden="true"></i>';
@@ -337,7 +343,12 @@ class PenciLatestTweets extends Base_Widget {
                                             </div>
                                         </div>
                                     </div>
-								<?php endforeach; ?>
+								<?php endforeach; 
+								if ( 'slider' == $style ) {
+									echo '</div>';
+								}
+								?>
+
                             </div>
                         </div>
 

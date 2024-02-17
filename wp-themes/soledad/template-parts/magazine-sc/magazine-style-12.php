@@ -18,7 +18,7 @@ if ( 'horizontal' == $penci_featimg_size ) {
 }
 ?>
 
-<div class="magcat-carousel">
+<div class="magcat-carousel swiper-slide">
     <div class="magcat-thumb hentry">
         <a href="<?php penci_permalink_fix(); ?>" class="mag-post-thumb<?php echo penci_class_lightbox_enable(); ?>">
 			<?php

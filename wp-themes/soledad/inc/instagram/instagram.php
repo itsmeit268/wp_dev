@@ -125,7 +125,7 @@ if ( ! class_exists( 'Penci_Instagram_Feed' ) ):
 				}
 
 				if ( 'slider' == $args['template'] ) {
-					$output .= '<div class="penci-insta-info">';
+					$output .= '<div class="penci-insta-info swiper-slide">';
 					$output .= '<img class="instagram-square-lazy" src="' . $image_url . '" alt="' . $short_caption . '" ' . $nopin . '/>';;
 
 					if ( is_array( $args['description'] ) && count( $args['description'] ) >= 1 ) {
@@ -154,7 +154,7 @@ if ( ! class_exists( 'Penci_Instagram_Feed' ) ):
 
 					$output .= "</div>";
 				} elseif ( 'slider-overlay' == $args['template'] ) {
-					$output .= '<div class="penci-insta-info">';
+					$output .= '<div class="penci-insta-info swiper-slide">';
 					$output .= '<img class="instagram-square-lazy" src="' . $image_url . '" alt="' . $short_caption . '" ' . $nopin . '/>';;
 
 					if ( is_array( $args['description'] ) && count( $args['description'] ) >= 1 ) {
@@ -199,9 +199,9 @@ if ( ! class_exists( 'Penci_Instagram_Feed' ) ):
 
 			if ( $output ) {
 				if ( 'slider' == $args['template'] ) {
-					echo '<div class="penci-instaslider-normal penci-owl-carousel penci-owl-carousel-slider"' . $data_slider . '>' . $output . '</div>';
+					echo '<div class="penci-instaslider-normal swiper penci-owl-carousel penci-owl-carousel-slider"' . $data_slider . '><div class="swiper-wrapper">' . $output . '</div></div>';
 				} elseif ( 'slider-overlay' == $args['template'] ) {
-					echo '<div class="penci-instaslider-overlay penci-owl-carousel penci-owl-carousel-slider"' . $data_slider . '>' . $output . '</div>';
+					echo '<div class="penci-instaslider-overlay swiper penci-owl-carousel penci-owl-carousel-slider"' . $data_slider . '><div class="swiper-wrapper">' . $output . '</div></div>';
 				} elseif ( 'thumbs-no-border' == $args['template'] ) {
 					echo '<div class="penci-insta-thumb"><ul class="thumbnails no-border penci-inscol' . $args['columns'] . '">' . $output . '</ul></div>';
 				} else {

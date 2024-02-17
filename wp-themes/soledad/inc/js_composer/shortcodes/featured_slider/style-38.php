@@ -10,8 +10,8 @@ if ( $penci_is_mobile ) {
 }
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
-	    <?php do_action( 'penci_bookmark_post' ); ?>
+    <div class="item swiper-slide">
+		<?php do_action( 'penci_bookmark_post' ); ?>
         <a class="penci-slider38-overlay" href="<?php the_permalink(); ?>"></a>
         <a class="penci-image-holder"
            style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $post_thumb_size ); ?>');"
@@ -39,13 +39,13 @@ if ( $penci_is_mobile ) {
                                 <span class="feat-comments"><a
                                             href="<?php comments_link(); ?> "><?php comments_number( '0 ' . penci_get_setting( 'penci_trans_comment' ), '1 ' . penci_get_setting( 'penci_trans_comment' ), '% ' . penci_get_setting( 'penci_trans_comments' ) ); ?></a></span>
 							<?php endif; ?>
-	                        <?php echo penci_show_custom_meta_fields( [
-		                        'validator' => $cspost_enable,
-		                        'keys'      => $cspost_cpost_meta,
-		                        'acf'       => $cspost_cpost_acf_meta,
-		                        'label' 	=> $cspost_cpost_meta_label,
-		                        'divider' 	=> $cspost_cpost_meta_divider,
-	                        ] ); ?>
+							<?php echo penci_show_custom_meta_fields( [
+								'validator' => $cspost_enable,
+								'keys'      => $cspost_cpost_meta,
+								'acf'       => $cspost_cpost_acf_meta,
+								'label'     => $cspost_cpost_meta_label,
+								'divider'   => $cspost_cpost_meta_divider,
+							] ); ?>
 							<?php if ( get_the_excerpt() && ! $hide_meta_excerpt ): ?>
                                 <div class="featured-slider-excerpt"><p><?php $excerpt = get_the_excerpt();
 										echo wp_trim_words( $excerpt, 20, '...' ); ?></p></div>

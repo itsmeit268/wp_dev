@@ -389,6 +389,17 @@ class PenciProduct extends Base_Widget {
 			'return_value' => 'false',
 		] );
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control( 'wrap', [
 			'label'        => esc_html__( 'Slider loop', 'soledad' ),
 			'type'         => Controls_Manager::SWITCHER,

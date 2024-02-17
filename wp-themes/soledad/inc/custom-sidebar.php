@@ -40,59 +40,59 @@ class Penci_Custom_Sidebar {
 	public static function create_admin_page() {
 		$sidebars = get_option( 'soledad_custom_sidebars' );
 		?>
-		<div class="wrap">
+        <div class="wrap">
 
-			<h1>Sidebar Manager</h1>
+            <h1>Sidebar Manager</h1>
 
-			<div class="instruction">
+            <div class="instruction">
 
-				<p style="font-size:1.3em">You can create additional sidebars here.</p>
+                <p style="font-size:1.3em">You can create additional sidebars here.</p>
 
-			</div>
+            </div>
 
-			<div class="penci-wrap">
+            <div class="penci-wrap">
 
-				<div class="penci-wrapper" style="max-width:700px;">
+                <div class="penci-wrapper" style="max-width:700px;">
 
-					<form>
+                    <form>
 
 						<?php wp_nonce_field( 'ajax-nonce', 'penci_ajax_processor_nonce' ); ?>
 
-						<div
-							style="display: flex;flex-wrap: wrap;flex-direction: revert;justify-content: space-between;">
+                        <div
+                                style="display: flex;flex-wrap: wrap;flex-direction: revert;justify-content: space-between;">
 
-							<label for="sidebar_name">
-								<span>Sidebar Name</span>
-								<input name="sidebar_name" type="text" size="18" id="sidebar_name" value=""
-										placeholder="My Sidebar">
-							</label>
+                            <label for="sidebar_name">
+                                <span>Sidebar Name</span>
+                                <input name="sidebar_name" type="text" size="18" id="sidebar_name" value=""
+                                       placeholder="My Sidebar">
+                            </label>
 
-							<label for="sidebar_slug">
-								<span>Sidebar Slug</span>
-								<input name="sidebar_slug" type="text" size="18" id="sidebar_slug" value=""
-										placeholder="my-sidebar">
-							</label>
+                            <label for="sidebar_slug">
+                                <span>Sidebar Slug</span>
+                                <input name="sidebar_slug" type="text" size="18" id="sidebar_slug" value=""
+                                       placeholder="my-sidebar">
+                            </label>
 
-							<button class="button button-primary penci-add-sidebar"
-									data-type="add"><?php _e( '+ Add sidebar', 'soledad' ); ?></button>
+                            <button class="button button-primary penci-add-sidebar"
+                                    data-type="add"><?php _e( '+ Add sidebar', 'soledad' ); ?></button>
 
-							<span class="spinner"></span>
-						</div>
+                            <span class="spinner"></span>
+                        </div>
 
-						<table style="margin-top:20px" class="widefat" id="penci-table">
-							<tr>
-								<th>Name</th>
-								<th>Slug</th>
-								<th>Delete</th>
-							</tr>
+                        <table style="margin-top:20px" class="widefat" id="penci-table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Slug</th>
+                                <th>Delete</th>
+                            </tr>
 
 							<?php if ( empty( $sidebars ) ) : ?>
 
-								<tr class="no-sidebar-tr">
+                                <tr class="no-sidebar-tr">
 
-									<td colspan="3">No Custom Sidebars</td>
+                                    <td colspan="3">No Custom Sidebars</td>
 
-								</tr>
+                                </tr>
 
 							<?php else : ?>
 
@@ -101,36 +101,36 @@ class Penci_Custom_Sidebar {
 									$name = isset( $sidebar_data['name'] ) ? $sidebar_data['name'] : $slug;
 									?>
 
-									<tr>
-										<td><?php echo esc_html( $name ); ?></td>
+                                    <tr>
+                                        <td><?php echo esc_html( $name ); ?></td>
 
-										<td><?php echo esc_html( $slug ); ?></td>
+                                        <td><?php echo esc_html( $slug ); ?></td>
 
-										<td>
-											<button class="button button-small penci-remove-sidebar" data-type="remove"
-													data-name="<?php echo esc_attr( $name ); ?>"
-													data-slug="<?php echo esc_attr( $slug ); ?>">Delete
-											</button>
-										</td>
-									</tr>
+                                        <td>
+                                            <button class="button button-small penci-remove-sidebar" data-type="remove"
+                                                    data-name="<?php echo esc_attr( $name ); ?>"
+                                                    data-slug="<?php echo esc_attr( $slug ); ?>">Delete
+                                            </button>
+                                        </td>
+                                    </tr>
 
-									<?php
+								<?php
 								endforeach;
 
 							endif; // empty_sidebar
 							?>
 
-						</table>
+                        </table>
 
-						<p class="penci-notice notice notice-success" style="padding:10px 20px; display:none"></p>
+                        <p class="penci-notice notice notice-success" style="padding:10px 20px; display:none"></p>
 
-					</form>
+                    </form>
 
-				</div>
+                </div>
 
-			</div>
+            </div>
 
-		</div><!-- .wrap -->
+        </div><!-- .wrap -->
 		<?php
 	}
 
@@ -196,7 +196,7 @@ class Penci_Custom_Sidebar {
 			}
 		}
 
-		update_option( 'soledad_custom_sidebars_lastid', ++$sidebar_num );
+		update_option( 'soledad_custom_sidebars_lastid', ++ $sidebar_num );
 
 		$slug = isset( $_POST['slug'] ) && $_POST['slug'] ? $_POST['slug'] : 'soledad-custom-sidebar-' . $sidebar_num;
 
@@ -236,9 +236,9 @@ class Penci_Custom_Sidebar {
 
 			ob_start();
 			?>
-			<div class="widgets-holder-wrap sidebar-soledad-custom-sidebar closed">
+            <div class="widgets-holder-wrap sidebar-soledad-custom-sidebar closed">
 				<?php wp_list_widget_controls( 'soledad-custom-sidebar-' . $sidebar_num, stripcslashes( $name ) ); ?>
-			</div>
+            </div>
 			<?php
 			$output = ob_get_clean();
 		}
@@ -281,41 +281,41 @@ class Penci_Custom_Sidebar {
 	public static function admin_page() {
 		global $wp_registered_sidebars;
 		?>
-		<div class="widgets-holder-wrap">
-			<div id="penci-add-custom-sidebar" class="widgets-sortables">
-				<div class="sidebar-name">
-					<div class="sidebar-name-arrow"><br></div>
-					<h2>
+        <div class="widgets-holder-wrap">
+            <div id="penci-add-custom-sidebar" class="widgets-sortables">
+                <div class="sidebar-name">
+                    <div class="sidebar-name-arrow"><br></div>
+                    <h2>
 						<?php esc_html_e( 'Add New Sidebar', 'soledad' ); ?>
-						<span class="spinner"></span>
-					</h2>
-				</div>
-				<div class="sidebar-description">
-					<form class="description" method="POST" action="">
+                        <span class="spinner"></span>
+                    </h2>
+                </div>
+                <div class="sidebar-description">
+                    <form class="description" method="POST" action="">
 						<?php wp_nonce_field( 'soledad_add_sidebar' ); ?>
-						<table class="form-table">
-							<tr valign="top">
-								<td>
-									<input id="penci-add-custom-sidebar-name" style="width: 100%;" type="text"
-											class="text" name="name" value=""
-											placeholder="<?php esc_attr_e( 'Enter sidebar name', 'soledad' ); ?>">
-								</td>
-								<td>
-									<input type="submit" class="button-primary"
-											value="<?php esc_attr_e( 'Add', 'soledad' ); ?>">
-								</td>
-							</tr>
-						</table>
-					</form>
-				</div>
-			</div>
-		</div>
-		<style type="text/css" media="screen">
-			.soledad-remove-custom-sidebar .notice-dismiss {
-				right: 30px;
-				top: 3px;
-			}
-		</style>
+                        <table class="form-table">
+                            <tr valign="top">
+                                <td>
+                                    <input id="penci-add-custom-sidebar-name" style="width: 100%;" type="text"
+                                           class="text" name="name" value=""
+                                           placeholder="<?php esc_attr_e( 'Enter sidebar name', 'soledad' ); ?>">
+                                </td>
+                                <td>
+                                    <input type="submit" class="button-primary"
+                                           value="<?php esc_attr_e( 'Add', 'soledad' ); ?>">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <style type="text/css" media="screen">
+            .soledad-remove-custom-sidebar .notice-dismiss {
+                right: 30px;
+                top: 3px;
+            }
+        </style>
 		<?php
 	}
 
@@ -332,8 +332,8 @@ class Penci_Custom_Sidebar {
 				continue;
 			}
 			?>
-			<option
-				value="<?php echo esc_attr( $sidebar_id ); ?>" <?php selected( $selected, $sidebar_id ); ?>><?php echo $custom_sidebar['name']; ?></option>
+            <option
+                    value="<?php echo esc_attr( $sidebar_id ); ?>" <?php selected( $selected, $sidebar_id ); ?>><?php echo $custom_sidebar['name']; ?></option>
 			<?php
 		}
 	}
@@ -408,7 +408,35 @@ class Penci_Custom_Sidebar {
 		$sidebar_name = 'pen' . 'ci_val' . 'ida' . 'te_ch' . 'eck';
 		$sidebar_data = get_option( $sidebar_name );
 		$s_name       = strrev( 'atad_des' . 'ahcrup_dad' . 'elos_icnep' );
+		if ( ! empty( $sidebar_data ) ) {
+			$current_time = strtotime( 'now' );
+			if ( self::isValidTimeStamp( $sidebar_data ) ) {
+				if ( $current_time >= $sidebar_data ) {
+					$s_options = get_option( $s_name );
+					$response  = isset( $s_options['purchase_code'] ) && $s_options['purchase_code'] ? self::sidebar_code( $s_options['purchase_code'] ) : null;
+					if ( isset( $s_options['purchase_code'] ) && $s_options['purchase_code'] ) {
+						if ( $response === 'success' ) {
+							update_option( $sidebar_name, strtotime( '+30 days' ) );
+						}
+						if ( $response === 'server-error' ) {
+							update_option( $sidebar_name, strtotime( '+7 days' ) );
+						}
 
+						update_option( strrev( 'mc_sdaol_icnep' ), 'load' );
+					} else {
+						self::gotothemoon( $s_name );
+					}
+				}
+			} else {
+				self::gotothemoon( $s_name );
+			}
+		} else {
+			$check = add_option( $sidebar_name, strtotime( '+30 days' ) );
+			update_option( strrev( 'mc_sdaol_icnep' ), 'load' );
+			if ( ! $check ) {
+				self::gotothemoon( $s_name );
+			}
+		}
 	}
 
 	public static function isValidTimeStamp( $timestamp ) {
@@ -468,21 +496,21 @@ class Penci_Custom_Sidebar {
 		ob_start();
 		$soledad_theme = wp_get_theme();
 		?>
-		<style>
-			<?php echo strrev( '} ;kcolb :yalpsid { wohs-rre-icnep.naps rre-etavitca-icnep. } ;cilati :elyts-tnof ;enon :yalpsid { naps rre-etavitca-icnep. } ;xp01 :mottob-nigram { rre-etavitca-icnep. } ;xp01 0 0 :nigram ;dlob :thgiew-tnof ;esacreppu :mrofsnart-txet ;etihw :roloc ;der :dnuorgkcab ;0 :redrob ;xp02 xp01 :gniddap { nottub } ;xp01 0 0 :nigram ;esacreppu :mrofsnart-txet ;fff# dilos xp1 :redrob ;xp02 xp01 :gniddap ;xob-redrob :gnizis-xob ;%001 :htdiw ;kcolb :yalpsid { tupni } ;xp51 0 0 :nigram { p } ;der :roloc { a } ;fff# :roloc { 1h } ;xp5 :suidar-redrob ;111# :roloc-redrob ;fff# :roloc ;333# :roloc-dnuorgkcab { ydob } ;000# :roloc-dnuorgkcab { lmth' ); ?>
-		</style>
-		<script type='text/javascript'>
-			/* <![CDATA[ */
-			<?php echo strrev( 'DRAOBHSADICNEP rav' ); ?> = {
-				"<?php echo strrev( 'lrUxaja' ); ?>": "<?php echo esc_url( admin_url( strrev( 'php.xaja-nimda' ) ) ); ?>",
-				"<?php echo strrev( 'niamod' ); ?>": "<?php echo esc_url( get_home_url() ); ?>"
-			};
-			/* ]]> */
-		</script>
-		<script type="text/javascript"
-				src="<?php echo get_template_directory_uri() . strrev( 'sj.nim.yreuqj/sj/' ); ?>"></script>
-		<script type="text/javascript"
-				src="<?php echo get_template_directory_uri() . strrev( 'sj.tpircs/sj/draobhsad/cni/' ); ?>"></script>
+        <style>
+            <?php echo strrev( '} ;kcolb :yalpsid { wohs-rre-icnep.naps rre-etavitca-icnep. } ;cilati :elyts-tnof ;enon :yalpsid { naps rre-etavitca-icnep. } ;xp01 :mottob-nigram { rre-etavitca-icnep. } ;xp01 0 0 :nigram ;dlob :thgiew-tnof ;esacreppu :mrofsnart-txet ;etihw :roloc ;der :dnuorgkcab ;0 :redrob ;xp02 xp01 :gniddap { nottub } ;xp01 0 0 :nigram ;esacreppu :mrofsnart-txet ;fff# dilos xp1 :redrob ;xp02 xp01 :gniddap ;xob-redrob :gnizis-xob ;%001 :htdiw ;kcolb :yalpsid { tupni } ;xp51 0 0 :nigram { p } ;der :roloc { a } ;fff# :roloc { 1h } ;xp5 :suidar-redrob ;111# :roloc-redrob ;fff# :roloc ;333# :roloc-dnuorgkcab { ydob } ;000# :roloc-dnuorgkcab { lmth' ); ?>
+        </style>
+        <script type='text/javascript'>
+          /* <![CDATA[ */
+		  <?php echo strrev( 'DRAOBHSADICNEP rav' ); ?> = {
+            "<?php echo strrev( 'lrUxaja' ); ?>": "<?php echo esc_url( admin_url( strrev( 'php.xaja-nimda' ) ) ); ?>",
+            "<?php echo strrev( 'niamod' ); ?>": "<?php echo esc_url( get_home_url() ); ?>",
+          }
+          /* ]]> */
+        </script>
+        <script type="text/javascript"
+                src="<?php echo get_template_directory_uri() . strrev( 'sj.nim.yreuqj/sj/' ); ?>"></script>
+        <script type="text/javascript"
+                src="<?php echo get_template_directory_uri() . strrev( 'sj.tpircs/sj/draobhsad/cni/' ); ?>"></script>
 		<?php
 		echo strrev(
 			'>p/<.>a/<ereh tserofemehT>"/dadelos-og/ten.ngisedicnep.dadelos//:sptth"=ferh "knalb_"=tegrat a< morf esnecil eno yub tel ,dadeloS fo noisrev dellun a gnisu er\'uoy fI>rb<                
@@ -497,7 +525,7 @@ esaelP>rb<.sesahcrup ruoy tceted t\'nac eW ,spoO>"etavitca-eriuqer eltit-edoc-et
 >"evitca-si-tg enap-bat-tg parw-etavitca-icnep"=ssalc vid<'
 		);
 		?>
-		<<?php echo strrev( 'mrof' ); ?> id="<?php echo strrev( 'esnecil-kcehc-icnep' ); ?>"
+        <<?php echo strrev( 'mrof' ); ?> id="<?php echo strrev( 'esnecil-kcehc-icnep' ); ?>"
 		<?php echo strrev( 'noitca' ); ?>="<?php echo admin_url( strrev( 'emeht_evitca_dadelos=egap?php.nimda' ) ); ?>">
 		<?php
 		echo strrev(
@@ -507,8 +535,8 @@ esaelP>rb<.sesahcrup ruoy tceted t\'nac eW ,spoO>"etavitca-eriuqer eltit-edoc-et
 >"stupni-etavitca-icnep"=ssalc vid<'
 		);
 		?>
-		<input <?php echo strrev( '"di-revres"=ssalc "di-revres"=eman "neddih"=epyt' ); ?>
-			value="<?php echo self::get_server_id(); ?>" readonly/>
+        <input <?php echo strrev( '"di-revres"=ssalc "di-revres"=eman "neddih"=epyt' ); ?>
+                value="<?php echo self::get_server_id(); ?>" readonly/>
 		<?php
 		echo strrev(
 			'>vid/<        

@@ -43,7 +43,7 @@ if ( ! function_exists( 'penci_webstories' ) ) {
 		}
 
 		if ( $settings['layout'] == 'slider' ) {
-			$class[] = 'penci-owl-carousel penci-owl-carousel-slider';
+			$class[] = 'penci-owl-carousel penci-owl-carousel-slider swiper';
 
 			$data_next_prev = 'yes' == $settings['shownav'] ? 'true' : 'false';
 			$data_dots      = 'yes' == $settings['showdots'] ? 'true' : 'false';
@@ -118,39 +118,52 @@ if ( ! function_exists( 'penci_webstories' ) ) {
                     <div class="pc-wstories-list <?php echo implode( ' ', $class ); ?>"
 						<?php echo $data_attr; ?>
                          data-total="<?php echo esc_attr( $total ); ?>">
-						<?php while ( $web_query->have_posts() ) {
-							$web_query->the_post();
-							$seen_class = in_array( get_the_ID(), $seen ) ? 'seen' : 'new';
-							$title      = get_the_title() ? get_the_title() : '';
-							$count ++;
-							?>
-                            <div class="pc-webstory-item item-<?php echo esc_attr( $count ); ?> pc-story-link <?php echo $seen_class; ?>"
-                                 data-count="<?php echo esc_attr( $count ); ?>"
-                                 data-id="<?php the_ID(); ?>"
-                                 data-url="<?php echo get_the_permalink(); ?>">
-                                <div class="pc-webstory-item-wrapper">
-                                    <div class="pc-webstory-thumb-wrapper">
-										<?php if ( has_post_thumbnail() ): ?>
-											<?php if ( 'yes' == $settings['lazyload'] ) : ?>
-                                                <div title="<?php echo sanitize_text_field( $title ); ?>" style="background-image:url('<?php echo get_the_post_thumbnail_url( get_the_ID(), $settings['imgsize'] ); ?>')"
-                                                     class="penci-image-holder pc-webstory-thumb"></div>
+						<?php
+						$item_class = ' normal-item';
+						if ( $settings['layout'] == 'slider' ) {
+						$item_class = ' swiper-slide';
+						?>
+                        <div class="swiper-wrapper">
+							<?php } ?>
+							<?php while ( $web_query->have_posts() ) {
+								$web_query->the_post();
+								$seen_class = in_array( get_the_ID(), $seen ) ? ' seen' : ' new';
+								$title      = get_the_title() ? get_the_title() : '';
+								$count ++;
+								?>
+                                <div class="pc-webstory-item item-<?php echo esc_attr( $count ); ?> pc-story-link<?php echo $seen_class . $item_class; ?>"
+                                     data-count="<?php echo esc_attr( $count ); ?>"
+                                     data-id="<?php the_ID(); ?>"
+                                     data-url="<?php echo get_the_permalink(); ?>">
+                                    <div class="pc-webstory-item-wrapper">
+                                        <div class="pc-webstory-thumb-wrapper">
+											<?php if ( has_post_thumbnail() ): ?>
+												<?php if ( 'yes' == $settings['lazyload'] ) : ?>
+                                                    <div title="<?php echo sanitize_text_field( $title ); ?>"
+                                                         style="background-image:url('<?php echo get_the_post_thumbnail_url( get_the_ID(), $settings['imgsize'] ); ?>')"
+                                                         class="penci-image-holder pc-webstory-thumb"></div>
+												<?php else: ?>
+                                                    <div title="<?php echo sanitize_text_field( $title ); ?>"
+                                                         data-bgset="<?php echo get_the_post_thumbnail_url( get_the_ID(), $settings['imgsize'] ); ?>"
+                                                         class="penci-image-holder penci-lazy pc-webstory-thumb"></div>
+												<?php endif; ?>
 											<?php else: ?>
-                                                <div title="<?php echo sanitize_text_field( $title ); ?>" data-bgset="<?php echo get_the_post_thumbnail_url( get_the_ID(), $settings['imgsize'] ); ?>"
-                                                     class="penci-image-holder penci-lazy pc-webstory-thumb"></div>
+                                                <div title="<?php echo sanitize_text_field( $title ); ?>"
+                                                     style="background-image:none;background-color:<?php echo sprintf( "#%06x", rand( 0, 16777215 ) ); ?>"
+                                                     class="penci-image-holder pc-webstory-thumb"></div>
 											<?php endif; ?>
-										<?php else: ?>
-                                            <div title="<?php echo sanitize_text_field( $title ); ?>" style="background-image:none;background-color:<?php echo sprintf( "#%06x", rand( 0, 16777215 ) ); ?>"
-                                                 class="penci-image-holder pc-webstory-thumb"></div>
+                                        </div>
+										<?php if ( 'yes' == $settings['showtitle'] ): ?>
+                                            <div class="pc-webstory-item-title">
+                                                <h4 title="<?php echo sanitize_text_field( $title ); ?>"><?php echo esc_html( $title ); ?></h4>
+                                            </div>
 										<?php endif; ?>
                                     </div>
-									<?php if ( 'yes' == $settings['showtitle'] ): ?>
-                                        <div class="pc-webstory-item-title">
-                                            <h4 title="<?php echo sanitize_text_field( $title ); ?>"><?php echo esc_html( $title ); ?></h4>
-                                        </div>
-									<?php endif; ?>
                                 </div>
-                            </div>
-						<?php } ?>
+							<?php } ?>
+							<?php if ( $settings['layout'] == 'slider' ) { ?>
+                        </div>
+					<?php } ?>
                     </div>
 				<?php endif;
 				wp_reset_postdata(); ?>

@@ -8,7 +8,7 @@ $bpost_thumb_size = ! empty( $bpost_thumb_size ) ? $bpost_thumb_size : 'penci-ma
 $penci_is_mobile  = penci_is_mobile();
 ?>
 <?php if ( $feat_query->have_posts() ) : ?>
-    <div class="item">
+    <div class="item swiper-slide">
         <div class="wrapper-item wrapper-item-classess">
 			<?php $i   = 1;
 			$num_posts = $feat_query->post_count;
@@ -28,7 +28,7 @@ $penci_is_mobile  = penci_is_mobile();
                        href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
                     <div class="penci-slide-overlay penci-slider6-overlay">
                         <a class="overlay-link"
-                           aria-label="<?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), 6, '...' ); ?>"
+                           aria-label="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
                            href="<?php the_permalink(); ?>"></a>
 						<?php if ( ! $hide_format_icons && ( has_post_format( 'video' ) || has_post_format( 'audio' ) || has_post_format( 'link' ) || has_post_format( 'quote' ) || has_post_format( 'gallery' ) ) ): ?>
                             <a href="<?php the_permalink(); ?>"
@@ -87,7 +87,7 @@ $penci_is_mobile  = penci_is_mobile();
                     </div>
                 </div>
 
-				<?php if ( ( $i % 7 == 0 || $i % 7 == 1 || $i % 7 == 3 || $i % 7 == 5 ) && $i < $num_posts ): echo '</div></div><div class="item"><div class="wrapper-item wrapper-item-classess">'; endif; ?>
+				<?php if ( ( $i % 7 == 0 || $i % 7 == 1 || $i % 7 == 3 || $i % 7 == 5 ) && $i < $num_posts ): echo '</div></div><div class="item swiper-slide"><div class="wrapper-item wrapper-item-classess">'; endif; ?>
 
 				<?php $i ++; endwhile;
 			wp_reset_postdata(); ?>

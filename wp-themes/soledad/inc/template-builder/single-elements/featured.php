@@ -169,30 +169,6 @@ class PenciSingleFeatured extends \Elementor\Widget_Base {
 		<?php
 	}
 
-	public static function get_type_video( $video_embed ) {
-		if ( ! $video_embed ) {
-			return '';
-		}
-
-		$video_embed = strtolower( $video_embed );
-		if ( false !== strpos( $video_embed, 'vimeo.com' ) ) {
-			return 'vimeo';
-		}
-
-		if ( false !== strpos( $video_embed, 'youtu.be' ) ||
-		     false !== strpos( $video_embed, 'youtube-nocookie.com' ) ||
-		     false !== strpos( $video_embed, 'youtube.com' ) ) {
-			return 'youtube';
-		}
-
-		preg_match( '#^(http|https)://.+\.(mp4|m4v|webm|ogv|wmv|flv)$#i', $video_embed, $matches );
-		if ( ! empty( $matches[0] ) ) {
-			return 'selfhosted';
-		}
-
-		return '';
-	}
-
 	protected function builder_content() {
 		$settings       = $this->get_settings_for_display();
 		$simage_df_size = get_theme_mod( 'penci_single_custom_thumbnail_size' ) ? get_theme_mod( 'penci_single_custom_thumbnail_size' ) : 'penci-full-thumb';
@@ -260,34 +236,39 @@ class PenciSingleFeatured extends \Elementor\Widget_Base {
 				$autoplay = ! $settings['penci_disable_autoplay_single_slider'] ? 'true' : 'false';
 				?>
                 <div class="post-image">
-                    <div class="penci-owl-carousel penci-owl-carousel-slider penci-nav-visible"
+                    <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-nav-visible"
                          data-auto="<?php echo $autoplay; ?>" data-lazy="true">
-						<?php foreach ( $images as $image ) : ?>
+                        <div class="swiper-wrapper">
+							<?php foreach ( $images as $image ) : ?>
 
-							<?php $the_image = wp_get_attachment_image_src( $image, $simage_size ); ?>
-							<?php $the_caption = get_post_field( 'post_excerpt', $image );
-							$image_alt         = penci_get_image_alt( $image, get_the_ID() );
-							$image_title_html  = penci_get_image_title( $image );
-							?>
-                            <figure class="item-link-relative">
-								<?php if ( get_theme_mod( 'penci_speed_disable_first_screen' ) || ! get_theme_mod( 'penci_disable_lazyload_fsingle' ) ) { ?>
-									<?php echo penci_get_ratio_img_format_gallery( $the_image ); ?>
-                                    <img class="penci-lazy"
-                                         src="<?php echo penci_holder_image_base( $the_image[1], $the_image[2] ); ?>"
-                                         width="<?php echo $the_image[1]; ?>" height="<?php echo $the_image[2]; ?>"
-                                         data-src="<?php echo esc_url( $the_image[0] ); ?>"
-                                         alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
-								<?php } else { ?>
-                                    <img src="<?php echo esc_url( $the_image[0] ); ?>"
-                                         width="<?php echo $the_image[1]; ?>" height="<?php echo $the_image[2]; ?>"
-                                         alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
-								<?php } ?>
-								<?php if ( $settings['penci_post_gallery_caption'] && $the_caption ): ?>
-                                    <p class="penci-single-gallery-captions penci-single-gaformat-caption"><?php echo $the_caption; ?></p>
-								<?php endif; ?>
-                            </figure>
+                            <div class="swiper-slide swiper-mark-item">
 
-						<?php endforeach; ?>
+								<?php $the_image = wp_get_attachment_image_src( $image, $simage_size ); ?>
+								<?php $the_caption = get_post_field( 'post_excerpt', $image );
+								$image_alt         = penci_get_image_alt( $image, get_the_ID() );
+								$image_title_html  = penci_get_image_title( $image );
+								?>
+                                <figure class="item-link-relative penci-swiper-mask">
+									<?php if ( get_theme_mod( 'penci_speed_disable_first_screen' ) || ! get_theme_mod( 'penci_disable_lazyload_fsingle' ) ) { ?>
+										<?php echo penci_get_ratio_img_format_gallery( $the_image ); ?>
+                                        <img class="penci-lazy"
+                                             src="<?php echo penci_holder_image_base( $the_image[1], $the_image[2] ); ?>"
+                                             width="<?php echo $the_image[1]; ?>" height="<?php echo $the_image[2]; ?>"
+                                             data-src="<?php echo esc_url( $the_image[0] ); ?>"
+                                             alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
+									<?php } else { ?>
+                                        <img src="<?php echo esc_url( $the_image[0] ); ?>"
+                                             width="<?php echo $the_image[1]; ?>" height="<?php echo $the_image[2]; ?>"
+                                             alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
+									<?php } ?>
+									<?php if ( $settings['penci_post_gallery_caption'] && $the_caption ): ?>
+                                        <p class="penci-single-gallery-captions penci-single-gaformat-caption"><?php echo $the_caption; ?></p>
+									<?php endif; ?>
+                                </figure>
+                            </div>
+
+							<?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
 			<?php endif; ?>
@@ -377,5 +358,29 @@ class PenciSingleFeatured extends \Elementor\Widget_Base {
 			<?php endif; ?>
 
 		<?php endif;
+	}
+
+	public static function get_type_video( $video_embed ) {
+		if ( ! $video_embed ) {
+			return '';
+		}
+
+		$video_embed = strtolower( $video_embed );
+		if ( false !== strpos( $video_embed, 'vimeo.com' ) ) {
+			return 'vimeo';
+		}
+
+		if ( false !== strpos( $video_embed, 'youtu.be' ) ||
+		     false !== strpos( $video_embed, 'youtube-nocookie.com' ) ||
+		     false !== strpos( $video_embed, 'youtube.com' ) ) {
+			return 'youtube';
+		}
+
+		preg_match( '#^(http|https)://.+\.(mp4|m4v|webm|ogv|wmv|flv)$#i', $video_embed, $matches );
+		if ( ! empty( $matches[0] ) ) {
+			return 'selfhosted';
+		}
+
+		return '';
 	}
 }

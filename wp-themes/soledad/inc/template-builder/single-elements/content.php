@@ -6,10 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class PenciSingleContent extends \Elementor\Widget_Base {
 
-	public function get_name() {
-		return 'penci-single-content';
-	}
-
 	public function get_title() {
 		return esc_html__( 'Post - Content', 'soledad' );
 	}
@@ -30,6 +26,10 @@ class PenciSingleContent extends \Elementor\Widget_Base {
 		return 'pcsb-mct elementor-widget-' . $this->get_name();
 	}
 
+	public function get_name() {
+		return 'penci-single-content';
+	}
+
 	protected function register_controls() {
 
 		$this->start_controls_section( 'content_section', [
@@ -45,6 +45,81 @@ class PenciSingleContent extends \Elementor\Widget_Base {
 			'options'     => [
 				'style-1' => 'Style 1',
 				'style-2' => 'Style 2'
+			]
+		] );
+
+		$this->add_control( 'ct_headingh1_style', [
+			'label'   => esc_html__( 'Style for Heading 1', 'soledad' ),
+			'type'    => \Elementor\Controls_Manager::SELECT,
+			'default' => '',
+			'options' => [
+				'' 		  => 'Default (No Style)',
+				'style-1' => 'Style 1',
+				'style-2' => 'Style 2',
+				'style-3' => 'Style 3',
+				'style-4' => 'Style 4',
+				'style-5' => 'Style 5',
+				'style-6' => 'Style 6',
+			]
+		] );
+
+		$this->add_control( 'ct_headingh2_style', [
+			'label'   => esc_html__( 'Style for Heading 2', 'soledad' ),
+			'type'    => \Elementor\Controls_Manager::SELECT,
+			'default' => '',
+			'options' => [
+				'' 		  => 'Default (No Style)',
+				'style-1' => 'Style 1',
+				'style-2' => 'Style 2',
+				'style-3' => 'Style 3',
+				'style-4' => 'Style 4',
+				'style-5' => 'Style 5',
+				'style-6' => 'Style 6',
+			]
+		] );
+
+		$this->add_control( 'ct_headingh3_style', [
+			'label'   => esc_html__( 'Style for Heading 3', 'soledad' ),
+			'type'    => \Elementor\Controls_Manager::SELECT,
+			'default' => '',
+			'options' => [
+				'' 		  => 'Default (No Style)',
+				'style-1' => 'Style 1',
+				'style-2' => 'Style 2',
+				'style-3' => 'Style 3',
+				'style-4' => 'Style 4',
+				'style-5' => 'Style 5',
+				'style-6' => 'Style 6',
+			]
+		] );
+
+		$this->add_control( 'ct_headingh4_style', [
+			'label'   => esc_html__( 'Style for Heading 4', 'soledad' ),
+			'type'    => \Elementor\Controls_Manager::SELECT,
+			'default' => '',
+			'options' => [
+				'' 		  => 'Default (No Style)',
+				'style-1' => 'Style 1',
+				'style-2' => 'Style 2',
+				'style-3' => 'Style 3',
+				'style-4' => 'Style 4',
+				'style-5' => 'Style 5',
+				'style-6' => 'Style 6',
+			]
+		] );
+
+		$this->add_control( 'ct_headingh5_style', [
+			'label'   => esc_html__( 'Style for Heading 5', 'soledad' ),
+			'type'    => \Elementor\Controls_Manager::SELECT,
+			'default' => '',
+			'options' => [
+				'' 		  => 'Default (No Style)',
+				'style-1' => 'Style 1',
+				'style-2' => 'Style 2',
+				'style-3' => 'Style 3',
+				'style-4' => 'Style 4',
+				'style-5' => 'Style 5',
+				'style-6' => 'Style 6',
 			]
 		] );
 
@@ -98,20 +173,19 @@ class PenciSingleContent extends \Elementor\Widget_Base {
 	}
 
 	protected function render() {
-
 		if ( penci_elementor_is_edit_mode() ) {
 			$this->preview_content();
 		} else {
 			$this->builder_content();
 		}
-
 	}
 
 	protected function preview_content() {
-		$settings    = $this->get_settings_for_display();
-		$block_style = $settings['block_style'];
+		$settings         = $this->get_settings_for_display();
+		$block_style      = $settings['block_style'];
+		$ct_heading_style = $this->penci_get_heading_style();
 		?>
-        <div class="post-entry <?php echo 'blockquote-' . $block_style; ?>">
+        <div class="post-entry <?php echo 'blockquote-' . $block_style; ?> <?php echo $ct_heading_style; ?>">
             <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
 
 				<?php do_action( 'penci_action_before_the_content' ); ?>
@@ -141,11 +215,12 @@ class PenciSingleContent extends \Elementor\Widget_Base {
 	}
 
 	protected function builder_content() {
-		$settings    = $this->get_settings_for_display();
-		$block_style = $settings['block_style'];
+		$settings         = $this->get_settings_for_display();
+		$block_style      = $settings['block_style'];
+		$ct_heading_style = $this->penci_get_heading_style();
 		?>
         <article class="post">
-            <div class="post-entry <?php echo 'blockquote-' . $block_style; ?>">
+            <div class="post-entry <?php echo 'blockquote-' . $block_style; ?> <?php echo $ct_heading_style; ?>">
                 <div class="inner-post-entry entry-content" id="penci-post-entry-inner">
 
 					<?php do_action( 'penci_action_before_the_content' ); ?>
@@ -161,5 +236,41 @@ class PenciSingleContent extends \Elementor\Widget_Base {
             </div>
         </article>
 		<?php
+	}
+
+	protected function penci_get_heading_style() {
+
+		$settings         = $this->get_settings_for_display();
+
+		$css_class = '';
+
+		$h1_style = $settings['ct_headingh1_style'];
+		$h2_style = $settings['ct_headingh2_style'];
+		$h3_style = $settings['ct_headingh3_style'];
+		$h4_style = $settings['ct_headingh4_style'];
+		$h5_style = $settings['ct_headingh5_style'];
+
+		if ( $h1_style ) {
+			$css_class .= ' heading1-'.$h1_style;
+		}
+
+		if ( $h2_style ) {
+			$css_class .= ' heading2-'.$h2_style;
+		}
+
+		if ( $h3_style ) {
+			$css_class .= ' heading3-'.$h3_style;
+		}
+
+		if ( $h4_style ) {
+			$css_class .= ' heading4-'.$h4_style;
+		}
+
+		if ( $h5_style ) {
+			$css_class .= ' heading5-'.$h5_style;
+		}
+
+		return $css_class;
+
 	}
 }

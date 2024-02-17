@@ -60,6 +60,8 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
 		$ajs_customizes['pcajs_tfz']  = get_theme_mod( 'penci_ajaxsearch_title_fsize' ) ? get_theme_mod( 'penci_ajaxsearch_title_fsize' ) . 'px' : '';
 		$ajs_customizes['pcajs_mfz']  = get_theme_mod( 'penci_ajaxsearch_meta_fsize' ) ? get_theme_mod( 'penci_ajaxsearch_meta_fsize' ) . 'px' : '';
 		$ajs_customizes['pcajs_nfz']  = get_theme_mod( 'penci_ajaxsearch_notice_fsize' ) ? get_theme_mod( 'penci_ajaxsearch_notice_fsize' ) . 'px' : '';
+		$ajs_customizes['pcajs_fvw']  = get_theme_mod( 'penci_video_float_w' ) ? get_theme_mod( 'penci_video_float_w' ) . 'px' : '470px';
+		$ajs_customizes['pcajs_fvmw'] = get_theme_mod( 'penci_video_float_mw' ) ? get_theme_mod( 'penci_video_float_mw' ) . 'px' : '220px';
 		?>
         body{
         --pcbg-cl: #fff;
@@ -333,10 +335,10 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
 		$body_size                    = get_theme_mod( 'penci_font_for_size_body' );
 		if ( is_numeric( $body_size ) && $body_size > 1 && $body_size != '14' ): ?>
             body, .widget ul li a{ font-size: <?php echo absint( $body_size ); ?>px; }
-            .widget ul li, .post-entry, p, .post-entry p { font-size: <?php echo absint( $body_size ); ?>px; line-height: 1.8; }
+            .widget ul li, .widget ol li, .post-entry, p, .post-entry p { font-size: <?php echo absint( $body_size ); ?>px; line-height: 1.8; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_font_mfor_size_body' ) && '14' != get_theme_mod( 'penci_font_mfor_size_body' ) ): ?>
-            @media only screen and (max-width: 480px){ body, .widget ul li a, .widget ul li, .post-entry, p, .post-entry p{ font-size: <?php echo get_theme_mod( 'penci_font_mfor_size_body' ); ?>px; } }
+            @media only screen and (max-width: 480px){ body, .widget ul li a, .widget ul li, .widget ol li, .post-entry, p, .post-entry p{ font-size: <?php echo get_theme_mod( 'penci_font_mfor_size_body' ); ?>px; } }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_archive_fpagetitle' ) ): ?>
             .archive-box span, .archive-box h1{ font-size: <?php echo get_theme_mod( 'penci_archive_fpagetitle' ); ?>px; }
@@ -348,7 +350,7 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .archive-box span, .archive-box h1{ text-transform: none; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_body_line_height' ) && '1.8' != get_theme_mod( 'penci_body_line_height' ) ): ?>
-            .widget ul li, .post-entry, p, .post-entry p{ line-height: <?php echo get_theme_mod( 'penci_body_line_height' ); ?>; }
+            .widget ul li, .widget ol li, .post-entry, p, .post-entry p{ line-height: <?php echo get_theme_mod( 'penci_body_line_height' ); ?>; }
 		<?php endif; ?>
 		<?php
 		if ( get_theme_mod( 'penci_font_weight_title' ) ) {
@@ -837,7 +839,7 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             background-color: var(--pctext-cl);
             }
 
-            body.pcdark-mode .penci-owl-carousel-slider .owl-dot span {
+            body.pcdark-mode .penci-owl-carousel-slider .penci-owl-dot span {
             background-color: var(--pctext-cl);
             border-color: var(--pctext-cl);
             }
@@ -1049,7 +1051,7 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .penci-pagination ul.page-numbers li span.current, #comments_pagination span { color: #fff; background: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; border-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; }
             .footer-instagram h4.footer-instagram-title > span:before, .woocommerce nav.woocommerce-pagination ul li span.current, .penci-pagination.penci-ajax-more a.penci-ajax-more-button:hover, .penci-recipe-heading a.penci-recipe-print:hover,.penci-review-metas .penci-review-btnbuy:hover, .home-featured-cat-content.style-14 .magcat-padding:before, .wrapper-boxed .bbp-pagination-links span.current, #buddypress .dir-search input[type=submit], #buddypress .groups-members-search input[type=submit], #buddypress button:hover, #buddypress a.button:hover, #buddypress a.button:focus, #buddypress input[type=button]:hover, #buddypress input[type=reset]:hover, #buddypress ul.button-nav li a:hover, #buddypress ul.button-nav li.current a, #buddypress div.generic-button a:hover, #buddypress .comment-reply-link:hover, #buddypress input[type=submit]:hover, #buddypress div.pagination .pagination-links .current, #buddypress input[type=submit], form.pc-searchform.penci-hbg-search-form input.search-input:hover, form.pc-searchform.penci-hbg-search-form input.search-input:focus, .penci-dropcap-box-outline, .penci-dropcap-circle-outline { border-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; }
             .woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message { border-top-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; }
-            .penci-slider ol.penci-control-nav li a.penci-active, .penci-slider ol.penci-control-nav li a:hover, .penci-related-carousel .owl-dot.active span, .penci-owl-carousel-slider .owl-dot.active span{ border-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; background-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; }
+            .penci-slider ol.penci-control-nav li a.penci-active, .penci-slider ol.penci-control-nav li a:hover, .penci-related-carousel .penci-owl-dot.active span, .penci-owl-carousel-slider .penci-owl-dot.active span{ border-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; background-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; }
             .woocommerce .woocommerce-message:before, .woocommerce form.checkout table.shop_table .order-total .amount, .woocommerce ul.products li.product .price ins, .woocommerce ul.products li.product .price, .woocommerce div.product p.price ins, .woocommerce div.product span.price ins, .woocommerce div.product p.price, .woocommerce div.product .entry-summary div[itemprop="description"] blockquote:before, .woocommerce div.product .woocommerce-tabs #tab-description blockquote:before, .woocommerce div.product .entry-summary div[itemprop="description"] blockquote cite, .woocommerce div.product .entry-summary div[itemprop="description"] blockquote .author, .woocommerce div.product .woocommerce-tabs #tab-description blockquote cite, .woocommerce div.product .woocommerce-tabs #tab-description blockquote .author, .woocommerce div.product .product_meta > span a:hover, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce ul.cart_list li .amount, .woocommerce ul.product_list_widget li .amount, .woocommerce table.shop_table td.product-name a:hover, .woocommerce table.shop_table td.product-price span, .woocommerce table.shop_table td.product-subtotal span, .woocommerce-cart .cart-collaterals .cart_totals table td .amount, .woocommerce .woocommerce-info:before, .woocommerce div.product span.price, .penci-container-inside.penci-breadcrumb span a:hover,.penci-container-inside.penci-breadcrumb a:hover  { color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; }
             .standard-content .penci-more-link.penci-more-link-button a.more-link, .penci-readmore-btn.penci-btn-make-button a, .penci-featured-cat-seemore.penci-btn-make-button a{ background-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; color: #fff; }
             .penci-vernav-toggle:before{ border-top-color: <?php echo get_theme_mod( 'penci_color_accent' ); ?>; color: #fff; }
@@ -1127,10 +1129,10 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .headline-title { color: <?php echo get_theme_mod( 'penci_top_bar_top_posts_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_top_bar_button_color' ) ): ?>
-            .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-prev, .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-next, .penci-trending-nav a{ color: <?php echo get_theme_mod( 'penci_top_bar_button_color' ); ?>; }
+            .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-prev, .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-next, .penci-trending-nav a{ color: <?php echo get_theme_mod( 'penci_top_bar_button_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_top_bar_button_hover_color' ) ): ?>
-            .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-prev:hover, .penci-owl-carousel-slider.penci-headline-posts .owl-nav .owl-next:hover, .penci-trending-nav a:hover{ color: <?php echo get_theme_mod( 'penci_top_bar_button_hover_color' ); ?>; }
+            .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-prev:hover, .penci-owl-carousel-slider.penci-headline-posts .penci-owl-nav .owl-next:hover, .penci-trending-nav a:hover{ color: <?php echo get_theme_mod( 'penci_top_bar_button_hover_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_top_bar_title_color' ) ): ?>
             a.penci-topbar-post-title { color: <?php echo get_theme_mod( 'penci_top_bar_title_color' ); ?>; }
@@ -1450,13 +1452,24 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             #navigation.menu-item-padding .menu > li > a:hover, #navigation.menu-item-padding .menu > li:hover > a, #navigation.menu-item-padding .menu > li.current-menu-item > a, #navigation.menu-item-padding .menu > li.current_page_item > a, #navigation.menu-item-padding .menu > li.current-menu-ancestor > a, #navigation.menu-item-padding .menu > li.current-menu-item > a { background-color:  <?php echo get_theme_mod( 'penci_main_bar_padding_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_drop_bg_color' ) ): ?>
+            #navigation.menu-style-3 .menu .sub-menu:after, .navigation.menu-style-3 .menu .sub-menu:after { border-bottom-color: <?php echo get_theme_mod( 'penci_drop_bg_color' ); ?>; }
+            #navigation.menu-style-3 .menu .sub-menu .sub-menu:after,.navigation.menu-style-3 .menu .sub-menu .sub-menu:after { border-right-color:  <?php echo get_theme_mod( 'penci_drop_bg_color' ); ?>; }
             #navigation .menu .sub-menu, #navigation .menu .children, #navigation ul.menu > li.megamenu > ul.sub-menu { background-color:  <?php echo get_theme_mod( 'penci_drop_bg_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_drop_items_border' ) ): ?>
             #navigation .menu .sub-menu, #navigation .menu .children, #navigation ul.menu ul.sub-menu li > a, #navigation .menu ul ul.sub-menu li a, #navigation.menu-style-2 .menu .sub-menu, #navigation.menu-style-2 .menu .children { border-color:  <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; }
             #navigation .penci-megamenu .penci-mega-child-categories a.cat-active { border-top-color: <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; border-bottom-color: <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; }
             #navigation ul.menu > li.megamenu > ul.sub-menu > li:before, #navigation .penci-megamenu .penci-mega-child-categories:after { background-color: <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; }
-            .penci-dropdown-menu{ border-color: <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; }
+            #navigation.menu-style-3 .menu .sub-menu,
+            .navigation.menu-style-3 .menu .sub-menu,
+            .navigation.menu-style-3 .menu .penci-dropdown-menu,
+            #navigation.menu-style-3 .menu .children,
+            #navigation.menu-style-3 .menu .penci-dropdown-menu,
+            .navigation.menu-style-3 .menu .children, .penci-dropdown-menu{ border-color: <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; }
+            #navigation.menu-style-3 .menu .sub-menu:before,
+            .navigation.menu-style-3 .menu .sub-menu:before{ border-bottom-color: <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; }
+            #navigation.menu-style-3 .menu .sub-menu .sub-menu:before,
+            .navigation.menu-style-3 .menu .sub-menu .sub-menu:before{ border-right-color: <?php echo get_theme_mod( 'penci_drop_items_border' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_mega_bg_color' ) ): ?>
             #navigation .penci-megamenu, #navigation .penci-megamenu .penci-mega-child-categories a.cat-active,
@@ -1606,10 +1619,10 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .featured-area .cat > a.penci-cat-name { font-size: <?php echo get_theme_mod( 'penci_fslider_cat_fsize' ); ?>px; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_fslider_meta_fsize' ) ): ?>
-            .penci-featured-content .feat-text .feat-meta span { font-size: <?php echo get_theme_mod( 'penci_fslider_meta_fsize' ); ?>px; }
+            .penci-featured-content .feat-text .feat-meta span, .penci-43-slider-item .penci-fslider-fmeta span { font-size: <?php echo get_theme_mod( 'penci_fslider_meta_fsize' ); ?>px; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_fslider_title_fsize' ) ): ?>
-            @media only screen and (min-width: 768px){ .penci-featured-content .feat-text h3 a, .featured-style-4 .penci-featured-content .feat-text h3 a, .featured-style-6 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-7 .penci-mag-featured-content h3 a, .featured-style-8 .penci-mag-featured-content h3 a, .featured-style-9 .penci-mag-featured-content h3 a, .featured-style-10 .penci-mag-featured-content h3 a, .featured-style-11 .penci-mag-featured-content h3 a, .featured-style-12 .penci-mag-featured-content h3 a, .featured-style-13 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-14 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-15 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-16 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-17 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-18 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-19 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-19 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-25 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-28 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-29 .penci-featured-content .feat-text h3 a, .featured-style-35 .feat-text-right h3 a, .featured-style-37 .penci-item-1 .penci-mag-featured-content h3 a{ font-size: <?php echo get_theme_mod( 'penci_fslider_title_fsize' ); ?>px; } }
+            @media only screen and (min-width: 768px){ .penci-featured-content .feat-text h3 a, .featured-style-4 .penci-featured-content .feat-text h3 a, .featured-style-6 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-7 .penci-mag-featured-content h3 a, .featured-style-8 .penci-mag-featured-content h3 a, .featured-style-9 .penci-mag-featured-content h3 a, .featured-style-10 .penci-mag-featured-content h3 a, .featured-style-11 .penci-mag-featured-content h3 a, .featured-style-12 .penci-mag-featured-content h3 a, .featured-style-13 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-14 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-15 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-16 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-17 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-18 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-19 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-19 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-25 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-28 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-29 .penci-featured-content .feat-text h3 a, .featured-style-35 .feat-text-right h3 a, .featured-style-37 .penci-item-1 .penci-mag-featured-content h3 a, .penci-43-slider-item .title-part{ font-size: <?php echo get_theme_mod( 'penci_fslider_title_fsize' ); ?>px; } }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_fslider_smalltitle_fsize' ) ): ?>
             @media only screen and (min-width: 768px){ .penci-mag-featured-content h3 a, .featured-style-13 .penci-mag-featured-content h3 a, .featured-style-15 .penci-mag-featured-content h3 a, .featured-style-18 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-2 .penci-mag-featured-content h3 a { font-size: <?php echo get_theme_mod( 'penci_fslider_smalltitle_fsize' ); ?>px; } }
@@ -1618,13 +1631,13 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             @media only screen and (min-width: 768px){ .featured-style-22 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-5 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-6 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-5 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-0 .penci-mag-featured-content h3 a{ font-size: <?php echo get_theme_mod( 'penci_fslider_tinytitle_fsize' ); ?>px; } }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_fslider_excerpt_fsize' ) ): ?>
-            .featured-style-35 .featured-content-excerpt p, .featured-slider-excerpt p { font-size: <?php echo get_theme_mod( 'penci_fslider_excerpt_fsize' ); ?>px; }
+            .featured-style-35 .featured-content-excerpt p, .featured-slider-excerpt p, .penci-43-slider-item .featured-slider-excerpt p { font-size: <?php echo get_theme_mod( 'penci_fslider_excerpt_fsize' ); ?>px; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_fslider_button_fsize' ) ): ?>
-            .featured-style-29 .penci-featured-slider-button a, .featured-style-35 .penci-featured-slider-button a, .featured-style-38 .penci-featured-slider-button a { font-size: <?php echo get_theme_mod( 'penci_fslider_button_fsize' ); ?>px; }
+            .featured-style-29 .penci-featured-slider-button a, .featured-style-35 .penci-featured-slider-button a, .featured-style-38 .penci-featured-slider-button a, .featured-style-40 .penci-featured-slider-button a { font-size: <?php echo get_theme_mod( 'penci_fslider_button_fsize' ); ?>px; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_fslider_title_fsize_mobile' ) ): ?>
-            @media only screen and (max-width: 479px){ .penci-featured-content .feat-text h3 a, .featured-style-4 .penci-featured-content .feat-text h3 a, .featured-style-5 .penci-featured-content .feat-text h3 a, .featured-style-6 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-7 .penci-mag-featured-content h3 a, .featured-style-8 .penci-mag-featured-content h3 a, .featured-style-9 .penci-mag-featured-content h3 a, .featured-style-10 .penci-mag-featured-content h3 a, .featured-style-11 .penci-mag-featured-content h3 a, .featured-style-12 .penci-mag-featured-content h3 a, .featured-style-13 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-14 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-15 .penci-mag-featured-content h3 a, .featured-style-15 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-16 .penci-mag-featured-content h3 a, .featured-style-16 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-17 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-18 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-28 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-29 .penci-featured-content .feat-text h3 a, .featured-style-30 .penci-featured-content .feat-text h3 a, .featured-style-35 .feat-text-right h3 a, .featured-style-37 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-38 .penci-featured-content .feat-text h3 a{ font-size: <?php echo get_theme_mod( 'penci_fslider_title_fsize_mobile' ); ?>px; } }
+            @media only screen and (max-width: 479px){ .penci-featured-content .feat-text h3 a, .featured-style-4 .penci-featured-content .feat-text h3 a, .featured-style-5 .penci-featured-content .feat-text h3 a, .featured-style-6 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-7 .penci-mag-featured-content h3 a, .featured-style-8 .penci-mag-featured-content h3 a, .featured-style-9 .penci-mag-featured-content h3 a, .featured-style-10 .penci-mag-featured-content h3 a, .featured-style-11 .penci-mag-featured-content h3 a, .featured-style-12 .penci-mag-featured-content h3 a, .featured-style-13 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-14 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-15 .penci-mag-featured-content h3 a, .featured-style-15 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-16 .penci-mag-featured-content h3 a, .featured-style-16 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-17 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-18 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-28 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-29 .penci-featured-content .feat-text h3 a, .featured-style-30 .penci-featured-content .feat-text h3 a, .featured-style-35 .feat-text-right h3 a, .featured-style-37 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-38 .penci-featured-content .feat-text h3 a, .penci-43-slider-item .title-part{ font-size: <?php echo get_theme_mod( 'penci_fslider_title_fsize_mobile' ); ?>px; } }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_fslider_small_fsize_mobile' ) ): ?>
             @media only screen and (max-width: 479px){ .penci-mag-featured-content h3 a, .featured-style-13 .penci-mag-featured-content h3 a, .featured-style-18 .penci-mag-featured-content h3 a, .featured-style-19 .penci-mag-featured-content h3 a, .featured-style-19 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-19 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-20 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-21 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-5 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-6 .penci-mag-featured-content h3 a, .featured-style-22 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-5 .penci-mag-featured-content h3 a, .featured-style-23 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-24 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-25 .penci-item-1 .penci-mag-featured-content h3 a, .featured-style-25 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-25 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-25 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-26 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-2 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-3 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-4 .penci-mag-featured-content h3 a, .featured-style-27 .penci-item-0 .penci-mag-featured-content h3 a, .featured-style-28 .penci-mag-featured-content h3 a{ font-size: <?php echo get_theme_mod( 'penci_fslider_small_fsize_mobile' ); ?>px; } }
@@ -1801,14 +1814,20 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             background: linear-gradient(to right, rgba(255,255,255,0) 26%, <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg' ); ?> 65%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo get_theme_mod( 'penci_featured_slider_overlay_bg' ); ?>', endColorstr='<?php echo get_theme_mod( 'penci_featured_slider_overlay_bg' ); ?>',GradientType=1 );
             }
+            .slider-40-wrapper .list-slider-creative .item-slider-creative .img-container:before {
+            background-color: <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg' ); ?>;
+            }
             @media only screen and (max-width: 960px){
-            .featured-style-4 .penci-featured-content .featured-slider-overlay, .featured-style-5 .penci-featured-content .featured-slider-overlay { background-color: <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg' ); ?>; }
+            .featured-style-4 .penci-featured-content .featured-slider-overlay, .featured-style-5 .penci-featured-content .featured-slider-overlay, .slider-40-wrapper .list-slider-creative .item-slider-creative .img-container:before { background-color: <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg' ); ?>; }
             }
             .penci-slider38-overlay, .penci-flat-overlay .penci-slide-overlay .penci-mag-featured-content:before{ background-color: <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg' ); ?>; }
 		<?php endif; ?>
-        .penci-slide-overlay .overlay-link, .penci-slider38-overlay, .penci-flat-overlay .penci-slide-overlay .penci-mag-featured-content:before { opacity: <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg_opacity' ); ?>; }
+        .penci-slide-overlay .overlay-link, .penci-slider38-overlay, .penci-flat-overlay .penci-slide-overlay .penci-mag-featured-content:before, .slider-40-wrapper .list-slider-creative .item-slider-creative .img-container:before { opacity: <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg_opacity' ); ?>; }
         .penci-item-mag:hover .penci-slide-overlay .overlay-link, .featured-style-38 .item:hover .penci-slider38-overlay, .penci-flat-overlay .penci-item-mag:hover .penci-slide-overlay .penci-mag-featured-content:before { opacity: <?php echo get_theme_mod( 'penci_featured_slider_overlay_bg_hover_opacity' ); ?>; }
         .penci-featured-content .featured-slider-overlay { opacity: <?php echo get_theme_mod( 'penci_featured_slider_box_opacity' ); ?>; }
+        .slider-40-wrapper .list-slider-creative .item-slider-creative:hover .img-container:before {
+        opacity:<?php echo get_theme_mod( 'penci_featured_slider_overlay_bg_hover_opacity' ); ?>;
+        }
 		<?php if ( get_theme_mod( 'penci_featured_slider_box_opacity' ) ): ?>
             @-webkit-keyframes pencifadeInUpDiv{Header Background Color
             0%{ opacity:0; -webkit-transform:translate3d(0,450px,0);transform:translate3d(0,450px,0);}
@@ -1821,29 +1840,32 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             @media only screen and (max-width: 960px){
             .penci-featured-content-right .feat-text-right:before{ opacity: <?php echo get_theme_mod( 'penci_featured_slider_box_opacity' ); ?>; }
             }
+            .slider-40-wrapper .list-slider-creative .item-slider-creative .img-container:before {
+            opacity:<?php echo get_theme_mod( 'penci_featured_slider_box_opacity' ); ?>;
+            }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_box_bg_color' ) ): ?>
             .penci-featured-content .featured-slider-overlay, .penci-featured-content-right:before, .penci-featured-content-right .feat-text-right:before { background: <?php echo get_theme_mod( 'penci_featured_slider_box_bg_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_cat_color' ) ): ?>
-            .penci-featured-content .feat-text .featured-cat a, .penci-mag-featured-content .cat > a.penci-cat-name, .featured-style-35 .cat > a.penci-cat-name { color: <?php echo get_theme_mod( 'penci_featured_slider_cat_color' ); ?>; }
+            .penci-43-slider-item div .featured-cat a, .penci-featured-content .feat-text .featured-cat a, .penci-mag-featured-content .cat > a.penci-cat-name, .featured-style-35 .cat > a.penci-cat-name { color: <?php echo get_theme_mod( 'penci_featured_slider_cat_color' ); ?>; }
             .penci-mag-featured-content .cat > a.penci-cat-name:after, .penci-featured-content .cat > a.penci-cat-name:after, .featured-style-35 .cat > a.penci-cat-name:after{ border-color: <?php echo get_theme_mod( 'penci_featured_slider_cat_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_cat_hover_color' ) ): ?>
-            .penci-featured-content .feat-text .featured-cat a:hover, .penci-mag-featured-content .cat > a.penci-cat-name:hover, .featured-style-35 .cat > a.penci-cat-name:hover { color: <?php echo get_theme_mod( 'penci_featured_slider_cat_hover_color' ); ?>; }
+            .penci-43-slider-item div .featured-cat a:hover, .penci-featured-content .feat-text .featured-cat a:hover, .penci-mag-featured-content .cat > a.penci-cat-name:hover, .featured-style-35 .cat > a.penci-cat-name:hover { color: <?php echo get_theme_mod( 'penci_featured_slider_cat_hover_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_title_color' ) ): ?>
-            .penci-mag-featured-content h3 a, .penci-featured-content .feat-text h3 a, .featured-style-35 .feat-text-right h3 a { color: <?php echo get_theme_mod( 'penci_featured_slider_title_color' ); ?>; }
+            .penci-mag-featured-content h3 a, .penci-featured-content .feat-text h3 a, .featured-style-35 .feat-text-right h3 a, .penci-43-slider-item .title-part a { color: <?php echo get_theme_mod( 'penci_featured_slider_title_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_title_hover_color' ) ): ?>
-            .penci-mag-featured-content h3 a:hover, .penci-featured-content .feat-text h3 a:hover, .featured-style-35 .feat-text-right h3 a:hover { color: <?php echo get_theme_mod( 'penci_featured_slider_title_hover_color' ); ?>; }
+            .penci-mag-featured-content h3 a:hover, .penci-featured-content .feat-text h3 a:hover, .featured-style-35 .feat-text-right h3 a:hover, .penci-43-slider-item .title-part a:hover { color: <?php echo get_theme_mod( 'penci_featured_slider_title_hover_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_meta_color' ) ): ?>
-            .penci-mag-featured-content .feat-meta span, .penci-mag-featured-content .feat-meta a, .penci-featured-content .feat-text .feat-meta span, .penci-featured-content .feat-text .feat-meta span a, .featured-style-35 .featured-content-excerpt .feat-meta span, .featured-style-35 .featured-content-excerpt .feat-meta span a { color: <?php echo get_theme_mod( 'penci_featured_slider_meta_color' ); ?>; }
-            .penci-mag-featured-content .feat-meta > span:after, .penci-featured-content .feat-text .feat-meta > span:after { border-color: <?php echo get_theme_mod( 'penci_featured_slider_meta_color' ); ?>; }
+            .penci-fslider-fmeta span, .penci-fslider-fmeta span a, .penci-mag-featured-content .feat-meta span, .penci-mag-featured-content .feat-meta a, .penci-featured-content .feat-text .feat-meta span, .penci-featured-content .feat-text .feat-meta span a, .featured-style-35 .featured-content-excerpt .feat-meta span, .featured-style-35 .featured-content-excerpt .feat-meta span a { color: <?php echo get_theme_mod( 'penci_featured_slider_meta_color' ); ?>; }
+            .penci-fslider-fmeta a:after, .penci-mag-featured-content .feat-meta > span:after, .penci-featured-content .feat-text .feat-meta > span:after { border-color: <?php echo get_theme_mod( 'penci_featured_slider_meta_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_excerpt_color' ) ): ?>
-            .featured-style-35 .featured-content-excerpt p, .featured-slider-excerpt p{ color: <?php echo get_theme_mod( 'penci_featured_slider_excerpt_color' ); ?>; }
+            .penci-43-slider-item .featured-slider-excerpt p, .featured-style-35 .featured-content-excerpt p, .featured-slider-excerpt p{ color: <?php echo get_theme_mod( 'penci_featured_slider_excerpt_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_icon_color' ) ): ?>
             .featured-area .overlay-icon-format { color: <?php echo get_theme_mod( 'penci_featured_slider_icon_color' ); ?>; border-color: <?php echo get_theme_mod( 'penci_featured_slider_icon_color' ); ?>; }
@@ -1856,13 +1878,13 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .featured-style-29 .penci-featured-content .feat-text h3:before { border-color: <?php echo get_theme_mod( 'penci_featured_slider_lines_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_button_color' ) ): ?>
-            .featured-style-29 .penci-featured-slider-button a, .featured-style-35 .penci-featured-slider-button a, .featured-style-38 .penci-featured-slider-button a { border-color: <?php echo get_theme_mod( 'penci_featured_slider_button_color' ); ?>; color: <?php echo get_theme_mod( 'penci_featured_slider_button_color' ); ?>; }
+            .featured-style-40 .penci-featured-slider-button a, .featured-style-29 .penci-featured-slider-button a, .featured-style-35 .penci-featured-slider-button a, .featured-style-38 .penci-featured-slider-button a { border-color: <?php echo get_theme_mod( 'penci_featured_slider_button_color' ); ?>; color: <?php echo get_theme_mod( 'penci_featured_slider_button_color' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_button_hover_bg' ) ): ?>
-            .featured-style-29 .penci-featured-slider-button a:hover, .featured-style-35 .penci-featured-slider-button a:hover, .featured-style-38 .penci-featured-slider-button a:hover { border-color: <?php echo get_theme_mod( 'penci_featured_slider_button_hover_bg' ); ?>; background-color: <?php echo get_theme_mod( 'penci_featured_slider_button_hover_bg' ); ?>; }
+            .featured-style-40 .penci-featured-slider-button a:hover, .featured-style-29 .penci-featured-slider-button a:hover, .featured-style-35 .penci-featured-slider-button a:hover, .featured-style-38 .penci-featured-slider-button a:hover { border-color: <?php echo get_theme_mod( 'penci_featured_slider_button_hover_bg' ); ?>; background-color: <?php echo get_theme_mod( 'penci_featured_slider_button_hover_bg' ); ?>; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_featured_slider_button_hover_color' ) ): ?>
-            .featured-style-29 .penci-featured-slider-button a:hover, .featured-style-35 .penci-featured-slider-button a:hover, .featured-style-38 .penci-featured-slider-button a:hover { color: <?php echo get_theme_mod( 'penci_featured_slider_button_hover_color' ); ?>; }
+            .featured-style-40 .penci-featured-slider-button a:hover, .featured-style-29 .penci-featured-slider-button a:hover, .featured-style-35 .penci-featured-slider-button a:hover, .featured-style-38 .penci-featured-slider-button a:hover { color: <?php echo get_theme_mod( 'penci_featured_slider_button_hover_color' ); ?>; }
 		<?php endif; ?>
 		<?php
 		$auto_speed = get_theme_mod( 'penci_featured_slider_auto_speed' );
@@ -2155,8 +2177,8 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .penci-sidebar-content .penci-border-arrow .inner-arrow { text-transform: none; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_sidebar_rm_bdbottom' ) ): ?>
-            .widget ul li, .widget ul.side-newsfeed li, .woocommerce ul.product_list_widget li{ padding-bottom: 0; border-bottom: none; }
-            .widget ul li{ margin-bottom: 15px; }
+            .widget ul li, .widget ol li, .widget ul.side-newsfeed li, .woocommerce ul.product_list_widget li{ padding-bottom: 0; border-bottom: none; }
+            .widget ul li, .widget ol li{ margin-bottom: 15px; }
             .woocommerce ul.product_list_widget li{ margin-bottom: 20px; }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_sidebar_heading_size' ) ): ?>
@@ -2240,7 +2262,7 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .widget .tagcloud a:hover, .widget-social a:hover i, .widget input[type="submit"]:hover,.penci-user-logged-in .penci-user-action-links a:hover,.penci-button:hover, .widget button[type="submit"]:hover { color: #fff; background-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; border-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; }
             .about-widget .about-me-heading:before { border-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; }
             .penci-tweets-widget-content .tweet-intents-inner:before, .penci-tweets-widget-content .tweet-intents-inner:after, .pencisc-column-1.penci-video_playlist .penci-video-nav .playlist-panel-item, .penci-video_playlist .penci-custom-scroll::-webkit-scrollbar-thumb, .penci-video_playlist .penci-playlist-title { background-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; }
-            .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span, .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span { border-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; background-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; }
+            .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span, .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span { border-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; background-color: <?php echo get_theme_mod( 'penci_sidebar_accent_hover_color' ); ?>; }
 		<?php endif; ?>
 		<?php
 		$footer_widget_padding = get_theme_mod( 'penci_footer_widget_padding' );
@@ -2377,7 +2399,7 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
             .footer-widget-wrapper .widget .tagcloud a:hover, .footer-widget-wrapper .widget-social a:hover i, .footer-widget-wrapper .mc4wp-form input[type="submit"]:hover, .footer-widget-wrapper .widget input[type="submit"]:hover,.footer-widget-wrapper .penci-user-logged-in .penci-user-action-links a:hover, .footer-widget-wrapper .widget button[type="submit"]:hover { color: #fff; background-color: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>; border-color: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>; }
             .footer-widget-wrapper .about-widget .about-me-heading:before { border-color: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>; }
             .footer-widget-wrapper .penci-tweets-widget-content .tweet-intents-inner:before, .footer-widget-wrapper .penci-tweets-widget-content .tweet-intents-inner:after { background-color: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>; }
-            .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span, .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span {  border-color: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>;  background: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>;  }
+            .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span, .footer-widget-wrapper .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span {  border-color: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>;  background: <?php echo get_theme_mod( 'penci_footer_widget_accent_hover_color' ); ?>;  }
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'penci_footer_icon_color' ) ): ?>
             ul.footer-socials li a i { color: <?php echo get_theme_mod( 'penci_footer_icon_color' ); ?>; border-color: <?php echo get_theme_mod( 'penci_footer_icon_color' ); ?>; }
@@ -3327,8 +3349,8 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
 				echo '.penci-menu-hbg .about-widget .about-me-heading:before { border-color: ' . esc_attr( $mhbgaccent_hover_color ) . '; }';
 				echo '.penci-menu-hbg .penci-tweets-widget-content .tweet-intents-inner:before,';
 				echo '.penci-menu-hbg .penci-tweets-widget-content .tweet-intents-inner:after { background-color: ' . esc_attr( $mhbgaccent_hover_color ) . '; }';
-				echo '.penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span,';
-				echo '.penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span { border-color: ' . esc_attr( $mhbgaccent_hover_color ) . '; background-color: ' . esc_attr( $mhbgaccent_hover_color ) . '; }';
+				echo '.penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span,';
+				echo '.penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span { border-color: ' . esc_attr( $mhbgaccent_hover_color ) . '; background-color: ' . esc_attr( $mhbgaccent_hover_color ) . '; }';
 			}
 
 			if ( $mhbgfooter_color ) {
@@ -3649,12 +3671,20 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
 			echo 'a.post-share-item:hover,.pcnew-share.penci-icon-full.border-style .post-share-item:hover i{border-color:' . $snew_hbcolor . '}';
 		}
 
-		if ( get_theme_mod('penci_post_share_disbtnplus') ) {
+		if ( get_theme_mod( 'penci_post_share_disbtnplus' ) ) {
 			echo '.penci-featured-share-box .penci-shareso a:nth-last-child(2){ margin-right: 0; }';
 		}
 
-		if ( get_theme_mod('penci_meta_author_aw')) {
-			echo '.penci-grid li .item .author-url .avatar,.penci-masonry .item-masonry a .author-url .avatar,.author-url .avatar,.grid-post-box-meta img.avatar{width:'.get_theme_mod('penci_meta_author_aw').'px;}';
+		if ( get_theme_mod( 'penci_meta_author_aw' ) ) {
+			echo '.penci-grid li .item .author-url .avatar,.penci-masonry .item-masonry a .author-url .avatar,.author-url .avatar,.grid-post-box-meta img.avatar{width:' . get_theme_mod( 'penci_meta_author_aw' ) . 'px;}';
+		}
+
+		if ( get_theme_mod( 'penci_textshare_selection_bgcolor' ) ) {
+			echo '.entry-content p::selection{background-color: ' . get_theme_mod( 'penci_textshare_selection_bgcolor' ) . '}';
+		}
+
+		if ( get_theme_mod( 'penci_textshare_selection_txtcolor' ) ) {
+			echo '.entry-content p::selection{color: ' . get_theme_mod( 'penci_textshare_selection_txtcolor' ) . '}';
 		}
 
 		do_action( 'soledad_theme/custom_css' );
@@ -3699,9 +3729,17 @@ if ( ! function_exists( 'pencidesign_get_customizer_css_file' ) ):
 		<?php } ?>
 		<?php
 		do_action( 'soledad_theme/custom_dark_css' );
+		$custom_social_colors = get_option( 'penci_custom_socials', array() );
+		if ( ! empty( $custom_social_colors ) ) {
+			foreach ( $custom_social_colors as $key => $data ) {
+				if ( isset( $data['color'] ) && $data['color'] ) {
+					echo '.pcsoccl-brandbg .pcsc-brandflag.pcsoci-' . $key . '{background-color:' . $data['color'] . '}';
+					echo '.pcsoccl-brandtext .pcsc-brandflag.pcsoci-' . $key . ' svg{fill:' . $data['color'] . '}';
+				}
+			}
+		}
 	}
 endif;
 
 
 add_action( 'wp_head', 'pencidesign_customizer_css' );
-?>

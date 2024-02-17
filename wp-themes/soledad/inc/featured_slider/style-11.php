@@ -18,7 +18,7 @@ if ( penci_is_mobile() ) {
 	$num_posts = $feat_query->post_count;
 	while ( $feat_query->have_posts() ) : $feat_query->the_post();
 		?>
-        <div class="item">
+        <div class="item swiper-slide">
             <div class="wrapper-item wrapper-item-classess">
                 <div class="penci-item-mag penci-item-<?php echo( $i % 2 ); ?>">
 	                <?php do_action( 'penci_bookmark_post' ); ?>
@@ -35,7 +35,7 @@ if ( penci_is_mobile() ) {
 					<?php } ?>
                     <div class="penci-slide-overlay penci-slider7-overlay">
                         <a class="overlay-link"
-                           aria-label="<?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), 6, '...' ); ?>"
+                           aria-label="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
                            href="<?php the_permalink(); ?>"></a>
 						<?php if ( ! get_theme_mod( 'penci_featured_slider_icons' ) && ( has_post_format( 'video' ) || has_post_format( 'audio' ) || has_post_format( 'link' ) || has_post_format( 'quote' ) || has_post_format( 'gallery' ) ) ): ?>
                             <a href="<?php the_permalink(); ?>" class="overlay-icon-format lager-size-icon">

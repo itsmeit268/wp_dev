@@ -136,7 +136,7 @@ $options[] = array(
 	),
 );
 $options[] = array(
-	'label'    => __( 'Font Size for Excerpt on Style 35, 36, 38', 'soledad' ),
+	'label'    => __( 'Font Size for Excerpt on Style 35, 36, 38, 39', 'soledad' ),
 	'id'       => 'penci_fslider_excerpt_fsize',
 	'default'  => '',
 	'sanitize' => 'absint',
@@ -155,7 +155,7 @@ $options[] = array(
 	),
 );
 $options[] = array(
-	'label'    => __( 'Font Size for Button on Style 29, 30, 35, 36, 38', 'soledad' ),
+	'label'    => __( 'Font Size for Button on Style 29, 30, 35, 36, 38, 39', 'soledad' ),
 	'id'       => 'penci_fslider_button_fsize',
 	'default'  => '',
 	'sanitize' => 'absint',

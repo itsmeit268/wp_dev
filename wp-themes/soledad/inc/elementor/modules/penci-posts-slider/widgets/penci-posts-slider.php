@@ -285,10 +285,11 @@ class PenciPostsSlider extends Base_Widget {
 			<?php $this->markup_block_title( $settings, $this ); ?>
             <div class="penci-block_content">
                 <div id="penci-postslidewg-<?php echo sanitize_text_field( $rand ); ?>"
-                     class="penci-owl-carousel penci-owl-carousel-slider penci-widget-slider penci-post-slider-<?php echo $style; ?>"
+                     class="penci-owl-carousel swiper penci-owl-carousel-slider penci-widget-slider penci-post-slider-<?php echo $style; ?>"
                      data-lazy="true" data-auto="<?php echo $dataauto; ?>">
+                    <div class="swiper-wrapper">
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                        <div class="penci-slide-widget">
+                        <div class="penci-slide-widget swiper-slide">
                             <div class="penci-slide-content">
 								<?php if ( $style != 'style-3' ) { ?>
 									<?php if ( ! $dis_lazyload ) { ?>
@@ -332,6 +333,7 @@ class PenciPostsSlider extends Base_Widget {
                             </div>
                         </div>
 					<?php endwhile; ?>
+					</div>
                 </div>
 
 				<?php

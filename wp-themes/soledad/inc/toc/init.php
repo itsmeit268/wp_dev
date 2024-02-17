@@ -49,14 +49,14 @@ if ( ! class_exists( 'PenciTOC' ) ) {
 		public static function enqueueScripts() {
 			$js_vars = array();
 			wp_enqueue_script( 'js-cookies' );
-			wp_register_script( 'penci-smoothscroll', get_template_directory_uri() . '/js/smooth-scroll.min.js', array( 'jquery' ), PENCI_SOLEDAD_VERSION, true );
+			wp_register_script( 'penci-smoothscroll2', get_template_directory_uri() . '/js/smooth-scroll.min.js', array( 'jquery' ), PENCI_SOLEDAD_VERSION, true );
 			wp_register_script(
 				'penci-toc-lib',
 				get_template_directory_uri() . '/inc/toc/penci-toc.js',
 				array(
 					'jquery',
 					'js-cookies',
-					'penci-smoothscroll',
+					'penci-smoothscroll2',
 				),
 				PENCI_SOLEDAD_VERSION,
 				true

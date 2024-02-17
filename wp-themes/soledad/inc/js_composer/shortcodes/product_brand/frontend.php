@@ -61,7 +61,9 @@ if ( 'carousel' === $settings['style'] ) {
 	$owl_attributes              = '';
 
 	$wrapper_class[]       = 'penci-carousel-container';
-	$items_wrapper_class[] = 'penci-owl-carousel penci-owl-carousel-slider';
+	$items_wrapper_class[] = 'penci-owl-carousel penci-owl-carousel-slider swiper';
+
+	$item_class[]          = 'swiper-slide';
 
 
 	$items_wrapper_data[] = 'data-item="' . ( isset( $settings['slides_per_view'] ) ? $settings['slides_per_view'] : 3 ) . '"';
@@ -130,6 +132,7 @@ if ( penci_is_shop_on_front() ) {
     <div <?php echo implode( ' ', $wrapper_class ); ?>>
 		<?php Penci_Vc_Helper::markup_block_title( $settings ); ?>
         <div <?php echo implode( ' ', $items_wrapper_class ); ?> <?php echo implode( ' ', $items_wrapper_data ); ?>>
+        	<div class="swiper-wrapper">
 			<?php if ( ! is_wp_error( $brands ) && count( $brands ) > 0 ) : ?>
 				<?php foreach ( $brands as $key => $brand ) : ?>
 					<?php
@@ -158,6 +161,7 @@ if ( penci_is_shop_on_front() ) {
                     </div>
 				<?php endforeach; ?>
 			<?php endif; ?>
+			</div>
         </div>
     </div>
 <?php

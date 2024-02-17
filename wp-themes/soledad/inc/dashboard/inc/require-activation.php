@@ -379,7 +379,7 @@ if ( ! class_exists( 'Penci_Require_Active' ) ) {
                 wp_send_json_error(
                     array(
                         'success' => false,
-                        'message' => 'Invalid purchase code',
+                        'message' => 'Invalid purchase code. Please check it again.',
                     )
                 );
             }

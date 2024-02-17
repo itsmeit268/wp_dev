@@ -22,7 +22,7 @@ $image_size_big      = get_theme_mod( 'featured_slider_imgbig' ) ? get_theme_mod
 		$thumb_mobile = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_theme_mod( 'featured_slider_imgsize_mobile' ) : 'penci-masonry-thumb';
 
 		?>
-        <div class="item">
+        <div class="item swiper-slide">
             <div class="penci-item-mag penci-item-<?php if ( $i != $number_last && $i != $num_posts ) {
 				echo '1';
 			} else {
@@ -40,7 +40,7 @@ $image_size_big      = get_theme_mod( 'featured_slider_imgbig' ) ? get_theme_mod
 				<?php } ?>
                 <div class="penci-slide-overlay penci-slider6-overlay penci-slider37-overlay">
                     <a class="overlay-link"
-                       aria-label="<?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), 6, '...' ); ?>"
+                       aria-label="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
                        href="<?php the_permalink(); ?>"></a>
 					<?php if ( ! get_theme_mod( 'penci_featured_slider_icons' ) && ( has_post_format( 'video' ) || has_post_format( 'audio' ) || has_post_format( 'link' ) || has_post_format( 'quote' ) || has_post_format( 'gallery' ) ) ): ?>
                         <a href="<?php the_permalink(); ?>"
@@ -94,7 +94,7 @@ $image_size_big      = get_theme_mod( 'featured_slider_imgbig' ) ? get_theme_mod
 
         </div>
 
-		<?php if ( $i == ( $num_posts - 2 ) || $num_posts < 3 ): echo '</div></div><div class="penci-featured-items-right">'; endif; ?>
+		<?php if ( $i == ( $num_posts - 2 ) || $num_posts < 3 ): echo '</div></div></div><div class="penci-featured-items-right">'; endif; ?>
 
 		<?php $i ++; endwhile;
 	wp_reset_postdata(); ?>

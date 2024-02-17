@@ -15,6 +15,20 @@ $options[] = array(
 	'type'     => 'soledad-fw-toggle',
 );
 $options[] = array(
+	'default'  => 'style-1',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Related Posts Style:', 'soledad' ),
+	'id'       => 'penci_related_style',
+	'type'     => 'soledad-fw-select',
+	'choices'  => array(
+		'style-1' => 'Style 1',
+		'style-2' => 'Style 2',
+		'style-3' => 'Style 3',
+		'style-4' => 'Style 4',
+		'style-5' => 'Style 5',
+	)
+);
+$options[] = array(
 	'default'  => 'categories',
 	'sanitize' => 'penci_sanitize_choices_field',
 	'label'    => __( 'Display Related Posts By:', 'soledad' ),
@@ -149,14 +163,14 @@ $options[] = array(
 	'sanitize'    => 'penci_sanitize_checkbox_field',
 	'label'       => __( 'Exclude Featured Category from Related Posts based on Categories', 'soledad' ),
 	'id'          => 'penci_post_related_exclusive_cat',
-	'description'=>__('Featured Category is category you selected to filter slider via Customize > Featured Slider > General. This option will help you remove that category on related posts based on categories','soledad'),
+	'description' => __( 'Featured Category is category you selected to filter slider via Customize > Featured Slider > General. This option will help you remove that category on related posts based on categories', 'soledad' ),
 	'type'        => 'soledad-fw-toggle',
 );
 $options[] = array(
 	'sanitize'    => 'sanitize_text_field',
 	'label'       => esc_html__( 'Related Posts Popup', 'soledad' ),
 	'id'          => 'penci_section_related_post_popup',
-	'description'=>__('Please check <a class="wp-customizer-link" target="_blank" href="https://imgresources.s3.amazonaws.com/related-posts-popup.png">this image</a> to know what is "Related Posts Popup"','soledad'),
+	'description' => __( 'Please check <a class="wp-customizer-link" target="_blank" href="https://imgresources.s3.amazonaws.com/related-posts-popup.png">this image</a> to know what is "Related Posts Popup"', 'soledad' ),
 	'type'        => 'soledad-fw-header',
 );
 $options[] = array(

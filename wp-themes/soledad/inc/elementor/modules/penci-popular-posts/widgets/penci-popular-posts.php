@@ -234,7 +234,7 @@ class PenciPopularPosts extends Base_Widget {
 				'label'     => __( 'Color', 'soledad' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
-				'selectors' => array( '{{WRAPPER}} .owl-dots .owl-dot span' => 'border-color: {{VALUE}};background-color: {{VALUE}};', ),
+				'selectors' => array( '{{WRAPPER}} .penci-owl-dots .penci-owl-dot span' => 'border-color: {{VALUE}};background-color: {{VALUE}};', ),
 			)
 		);
 		$this->add_control(
@@ -244,8 +244,8 @@ class PenciPopularPosts extends Base_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .owl-dots .owl-dot:hover span'  => 'border-color: {{VALUE}};background-color: {{VALUE}};',
-					'{{WRAPPER}} .owl-dots .owl-dot.active span' => 'border-color: {{VALUE}};background-color: {{VALUE}};',
+					'{{WRAPPER}} .penci-owl-dots .penci-owl-dot:hover span'  => 'border-color: {{VALUE}};background-color: {{VALUE}};',
+					'{{WRAPPER}} .penci-owl-dots .penci-owl-dot.active span' => 'border-color: {{VALUE}};background-color: {{VALUE}};',
 				),
 			)
 		);

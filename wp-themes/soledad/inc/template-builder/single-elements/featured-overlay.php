@@ -233,13 +233,20 @@ class PenciSingleFeaturedOverlay extends \Elementor\Widget_Base {
 				'px' => array( 'max' => 100 ),
 			),
 			'selectors'  => [
-				'{{WRAPPER}} .post-box-meta-single > span:not(:last-child)' => 'margin-right:{{SIZE}}px;',
+				'{{WRAPPER}} .post-box-meta-single > span:not(:last-child)'          => 'margin-right:{{SIZE}}px;',
 				'body.rtl {{WRAPPER}} .post-box-meta-single > span:not(:last-child)' => 'margin-left:{{SIZE}}px;margin-right:0',
 			],
 		] );
 
 		$this->add_control( 'penci_single_meta_author', [
 			'label'     => esc_html__( 'Hide Author?', 'soledad' ),
+			'type'      => \Elementor\Controls_Manager::SWITCHER,
+			'label_on'  => __( 'Yes', 'soledad' ),
+			'label_off' => __( 'No', 'soledad' ),
+		] );
+
+		$this->add_control( 'penci_single_meta_author_update', [
+			'label'     => esc_html__( 'Show Latest Update Author?', 'soledad' ),
 			'type'      => \Elementor\Controls_Manager::SWITCHER,
 			'label_on'  => __( 'Yes', 'soledad' ),
 			'label_off' => __( 'No', 'soledad' ),
@@ -1501,29 +1508,33 @@ class PenciSingleFeaturedOverlay extends \Elementor\Widget_Base {
 				$autoplay = ! get_theme_mod( 'penci_disable_autoplay_single_slider' ) ? 'true' : 'false';
 				?>
                 <div class="post-image">
-                    <div class="penci-owl-carousel penci-owl-carousel-slider penci-nav-visible"
+                    <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-nav-visible"
                          data-auto="<?php echo $autoplay; ?>" data-lazy="true">
-						<?php foreach ( $images as $image ) : ?>
+                        <div class="swiper-wrapper">
+							<?php foreach ( $images as $image ) : ?>
 
-							<?php $the_image = wp_get_attachment_image_src( $image, $image_size ); ?>
-							<?php $the_caption = get_post_field( 'post_excerpt', $image );
-							$image_alt         = penci_get_image_alt( $image, get_the_ID() );
-							$image_title_html  = penci_get_image_title( $image );
-							?>
-                            <figure>
-								<?php if ( get_theme_mod( 'penci_speed_disable_first_screen' ) || ! get_theme_mod( 'penci_disable_lazyload_fsingle' ) ) { ?>
-                                    <img class="penci-lazy" data-src="<?php echo esc_url( $the_image[0] ); ?>"
-                                         alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
-								<?php } else { ?>
-                                    <img src="<?php echo esc_url( $the_image[0] ); ?>"
-                                         alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
-								<?php } ?>
-								<?php if ( get_theme_mod( 'penci_post_gallery_caption' ) && $the_caption ): ?>
-                                    <p class="penci-single-gallery-captions penci-single-gaformat-caption"><?php echo $the_caption; ?></p>
-								<?php endif; ?>
-                            </figure>
+								<?php $the_image = wp_get_attachment_image_src( $image, $image_size ); ?>
+								<?php $the_caption = get_post_field( 'post_excerpt', $image );
+								$image_alt         = penci_get_image_alt( $image, get_the_ID() );
+								$image_title_html  = penci_get_image_title( $image );
+								?>
+                                <div class="swiper-slide swiper-mark-item">
+                                    <figure class="penci-swiper-mask">
+										<?php if ( get_theme_mod( 'penci_speed_disable_first_screen' ) || ! get_theme_mod( 'penci_disable_lazyload_fsingle' ) ) { ?>
+                                            <img class="penci-lazy" data-src="<?php echo esc_url( $the_image[0] ); ?>"
+                                                 alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
+										<?php } else { ?>
+                                            <img src="<?php echo esc_url( $the_image[0] ); ?>"
+                                                 alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
+										<?php } ?>
+										<?php if ( get_theme_mod( 'penci_post_gallery_caption' ) && $the_caption ): ?>
+                                            <p class="penci-single-gallery-captions penci-single-gaformat-caption"><?php echo $the_caption; ?></p>
+										<?php endif; ?>
+                                    </figure>
+                                </div>
 
-						<?php endforeach; ?>
+							<?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
 			<?php endif; ?>
@@ -1692,6 +1703,7 @@ class PenciSingleFeaturedOverlay extends \Elementor\Widget_Base {
                                         </span>
                                     </span>
 								<?php endif; ?>
+								<?php penci_author_update_name( $settings['penci_single_meta_author_update'], $avatar, $avatarw ); ?>
 								<?php if ( ! $settings['penci_single_meta_date'] ) : ?>
                                     <span class="pctmp-date-post">
                                 <?php
@@ -1747,7 +1759,7 @@ class PenciSingleFeaturedOverlay extends \Elementor\Widget_Base {
 									echo '<span class="penci-featured-caption penci-fixed-caption penci-caption-relative">' . get_the_post_thumbnail_caption() . '</span>';
 								}
 								?>
-	                            <?php do_action( 'penci_single_meta_content' ); ?>
+								<?php do_action( 'penci_single_meta_content' ); ?>
                             </div>
 						<?php endif; ?>
 						<?php

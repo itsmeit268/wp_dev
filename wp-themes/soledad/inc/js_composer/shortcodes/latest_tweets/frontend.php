@@ -21,7 +21,7 @@ $class_to_filter = vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraC
 $css_class = 'penci-block-vc penci-latest-tweets-widget';
 $css_class .= ' ' . apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
 $block_id  = Penci_Vc_Helper::get_unique_id_block( 'latest_tweets' );
-$classes   = 'slider' == $style ? 'penci-owl-carousel penci-owl-carousel-slider penci-tweets-slider' : 'penci-tweets-lists';
+$classes   = 'slider' == $style ? 'swiper penci-owl-carousel penci-owl-carousel-slider penci-tweets-slider' : 'penci-tweets-lists';
 ?>
     <div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $css_class ); ?>">
 		<?php Penci_Vc_Helper::markup_block_title( $atts ); ?>
@@ -43,7 +43,13 @@ $classes   = 'slider' == $style ? 'penci-owl-carousel penci-owl-carousel-slider 
 					} else {
 						echo 'true';
 					} ?>">
-						<?php foreach ( $tweets as $tweet ):
+						<?php 
+						$item_class = 'normal-item';
+						if ( 'slider' == $style ) {
+							echo '<div class="swiper-wrapper">';
+							$item_class = 'swiper-slide';
+						}
+						foreach ( $tweets as $tweet ):
 							$date_array = explode( ' ', $tweet['created_at'] );
 							$tweet_id = $tweet['id_str'];
 							$tweet_text = $tweet['text'];
@@ -58,7 +64,7 @@ $classes   = 'slider' == $style ? 'penci-owl-carousel penci-owl-carousel-slider 
 								}
 							}
 							?>
-                            <div class="penci-tweet">
+                            <div class="penci-tweet <?php echo $item_class;?>">
 
 								<?php if ( $style == 'list' ):
 									$reply = '<i class="fa fa-reply" aria-hidden="true"></i>';
@@ -93,7 +99,11 @@ $classes   = 'slider' == $style ? 'penci-owl-carousel penci-owl-carousel-slider 
                                     </div>
                                 </div>
                             </div>
-						<?php endforeach; ?>
+						<?php endforeach;
+						if ( 'slider' == $style ) {
+							echo '</div>';
+						}
+						?>
                     </div>
                 </div>
 
@@ -133,11 +143,11 @@ if ( $tweets_link_size ) {
 	$css_custom .= penci_extract_md_responsive_fsize( $id_latest_tweets . ' .penci-tweets-widget-content .tweet-intents a{ font-size:{{VALUE}}px }', $tweets_text_size );
 }
 if ( $tweets_dot_color ) {
-	$css_custom .= $id_latest_tweets2 . ' .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot span{ border-color:' . esc_attr( $tweets_dot_color ) . ';background-color:' . esc_attr( $tweets_dot_color ) . ' }';
+	$css_custom .= $id_latest_tweets2 . ' .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot span{ border-color:' . esc_attr( $tweets_dot_color ) . ';background-color:' . esc_attr( $tweets_dot_color ) . ' }';
 }
 if ( $tweets_dot_hcolor ) {
-	$css_custom .= $id_latest_tweets2 . ' .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span,';
-	$css_custom .= $id_latest_tweets2 . ' .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span{ border-color:' . esc_attr( $tweets_dot_hcolor ) . ';background-color:' . esc_attr( $tweets_dot_hcolor ) . '}';
+	$css_custom .= $id_latest_tweets2 . ' .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span,';
+	$css_custom .= $id_latest_tweets2 . ' .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span{ border-color:' . esc_attr( $tweets_dot_hcolor ) . ';background-color:' . esc_attr( $tweets_dot_hcolor ) . '}';
 }
 if ( $responsive_spacing ) {
 	$css_custom .= penci_extract_spacing_style( $id_latest_tweets, $responsive_spacing );

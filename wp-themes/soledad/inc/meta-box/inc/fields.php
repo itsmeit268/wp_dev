@@ -141,6 +141,7 @@ if ( ! class_exists( 'PENCI_FW_MetaBox_Fields' ) ):
                             <option value="style-37" <?php selected( $slider, 'style-37' ); ?>><?php _e( 'Posts Featured Slider Style 37', 'soledad' ); ?>
                             </option>
                             <option value="style-38" <?php selected( $slider, 'style-38' ); ?>><?php _e( 'Posts Featured Slider Style 38', 'soledad' ); ?>
+                            <option value="style-40" <?php selected( $slider, 'style-40' ); ?>><?php _e( 'Posts Featured Slider Style 39', 'soledad' ); ?>
                             </option>
                             <option value="video" <?php selected( $slider, 'video' ); ?>><?php _e( 'Featured Video Background', 'soledad' ); ?>
                             </option>

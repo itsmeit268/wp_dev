@@ -117,11 +117,7 @@ if ( ! class_exists( 'penci_popular_news_widget' ) ) {
 			if ( 'post' == $ptype ) {
 				if ( isset( $instance['cats_id'] ) ) {
 					if ( ! empty( $cats_id ) && ! in_array( 'all', $cats_id ) ) {
-						$query['tax_query'][] = [
-							'taxonomy' => 'category',
-							'field'    => 'term_id',
-							'terms'    => $cats_id,
-						];
+						$query['category__in'] = $cats_id;
 					}
 				} else {
 					if ( $categories ) {
@@ -131,11 +127,7 @@ if ( ! class_exists( 'penci_popular_news_widget' ) ) {
 
 				if ( ! empty( $tags_id ) ) {
 					if ( ! in_array( 'all', $tags_id ) ) {
-						$query['tax_query'][] = [
-							'taxonomy' => 'post_tag',
-							'field'    => 'term_id',
-							'terms'    => $tags_id,
-						];
+						$query['tag__in'] = $tags_id;
 					}
 				}
 			}
@@ -184,21 +176,39 @@ if ( ! class_exists( 'penci_popular_news_widget' ) ) {
 				}
 
 				$rand = rand( 1000, 10000 );
+
+				$data_settings = $instance;
+				unset( $data_settings['title'] );
+
+				$widget_class = [];
+
+				$widget_class[] = 'side-newsfeed';
+
+				if ( $twocolumn && ! $allfeatured ) {
+					$widget_class[] = 'penci-feed-2columns';
+					if ( $featured ) {
+						$widget_class[] = 'penci-2columns-featured';
+					} else {
+						$widget_class[] = 'penci-2columns-feed';
+					}
+				}
+
+				if ( ! $ordernum ) {
+					$widget_class[] = 'display-order-numbers';
+				}
+
+				if ( $dotstyle ) {
+					$widget_class[] = 'pctlst pctl-' . $dotstyle;
+				}
+
+
 				?>
                 <ul id="penci-popularwg-<?php echo sanitize_text_field( $rand ); ?>"
-                    data-settings='<?php echo json_encode( $instance ); ?>' data-paged="1"
+                    data-settings='<?php echo json_encode( $data_settings ); ?>' data-paged="1"
                     data-action="penci_popular_news_ajax"
                     data-mes="<?php echo penci_get_setting( 'penci_trans_no_more_posts' ); ?>"
                     data-max="<?php echo esc_attr( $loop->max_num_pages ); ?>"
-                    class="side-newsfeed<?php if ( $twocolumn && ! $allfeatured ): echo ' penci-feed-2columns';
-					    if ( $featured ) {
-						    echo ' penci-2columns-featured';
-					    } else {
-						    echo ' penci-2columns-feed';
-					    } endif; ?><?php if ( ! $ordernum ): echo ' display-order-numbers'; endif;
-				    if ( $dotstyle ) {
-					    echo ' pctlst pctl-' . $dotstyle;
-				    } ?>">
+                    class="<?php echo esc_attr( implode( ' ', $widget_class ) ) ?>">
 
 					<?php $num = 1;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -341,6 +351,7 @@ if ( ! class_exists( 'penci_popular_news_widget' ) ) {
                 </ul>
 
 				<?php
+
 				if ( isset( $instance['ajaxnav'] ) && $instance['ajaxnav'] == 'btn' ) {
 					?>
                     <div class="penci-pagination penci-ajax-more pcwg-lposts">
@@ -365,6 +376,7 @@ if ( ! class_exists( 'penci_popular_news_widget' ) ) {
 						<?php echo penci_get_html_animation_loading( 'df' ); ?>
                     </div>
 					<?php
+					wp_enqueue_script( 'penci_widgets_ajax' );
 				}
 				$attrstyle = '';
 				if ( $ptfsfe ) {
@@ -528,7 +540,7 @@ if ( ! class_exists( 'penci_popular_news_widget' ) ) {
 					<?php if ( ! empty( penci_jetpack_option() ) ): ?>
                         <option value='jetpack' <?php if ( 'jetpack' == $instance['type'] ) {
 							echo 'selected="selected"';
-						} ?>>Once a Month
+						} ?>>Jetpack Post Views
                         </option>
 					<?php endif; ?>
                 </select>

@@ -54,6 +54,7 @@ if ( ! class_exists( 'penci_advanced_categories_widget' ) ) {
 			$mark_count   = isset( $instance['mark_count'] ) && $instance['mark_count'];
 			$maxitems     = isset( $instance['maxitems'] ) ? $instance['maxitems'] : '';
 			$exclude      = isset( $instance['exclude'] ) ? $instance['exclude'] : '';
+			$toggle       = isset( $instance['toggle'] ) ? $instance['toggle'] : '';
 
 			$this->classname[] = 'widget_categories';
 			/* Before widget (defined by themes). */
@@ -116,7 +117,8 @@ if ( ! class_exists( 'penci_advanced_categories_widget' ) ) {
                 elseif ( 'style-2' == $rstyle ):
 					wp_tag_cloud( $term_args );
 				else:
-					echo '<ul>';
+					$extra_class = $toggle ? ' toggle-enable' : '';
+					echo '<ul class="pc-advanced-cat '.esc_attr( $extra_class ).'">';
 					wp_list_categories( $term_args );
 					echo '</ul>';
 				endif; ?>
@@ -195,6 +197,7 @@ if ( ! class_exists( 'penci_advanced_categories_widget' ) ) {
 				'hierarchical' => '',
 				'count'        => '',
 				'mark_count'   => '',
+				'toggle'   	   => '',
 				'maxitems'     => '',
 				'exclude'      => '',
 				'color'        => '',
@@ -300,6 +303,12 @@ if ( ! class_exists( 'penci_advanced_categories_widget' ) ) {
 					} ?>>DESC
                     </option>
                 </select>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'toggle' ) ); ?>"><?php esc_html_e( 'Enable toggle to view child terms?:', 'soledad' ); ?></label>
+                <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'toggle' ) ); ?>"
+                       name="<?php echo esc_attr( $this->get_field_name( 'toggle' ) ); ?>" <?php checked( (bool) $instance['toggle'], true ); ?> />
             </p>
 
             <p>

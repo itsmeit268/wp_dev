@@ -120,7 +120,7 @@ $header_classes .= ' text-' . $alignment;
 				$css .= '}';
 
 				$css .= '.tabs-' . esc_attr( $tabs_id ) . '.tabs-design-simple .products-tabs-title li.active-tab-title,';
-				$css .= '.tabs-' . esc_attr( $tabs_id ) . '.tabs-design-simple .owl-nav > div:hover,';
+				$css .= '.tabs-' . esc_attr( $tabs_id ) . '.tabs-design-simple .penci-owl-nav > div:hover,';
 				$css .= '.tabs-' . esc_attr( $tabs_id ) . '.tabs-design-simple .wrap-loading-arrow > div:not(.disabled):hover {';
 				$css .= 'color: ' . esc_attr( $color ) . ';';
 				$css .= '}';

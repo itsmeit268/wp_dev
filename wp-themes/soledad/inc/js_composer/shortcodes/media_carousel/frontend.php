@@ -25,7 +25,9 @@ $data_slider .= ' data-tabsmall="' . ( isset( $atts['limit_tab'] ) && $atts['lim
 $data_slider .= ' data-mobile="' . ( isset( $atts['limit_mobile'] ) && $atts['limit_mobile'] ? $atts['limit_mobile'] : '1' ) . '"';
 ?>
 <div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $css_class ); ?>">
-	<div class="penci-block_content penci-owl-carousel penci-owl-carousel-slider" <?php echo( $data_slider ); ?>>
+	<div class="penci-block_content swiper penci-owl-carousel penci-owl-carousel-slider swiper" <?php echo( $data_slider ); ?>>
+		<div class="swiper-wrapper">
 		<?php echo do_shortcode( $content ); ?>
+		</div>
 	</div>
 </div>

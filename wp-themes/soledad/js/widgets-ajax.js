@@ -71,10 +71,6 @@
 
                         if (nav) {
                             wrapper.empty();
-                        } else {
-                            if (!datajs.find('li').hasClass('all-featured-news')) {
-                                datajs.find('li').removeClass().addClass('penci-feed');
-                            }
                         }
 
                         wrapper.append(datajs.html());

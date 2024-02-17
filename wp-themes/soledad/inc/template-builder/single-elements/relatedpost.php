@@ -71,6 +71,22 @@ class PenciSingleRelatedpost extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'penci_related_style',
+			[
+				'label'   => esc_html__( 'Related Posts Style', 'soledad' ),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+                'default' => 'style-1',
+				'options' => [
+					'style-1' => 'Style 1',
+					'style-2' => 'Style 2',
+					'style-3' => 'Style 3',
+					'style-4' => 'Style 4',
+					'style-5' => 'Style 5',
+				]
+			]
+		);
+
+		$this->add_control(
 			'penci_related_orderby',
 			[
 				'label'   => esc_html__( 'Order Related Posts By', 'soledad' ),
@@ -673,6 +689,7 @@ class PenciSingleRelatedpost extends \Elementor\Widget_Base {
         $settings = $this->get_settings_for_display();
 		$data_auto = 'true';
         $auto      = $settings[ 'penci_post_related_autoplay' ];
+        $related_style = $settings['penci_related_style'];
         if ( $auto == false ) {
             $data_auto = 'false';
         }
@@ -687,15 +704,17 @@ class PenciSingleRelatedpost extends \Elementor\Widget_Base {
 			$this->markup_block_title( $settings );
 		}
 ?>
-<div class="post-related<?php if ( $settings[ 'penci_post_related_grid' ] ): echo ' penci-posts-related-grid'; endif; ?>">
+<div class="pcrlt-<?php echo $related_style; ?> post-related<?php if ( $settings[ 'penci_post_related_grid' ] ): echo ' penci-posts-related-grid'; endif; ?>">
 <?php if ($settings[ 'penci_post_related_text' ] && $settings['penci_hide_heading'] != 'yes' ): ?>
     <div class="post-title-box"><h4
                 class="post-box-title"><?php echo $settings[ 'penci_post_related_text' ]; ?></h4></div>
                 <?php endif;?>
 	<?php if ( ! $settings[ 'penci_post_related_grid' ]) {
+	$dcol_slides = $related_style == 'style-4' ? 2 : 3;
+	$mcol_slides = $related_style == 'style-4' ? 1 : 2;
 	$lazy_class = 'penci-lazy'; ?>
-    <div class="penci-owl-carousel penci-owl-carousel-slider penci-related-carousel"
-         data-lazy="true"<?php echo $data_loop; ?> data-item="3" data-desktop="3" data-tablet="2" data-tabsmall="2"
+    <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-related-carousel"
+         data-lazy="true"<?php echo $data_loop; ?> data-item="<?php echo $dcol_slides;?>" data-desktop="<?php echo $dcol_slides;?>" data-tablet="<?php echo $mcol_slides;?>" data-tabsmall="<?php echo $mcol_slides;?>"
          data-auto="<?php echo $data_auto; ?>"
          data-speed="300"<?php if ( ! $settings[ 'penci_post_related_dots' ] ) {
 		echo ' data-dots="true"';
@@ -703,25 +722,45 @@ class PenciSingleRelatedpost extends \Elementor\Widget_Base {
 	if ( ! $settings[ 'penci_post_related_arrows' ] ) {
 		echo ' data-nav="false"';
 	} ?>>
+	<div class="swiper-wrapper">
 		<?php } else {
 		$lazy_class = 'penci-lazy'; ?>
         <div class="penci-related-carousel penci-related-grid-display">
 			<?php } ?>
 			<?php for ($i=1;$i<$numbers_related;$i++): ?>
-                <div class="item-related">
-                <?php do_action('penci_bookmark_post',get_the_ID()); ?>
-                    <a class="related-thumb penci-image-holder <?php echo $lazy_class; ?>"
-                       data-bgset="<?php echo get_template_directory_uri() . '/inc/template-builder/placeholder.php?w=200&h=300' ;?>"
-                       href="#" title="This is a post Title"></a>
-                        <h3>
-                            <a href="#"><?php echo wp_trim_words( 'This is a post Title', $related_title_length, '...' ); ?></a>
-                        </h3>
-						<?php if ( ! $settings[ 'penci_hide_date_related' ] ): ?>
-                            <span class="date"><?php penci_soledad_time_link(); ?></span>
-						<?php endif; ?>
+                <div class="item-related swiper-slide">
+                	<div class="item-related-inner">
+                		<?php 
+                    	if ( 'style-2' == $related_style ) {
+                    		echo '<a style="" class="penci-cat-name" href="#" rel="category tag"><span style="">Category Name</span></a>';
+                    	}
+                    	?>
+	                <?php do_action('penci_bookmark_post',get_the_ID()); ?>
+	                    <a class="related-thumb penci-image-holder <?php echo $lazy_class; ?>"
+	                       data-bgset="<?php echo get_template_directory_uri() . '/inc/template-builder/placeholder.php?w=200&h=300' ;?>"
+	                       href="#" title="This is a post Title"></a>
+	                    <div class="related-content">
+	                    	<?php 
+	                    	if ( 'style-4' == $related_style || 'style-5' == $related_style ) {
+	                    		?>
+	                    		<a style="" class="penci-cat-name" href="#" rel="category tag"><span style="">Category Name</span></a>
+	                    		<?php
+	                    	}
+	                    	?>
+	                        <h3>
+	                            <a href="#"><?php echo wp_trim_words( 'This is a post Title', $related_title_length, '...' ); ?></a>
+	                        </h3>
+							<?php if ( ! $settings[ 'penci_hide_date_related' ] ): ?>
+	                            <span class="date"><?php penci_soledad_time_link(); ?></span>
+							<?php endif; ?>
+						</div>
+					</div>
                 </div>
 			<?php
 			endfor;
+			if ( ! $settings[ 'penci_post_related_grid' ]) {
+				echo '<div class="penci-owl-dots"></div></div>';
+			}
 			echo '</div></div>';
 	}
 
@@ -828,6 +867,7 @@ class PenciSingleRelatedpost extends \Elementor\Widget_Base {
 	protected function overwrite_mods() {
 		$settings = $this->get_settings_for_display();
 		$mods     = [
+            'penci_related_style',
 			'penci_post_related_autoplay',
 			'penci_numbers_related_post',
 			'penci_related_orderby',

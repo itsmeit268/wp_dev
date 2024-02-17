@@ -1,7 +1,7 @@
 <?php
 $headline_uppercase = penci_get_builder_mod( 'penci_header_pb_news_ticker_disable_uppercase' );
-$title_uppercase = penci_get_builder_mod( 'penci_header_pb_news_ticker_post_titles_uppercase' );
-$title_classes   = $headline_class = ' penci-enable-uppercase';
+$title_uppercase    = penci_get_builder_mod( 'penci_header_pb_news_ticker_post_titles_uppercase' );
+$title_classes      = $headline_class = ' penci-enable-uppercase';
 if ( 'enable' == $title_uppercase ) {
 	$title_classes = ' penci-disable-uppercase';
 }
@@ -13,7 +13,7 @@ if ( 'enable' == $headline_uppercase ) {
 	<?php if ( penci_get_builder_mod( 'penci_header_pb_news_ticker_text', 'Top Posts' ) ) {
 		$toptext_style = penci_get_builder_mod( 'penci_header_pb_news_ticker_style', 'nticker-style-1' );
 		?>
-        <span class="headline-title <?php echo $toptext_style.$headline_class; ?>"><?php echo penci_get_builder_mod( 'penci_header_pb_news_ticker_text','Top Posts' ); ?></span>
+        <span class="headline-title <?php echo $toptext_style . $headline_class; ?>"><?php echo penci_get_builder_mod( 'penci_header_pb_news_ticker_text', 'Top Posts' ); ?></span>
 	<?php } ?>
 	<?php
 	/**
@@ -77,21 +77,25 @@ if ( 'enable' == $headline_uppercase ) {
 		$animation  = penci_get_builder_mod( 'penci_header_pb_news_ticker_animation', 'slideInUp' );
 		?>
         <span class="penci-trending-nav">
-			<a class="penci-slider-prev" aria-label="Previous" href="#"><?php penci_fawesome_icon( 'fas fa-angle-left' ); ?></a>
-			<a class="penci-slider-next" aria-label="Next" href="#"><?php penci_fawesome_icon( 'fas fa-angle-right' ); ?></a>
+			<a class="penci-slider-prev" aria-label="Previous"
+               href="#"><?php penci_fawesome_icon( 'fas fa-angle-left' ); ?></a>
+			<a class="penci-slider-next" aria-label="Next"
+               href="#"><?php penci_fawesome_icon( 'fas fa-angle-right' ); ?></a>
 		</span>
-        <div class="penci-owl-carousel penci-owl-carousel-slider penci-headline-posts"
+        <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-headline-posts"
              data-auto="<?php echo $auto_play; ?>" data-nav="false" data-autotime="<?php echo $auto_time; ?>"
              data-speed="<?php echo $auto_speed; ?>" data-anim="<?php echo $animation; ?>">
-			<?php while ( $news->have_posts() ): $news->the_post();
-				$title_full = get_the_title();
-				?>
-                <div>
-                    <a class="penci-topbar-post-title <?php echo esc_attr($title_classes);?>"
-                       href="<?php the_permalink(); ?>"><?php echo sanitize_text_field( wp_trim_words( get_the_title(), $title_length, '...' ) ); ?></a>
-                </div>
-			<?php endwhile;
-			wp_reset_postdata(); ?>
+            <div class="swiper-wrapper">
+				<?php while ( $news->have_posts() ): $news->the_post();
+					$title_full = get_the_title();
+					?>
+                    <div class="swiper-slide">
+                        <a class="penci-topbar-post-title <?php echo esc_attr( $title_classes ); ?>"
+                           href="<?php the_permalink(); ?>"><?php echo sanitize_text_field( wp_trim_words( get_the_title(), $title_length, '...' ) ); ?></a>
+                    </div>
+				<?php endwhile;
+				wp_reset_postdata(); ?>
+            </div>
         </div>
 	<?php endif; /* End check if no posts */ ?>
 </div>

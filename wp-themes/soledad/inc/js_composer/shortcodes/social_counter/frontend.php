@@ -9,29 +9,32 @@ extract( $atts );
 
 $class_to_filter = vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class ) . $this->getCSSAnimation( $css_animation );
 
-$css_class = 'penci-block-vc penci-social-counter';
+$css_class  = 'penci-block-vc penci-social-counter';
 $css_class .= ' ' . apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
-$block_id  = Penci_Vc_Helper::get_unique_id_block( 'social_counter' );
+$block_id   = Penci_Vc_Helper::get_unique_id_block( 'social_counter' );
 ?>
-    <div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $css_class ); ?>">
+	<div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $css_class ); ?>">
 		<?php Penci_Vc_Helper::markup_block_title( $atts ); ?>
-        <div class="penci-block_content">
+		<div class="penci-block_content">
 			<?php
 			$css_class     = 'penci-block-vc penci-social-counter';
 			$wrapper_class = 'pcsoc-wrapper';
-			$social_style  = isset( $social_style ) && $social_style && in_array( $social_style, array(
-				's1',
-				's2',
-				's3',
-				's4'
-			) ) ? $social_style : 's1';
+			$social_style  = isset( $social_style ) && $social_style && in_array(
+				$social_style,
+				array(
+					's1',
+					's2',
+					's3',
+					's4',
+				)
+			) ? $social_style : 's1';
 			$fill          = $fill ? $fill : 'border';
 			$shape         = $shape ? $shape : 'rectangle';
 			$color_style   = $color_style ? $color_style : 'custom';
 			$brand_class   = $brand_class_icon = '';
 			if ( in_array( $social_style, array( 's2', 's4' ) ) ) {
 				$brand_class_icon = ' pcsc-brandflag';
-			} else if ( in_array( $social_style, array( 's1', 's3' ) ) ) {
+			} elseif ( in_array( $social_style, array( 's1', 's3' ) ) ) {
 				$brand_class = ' pcsc-brandflag';
 			}
 
@@ -47,18 +50,18 @@ $block_id  = Penci_Vc_Helper::get_unique_id_block( 'social_counter' );
 				$mobile_column_default = in_array( $social_style, array( 's3' ) ) ? '2' : '1';
 				$tab_column            = $tab_column ? $tab_column : $tab_column_default;
 				$mobile_column         = $mobile_column ? $mobile_column : $mobile_column_default;
-				$wrapper_class         .= ' pcsocc-' . $column;
-				$wrapper_class         .= ' pcsocc-tabcol-' . $tab_column;
-				$wrapper_class         .= ' pcsocc-mocol-' . $mobile_column;
+				$wrapper_class        .= ' pcsocc-' . $column;
+				$wrapper_class        .= ' pcsocc-tabcol-' . $tab_column;
+				$wrapper_class        .= ' pcsocc-mocol-' . $mobile_column;
 			}
 
 			if ( 'yes' == $use_shadow ) {
 				$wrapper_class .= ' pcsocshadow';
 			}
 			?>
-            <div class="pcsoc-wrapper-outside source-<?php echo esc_attr( $source ); ?>">
+			<div class="pcsoc-wrapper-outside source-<?php echo esc_attr( $source ); ?>">
 				<?php Penci_Vc_Helper::markup_block_title( $atts ); ?>
-                <div class="<?php echo $wrapper_class; ?>">
+				<div class="<?php echo $wrapper_class; ?>">
 					<?php
 					if ( 'counter' == $source ) {
 						$socials = array(
@@ -115,27 +118,32 @@ $block_id  = Penci_Vc_Helper::get_unique_id_block( 'social_counter' );
 							// $social_url = '#';
 							// $social_follow = 'Like';
 							?>
-                            <div class="pcsoc-item-wrap">
-                                <a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?><?php if ( ! $count ) {
-									echo ' empty-count';
-								} ?>" href="<?php echo esc_url( $social_url ); ?>"
-                                   target="_blank" <?php echo penci_reltag_social_icons(); ?>>
-                                    <span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
+							<div class="pcsoc-item-wrap">
+								<a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?>
+																		<?php
+																		if ( ! $count ) {
+																			echo ' empty-count';
+																		}
+																		?>
+								" href="<?php echo esc_url( $social_url ); ?>"
+									target="_blank" <?php echo penci_reltag_social_icons(); ?>>
+									<span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
 									<?php if ( $count && 'yes' != $hide_count ) { ?>
-                                        <span class="pcsoc-counter"><?php echo $count; ?></span>
-                                        <span class="pcsoc-fan"><?php echo $social_follower; ?></span>
+										<span class="pcsoc-counter"><?php echo $count; ?></span>
+										<span class="pcsoc-fan"><?php echo $social_follower; ?></span>
 									<?php } else { ?>
-                                        <span class="pcsoc-counter pcsoc-socname"><?php echo $social; ?></span>
+										<span class="pcsoc-counter pcsoc-socname"><?php echo $social; ?></span>
 									<?php } ?>
 									<?php if ( in_array( $social_style, array( 's1', 's2' ) ) ) { ?>
-                                        <span class="pcsoc-like"><?php echo $social_follow; ?></span>
+										<span class="pcsoc-like"><?php echo $social_follow; ?></span>
 									<?php } ?>
-                                </a>
-                            </div>
+								</a>
+							</div>
 							<?php
 						}
 					} else {
-						$socials = penci_social_media_array();
+						$custom_social_icons = get_option( 'penci_custom_socials', array() );
+						$socials             = penci_social_media_array();
 						foreach ( $socials as $social => $sdata ) {
 
 							if ( empty( $atts[ 'social_profile_' . $social ] ) ) {
@@ -145,31 +153,32 @@ $block_id  = Penci_Vc_Helper::get_unique_id_block( 'social_counter' );
 							$social_icon   = penci_icon_by_ver( $sdata[1] );
 							$social_follow = penci_get_setting( 'penci_trans_follow' );
 							$social_url    = esc_url( do_shortcode( $sdata[0] ) );
+							$name          = isset( $custom_social_icons[ $social ]['name'] ) ? $custom_social_icons[ $social ]['name'] : $social;
 							?>
-                            <div class="pcsoc-item-wrap">
-                                <a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?> empty-count"
-                                   href="<?php echo esc_url( $social_url ); ?>"
-                                   target="_blank" <?php echo penci_reltag_social_icons(); ?>>
-                                    <span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
-                                    <span class="pcsoc-counter pcsoc-socname"><?php echo $social; ?></span>
+							<div class="pcsoc-item-wrap">
+								<a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?> empty-count"
+									href="<?php echo esc_url( $social_url ); ?>"
+									target="_blank" <?php echo penci_reltag_social_icons(); ?>>
+									<span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
+									<span class="pcsoc-counter pcsoc-socname"><?php echo $name; ?></span>
 									<?php if ( in_array( $social_style, array( 's1', 's2' ) ) ) { ?>
-                                        <span class="pcsoc-like"><?php echo $social_follow; ?></span>
+										<span class="pcsoc-like"><?php echo $social_follow; ?></span>
 									<?php } ?>
-                                </a>
-                            </div>
+								</a>
+							</div>
 							<?php
 						}
 					}
 					?>
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 <?php
 
-$id_social_counter = '#' . $block_id;
+$id_social_counter  = '#' . $block_id;
 $id_social_counter2 = 'body:not(.pcdm-enable) #' . $block_id;
-$css_custom        = Penci_Vc_Helper::get_heading_block_css( $id_social_counter, $atts );
+$css_custom         = Penci_Vc_Helper::get_heading_block_css( $id_social_counter, $atts );
 
 if ( $css_custom ) {
 	echo '<style>';

@@ -67,7 +67,7 @@ jQuery(document).ready(function ($) {
 
                             $(".penci-wrapper-smalllist").fitVids();
 
-                            $('.pcsl-crs').owlCarousel();
+                            $('body').trigger( 'penci_swiper_sliders' );
 
                             if ($().easyPieChart) {
                                 $('.penci-piechart').each(function () {

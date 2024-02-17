@@ -80,7 +80,7 @@ if ( ! class_exists( 'penci_webstories_widget' ) ) {
 			echo '<style>';
 			if ( $args_stories['columns'] ) {
 				echo $id_base . ' .pc-wstories-wrapper .pc-wstories-list.grid .pc-webstory-item{width:calc(100% / ' . $args_stories['columns'] . ')}';
-				echo $id_base . ' .pc-wstories-wrapper .pc-wstories-list.slider:not(.owl-loaded) .pc-webstory-item{width:calc(100% / ' . $args_stories['columns'] . ')}';
+				echo $id_base . ' .pc-wstories-wrapper .pc-wstories-list.slider:not(.penci-owl-loaded) .pc-webstory-item{width:calc(100% / ' . $args_stories['columns'] . ')}';
 				echo $id_base . ' .pc-wstories-wrapper .pc-wstories-list.one-row .pc-webstory-item{width:unset;flex: 0 0 calc(100% / ' . $args_stories['columns'] . ');min-width:calc(100% / ' . $args_stories['columns'] . ');}';
 			}
 			if ( $args_stories['iboradius'] ) {

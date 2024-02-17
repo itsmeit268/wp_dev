@@ -28,7 +28,7 @@ $single_layouts    = get_posts( [
 foreach ( $single_layouts as $slayout ) {
 	$single_layout[ $slayout->post_name ] = $slayout->post_title;
 }
-$options[] = array(
+$options[]   = array(
 	'default'     => '',
 	'description' => __( 'Will override the pre-build single posts template above. You can add new and edit a single post template on <a class="wp-customizer-link" target="_blank" href="' . esc_url( admin_url( '/edit.php?post_type=custom-post-template' ) ) . '">this page</a>', 'soledad' ),
 	'sanitize'    => 'penci_sanitize_choices_field',
@@ -37,14 +37,69 @@ $options[] = array(
 	'type'        => 'soledad-fw-select',
 	'choices'     => $single_layout
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Move Categories, Post Title, Post Meta To Bellow Featured Image', 'soledad' ),
 	'id'       => 'penci_move_title_bellow',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
+	'default'     => false,
+	'sanitize'    => 'penci_sanitize_checkbox_field',
+	'label'       => __( 'Enable Video Floating', 'soledad' ),
+	'description' => __( 'This option apply for the post format Video. The video will float in the corner as you scroll down outside the main video at the top.', 'soledad' ),
+	'id'          => 'penci_video_float',
+	'type'        => 'soledad-fw-toggle',
+);
+$options[]   = array(
+	'default'  => 'bottom-right',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Video Floating Position', 'soledad' ),
+	'id'       => 'penci_video_float_position',
+	'type'     => 'soledad-fw-select',
+	'choices'  => array(
+		'top-left'     => esc_html__( 'Top Left', 'soledad' ),
+		'bottom-left'  => esc_html__( 'Bottom Left', 'soledad' ),
+		'top-right'    => esc_html__( 'Top Right', 'soledad' ),
+		'bottom-right' => esc_html__( 'Bottom Right', 'soledad' ),
+	)
+);
+$options[]   = array(
+	'default'  => '',
+	'sanitize' => 'absint',
+	'label'    => __( 'Custom Floating Video Mobile Width', 'soledad' ),
+	'id'       => 'penci_video_float_mw',
+	'type'     => 'soledad-fw-hidden',
+);
+$options[]   = array(
+	'default'  => '',
+	'sanitize' => 'absint',
+	'label'    => __( 'Custom Floating Video Width', 'soledad' ),
+	'id'       => 'penci_video_float_w',
+	'type'     => 'soledad-fw-size',
+	'ids'      => array(
+		'desktop' => 'penci_video_float_w',
+		'mobile'  => 'penci_video_float_mw',
+	),
+	'choices'  => array(
+		'desktop' => array(
+			'min'  => 1,
+			'max'  => 2000,
+			'step' => 1,
+			'edit' => true,
+			'unit' => 'px',
+		),
+		'mobile'  => array(
+			'min'  => 1,
+			'max'  => 2000,
+			'step' => 1,
+			'edit' => true,
+			'unit' => 'px',
+		),
+	),
+);
+$options[]   = array(
 	'default'  => 'right',
 	'sanitize' => 'penci_sanitize_choices_field',
 	'label'    => __( 'Single Posts Sidebar Layout', 'soledad' ),
@@ -58,7 +113,7 @@ $options[] = array(
 		'small_width' => 'No Sidebar with Container Width Smaller'
 	)
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => '1',
 	'sanitize' => 'penci_sanitize_choices_field',
 	'label'    => __( 'Default Smart Lists Style', 'soledad' ),
@@ -73,7 +128,7 @@ $options[] = array(
 		'6' => 'Style 6',
 	)
 );
-$options[] = array(
+$options[]   = array(
 	'default'         => '780',
 	'sanitize'        => 'absint',
 	'label'           => __( 'Custom Width for "No Sidebar with Container Width Smaller" Layout You Selected Above', 'soledad' ),
@@ -100,7 +155,7 @@ $options[] = array(
 		]
 	],
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => '',
 	'sanitize'    => 'absint',
 	'label'       => __( 'Custom Container Width on Single Posts Page', 'soledad' ),
@@ -120,7 +175,7 @@ $options[] = array(
 		),
 	),
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => '',
 	'sanitize'    => 'absint',
 	'label'       => __( 'Custom Container Width for Two Sidebars on Single Posts Page', 'soledad' ),
@@ -140,7 +195,7 @@ $options[] = array(
 		),
 	),
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => '',
 	'sanitize'    => 'penci_sanitize_choices_field',
 	'label'       => __( 'Custom Image Size for Featured Image', 'soledad' ),
@@ -181,7 +236,7 @@ $options[] = array(
 		return $image_sizes_data;
 	} ),
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => false,
 	'sanitize'    => 'penci_sanitize_checkbox_field',
 	'label'       => __( 'Enable Parallax on Featured Image', 'soledad' ),
@@ -189,42 +244,42 @@ $options[] = array(
 	'type'        => 'soledad-fw-toggle',
 	'description' => __( 'This feature does not apply for Single Style 1 & 2', 'soledad' ),
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Enable Font Sizes Changer', 'soledad' ),
 	'id'       => 'penci_single_font_changer',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Disable Parallax on Featured Image on Mobile', 'soledad' ),
 	'id'       => 'penci_dis_jarallax_single_mb',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Disable Auto Play for Single Slider Gallery & Posts Format Gallery', 'soledad' ),
 	'id'       => 'penci_disable_autoplay_single_slider',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Images Title on Galleries from The Theme', 'soledad' ),
 	'id'       => 'penci_disable_image_titles_galleries',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Disable Lightbox on Single Posts', 'soledad' ),
 	'id'       => 'penci_disable_lightbox_single',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => false,
 	'sanitize'    => 'penci_sanitize_checkbox_field',
 	'label'       => __( 'Hide Featured Image on Top', 'soledad' ),
@@ -232,21 +287,21 @@ $options[] = array(
 	'description' => __( 'Hide Featured images auto appears on single posts page - This option not apply for Video format, Gallery format', 'soledad' ),
 	'type'        => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Category', 'soledad' ),
 	'id'       => 'penci_post_cat',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Enable Uppercase on Post Categories', 'soledad' ),
 	'id'       => 'penci_on_uppercase_post_cat',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => '',
 	'sanitize'    => 'sanitize_text_field',
 	'label'       => __( 'Custom Border Radius for Featured Image', 'soledad' ),
@@ -254,7 +309,7 @@ $options[] = array(
 	'type'        => 'soledad-fw-text',
 	'description' => __( 'You can use pixel or percent. E.g:  <strong>10px</strong>  or  <strong>10%</strong>. If you want to disable border radius - fill 0', 'soledad' ),
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => '',
 	'sanitize'    => 'sanitize_text_field',
 	'label'       => __( 'Custom Aspect Ratio for Featured Image', 'soledad' ),
@@ -262,42 +317,50 @@ $options[] = array(
 	'type'        => 'soledad-fw-text',
 	'description' => __( 'The aspect ratio of an element describes the proportional relationship between its width and its height. E.g: <strong>3:2</strong>. Default is 3:2 . This option not apply when enable parallax images. This feature does not apply for Single Style 1 & 2', 'soledad' ),
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Align Left Post Categories, Post Title, Post Meta', 'soledad' ),
 	'id'       => 'penci_align_left_post_title',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Remove Letter Spacing on Post Title', 'soledad' ),
 	'id'       => 'penci_off_letter_space_post_title',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Turn Off Uppercase on Post Title', 'soledad' ),
 	'id'       => 'penci_off_uppercase_post_title',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Post Author', 'soledad' ),
 	'id'       => 'penci_single_meta_author',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
+	'default'     => false,
+	'sanitize'    => 'penci_sanitize_checkbox_field',
+	'label'       => __( 'Show Updated Author', 'soledad' ),
+	'description' => __( 'If a post is created by one author and then edited and updated by another author, this option will allow you to display both authors in the post\'s meta data.', 'soledad' ),
+	'id'          => 'penci_single_meta_update_author',
+	'type'        => 'soledad-fw-toggle',
+);
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Post Date', 'soledad' ),
 	'id'       => 'penci_single_meta_date',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => false,
 	'sanitize'    => 'penci_sanitize_checkbox_field',
 	'label'       => __( 'Display Published Date & Modified Date', 'soledad' ),
@@ -305,35 +368,35 @@ $options[] = array(
 	'id'          => 'penci_single_publishmodified',
 	'type'        => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Comment Count', 'soledad' ),
 	'id'       => 'penci_single_meta_comment',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Show Views Count', 'soledad' ),
 	'id'       => 'penci_single_show_cview',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Reading Time', 'soledad' ),
 	'id'       => 'penci_single_hreadtime',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Enable Font Size Adjustment', 'soledad' ),
 	'id'       => 'penci_single_fontsize_adj',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => false,
 	'sanitize'    => 'penci_sanitize_checkbox_field',
 	'label'       => __( 'Enable ajax Post View Count', 'soledad' ),
@@ -341,7 +404,7 @@ $options[] = array(
 	'description' => __( 'Use to count posts viewed when you using cache plugin.', 'soledad' ),
 	'type'        => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'     => false,
 	'sanitize'    => 'penci_sanitize_checkbox_field',
 	'label'       => __( 'Enable Caption on Featured Image', 'soledad' ),
@@ -349,28 +412,28 @@ $options[] = array(
 	'description' => __( 'If your featured image has a caption, it will display on featured image', 'soledad' ),
 	'type'        => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Enable Caption on Slider of Gallery Post Format', 'soledad' ),
 	'id'       => 'penci_post_gallery_caption',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Move Caption of Images to Below The Images', 'soledad' ),
 	'id'       => 'penci_post_caption_below',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Disable Italic on Caption of Images', 'soledad' ),
 	'id'       => 'penci_post_caption_disable_italic',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => 'style-1',
 	'sanitize' => 'penci_sanitize_choices_field',
 	'label'    => __( 'Blockquote Style:', 'soledad' ),
@@ -381,59 +444,130 @@ $options[] = array(
 		'style-2' => 'Style 2'
 	)
 );
-/*$options[] = array(
-	'default'     => '',
-	'sanitize'    => 'penci_sanitize_textarea_field',
-	'label'=>__('Add Ads/Custom HTML Code Inside Posts Content','soledad'),
-	'id'          => 'penci_ads_inside_content_html',
-	'description'=>'',
-	'type'        => 'soledad-fw-textarea',
-);
-$options[] = array(
-	'default'  => 'style-1',
+$options[]   = array(
+	'default'  => '',
 	'sanitize' => 'penci_sanitize_choices_field',
-	'label'=>__('Add Ads/Custom HTML Code Inside Posts Content With:','soledad'),
-	'id'       => 'penci_ads_inside_content_style',
+	'label'    => __( 'Custom Style for Heading 1 Inside Post Content', 'soledad' ),
+	'id'       => 'penci_heading_h1_style',
 	'type'     => 'soledad-fw-select',
 	'choices'  => array(
-		'style-1' => 'After Each X Paragraphs - Repeat',
-		'style-2' => 'After X Paragraphs - No Repeat'
+		'' 		  => 'Default (No Style)',
+		'style-1' => 'Style 1',
+		'style-2' => 'Style 2',
+		'style-3' => 'Style 3',
+		'style-4' => 'Style 4',
+		'style-5' => 'Style 5',
+		'style-6' => 'Style 6',
 	)
 );
-$options[] = array(
-	'default'  => '4',
-	'sanitize' => 'absint',
-	'label'    => __( 'Add Ads/Custom HTML Code Inside Posts Content After How Many Paragraphs?', 'soledad' ),
-	'id'       => 'penci_ads_inside_content_num',
-	'type'     => 'soledad-fw-size',
-	'ids'      => array(
-		'desktop' => 'penci_ads_inside_content_num',
-	),
+$options[]   = array(
+	'default'  => '',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Custom Style for Heading 2 Inside Post Content', 'soledad' ),
+	'id'       => 'penci_heading_h2_style',
+	'type'     => 'soledad-fw-select',
 	'choices'  => array(
-		'desktop' => array(
-			'min'  => 1,
-			'max'  => 2000,
-			'step' => 1,
-			'edit' => true,
-			'unit' => '',
-		),
-	),
-);*/
-$options[] = array(
+		'' 		  => 'Default (No Style)',
+		'style-1' => 'Style 1',
+		'style-2' => 'Style 2',
+		'style-3' => 'Style 3',
+		'style-4' => 'Style 4',
+		'style-5' => 'Style 5',
+		'style-6' => 'Style 6',
+	)
+);
+$options[]   = array(
+	'default'  => '',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Custom Style for Heading 3 Inside Post Content', 'soledad' ),
+	'id'       => 'penci_heading_h3_style',
+	'type'     => 'soledad-fw-select',
+	'choices'  => array(
+		'' 		  => 'Default (No Style)',
+		'style-1' => 'Style 1',
+		'style-2' => 'Style 2',
+		'style-3' => 'Style 3',
+		'style-4' => 'Style 4',
+		'style-5' => 'Style 5',
+		'style-6' => 'Style 6',
+	)
+);
+$options[]   = array(
+	'default'  => '',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Custom Style for Heading 4 Inside Post Content', 'soledad' ),
+	'id'       => 'penci_heading_h4_style',
+	'type'     => 'soledad-fw-select',
+	'choices'  => array(
+		'' 		  => 'Default (No Style)',
+		'style-1' => 'Style 1',
+		'style-2' => 'Style 2',
+		'style-3' => 'Style 3',
+		'style-4' => 'Style 4',
+		'style-5' => 'Style 5',
+		'style-6' => 'Style 6',
+	)
+);
+$options[]   = array(
+	'default'  => '',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Custom Style for Heading 5 Inside Post Content', 'soledad' ),
+	'id'       => 'penci_heading_h5_style',
+	'type'     => 'soledad-fw-select',
+	'choices'  => array(
+		'' 		  => 'Default (No Style)',
+		'style-1' => 'Style 1',
+		'style-2' => 'Style 2',
+		'style-3' => 'Style 3',
+		'style-4' => 'Style 4',
+		'style-5' => 'Style 5',
+		'style-6' => 'Style 6',
+	)
+);
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Tags', 'soledad' ),
 	'id'       => 'penci_post_tags',
 	'type'     => 'soledad-fw-toggle',
 );
-$options[] = array(
+$options[]   = array(
 	'default'  => false,
 	'sanitize' => 'penci_sanitize_checkbox_field',
 	'label'    => __( 'Hide Like Count & Social Share', 'soledad' ),
 	'id'       => 'penci_post_share',
 	'type'     => 'soledad-fw-toggle',
 );
-
+$options[]   = array(
+	'default'  => false,
+	'sanitize' => 'penci_sanitize_checkbox_field',
+	'label'    => __( 'Turn on the Sticky Share', 'soledad' ),
+	'id'       => 'penci_post_stickyshare',
+	'type'     => 'soledad-fw-toggle',
+);
+$options[]   = array(
+	'default'  => 'style-1',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Sticky Share Style:', 'soledad' ),
+	'id'       => 'penci_post_stickyshare_style',
+	'type'     => 'soledad-fw-select',
+	'choices'  => array(
+		'style-1' => 'Style 1',
+		'style-2' => 'Style 2',
+		'style-3' => 'Style 3',
+	)
+);
+$options[]   = array(
+	'default'  => 'left',
+	'sanitize' => 'penci_sanitize_choices_field',
+	'label'    => __( 'Sticky Share Position:', 'soledad' ),
+	'id'       => 'penci_post_stickyshare_pos',
+	'type'     => 'soledad-fw-select',
+	'choices'  => array(
+		'left'  => 'Left',
+		'right' => 'Right',
+	)
+);
 $share_style = [];
 for ( $i = 1; $i <= 23; $i ++ ) {
 	$v                      = $i < 4 ? 's' : 'n';

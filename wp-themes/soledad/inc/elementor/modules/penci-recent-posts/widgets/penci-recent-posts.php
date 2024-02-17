@@ -340,6 +340,8 @@ class PenciRecentPosts extends Base_Widget {
 				'selectors' => array(
 					'{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text h4 a' => 'color: {{VALUE}};',
 					'{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text h4'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .popularpost_item .pcpopular_new_post_title'         => 'color: {{VALUE}};',
+					'{{WRAPPER}} .popularpost_item .pcpopular_new_post_title a'       => 'color: {{VALUE}};',
 				)
 			)
 		);
@@ -349,6 +351,7 @@ class PenciRecentPosts extends Base_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text h4 a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .popularpost_item .pcpopular_new_post_title a:hover'       => 'color: {{VALUE}};',
 				)
 			)
 		);
@@ -356,7 +359,7 @@ class PenciRecentPosts extends Base_Widget {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), array(
 				'name'     => 'ptitle_typo',
-				'selector' => '{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text h4 a,{{WRAPPER}}  ul.side-newsfeed li .side-item .side-item-text h4'
+				'selector' => '{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text h4 a,{{WRAPPER}}  ul.side-newsfeed li .side-item .side-item-text h4, {{WRAPPER}} .popularpost_item .pcpopular_new_post_title a, {{WRAPPER}} .popularpost_item .pcpopular_new_post_title'
 			)
 		);
 
@@ -384,6 +387,7 @@ class PenciRecentPosts extends Base_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text .side-item-meta' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .popularpost_meta'                                              => 'color: {{VALUE}};',
 				)
 			)
 		);
@@ -393,6 +397,7 @@ class PenciRecentPosts extends Base_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text .side-item-meta a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .popularpost_meta a'                                              => 'color: {{VALUE}};',
 				)
 			)
 		);
@@ -402,15 +407,17 @@ class PenciRecentPosts extends Base_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text .side-item-meta a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .popularpost_meta a:hover'                                              => 'color: {{VALUE}};',
 				)
 			)
 		);
 		$this->add_group_control(
 			Group_Control_Typography::get_type(), array(
 				'name'     => 'pmeta_typo',
-				'selector' => '{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text .side-item-meta'
+				'selector' => '{{WRAPPER}} ul.side-newsfeed li .side-item .side-item-text .side-item-meta, {{WRAPPER}} .popularpost_meta',
 			)
 		);
+
 		$this->end_controls_section();
 
 		$this->start_controls_section( 'post_navigation_style', array(
@@ -624,24 +631,25 @@ class PenciRecentPosts extends Base_Widget {
         <div class="<?php echo esc_attr( $css_class ); ?>">
 			<?php $this->markup_block_title( $settings, $this ); ?>
             <div class="penci-block_content">
+
                 <ul id="penci-latestwg-<?php echo sanitize_text_field( $rand ); ?>"
-                	<?php if ( isset( $settings['ajaxnav'] ) && $settings['ajaxnav'] ) { ?>
-                    data-settings='<?php echo json_encode( $ajax_tab_var ); ?>'
-                    data-paged="1"
-                    data-type="elementor"
-                    data-action="penci_latest_news_widget_ajax"
-                    data-mes="<?php echo penci_get_setting( 'penci_trans_no_more_posts' ); ?>"
-                    data-max="<?php echo esc_attr( $loop->max_num_pages ); ?>"
-                	<?php } ?>
+					<?php if ( isset( $settings['ajaxnav'] ) && $settings['ajaxnav'] ) { ?>
+                        data-settings='<?php echo json_encode( $ajax_tab_var ); ?>'
+                        data-paged="1"
+                        data-type="elementor"
+                        data-action="penci_latest_news_widget_ajax"
+                        data-mes="<?php echo penci_get_setting( 'penci_trans_no_more_posts' ); ?>"
+                        data-max="<?php echo esc_attr( $loop->max_num_pages ); ?>"
+					<?php } ?>
                     class="side-newsfeed<?php if ( $twocolumn && ! $allfeatured ): echo ' penci-feed-2columns';
-					    if ( $featured ) {
-						    echo ' penci-2columns-featured';
-					    } else {
-						    echo ' penci-2columns-feed';
-					    } endif;
-				    if ( $dotstyle ) {
-					    echo ' pctlst pctl-' . $dotstyle;
-				    } ?>">
+						if ( $featured ) {
+							echo ' penci-2columns-featured';
+						} else {
+							echo ' penci-2columns-feed';
+						} endif;
+					if ( $dotstyle ) {
+						echo ' pctlst pctl-' . $dotstyle;
+					} ?>">
 					<?php $num = 1;
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
                         <li class="penci-feed<?php if ( ( ( $num == 1 ) && $featured ) || $allfeatured ): echo ' featured-news';
@@ -657,7 +665,7 @@ class PenciRecentPosts extends Base_Widget {
 										<?php
 										$size_pie = 'small';
 										if ( ( ( $num == 1 ) && $featured ) || $allfeatured ): $size_pie = 'normal'; endif;
-										do_action( 'penci_bookmark_post', get_the_ID(),$size_pie );
+										do_action( 'penci_bookmark_post', get_the_ID(), $size_pie );
 										/* Display Review Piechart  */
 										if ( function_exists( 'penci_display_piechart_review_html' ) ) {
 											penci_display_piechart_review_html( get_the_ID(), $size_pie );
@@ -756,7 +764,8 @@ class PenciRecentPosts extends Base_Widget {
 									<?php endif; ?>
 
                                     <h4 class="side-title-post">
-                                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
+                                        <a href="<?php the_permalink() ?>" rel="bookmark"
+                                           title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 											<?php
 											if ( ! $title_length || ! is_numeric( $title_length ) ) {
 												if ( $featured2 && ( ( ( $num == 1 ) && $featured ) || $allfeatured ) ) {
@@ -795,6 +804,7 @@ class PenciRecentPosts extends Base_Widget {
 						<?php $num ++; endwhile; ?>
                 </ul>
 				<?php
+
 				if ( isset( $settings['ajaxnav'] ) && $settings['ajaxnav'] == 'btn' ) {
 					?>
                     <div class="penci-pagination penci-ajax-more pcwg-lposts">

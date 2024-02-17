@@ -109,21 +109,23 @@ class Soledad_Social_Counter extends WP_Widget {
 		}
 		echo '</style>';
 
-
 		$wrapper_class = 'pcsoc-wrapper';
-		$social_style  = isset( $social_style ) && $social_style && in_array( $social_style, array(
-			's1',
-			's2',
-			's3',
-			's4'
-		) ) ? $social_style : 's1';
+		$social_style  = isset( $social_style ) && $social_style && in_array(
+			$social_style,
+			array(
+				's1',
+				's2',
+				's3',
+				's4',
+			)
+		) ? $social_style : 's1';
 		$fill          = $fill ? $fill : 'border';
 		$shape         = $shape ? $shape : 'rectangle';
 		$color_style   = $color_style ? $color_style : 'custom';
 		$brand_class   = $brand_class_icon = '';
 		if ( in_array( $social_style, array( 's2', 's4' ) ) ) {
 			$brand_class_icon = ' pcsc-brandflag';
-		} else if ( in_array( $social_style, array( 's1', 's3' ) ) ) {
+		} elseif ( in_array( $social_style, array( 's1', 's3' ) ) ) {
 			$brand_class = ' pcsc-brandflag';
 		}
 
@@ -143,11 +145,10 @@ class Soledad_Social_Counter extends WP_Widget {
 			$mobile_column_default = $social_style == 's3' ? '2' : '1';
 			$tab_column            = $tab_column ? $tab_column : $tab_column_default;
 			$mobile_column         = $mobile_column ? $mobile_column : $mobile_column_default;
-			$wrapper_class         .= ' pcsocc-' . $column;
-			$wrapper_class         .= ' pcsocc-tabcol-' . $tab_column;
-			$wrapper_class         .= ' pcsocc-mocol-' . $mobile_column;
+			$wrapper_class        .= ' pcsocc-' . $column;
+			$wrapper_class        .= ' pcsocc-tabcol-' . $tab_column;
+			$wrapper_class        .= ' pcsocc-mocol-' . $mobile_column;
 		}
-
 
 		echo $args['before_widget'];
 		if ( $title ) {
@@ -155,9 +156,9 @@ class Soledad_Social_Counter extends WP_Widget {
 		}
 
 		?>
-        <div class="pcsoc-wrapper-outside source-<?php echo esc_attr( $source ); ?>"
-             id="<?php echo 'penci-sct-' . $id; ?>">
-            <div class="<?php echo $wrapper_class; ?>">
+		<div class="pcsoc-wrapper-outside source-<?php echo esc_attr( $source ); ?>"
+			id="<?php echo 'penci-sct-' . $id; ?>">
+			<div class="<?php echo $wrapper_class; ?>">
 				<?php
 
 				if ( 'counter' == $source ) {
@@ -203,23 +204,27 @@ class Soledad_Social_Counter extends WP_Widget {
 						$social_follow   = isset( $social_info['text_btn'] ) && $social_info['text_btn'] ? $social_info['text_btn'] : '';
 						$social_url      = isset( $social_info['url'] ) && $social_info['url'] ? $social_info['url'] : '';
 						?>
-                        <div class="pcsoc-item-wrap">
-                            <a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?><?php if ( ! $count ) {
-								echo ' empty-count';
-							} ?>" href="<?php echo esc_url( $social_url ); ?>"
-                               target="_blank" <?php echo penci_reltag_social_icons(); ?>>
-                                <span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
+						<div class="pcsoc-item-wrap">
+							<a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?>
+																	<?php
+																	if ( ! $count ) {
+																		echo ' empty-count';
+																	}
+																	?>
+							" href="<?php echo esc_url( $social_url ); ?>"
+								target="_blank" <?php echo penci_reltag_social_icons(); ?>>
+								<span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
 								<?php if ( $count && 'yes' != $hide_count ) { ?>
-                                    <span class="pcsoc-counter"><?php echo $count; ?></span>
-                                    <span class="pcsoc-fan"><?php echo $social_follower; ?></span>
+									<span class="pcsoc-counter"><?php echo $count; ?></span>
+									<span class="pcsoc-fan"><?php echo $social_follower; ?></span>
 								<?php } else { ?>
-                                    <span class="pcsoc-counter pcsoc-socname"><?php echo $social; ?></span>
+									<span class="pcsoc-counter pcsoc-socname"><?php echo $social; ?></span>
 								<?php } ?>
 								<?php if ( in_array( $social_style, array( 's1', 's2' ) ) ) { ?>
-                                    <span class="pcsoc-like"><?php echo $social_follow; ?></span>
+									<span class="pcsoc-like"><?php echo $social_follow; ?></span>
 								<?php } ?>
-                            </a>
-                        </div>
+							</a>
+						</div>
 						<?php
 					}
 				} else {
@@ -233,24 +238,27 @@ class Soledad_Social_Counter extends WP_Widget {
 						$social_icon   = penci_icon_by_ver( $sdata[1] );
 						$social_follow = penci_get_setting( 'follow' );
 						$social_url    = esc_url( do_shortcode( $sdata[0] ) );
+
+						$custom_social_icons = get_option( 'penci_custom_socials', array() );
+						$name                = isset( $custom_social_icons[ $social ]['name'] ) ? $custom_social_icons[ $social ]['name'] : $social;
 						?>
-                        <div class="pcsoc-item-wrap">
-                            <a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?> empty-count"
-                               href="<?php echo esc_url( $social_url ); ?>"
-                               target="_blank" <?php echo penci_reltag_social_icons(); ?>>
-                                <span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
-                                <span class="pcsoc-counter pcsoc-socname"><?php echo $social; ?></span>
+						<div class="pcsoc-item-wrap">
+							<a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?> empty-count"
+								href="<?php echo esc_url( $social_url ); ?>"
+								target="_blank" <?php echo penci_reltag_social_icons(); ?>>
+								<span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
+								<span class="pcsoc-counter pcsoc-socname"><?php echo $name; ?></span>
 								<?php if ( in_array( $social_style, array( 's1', 's2' ) ) ) { ?>
-                                    <span class="pcsoc-like"><?php echo $social_follow; ?></span>
+									<span class="pcsoc-like"><?php echo $social_follow; ?></span>
 								<?php } ?>
-                            </a>
-                        </div>
+							</a>
+						</div>
 						<?php
 					}
 				}
 				?>
-            </div>
-        </div>
+			</div>
+		</div>
 		<?php
 		echo $args['after_widget'];
 	}
@@ -292,322 +300,366 @@ class Soledad_Social_Counter extends WP_Widget {
 		$source                 = ! empty( $instance['source'] ) ? $instance['source'] : 'counter';
 		?>
 
-        <div class="penci-social-widget-tabs">
-            <div class="tabs-stage">
-                <div id="pc_general_social" class="penci-social-tab tab-active">
-                    <p class="widget-title-settings">
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'soledad' ); ?></label>
-                        <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-                               name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-                               value="<?php echo esc_attr( $title ); ?>">
-                    </p>
+		<div class="penci-social-widget-tabs">
+			<div class="tabs-stage">
+				<div id="pc_general_social" class="penci-social-tab tab-active">
+					<p class="widget-title-settings">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'soledad' ); ?></label>
+						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+								value="<?php echo esc_attr( $title ); ?>">
+					</p>
 
-                    <p class="widget-title-settings">
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>">Select Data
-                            Source:</label>
-                        <select class="widefat source-select"
-                                id="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'source' ) ); ?>">
-                            <option value="counter" <?php selected( $source, 'counter' ); ?>><?php echo esc_html__( 'Social Counter', 'soledad' ); ?></option>
-                            <option value="customizer" <?php selected( $source, 'customizer' ); ?>><?php echo esc_html__( 'Social Media URLs from Customizer ( no Counter )', 'soledad' ); ?></option>
-                        </select>
-                    </p>
+					<p class="widget-title-settings">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>">Select Data
+							Source:</label>
+						<select class="widefat source-select"
+								id="<?php echo esc_attr( $this->get_field_id( 'source' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'source' ) ); ?>">
+							<option value="counter" <?php selected( $source, 'counter' ); ?>><?php echo esc_html__( 'Social Counter', 'soledad' ); ?></option>
+							<option value="customizer" <?php selected( $source, 'customizer' ); ?>><?php echo esc_html__( 'Social Media URLs from Customizer ( no Counter )', 'soledad' ); ?></option>
+						</select>
+					</p>
 
-                    <p class="widget-title-settings notes counter"><strong>Note Important</strong>: You need to setup
-                        data for socials sharing
-                        on <a
-                                href="<?php echo esc_url( admin_url( 'admin.php?page=penci_social_counter_settings' ) ); ?>"
-                                target="_blank">this page</a> to get the counter number work.</p>
+					<p class="widget-title-settings notes counter"><strong>Note Important</strong>: You need to setup
+						data for socials sharing
+						on <a
+								href="<?php echo esc_url( admin_url( 'admin.php?page=penci_social_counter_settings' ) ); ?>"
+								target="_blank">this page</a> to get the counter number work.</p>
 
-                    <p style="display: none;" class="widget-title-settings notes customizer"><strong>Note
-                            Important</strong>: You need to setup
-                        data for socials profile on Appearance > Customize > Social Media.</p>
+					<p style="display: none;" class="widget-title-settings notes customizer"><strong>Note
+							Important</strong>: You need to setup
+						data for socials profile on Appearance > Customize > Social Media.</p>
 
-                    <p class="widget-title-settings">
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>">Select Pre-Build
-                            Design:</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'style' ) ); ?>">
-                            <option value="s1" <?php selected( $style, 's1' ); ?>><?php echo esc_html__( 'Style 1', 'soledad' ); ?></option>
-                            <option value="s2" <?php selected( $style, 's2' ); ?>><?php echo esc_html__( 'Style 2', 'soledad' ); ?></option>
-                            <option value="s3" <?php selected( $style, 's3' ); ?>><?php echo esc_html__( 'Style 3', 'soledad' ); ?></option>
-                            <option value="s4" <?php selected( $style, 's4' ); ?>><?php echo esc_html__( 'Style 4', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'fill' ) ); ?>">Filled or Bordered
-                            Style?</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'fill' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'fill' ) ); ?>">
-                            <option value="fill" <?php selected( $fill, 'fill' ); ?>><?php echo esc_html__( 'Filled', 'soledad' ); ?></option>
-                            <option value="border" <?php selected( $fill, 'border' ); ?>><?php echo esc_html__( 'Bordered', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'shape' ) ); ?>">Shape</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'shape' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'shape' ) ); ?>">
-                            <option value="rectangle" <?php selected( $shape, 'rectangle' ); ?>><?php echo esc_html__( 'Rectangle', 'soledad' ); ?></option>
-                            <option value="round" <?php selected( $shape, 'round' ); ?>><?php echo esc_html__( 'Round', 'soledad' ); ?></option>
-                            <option value="circle" <?php selected( $shape, 'circle' ); ?>><?php echo esc_html__( 'Circle', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'color_style' ) ); ?>">Colors
-                            Style</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'color_style' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'color_style' ) ); ?>">
-                            <option value="custom" <?php selected( $color_style, 'custom' ); ?>><?php echo esc_html__( 'Custom Color', 'soledad' ); ?></option>
-                            <option value="brandbg" <?php selected( $color_style, 'brandbg' ); ?>><?php echo esc_html__( 'Brand Background', 'soledad' ); ?></option>
-                            <option value="brandtext" <?php selected( $color_style, 'brandtext' ); ?>><?php echo esc_html__( 'Brand Text', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'columns' ) ); ?>">Select Columns:</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'columns' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'columns' ) ); ?>">
-                            <option value="1" <?php selected( $columns, '1' ); ?>><?php echo esc_html__( '1 Column', 'soledad' ); ?></option>
-                            <option value="2" <?php selected( $columns, '2' ); ?>><?php echo esc_html__( '2 Columns', 'soledad' ); ?></option>
-                            <option value="3" <?php selected( $columns, '3' ); ?>><?php echo esc_html__( '3 Columns', 'soledad' ); ?></option>
-                            <option value="4" <?php selected( $columns, '4' ); ?>><?php echo esc_html__( '4 Columns', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'tab_column' ) ); ?>">Select Columns for
-                            Tablet:</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'tab_column' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'tab_column' ) ); ?>">
-                            <option value="" <?php selected( $tab_column, '' ); ?>><?php echo esc_html__( 'Default', 'soledad' ); ?></option>
-                            <option value="1" <?php selected( $tab_column, '1' ); ?>><?php echo esc_html__( '1 Column', 'soledad' ); ?></option>
-                            <option value="2" <?php selected( $tab_column, '2' ); ?>><?php echo esc_html__( '2 Columns', 'soledad' ); ?></option>
-                            <option value="3" <?php selected( $tab_column, '3' ); ?>><?php echo esc_html__( '3 Columns', 'soledad' ); ?></option>
-                            <option value="4" <?php selected( $tab_column, '4' ); ?>><?php echo esc_html__( '4 Columns', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'mobile_column' ) ); ?>">Select Columns
-                            for
-                            Mobile</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'mobile_column' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'mobile_column' ) ); ?>">
-                            <option value="" <?php selected( $mobile_column, '' ); ?>><?php echo esc_html__( 'Default', 'soledad' ); ?></option>
-                            <option value="1" <?php selected( $mobile_column, '1' ); ?>><?php echo esc_html__( '1 Column', 'soledad' ); ?></option>
-                            <option value="2" <?php selected( $mobile_column, '2' ); ?>><?php echo esc_html__( '2 Columns', 'soledad' ); ?></option>
-                            <option value="3" <?php selected( $mobile_column, '3' ); ?>><?php echo esc_html__( '3 Columns', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'use_shadow' ) ); ?>">Use Shadow?</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'use_shadow' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'use_shadow' ) ); ?>">
-                            <option value="no" <?php selected( $use_shadow, 'no' ); ?>><?php echo esc_html__( 'No', 'soledad' ); ?></option>
-                            <option value="yes" <?php selected( $use_shadow, 'yes' ); ?>><?php echo esc_html__( 'Yes', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'hide_count' ) ); ?>">Hide Counter Data &
-                            Show Social Name?</label>
-                        <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'hide_count' ) ); ?>"
-                                name="<?php echo esc_attr( $this->get_field_name( 'hide_count' ) ); ?>">
-                            <option value="no" <?php selected( $hide_count, 'no' ); ?>><?php echo esc_html__( 'No', 'soledad' ); ?></option>
-                            <option value="yes" <?php selected( $hide_count, 'yes' ); ?>><?php echo esc_html__( 'Yes', 'soledad' ); ?></option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'hospace' ) ); ?>">Horizontal Spacing
-                            Between Social Icons</label>
-                        <input type="number" class="widefat"
-                               id="<?php echo esc_attr( $this->get_field_id( 'hospace' ) ); ?>"
-                               name="<?php echo esc_attr( $this->get_field_name( 'hospace' ) ); ?>"
-                               value="<?php echo $hospace; ?>">
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'verspace' ) ); ?>">Vertical Spacing
-                            Between Social Icons</label>
-                        <input type="number" class="widefat"
-                               id="<?php echo esc_attr( $this->get_field_id( 'verspace' ) ); ?>"
-                               name="<?php echo esc_attr( $this->get_field_name( 'verspace' ) ); ?>"
-                               value="<?php echo $verspace; ?>">
-                    </p>
-                </div>
-                <div id="pc_profile_social" class="data-source-settings counter penci-social-tab">
+					<p class="widget-title-settings">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>">Select Pre-Build
+							Design:</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'style' ) ); ?>">
+							<option value="s1" <?php selected( $style, 's1' ); ?>><?php echo esc_html__( 'Style 1', 'soledad' ); ?></option>
+							<option value="s2" <?php selected( $style, 's2' ); ?>><?php echo esc_html__( 'Style 2', 'soledad' ); ?></option>
+							<option value="s3" <?php selected( $style, 's3' ); ?>><?php echo esc_html__( 'Style 3', 'soledad' ); ?></option>
+							<option value="s4" <?php selected( $style, 's4' ); ?>><?php echo esc_html__( 'Style 4', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'fill' ) ); ?>">Filled or Bordered
+							Style?</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'fill' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'fill' ) ); ?>">
+							<option value="fill" <?php selected( $fill, 'fill' ); ?>><?php echo esc_html__( 'Filled', 'soledad' ); ?></option>
+							<option value="border" <?php selected( $fill, 'border' ); ?>><?php echo esc_html__( 'Bordered', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'shape' ) ); ?>">Shape</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'shape' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'shape' ) ); ?>">
+							<option value="rectangle" <?php selected( $shape, 'rectangle' ); ?>><?php echo esc_html__( 'Rectangle', 'soledad' ); ?></option>
+							<option value="round" <?php selected( $shape, 'round' ); ?>><?php echo esc_html__( 'Round', 'soledad' ); ?></option>
+							<option value="circle" <?php selected( $shape, 'circle' ); ?>><?php echo esc_html__( 'Circle', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'color_style' ) ); ?>">Colors
+							Style</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'color_style' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'color_style' ) ); ?>">
+							<option value="custom" <?php selected( $color_style, 'custom' ); ?>><?php echo esc_html__( 'Custom Color', 'soledad' ); ?></option>
+							<option value="brandbg" <?php selected( $color_style, 'brandbg' ); ?>><?php echo esc_html__( 'Brand Background', 'soledad' ); ?></option>
+							<option value="brandtext" <?php selected( $color_style, 'brandtext' ); ?>><?php echo esc_html__( 'Brand Text', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'columns' ) ); ?>">Select Columns:</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'columns' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'columns' ) ); ?>">
+							<option value="1" <?php selected( $columns, '1' ); ?>><?php echo esc_html__( '1 Column', 'soledad' ); ?></option>
+							<option value="2" <?php selected( $columns, '2' ); ?>><?php echo esc_html__( '2 Columns', 'soledad' ); ?></option>
+							<option value="3" <?php selected( $columns, '3' ); ?>><?php echo esc_html__( '3 Columns', 'soledad' ); ?></option>
+							<option value="4" <?php selected( $columns, '4' ); ?>><?php echo esc_html__( '4 Columns', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'tab_column' ) ); ?>">Select Columns for
+							Tablet:</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'tab_column' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'tab_column' ) ); ?>">
+							<option value="" <?php selected( $tab_column, '' ); ?>><?php echo esc_html__( 'Default', 'soledad' ); ?></option>
+							<option value="1" <?php selected( $tab_column, '1' ); ?>><?php echo esc_html__( '1 Column', 'soledad' ); ?></option>
+							<option value="2" <?php selected( $tab_column, '2' ); ?>><?php echo esc_html__( '2 Columns', 'soledad' ); ?></option>
+							<option value="3" <?php selected( $tab_column, '3' ); ?>><?php echo esc_html__( '3 Columns', 'soledad' ); ?></option>
+							<option value="4" <?php selected( $tab_column, '4' ); ?>><?php echo esc_html__( '4 Columns', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'mobile_column' ) ); ?>">Select Columns
+							for
+							Mobile</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'mobile_column' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'mobile_column' ) ); ?>">
+							<option value="" <?php selected( $mobile_column, '' ); ?>><?php echo esc_html__( 'Default', 'soledad' ); ?></option>
+							<option value="1" <?php selected( $mobile_column, '1' ); ?>><?php echo esc_html__( '1 Column', 'soledad' ); ?></option>
+							<option value="2" <?php selected( $mobile_column, '2' ); ?>><?php echo esc_html__( '2 Columns', 'soledad' ); ?></option>
+							<option value="3" <?php selected( $mobile_column, '3' ); ?>><?php echo esc_html__( '3 Columns', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'use_shadow' ) ); ?>">Use Shadow?</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'use_shadow' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'use_shadow' ) ); ?>">
+							<option value="no" <?php selected( $use_shadow, 'no' ); ?>><?php echo esc_html__( 'No', 'soledad' ); ?></option>
+							<option value="yes" <?php selected( $use_shadow, 'yes' ); ?>><?php echo esc_html__( 'Yes', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'hide_count' ) ); ?>">Hide Counter Data &
+							Show Social Name?</label>
+						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'hide_count' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'hide_count' ) ); ?>">
+							<option value="no" <?php selected( $hide_count, 'no' ); ?>><?php echo esc_html__( 'No', 'soledad' ); ?></option>
+							<option value="yes" <?php selected( $hide_count, 'yes' ); ?>><?php echo esc_html__( 'Yes', 'soledad' ); ?></option>
+						</select>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'hospace' ) ); ?>">Horizontal Spacing
+							Between Social Icons</label>
+						<input type="number" class="widefat"
+								id="<?php echo esc_attr( $this->get_field_id( 'hospace' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'hospace' ) ); ?>"
+								value="<?php echo $hospace; ?>">
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'verspace' ) ); ?>">Vertical Spacing
+							Between Social Icons</label>
+						<input type="number" class="widefat"
+								id="<?php echo esc_attr( $this->get_field_id( 'verspace' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'verspace' ) ); ?>"
+								value="<?php echo $verspace; ?>">
+					</p>
+				</div>
+				<div id="pc_profile_social" class="data-source-settings counter penci-social-tab">
 					<?php
+					$custom_social_icons = get_option( 'penci_custom_socials', array() );
 					foreach ( $social_lists as $social => $social_info ) {
 						$checked = isset( $instance[ $social ] ) ? (bool) $instance[ $social ] : false;
+						$name    = $social_info['label'];
+						$name    = isset( $custom_social_icons[ $name ]['name'] ) ? $custom_social_icons[ $name ]['name'] : $name;
 						?>
 
-                        <p>
-                            <input class="checkbox" id="<?php echo esc_attr( $this->get_field_id( $social ) ); ?>"
-                                   name="<?php echo esc_attr( $this->get_field_name( $social ) ); ?>"
-                                   type="checkbox" <?php checked( $checked ); ?> />
-                            <label for="<?php echo esc_attr( $this->get_field_id( $social ) ); ?>"><?php echo esc_attr( $social_info['label'] ); ?></label>
-                        </p>
+						<p>
+							<input class="checkbox" id="<?php echo esc_attr( $this->get_field_id( $social ) ); ?>"
+									name="<?php echo esc_attr( $this->get_field_name( $social ) ); ?>"
+									type="checkbox" <?php checked( $checked ); ?> />
+							<label for="<?php echo esc_attr( $this->get_field_id( $social ) ); ?>"><?php echo esc_attr( $name ); ?></label>
+						</p>
 
 						<?php
 
 					}
 					?>
-                </div>
-                <div class="social-flex penci-social-tab data-source-settings customizer">
-					<?php $socials_profile = penci_social_media_array();
+				</div>
+				<div class="social-flex penci-social-tab data-source-settings customizer">
+					<?php
+					$custom_social_icons = get_option( 'penci_custom_socials', array() );
+					$socials_profile     = penci_social_media_array();
 					foreach ( $socials_profile as $name => $data ) {
 						$settings_name = 'profile_' . $name;
 						$checked       = isset( $instance[ $settings_name ] ) ? (bool) $instance[ $settings_name ] : false;
+						$name          = isset( $custom_social_icons[ $name ]['name'] ) ? $custom_social_icons[ $name ]['name'] : $name;
 						?>
-                        <p>
-                            <label for="<?php echo esc_attr( $this->get_field_id( $settings_name ) ); ?>"><?php esc_html_e( 'Show ' . ucwords( $name ) . ':', 'soledad' ); ?></label>
-                            <input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( $settings_name ) ); ?>"
-                                   name="<?php echo esc_attr( $this->get_field_name( $settings_name ) ); ?>" <?php checked( $checked ); ?> />
-                        </p>
+						<p>
+							<label for="<?php echo esc_attr( $this->get_field_id( $settings_name ) ); ?>"><?php esc_html_e( 'Show ' . ucwords( $name ) . ':', 'soledad' ); ?></label>
+							<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( $settings_name ) ); ?>"
+									name="<?php echo esc_attr( $this->get_field_name( $settings_name ) ); ?>" <?php checked( $checked ); ?> />
+						</p>
 					<?php } ?>
-                </div>
-                <div id="pc_color_social" class="penci-social-tab">
+				</div>
+				<div id="pc_color_social" class="penci-social-tab">
 
-                    <p class="widget-title-settings">
-                        <label for="<?php echo $this->get_field_id( 'counter_item_icon_size' ); ?>"
-                               style="display:block;"><?php _e( 'Icon Size: (Number only)' ); ?></label>
-                        <input class="widefat" id="<?php echo $this->get_field_id( 'counter_item_icon_size' ); ?>"
-                               name="<?php echo $this->get_field_name( 'counter_item_icon_size' ); ?>" type="number"
-                               value="<?php echo $counter_item_icon_size; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'countersize' ) ); ?>">Font Size for
-                            Counter Number</label>
-                        <input type="number" class="widefat"
-                               id="<?php echo esc_attr( $this->get_field_id( 'countersize' ) ); ?>"
-                               name="<?php echo esc_attr( $this->get_field_name( 'countersize' ) ); ?>"
-                               value="<?php echo $countersize; ?>">
-                    </p>
-                    <p>
-                        <label for="<?php echo esc_attr( $this->get_field_id( 'fansize' ) ); ?>">Font Size for Fans/Like
-                            text</label>
-                        <input type="number" class="widefat"
-                               id="<?php echo esc_attr( $this->get_field_id( 'fansize' ) ); ?>"
-                               name="<?php echo esc_attr( $this->get_field_name( 'fansize' ) ); ?>"
-                               value="<?php echo $fansize; ?>">
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'bgcl' ); ?>"
-                               style="display:block;"><?php _e( 'Background Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'bgcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'bgcl' ); ?>" type="text"
-                               value="<?php echo $bgcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'hbgcl' ); ?>"
-                               style="display:block;"><?php _e( 'Background Hover Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'hbgcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'hbgcl' ); ?>" type="text"
-                               value="<?php echo $hbgcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'bordercl' ); ?>"
-                               style="display:block;"><?php _e( 'Border Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'bordercl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'bordercl' ); ?>" type="text"
-                               value="<?php echo $bordercl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'borderhcl' ); ?>"
-                               style="display:block;"><?php _e( 'Border Hover Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'bordercl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'borderhcl' ); ?>" type="text"
-                               value="<?php echo $borderhcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'textcl' ); ?>"
-                               style="display:block;"><?php _e( 'Icon Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'textcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'textcl' ); ?>" type="text"
-                               value="<?php echo $textcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'texthcl' ); ?>"
-                               style="display:block;"><?php _e( 'Icon Hover Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'texthcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'texthcl' ); ?>" type="text"
-                               value="<?php echo $texthcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'countcl' ); ?>"
-                               style="display:block;"><?php _e( 'Counter Text Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'countcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'countcl' ); ?>" type="text"
-                               value="<?php echo $countcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'counthcl' ); ?>"
-                               style="display:block;"><?php _e( 'Counter Text Hover Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'counthcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'counthcl' ); ?>" type="text"
-                               value="<?php echo $counthcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'fanscl' ); ?>"
-                               style="display:block;"><?php _e( 'Fans Text Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'fanscl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'fanscl' ); ?>" type="text"
-                               value="<?php echo $fanscl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'fanshcl' ); ?>"
-                               style="display:block;"><?php _e( 'Fans Text Hover Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'fanshcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'fanshcl' ); ?>" type="text"
-                               value="<?php echo $fanshcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'followcl' ); ?>"
-                               style="display:block;"><?php _e( 'Follow Text Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'followcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'followcl' ); ?>" type="text"
-                               value="<?php echo $followcl; ?>"/>
-                    </p>
-                    <p>
-                        <label for="<?php echo $this->get_field_id( 'followhcl' ); ?>"
-                               style="display:block;"><?php _e( 'Follow Text Hover Color:' ); ?></label>
-                        <input class="widefat pcwoo-color-picker color-picker"
-                               id="<?php echo $this->get_field_id( 'followhcl' ); ?>"
-                               name="<?php echo $this->get_field_name( 'followhcl' ); ?>" type="text"
-                               value="<?php echo $followhcl; ?>"/>
-                    </p>
+					<p class="widget-title-settings">
+						<label for="<?php echo $this->get_field_id( 'counter_item_icon_size' ); ?>"
+								style="display:block;"><?php _e( 'Icon Size: (Number only)' ); ?></label>
+						<input class="widefat" id="<?php echo $this->get_field_id( 'counter_item_icon_size' ); ?>"
+								name="<?php echo $this->get_field_name( 'counter_item_icon_size' ); ?>" type="number"
+								value="<?php echo $counter_item_icon_size; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'countersize' ) ); ?>">Font Size for
+							Counter Number</label>
+						<input type="number" class="widefat"
+								id="<?php echo esc_attr( $this->get_field_id( 'countersize' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'countersize' ) ); ?>"
+								value="<?php echo $countersize; ?>">
+					</p>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( 'fansize' ) ); ?>">Font Size for Fans/Like
+							text</label>
+						<input type="number" class="widefat"
+								id="<?php echo esc_attr( $this->get_field_id( 'fansize' ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'fansize' ) ); ?>"
+								value="<?php echo $fansize; ?>">
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'bgcl' ); ?>"
+								style="display:block;"><?php _e( 'Background Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'bgcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'bgcl' ); ?>" type="text"
+								value="<?php echo $bgcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'hbgcl' ); ?>"
+								style="display:block;"><?php _e( 'Background Hover Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'hbgcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'hbgcl' ); ?>" type="text"
+								value="<?php echo $hbgcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'bordercl' ); ?>"
+								style="display:block;"><?php _e( 'Border Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'bordercl' ); ?>"
+								name="<?php echo $this->get_field_name( 'bordercl' ); ?>" type="text"
+								value="<?php echo $bordercl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'borderhcl' ); ?>"
+								style="display:block;"><?php _e( 'Border Hover Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'bordercl' ); ?>"
+								name="<?php echo $this->get_field_name( 'borderhcl' ); ?>" type="text"
+								value="<?php echo $borderhcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'textcl' ); ?>"
+								style="display:block;"><?php _e( 'Icon Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'textcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'textcl' ); ?>" type="text"
+								value="<?php echo $textcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'texthcl' ); ?>"
+								style="display:block;"><?php _e( 'Icon Hover Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'texthcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'texthcl' ); ?>" type="text"
+								value="<?php echo $texthcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'countcl' ); ?>"
+								style="display:block;"><?php _e( 'Counter Text Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'countcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'countcl' ); ?>" type="text"
+								value="<?php echo $countcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'counthcl' ); ?>"
+								style="display:block;"><?php _e( 'Counter Text Hover Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'counthcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'counthcl' ); ?>" type="text"
+								value="<?php echo $counthcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'fanscl' ); ?>"
+								style="display:block;"><?php _e( 'Fans Text Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'fanscl' ); ?>"
+								name="<?php echo $this->get_field_name( 'fanscl' ); ?>" type="text"
+								value="<?php echo $fanscl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'fanshcl' ); ?>"
+								style="display:block;"><?php _e( 'Fans Text Hover Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'fanshcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'fanshcl' ); ?>" type="text"
+								value="<?php echo $fanshcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'followcl' ); ?>"
+								style="display:block;"><?php _e( 'Follow Text Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'followcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'followcl' ); ?>" type="text"
+								value="<?php echo $followcl; ?>"/>
+					</p>
+					<p>
+						<label for="<?php echo $this->get_field_id( 'followhcl' ); ?>"
+								style="display:block;"><?php _e( 'Follow Text Hover Color:' ); ?></label>
+						<input class="widefat pcwoo-color-picker color-picker"
+								id="<?php echo $this->get_field_id( 'followhcl' ); ?>"
+								name="<?php echo $this->get_field_name( 'followhcl' ); ?>" type="text"
+								value="<?php echo $followhcl; ?>"/>
+					</p>
 
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 		<?php
 	}
 
 	/**
 	 * Outputs the social array listing
-	 *
 	 */
 	public function social_lists() {
 		return array(
-			'facebook'   => array( 'label' => __( 'Facebook', 'soledad' ), 'default' => 'yes' ),
-			'twitter'    => array( 'label' => __( 'Twitter', 'soledad' ), 'default' => 'yes' ),
-			'youtube'    => array( 'label' => __( 'Youtube', 'soledad' ), 'default' => 'yes' ),
-			'instagram'  => array( 'label' => __( 'Instagram', 'soledad' ), 'default' => 'yes' ),
-			'pinterest'  => array( 'label' => __( 'Pinterest', 'soledad' ), 'default' => '' ),
-			'flickr'     => array( 'label' => __( 'Flickr', 'soledad' ), 'default' => '' ),
-			'vimeo'      => array( 'label' => __( 'Vimeo', 'soledad' ), 'default' => '' ),
-			'soundcloud' => array( 'label' => __( 'SoundCloud', 'soledad' ), 'default' => '' ),
-			'behance '   => array( 'label' => __( 'Behance', 'soledad' ), 'default' => '' ),
-			'vk'         => array( 'label' => __( 'VK', 'soledad' ), 'default' => '' ),
-			'tiktok'     => array( 'label' => __( 'Tiktok', 'soledad' ), 'default' => '' ),
-			'twitch'     => array( 'label' => __( 'Twitch', 'soledad' ), 'default' => '' ),
-			'rss'        => array( 'label' => __( 'RSS', 'soledad' ), 'default' => '' ),
+			'facebook'   => array(
+				'label'   => __( 'Facebook', 'soledad' ),
+				'default' => 'yes',
+			),
+			'twitter'    => array(
+				'label'   => __( 'Twitter', 'soledad' ),
+				'default' => 'yes',
+			),
+			'youtube'    => array(
+				'label'   => __( 'Youtube', 'soledad' ),
+				'default' => 'yes',
+			),
+			'instagram'  => array(
+				'label'   => __( 'Instagram', 'soledad' ),
+				'default' => 'yes',
+			),
+			'pinterest'  => array(
+				'label'   => __( 'Pinterest', 'soledad' ),
+				'default' => '',
+			),
+			'flickr'     => array(
+				'label'   => __( 'Flickr', 'soledad' ),
+				'default' => '',
+			),
+			'vimeo'      => array(
+				'label'   => __( 'Vimeo', 'soledad' ),
+				'default' => '',
+			),
+			'soundcloud' => array(
+				'label'   => __( 'SoundCloud', 'soledad' ),
+				'default' => '',
+			),
+			'behance '   => array(
+				'label'   => __( 'Behance', 'soledad' ),
+				'default' => '',
+			),
+			'vk'         => array(
+				'label'   => __( 'VK', 'soledad' ),
+				'default' => '',
+			),
+			'tiktok'     => array(
+				'label'   => __( 'Tiktok', 'soledad' ),
+				'default' => '',
+			),
+			'twitch'     => array(
+				'label'   => __( 'Twitch', 'soledad' ),
+				'default' => '',
+			),
+			'rss'        => array(
+				'label'   => __( 'RSS', 'soledad' ),
+				'default' => '',
+			),
 		);
 	}
 
@@ -675,29 +727,29 @@ class Soledad_Social_Counter extends WP_Widget {
 
 	public function print_scripts() {
 		?>
-        <script>
-            (function ($) {
-                function initColorPicker(widget) {
-                    widget.find('.color-picker').wpColorPicker({
-                        change: _.throttle(function () { // For Customizer
-                            $(this).trigger('change');
-                        }, 3000)
-                    });
-                }
+		<script>
+			(function ($) {
+				function initColorPicker(widget) {
+					widget.find('.color-picker').wpColorPicker({
+						change: _.throttle(function () { // For Customizer
+							$(this).trigger('change');
+						}, 3000)
+					});
+				}
 
-                function onFormUpdate(event, widget) {
-                    initColorPicker(widget);
-                }
+				function onFormUpdate(event, widget) {
+					initColorPicker(widget);
+				}
 
-                $(document).on('widget-added widget-updated', onFormUpdate);
+				$(document).on('widget-added widget-updated', onFormUpdate);
 
-                $(document).ready(function () {
-                    $('#widgets-right .widget:has(.color-picker)').each(function () {
-                        initColorPicker($(this));
-                    });
-                });
-            }(jQuery));
-        </script>
+				$(document).ready(function () {
+					$('#widgets-right .widget:has(.color-picker)').each(function () {
+						initColorPicker($(this));
+					});
+				});
+			}(jQuery));
+		</script>
 		<?php
 	}
 }

@@ -12,6 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
+ * @version 3.6.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -22,8 +23,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 $product_style = penci_get_product_loop_class();
+$layout = wc_get_loop_prop('layout') == 'carousel' ? 'swiper-slide' : 'normal-item';
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
+<li <?php wc_product_class( $layout, $product ); ?>>
     <div class="penci-soledad-product <?php echo esc_attr( $product_style ); ?>">
 		<?php do_action( 'penci_before_product_loop' ); ?>
         <div class="penci-product-loop-inner-content">

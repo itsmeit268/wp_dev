@@ -451,8 +451,8 @@ if ( ! class_exists( 'Soledad_VC_Shortcodes' ) ) {
                                data-numbermore="' . absint( $morenum ) . '"
                                data-offset="0" data-exclude="' . $exclude . '" data-from="vc" data-come_from="vc-elementor"
                                data-template="' . $data_template . '"
-							   data-archivetype="'.$data_archive_type.'"
-                                data-archivevalue="'.$data_archive_value.'"
+							   data-archivetype="' . $data_archive_type . '"
+                                data-archivevalue="' . $data_archive_value . '"
                                data-mixed="' . esc_attr( $penci_mixed_style ) . '" ' . $data_infeed_ads . ' data-query_type="ajaxtab" data-more="' . esc_attr( $more_link_text ) . '" class="pcnav-lgroup"><ul class="pcflx">';
 				$link_group_out_after  = '</ul></nav>';
 				$has_link              = false;
@@ -1233,37 +1233,41 @@ if ( ! class_exists( 'Soledad_VC_Shortcodes' ) ) {
                         <div class="home-featured-cat-wrapper">
                             <div class="home-featured-cat-content pwf-id-default <?php echo esc_attr( $style ); ?>">
 								<?php if ( $style == 'style-4' ): ?>
-                                <div class="penci-single-mag-slider penci-owl-carousel penci-owl-carousel-slider"
+                                <div class="swiper penci-single-mag-slider penci-owl-carousel penci-owl-carousel-slider"
                                      data-auto="<?php echo $slider_autoplay; ?>" data-dots="true" data-nav="false">
-									<?php endif; ?>
-									<?php if ( $style == 'style-5' || $style == 'style-12' ):
-									$data_item = 2;
-									if ( $style == 'style-12' ): $data_item = 3; endif;
-									?>
-                                    <div class="penci-magcat-carousel-wrapper">
-                                        <div class="penci-owl-carousel penci-owl-carousel-slider penci-magcat-carousel"
-                                             data-speed="400" data-auto="<?php echo $slider_autoplay; ?>"
-                                             data-item="<?php echo $data_item; ?>"
-                                             data-desktop="<?php echo $data_item; ?>"
-                                             data-tablet="2" data-tabsmall="1">
-											<?php endif; ?>
-											<?php if ( $style == 'style-7' || $style == 'style-8' || $style == 'style-13' ): ?>
-                                            <ul class="penci-grid penci-grid-maglayout penci-fea-cat-<?php echo $style; ?>">
-												<?php endif; ?>
-												<?php
-												$m = 1;
-												while ( $fea_query->have_posts() ): $fea_query->the_post();
-													include( locate_template( 'template-parts/magazine-sc/magazine-' . $style . '.php' ) );
-													$m ++; endwhile;
-												?>
-												<?php if ( $style == 'style-7' || $style == 'style-8' || $style == 'style-13' ): ?>
-                                            </ul>
+                                    <div class="swiper-wrapper">
 										<?php endif; ?>
-											<?php if ( $style == 'style-5' || $style == 'style-12' ): ?>
+										<?php if ( $style == 'style-5' || $style == 'style-12' ):
+										$data_item = 2;
+										if ( $style == 'style-12' ): $data_item = 3; endif;
+										?>
+                                        <div class="penci-magcat-carousel-wrapper">
+                                            <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-magcat-carousel"
+                                                 data-speed="400" data-auto="<?php echo $slider_autoplay; ?>"
+                                                 data-item="<?php echo $data_item; ?>"
+                                                 data-desktop="<?php echo $data_item; ?>"
+                                                 data-tablet="2" data-tabsmall="1">
+                                                <div class="swiper-wrapper">
+													<?php endif; ?>
+													<?php if ( $style == 'style-7' || $style == 'style-8' || $style == 'style-13' ): ?>
+                                                    <ul class="penci-grid penci-grid-maglayout penci-fea-cat-<?php echo $style; ?>">
+														<?php endif; ?>
+														<?php
+														$m = 1;
+														while ( $fea_query->have_posts() ): $fea_query->the_post();
+															include( locate_template( 'template-parts/magazine-sc/magazine-' . $style . '.php' ) );
+															$m ++; endwhile;
+														?>
+														<?php if ( $style == 'style-7' || $style == 'style-8' || $style == 'style-13' ): ?>
+                                                    </ul>
+												<?php endif; ?>
+													<?php if ( $style == 'style-5' || $style == 'style-12' ): ?>
+                                                </div>
+                                            </div>
                                         </div>
+									<?php endif; ?>
+										<?php if ( $style == 'style-4' ): ?>
                                     </div>
-								<?php endif; ?>
-									<?php if ( $style == 'style-4' ): ?>
                                 </div>
 							<?php endif; ?>
                             </div>
@@ -1666,54 +1670,56 @@ if ( ! class_exists( 'Soledad_VC_Shortcodes' ) ) {
 						<?php } ?>
 					<?php } ?>
 
-                    <div class="penci-owl-carousel penci-owl-carousel-slider penci-related-carousel penci-home-popular-post"<?php echo $data_loop; ?>
+                    <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-related-carousel penci-home-popular-post"<?php echo $data_loop; ?>
                          data-lazy="true" data-item="<?php echo $columns; ?>" data-desktop="<?php echo $columns; ?>"
                          data-tablet="3" data-tabsmall="2" data-auto="false" data-speed="300"
                          data-dots="<?php echo $data_dots; ?>" data-nav="<?php echo $data_nav; ?>">
-						<?php while ( $popular->have_posts() ) : $popular->the_post(); ?>
-                            <div class="item-related">
-								<?php if ( ( function_exists( 'has_post_thumbnail' ) ) && ( has_post_thumbnail() ) ) : ?>
-	                            <?php do_action('penci_bookmark_post',get_the_ID()); ?>
-								<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
-                                <a class="related-thumb penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
-                                   href="<?php the_permalink() ?>"
-                                   title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
-                                   data-bgset="<?php echo penci_image_srcset( get_the_ID(), $thumbsize ); ?>">
-									<?php } else { ?>
-                                    <a class="related-thumb penci-image-holder" href="<?php the_permalink() ?>"
+                        <div class="swiper-wrapper">
+							<?php while ( $popular->have_posts() ) : $popular->the_post(); ?>
+                                <div class="item-related swiper-slide">
+									<?php if ( ( function_exists( 'has_post_thumbnail' ) ) && ( has_post_thumbnail() ) ) : ?>
+									<?php do_action( 'penci_bookmark_post', get_the_ID() ); ?>
+									<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
+                                    <a class="related-thumb penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
+                                       href="<?php the_permalink() ?>"
                                        title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
-                                       style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $thumbsize ); ?>');">
-										<?php } ?>
-										<?php if ( has_post_thumbnail() && get_theme_mod( 'penci_enable_home_popular_icons' ) ): ?>
-											<?php if ( has_post_format( 'video' ) ) : ?>
-												<?php penci_fawesome_icon( 'fas fa-play' ); ?>
+                                       data-bgset="<?php echo penci_image_srcset( get_the_ID(), $thumbsize ); ?>">
+										<?php } else { ?>
+                                        <a class="related-thumb penci-image-holder" href="<?php the_permalink() ?>"
+                                           title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
+                                           style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), $thumbsize ); ?>');">
+											<?php } ?>
+											<?php if ( has_post_thumbnail() && get_theme_mod( 'penci_enable_home_popular_icons' ) ): ?>
+												<?php if ( has_post_format( 'video' ) ) : ?>
+													<?php penci_fawesome_icon( 'fas fa-play' ); ?>
+												<?php endif; ?>
+												<?php if ( has_post_format( 'audio' ) ) : ?>
+													<?php penci_fawesome_icon( 'fas fa-music' ); ?>
+												<?php endif; ?>
+												<?php if ( has_post_format( 'link' ) ) : ?>
+													<?php penci_fawesome_icon( 'fas fa-link' ); ?>
+												<?php endif; ?>
+												<?php if ( has_post_format( 'quote' ) ) : ?>
+													<?php penci_fawesome_icon( 'fas fa-quote-left' ); ?>
+												<?php endif; ?>
+												<?php if ( has_post_format( 'gallery' ) ) : ?>
+													<?php penci_fawesome_icon( 'far fa-image' ); ?>
+												<?php endif; ?>
 											<?php endif; ?>
-											<?php if ( has_post_format( 'audio' ) ) : ?>
-												<?php penci_fawesome_icon( 'fas fa-music' ); ?>
-											<?php endif; ?>
-											<?php if ( has_post_format( 'link' ) ) : ?>
-												<?php penci_fawesome_icon( 'fas fa-link' ); ?>
-											<?php endif; ?>
-											<?php if ( has_post_format( 'quote' ) ) : ?>
-												<?php penci_fawesome_icon( 'fas fa-quote-left' ); ?>
-											<?php endif; ?>
-											<?php if ( has_post_format( 'gallery' ) ) : ?>
-												<?php penci_fawesome_icon( 'far fa-image' ); ?>
-											<?php endif; ?>
+                                        </a>
 										<?php endif; ?>
-                                    </a>
-									<?php endif; ?>
 
-                                    <h3><a title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
-                                           href="<?php the_permalink(); ?>"><?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $popular_title_length, '...' ); ?></a>
-                                    </h3>
-									<?php if ( ! get_theme_mod( 'penci_hide_date_home_popular' ) ) : ?>
-                                        <span class="date"><?php penci_soledad_time_link(); ?></span>
-									<?php endif; ?>
-                            </div>
-						<?php
-						endwhile;
-						?>
+                                        <h3><a title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"
+                                               href="<?php the_permalink(); ?>"><?php echo wp_trim_words( wp_strip_all_tags( get_the_title() ), $popular_title_length, '...' ); ?></a>
+                                        </h3>
+										<?php if ( ! get_theme_mod( 'penci_hide_date_home_popular' ) ) : ?>
+                                            <span class="date"><?php penci_soledad_time_link(); ?></span>
+										<?php endif; ?>
+                                </div>
+							<?php
+							endwhile;
+							?>
+                        </div>
                     </div>
                 </div>
             </div><!-- penci-popular_posts-sc -->

@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="magcat-carousel">
+<div class="magcat-carousel swiper-slide">
     <div class="magcat-thumb hentry">
 	    <?php do_action( 'penci_bookmark_post', get_the_ID() ); ?>
         <a href="<?php penci_permalink_fix(); ?>" class="mag-post-thumb<?php echo penci_class_lightbox_enable(); ?>">

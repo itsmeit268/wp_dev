@@ -36,7 +36,7 @@ class PenciProductCategories extends Base_Widget {
 	 *
 	 */
 	public function get_title() {
-		return penci_get_theme_name('Penci').' '.esc_html__( ' Product Categories', 'soledad' );
+		return penci_get_theme_name( 'Penci' ) . ' ' . esc_html__( ' Product Categories', 'soledad' );
 	}
 
 	/**
@@ -326,6 +326,17 @@ class PenciProductCategories extends Base_Widget {
 			]
 		);
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control(
 			'wrap',
 			[
@@ -469,12 +480,13 @@ class PenciProductCategories extends Base_Widget {
 			$settings['scroll_per_page'] = 'yes';
 			$settings['carousel_id']     = $carousel_id;
 
-			$this->add_render_attribute( 'wrapper', 'class', 'penci-owl-carousel penci-owl-carousel-slider ' );
+			$this->add_render_attribute( 'wrapper', 'class', 'swiper penci-owl-carousel penci-owl-carousel-slider ' );
 			$this->add_render_attribute( 'wrapper', 'data-item', isset( $settings['slides_per_view']['size'] ) ? $settings['slides_per_view']['size'] : 3 );
 			$this->add_render_attribute( 'wrapper', 'data-desktop', isset( $settings['slides_per_view']['size'] ) ? $settings['slides_per_view']['size'] : 3 );
 			$this->add_render_attribute( 'wrapper', 'data-dots', $settings['hide_pagination_control'] );
 			$this->add_render_attribute( 'wrapper', 'data-nav', $settings['hide_prev_next_buttons'] );
 			$this->add_render_attribute( 'wrapper', 'data-loop', $settings['wrap'] );
+			$this->add_render_attribute( 'wrapper', 'data-ceffect', $settings['carousel_slider_effect'] );
 			$this->add_render_attribute( 'wrapper', 'data-auto', $settings['autoplay'] );
 			$this->add_render_attribute( 'wrapper', 'data-speed', $settings['speed'] );
 			$this->add_render_attribute( 'wrapper', 'data-margin', 30 );
@@ -509,6 +521,10 @@ class PenciProductCategories extends Base_Widget {
             <div class="woocommerce penci-product-categories">
 				<?php $this->markup_block_title( $this->get_settings(), $this ); ?>
                 <ul <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
+					<?php if ( $settings['style'] == 'carousel' ) {
+						echo '<div class="swiper-wrapper">';
+					} ?>
+
 					<?php if ( ! in_array( $settings['style'], array( 'default', 'carousel' ) ) )  { ?>
                     <ul>
 						<?php } ?>
@@ -525,6 +541,9 @@ class PenciProductCategories extends Base_Widget {
 						<?php if ( ! in_array( $settings['style'], array( 'default', 'carousel' ) ) )  { ?>
                     </ul>
 				<?php } ?>
+					<?php if ( $settings['style'] == 'carousel' ) {
+						echo '</div>';
+					} ?>
                 </ul>
             </div>
 		<?php endif;

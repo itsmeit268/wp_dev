@@ -57,6 +57,7 @@ global $post;
                     </span>
                 </span>
 		<?php endif; ?>
+	    <?php penci_author_update_name(); ?>
 		<?php if ( ! $settings['penci_single_meta_date'] ) : ?>
             <span class="pctmp-date-post">
 				<?php penci_soledad_time_link( 'single' ); ?></span>

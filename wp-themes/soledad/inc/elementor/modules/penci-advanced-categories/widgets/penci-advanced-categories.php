@@ -109,6 +109,11 @@ class PenciAdvancedCategories extends Base_Widget {
 			'type'  => Controls_Manager::SWITCHER,
 		) );
 
+		$this->add_control( 'toggle', array(
+			'label' => __( 'Show Toggle Button?', 'soledad' ),
+			'type'  => Controls_Manager::SWITCHER,
+		) );
+
 		$this->add_control( 'mark_count', array(
 			'label' => __( 'Highlight posts count?', 'soledad' ),
 			'type'  => Controls_Manager::SWITCHER,
@@ -319,7 +324,8 @@ class PenciAdvancedCategories extends Base_Widget {
                 elseif ( 'style-2' == $rstyle ):
 					wp_tag_cloud( $term_args );
 				else:
-					echo '<ul>';
+					$extra_class = $settings['toggle'] == 'yes' ? ' toggle-enable' : '';
+					echo '<ul class="pc-advanced-cat '.esc_attr( $extra_class ).'">';
 					wp_list_categories( $term_args );
 					echo '</ul>';
 				endif; ?>

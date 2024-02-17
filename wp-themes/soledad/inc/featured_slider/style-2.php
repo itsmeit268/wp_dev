@@ -9,20 +9,22 @@ if ( ! $feat_query ) {
 }
 $slider_title_length = get_theme_mod( 'penci_slider_title_length' ) ? get_theme_mod( 'penci_slider_title_length' ) : 20;
 $image_size          = get_theme_mod( 'featured_slider_imgsize' ) ? get_theme_mod( 'featured_slider_imgsize' ) : 'penci-slider-thumb';
-$image_size_mobile = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_theme_mod( 'featured_slider_imgsize_mobile' ) : 'penci-masonry-thumb';
+$image_size_mobile   = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_theme_mod( 'featured_slider_imgsize_mobile' ) : 'penci-masonry-thumb';
 ?>
 <?php if ( $feat_query->have_posts() ) : while ( $feat_query->have_posts() ) : $feat_query->the_post(); ?>
-    <div class="item">
-	    <?php do_action( 'penci_bookmark_post' ); ?>
-	    <?php if ( ! get_theme_mod( 'penci_disable_lazyload_slider' ) ) { ?>
+
+    <div class="swiper-slide item">
+        
+		<?php do_action( 'penci_bookmark_post' ); ?>
+		<?php if ( ! get_theme_mod( 'penci_disable_lazyload_slider' ) ) { ?>
             <a class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
                data-bgset="<?php echo penci_image_srcset( get_the_ID(), $image_size, $image_size_mobile ); ?>"
                href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
-	    <?php } else { ?>
+		<?php } else { ?>
             <a class="penci-image-holder"
                style="background-image: url('<?php echo penci_get_featured_image_size( get_the_ID(), penci_is_mobile() ? $image_size_mobile : $image_size ); ?>');"
                href="<?php the_permalink(); ?>" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>"></a>
-	    <?php } ?>
+		<?php } ?>
 		<?php if ( ! get_theme_mod( 'penci_featured_center_box' ) ): ?>
             <div class="penci-featured-content">
                 <div class="feat-text<?php if ( get_theme_mod( 'penci_featured_meta_date' ) ): echo ' slider-hide-date'; endif; ?>">
@@ -51,6 +53,8 @@ $image_size_mobile = get_theme_mod( 'featured_slider_imgsize_mobile' ) ? get_the
                 </div>
             </div>
 		<?php endif; ?>
+        
     </div>
+
 <?php endwhile;
 	wp_reset_postdata(); endif; ?>

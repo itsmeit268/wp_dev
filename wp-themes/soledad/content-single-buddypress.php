@@ -5,9 +5,10 @@
  * @since 1.0
  */
 $block_style = get_theme_mod('penci_blockquote_style') ? get_theme_mod('penci_blockquote_style') : 'style-1';
+$heading_style = penci_get_heading_style();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post-entry <?php echo 'blockquote-'. $block_style; ?>">
+	<div class="post-entry <?php echo 'blockquote-'. $block_style; ?> <?php echo $heading_style; ?>">
 		<div class="inner-post-entry entry-content">
 			<?php the_content(); ?>
 			

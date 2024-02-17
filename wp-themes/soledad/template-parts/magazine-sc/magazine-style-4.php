@@ -18,7 +18,7 @@ if ( 'horizontal' == $penci_featimg_size ) {
 }
 ?>
 
-<div class="mag-single-slider">
+<div class="mag-single-slider swiper-slide">
     <div class="magcat-thumb hentry">
 	    <?php do_action( 'penci_bookmark_post', get_the_ID() ); ?>
         <a href="<?php penci_permalink_fix(); ?>"

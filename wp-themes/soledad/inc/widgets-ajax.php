@@ -1,4 +1,154 @@
 <?php
+add_action( 'wp_ajax_nopriv_penci_stylisted_articles_count_ajax', 'penci_stylisted_articles_count_ajax' );
+add_action( 'wp_ajax_penci_stylisted_articles_count_ajax', 'penci_stylisted_articles_count_ajax' );
+function penci_stylisted_articles_count_ajax() {
+	check_ajax_referer( 'penci_widgets_ajax', 'nonce' );
+	check_ajax_referer( 'penci_widgets_ajax', 'nonce' );
+	/* Our variables from the widget settings. */
+	$instance   = str_replace( 'u00a0', '', str_replace( '\\', '', $_POST['settings'] ) );
+	$instance   = json_decode( $instance, true );
+	$paged      = $_POST['paged'];
+	$categories = isset( $instance['categories'] ) ? $instance['categories'] : '';
+	$orderby    = isset( $instance['orderby'] ) ? $instance['orderby'] : 'date';
+	$order      = isset( $instance['order'] ) ? $instance['order'] : 'DESC';
+	$number     = isset( $instance['number'] ) ? $instance['number'] : '';
+	$offset     = isset( $instance['offset'] ) ? $instance['offset'] : '';
+	$ptype      = isset( $instance['ptype'] ) ? $instance['ptype'] : '';
+	if ( ! $ptype ): $ptype = 'post'; endif;
+	$taxonomy     = isset( $instance['taxonomy'] ) ? $instance['taxonomy'] : '';
+	$tax_ids      = isset( $instance['tax_ids'] ) ? $instance['tax_ids'] : 'tax_ids';
+	$sticky       = isset( $instance['sticky'] ) ? $instance['sticky'] : true;
+	$sticky_value = ( false == $sticky ) ? 0 : 1;
+	$title_length = isset( $instance['title_length'] ) ? $instance['title_length'] : '';
+	$postdate     = isset( $instance['postdate'] ) ? $instance['postdate'] : false;
+	$image_type   = isset( $instance['image_type'] ) ? $instance['image_type'] : 'default';
+	$showauthor   = isset( $instance['show_author'] ) ? $instance['show_author'] : false;
+	$showcomment  = isset( $instance['show_comment'] ) ? $instance['show_comment'] : false;
+	$showviews    = isset( $instance['show_postviews'] ) ? $instance['show_postviews'] : false;
+	$columns      = isset( $instance['columns'] ) ? $instance['columns'] : '';
+	$cats_id      = ! empty( $instance['cats_id'] ) ? explode( ',', $instance['cats_id'] ) : array();
+	$tags_id      = ! empty( $instance['tags_id'] ) ? explode( ',', $instance['tags_id'] ) : array();
+
+	$thumb = 'penci-thumb-masonry';
+
+	if ( $image_type == 'horizontal' ) {
+		$thumb = 'penci-thumb-small';
+	} elseif ( $image_type == 'square' ) {
+		$thumb = 'penci-thumb-square';
+	} elseif ( $image_type == 'vertical' ) {
+		$thumb = 'penci-thumb-vertical';
+	}
+
+	if ( isset( $instance['custom_query'] ) && $instance['custom_query'] ) {
+		$query  = $instance['custom_query'];
+		$number = $query['posts_per_page'];
+	} else {
+		$query = array(
+			'posts_per_page'      => $number,
+			'post_type'           => $ptype,
+			'ignore_sticky_posts' => $sticky_value
+		);
+
+
+		if ( isset( $instance['cats_id'] ) ) {
+			if ( ! empty( $cats_id ) && ! in_array( 'all', $cats_id ) ) {
+				$query['category__in'] = $cats_id;
+			}
+		} else {
+			$term_name = get_cat_name( $categories );
+			$term      = term_exists( $term_name, 'category' );
+
+			if ( $term !== 0 && $term !== null ) {
+				$query['cat'] = $categories;
+			}
+		}
+
+		if ( ! empty( $tags_id ) ) {
+			if ( ! in_array( 'all', $tags_id ) ) {
+				$query['tag__in'] = $tags_id;
+			}
+		}
+
+		if ( $orderby == 'week' ) {
+			$query['meta_key']     = 'penci_post_week_views_count';
+			$query['orderby']       = 'meta_value_num';
+		} elseif ( $orderby == 'month' ) {
+			$query['meta_key']     = 'penci_post_month_views_count';
+			$query['orderby']       = 'meta_value_num';
+		} elseif ( $orderby == 'jetpack' ) {
+			$query['meta_key']     = '_jetpack_post_view';
+			$query['orderby']       = 'meta_value_num';
+		} elseif ( $orderby == 'all' ) {
+			$query['meta_key']     = penci_get_postviews_key();
+			$query['orderby']       = 'meta_value_num';
+		} elseif ( $orderby ) {
+			$query['orderby'] = $orderby;
+		}
+
+		if ( $order ) {
+			$query['order'] = $order;
+		}
+		
+
+		if ( $taxonomy && ( 'post' != $ptype ) ) {
+			$taxonomy  = str_replace( ' ', '', $taxonomy );
+			$tax_array = explode( ',', $taxonomy );
+
+			foreach ( $tax_array as $tax ) {
+				$tax_ids_array = array();
+				if ( $tax_ids ) {
+					$tax_ids       = str_replace( ' ', '', $tax_ids );
+					$tax_ids_array = explode( ',', $tax_ids );
+				} else {
+					$get_all_terms = get_terms( $tax );
+					if ( ! empty( $get_all_terms ) ) {
+						foreach ( $get_all_terms as $term ) {
+							$tax_ids_array[] = $term->term_id;
+						}
+					}
+				}
+
+				if ( ! empty( $tax_ids_array ) ) {
+					$query['tax_query'][] = array(
+						'taxonomy' => $tax,
+						'field'    => 'term_id',
+						'terms'    => $tax_ids_array
+					);
+				}
+			}
+		}
+
+	}
+
+	if ( $paged ) {
+		$query['paged'] = $paged;
+	}
+
+	if ( $offset ) {
+		$query['offset'] = $offset;
+	}
+
+
+	$loop = new WP_Query( $query );
+	if ( $loop->have_posts() ) :
+		get_template_part( 'inc/templates/popular_posts', '', [
+			'loop'         => $loop,
+			'class'        => 'demo',
+			'showauthor'   => $showauthor,
+			'postdate'     => $postdate,
+			'showviews'    => $showviews,
+			'showcomment'  => $showcomment,
+			'title_length' => $title_length,
+			'thumb'        => $thumb,
+			'columns'      => $columns,
+			'id'           => '',
+			'data_attr'    => '',
+			'paged'        => $paged,
+		] );
+	endif;
+	die();
+}
+
 add_action( 'wp_ajax_nopriv_penci_latest_news_widget_ajax', 'penci_latest_news_widget_ajax' );
 add_action( 'wp_ajax_penci_latest_news_widget_ajax', 'penci_latest_news_widget_ajax' );
 function penci_latest_news_widget_ajax() {
@@ -37,6 +187,7 @@ function penci_latest_news_widget_ajax() {
 	$showborder   = isset( $instance['showborder'] ) ? $instance['showborder'] : false;
 	$cats_id      = ! empty( $instance['cats_id'] ) ? explode( ',', $instance['cats_id'] ) : array();
 	$tags_id      = ! empty( $instance['tags_id'] ) ? explode( ',', $instance['tags_id'] ) : array();
+	$alt_style    = ! empty( $instance['altstyle'] ) ? $instance['altstyle'] : false;
 
 	if ( isset( $instance['custom_query'] ) && $instance['custom_query'] ) {
 		$query  = $instance['custom_query'];
@@ -49,32 +200,22 @@ function penci_latest_news_widget_ajax() {
 		);
 
 
-		if ( 'post' == $ptype ) {
-			if ( isset( $instance['cats_id'] ) ) {
-				if ( ! empty( $cats_id ) && ! in_array( 'all', $cats_id ) ) {
-					$query['tax_query'][] = [
-						'taxonomy' => 'category',
-						'field'    => 'term_id',
-						'terms'    => $cats_id,
-					];
-				}
-			} else {
-				$term_name = get_cat_name( $categories );
-				$term      = term_exists( $term_name, 'category' );
-
-				if ( $term !== 0 && $term !== null ) {
-					$query['cat'] = $categories;
-				}
+		if ( isset( $instance['cats_id'] ) ) {
+			if ( ! empty( $cats_id ) && ! in_array( 'all', $cats_id ) ) {
+				$query['category__in'] = $cats_id;
 			}
+		} else {
+			$term_name = get_cat_name( $categories );
+			$term      = term_exists( $term_name, 'category' );
 
-			if ( ! empty( $tags_id ) ) {
-				if ( ! in_array( 'all', $tags_id ) ) {
-					$query['tax_query'][] = [
-						'taxonomy' => 'post_tag',
-						'field'    => 'term_id',
-						'terms'    => $tags_id,
-					];
-				}
+			if ( $term !== 0 && $term !== null ) {
+				$query['cat'] = $categories;
+			}
+		}
+
+		if ( ! empty( $tags_id ) ) {
+			if ( ! in_array( 'all', $tags_id ) ) {
+				$query['tag__in'] = $tags_id;
 			}
 		}
 
@@ -122,8 +263,10 @@ function penci_latest_news_widget_ajax() {
 		$query['paged'] = $paged;
 	}
 
+
 	$loop = new WP_Query( $query );
 	if ( $loop->have_posts() ) :
+
 		?>
         <ul class="side-newsfeed<?php if ( $twocolumn && ! $allfeatured ): echo ' penci-feed-2columns';
 			if ( $featured ) {
@@ -234,7 +377,8 @@ function penci_latest_news_widget_ajax() {
 							<?php endif; ?>
 
                             <h4 class="side-title-post">
-                                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
+                                <a href="<?php the_permalink() ?>" rel="bookmark"
+                                   title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 									<?php
 									if ( ! $title_length || ! is_numeric( $title_length ) ) {
 										if ( $featured2 && ( ( ( $num == 1 ) && $featured ) || $allfeatured ) ) {
@@ -314,6 +458,7 @@ function penci_popular_news_ajax() {
 	$showviews    = isset( $instance['show_postviews'] ) ? $instance['show_postviews'] : false;
 	$cats_id      = ! empty( $instance['cats_id'] ) ? explode( ',', $instance['cats_id'] ) : array();
 	$tags_id      = ! empty( $instance['tags_id'] ) ? explode( ',', $instance['tags_id'] ) : array();
+	$alt_style    = ! empty( $instance['altstyle'] ) ? $instance['altstyle'] : false;
 
 	$query = array(
 		'meta_key'            => penci_get_postviews_key(),
@@ -411,9 +556,9 @@ function penci_popular_news_ajax() {
 
 	$loop = new WP_Query( $query );
 	if ( $loop->have_posts() ) :
-
-
 		$rand = rand( 1000, 10000 );
+
+
 		?>
         <ul id="penci-popularwg-<?php echo sanitize_text_field( $rand ); ?>"
             class="side-newsfeed<?php if ( $twocolumn && ! $allfeatured ): echo ' penci-feed-2columns';
@@ -442,7 +587,7 @@ function penci_popular_news_ajax() {
 								<?php
 								$size_pie = 'small';
 								if ( ( ( $num == 1 ) && $featured ) || $allfeatured ): $size_pie = 'normal'; endif;
-								do_action( 'penci_bookmark_post', get_the_ID(),$size_pie );
+								do_action( 'penci_bookmark_post', get_the_ID(), $size_pie );
 								/* Display Review Piechart  */
 								if ( function_exists( 'penci_display_piechart_review_html' ) ) {
 									penci_display_piechart_review_html( get_the_ID(), $size_pie );
@@ -524,7 +669,8 @@ function penci_popular_news_ajax() {
 							<?php endif; ?>
 
                             <h4 class="side-title-post">
-                                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
+                                <a href="<?php the_permalink() ?>" rel="bookmark"
+                                   title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 									<?php
 									if ( ! $title_length || ! is_numeric( $title_length ) ) {
 										if ( $featured2 && ( ( ( $num == 1 ) && $featured ) || $allfeatured ) ) {
@@ -563,6 +709,7 @@ function penci_popular_news_ajax() {
 				<?php $num ++; endwhile; ?>
         </ul>
 		<?php
+
 		wp_reset_postdata();
 	endif;
 	die();
@@ -623,7 +770,7 @@ function penci_related_news_widget_ajax() {
 									<?php
 									$size_pie = 'small';
 									if ( ( ( $num == 1 ) && $featured ) || $allfeatured ): $size_pie = 'normal'; endif;
-									do_action( 'penci_bookmark_post', get_the_ID(),$size_pie );
+									do_action( 'penci_bookmark_post', get_the_ID(), $size_pie );
 									/* Display Review Piechart  */
 									if ( function_exists( 'penci_display_piechart_review_html' ) ) {
 										penci_display_piechart_review_html( get_the_ID(), $size_pie );
@@ -831,7 +978,7 @@ function penci_posts_tabs_widget_ajax() {
 								<?php
 								$size_pie = 'small';
 								if ( ( ( $num == 1 ) && $featured ) || $allfeatured ): $size_pie = 'normal'; endif;
-								do_action( 'penci_bookmark_post', get_the_ID(),$size_pie );
+								do_action( 'penci_bookmark_post', get_the_ID(), $size_pie );
 								/* Display Review Piechart  */
 								if ( function_exists( 'penci_display_piechart_review_html' ) ) {
 									penci_display_piechart_review_html( get_the_ID(), $size_pie );
@@ -913,7 +1060,8 @@ function penci_posts_tabs_widget_ajax() {
 							<?php endif; ?>
 
                             <h4 class="side-title-post">
-                                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
+                                <a href="<?php the_permalink() ?>" rel="bookmark"
+                                   title="<?php echo wp_strip_all_tags( get_the_title() ); ?>">
 									<?php
 									if ( ! $title_length || ! is_numeric( $title_length ) ) {
 										if ( $featured2 && ( ( ( $num == 1 ) && $featured ) || $allfeatured ) ) {

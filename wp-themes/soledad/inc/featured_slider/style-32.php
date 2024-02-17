@@ -75,7 +75,7 @@ $feat_query = new WP_Query( $featured_args );
 
 	if ( ! empty( $image_url ) ):
 		?>
-        <div class="item pencislider-item">
+        <div class="item swiper-slide pencislider-item">
 			<?php if ( ! get_theme_mod( 'penci_disable_lazyload_slider' ) ) { ?>
                 <div class="penci-image-holder <?php echo penci_classes_slider_lazy(); ?>"
                      data-bgset="<?php echo penci_get_image_size_url( $image_url, $image_size ); ?>"

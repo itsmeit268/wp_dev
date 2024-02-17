@@ -14,10 +14,10 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 
 		public static function pre_data_schema() {
 			$data = array();
-			if( ! get_theme_mod( 'penci_schema_organization' ) ){
+			if ( ! get_theme_mod( 'penci_schema_organization' ) ) {
 				$data['organization'] = self::generate_data();
 			}
-			if( ! get_theme_mod( 'penci_schema_website' ) ){
+			if ( ! get_theme_mod( 'penci_schema_website' ) ) {
 				$data['website'] = self::website_data();
 			}
 
@@ -25,7 +25,7 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 
 				if ( is_page() ) {
 					$data['page'] = self::page_data();
-				} else if ( function_exists( 'is_product' ) && is_product() ) {
+				} elseif ( function_exists( 'is_product' ) && is_product() ) {
 					$data['product'] = self::product_data();
 				} else {
 					$data['single'] = self::single_data();
@@ -45,11 +45,11 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 				}
 			}
 
-			if ( ! is_front_page() &&  ! $breadcrumbs_enabled && ! get_theme_mod( 'penci_schema_breadcrumbs' ) ) {
+			if ( ! is_front_page() && ! $breadcrumbs_enabled && ! get_theme_mod( 'penci_schema_breadcrumbs' ) ) {
 				$data['BreadcrumbList'] = self::BreadcrumbList_data();
 			}
-			
-			if( is_singular('post') && get_theme_mod('penci_post_use_newsarticle') ){
+
+			if ( is_singular( 'post' ) && get_theme_mod( 'penci_post_use_newsarticle' ) ) {
 				$data['NewsArticle'] = self::newsarticle_data();
 			}
 
@@ -62,8 +62,8 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 		public static function output_schema() {
 
 			$pre_data_schema = self::pre_data_schema();
-			
-			if( ! empty( $pre_data_schema ) ) {
+
+			if ( ! empty( $pre_data_schema ) ) {
 				foreach ( $pre_data_schema as $json ) {
 					echo '<script type="application/ld+json">' . wp_json_encode( $json, JSON_PRETTY_PRINT ) . '</script>';
 				}
@@ -87,13 +87,13 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 			}
 
 			return array(
-				"@context"    => "https://schema.org/",
+				'@context'    => 'https://schema.org/',
 				'@type'       => 'organization',
 				'@id'         => '#organization',
 				'logo'        => $data_logo,
 				'url'         => home_url( '/' ),
 				'name'        => get_bloginfo( 'name' ),
-				'description' => esc_attr( get_bloginfo( 'description' ) )
+				'description' => esc_attr( get_bloginfo( 'description' ) ),
 			);
 		}
 
@@ -104,7 +104,7 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 		 */
 		public static function website_data() {
 			$data = array(
-				"@context"      => "https://schema.org/",
+				'@context'      => 'https://schema.org/',
 				'@type'         => 'WebSite',
 				'name'          => esc_attr( get_bloginfo( 'name' ) ),
 				'alternateName' => esc_attr( get_bloginfo( 'description' ) ),
@@ -115,7 +115,7 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 				$data['potentialAction'] = array(
 					'@type'       => 'SearchAction',
 					'target'      => get_search_link() . '{search_term}',
-					'query-input' => 'required name=search_term'
+					'query-input' => 'required name=search_term',
 				);
 			}
 
@@ -150,7 +150,7 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 
 			$schema_markup['offers'] = array(
 				'@type'         => 'Offer',
-				'url' 			=> get_the_permalink(),
+				'url'           => get_the_permalink(),
 				'priceCurrency' => get_woocommerce_currency(),
 				'price'         => $product->get_price(),
 				'availability'  => 'https://schema.org/' . ( $product->is_in_stock() ? 'InStock' : 'OutOfStock' ),
@@ -164,31 +164,31 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 
 			return $schema_markup;
 		}
-		
+
 		public static function newsarticle_data() {
 			global $post;
-			
+
 			$post_id   = isset( $post->ID ) ? $post->ID : '';
 			$permalink = get_permalink( $post_id );
 
-			$post_title   = isset( $post->post_title ) ? $post->post_title : '';
+			$post_title     = isset( $post->post_title ) ? $post->post_title : '';
 			$excerpt_length = get_theme_mod( 'penci_post_excerpt_length', 30 );
-			$post_excerpt = get_theme_mod( 'penci_excerptcharac' ) ? get_the_excerpt() : penci_get_the_excerpt( null, $excerpt_length );
-			
+			$post_excerpt   = ! get_theme_mod( 'penci_excerptcharac' ) ? get_the_excerpt() : penci_get_the_excerpt( null, $excerpt_length );
+
 			$featured_image   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 			$featured_image_0 = isset( $featured_image[0] ) ? $featured_image[0] : get_template_directory_uri() . '/images/no-image.jpg';
-			
+
 			$schema_markup = array(
-				"@context"         => "https://schema.org",
+				'@context'         => 'https://schema.org',
 				'@type'            => 'NewsArticle',
 				'headline'         => $post_title,
 				'image'            => $featured_image_0,
 				'datePublished'    => get_the_date( 'Y-m-d' ),
 				'datemodified'     => get_post_modified_time( 'Y-m-d' ),
 				'description'      => $post_excerpt,
-				'mainEntityOfPage' => $permalink
+				'mainEntityOfPage' => $permalink,
 			);
-			
+
 			// publisher
 			$schema_markup['publisher'] = array(
 				'@type' => 'Organization',
@@ -202,21 +202,22 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 					'url'   => $url_logo,
 				);
 			}
-			
+
 			// Author
 			$post_author = isset( $post->post_author ) ? $post->post_author : '';
 			$author      = get_the_author_meta( 'display_name', $post_author );
-			$author_url      = get_author_posts_url( get_the_author_meta( 'ID', $post_author ) );
+			$author_url  = get_author_posts_url( get_the_author_meta( 'ID', $post_author ) );
 			if ( $author ) {
 				$schema_markup['author'] = array(
 					'@type' => 'Person',
 					'@id'   => '#person-' . sanitize_html_class( $author ),
 					'name'  => $author,
-					'url'	=> $author_url
+					'url'   => $author_url,
 				);
 			}
-			
-			$schema_return = apply_filters('soledad_schema', $schema_markup);
+
+			$schema_return = apply_filters( 'soledad_schema', $schema_markup );
+
 			return $schema_return;
 		}
 
@@ -230,20 +231,20 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 			$post_id   = isset( $post->ID ) ? $post->ID : '';
 			$permalink = get_permalink( $post_id );
 
-			$post_title   = isset( $post->post_title ) ? $post->post_title : '';
+			$post_title     = isset( $post->post_title ) ? $post->post_title : '';
 			$excerpt_length = get_theme_mod( 'penci_post_excerpt_length', 30 );
-			$post_excerpt = get_theme_mod( 'penci_excerptcharac' ) ? get_the_excerpt() : penci_get_the_excerpt( null, $excerpt_length );
-			$post_excerpt = $post_excerpt ? $post_excerpt : $post_title;
-			$post_type    = isset( $post->post_type ) ? $post->post_type : '';
+			$post_excerpt   = ! get_theme_mod( 'penci_excerptcharac' ) ? get_the_excerpt() : penci_get_the_excerpt( null, $excerpt_length );
+			$post_excerpt   = $post_excerpt ? $post_excerpt : $post_title;
+			$post_type      = isset( $post->post_type ) ? $post->post_type : '';
 
 			$schema_markup = array(
-				"@context"         => "https://schema.org/",
+				'@context'         => 'https://schema.org/',
 				'@type'            => $type,
 				'headline'         => $post_title,
 				'description'      => $post_excerpt,
 				'datePublished'    => get_the_date( 'Y-m-d' ),
 				'datemodified'     => get_post_modified_time( 'Y-m-d' ),
-				'mainEntityOfPage' => $permalink
+				'mainEntityOfPage' => $permalink,
 			);
 
 			// Featured img
@@ -281,13 +282,13 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 			// Author
 			$post_author = isset( $post->post_author ) ? $post->post_author : '';
 			$author      = get_the_author_meta( 'display_name', $post_author );
-			$author_url      = get_author_posts_url( get_the_author_meta( 'ID', $post_author ) );
+			$author_url  = get_author_posts_url( get_the_author_meta( 'ID', $post_author ) );
 			if ( $author ) {
 				$schema_markup['author'] = array(
 					'@type' => 'Person',
 					'@id'   => '#person-' . sanitize_html_class( $author ),
 					'name'  => $author,
-					'url'	=> $author_url
+					'url'   => $author_url,
 				);
 			}
 
@@ -297,7 +298,6 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 
 				if ( 'video' == $format ) {
 					$schema_markup['@type'] = 'VideoObject';
-
 
 					$video = get_post_meta( $post_id, '_format_video_embed', true );
 
@@ -326,22 +326,22 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 					} else {
 						$schema_markup['contentUrl'] = sanitize_text_field( $audio );
 					}
-
 				} elseif ( 'image' == $format ) {
 					$schema_markup['@type'] = 'ImageObject';
 				} elseif ( 'gallery' == $format ) {
 					$schema_markup['@type'] = 'ImageObject';
 				}
 			}
+
 			return $schema_markup;
 		}
 
 		public static function get_url_logo() {
 			$logo = get_template_directory_uri() . '/images/logo.png';
-			if( get_theme_mod( 'penci_logo' ) ) {
+			if ( get_theme_mod( 'penci_logo' ) ) {
 				$logo = get_theme_mod( 'penci_logo' );
 			}
-			if( get_theme_mod('penci_logo_schema') ) {
+			if ( get_theme_mod( 'penci_logo_schema' ) ) {
 				$logo = get_theme_mod( 'penci_logo_schema' );
 			}
 
@@ -354,11 +354,17 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 			$itemListElement = array();
 			$items           = array();
 
-			$items[] = array( 'id' => home_url(), 'name' => penci_get_setting( 'penci_trans_home' ) );
+			$items[] = array(
+				'id'   => home_url(),
+				'name' => penci_get_setting( 'penci_trans_home' ),
+			);
 
 			if ( is_home() && ! is_front_page() ) {
 				$page    = get_option( 'page_for_posts' );
-				$items[] = array( 'id' => get_permalink( $page ), 'name' => get_the_title( $page ) );
+				$items[] = array(
+					'id'   => get_permalink( $page ),
+					'name' => get_the_title( $page ),
+				);
 			} elseif ( is_post_type_archive( 'portfolio' ) || is_tax( 'portfolio-category' ) ) {
 
 				$current_term     = get_queried_object();
@@ -367,13 +373,19 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 
 				foreach ( (array) $terms as $term_id ) {
 					$term    = get_term( $term_id, $current_term->taxonomy );
-					$items[] = array( 'id' => get_category_link( $term_id ), 'name' => $term->name );
+					$items[] = array(
+						'id'   => get_category_link( $term_id ),
+						'name' => $term->name,
+					);
 				}
 
 				$current_term_label = isset( $current_term->label ) ? $current_term->label : $current_term->name;
-				$current_term_id    = isset( $current_term->term_id ) ?  $current_term->term_id : '';
+				$current_term_id    = isset( $current_term->term_id ) ? $current_term->term_id : '';
 
-				$items[] = array( 'id' => get_category_link( $current_term_id ), 'name' => $current_term_label );
+				$items[] = array(
+					'id'   => get_category_link( $current_term_id ),
+					'name' => $current_term_label,
+				);
 			} elseif ( is_single() ) {
 
 				// Terms
@@ -386,18 +398,30 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 					foreach ( $terms as $term_id ) {
 						$term = get_term( $term_id, 'category' );
 						if ( ! is_wp_error( $term ) && ! empty( $term ) ) {
-							$items[] = array( 'id' => get_term_link( $term, 'category' ), 'name' => $term->name );
+							$items[] = array(
+								'id'   => get_term_link( $term, 'category' ),
+								'name' => $term->name,
+							);
 						}
 					}
-					$items[] = array( 'id' => get_permalink(), 'name' => get_the_title() );
+					$items[] = array(
+						'id'   => get_permalink(),
+						'name' => get_the_title(),
+					);
 				}
 			} elseif ( is_page() ) {
 				$pages = penci_get_post_parents( get_queried_object_id() );
 				foreach ( $pages as $page ) {
-					$items[] = array( 'id' => get_permalink( $page ), 'name' => get_the_title( $page ) );
+					$items[] = array(
+						'id'   => get_permalink( $page ),
+						'name' => get_the_title( $page ),
+					);
 				}
 
-				$items[] = array( 'id' => '', 'name' => get_the_title() );
+				$items[] = array(
+					'id'   => '',
+					'name' => get_the_title(),
+				);
 			} elseif ( is_tax() || is_category() || is_tag() ) {
 				$current_term = get_queried_object();
 				$terms        = penci_get_term_parents( get_queried_object_id(), $current_term->taxonomy );
@@ -405,66 +429,89 @@ if ( ! class_exists( 'Penci_JSON_Schema_Validator' ) ) {
 				foreach ( $terms as $term_id ) {
 					$term = get_term( $term_id, $current_term->taxonomy );
 
-					$items[] = array( 'id' => get_category_link( $term_id ), 'name' => $term->name );
+					$items[] = array(
+						'id'   => get_category_link( $term_id ),
+						'name' => $term->name,
+					);
 				}
 
-				$current_term_id    = isset( $current_term->term_id ) ? $current_term->term_id : '';
+				$current_term_id = isset( $current_term->term_id ) ? $current_term->term_id : '';
 
-				$items[] = array( 'id' => get_category_link( $current_term_id ), 'name' => $current_term->name );
+				$items[] = array(
+					'id'   => get_category_link( $current_term_id ),
+					'name' => $current_term->name,
+				);
 			} elseif ( is_search() ) {
-				$items[] = array( 'id' => get_search_link( get_search_query() ), 'name' => sprintf( esc_html__( '%s &quot;%s&quot;', 'soledad' ), penci_get_setting( 'penci_trans_search' ), get_search_query() ) );
+				$items[] = array(
+					'id'   => get_search_link( get_search_query() ),
+					'name' => sprintf( esc_html__( '%1$s &quot;%2$s&quot;', 'soledad' ), penci_get_setting( 'penci_trans_search' ), get_search_query() ),
+				);
 			} elseif ( is_404() ) {
-				$items[] = array( 'id' => '', 'name' => esc_html__( 'Not Found', 'soledad' ) );
+				$items[] = array(
+					'id'   => '',
+					'name' => esc_html__( 'Not Found', 'soledad' ),
+				);
 			} elseif ( is_author() ) {
 				$author_url = get_author_posts_url( get_the_author_meta( 'ID' ) );
 
 				$items[] = array(
 					'id'   => $author_url,
 					'name' => sprintf(
-						esc_html__( '%s %s', 'soledad' ),
+						esc_html__( '%1$s %2$s', 'soledad' ),
 						esc_html__( 'Author', 'soledad' ),
 						'<span class="vcard"><a class="url fn n" href="' . $author_url . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>'
-					)
+					),
 				);
 			} elseif ( is_day() ) {
-				$items[] = array( 'id' => home_url( add_query_arg( array(), $wp->request ) ), 'name' => sprintf( esc_html__( '%s %s', 'soledad' ), esc_html__( 'Day Archives:', 'soledad' ), get_the_date() ) );
+				$items[] = array(
+					'id'   => home_url( add_query_arg( array(), $wp->request ) ),
+					'name' => sprintf( esc_html__( '%1$s %2$s', 'soledad' ), esc_html__( 'Day Archives:', 'soledad' ), get_the_date() ),
+				);
 			} elseif ( is_month() ) {
-				$items[] = array( 'id' => home_url( add_query_arg( array(), $wp->request ) ), 'name' => sprintf( esc_html__( '%s %s', 'soledad' ), esc_html__( 'Monthly Archives:', 'soledad' ), get_the_date( 'F Y' ) ) );
+				$items[] = array(
+					'id'   => home_url( add_query_arg( array(), $wp->request ) ),
+					'name' => sprintf( esc_html__( '%1$s %2$s', 'soledad' ), esc_html__( 'Monthly Archives:', 'soledad' ), get_the_date( 'F Y' ) ),
+				);
 			} elseif ( is_year() ) {
-				$items[] = array( 'id' => home_url( add_query_arg( array(), $wp->request ) ), 'name' => sprintf( esc_html__( '%s %s', 'soledad' ), esc_html__( 'Yearly Archives:', 'soledad' ), get_the_date( 'Y' ) ) );
+				$items[] = array(
+					'id'   => home_url( add_query_arg( array(), $wp->request ) ),
+					'name' => sprintf( esc_html__( '%1$s %2$s', 'soledad' ), esc_html__( 'Yearly Archives:', 'soledad' ), get_the_date( 'Y' ) ),
+				);
 			} else {
-				$items[] = array( 'id' => home_url( add_query_arg( array(), $wp->request ) ),'', 'name' => penci_get_setting( 'penci_trans_archives' ) );
+				$items[] = array(
+					'id'   => home_url( add_query_arg( array(), $wp->request ) ),
+					'',
+					'name' => penci_get_setting( 'penci_trans_archives' ),
+				);
 			}
 
 			$pos_item = 1;
 			foreach ( $items as $item ) {
 				$itemListElement[] = array(
-					"@type"    => "ListItem",
-					"position" => absint( $pos_item ),
+					'@type'    => 'ListItem',
+					'position' => absint( $pos_item ),
 					'item'     => array(
 						'@id'  => $item['id'],
 						'name' => $item['name'],
-					)
+					),
 				);
 
-				//$itemListElement .= '{"@type": "ListItem","position": ' . absint( $pos_item ) . ',"item":{"@id": "' . $item['id'] . '","name": "' . $item['name'] . '"}}';
-				$pos_item ++;
+				// $itemListElement .= '{"@type": "ListItem","position": ' . absint( $pos_item ) . ',"item":{"@id": "' . $item['id'] . '","name": "' . $item['name'] . '"}}';
+				++ $pos_item;
 			}
 
 			$output = array(
-				"@context"        => "https://schema.org/",
+				'@context'        => 'https://schema.org/',
 				'@type'           => 'BreadcrumbList',
-				'itemListElement' => $itemListElement
+				'itemListElement' => $itemListElement,
 			);
 
 			return $output;
 		}
-
 	}
 }
 
-new Penci_JSON_Schema_Validator;
-
+new Penci_JSON_Schema_Validator();
 
 /**
  * Gets parent posts' IDs of any post type, include current post
@@ -499,7 +546,6 @@ if ( ! function_exists( 'penci_get_post_parents' ) ) {
 		return $list;
 	}
 }
-
 
 if ( ! function_exists( 'penci_bread_primary_term' ) ) {
 
@@ -553,34 +599,3 @@ if ( ! function_exists( 'penci_get_term_parents' ) ) {
 		return $list;
 	}
 }
-
-if ( ! function_exists( 'penci_soledad_entry_footer' ) ) :
-	function penci_soledad_entry_footer() {
-
-		$separate_meta = __( ', ', 'twentyseventeen' );
-		$categories_list = get_the_category_list( $separate_meta );
-
-		$tags_list = get_the_tag_list( '', $separate_meta );
-
-		echo '<div class="entry-footer penci-entry-footer">';
-
-		if ( 'post' === get_post_type() ) {
-			if ( ( $categories_list && twentyseventeen_categorized_blog() ) || $tags_list ) {
-				echo '<span class="cat-tags-links">';
-
-				// Make sure there's more than one category before displaying.
-				if ( $categories_list && twentyseventeen_categorized_blog() ) {
-					echo '<span class="cat-links">' . twentyseventeen_get_svg( array( 'icon' => 'folder-open' ) ) . '<span class="screen-reader-text">' . __( 'Categories', 'twentyseventeen' ) . '</span>' . $categories_list . '</span>';
-				}
-
-				if ( $tags_list && ! is_wp_error( $tags_list ) ) {
-					echo '<span class="tags-links">' . twentyseventeen_get_svg( array( 'icon' => 'hashtag' ) ) . '<span class="screen-reader-text">' . __( 'Tags', 'twentyseventeen' ) . '</span>' . $tags_list . '</span>';
-				}
-
-				echo '</span>';
-			}
-		}
-
-		echo '</div> <!-- .entry-footer -->';
-	}
-endif;

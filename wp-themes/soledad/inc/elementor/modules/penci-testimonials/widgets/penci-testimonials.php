@@ -1,12 +1,13 @@
 <?php
+
 namespace PenciSoledadElementor\Modules\PenciTestimonials\Widgets;
 
-use PenciSoledadElementor\Base\Base_Widget;
 use Elementor\Controls_Manager;
+use Elementor\Group_Control_Box_Shadow;
+use Elementor\Group_Control_Typography;
 use Elementor\Repeater;
 use Elementor\Utils;
-use Elementor\Group_Control_Typography;
-use Elementor\Group_Control_Box_Shadow;
+use PenciSoledadElementor\Base\Base_Widget;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -78,8 +79,9 @@ class PenciTestimonials extends Base_Widget {
 			array(
 				'label'   => __( 'Columns', 'soledad' ),
 				'type'    => Controls_Manager::SELECT,
-				'default' => '3',
+				'default' => '',
 				'options' => array(
+					'' => 'Default',
 					'1' => '1',
 					'2' => '2',
 					'3' => '3',
@@ -95,8 +97,9 @@ class PenciTestimonials extends Base_Widget {
 			array(
 				'label'   => __( 'Columns on Tablet', 'soledad' ),
 				'type'    => Controls_Manager::SELECT,
-				'default' => '2',
+				'default' => '',
 				'options' => array(
+					'' => 'Default',
 					'1' => '1',
 					'2' => '2',
 					'3' => '3',
@@ -131,9 +134,9 @@ class PenciTestimonials extends Base_Widget {
 				'type'      => Controls_Manager::SELECT,
 				'default'   => '',
 				'options'   => array(
-					''      => __('Top','soledad' ),
-					'left'  => __('Left','soledad' ),
-					'right' => __('Right','soledad' ),
+					''      => __( 'Top', 'soledad' ),
+					'left'  => __( 'Left', 'soledad' ),
+					'right' => __( 'Right', 'soledad' ),
 				),
 				'condition' => array( 'style' => 's4' ),
 			)
@@ -292,6 +295,17 @@ class PenciTestimonials extends Base_Widget {
 			)
 		);
 
+		$this->add_control( 'carousel_slider_effect', array(
+			'label'       => __( 'Carousel Slider Effect', 'soledad' ),
+			'description' => __( 'The "Swing" effect does not support the loop option.', 'soledad' ),
+			'type'        => Controls_Manager::SELECT,
+			'default'     => get_theme_mod( 'penci_carousel_slider_effect', 'swing' ),
+			'options'     => array(
+				'default' => 'Default',
+				'swing'   => 'Swing',
+			),
+		) );
+
 		$this->add_control(
 			'autoplay',
 			array(
@@ -303,9 +317,10 @@ class PenciTestimonials extends Base_Widget {
 		$this->add_control(
 			'loop',
 			array(
-				'label'   => __( 'Slider Loop', 'soledad' ),
-				'type'    => Controls_Manager::SWITCHER,
-				'default' => 'yes',
+				'label'     => __( 'Slider Loop', 'soledad' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'yes',
+				'condition' => [ 'carousel_slider_effect' => 'default' ],
 			)
 		);
 		$this->add_control(
@@ -494,7 +509,7 @@ class PenciTestimonials extends Base_Widget {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .penci-testimonail .penci-testi-bq-icon:before' => 'font-size: {{SIZE}}px;',
-					'{{WRAPPER}} .penci-testi-s2 .penci-testi-bq-icon:before' => 'width: auto; height: auto; line-height: {{SIZE}}px;',
+					'{{WRAPPER}} .penci-testi-s2 .penci-testi-bq-icon:before'    => 'width: auto; height: auto; line-height: {{SIZE}}px;',
 				),
 			)
 		);
@@ -608,7 +623,7 @@ class PenciTestimonials extends Base_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .penci-testi-s5 .penci-testi-blockquote:after' => 'border-top-color: {{VALUE}};',
-					'{{WRAPPER}} .penci-testi-blockquote' => 'background-color: {{VALUE}};border-color: {{VALUE}};',
+					'{{WRAPPER}} .penci-testi-blockquote'                       => 'background-color: {{VALUE}};border-color: {{VALUE}};',
 				),
 				'condition' => array( 'style' => array( 's1', 's2', 's5' ) ),
 			)
@@ -685,7 +700,7 @@ class PenciTestimonials extends Base_Widget {
 				'default'   => '',
 				'condition' => array( 'testitype' => 'crs' ),
 				'selectors' => array(
-					'{{WRAPPER}} .owl-dot span' => 'background-color: {{VALUE}}; opacity: 1;',
+					'{{WRAPPER}} .penci-owl-dot span' => 'background-color: {{VALUE}}; opacity: 1;',
 				),
 			)
 		);
@@ -697,7 +712,7 @@ class PenciTestimonials extends Base_Widget {
 				'default'   => '',
 				'condition' => array( 'testitype' => 'crs' ),
 				'selectors' => array(
-					'{{WRAPPER}} .owl-dot span' => 'border-color: {{VALUE}};opacity: 1;',
+					'{{WRAPPER}} .penci-owl-dot span' => 'border-color: {{VALUE}};opacity: 1;',
 				),
 			)
 		);
@@ -708,7 +723,7 @@ class PenciTestimonials extends Base_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'condition' => array( 'testitype' => 'crs' ),
-				'selectors' => array( '{{WRAPPER}} .owl-dot.hover span,{{WRAPPER}} .owl-dot.active span' => 'background-color: {{VALUE}};border-color: {{VALUE}};opacity: 1;' ),
+				'selectors' => array( '{{WRAPPER}} .penci-owl-dot.hover span,{{WRAPPER}} .penci-owl-dot.active span' => 'background-color: {{VALUE}};border-color: {{VALUE}};opacity: 1;' ),
 			)
 		);
 
@@ -723,22 +738,29 @@ class PenciTestimonials extends Base_Widget {
 		}
 
 		$style        = isset( $settings['style'] ) && $settings['style'] ? $settings['style'] : 's1';
-		$slider_item  = isset( $settings['slider_item'] ) && $settings['slider_item'] ? $settings['slider_item'] : '3';
-		$slider_titem = isset( $settings['slider_titem'] ) && $settings['slider_titem'] ? $settings['slider_titem'] : '2';
+
+		$default_item_desktop = '3';
+		$default_item_tablet = '2';
+		if( $style == 's1' || $style == 's3' ) { $default_item_desktop = '1'; $default_item_tablet = '1'; }
+
+		$slider_item  = isset( $settings['slider_item'] ) && $settings['slider_item'] ? $settings['slider_item'] : $default_item_desktop;
+		$slider_titem = isset( $settings['slider_titem'] ) && $settings['slider_titem'] ? $settings['slider_titem'] : $default_item_tablet;
 		$slider_mitem = isset( $settings['slider_mitem'] ) && $settings['slider_mitem'] ? $settings['slider_mitem'] : '1';
 		$testitype    = isset( $settings['testitype'] ) && $settings['testitype'] ? $settings['testitype'] : 'crs';
 		$imagepos     = isset( $settings['imagepos'] ) && $settings['imagepos'] ? $settings['imagepos'] : '';
 
-		$wrapper_css_class  = 'penci-block-vc penci-smalllist penci-testimonails';
+
+
+		$wrapper_css_class = 'penci-block-vc penci-smalllist penci-testimonails';
 		$wrapper_css_class .= ' penci-testi-' . $style;
 		if ( 's4' == $style && $imagepos ) {
 			$wrapper_css_class .= ' pcimgpos-' . $imagepos;
 		}
 
-		$inner_wrapper_class  = 'penci-block_content pcsl-inner penci-clearfix';
+		$inner_wrapper_class = 'penci-block_content pcsl-inner penci-clearfix';
 		$inner_wrapper_class .= ' pcsl-' . $testitype;
 		if ( 'crs' == $testitype ) {
-			$inner_wrapper_class .= ' penci-owl-carousel penci-owl-carousel-slider';
+			$inner_wrapper_class .= ' swiper penci-owl-carousel penci-owl-carousel-slider';
 		}
 
 		$inner_wrapper_class .= ' pcsl-col-' . $slider_item;
@@ -747,18 +769,23 @@ class PenciTestimonials extends Base_Widget {
 
 		$data_slider = '';
 		if ( 'crs' == $testitype ) {
-			$data_slider  = $settings['showdots'] ? ' data-dots="true"' : '';
+			$data_slider = $settings['showdots'] ? ' data-dots="true"' : '';
 			$data_slider .= ! $settings['shownav'] ? ' data-nav="true"' : '';
 			$data_slider .= ! $settings['loop'] ? ' data-loop="true"' : '';
+			$data_slider .= ' data-ceffect="' . $settings['carousel_slider_effect'] . '"';
 			$data_slider .= ' data-auto="' . ( 'yes' == $settings['autoplay'] ? 'true' : 'false' ) . '"';
 			$data_slider .= ' data-autotime="' . ( $settings['auto_time'] ? intval( $settings['auto_time'] ) : '4000' ) . '"';
 			$data_slider .= ' data-speed="' . ( $settings['speed'] ? intval( $settings['speed'] ) : '800' ) . '"';
 			$data_slider .= ' data-item="' . $slider_item . '" data-desktop="' . $slider_item . '" data-tablet="' . $slider_titem . '" data-tabsmall="' . $slider_titem . '" data-mobile="' . $slider_mitem . '"';
 		}
 		?>
-		<div class="<?php echo esc_attr( $wrapper_css_class ); ?>">
-			<div class="<?php echo $inner_wrapper_class; ?>"<?php echo $data_slider; ?>>
+        <div class="<?php echo esc_attr( $wrapper_css_class ); ?>">
+            <div class="<?php echo $inner_wrapper_class; ?>"<?php echo $data_slider; ?>>
 				<?php
+				$item_class = 'normal-item';
+				if ( 'crs' == $testitype ) {
+					echo '<div class="swiper-wrapper">';
+				}
 				foreach ( (array) $settings['testimonails'] as $_testi ) {
 					$_testi_image   = isset( $_testi['testi_image'] ) ? $_testi['testi_image'] : '';
 					$_testi_name    = isset( $_testi['testi_name'] ) ? $_testi['testi_name'] : '';
@@ -768,9 +795,12 @@ class PenciTestimonials extends Base_Widget {
 					$_testi_rating  = isset( $_testi['testi_rating'] ) ? $_testi['testi_rating'] : '';
 
 					if ( $_testi_name || $_testi_company || $_testi_desc ) {
+						if ( 'crs' == $testitype ) {
+							echo '<div class="swiper-slide">';
+						}
 						?>
-						<div class="pcsl-item penci-testimonail">
-							<div class="pcsl-itemin pc-testiinner">
+                        <div class="pcsl-item penci-testimonail <?php echo $item_class; ?>">
+                            <div class="pcsl-itemin pc-testiinner">
 								<?php
 								if ( in_array( $style, array( 's1', 's2', 's3' ) ) ) {
 									if ( 's2' == $style ) {
@@ -780,7 +810,7 @@ class PenciTestimonials extends Base_Widget {
 
 											if ( $_testi_rating ) {
 												$rating_item = '';
-												for ( $i = 1; $i <= $_testi_rating; $i++ ) {
+												for ( $i = 1; $i <= $_testi_rating; $i ++ ) {
 													$rating_item .= penci_icon_by_ver( 'fas fa-star' );
 												}
 												if ( $rating_item ) {
@@ -797,7 +827,7 @@ class PenciTestimonials extends Base_Widget {
 
 										if ( $_testi_rating ) {
 											$rating_item = '';
-											for ( $i = 1; $i <= $_testi_rating; $i++ ) {
+											for ( $i = 1; $i <= $_testi_rating; $i ++ ) {
 												$rating_item .= penci_icon_by_ver( 'fas fa-star' );
 											}
 
@@ -833,7 +863,7 @@ class PenciTestimonials extends Base_Widget {
 										echo '<div class="pctesticont">';
 										if ( $_testi_rating ) {
 											$rating_item = '';
-											for ( $i = 1; $i <= $_testi_rating; $i++ ) {
+											for ( $i = 1; $i <= $_testi_rating; $i ++ ) {
 												$rating_item .= penci_icon_by_ver( 'fas fa-star' );
 											}
 											if ( $rating_item ) {
@@ -879,7 +909,7 @@ class PenciTestimonials extends Base_Widget {
 
 											if ( $_testi_rating ) {
 												$rating_item = '';
-												for ( $i = 1; $i <= $_testi_rating; $i++ ) {
+												for ( $i = 1; $i <= $_testi_rating; $i ++ ) {
 													$rating_item .= penci_icon_by_ver( 'fas fa-star' );
 												}
 												if ( $rating_item ) {
@@ -894,14 +924,22 @@ class PenciTestimonials extends Base_Widget {
 									}
 								}
 								?>
-							</div>
-						</div>
+                            </div>
+                        </div>
+
 						<?php
+						if ( 'crs' == $testitype ) {
+							echo '</div>';
+						}
 					}
+
+				}
+				if ( 'crs' == $testitype ) {
+					echo '</div>';
 				}
 				?>
-			</div>
-		</div>
+            </div>
+        </div>
 		<?php
 	}
 

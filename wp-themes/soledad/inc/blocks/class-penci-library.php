@@ -17,7 +17,7 @@ class Penci_Library
 	public function inline_styles()
 	{
 ?>
-		<style>.penci-library-modal-btn {margin-left: 5px;background: #33ad67;vertical-align: top;font-size: 0 !important;}.penci-library-modal-btn:before {content: '';width: 16px;height: 16px;background-image: url('<?php echo get_template_directory_uri() . '/images/penci-icon.png';?>');background-position: center;background-size: contain;background-repeat: no-repeat;}#penci-library-modal .penci-elementor-template-library-template-name {text-align: right;flex: 1 0 0%;}</style>
+		<style>.elementor-add-section-area-button.penci-library-modal-btn:hover, .penci-library-modal-btn:hover{background: #6eb48c;opacity: 0.7}.elementor-add-section-area-button.penci-library-modal-btn, .penci-library-modal-btn {margin-left: 5px;background: #6eb48c;vertical-align: top;font-size: 0 !important;}.penci-library-modal-btn:before {content: '';width: 16px;height: 16px;background-image: url('<?php echo get_template_directory_uri() . '/images/penci-icon.png';?>');background-position: center;background-size: contain;background-repeat: no-repeat;}#penci-library-modal .penci-elementor-template-library-template-name {text-align: right;flex: 1 0 0%;}</style>
 	<?php
 	}
 

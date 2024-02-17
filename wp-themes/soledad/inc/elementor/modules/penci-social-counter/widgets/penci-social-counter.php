@@ -243,10 +243,11 @@ class PenciSocialCounter extends Base_Widget {
 		) );
 
 		$socials_profile = penci_social_media_array();
+		$custom_social_icons = get_option( 'penci_custom_socials', array() );
 		foreach ( $socials_profile as $name => $data ) {
 			$default = in_array( $name, [ 'facebook', 'twitter', 'youtube', 'instagram' ] ) ? 'yes' : '';
 			$this->add_control( 'social_profile_' . $name, array(
-				'label'     => ucwords( $name ),
+				'label'     => ucwords( isset( $custom_social_icons[ $name ]['name'] ) ? $custom_social_icons[ $name ]['name'] : $name ),
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => __( 'Show', 'soledad' ),
 				'label_off' => __( 'Hide', 'soledad' ),
@@ -568,6 +569,7 @@ class PenciSocialCounter extends Base_Widget {
 					}
 				} else {
 					$socials = penci_social_media_array();
+					$custom_social_icons = get_option( 'penci_custom_socials', array() );
 					foreach ( $socials as $social => $sdata ) {
 
 						if ( empty( $settings[ 'social_profile_' . $social ] ) ) {
@@ -577,13 +579,14 @@ class PenciSocialCounter extends Base_Widget {
 						$social_icon   = penci_icon_by_ver( $sdata[1] );
 						$social_follow = penci_get_setting( 'penci_trans_follow' );
 						$social_url    = esc_url( do_shortcode( $sdata[0] ) );
+						$name = isset( $custom_social_icons[ $social ]['name'] ) ? $custom_social_icons[ $social ]['name'] : $social;
 						?>
                         <div class="pcsoc-item-wrap">
                             <a class="pcsoc-item pcsoci-<?php echo $social . $brand_class; ?> empty-count"
                                href="<?php echo esc_url( $social_url ); ?>"
                                target="_blank" <?php echo penci_reltag_social_icons(); ?>>
                                 <span class="pcsoc-icon pcsoci-<?php echo $social . $brand_class_icon; ?>"><?php echo $social_icon; ?></span>
-                                <span class="pcsoc-counter pcsoc-socname"><?php echo $social; ?></span>
+                                <span class="pcsoc-counter pcsoc-socname"><?php echo $name; ?></span>
 								<?php if ( in_array( $social_style, array( 's1', 's2' ) ) ) { ?>
                                     <span class="pcsoc-like"><?php echo $social_follow; ?></span>
 								<?php } ?>

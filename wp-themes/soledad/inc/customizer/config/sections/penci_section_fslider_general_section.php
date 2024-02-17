@@ -76,7 +76,36 @@ $options[] = array(
 		'style-36' => 'Style 36',
 		'style-37' => 'Style 37',
 		'style-38' => 'Style 38',
+		'style-40' => 'Style 39',
 	)
+);
+$options[] = array(
+	'label'       => __( 'Carousel Sliders Effect', 'soledad' ),
+	'description' => __( 'This option apply for slider styles 7,8,9,10 and 38. The "Swing" effect does not support the loop option.', 'soledad' ),
+	'id'          => 'penci_fslider_carousel_slider_effect',
+	'type'        => 'soledad-fw-select',
+	'choices'     => array(
+		'default' => 'Default',
+		'swing'   => 'Swing',
+	),
+	'default'     => 'swing',
+	'sanitize'    => 'penci_sanitize_choices_field',
+);
+$options[] = array(
+	'label'       => __( 'General Slider Effect', 'soledad' ),
+	'description' => __( 'Some sliders do not support all effects listed below.', 'soledad' ),
+	'id'          => 'penci_fslider_single_slider_effect',
+	'type'        => 'soledad-fw-select',
+	'choices'     => array(
+		'slide'     => 'Slide',
+		'fade'      => 'Fade',
+		'coverflow' => 'Coverflow',
+		'flip'      => 'Flip',
+		'cards'     => 'Cards',
+		'creative'  => 'Creative',
+	),
+	'default'     => 'creative',
+	'sanitize'    => 'penci_sanitize_choices_field',
 );
 $options[] = array(
 	'label'       => __( 'Revolution Slider Shortcode', 'soledad' ),
@@ -491,8 +520,9 @@ $options[] = array(
 	'sanitize' => 'penci_sanitize_checkbox_field'
 );
 $options[] = array(
-	'label'    => __( 'Hide Post Excerpt on Style 35 & 36', 'soledad' ),
+	'label'    => __( 'Hide Post Excerpt', 'soledad' ),
 	'section'  => 'penci_section_fslider_general',
+	'description' => __( 'Apply for some slider styles has post excerpt.', 'soledad' ),
 	'id'       => 'penci_featured_meta_excerpt',
 	'type'     => 'soledad-fw-toggle',
 	'default'  => false,

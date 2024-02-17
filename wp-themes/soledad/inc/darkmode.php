@@ -328,8 +328,8 @@ if ( ! function_exists( 'penci_darkmode_css' ) ) {
 				echo 'body.pcdm-enable .penci-menu-hbg .about-widget .about-me-heading:before { border-color: var(--pcborder-cl); }';
 				echo 'body.pcdm-enable .penci-menu-hbg .penci-tweets-widget-content .tweet-intents-inner:before,';
 				echo 'body.pcdm-enable .penci-menu-hbg .penci-tweets-widget-content .tweet-intents-inner:after { background-color:var(--pcbg-cl); }';
-				echo 'body.pcdm-enable .penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot.active span,';
-				echo 'body.pcdm-enable .penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .owl-dots .owl-dot:hover span { border-color:var(--pcborder-cl); background-color:var(--pcbg-cl); }';
+				echo 'body.pcdm-enable .penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot.active span,';
+				echo 'body.pcdm-enable .penci-menu-hbg .penci-owl-carousel.penci-tweets-slider .penci-owl-dots .penci-owl-dot:hover span { border-color:var(--pcborder-cl); background-color:var(--pcbg-cl); }';
 			}
 			if ( $mhbgfooter_color ) {
 				echo 'body.pcdm-enable .penci-menu-hbg-inner .penci_menu_hbg_ftext{ color:var(--pctext-cl);}';

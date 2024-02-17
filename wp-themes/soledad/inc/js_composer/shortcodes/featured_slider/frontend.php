@@ -76,6 +76,9 @@ $slider_data .= ' data-auto="' . ( 'yes' == $atts['autoplay'] ? 'true' : 'false'
 $slider_data .= ' data-autotime="' . ( $atts['auto_time'] ? intval( $atts['auto_time'] ) : '4000' ) . '"';
 $slider_data .= ' data-speed="' . ( $atts['speed'] ? intval( $atts['speed'] ) : '600' ) . '"';
 $slider_data .= ' data-loop="' . ( 'yes' == $atts['loop'] ? 'true' : 'false' ) . '"';
+$slider_data .= ' data-ceffect="' . $atts['carousel_slider_effect'] . '"';
+$slider_data .= ' data-seffect="' . $atts['single_slider_effect'] . '"';
+
 if ( $slider_style == 'style-7' || $slider_style == 'style-8' ) {
 	$slider_data .= ' data-item="4" data-desktop="4" data-tablet="2" data-tabsmall="1"';
 } elseif ( $slider_style == 'style-9' || $slider_style == 'style-10' ) {
@@ -87,6 +90,22 @@ if ( $slider_style == 'style-7' || $slider_style == 'style-8' ) {
 	$data_dots      = 'yes' == $atts['showdots'] ? 'true' : 'false';
 	$slider_data    .= ' data-dots="' . $data_dots . '" data-nav="' . $data_next_prev . '"';
 }
+$slider_lib = 'penci-owl-featured-area';
+
+$slider_lib .= ' elsl-' . $slider_style;
+
+$swiper = true;
+
+if ( $slider_style == 'style-40' ) {
+	wp_enqueue_script( 'ff40' );
+	wp_enqueue_script( 'gsap' );
+	$slider_lib .= ' no-df-swiper';
+	$swiper     = false;
+}
+
+if ( $swiper ) {
+	$slider_lib .= ' swiper penci-owl-carousel';
+}
 ?>
     <div id="<?php echo esc_attr( $block_id ) ?>">
 		<?php
@@ -94,8 +113,17 @@ if ( $slider_style == 'style-7' || $slider_style == 'style-8' ) {
 		if ( $slider_style == 'style-37' ):
 			echo '<div class="penci-featured-items-left">';
 		endif;
-		echo '<div class="penci-owl-carousel penci-owl-featured-area elsl-' . $slider_class . '"' . $slider_data . '>';
+		echo '<div class="' . $slider_lib . ' penci-owl-featured-area elsl-' . $slider_class . '"' . $slider_data . '>';
+		if ( $swiper ) {
+			if ( 'yes' == $atts['shownav'] ) {
+				echo '<div class="penci-owl-nav"><div class="owl-prev"><i class="penciicon-left-chevron"></i></div><div class="owl-next"><i class="penciicon-right-chevron"></i></div></div>';
+			}
+			echo '<div class="swiper-wrapper">';
+		}
 		include dirname( __FILE__ ) . "/{$slider_style}.php";
+		if ( $swiper && $slider_style != 'style-37' ) {
+			echo '</div>';
+		}
 		echo '</div>';
 		echo '</div>';
 		?>

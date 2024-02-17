@@ -19,7 +19,7 @@ if ( $pmt_enable_jarallax ) {
 
 $image_size = 'penci-single-full';
 
-if( in_array( $single_style, array( 'style-3', 'style-6', 'style-8', 'style-9', 'style-10' ) ) ) {
+if ( in_array( $single_style, array( 'style-3', 'style-6', 'style-8', 'style-9', 'style-10' ) ) ) {
 	$image_size = get_theme_mod( 'penci_single_custom_thumbnail_size' ) ? get_theme_mod( 'penci_single_custom_thumbnail_size' ) : 'penci-full-thumb';
 }
 
@@ -37,14 +37,14 @@ if ( ! $move_title_bellow ) {
 		$div_special_wrapper .= ' container';
 	}
 
-	if( 'two-sidebar' == $sidebar_position ) {
+	if ( 'two-sidebar' == $sidebar_position ) {
 		$div_special_wrapper .= ' ' . $sidebar_position;
 	}
 
 	$div_special_wrapper .= '">';
 }
 
-$image_html = penci_get_featured_single_image_size(  get_the_ID(), $image_size, $enable_jarallax, $thumb_alt );
+$image_html = penci_get_featured_single_image_size( get_the_ID(), $image_size, $enable_jarallax, $thumb_alt );
 
 ?>
 <?php if ( penci_get_post_format( 'link' ) || penci_get_post_format( 'quote' ) ) : ?>
@@ -57,7 +57,7 @@ $image_html = penci_get_featured_single_image_size(  get_the_ID(), $image_size, 
 		$class_pimage_linkquote .= ' no-thumbnail';
 	}
 
-	if( ! $move_title_bellow ){
+	if ( ! $move_title_bellow ) {
 		$class_pimage_linkquote .= ' penci-move-title-above';
 	}
 
@@ -65,52 +65,52 @@ $image_html = penci_get_featured_single_image_size(  get_the_ID(), $image_size, 
 		$class_pimage_linkquote .= ' penci-jarallax';
 	}
 	?>
-	<div class="<?php echo( $class_pimage_linkquote ); ?>">
-		<?php
-		if ( has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
-			echo $image_html;
-		}
-		?>
-		<?php echo $div_special_wrapper; ?>
-			<div class="standard-content-special">
-			<div class="format-post-box<?php if ( penci_get_post_format( 'quote' ) ) {
-				echo ' penci-format-quote';
-			} else {
-				echo ' penci-format-link';
-			} ?>">
-				<span class="post-format-icon"><?php penci_fawesome_icon('fas fa-' . ( penci_get_post_format( 'quote' ) ? 'quote-left' : 'link' ) ); ?></span>
-				<p class="dt-special">
-					<?php
-					if ( penci_get_post_format( 'quote' ) ) {
-						$dt_content = get_post_meta( $post->ID, '_format_quote_source_name', true );
-						if ( ! empty( $dt_content ) ): echo sanitize_text_field( $dt_content ); endif;
-					} else {
-						$dt_content = get_post_meta( $post->ID, '_format_link_url', true );
-						if ( ! empty( $dt_content ) ):
-							echo '<a href="' . esc_url( $dt_content ) . '" target="_blank">' . sanitize_text_field( $dt_content ) . '</a>';
-						endif;
-					}
-					?>
-				</p>
+<div class="<?php echo( $class_pimage_linkquote ); ?>">
+	<?php
+	if ( has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
+		echo $image_html;
+	}
+	?>
+	<?php echo $div_special_wrapper; ?>
+    <div class="standard-content-special">
+        <div class="format-post-box<?php if ( penci_get_post_format( 'quote' ) ) {
+			echo ' penci-format-quote';
+		} else {
+			echo ' penci-format-link';
+		} ?>">
+            <span class="post-format-icon"><?php penci_fawesome_icon( 'fas fa-' . ( penci_get_post_format( 'quote' ) ? 'quote-left' : 'link' ) ); ?></span>
+            <p class="dt-special">
 				<?php
-				if ( penci_get_post_format( 'quote' ) ):
-					$quote_author = get_post_meta( $post->ID, '_format_quote_source_url', true );
-					if ( ! empty( $quote_author ) ):
-						echo '<div class="author-quote"><span>' . sanitize_text_field( $quote_author ) . '</span></div>';
+				if ( penci_get_post_format( 'quote' ) ) {
+					$dt_content = get_post_meta( $post->ID, '_format_quote_source_name', true );
+					if ( ! empty( $dt_content ) ): echo sanitize_text_field( $dt_content ); endif;
+				} else {
+					$dt_content = get_post_meta( $post->ID, '_format_link_url', true );
+					if ( ! empty( $dt_content ) ):
+						echo '<a href="' . esc_url( $dt_content ) . '" target="_blank">' . sanitize_text_field( $dt_content ) . '</a>';
 					endif;
-				endif; ?>
-			</div>
-		</div>
+				}
+				?>
+            </p>
 			<?php
-			if ( ! $move_title_bellow && 'style-8' != $single_style ){
-				get_template_part( 'template-parts/single', 'breadcrumb' );
-			}
-			if ( ! $move_title_bellow && has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
-				get_template_part( 'template-parts/single', 'entry-header' );
-			}
-			?>
-		<?php if(! $move_title_bellow ): ?></div><?php endif; ?>
-	</div>
+			if ( penci_get_post_format( 'quote' ) ):
+				$quote_author = get_post_meta( $post->ID, '_format_quote_source_url', true );
+				if ( ! empty( $quote_author ) ):
+					echo '<div class="author-quote"><span>' . sanitize_text_field( $quote_author ) . '</span></div>';
+				endif;
+			endif; ?>
+        </div>
+    </div>
+	<?php
+	if ( ! $move_title_bellow && 'style-8' != $single_style ) {
+		get_template_part( 'template-parts/single', 'breadcrumb' );
+	}
+	if ( ! $move_title_bellow && has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
+		get_template_part( 'template-parts/single', 'entry-header' );
+	}
+	?>
+	<?php if ( ! $move_title_bellow ): ?></div><?php endif; ?>
+    </div>
 
 <?php elseif ( penci_get_post_format( 'gallery' ) ) : ?>
 
@@ -118,9 +118,9 @@ $image_html = penci_get_featured_single_image_size(  get_the_ID(), $image_size, 
 
 	<?php if ( ! $move_title_bellow && has_post_thumbnail() ) : ?>
 		<?php if ( ! get_theme_mod( 'penci_post_thumb' ) ) : ?>
-			<div class="post-image <?php echo ( ! $move_title_bellow ? ' penci-move-title-above' : '' ); ?> <?php echo( $enable_jarallax ? ' penci-jarallax' : '' ); ?>">
+            <div class="post-image <?php echo( ! $move_title_bellow ? ' penci-move-title-above' : '' ); ?> <?php echo( $enable_jarallax ? ' penci-jarallax' : '' ); ?>">
 				<?php
-				if ( ! get_theme_mod( 'penci_disable_lightbox_single' ) &&  ! $enable_jarallax  ) {
+				if ( ! get_theme_mod( 'penci_disable_lightbox_single' ) && ! $enable_jarallax ) {
 					$thumb_url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 					echo '<a href="' . esc_url( $thumb_url ) . '" data-rel="penci-gallery-image-content">';
 					echo $image_html;
@@ -131,44 +131,50 @@ $image_html = penci_get_featured_single_image_size(  get_the_ID(), $image_size, 
 
 				echo $div_special_wrapper;
 
-				if ( ! $move_title_bellow && 'style-8' != $single_style ){
+				if ( ! $move_title_bellow && 'style-8' != $single_style ) {
 					get_template_part( 'template-parts/single', 'breadcrumb' );
 				}
 				if ( ! $move_title_bellow && has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
 					get_template_part( 'template-parts/single', 'entry-header' );
 				}
-				if(! $move_title_bellow ){
+				if ( ! $move_title_bellow ) {
 					echo '</div>';
 				}
 				?>
-			</div>
+            </div>
 		<?php endif; ?>
 	<?php elseif ( $images ) :
 		$autoplay = ! get_theme_mod( 'penci_disable_autoplay_single_slider' ) ? 'true' : 'false';
 		?>
-		<div class="post-image">
-			<div class="penci-owl-carousel penci-owl-carousel-slider penci-nav-visible" data-auto="<?php echo $autoplay; ?>" data-lazy="true">
-				<?php foreach ( $images as $image ) : ?>
+        <div class="post-image">
+            <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-nav-visible"
+                 data-auto="<?php echo $autoplay; ?>" data-lazy="true">
+                <div class="swiper-wrapper">
+					<?php foreach ( $images as $image ) : ?>
 
-					<?php $the_image = wp_get_attachment_image_src( $image, $image_size ); ?>
-					<?php $the_caption = get_post_field( 'post_excerpt', $image );
-					$image_alt         = penci_get_image_alt( $image, get_the_ID() );
-					$image_title_html  = penci_get_image_title( $image );
-					?>
-					<figure>
-						<?php if ( get_theme_mod( 'penci_speed_disable_first_screen' ) || ! get_theme_mod('penci_disable_lazyload_fsingle') ) { ?>
-							<img class="penci-lazy" data-src="<?php echo esc_url( $the_image[0] ); ?>" alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
-						<?php } else { ?>
-							<img src="<?php echo esc_url( $the_image[0] ); ?>" alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
-						<?php } ?>
-						<?php if( get_theme_mod('penci_post_gallery_caption') && $the_caption ): ?>
-							<p class="penci-single-gallery-captions penci-single-gaformat-caption"><?php echo $the_caption; ?></p>
-						<?php endif; ?>
-					</figure>
-
-				<?php endforeach; ?>
-			</div>
-		</div>
+						<?php $the_image = wp_get_attachment_image_src( $image, $image_size ); ?>
+						<?php $the_caption = get_post_field( 'post_excerpt', $image );
+						$image_alt         = penci_get_image_alt( $image, get_the_ID() );
+						$image_title_html  = penci_get_image_title( $image );
+						?>
+                        <div class="swiper-slide">
+                            <figure>
+								<?php if ( get_theme_mod( 'penci_speed_disable_first_screen' ) || ! get_theme_mod( 'penci_disable_lazyload_fsingle' ) ) { ?>
+                                    <img class="penci-lazy" data-src="<?php echo esc_url( $the_image[0] ); ?>"
+                                         alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
+								<?php } else { ?>
+                                    <img src="<?php echo esc_url( $the_image[0] ); ?>"
+                                         alt="<?php echo $image_alt; ?>"<?php echo $image_title_html; ?> />
+								<?php } ?>
+								<?php if ( get_theme_mod( 'penci_post_gallery_caption' ) && $the_caption ): ?>
+                                    <p class="penci-single-gallery-captions penci-single-gaformat-caption"><?php echo $the_caption; ?></p>
+								<?php endif; ?>
+                            </figure>
+                        </div>
+					<?php endforeach; ?>
+                </div>
+            </div>
+        </div>
 	<?php endif; ?>
 
 <?php elseif ( penci_get_post_format( 'video' ) ) : ?>
@@ -195,46 +201,46 @@ $image_html = penci_get_featured_single_image_size(  get_the_ID(), $image_size, 
 		$class_pimage_audio .= ' penci-jarallax';
 	}
 
-	if( ! $move_title_bellow ){
+	if ( ! $move_title_bellow ) {
 		$class_pimage_audio .= ' penci-move-title-above';
 	}
 
 	?>
-	<div class="<?php echo $class_pimage_audio; ?>">
-		<?php
-		if ( has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
-				echo $image_html;
-		}
-		?>
-		<?php echo $div_special_wrapper; ?>
-		<div class="audio-iframe">
-			<?php $penci_audio = get_post_meta( $post->ID, '_format_audio_embed', true );
-			$penci_audio_str   = substr( $penci_audio, - 4 ); ?>
-			<?php if ( wp_oembed_get( $penci_audio ) ) : ?>
-				<?php echo wp_oembed_get( $penci_audio ); ?>
-			<?php elseif ( $penci_audio_str == '.mp3' ) : ?>
-				<?php echo do_shortcode( '[audio src="' . esc_url( $penci_audio ) . '"]' ); ?>
-			<?php else : ?>
-				<?php echo $penci_audio; ?>
-			<?php endif; ?>
-		</div>
-		<?php
-		if ( ! $move_title_bellow && 'style-8' != $single_style ){
-			get_template_part( 'template-parts/single', 'breadcrumb' );
-		}
-		if ( ! $move_title_bellow && has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
-			get_template_part( 'template-parts/single', 'entry-header' );
-		}
-		?>
-		<?php if(! $move_title_bellow ): ?></div><?php endif; ?>
-	</div>
+<div class="<?php echo $class_pimage_audio; ?>">
+	<?php
+	if ( has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
+		echo $image_html;
+	}
+	?>
+	<?php echo $div_special_wrapper; ?>
+    <div class="audio-iframe">
+		<?php $penci_audio = get_post_meta( $post->ID, '_format_audio_embed', true );
+		$penci_audio_str   = substr( $penci_audio, - 4 ); ?>
+		<?php if ( wp_oembed_get( $penci_audio ) ) : ?>
+			<?php echo wp_oembed_get( $penci_audio ); ?>
+		<?php elseif ( $penci_audio_str == '.mp3' ) : ?>
+			<?php echo do_shortcode( '[audio src="' . esc_url( $penci_audio ) . '"]' ); ?>
+		<?php else : ?>
+			<?php echo $penci_audio; ?>
+		<?php endif; ?>
+    </div>
+	<?php
+	if ( ! $move_title_bellow && 'style-8' != $single_style ) {
+		get_template_part( 'template-parts/single', 'breadcrumb' );
+	}
+	if ( ! $move_title_bellow && has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
+		get_template_part( 'template-parts/single', 'entry-header' );
+	}
+	?>
+	<?php if ( ! $move_title_bellow ): ?></div><?php endif; ?>
+    </div>
 
 <?php else : ?>
 
 	<?php if ( has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) : ?>
-		<div class="post-image <?php echo ( ! $move_title_bellow ? ' penci-move-title-above' : '' ); ?>">
+        <div class="post-image <?php echo( ! $move_title_bellow ? ' penci-move-title-above' : '' ); ?>">
 			<?php
-			if ( ! get_theme_mod( 'penci_disable_lightbox_single' ) &&  ! $enable_jarallax  ) {
+			if ( ! get_theme_mod( 'penci_disable_lightbox_single' ) && ! $enable_jarallax ) {
 				$thumb_url = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 				echo '<a href="' . esc_url( $thumb_url ) . '" data-rel="penci-gallery-bground-content">';
 				echo $image_html;
@@ -246,23 +252,23 @@ $image_html = penci_get_featured_single_image_size(  get_the_ID(), $image_size, 
 				echo '</div>';
 			}
 
-			 echo $div_special_wrapper;
-			if ( ! $move_title_bellow && 'style-8' != $single_style ){
+			echo $div_special_wrapper;
+			if ( ! $move_title_bellow && 'style-8' != $single_style ) {
 				get_template_part( 'template-parts/single', 'breadcrumb' );
 			}
 
 			if ( ! $move_title_bellow && has_post_thumbnail() && ! get_theme_mod( 'penci_post_thumb' ) ) {
 				get_template_part( 'template-parts/single', 'entry-header' );
 			}
-			if(! $move_title_bellow ){
+			if ( ! $move_title_bellow ) {
 				echo '</div>';
 			}
-			
+
 			if ( get_the_post_thumbnail_caption() && get_theme_mod( 'penci_post_thumb_caption' ) && $move_title_bellow ) {
 				echo '<span class="penci-featured-caption penci-fixed-caption">' . get_the_post_thumbnail_caption() . '</span>';
 			}
 			?>
-		</div>
+        </div>
 	<?php endif; ?>
 
 <?php endif; ?>

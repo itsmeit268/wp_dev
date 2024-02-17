@@ -690,6 +690,13 @@ $options[] = array(
 	'sanitize' => 'penci_sanitize_checkbox_field'
 );
 $options[] = array(
+	'label'    => __( 'Disable Auto Collapse Description Content', 'soledad' ),
+	'id'       => 'penci_archive_disable_desc_collapse',
+	'type'     => 'soledad-fw-toggle',
+	'default'  => false,
+	'sanitize' => 'penci_sanitize_checkbox_field'
+);
+$options[] = array(
 	'label'    => __( 'Category, Tags, Archive Description Align', 'soledad' ),
 	'id'       => 'penci_archive_descalign',
 	'type'     => 'soledad-fw-select',

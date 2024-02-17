@@ -21,6 +21,7 @@ $options[] = array(
 			'max'  => 300,
 			'step' => 1,
 			'edit' => true,
+
 			'unit' => 'px',
 		),
 		'mobile'  => array(
@@ -60,6 +61,7 @@ $options[] = array(
 	'choices'  => array(
 		'menu-style-1' => 'Style 1',
 		'menu-style-2' => 'Style 2',
+		'menu-style-3' => 'Style 3',
 	)
 );
 $options[] = array(

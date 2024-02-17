@@ -40,14 +40,6 @@
             return false;
         });
 
-        // Lazyload
-        /*$('.penci-lazy').Lazy({
-            effect: 'fadeIn',
-            effectTime: 300,
-            scrollDirection: 'both'
-        });*/
-        //lazySizes.init();
-
         // Go to top button
         var $goto_button = $('.penci-go-to-top-floating');
         if ($goto_button.length) {
@@ -152,273 +144,6 @@
 
             return false;
         });
-    }
-
-    /* Sticky main navigation
-     ---------------------------------------------------------------*/
-
-
-    /* Homepage Featured Slider
-     ---------------------------------------------------------------*/
-    ELPENCI.featured_slider = function () {
-        if ($().owlCarousel) {
-            $('.featured-area .penci-owl-featured-area').each(function () {
-                var $this = $(this),
-                    $style = $this.data('style'),
-                    $auto = false,
-                    $autotime = $this.data('autotime'),
-                    $speed = $this.data('speed'),
-                    $loop = $this.data('loop'),
-                    $item = 1,
-                    $nav = true,
-                    $dots = false,
-                    $rtl = false,
-                    $items_desktop = 1,
-                    $items_tablet = 1,
-                    $items_tabsmall = 1;
-
-                if ($style === 'style-2') {
-                    $item = 2;
-                } else if ($style === 'style-28') {
-                    $loop = true;
-                }
-
-                if ($('html').attr('dir') === 'rtl') {
-                    $rtl = true;
-                }
-                if ($this.attr('data-auto') === 'true') {
-                    $auto = true;
-                }
-                if ($this.attr('data-nav') === 'false') {
-                    $nav = false;
-                }
-                if ($this.attr('data-dots') === 'true') {
-                    $dots = true;
-                }
-                if ($this.attr('data-item')) {
-                    $item = parseInt($this.data('item'));
-                }
-                if ($this.attr('data-desktop')) {
-                    $items_desktop = parseInt($this.data('desktop'));
-                }
-                if ($this.attr('data-tablet')) {
-                    $items_tablet = parseInt($this.data('tablet'));
-                }
-                if ($this.attr('data-tabsmall')) {
-                    $items_tabsmall = parseInt($this.data('tabsmall'));
-                }
-
-                var owl_args = {
-                    rtl: $rtl,
-                    loop: $loop,
-                    margin: 0,
-                    items: $item,
-                    navSpeed: $speed,
-                    dotsSpeed: $speed,
-                    nav: $nav,
-                    slideBy: $item,
-                    mouseDrag: false,
-                    lazyLoad: true,
-                    dots: $dots,
-                    navText: ['<i class="penciicon-left-chevron"></i>', '<i class="penciicon-right-chevron"></i>'],
-                    autoplay: $auto,
-                    autoplayTimeout: $autotime,
-                    autoplayHoverPause: true,
-                    autoplaySpeed: $speed,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        480: {
-                            items: $items_tabsmall,
-                            slideBy: $items_tabsmall
-                        },
-                        768: {
-                            items: $items_tablet,
-                            slideBy: $items_tablet
-                        },
-                        1170: {
-                            items: $items_desktop,
-                            slideBy: $items_desktop
-                        }
-                    }
-                }
-
-                if ($style === 'style-2') {
-                    owl_args['center'] = true;
-                    owl_args['margin'] = 10;
-                    owl_args['autoWidth'] = true;
-                } else if ($style === 'style-28') {
-                    owl_args['margin'] = 4;
-                    owl_args['items'] = 6;
-                    owl_args['autoWidth'] = true;
-                } else if ($style === 'style-38') {
-                    owl_args['center'] = true;
-                    owl_args['margin'] = 5;
-                    owl_args['autoWidth'] = true;
-                }
-
-                $this.imagesLoaded(function () {
-                    $this.owlCarousel(owl_args);
-                });
-
-                $this.on('initialize.owl.carousel', function (event) {
-                    $this.closest('.featured-area').addClass('penci-featured-loaded');
-                });
-
-                $this.on('changed.owl.carousel', function (event) {
-                    /*$this.find( '.penci-lazy' ).Lazy( {
-                        effect: 'fadeIn',
-                        effectTime: 200,
-                        scrollDirection: 'both',
-                        visibleOnly: true,
-                        threshold: 0
-                    } );*/
-                    //lazySizes.init();
-                });
-            });
-        }	// if owlcarousel
-    }
-
-    /* Owl Slider General
-     ---------------------------------------------------------------*/
-    ELPENCI.owl_slider = function () {
-        if ($().owlCarousel) {
-            $('.penci-owl-carousel-slider').each(function () {
-                var $this = $(this),
-                    $parent = $this.parent(),
-                    $auto = true,
-                    $dots = false,
-                    $nav = true,
-                    $loop = true,
-                    $rtl = false,
-                    $dataauto = $this.data('auto'),
-                    $items_desktop = 1,
-                    $items_tablet = 1,
-                    $items_tabsmall = 1,
-                    $items_mobile = 1,
-                    $speed = 600,
-                    $item = 1,
-                    $margin = 0,
-                    $autotime = 5000,
-                    $height = true,
-                    $datalazy = false;
-
-                if ($('html').attr('dir') === 'rtl') {
-                    $rtl = true;
-                }
-                if ($this.attr('data-dots') === 'true') {
-                    $dots = true;
-                }
-                if ($this.attr('data-loop') === 'false') {
-                    $loop = false;
-                }
-                if ($this.attr('data-nav') === 'false') {
-                    $nav = false;
-                }
-                if ($this.attr('data-height')) {
-                    $height = false;
-                }
-
-                if ($this.attr('data-margin')) {
-                    $margin = parseInt($this.data('margin'));
-                }
-                if ($this.attr('data-desktop')) {
-                    $items_desktop = parseInt($this.data('desktop'));
-                }
-                if ($this.attr('data-tablet')) {
-                    $items_tablet = parseInt($this.data('tablet'));
-                }
-                if ($this.attr('data-tabsmall')) {
-                    $items_tabsmall = parseInt($this.data('tabsmall'));
-                }
-                if ($this.attr('data-mobile')) {
-                    $items_mobile = parseInt($this.data('mobile'));
-                }
-                if ($this.attr('data-speed')) {
-                    $speed = parseInt($this.data('speed'));
-                }
-                if ($this.attr('data-autotime')) {
-                    $autotime = parseInt($this.data('autotime'));
-                }
-                if ($this.attr('data-item')) {
-                    $item = parseInt($this.data('item'));
-                }
-                if ($this.attr('data-lazy')) {
-                    $datalazy = true;
-                }
-
-                var owl_args = {
-                    loop: $loop,
-                    rtl: $rtl,
-                    margin: $margin,
-                    items: $item,
-                    slideBy: $item,
-                    lazyLoad: $datalazy,
-                    navSpeed: $speed,
-                    dotsSpeed: $speed,
-                    nav: $nav,
-                    dots: $dots,
-                    navText: ['<i class="penciicon-left-chevron"></i>', '<i class="penciicon-right-chevron"></i>'],
-                    autoplay: $dataauto,
-                    autoplayTimeout: $autotime,
-                    autoHeight: $height,
-                    autoplayHoverPause: true,
-                    autoplaySpeed: $speed,
-                    responsive: {
-                        0: {
-                            items: $items_mobile,
-                            slideBy: $items_mobile
-                        },
-                        480: {
-                            items: $items_tabsmall,
-                            slideBy: $items_tabsmall
-                        },
-                        768: {
-                            items: $items_tablet,
-                            slideBy: $items_tablet
-                        },
-                        1170: {
-                            items: $items_desktop,
-                            slideBy: $items_desktop
-                        }
-                    }
-                };
-
-                if ($this.hasClass('penci-headline-posts')) {
-                    owl_args['animateOut'] = 'slideOutUp';
-                    owl_args['animateIn'] = 'slideInUp';
-                }
-
-                $this.owlCarousel(owl_args);
-
-                $this.on('changed.owl.carousel', function (event) {
-                    /*$this.find( '.penci-lazy' ).Lazy( {
-                        effect: 'fadeIn',
-                        effectTime: 200,
-                        scrollDirection: 'both',
-                        visibleOnly: true,
-                        threshold: 0
-                    } );*/
-                    //lazySizes.init();
-                });
-
-                if ($parent.hasClass('penci-topbar-trending')) {
-                    var $customNext = $parent.find(".penci-slider-next"),
-                        $customPrev = $parent.find(".penci-slider-prev");
-                    $customNext.on('click', function (ev) {
-                        ev.preventDefault();
-                        $this.trigger("next.owl.carousel");
-                        return false;
-                    });
-                    $customPrev.on('click', function (ev) {
-                        ev.preventDefault();
-                        $this.trigger("prev.owl.carousel");
-                        return false;
-                    });
-                }
-            });
-        }	// if owlcarousel
     }
 
     /* Fitvids
@@ -1579,8 +1304,7 @@
     $(document).ready(function () {
         ELPENCI.general();
         ELPENCI.cookie();
-        ELPENCI.featured_slider();
-        ELPENCI.owl_slider();
+        $('body').trigger('penci_swiper_sliders');
         ELPENCI.fitvids();
         ELPENCI.sticky_sidebar();
         ELPENCI.mega_menu();
@@ -1605,14 +1329,7 @@
     $(window).on('elementor/frontend/init', function () {
         if (window.elementorFrontend) {
 
-            function penciLazy() {
-                /*$('.penci-lazy').Lazy({
-                    effect: 'fadeIn',
-                    effectTime: 300,
-                    scrollDirection: 'both'
-                });*/
-                //lazySizes.init();
-            };
+            
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-custom-sliders.default', function ($scope) {
                 ELPENCI.Jarallax();
@@ -1625,14 +1342,12 @@
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-portfolio.default', function ($scope) {
                 ELPENCI.portfolio();
             });
-            elementorFrontend.hooks.addAction('frontend/element_ready/penci-about-me.default', function ($scope) {
-                penciLazy();
-            });
+            
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-image-gallery.default', function ($scope) {
-                penciLazy();
+                
                 ELPENCI.masonry();
                 ELPENCI.gallery();
-                ELPENCI.owl_slider();
+                $('body').trigger('penci_swiper_sliders');
                 var $masonry_gallery = $('.penci-post-gallery-container.masonry');
                 if ($().isotope && $masonry_gallery.length) {
                     $masonry_gallery.each(function () {
@@ -1657,61 +1372,50 @@
                     });
                 }
             });
-            elementorFrontend.hooks.addAction('frontend/element_ready/penci-pintersest.default', function ($scope) {
-                penciLazy();
-            });
+            
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-big-grid.default', function ($scope) {
-                penciLazy();
+                
                 ELPENCI.masonry();
                 $('body').trigger('penci-block-heading');
             });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-small-list.default', function ($scope) {
-                penciLazy();
-                ELPENCI.owl_slider();
+                
+                $('body').trigger('penci_swiper_sliders');
                 $('body').trigger('penci-block-heading')
                     .trigger('penci-small-list-loaded');
             });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-product-list.default', function ($scope) {
-                penciLazy();
-                ELPENCI.owl_slider();
+                
+                $('body').trigger('penci_swiper_sliders');
             });
-            elementorFrontend.hooks.addAction('frontend/element_ready/penci-video-playlist.default', function ($scope) {
-                penciLazy();
-            });
-
-            elementorFrontend.hooks.addAction('frontend/element_ready/penci-featured-boxes.default', function ($scope) {
-                penciLazy();
-            });
+            
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-popular-posts.default', function ($scope) {
-                penciLazy();
-                ELPENCI.owl_slider();
+                
+                $('body').trigger('penci_swiper_sliders');
                 ELPENCI.extraFunction.init();
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-featured-cat.default', function ($scope) {
-                penciLazy();
-                ELPENCI.owl_slider();
+                
+                $('body').trigger('penci_swiper_sliders');
                 ELPENCI.extraFunction.init();
                 $('body').trigger('penci-block-heading');
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-latest-posts.default', function ($scope) {
-                penciLazy();
-                ELPENCI.owl_slider();
+                
+                $('body').trigger('penci_swiper_sliders');
                 ELPENCI.masonry();
                 ELPENCI.extraFunction.init();
                 $('body').trigger('penci-block-heading');
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-recent-posts.default', function ($scope) {
-                penciLazy();
+                
                 ELPENCI.extraFunction.init();
             });
-            elementorFrontend.hooks.addAction('frontend/element_ready/penci-team-member.default', function ($scope) {
-                penciLazy();
-            });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-portfolio.default', function ($scope) {
-                penciLazy();
+                
                 ELPENCI.portfolio();
                 ELPENCI.masonry();
 
@@ -1763,21 +1467,20 @@
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-featured-sliders.default', function ($scope) {
-                ELPENCI.featured_slider();
-                penciLazy();
+
+                
+                $('body').trigger('el_featured_slider');
             });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-custom-sliders.default', function ($scope) {
-                ELPENCI.owl_slider();
+                $('body').trigger('penci_swiper_sliders');
             });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-instagram.default', function ($scope) {
-                ELPENCI.featured_slider();
-                penciLazy();
-                ELPENCI.owl_slider();
+               
+                $('body').trigger('penci_swiper_sliders');
             });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-posts-slider.default', function ($scope) {
-                ELPENCI.featured_slider();
-                penciLazy();
-                ELPENCI.owl_slider();
+                
+                $('body').trigger('penci_swiper_sliders');
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-counter-up.default', function ($scope) {
@@ -1787,28 +1490,28 @@
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-map.default', function ($scope) {
                 ELPENCI.extraFunction.map();
             });
+            elementorFrontend.hooks.addAction('frontend/element_ready/penci-news-ticker.default', function ($scope) {
+                $('body').trigger('penci_swiper_sliders');
+            });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-latest-tweets.default', function ($scope) {
-                ELPENCI.owl_slider();
+                $('body').trigger('penci_swiper_sliders');
             });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-testimonials.default', function ($scope) {
-                ELPENCI.owl_slider();
+                $('body').trigger('penci_swiper_sliders');
             });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-web-story.default', function ($scope) {
-                ELPENCI.owl_slider();
+                $('body').trigger('penci_swiper_sliders');
             });
-
+            elementorFrontend.hooks.addAction('frontend/element_ready/penci-single-related-posts.default', function ($scope) {
+                $('body').trigger('penci_swiper_sliders');
+            });
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-media-carousel.default', function ($scope) {
-                penciLazy();
                 ELPENCI.lightbox();
-                ELPENCI.owl_slider();
+                $('body').trigger('penci_swiper_sliders');
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-progress-bar.default', function ($scope) {
                 ELPENCI.extraFunction.progressBar();
-            });
-
-            elementorFrontend.hooks.addAction('frontend/element_ready/penci-sidebar.default', function ($scope) {
-                penciLazy();
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-block-heading.default', function ($scope) {
@@ -1820,8 +1523,7 @@
             });
 
             elementorFrontend.hooks.addAction('frontend/element_ready/penci-fullwidth-hero-overlay.default', function ($scope) {
-                penciLazy();
-                ELPENCI.owl_slider();
+                $('body').trigger('penci_swiper_sliders');
                 ELPENCI.extraFunction.init();
             });
         }

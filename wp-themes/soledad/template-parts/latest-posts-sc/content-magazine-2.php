@@ -16,24 +16,28 @@ $penci_featimg_size = isset( $penci_featimg_size ) ? $penci_featimg_size : '';
 			<?php if ( $images ) : ?>
                 <div class="thumbnail">
 					<?php do_action( 'penci_bookmark_post' ); ?>
-                    <div class="penci-owl-carousel penci-owl-carousel-slider penci-nav-visible" data-auto="true">
-						<?php foreach ( $images as $image ) : ?>
-							<?php $the_image = wp_get_attachment_image_src( $image, penci_featured_images_size_vcel( 'normal', $penci_featimg_size ) ); ?>
-							<?php $the_caption = get_post_field( 'post_excerpt', $image ); ?>
+                    <div class="swiper penci-owl-carousel penci-owl-carousel-slider penci-nav-visible" data-auto="true">
+                        <div class="swiper-wrapper">
+							<?php foreach ( $images as $image ) : ?>
+                                <div class="swiper-slide swiper-mark-item">
+									<?php $the_image = wp_get_attachment_image_src( $image, penci_featured_images_size_vcel( 'normal', $penci_featimg_size ) ); ?>
+									<?php $the_caption = get_post_field( 'post_excerpt', $image ); ?>
 
-							<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
-                                <figure class="penci-image-holder penci-lazy"
-									<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
-                                        data-bgset="<?php echo esc_url( $the_image[0] ); ?>">
-                                </figure>
-							<?php } else { ?>
-                                <figure class="penci-image-holder"
-									<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
-                                        style="background-image: url('<?php echo esc_url( $the_image[0] ); ?>');">
-                                </figure>
-							<?php } ?>
+									<?php if ( ! get_theme_mod( 'penci_disable_lazyload_layout' ) ) { ?>
+                                        <figure class="penci-swiper-mask penci-image-holder penci-lazy"
+											<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
+                                                data-bgset="<?php echo esc_url( $the_image[0] ); ?>">
+                                        </figure>
+									<?php } else { ?>
+                                        <figure class="penci-swiper-mask penci-image-holder"
+											<?php if ( $the_caption ) : ?> title="<?php echo esc_attr( $the_caption ); ?>"<?php endif; ?>
+                                                style="background-image: url('<?php echo esc_url( $the_image[0] ); ?>');">
+                                        </figure>
+									<?php } ?>
+                                </div>
 
-						<?php endforeach; ?>
+							<?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
 			<?php endif; ?>

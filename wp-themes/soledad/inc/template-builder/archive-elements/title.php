@@ -82,17 +82,17 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 		] );
 
 		$this->add_control( 'show_desc', [
-			'label'     => __( 'Show Archive Description', 'soledad' ),
-			'type'      => \Elementor\Controls_Manager::SWITCHER,
+			'label' => __( 'Show Archive Description', 'soledad' ),
+			'type'  => \Elementor\Controls_Manager::SWITCHER,
 		] );
 
 		$this->add_control( 'desc_position', [
-			'label'   => esc_html__( 'Description Position', 'soledad' ),
-			'type'    => \Elementor\Controls_Manager::SELECT,
-			'default' => 'after',
-			'condition' => ['show_desc' => 'yes'],
-			'options' => [
-				'after' => 'After Title',
+			'label'     => esc_html__( 'Description Position', 'soledad' ),
+			'type'      => \Elementor\Controls_Manager::SELECT,
+			'default'   => 'after',
+			'condition' => [ 'show_desc' => 'yes' ],
+			'options'   => [
+				'after'  => 'After Title',
 				'before' => 'Before Title',
 			]
 		] );
@@ -117,7 +117,7 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 			),
 			'toggle'    => true,
 			'selectors' => [ '{{WRAPPER}} .penci-category-description.post-entry' => 'text-align:{{VALUE}}' ],
-			'condition' => ['show_desc' => 'yes'],
+			'condition' => [ 'show_desc' => 'yes' ],
 		] );
 
 		$this->add_responsive_control( 'desc_spacing', [
@@ -128,10 +128,10 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 				'px' => array( 'max' => 200 ),
 			),
 			'selectors'  => [
-				'{{WRAPPER}} .post-entry.pcdcp-after' => 'margin-top:{{SIZE}}px !important;',
+				'{{WRAPPER}} .post-entry.pcdcp-after'  => 'margin-top:{{SIZE}}px !important;',
 				'{{WRAPPER}} .post-entry.pcdcp-before' => 'margin-bottom:{{SIZE}}px !important;',
 			],
-			'condition' => ['show_desc' => 'yes'],
+			'condition'  => [ 'show_desc' => 'yes' ],
 		] );
 
 		$this->end_controls_section();
@@ -160,8 +160,8 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 		] );
 
 		$this->add_control( 'text-color', [
-			'label'    => 'Prefix Text Color',
-			'type'     => \Elementor\Controls_Manager::COLOR,
+			'label'     => 'Prefix Text Color',
+			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .archive-box span' => 'color:{{VALUE}} !important' ],
 		] );
 
@@ -213,35 +213,77 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 		$this->add_control( 'desc-heading', [
 			'label'     => 'Archive Description',
 			'type'      => \Elementor\Controls_Manager::HEADING,
-			'condition' => ['show_desc' => 'yes'],
+			'condition' => [ 'show_desc' => 'yes' ],
 		] );
 
 		$this->add_group_control( \Elementor\Group_Control_Typography::get_type(), array(
-			'name'     => 'desc_typo',
-			'label'    => __( 'Typography for Archive Description', 'soledad' ),
-			'selector' => '{{WRAPPER}} .penci-archive-description.post-entry, {{WRAPPER}} .penci-archive-description.post-entry p',
-			'condition' => ['show_desc' => 'yes'],
+			'name'      => 'desc_typo',
+			'label'     => __( 'Typography for Archive Description', 'soledad' ),
+			'selector'  => '{{WRAPPER}} .penci-archive-description.post-entry, {{WRAPPER}} .penci-archive-description.post-entry p',
+			'condition' => [ 'show_desc' => 'yes' ],
 		) );
 
 		$this->add_control( 'desc-color', [
 			'label'     => 'Description Text Color',
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .penci-archive-description.post-entry' => 'color:{{VALUE}} !important' ],
-			'condition' => ['show_desc' => 'yes'],
+			'condition' => [ 'show_desc' => 'yes' ],
 		] );
 
 		$this->add_control( 'main-dtext-color', [
 			'label'     => 'Description Link Color',
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .penci-archive-description.post-entry a' => 'color:{{VALUE}} !important' ],
-			'condition' => ['show_desc' => 'yes'],
+			'condition' => [ 'show_desc' => 'yes' ],
 		] );
 
 		$this->add_control( 'main-dtext-hcolor', [
 			'label'     => 'Description Link Hover Color',
 			'type'      => \Elementor\Controls_Manager::COLOR,
 			'selectors' => [ '{{WRAPPER}} .penci-archive-description.post-entry a:hover' => 'color:{{VALUE}} !important' ],
-			'condition' => ['show_desc' => 'yes'],
+			'condition' => [ 'show_desc' => 'yes' ],
+		] );
+
+		$this->add_control( 'readmore-heading', [
+			'label'     => 'Read More',
+			'type'      => \Elementor\Controls_Manager::HEADING,
+			'condition' => [ 'show_desc' => 'yes' ],
+		] );
+
+		$this->add_control( 'readmore-bg-color', [
+			'label'     => 'Read More Background Color',
+			'type'      => \Elementor\Controls_Manager::COLOR,
+			'condition' => [ 'show_desc' => 'yes' ],
+			'selectors' => [ '{{WRAPPER}} .penci-category-description-button:before' => 'background: linear-gradient(to bottom, transparent 0px, {{VALUE}} 40px);' ],
+		] );
+
+		$this->add_group_control( \Elementor\Group_Control_Typography::get_type(), array(
+			'name'      => 'readmore_btn_typo',
+			'label'     => __( 'Typography for Read more', 'soledad' ),
+			'condition' => [ 'show_desc' => 'yes' ],
+			'selector'  => '{{WRAPPER}} .penci-category-description-button a',
+		) );
+
+		$this->add_control( 'readmore_btn_color', [
+			'label'     => 'Read More Text Color',
+			'type'      => \Elementor\Controls_Manager::COLOR,
+			'condition' => [ 'show_desc' => 'yes' ],
+			'selectors' => [ '{{WRAPPER}} .penci-category-description-button a' => 'color:{{VALUE}}' ],
+		] );
+
+		$this->add_control( 'readmore_btn_hcolor', [
+			'label'     => 'Read More Text Hover Color',
+			'type'      => \Elementor\Controls_Manager::COLOR,
+			'condition' => [ 'show_desc' => 'yes' ],
+			'selectors' => [ '{{WRAPPER}} .penci-category-description-button a:hover' => 'color:{{VALUE}}' ],
+		] );
+
+		$this->add_responsive_control( 'desc_maxheight', [
+			'label'     => 'Max Height for Description Text',
+			'type'      => \Elementor\Controls_Manager::SLIDER,
+			'condition' => [ 'show_desc' => 'yes' ],
+			'range'     => array( 'px' => array( 'min' => 0, 'max' => 1000, ) ),
+			'selectors' => [ 'body:not(.penci-disable-desc-collapse) {{WRAPPER}} .penci-category-description' => 'max-height:{{SIZE}}px' ],
 		] );
 
 		$this->end_controls_section();
@@ -259,22 +301,22 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 	}
 
 	protected function preview_content() {
-		$settings    = $this->get_settings_for_display();
-		$heading_tag = $settings['heading_markup'];
-		$align       = $settings['heading_align'];
+		$settings      = $this->get_settings_for_display();
+		$heading_tag   = $settings['heading_markup'];
+		$align         = $settings['heading_align'];
 		$desc_position = $settings['desc_position'] ? $settings['desc_position'] : 'after';
-		$desc_content = '<div class="post-entry penci-category-description penci-archive-description pcdcp-'.$desc_position.'">
+		$desc_content  = '<div class="post-entry penci-category-description penci-archive-description pcdcp-' . $desc_position . '">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur eius iste mollitia quo
                 veritatis, voluptatum. Atque culpa <a href="#">deleniti eligendi</a> est explicabo modi officia optio porro reiciendis
                 tempore, ut voluptas!</p>
         </div>';
-        if ( $settings['desc_position'] == 'before' && $settings['show_desc'] ) {
+		if ( $settings['desc_position'] == 'before' && $settings['show_desc'] ) {
 			echo $desc_content;
 		}
 		?>
         <div class="archive-box pcab-abox">
             <div class="title-bar align-<?php echo $align; ?>">
-				<span><?php _e( 'Prefix Text: ', 'soledad' ); ?></span>
+                <span><?php _e( 'Prefix Text: ', 'soledad' ); ?></span>
                 <<?php echo $heading_tag; ?> class="page-title">
 				<?php _e( 'Archive Title', 'soledad' ); ?>
             </<?php echo $heading_tag; ?>>
@@ -287,21 +329,25 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 	}
 
 	protected function builder_content() {
-		$settings    = $this->get_settings_for_display();
-		$heading_tag = $settings['heading_markup'];
-		$align       = $settings['heading_align'];
+		$settings      = $this->get_settings_for_display();
+		$heading_tag   = $settings['heading_markup'];
+		$align         = $settings['heading_align'];
 		$desc_position = $settings['desc_position'] ? $settings['desc_position'] : 'after';
 
-		$desc_content = '';
+		$desc_content = $button_desc = '';
 
-		if ( $settings['show_desc']) {
+		if ( $settings['show_desc'] ) {
 
+			if ( ! get_theme_mod( 'penci_archive_disable_desc_collapse' ) ) {
+
+				$button_desc = '<div class="penci-category-description-button"><a aria-label="' . penci_get_setting( 'penci_trans_read_more' ) . '" title="' . penci_get_setting( 'penci_trans_read_more' ) . '" href="#">' . penci_get_setting( 'penci_trans_read_more' ) . '</a></div>';
+			}
 			if ( is_tag() && tag_description() ) {
-				$desc_content = '<div class="post-entry penci-archive-description penci-tag-description pcdcp-'.$desc_position.'">' . do_shortcode( tag_description() ) . '</div>';
+				$desc_content = '<div class="post-entry penci-archive-description penci-tag-description pcdcp-' . $desc_position . '"><div class="penci-category-description-inner">' . do_shortcode( tag_description() ) . '</div>' . $button_desc . '</div>';
 			} elseif ( is_category() && category_description() ) {
-				$desc_content = '<div class="post-entry penci-archive-description penci-category-description pcdcp-'.$desc_position.'">' . do_shortcode( category_description() ) . '</div>';
+				$desc_content = '<div class="post-entry penci-archive-description penci-category-description pcdcp-' . $desc_position . '"><div class="penci-category-description-inner">' . do_shortcode( category_description() ) . '</div>' . $button_desc . '</div>';
 			} elseif ( is_archive() && get_the_archive_description() ) {
-				$desc_content ='<div class="post-entry penci-category-description penci-archive-description penci-acdes-below pcdcp-'.$desc_position.'">' . do_shortcode( get_the_archive_description() ) . '</div>';
+				$desc_content = '<div class="post-entry penci-category-description penci-archive-description penci-acdes-below pcdcp-' . $desc_position . '"><div class="penci-category-description-inner">' . do_shortcode( get_the_archive_description() ) . '</div>' . $button_desc . '</div>';
 			}
 		}
 
@@ -354,7 +400,7 @@ class PenciArchiveTitle extends \Elementor\Widget_Base {
 					printf( wp_kses( __( '<' . $heading_tag . ' class="page-title">"%s"</' . $heading_tag . '>', 'soledad' ), penci_allow_html() ), get_search_query() );
                 elseif ( is_tax() ) :
 					the_archive_title( '<' . $heading_tag . ' class="page-title">', '</' . $heading_tag . '>' );
-                else :
+				else :
 					echo '<' . $heading_tag . ' class="page-title">';
 					echo penci_get_setting( 'penci_trans_archives' );
 					echo '</' . $heading_tag . '>';

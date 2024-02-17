@@ -83,6 +83,12 @@ if ( ! function_exists( 'penci_should_render_single_template' ) ) {
 			foreach ( penci_get_published_posttypes() as $type ) {
 				if ( is_singular( $type ) ) {
 					$template = get_theme_mod( 'penci_' . $type . '_custom_template' );
+
+					$post_format = get_post_format( get_the_ID() );
+
+					if ( $post_format && get_theme_mod( 'penci_' . $post_format . '_custom_template' ) ) {
+						$template = get_theme_mod( 'penci_' . $post_format . '_custom_template' );
+					}
 				}
 			}
 		}

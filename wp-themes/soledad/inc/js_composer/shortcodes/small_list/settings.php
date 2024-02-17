@@ -631,5 +631,5 @@ vc_map( array(
 			'group'            => 'Typo & Color',
 		),
 
-	), Penci_Vc_Params_Helper::heading_block_params(), Penci_Vc_Params_Helper::params_heading_filter(), Penci_Vc_Params_Helper::params_custom_meta_fields(), Penci_Vc_Params_Helper::params_heading_filter_style(), Penci_Vc_Params_Helper::params_heading_typo_color(), Penci_Vc_Params_Helper::extra_params(),Penci_Vc_Params_Helper::params_bookmark_icon() )
+	), Penci_Vc_Params_Helper::heading_block_params(), Penci_Vc_Params_Helper::params_heading_filter(), Penci_Vc_Params_Helper::params_custom_meta_fields(), Penci_Vc_Params_Helper::params_heading_filter_style(), Penci_Vc_Params_Helper::params_heading_typo_color(), Penci_Vc_Params_Helper::extra_params(), Penci_Vc_Params_Helper::params_bookmark_icon() )
 ) );

@@ -119,7 +119,17 @@ if ( 'two-sidebar' == $sidebar_position ): $two_sidebar_class = ' two-sidebar'; 
 
 	<?php if ( category_description() && ! get_theme_mod( 'penci_archive_move_desc' ) ) : // Show an optional category description ?>
         <div class="container <?php echo $two_sidebar_class; ?>">
-            <div class="post-entry penci-category-description<?php echo $archive_desc_align; ?>"><?php echo do_shortcode( category_description() ); ?></div>
+            <div class="post-entry penci-category-description<?php echo $archive_desc_align; ?>">
+                <div class="penci-category-description-inner">
+					<?php echo do_shortcode( category_description() ); ?>
+                </div>
+				<?php if ( ! get_theme_mod( 'penci_archive_disable_desc_collapse' ) ): ?>
+                    <div class="penci-category-description-button">
+                        <a href="#" title="<?php echo penci_get_setting( 'penci_trans_read_more' ); ?>"
+                           aria-label="<?php echo penci_get_setting( 'penci_trans_read_more' ); ?>"><?php echo penci_get_setting( 'penci_trans_read_more' ); ?></a>
+                    </div>
+				<?php endif; ?>
+            </div>
         </div>
 	<?php endif; ?>
 
@@ -192,7 +202,17 @@ if ( $show_sidebar ) : ?> penci_sidebar <?php echo esc_attr( $sidebar_position )
                 </div>
 
 				<?php if ( category_description() && ! get_theme_mod( 'penci_archive_move_desc' ) ) : // Show an optional category description ?>
-                    <div class="post-entry penci-category-description<?php echo $archive_desc_align; ?>"><?php echo do_shortcode( category_description() ); ?></div>
+                    <div class="post-entry penci-category-description<?php echo $archive_desc_align; ?>">
+                        <div class="penci-category-description-inner">
+							<?php echo do_shortcode( category_description() ); ?>
+                        </div>
+						<?php if ( ! get_theme_mod( 'penci_archive_disable_desc_collapse' ) ): ?>
+                            <div class="penci-category-description-button">
+                                <a href="#" title="<?php echo penci_get_setting( 'penci_trans_read_more' ); ?>"
+                                   aria-label="<?php echo penci_get_setting( 'penci_trans_read_more' ); ?>"><?php echo penci_get_setting( 'penci_trans_read_more' ); ?></a>
+                            </div>
+						<?php endif; ?>
+                    </div>
 				<?php endif; ?>
 
 			<?php } else {

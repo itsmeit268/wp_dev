@@ -215,7 +215,7 @@ if ( ! class_exists( 'Penci_Block' ) ):
 				return false;
 			}
 
-			if ( did_action( 'elementor/loaded' ) && Plugin::$instance->documents->get( $id )->is_built_with_elementor() ) {
+			if ( $id && did_action( 'elementor/loaded' ) && Plugin::$instance->documents->get( $id )->is_built_with_elementor() ) {
 
 				$content = penci_get_elementor_content( $id );
 

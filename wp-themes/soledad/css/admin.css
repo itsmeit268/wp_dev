@@ -4717,6 +4717,14 @@ ul#menu-to-edit li:not(.menu-item-depth-0) .penci-hide-child {
   display: flex;
 }
 
+.pcmt-control-wrapper .pcmt-control .pcmt-child-control:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.pcmt-control-wrapper .pcmt-control .pcmt-child-control p {
+  margin: 0;
+}
+
 .pcmt-control-wrapper .pcmt-control input,
 .pcmt-control-wrapper .pcmt-control select {
   min-width: 330px;
@@ -5447,4 +5455,32 @@ body.soledad_page_penci_social_order .media-modal-content .attachment-info:befor
 }
 .csf-wrapper {
   overflow: hidden;
+}
+.penci-form-field {
+  position: relative;
+}
+.penci-form-field .wp-picker-holder {
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: auto;
+  z-index: 999;
+}
+.penci-form-field .wp-picker-input-wrap label,
+.penci-form-field .wp-picker-input-wrap .wp-picker-clear {
+  display: inline-block
+}
+.penci-form-field .wp-picker-input-wrap {
+  min-width: 175px;
+}
+.penci-form-field .wp-picker-input-wrap .wp-picker-clear {
+  max-width: 50px;
+}
+.social-colors-init {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }

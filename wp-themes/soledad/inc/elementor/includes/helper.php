@@ -480,16 +480,7 @@ function get_default_term_thumb_url( $term_id, $thumbnail = 'thumbnail', $show_d
 
 	if ( $show_default && ! $image_url ) {
 
-		$saved_data = '_penci_term_' . $term_id . '_url';
-
-		$saved_data_url = get_transient( $saved_data );
-
-
-		if ( $saved_data_url ) {
-			$image_url = $saved_data_url;
-		} else {
-
-			$term_query = new \WP_Query( [
+		$term_query = new \WP_Query( [
 				'category__in'   => $term_id,
 				'posts_per_page' => 1,
 				'meta_query'     => [
@@ -504,12 +495,11 @@ function get_default_term_thumb_url( $term_id, $thumbnail = 'thumbnail', $show_d
 
 					$image_url = get_the_post_thumbnail_url( get_the_ID(), $thumbnail );
 
-					set_transient( $saved_data, $image_url );
+					
 
 				}
 				wp_reset_postdata();
 			}
-		}
 
 
 	}

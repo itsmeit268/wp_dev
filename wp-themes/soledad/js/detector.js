@@ -30,7 +30,7 @@
                 src: '.penci-adblocker-popup'
             },
             type: 'inline',
-            removalDelay: 500, //delay removal by X to allow out-animation
+            removalDelay: 500,
             tClose: false,
             tLoading: false,
             closeOnBgClick: false,

@@ -21,7 +21,8 @@ $data_slider .= ! 'yes' == $atts['loop'] ? ' data-loop="true"' : '';
 $data_slider .= ' data-auto="' . ( ! 'yes' == $atts['autoplay'] ? 'false' : 'true' ) . '"';
 ?>
 	<div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $css_class ); ?>">
-		<div class="penci-block_content penci-slides-wrap penci-owl-carousel penci-owl-carousel-slider" <?php echo $data_slider; ?>>
+		<div class="penci-block_content penci-slides-wrap swiper penci-owl-carousel penci-owl-carousel-slider" <?php echo $data_slider; ?>>
+			<div class="swiper-wrapper">
 			<?php
 			$slide_count = 0;
 			foreach ( (array) $penci_slides as $slide ) {
@@ -40,7 +41,7 @@ $data_slider .= ' data-auto="' . ( ! 'yes' == $atts['autoplay'] ? 'false' : 'tru
 					}
 				}
 
-				echo '<div class="penci-repeater-item-' . $slide_count . ' penci-ctslide-wrap">';
+				echo '<div class="swiper-slide penci-repeater-item-' . $slide_count . ' penci-ctslide-wrap">';
 				echo '<div class="penci-custom-slide">';
 
 				echo '<div class="penci-ctslide-bg" style="background-color:' . esc_attr( $slide_bg_color ) . '"></div>';
@@ -103,6 +104,7 @@ $data_slider .= ' data-auto="' . ( ! 'yes' == $atts['autoplay'] ? 'false' : 'tru
 				$slide_count ++;
 			}
 			?>
+			</div>
 		</div>
 	</div>
 <?php

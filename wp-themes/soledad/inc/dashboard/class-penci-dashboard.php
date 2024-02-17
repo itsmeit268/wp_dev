@@ -37,6 +37,7 @@ class Penci_Soledad_Dashboard {
 		add_action( 'admin_notices', array( $this, 'penci_update_notice' ) );
 		add_filter( 'upload_mimes', array( $this, 'custom_mime_types' ) );
 		add_action( 'wp_ajax_admin_dimiss_license_notice', array( $this, 'admin_dimiss_license_notice' ) );
+		add_action( 'admin_init', array( $this, 'update' ) );
 	}
 
 	public function custom_mime_types( $mime_types ) {
@@ -87,8 +88,6 @@ class Penci_Soledad_Dashboard {
 		);
 
 		$this->replace_text_submenu();
-
-		add_action( 'admin_init', array( $this, 'update' ) );
 	}
 
 	public function get_wel_page_title() {
@@ -104,7 +103,7 @@ class Penci_Soledad_Dashboard {
 
 	public function update() {
 
-		if ( ! empty( $_POST ) && isset( $_POST['_page'] ) && $_POST['_page'] === 'soledad_custom_fonts' && wp_verify_nonce( 'nonce', 'penci_update_options' ) ) {
+		if ( ! empty( $_POST ) && isset( $_POST['_page'] ) && $_POST['_page'] === 'soledad_custom_fonts'  ) {
 
 			$fonts = array();
 
