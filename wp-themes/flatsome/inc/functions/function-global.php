@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * Get the Flatsome instance.
+ *
+ * @return Flatsome
+ */
+function flatsome() {
+	return Flatsome::instance();
+}
+
+/**
  * Get the Flatsome Envato instance.
  */
 function flatsome_envato() {
@@ -8,14 +17,14 @@ function flatsome_envato() {
 }
 
 /**
- * Enqueues a webpack bundle.
+ * Register a webpack bundle.
  *
  * @param string $handle       Script handle name.
  * @param string $entrypoint   The entrypoint name.
  * @param array  $dependencies Extra dependencies.
  * @return void
  */
-function flatsome_enqueue_asset( $handle, $entrypoint, $dependencies = array() ) {
+function flatsome_register_asset( $handle, $entrypoint, $dependencies = array() ) {
 	$filename     = "js/$entrypoint.js";
 	$theme        = wp_get_theme( get_template() );
 	$version      = $theme->get( 'Version' );
@@ -30,13 +39,26 @@ function flatsome_enqueue_asset( $handle, $entrypoint, $dependencies = array() )
 		? $assets[ $filename ]
 		: array( 'dependencies' => array(), 'version' => $version );
 
-	wp_enqueue_script(
+	wp_register_script(
 		$handle,
 		$script_url,
 		array_merge( $script_asset['dependencies'], $dependencies ),
 		$script_asset['version'],
 		true
 	);
+}
+
+/**
+ * Enqueues a webpack bundle.
+ *
+ * @param string $handle       Script handle name.
+ * @param string $entrypoint   The entrypoint name.
+ * @param array  $dependencies Extra dependencies.
+ * @return void
+ */
+function flatsome_enqueue_asset( $handle, $entrypoint, $dependencies = array() ) {
+	flatsome_register_asset( $handle, $entrypoint, $dependencies );
+	wp_enqueue_script( $handle );
 }
 
 /**
@@ -357,6 +379,23 @@ function flatsome_sort_on_priority( $a, $b ) {
 }
 
 /**
+ * Clean variables using sanitize_text_field. Arrays are cleaned recursively.
+ * Non-scalar values are ignored.
+ *
+ * @param string|array $data Data to sanitize.
+ *
+ * @return string|array
+ * @see wc_clean()
+ */
+function flatsome_clean( $data ) {
+	if ( is_array( $data ) ) {
+		return array_map( 'flatsome_clean', $data );
+	} else {
+		return is_scalar( $data ) ? sanitize_text_field( $data ) : $data;
+	}
+}
+
+/**
  * Check if support is expired.
  *
  * @return bool
@@ -385,55 +424,4 @@ function flatsome_is_invalid_support_time( $support_ends ) {
  */
 function flatsome_is_theme_enabled() {
 	return flatsome_envato()->registration->is_registered();
-}
-
-if ( ! flatsome_wp_version_check( '5.9' ) && ! function_exists( 'wp_json_file_decode' ) ) {
-	/**
-	 * Reads and decodes a JSON file.
-	 *
-	 * @since 5.9.0
-	 *
-	 * @param string $filename Path to the JSON file.
-	 * @param array  $options  {
-	 *     Optional. Options to be used with `json_decode()`.
-	 *
-	 *     @type bool $associative Optional. When `true`, JSON objects will be returned as associative arrays.
-	 *                             When `false`, JSON objects will be returned as objects. Default false.
-	 * }
-	 *
-	 * @return mixed Returns the value encoded in JSON in appropriate PHP type.
-	 *               `null` is returned if the file is not found, or its content can't be decoded.
-	 */
-	function wp_json_file_decode( $filename, $options = array() ) {
-		$result   = null;
-		$filename = wp_normalize_path( realpath( $filename ) );
-
-		if ( ! $filename ) {
-			trigger_error(
-				sprintf(
-				/* translators: %s: Path to the JSON file. */
-					__( "File %s doesn't exist!" ),
-					$filename
-				)
-			);
-			return $result;
-		}
-
-		$options      = wp_parse_args( $options, array( 'associative' => false ) );
-		$decoded_file = json_decode( file_get_contents( $filename ), $options['associative'] );
-
-		if ( JSON_ERROR_NONE !== json_last_error() ) {
-			trigger_error(
-				sprintf(
-				/* translators: 1: Path to the JSON file, 2: Error message. */
-					__( 'Error when decoding a JSON file at path %1$s: %2$s' ),
-					$filename,
-					json_last_error_msg()
-				)
-			);
-			return $result;
-		}
-
-		return $decoded_file;
-	}
 }

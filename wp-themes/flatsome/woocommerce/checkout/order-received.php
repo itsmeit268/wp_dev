@@ -12,8 +12,8 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 8.1.0
- * @flatsome-version 3.17.7
+ * @version 8.3.0
+ * @flatsome-version 3.18.0
  *
  * @var WC_Order|false $order
  */
@@ -33,10 +33,11 @@ defined( 'ABSPATH' ) || exit;
 	 */
 	$message = apply_filters(
 		'woocommerce_thankyou_order_received_text',
-		__( 'Thank you. Your order has been received.', 'woocommerce' ),
+		esc_html( __( 'Thank you. Your order has been received.', 'woocommerce' ) ),
 		$order
 	);
 
-	echo '<strong>' . esc_html( $message ) . '</strong>';
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo '<strong>' . $message . '</strong>';
 	?>
 </p>
