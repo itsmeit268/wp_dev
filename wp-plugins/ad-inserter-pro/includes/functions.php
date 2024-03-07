@@ -87,7 +87,7 @@ function recursive_remove_directory ($directory) {
 function ai_load_globals ($start_time = 0) {
   global $ad_inserter_globals, $wpdb, $ai_wp_data, $wp_version;
 
-  $ad_inserter_globals ['AI_STATUS']   = get_plugin_status ();
+  $ad_inserter_globals ['AI_STATUS']   = "0";
   $ad_inserter_globals ['AI_TYPE']     = get_plugin_type ();
   $ad_inserter_globals ['AI_COUNTER']  = get_plugin_counter ();
 
@@ -132,7 +132,7 @@ function ai_load_globals ($start_time = 0) {
     $ad_inserter_globals ['G'.$group] = get_group_country_list ($group);
   }
 
-  $ad_inserter_globals ['LICENSE_KEY'] = get_license_key ();
+  $ad_inserter_globals ['LICENSE_KEY'] = "activated";
 
   if (defined ('AI_STATISTICS') && AI_STATISTICS) {
 //    ob_start ();
