@@ -132,7 +132,7 @@ function ai_load_globals ($start_time = 0) {
     $ad_inserter_globals ['G'.$group] = get_group_country_list ($group);
   }
 
-  $ad_inserter_globals ['LICENSE_KEY'] = "activated";
+  $ad_inserter_globals ['LICENSE_KEY'] = "";
 
   if (defined ('AI_STATISTICS') && AI_STATISTICS) {
 //    ob_start ();

@@ -1,3 +1,14 @@
+--- 3.18.5 ---
+NEW: Added a button to clear typography cache and locally downloaded files.
+
+FIXED: Addressed an issue where locally served font files were returning 403 errors in some cases due to irregular Google font API responses.
+FIXED: Image lazy loading on WC Composite components.
+FIXED: Hotspot tooltip on a mobile device.
+
+CHANGED: Upgraded the format of font files to woff2 from woff.
+
+UPDATED: Language files.
+
 --- 3.18.4 ---
 NEW: WooCommerce 8.6 compatibility.
 
