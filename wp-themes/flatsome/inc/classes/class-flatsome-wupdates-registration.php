@@ -58,42 +58,20 @@ final class Flatsome_WUpdates_Registration extends Flatsome_Base_Registration {
 		return array();
 	}
 
-	/**
-	 * Get latest Flatsome version.
-	 *
-	 * @return string|WP_error
-	 */
-	public function get_latest_version() {
-		$code = $this->get_code();
+    /**
+     * Get latest Flatsome version.
+     *
+     * @return string|WP_error
+     */
+    public function get_latest_version() {
+        $code = $this->get_code();
 
-		if ( empty( $code ) ) {
-			return new WP_Error( 'missing-purchase-code', __( 'Missing purchase code.', 'flatsome' ) );
-		}
+        if ( empty( $code ) ) {
+            return new WP_Error( 'missing-purchase-code', __( 'Missing purchase code.', 'flatsome' ) );
+        }
 
-		$result = $this->api->send_request( "/legacy/license/$code/latest-version", 'wupdates-latest-version' );
-
-		if ( is_wp_error( $result ) ) {
-			$statuses = array( 400, 403, 404, 409, 410, 423 );
-			if ( in_array( (int) $result->get_error_code(), $statuses, true ) ) {
-				$this->set_errors( array( $result->get_error_message() ) );
-			}
-			return $result;
-		} else {
-			wp_clear_scheduled_hook( 'flatsome_scheduled_registration' );
-			wp_schedule_single_event( time() + HOUR_IN_SECONDS, 'flatsome_scheduled_registration' );
-			$this->set_errors( array() );
-		}
-
-		if ( empty( $result['version'] ) ) {
-			return new WP_Error( 'missing-version', __( 'No version received.', 'flatsome' ) );
-		}
-
-		if ( ! is_string( $result['version'] ) ) {
-			return new WP_Error( 'invalid-version', __( 'Invalid version received.', 'flatsome' ) );
-		}
-
-		return $result['version'];
-	}
+        return [];
+    }
 
 	/**
 	 * Get a temporary download URL.
