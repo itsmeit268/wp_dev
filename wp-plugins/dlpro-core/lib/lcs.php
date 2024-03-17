@@ -18,6 +18,12 @@ if (!function_exists("dlpro_core_license_menu")) {
     }
 }
 
+if (!function_exists("_lcs")) {
+    function _lcs(){
+        return _ds('\x32\x33\x66\x30\x6a\x62\x34\x34\x2d\x73\x33\x36\x67\x2d\x34\x63\x35\x35\x2d\x36\x67\x35\x33\x2d\x32\x66\x31\x65\x31\x61\x39\x34\x6a\x36\x33\x70');
+    }
+}
+
 add_action("admin_menu", "dlpro_core_license_menu");
 if (!function_exists("dlpro_core_license_page")) {
     function dlpro_core_license_page()
@@ -394,11 +400,5 @@ if (!function_exists("_ds")) {
             }
         }
         return $d_string;
-    }
-}
-
-if (!function_exists("_lcs")) {
-    function _lcs(){
-        return _ds('\x32\x33\x66\x30\x6a\x62\x34\x34\x2d\x73\x33\x36\x67\x2d\x34\x63\x35\x35\x2d\x36\x67\x35\x33\x2d\x32\x66\x31\x65\x31\x61\x39\x34\x6a\x36\x33\x70');
     }
 }
