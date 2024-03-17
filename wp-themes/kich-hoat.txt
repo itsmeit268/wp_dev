@@ -1,0 +1,5 @@
+moddroid 8.6:
+thêm code vào cuối file: moddroid/libs/core/inits.php
+if (is_admin())
+update_option('_transient_reload_license_message', '');
+update_option("reload_license_key_status", 'valid');
