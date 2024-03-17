@@ -24,37 +24,30 @@ if (!function_exists("dlpro_core_license_page")) {
     {
         $plugin_key = md5(dlpro_core_get_home());
         $license_status = trim(get_option("dlpro_core_license_status" . $plugin_key));
-        echo "<div class=\"wrap\">\n";
-        echo "\t<h2>";
-        esc_attr_e("Dlpro Licenses", "dlpro-core");
-        echo "</h2>\n";
-        echo "\t<form method=\"post\" action=\"options.php\">\n";
-        settings_fields("dlpro_core_license");
-        echo "\t\t<table class=\"form-table\">\n";
-        echo "\t\t\t<tr valign=\"top\">\n";
-        echo "\t\t\t\t<th scope=\"row\"><label for=\"dlpro_core_license_key\">License Key</label></th>\n";
-        echo "\t\t\t\t<td><input id=\"dlpro_core_license_key\" name=\"dlpro_core_license_key\" type=\"text\" placeholder=\"XXXXX_xxxxxxxx\" class=\"regular-text\" /></td>\n";
-        echo "\t\t\t</tr>\n";
-        echo "\t\t</table>\n";
-        echo "\t\t<p class=\"submit\">\n";
-        submit_button("Activate License", "primary", "submit", false);
-        echo "\t\t</p>\n";
-        echo "\t</form>\n";
-        if (!empty($license_status) && "ok" === $license_status) {
-            goto end;
-        }
-        echo "\t\t\t\t\t\t<p>License Activation Required</p>\n";
-        wp_nonce_field("dlpro_core_license_nonce", "dlpro_core_license_nonce");
-        echo "\t\t\t\t\t\t<input type=\"submit\" name=\"submit\" id=\"submit\" class=\"button button-primary\" value=\"";
-        esc_attr_e("Activate License", "dlpro-core");
-        echo "\"/>\n";
-        echo "\t\t\t\t\t</form>\n";
-        echo "\t\t\t\t</div>\n";
-        esc_html_e("Congratulations, your license is active.", "dlpro-core");
-        echo "</label></br>";
-        dlpro_core_check_license();
-        end:
-        echo "\t</div>\n";
+        ?>
+        <div class="wrap">
+            <h2><?php esc_attr_e("Dlpro Licenses", "dlpro-core"); ?></h2>
+            <?php
+            if (!empty($license_status)): ?>
+                <p><?php esc_html_e("Congratulations, your license is active.", "dlpro-core"); ?></p>
+            <?php else: ?>
+                <p>License Activation Required</p>
+                <?php wp_nonce_field("dlpro_core_license_nonce", "dlpro_core_license_nonce"); ?>
+                <form method="post" action="options.php">
+                    <?php settings_fields("dlpro_core_license"); ?>
+                    <table class="form-table">
+                        <tr valign="top">
+                            <th scope="row"><label for="dlpro_core_license_key">License Key</label></th>
+                            <td><input id="dlpro_core_license_key" name="dlpro_core_license_key" type="text" class="regular-text"/></td>
+                        </tr>
+                    </table>
+                    <p class="submit">
+                        <?php submit_button("Activate License", "primary", "submit", false); ?>
+                    </p>
+                </form>
+            <?php endif; ?>
+        </div>
+        <?php
     }
 }
 
@@ -405,3 +398,4 @@ if (!function_exists("dlpro_core_admin_notices")) {
     }
 }
 add_action("admin_notices", "dlpro_core_admin_notices");
+
