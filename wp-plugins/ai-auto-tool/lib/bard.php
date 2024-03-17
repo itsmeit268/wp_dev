@@ -76,7 +76,7 @@ class BardGenContent {
         }else{
             $accountType =  $fs->get_plan_title();
         }
-        $data['plan'] = $accountType;
+        $data['plan'] = 'aiautotoolpremium';
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);

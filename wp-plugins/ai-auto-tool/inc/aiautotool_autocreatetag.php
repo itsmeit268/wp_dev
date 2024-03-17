@@ -158,11 +158,15 @@ class AIautotool_autocreatetags extends rendersetting{
             );
 
         if($this->is_premium()->get_plan_name()=='aiautotoolpro'||$this->is_premium()->get_plan_name()=='premium'){
-           
+
+            $current_date = date('Y-m-d');
+            $expiration = strtotime('+1 month', strtotime($current_date));
+            $expiration = date('Y-m-d', $expiration);
+
             $this->config  = array(
                 'number_post'=>-1,
                 'usage'=>get_option($this->usage_option_name, 0, 'no'),
-                'time_exprice'=>$this->is_premium()->_get_license()->expiration
+                'time_exprice'=> $expiration
             );
         }
 

@@ -17,12 +17,8 @@ define('AIAUTOTOOL_VS', '1.9.1');
 define('AIAUTOTOOL_DIR', plugin_dir_path( __FILE__ ));
 define('AIAUTOTOOL_BASENAME', plugin_basename( __FILE__ ));
 
-define('AIAUTOTOOL_FREE', 30);
+define('AIAUTOTOOL_FREE', -1);
 
-
-    
-
- 
 if ( ! function_exists( 'aiautotool_premium' ) ) {
     // Create a helper function for easy SDK access.
     function aiautotool_premium() {

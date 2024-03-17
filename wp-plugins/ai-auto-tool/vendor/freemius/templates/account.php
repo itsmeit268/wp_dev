@@ -457,6 +457,7 @@
                                         }
 
 										if ( $has_paid_plan || $has_bundle_license ) {
+
 											if ( $fs->is_trial() ) {
 											    if ( $show_plan_row ) {
                                                     $profile[] = array(
@@ -472,10 +473,7 @@
                                                     $profile[] = array(
                                                         'id'    => 'plan',
                                                         'title' => ( $has_bundle_license ? ucfirst( $fs->get_module_type() ) . ' ' : '' ) . $plan_text,
-                                                        'value' => strtoupper( is_string( $plan->name ) ?
-                                                            $plan->title :
-                                                            strtoupper( $free_text )
-                                                        )
+                                                        'value' => $fs->get_plan_title()
                                                     );
 
                                                     if ( $has_bundle_license ) {
@@ -502,6 +500,7 @@
 									<?php $odd = true;
 										foreach ( $profile as $p ) : ?>
 											<?php
+
 											if ( 'plan' === $p['id'] && ! $has_paid_plan ) {
 												// If plugin don't have any paid plans, there's no reason
 												// to show current plan.
