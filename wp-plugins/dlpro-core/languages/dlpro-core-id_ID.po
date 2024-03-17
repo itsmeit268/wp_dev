@@ -1,0 +1,1791 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Dlpro Core 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-10 03:10+0700\n"
+"PO-Revision-Date: 2021-04-10 03:12+0700\n"
+"Last-Translator: MyThemeShop <support-team@mythemeshop.com>\n"
+"Language-Team: Gian Mokhammad R <g14nblog@gmail.com>\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x;esc_html__;_n:1,2;_nx:1,2;"
+"_x:1,2c;_ex:1,2c;_n_noop:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../lib/amember_http_api.php:19 ../lib/lcs.php:6
+msgid "Dlpro License"
+msgstr "Lisensi Dlpro"
+
+#: ../lib/amember_http_api.php:35
+msgid "Dlpro License Options"
+msgstr "Opsi Lisensi Dlpro"
+
+#: ../lib/amember_http_api.php:44
+msgid "License Key"
+msgstr "Kunci Lisensi"
+
+#: ../lib/amember_http_api.php:48
+msgid "Enter your license key here"
+msgstr "Silahkan masukkan kunci lisensi anda disini"
+
+#: ../lib/amember_http_api.php:54 ../lib/amember_http_api.php:68
+msgid "Activate License"
+msgstr "Aktifkan Lisensi"
+
+#: ../lib/amember_http_api.php:59
+msgid "License Active"
+msgstr "Lisensi Aktif"
+
+#: ../lib/amember_http_api.php:61
+msgid "Deactivate License"
+msgstr "Nonaktifkan Lisensi"
+
+#: ../lib/amember_http_api.php:62
+msgid ""
+"Congratulations, your license is active.<br /> You can disable license for "
+"this domain by entering the license key to the form and clicking "
+"<strong>Deactivate License</strong>"
+msgstr ""
+"Selamat, lisensi anda aktif.<br /> Anda dapat menonaktifkan lisensi untuk "
+"domain ini dengan memasukkan kunci lisensi pada form dan klik "
+"<strong>Nonaktifkan Lisensi</strong>"
+
+#: ../lib/amember_http_api.php:184 ../lib/amember_http_api.php:232
+#: ../lib/amember_http_api.php:307 ../lib/amember_http_api.php:355
+#: ../lib/lcs.php:6
+msgid "An error occurred, please try again."
+msgstr "Terjadi kesalahan, coba lagi."
+
+#: ../lib/amember_http_api.php:192 ../lib/amember_http_api.php:315
+#: ../lib/lcs.php:6
+msgid "Empty or invalid license key submitted."
+msgstr "Kunci lisensi yang dimasukkan kosong atau tidak valid."
+
+#: ../lib/amember_http_api.php:196 ../lib/amember_http_api.php:319
+#: ../lib/lcs.php:6
+msgid "License key not found on our server."
+msgstr "Kunci lisensi tidak ditemukan pada server kami."
+
+#: ../lib/amember_http_api.php:200 ../lib/amember_http_api.php:323
+#: ../lib/lcs.php:6
+msgid "License key has been disabled."
+msgstr "Kunci lisensi telah dinonaktifkan."
+
+#: ../lib/amember_http_api.php:204 ../lib/amember_http_api.php:327
+#: ../lib/lcs.php:6
+msgid "Your license key expired on"
+msgstr "Kunci lisensi anda kedaluwarsa pada"
+
+#: ../lib/amember_http_api.php:208 ../lib/amember_http_api.php:331
+#: ../lib/lcs.php:6
+msgid "Activation server error."
+msgstr "Kesalahan server aktivasi."
+
+#: ../lib/amember_http_api.php:212 ../lib/amember_http_api.php:335
+#: ../lib/lcs.php:6
+msgid "Activation failed: invalid input."
+msgstr "Aktivasi gagal: masukan tidak valid."
+
+#: ../lib/amember_http_api.php:216 ../lib/amember_http_api.php:339
+#: ../lib/lcs.php:6
+msgid "No more activations allowed. You must buy new license key."
+msgstr ""
+"Tidak ada lagi aktivasi yang dibolehkan. Anda harus membeli kunci lisensi "
+"baru."
+
+#: ../lib/amember_http_api.php:220 ../lib/amember_http_api.php:343
+#: ../lib/lcs.php:6
+msgid "No activation found for this installation."
+msgstr "Tidak ada aktivasi yang ditemukan untuk instalasi ini."
+
+#: ../lib/amember_http_api.php:224 ../lib/amember_http_api.php:347
+msgid "Re-activation is not allowed"
+msgstr "Aktivasi ulang tidak diijinkan"
+
+#: ../lib/amember_http_api.php:228 ../lib/amember_http_api.php:351
+msgid "Error returned from activation server"
+msgstr "Kesalahan kembali dari server aktivasi"
+
+#: ../lib/amember_http_api.php:462 ../lib/lcs.php:6
+msgid "Success."
+msgstr "Sukses."
+
+#: ../lib/apps/metabox.php:223
+msgid "Software Settings"
+msgstr "Pengaturan Software"
+
+#: ../lib/apps/metabox.php:346
+msgid "Software Settings:"
+msgstr "Pengaturan Software:"
+
+#: ../lib/apps/metabox.php:347
+msgid "Download Settings:"
+msgstr "Pengaturan Download:"
+
+#: ../lib/apps/metabox.php:352
+msgid "Version:"
+msgstr "Versi:"
+
+#: ../lib/apps/metabox.php:353
+msgid "Example: 1.0.234 beta 1"
+msgstr "Contoh: 1.0.234 beta 1"
+
+#: ../lib/apps/metabox.php:357
+msgid "System:"
+msgstr "Sistem:"
+
+#: ../lib/apps/metabox.php:358
+msgid "Example: Windows 10, MacOs Catalina, Android 10"
+msgstr "Contoh: Windows 10, MacOs Catalina, Android 10"
+
+#: ../lib/apps/metabox.php:362
+msgid "File Size:"
+msgstr "Ukuran File:"
+
+#: ../lib/apps/metabox.php:363
+msgid "Example: 25 MB"
+msgstr "Contoh: 25 MB"
+
+#: ../lib/apps/metabox.php:367
+msgid "License:"
+msgstr "Lisensi:"
+
+#: ../lib/apps/metabox.php:368
+msgid "Example: Freeware, Open Source, Trial, Etc"
+msgstr "Contoh: Freeware, Open Source, Trial, dan lain lain"
+
+#: ../lib/apps/metabox.php:372
+msgid "Developer:"
+msgstr "Pengembang:"
+
+#: ../lib/apps/metabox.php:373
+msgid "Example: Google Inc, Firefox Inc, Etc"
+msgstr "Contoh: Google Inc, Firefox Inc, dan lain lain"
+
+#: ../lib/apps/metabox.php:380
+msgid "Currency"
+msgstr "Mata Uang"
+
+#: ../lib/apps/metabox.php:381
+msgid "Price"
+msgstr "Harga"
+
+#: ../lib/apps/metabox.php:387
+msgid "IDR, USD"
+msgstr "IDR, USD"
+
+#: ../lib/apps/metabox.php:390
+msgid "5.12 or 5"
+msgstr "5.12 atau 5"
+
+#: ../lib/apps/metabox.php:399
+msgid "Software Thumbnail"
+msgstr "Thumbnail Softwore"
+
+#: ../lib/apps/metabox.php:405
+msgid "Shortcode Gallery:"
+msgstr "Shortcode Galeri:"
+
+#: ../lib/apps/metabox.php:417
+msgid "Title Button"
+msgstr "Judul Tombol"
+
+#: ../lib/apps/metabox.php:418
+msgid "Download URL"
+msgstr "Url Download"
+
+#: ../lib/apps/metabox.php:441 ../lib/apps/metabox.php:453
+#: ../lib/apps/metabox.php:462
+msgid "Example: Download Now"
+msgstr "Contoh: Download Sekarang"
+
+#: ../lib/apps/metabox.php:444 ../lib/apps/metabox.php:454
+#: ../lib/apps/metabox.php:463
+msgid ""
+"Example: https://play.google.com/store/apps/details?id=eth.org.freewallet.app"
+msgstr ""
+"Contoh: https://play.google.com/store/apps/details?id=eth.org.freewallet.app"
+
+#: ../lib/apps/metabox.php:446 ../lib/apps/metabox.php:455
+#: ../lib/apps/metabox.php:464
+msgid "Delete"
+msgstr "Hapus"
+
+#: ../lib/apps/metabox.php:472
+msgid "Add another"
+msgstr "Tambah lainnya"
+
+#: ../lib/apps/metabox.php:475
+msgid ""
+"Please insert title and URL download button. You can click <strong>Add "
+"another</strong> for add new button download and click <strong>Delete</"
+"strong> to delete download button."
+msgstr ""
+"Silahkan masukkan judul dan URL tombol download. Anda dapat klik "
+"<strong>Tambah lainnya</strong> untuk tambah tombol baru dan klik "
+"<strong>Hapus</strong> untuk menghapus tombol download."
+
+#: ../lib/apps/taxonomy-post-type.php:26 ../lib/apps/taxonomy-post-type.php:44
+#: ../lib/apps/taxonomy-post-type.php:45 ../lib/apps/taxonomy-post-type.php:49
+msgid "Software"
+msgstr "Software"
+
+#: ../lib/apps/taxonomy-post-type.php:27
+msgid "All Software"
+msgstr "Semua Software"
+
+#: ../lib/apps/taxonomy-post-type.php:28 ../lib/apps/taxonomy-post-type.php:46
+msgid "Add Software"
+msgstr "Tambahkan Software"
+
+#: ../lib/apps/taxonomy-post-type.php:47
+msgid "Add New Software"
+msgstr "Tambah Baru Software"
+
+#: ../lib/apps/taxonomy-post-type.php:48
+msgid "Edit Software"
+msgstr "Ubah Software"
+
+#: ../lib/blog/blog.cpt.php:75
+msgctxt "Post Type General Name"
+msgid "Blogs"
+msgstr "Blog"
+
+#: ../lib/blog/blog.cpt.php:76
+msgctxt "Post Type Singular Name"
+msgid "Blog"
+msgstr "Blog"
+
+#: ../lib/blog/blog.cpt.php:77
+msgid "Blog"
+msgstr "Blog"
+
+#: ../lib/blog/blog.cpt.php:78
+msgid "Parent Blog"
+msgstr "Blog Utama"
+
+#: ../lib/blog/blog.cpt.php:79
+msgid "All Blogs"
+msgstr "Semua Blog"
+
+#: ../lib/blog/blog.cpt.php:80
+msgid "View Blog"
+msgstr "Lihat Blog"
+
+#: ../lib/blog/blog.cpt.php:81
+msgid "Add Blog"
+msgstr "Tambah Blog"
+
+#: ../lib/blog/blog.cpt.php:82
+msgid "Add New"
+msgstr "Tambah Baru"
+
+#: ../lib/blog/blog.cpt.php:83
+msgid "Edit Blog"
+msgstr "UbahBlog"
+
+#: ../lib/blog/blog.cpt.php:84
+msgid "Update Blog"
+msgstr "Perbaharui Blog"
+
+#: ../lib/blog/blog.cpt.php:85
+msgid "Search Blog"
+msgstr "Cari Blog"
+
+#: ../lib/blog/blog.cpt.php:86
+msgid "Not blog found"
+msgstr "Blog Tidak Ditemukan"
+
+#: ../lib/blog/blog.cpt.php:87
+msgid "Not found in Trash"
+msgstr "Tidak ditemukan di Tempat Sampah"
+
+#: ../lib/blog/blog.cpt.php:129
+msgctxt "taxonomy general name"
+msgid "Blog Categories"
+msgstr "Kategori Blog"
+
+#: ../lib/blog/blog.cpt.php:130
+msgctxt "taxonomy singular name"
+msgid "Blog Category"
+msgstr "Kategori Blog"
+
+#: ../lib/blog/blog.cpt.php:131
+msgid "Search Blog Categories"
+msgstr "Cari Blog Kategori"
+
+#: ../lib/blog/blog.cpt.php:132
+msgid "All Blog Categories"
+msgstr "Semua Kategori Blog"
+
+#: ../lib/blog/blog.cpt.php:133
+msgid "Parent Blog Category"
+msgstr "Kategori Blog Utama"
+
+#: ../lib/blog/blog.cpt.php:134
+msgid "Parent Blog Category:"
+msgstr "Kategori Blog Utama:"
+
+#: ../lib/blog/blog.cpt.php:135
+msgid "Edit Blog Category"
+msgstr "Ubah Kategori Blog"
+
+#: ../lib/blog/blog.cpt.php:136
+msgid "Update Blog Category"
+msgstr "Perbaharui Kategori Blog"
+
+#: ../lib/blog/blog.cpt.php:137
+msgid "Add New Blog Category"
+msgstr "Tambah Baru Kategori Blog"
+
+#: ../lib/blog/blog.cpt.php:138
+msgid "New Blog Category Name"
+msgstr "Nama Kategori Blog Baru"
+
+#: ../lib/blog/blog.cpt.php:139
+msgid "Blog Categories"
+msgstr "Kategori Blog"
+
+#: ../lib/blog/blog.cpt.php:155
+msgctxt "Taxonomy General Name"
+msgid "Blog Tags"
+msgstr "Label Blog"
+
+#: ../lib/blog/blog.cpt.php:156
+msgctxt "Taxonomy Singular Name"
+msgid "Blog Tag"
+msgstr "Label Blog"
+
+#: ../lib/blog/blog.cpt.php:157
+msgid "Blog Tags"
+msgstr "Label Blog"
+
+#: ../lib/blog/blog.cpt.php:158
+msgid "All Blog Tags"
+msgstr "Semua Label Blog"
+
+#: ../lib/blog/blog.cpt.php:159
+msgid "Parent Blog Tag"
+msgstr "Label Blog Utama"
+
+#: ../lib/blog/blog.cpt.php:160
+msgid "Parent Blog Tag:"
+msgstr "Label Blog Utama:"
+
+#: ../lib/blog/blog.cpt.php:161
+msgid "New Tag Blog Tag"
+msgstr "Label Blog Label Baru"
+
+#: ../lib/blog/blog.cpt.php:162
+msgid "Add New Item"
+msgstr "Tambah Baru Item"
+
+#: ../lib/blog/blog.cpt.php:163
+msgid "Edit Blog Tag"
+msgstr "Ubah Label Blog"
+
+#: ../lib/blog/blog.cpt.php:164
+msgid "Update Blog Tag"
+msgstr "Perbaharui Label Blog"
+
+#: ../lib/blog/blog.cpt.php:165
+msgid "View Blog Tag"
+msgstr "Lihat Label Blog"
+
+#: ../lib/blog/blog.cpt.php:166
+msgid "Separate items with commas"
+msgstr "Pisahkan item dengan koma"
+
+#: ../lib/blog/blog.cpt.php:167
+msgid "Add or remove items"
+msgstr "Tambah atau hapus item"
+
+#: ../lib/blog/blog.cpt.php:168
+msgid "Choose from the most used"
+msgstr "Pilih dari penggunaan terbanyak"
+
+#: ../lib/blog/blog.cpt.php:169
+msgid "Popular Blog Tags"
+msgstr "Label Blog Populer"
+
+#: ../lib/blog/blog.cpt.php:170
+msgid "Search Blog Tags"
+msgstr "Cari Label Blog"
+
+#: ../lib/blog/blog.cpt.php:171
+msgid "Not Found"
+msgstr "Tidak Ditemukan"
+
+#: ../lib/blog/blog.cpt.php:172
+msgid "No items"
+msgstr "Tidak ada item"
+
+#: ../lib/blog/blog.cpt.php:173
+msgid "Blog Tags list"
+msgstr "Daftar label Blog"
+
+#: ../lib/blog/blog.cpt.php:174
+msgid "Blog Tags list navigation"
+msgstr "Navigasi daftar label Blog"
+
+#: ../lib/blog/includes/functions.php:61
+msgid "Blog Sidebar"
+msgstr "Sidebar Blog"
+
+#: ../lib/blog/includes/functions.php:63
+msgid "Add widgets for blog here."
+msgstr "Tambahkan widget untuk blog di sini."
+
+#: ../lib/blog/widgets/categories-blogs-widget.php:32
+msgid "A list or dropdown of categories blog."
+msgstr "Daftar atau dropdown kategori blog."
+
+#: ../lib/blog/widgets/categories-blogs-widget.php:35
+msgid "Categories Blog (Dlpro)"
+msgstr "Kategori Blog (Dlpro)"
+
+#: ../lib/blog/widgets/categories-blogs-widget.php:78
+msgid "Select Category"
+msgstr "Seleksi kategori"
+
+#: ../lib/blog/widgets/categories-blogs-widget.php:153
+#: ../lib/blog/widgets/recent-blogs-widget.php:436
+#: ../lib/blog/widgets/search-blogs-widget.php:104
+msgid "Title:"
+msgstr "Judul:"
+
+#: ../lib/blog/widgets/categories-blogs-widget.php:157
+msgid "Display as dropdown"
+msgstr "Tampilkan sebagai dropdown"
+
+#: ../lib/blog/widgets/categories-blogs-widget.php:160
+msgid "Show post counts"
+msgstr "Tampilkan jumlah post"
+
+#: ../lib/blog/widgets/categories-blogs-widget.php:163
+msgid "Show hierarchy"
+msgstr "Tampilkan hierarki"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:34
+msgid "Recent blogs with thumbnails widget."
+msgstr "Widget blog Terbaru dengan thumbnail."
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:36
+msgid "Recent Blogs (Dlpro)"
+msgstr "Blog Terbaru (Dlpro)"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:161
+msgid "Download "
+msgstr "Download "
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:416
+msgid "All Categories"
+msgstr "Semua Kategori"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:440
+msgid "Selected categories"
+msgstr "Seleksi kategori"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:443
+msgid ""
+"Click on the categories with pressed CTRL key to select multiple categories. "
+"If All Categories was selected then other selections will be ignored."
+msgstr ""
+"Klik pada kategori dengan tombol CTRL ditekan untuk memilih beberapa "
+"kategori. Jika semua Kategori terpilih maka pilihan lain akan diabaikan."
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:446
+msgid "Number post"
+msgstr "Jumlah pos"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:451
+msgid "One line limit title?"
+msgstr "Batasi judul 1 baris?"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:455
+msgid "Do not list the current post?"
+msgstr "Jangan masukkan pos saat ini?"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:459
+msgid "Show Meta?"
+msgstr "Tampilkan Meta?"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:463
+msgid "Show Thumbnail?"
+msgstr "Tampilkan Thumbnail?"
+
+#: ../lib/blog/widgets/recent-blogs-widget.php:466
+msgid "Banner After First Post:"
+msgstr "Iklan Setelah Pos Pertama:"
+
+#: ../lib/blog/widgets/search-blogs-widget.php:32
+msgid "Add search for blogs."
+msgstr "Tambahkan pencarian untuk blog."
+
+#: ../lib/blog/widgets/search-blogs-widget.php:35
+msgid "Search Blogs (Dlpro)"
+msgstr "Pencarian Blog (Dlpro)"
+
+#: ../lib/blog/widgets/search-blogs-widget.php:59
+msgid "Search for:"
+msgstr "Pencarian untuk:"
+
+#: ../lib/blog/widgets/search-blogs-widget.php:60
+msgid "Search blogs &hellip;"
+msgstr "Pencarian blog &hellip;"
+
+#: ../lib/blog/widgets/search-blogs-widget.php:63
+msgid "Search"
+msgstr "Cari"
+
+#: ../lib/lcs.php:6
+msgid "Congratulations, your license is active."
+msgstr "Selamat, lisensi anda aktif."
+
+#: ../lib/lcs.php:6
+msgid ""
+"You can disable license for this domain by entering the license key to the "
+"form and clicking Deactivate License"
+msgstr ""
+"Anda dapat menonaktifkan lisensi untuk domain ini dengan memasukkan kunci "
+"lisensi ke formulir dan mengklik Nonaktifkan Lisensi"
+
+#: ../lib/lcs.php:6
+msgid "Re-activation is not allowed."
+msgstr "Aktivasi ulang tidak diijinkan"
+
+#: ../lib/lcs.php:6
+msgid "Error returned from activation server."
+msgstr "Kesalahan kembali dari server aktivasi"
+
+#: ../lib/lcs.php:6
+msgid "Other Error."
+msgstr "Kesalahan Lainnya."
+
+#: ../lib/lcs.php:6
+msgid "This license not for this product."
+msgstr "Lisensi ini bukan untuk produk ini."
+
+#: ../lib/update/github-checker.php:119
+msgid "There is no changelog available."
+msgstr "Changelog tidak tersedia."
+
+#: ../lib/update/plugin-update-checker.php:763
+msgid "Check for updates"
+msgstr "Cek untuk pembaharuan"
+
+#: ../lib/update/plugin-update-checker.php:807
+msgid "This plugin is up to date."
+msgstr "Plugin sudah terbaru."
+
+#: ../lib/update/plugin-update-checker.php:809
+msgid "A new version of this plugin is available."
+msgstr "Versi terbaru plugin ini sudah tersedia."
+
+#: ../lib/update/plugin-update-checker.php:811
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Cek status pembaharuan tidak diketahui \"%s\""
+
+#~ msgid "Version: "
+#~ msgstr "Versi: "
+
+#~ msgid "System: "
+#~ msgstr "Sistem: "
+
+#~ msgid "License: "
+#~ msgstr "Lisensi: "
+
+#~ msgid ""
+#~ "Category Names, separated by commas. Eg: News, Home Design, Technology."
+#~ msgstr ""
+#~ "Nama Kategori, pisahkan dengan koma. Misal: Berita, Desain, Teknologi."
+
+#~ msgid "Maximum length of title"
+#~ msgstr "Maksimum panjang judul"
+
+#~ msgid "close"
+#~ msgstr "tutup"
+
+#~ msgid "Choose File"
+#~ msgstr "Pilih File"
+
+#~ msgid "License Key Not Found"
+#~ msgstr "Kunci Lisensi Tidak Ditemukan"
+
+#~ msgid "Note"
+#~ msgstr "Catatan"
+
+#~ msgid ""
+#~ "Please insert your own license key <a href=\"plugins.php?page=dlpro-"
+#~ "license\">here</a>."
+#~ msgstr ""
+#~ "Silahkan masukkan kunci lisensi anda sendiri <a href=\"plugins.php?"
+#~ "page=dlpro-license\">disini</a>."
+
+#~ msgid "Ads"
+#~ msgstr "Iklan"
+
+#~ msgid "Top Banner"
+#~ msgstr "Banner Atas"
+
+#~ msgid "Display ads after menu. You can add adsense or manual banner."
+#~ msgstr ""
+#~ "Menampilkan iklan setelah menu. Anda dapat menambahkan adsense atau "
+#~ "banner manual."
+
+#~ msgid "Banner Between Post"
+#~ msgstr "Iklan Diantara Pos"
+
+#~ msgid ""
+#~ "Display ads between post in index and archive page. You can add adsense "
+#~ "or manual banner."
+#~ msgstr ""
+#~ "Menampilkan iklan diantara pos pada indeks dan halaman arsip. Anda dapat "
+#~ "menambahkan adsense atau banner manual."
+
+#~ msgid "Position"
+#~ msgstr "Posisi"
+
+#~ msgid "After First Post"
+#~ msgstr "Setelah Pos Pertama"
+
+#~ msgid "After Second Post"
+#~ msgstr "Setelah Pos Kedua"
+
+#~ msgid "After Third Post"
+#~ msgstr "Setelah Pos Ketiga"
+
+#~ msgid "After Fourth Post"
+#~ msgstr "Setelah Pos Keempat"
+
+#~ msgid "Before Single Content"
+#~ msgstr "Sebelum Konten Single"
+
+#~ msgid ""
+#~ "Display ads before single content. You can add adsense or manual banner."
+#~ msgstr ""
+#~ "Menampilkan iklan sebelum konten single. Anda dapat menambahkan adsense "
+#~ "atau banner manual."
+
+#~ msgid "After Single Content"
+#~ msgstr "Setelah Konten Single"
+
+#~ msgid ""
+#~ "Display ads after single content. You can add adsense or manual banner."
+#~ msgstr ""
+#~ "Menampilkan iklan setelah konten single. Anda dapat menambahkan adsense "
+#~ "atau banner manual."
+
+#~ msgid "Alignment"
+#~ msgstr "Alinea"
+
+#~ msgid "Inside Single Content"
+#~ msgstr "Dalam Konten Single"
+
+#~ msgid ""
+#~ "Display ads inside paragraph single content. You can add adsense or "
+#~ "manual banner. Ads will not display if you have less than three paragraph "
+#~ "in your post."
+#~ msgstr ""
+#~ "Menampilkan banner pada paragraph dalam konten single anda. Anda dapat "
+#~ "menambahkan adsense atau banner manual. Iklan tidak akan ditampilkan jika "
+#~ "anda mempunya paragraph kurang dari tiga pada posting anda."
+
+#~ msgid "Floating Banner Left"
+#~ msgstr "Banner Melayang Kiri"
+
+#~ msgid ""
+#~ "Display floating banner in left side. You can add adsense or manual "
+#~ "banner. Display only on desktop."
+#~ msgstr ""
+#~ "Menampilkan banner melayang pada sisi kiri. Menampilkan banner pada "
+#~ "footer. Anda dapat menambahkan adsense atau banner manual. Ditampilkan "
+#~ "hanya pada desktop."
+
+#~ msgid "Floating Banner Right"
+#~ msgstr "Banner Melayang Kanan"
+
+#~ msgid ""
+#~ "Display floating banner in right side. You can add adsense or manual "
+#~ "banner. Display only on desktop."
+#~ msgstr ""
+#~ "Menampilkan banner melayang pada sisi kanan. Menampilkan banner pada "
+#~ "footer. Anda dapat menambahkan adsense atau banner manual. Ditampilkan "
+#~ "hanya pada desktop."
+
+#~ msgid "Floating Banner Footer"
+#~ msgstr "Banner Melayang Footer"
+
+#~ msgid ""
+#~ "Display floating banner in footer. You can add adsense or manual banner. "
+#~ "Display only on desktop."
+#~ msgstr ""
+#~ "Menampilkan banner melayang pada footer. Menampilkan banner pada footer. "
+#~ "Anda dapat menambahkan adsense atau banner manual. Ditampilkan hanya pada "
+#~ "desktop."
+
+#~ msgid "Footer Banner"
+#~ msgstr "Footer Banner"
+
+#~ msgid "Display banner in footer. You can add adsense or manual banner."
+#~ msgstr ""
+#~ "Menampilkan banner pada footer. Anda dapat menambahkan adsense atau "
+#~ "banner manual."
+
+#~ msgid ""
+#~ "Some ad place maybe conflict with Term of Use ad provider like adsense. "
+#~ "Please read TOS first before you insert the ads. Adsense TOS: https://www."
+#~ "google.com/adsense/policies. All field above support shortcode too.<br /> "
+#~ "For anti adblock, will give overlay notification, effect will cause a "
+#~ "drop visitors in your website."
+#~ msgstr ""
+#~ "Beberapa penempatan iklan mungkin konflik dengan Kebijakan Pengguna "
+#~ "penyedia iklan seperti adsense. Silahkan anda baca TOS sebelum anda "
+#~ "memasukkan iklan. Adsense TOS: https://www.google.com/adsense/policies. "
+#~ "Semua field diatas mendukung shortcode juga.<br /> Untuk anti adblock, "
+#~ "akan memberi pemeberitahuan melayang, akan berakibat jumlah pengunjung "
+#~ "menurun pada website anda."
+
+#~ msgid "No More Posts Available."
+#~ msgstr "Tidak Ada Pos Tersedia."
+
+#~ msgid "Load More"
+#~ msgstr "Muat Lebih"
+
+#~ msgid "Ajax & content"
+#~ msgstr "Ajax & Konten"
+
+#~ msgid "Enable Ajax Navigation"
+#~ msgstr "Aktifkan Navigasi Ajax"
+
+#~ msgid ""
+#~ "Check this if you want enable ajax navigation. If you using infinite "
+#~ "scroll from jetpack, please disable it, to enable this feature."
+#~ msgstr ""
+#~ "Centang ini jika anda ingin mengaktifkan navigasi ajax. Jika anda "
+#~ "menggunakan infinite scroll dari jetpack, nonaktifkan, untuk mengaktifkan "
+#~ "fitur ini."
+
+#~ msgid "Type Navigation"
+#~ msgstr "Tipe Navigasi"
+
+#~ msgid "Title Finish Text"
+#~ msgstr "Judul Teks Selesai"
+
+#~ msgid "Enter your title text for finish load."
+#~ msgstr "Masukkan judul teks anda untuk muat selesai."
+
+#~ msgid "Google Play URL:"
+#~ msgstr "URL Google Play:"
+
+#~ msgid ""
+#~ "Example: https://play.google.com/store/apps/details?id=com.lenovo."
+#~ "anyshare.gps"
+#~ msgstr ""
+#~ "Contoh: https://play.google.com/store/apps/details?id=com.lenovo.anyshare."
+#~ "gps"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Systems"
+#~ msgstr "Sistem"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "System"
+#~ msgstr "Sistem"
+
+#~ msgid "Search Systems"
+#~ msgstr "Cari Sistem"
+
+#~ msgid "Popular Systems"
+#~ msgstr "Sistem Populer"
+
+#~ msgid "All Systems"
+#~ msgstr "Semua Sistem"
+
+#~ msgid "Edit System"
+#~ msgstr "Ubah Sistem"
+
+#~ msgid "Update System"
+#~ msgstr "Perbaharui Sistem"
+
+#~ msgid "Add New System"
+#~ msgstr "Tambah Baru Sistem"
+
+#~ msgid "New System Name"
+#~ msgstr "Nama Sistem Baru"
+
+#~ msgid "Separate systems with commas"
+#~ msgstr "Pisahkan sistem dengan koma"
+
+#~ msgid "Add or remove systems"
+#~ msgstr "Tambah atau hapus sistem"
+
+#~ msgid "Choose from the most used systems"
+#~ msgstr "Pilih system dari penggunaan terbanyak"
+
+#~ msgid "No systems found."
+#~ msgstr "Sistem tidak ditemukan."
+
+#~ msgid "Systems"
+#~ msgstr "Sistem"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Licenses"
+#~ msgstr "Lisensi"
+
+#~ msgctxt "taxonomy singular name"
+#~ msgid "License"
+#~ msgstr "Lisensi"
+
+#~ msgid "Search Licenses"
+#~ msgstr "Cari Lisensi"
+
+#~ msgid "Popular Licenses"
+#~ msgstr "Lisensi popular"
+
+#~ msgid "All Licenses"
+#~ msgstr "Semua Lisensi"
+
+#~ msgid "Edit License"
+#~ msgstr "Ubah Lisensi"
+
+#~ msgid "Update License"
+#~ msgstr "Perbaharui Lisensi"
+
+#~ msgid "Add New License"
+#~ msgstr "Tambah Baru Lisensi"
+
+#~ msgid "New License Name"
+#~ msgstr "Nama Lisensi Baru"
+
+#~ msgid "Separate licenses with commas"
+#~ msgstr "Pisahkan lisensi dengan koma"
+
+#~ msgid "Add or remove licenses"
+#~ msgstr "Tambah atau hapus lisensi"
+
+#~ msgid "Choose from the most used licenses"
+#~ msgstr "Pilih lisensi dari penggunaan terbanyak"
+
+#~ msgid "No licenses found."
+#~ msgstr "Tidak ditemukan lisensi."
+
+#~ msgid "Licenses"
+#~ msgstr "Lisensi"
+
+#~ msgctxt "taxonomy general name"
+#~ msgid "Developers"
+#~ msgstr "Pengembang"
+
+#~ msgid "Search Developers"
+#~ msgstr "Cari Pengembang"
+
+#~ msgid "Popular Developers"
+#~ msgstr "Pengembang Populer"
+
+#~ msgid "All Developers"
+#~ msgstr "Semua Pengembang"
+
+#~ msgid "Edit Developer"
+#~ msgstr "Ubah Pengembang"
+
+#~ msgid "Update Developer"
+#~ msgstr "Perbaharui Pengembang"
+
+#~ msgid "Add New Developer"
+#~ msgstr "Tambah Baru Pengembang"
+
+#~ msgid "New Developer Name"
+#~ msgstr "Nama Pengembang Baru"
+
+#~ msgid "Separate developers with commas"
+#~ msgstr "Pisahkan pengembang dengan koma"
+
+#~ msgid "Add or remove developers"
+#~ msgstr "Tambah atau hapus pengembang"
+
+#~ msgid "Choose from the most used developers"
+#~ msgstr "Pilih pengembang dari penggunaan terbanyak"
+
+#~ msgid "No developers found."
+#~ msgstr "Tidak ditemukan pengembang."
+
+#~ msgid "Developers"
+#~ msgstr "Pengembang"
+
+#~ msgid "Index"
+#~ msgstr "Indeks"
+
+#~ msgid "Searching for:"
+#~ msgstr "Pencarian untuk:"
+
+#~ msgid "No title"
+#~ msgstr "Tidak ada judul"
+
+#~ msgid "Related posts:"
+#~ msgstr "Posting terkait:"
+
+#~ msgid "Permalink to: "
+#~ msgstr "Permalink ke: "
+
+#~ msgid "Share this"
+#~ msgstr "Sebarkan ini"
+
+#~ msgid "Sharer"
+#~ msgstr "Sebarkan"
+
+#~ msgid "Tweet this"
+#~ msgstr "Twit ini"
+
+#~ msgid "Tweet"
+#~ msgstr "Twit"
+
+#~ msgid "WhatsApp"
+#~ msgstr "WhatsApp"
+
+#~ msgid "Author Box"
+#~ msgstr "Kotak Penulis"
+
+#~ msgid "Related Post"
+#~ msgstr "Pos Terkait"
+
+#~ msgid "Breadcrumbs"
+#~ msgstr "Breadcrumb"
+
+#~ msgid "Social"
+#~ msgstr "Sosial"
+
+#~ msgid "Other"
+#~ msgstr "Lainnya"
+
+#~ msgid "Enable Author Box"
+#~ msgstr "Aktifkan Kotak Penulis"
+
+#~ msgid "Check this if you want enable author box in single post."
+#~ msgstr "Cek disini untuk mengaktifkan kotak penulis di single pos."
+
+#~ msgid "Username Color"
+#~ msgstr "Warna Nama Pengguna"
+
+#~ msgid "Description Color"
+#~ msgstr "Warna Deskripsi"
+
+#~ msgid "Website Color"
+#~ msgstr "Warna Situs"
+
+#~ msgid ""
+#~ "If you want add in your own place, you can using this action: "
+#~ "<strong>do_action( 'dlpro_core_author_box' );</strong> or you can remove "
+#~ "action and add your own function."
+#~ msgstr ""
+#~ "Jika anda ingin menambahkan tempat anda sendiri, anda dapat menggunakan "
+#~ "aksi ini: <strong>do_action( 'dlpro_core_author_box' );</strong> atau "
+#~ "anda dapat menghapus aksi dan menambahkan fungsi anda sendiri."
+
+#~ msgid "Enable related post"
+#~ msgstr "Aktifkan pos terkait"
+
+#~ msgid "Check this if you want enable related post in single post."
+#~ msgstr "Cek disini jika anda ingin mengaktifkan pos terkait di single pos."
+
+#~ msgid "How much number post want to display on related post."
+#~ msgstr ""
+#~ "Berapa banyak jumlah posting yang ingin ditampilkan pada posting terkait."
+
+#~ msgid "Taxonomy"
+#~ msgstr "Taksonomi"
+
+#~ msgid "Choice related post by tags or category"
+#~ msgstr "Pilih pos terkait berdasarkan tag atau kategori"
+
+#~ msgid ""
+#~ "This recent post support jetpack too. If you want change this related "
+#~ "post with jetpack, just install jetpack and activated module Related "
+#~ "Posts For Jetpack. Display using <strong>add_filter( 'the_content', "
+#~ "'dlpro_core_add_related_the_content', 40 );</strong>"
+#~ msgstr ""
+#~ "Posting terkait ini mendukung jetpack juga. Jika anda ingin menganti "
+#~ "posting terkait ini dengan jetpack, cukup pasang jetpack dan aktifkan "
+#~ "module Related Posts For Jetpack. Ditampilkan menggunakan "
+#~ "<strong>add_filter( 'the_content', 'dlpro_core_add_related_the_content', "
+#~ "40 );</strong>"
+
+#~ msgid "Enable breadcrumbs"
+#~ msgstr "Aktifkan breadcrumb"
+
+#~ msgid "Check this if you want enable breadcrumbs."
+#~ msgstr "Centang ini jika anda ingin mengaktifkan breadcrumb."
+
+#~ msgid "Homepage Text"
+#~ msgstr "Teks halaman beranda"
+
+#~ msgid "Blog Text"
+#~ msgstr "Teks blog"
+
+#~ msgid "Display only if you using blog page."
+#~ msgstr "Tampilkan hanya jika anda menggunakan halaman blog."
+
+#~ msgid "404 Error Text"
+#~ msgstr "Teks Kesalahan 404"
+
+#~ msgid ""
+#~ "This breadcrumbs support breadcrumb navxt or yoast breadcrumb too. If you "
+#~ "want change this breadcrumb with that plugin, just install plugin "
+#~ "breadcrumb navxt or wordpress SEO by seo. Display using "
+#~ "<strong>do_action( 'dlpro_core_view_breadcrumbs' );</strong>"
+#~ msgstr ""
+#~ "Breadcrumb ini mendukung breadcrumb NavXT atau breadcrumb Yoast juga. "
+#~ "Jika Anda ingin mengubah breadcrumb ini dengan plugin tersebut, hanya "
+#~ "menginstal plugin NavXT breadcrumb atau SEO wordpress. Tampilan "
+#~ "menggunakan <strong>do_action ('dlpro_core_view_breadcrumbs');</strong>"
+
+#~ msgid "Enable social share"
+#~ msgstr "Aktifkan sebarkan sosial"
+
+#~ msgid "Check this if you want enable social share in single post."
+#~ msgstr ""
+#~ "Centang ini jika anda ingin mengaktifkan sebarkan sosial di pos single."
+
+#~ msgid "Facebook App ID"
+#~ msgstr "Facebook App ID"
+
+#~ msgid ""
+#~ "Enter your facebook App ID here, some function require app ID, better if "
+#~ "you fill your own, or you can using default app ID from plugin."
+#~ msgstr ""
+#~ "Masukkan facebook App ID anda disini, beberapa fungsi mewajibkan app ID, "
+#~ "lebih baik jika anda menggunakan app ID sendiri, atau anda dapat "
+#~ "menggunakan app ID dari plugin."
+
+#~ msgid "Username Twitter"
+#~ msgstr "Nama pengguna Twitter"
+
+#~ msgid "Enter your Username Twitter Without @."
+#~ msgstr "Masukkan nama pengguna Twitter tanpa @."
+
+#~ msgid "Enable Facebook Comment"
+#~ msgstr "Aktifkan Komentar Facebook"
+
+#~ msgid ""
+#~ "Check this Facebook Comment, if you check this default comment will "
+#~ "replace with Facebook Comment."
+#~ msgstr ""
+#~ "Centang ini, jika anda mencentang ini komentar default akan di replace "
+#~ "dengan Komentar Facebook."
+
+#~ msgid "Facebook Pixel ID"
+#~ msgstr "Facebook Pixel ID"
+
+#~ msgid ""
+#~ "If you want adding Facebook Conversion Pixel code to WordPress sites, "
+#~ "enter your facebook pixel ID here or you can add complate code via Head "
+#~ "Script."
+#~ msgstr ""
+#~ "If anda ingin menambahkan kode konversi Facebook Pixel ke situs "
+#~ "WordPress, masukkan Facebook pixel ID anda disini atau anda dapat "
+#~ "menambahkan kode lengkap via opsi Head Script."
+
+#~ msgid "Google Analytics Code"
+#~ msgstr "Kode Google Analytics"
+
+#~ msgid ""
+#~ "Enter your Google Analytics code (Ex: UA-XXXXX-X) or you can add complate "
+#~ "code via Footer Script."
+#~ msgstr ""
+#~ "Masukkan kode Google Analytics anda (Contoh: UA-XXXXX-X) atau anda dapat "
+#~ "menambahkan kode lengkap lewat opsi Footer Script."
+
+#~ msgid "Head script"
+#~ msgstr "Script Head"
+
+#~ msgid ""
+#~ "These scripts will be printed in the <code>&lt;head&gt;</code> section."
+#~ msgstr "Script ini akan ditampilkan pada bagian <code>&lt;head&gt;</code>."
+
+#~ msgid "Footer script"
+#~ msgstr "Script Footer"
+
+#~ msgid ""
+#~ "These scripts will be printed above the <code>&lt;/body&gt;</code> tag."
+#~ msgstr "Script ini akan di tampilkan diatas tag <code>&lt;/body&gt;</code>."
+
+#~ msgid "Remove Emoji Script"
+#~ msgstr "Hapus skrip emoji"
+
+#~ msgid ""
+#~ "Check this if you want remove emoji script from <code>&lt;head&gt;</code> "
+#~ "section. This can improve your web performance."
+#~ msgstr ""
+#~ "Centang ini jika anda menghapus skrip emoji dari bagian <code>&lt;head&gt;"
+#~ "</code> section. Ini akan meningkatkan performa website anda."
+
+#~ msgid "Remove Script Version"
+#~ msgstr "Nonaktifkan Versi Skrip"
+
+#~ msgid ""
+#~ "Check this if you want remove script version from JS and CSS. This can "
+#~ "improve your web performance."
+#~ msgstr ""
+#~ "Centang ini jika anda ingin menghapus versi skrip dari JS dan CSS. Ini "
+#~ "dapat meningkatkan performa website anda."
+
+#~ msgid "Remove Jquery Migrate"
+#~ msgstr "Hapus Jquery Migrate"
+
+#~ msgid ""
+#~ "Check this if you want remove jquery migrate, if this conflict with some "
+#~ "plugin please do not activated. This can improve your web performance."
+#~ msgstr ""
+#~ "Centang ini jika anda ingin menghapus jquery migrate, jika terjadi "
+#~ "konflik dengan beberapa plugin jangan diaktifkan. Fitur ini dapat "
+#~ "meningkatkan kinerja web Anda."
+
+#~ msgid "Remove WP Oembed"
+#~ msgstr "Hapus WP Oembed"
+
+#~ msgid ""
+#~ "Check this if you want remove wp oembed feature, if this conflict with "
+#~ "some plugin please do not activated. This can improve your web "
+#~ "performance."
+#~ msgstr ""
+#~ "Centang ini jika anda ingin menghapus fitur wp oembed, jika terjadi "
+#~ "konflik dengan beberapa plugin jangan diaktifkan. Fitur ini dapat "
+#~ "meningkatkan kinerja web Anda."
+
+#~ msgid "Remove WP Head Meta Tag"
+#~ msgstr "Hapus WP Head Meta Tag"
+
+#~ msgid ""
+#~ "Check this if you want remove wp head meta tag, if this conflict with "
+#~ "some plugin please do not activated. This option can remove wp meta tag "
+#~ "generator, rds, wlwmanifest, feed links, shortlink, comments feed so your "
+#~ "head tag look simple and hope can fast your index."
+#~ msgstr ""
+#~ "Centang ini jika anda ingin menghapus wp head meta tag, jika terjadi "
+#~ "konflik dengan plugin silahkan jangan diaktifkan. Opsi ini dapat "
+#~ "menghapus wp meta tag generator, rds, wlwmanifest, feed links, shortlink, "
+#~ "feed komentar sehingga tag head anda terlihat simple dan semoga dapat "
+#~ "mempercepat indeks anda."
+
+#~ msgid "Remove data uninstaller"
+#~ msgstr "Hapus data ketika uninstal"
+
+#~ msgid ""
+#~ "Check this if you want remove data from database when plugin is uninstall."
+#~ msgstr ""
+#~ "Cek ini jika anda ingin menghapus dari dari database ketika plugin di "
+#~ "uninstall."
+
+#~ msgid "Add simple custom subscribe form in your widget."
+#~ msgstr "Menambahkan simple kustom subscribe form di widget anda."
+
+#~ msgid "Custom Subscribe Form (Dlpro)"
+#~ msgstr "Kustom Subscribe Form (Dlpro)"
+
+#~ msgid "Action URL *(Required)"
+#~ msgstr "Action URL *(Wajib)"
+
+#~ msgid ""
+#~ "For example, you get form code with &lt;form action=\"http://example.com/"
+#~ "subscribeform\" method=\"post\"&gt; just fill with http://example.com/"
+#~ "subscribeform"
+#~ msgstr ""
+#~ "Sebagai contoh, anda bias mendapatkan kode dengan &lt;form action="
+#~ "\"http://example.com/subscribeform\" method=\"post\"&gt; cukup isi dengan "
+#~ "http://example.com/subscribeform"
+
+#~ msgid "Select Method:"
+#~ msgstr "Pilih Metode:"
+
+#~ msgid "post"
+#~ msgstr "post"
+
+#~ msgid "get"
+#~ msgstr "get"
+
+#~ msgid "Enable Full Name Field"
+#~ msgstr "Aktifkan Kotak Isian Nama"
+
+#~ msgid "Enable Email Field"
+#~ msgstr "Aktifkan Email Field"
+
+#~ msgid "Hidden Input:"
+#~ msgstr "Hidden Input:"
+
+#~ msgid ""
+#~ "Fill with hidden field for example &lt;input name=\"hidden_name1\" type="
+#~ "\"hidden\" value=\"hidden_value1\" /&gt;&lt;input name=\"hidden_name2\" "
+#~ "type=\"hidden\" value=\"hidden_value2\" /&gt;"
+#~ msgstr ""
+#~ "Isi dengan bidang tersembunyi misalnya &lt;input name=\"hidden_name1\" "
+#~ "type=\"hidden\" value=\"hidden_value1\" /&gt;&lt;input name="
+#~ "\"hidden_name2\" type=\"hidden\" value=\"hidden_value2\" /&gt;"
+
+#~ msgid "Other Input:"
+#~ msgstr "Input Lainnya:"
+
+#~ msgid ""
+#~ "Fill with other field if you need other input for your subscribe form. "
+#~ "For example &lt;input name=\"city\" type=\"text\" placeholder=\"Enter "
+#~ "your city\" value=\"\" /&gt;&lt;input name=\"age\" type=\"text\" "
+#~ "placeholder=\"Enter your age\" value=\"\" /&gt;"
+#~ msgstr ""
+#~ "Isi dengan bidang lain jika Anda membutuhkan input lain untuk formulir "
+#~ "berlangganan Anda. Sebagai contoh &lt;input name=\"city\" type=\"text\" "
+#~ "placeholder=\"Enter your city\" value=\"\" /&gt;&lt;input name=\"age\" "
+#~ "type=\"text\" placeholder=\"Enter your age\" value=\"\" /&gt;"
+
+#~ msgid "Force Input 100%"
+#~ msgstr "Paksa Input 100%"
+
+#~ msgid "Placeholder For Name Field"
+#~ msgstr "Placeholder untuk kotak isian nama"
+
+#~ msgid "Placeholder For Email Address Field"
+#~ msgstr "Placeholder untuk kotak isian Alamat Email"
+
+#~ msgid "Submit Button Text"
+#~ msgstr "Teks tombol submit"
+
+#~ msgid "Intro Text:"
+#~ msgstr "Teks Intro:"
+
+#~ msgid "Spam Text:"
+#~ msgstr "Text Spam:"
+
+#~ msgid "Background Color"
+#~ msgstr "Warna Latar"
+
+#~ msgid "Text Color"
+#~ msgstr "Warna Text"
+
+#~ msgid "Button Text Color"
+#~ msgstr "Warna teks tombol"
+
+#~ msgid "Button Background Color"
+#~ msgstr "Warna latar tombol"
+
+#~ msgid "Add simple feedburner form in your widget."
+#~ msgstr "Menambahkan simple feedburner form di widget anda."
+
+#~ msgid "Feedburner Form (Dlpro)"
+#~ msgstr "Feedburner Form (Dlpro)"
+
+#~ msgid "Feedburner ID *(Required)"
+#~ msgstr "Feedburner ID *(Wajib)"
+
+#~ msgid ""
+#~ "Example: gianmr for https://feeds.feedburner.com/gianmr feed address."
+#~ msgstr ""
+#~ "Contoh: gianmr untuk alamat feed https://feeds.feedburner.com/gianmr."
+
+#~ msgid "Most view Softwares with thumbnails widget."
+#~ msgstr "Widget Software paling banyak dilihat dengan thumbnail."
+
+#~ msgid "Most view Softwares (Dlpro)"
+#~ msgstr "Software paling banyak dilihat (Dlpro)"
+
+#~ msgid "Selected tags"
+#~ msgstr "Seleksi label"
+
+#~ msgid "Tag Names, separated by commas. Eg: Tag 1, Tag 2, etc."
+#~ msgstr ""
+#~ "Nama Label, pisahkan dengan koma. Misal: Tag 1, Tag 2, dan lain "
+#~ "sebagainya."
+
+#~ msgid "Popular range:"
+#~ msgstr "Rentang popular:"
+
+#~ msgid "Alltime"
+#~ msgstr "Semua waktu"
+
+#~ msgid "1 Year"
+#~ msgstr "1 Tahun"
+
+#~ msgid "2 Mounts"
+#~ msgstr "2 Bulan"
+
+#~ msgid "1 Mount"
+#~ msgstr "1 Bulan"
+
+#~ msgid "7 Days"
+#~ msgstr "7 Hari"
+
+#~ msgid "Select popular by most view."
+#~ msgstr "Pilih popular berdasarkan paling banyak dilihat."
+
+#~ msgid "Show Comments Number?"
+#~ msgstr "Tampilkan Jumlah Komentar?"
+
+#~ msgid "Show View Count?"
+#~ msgstr "Tampilkan jumlah dilihat?"
+
+#~ msgid "Recent Softwares with thumbnails widget."
+#~ msgstr "Widget Software Terbaru dengan thumbnail."
+
+#~ msgid "Recent Softwares (Dlpro)"
+#~ msgstr "Software Terbaru (Dlpro)"
+
+#~ msgid "Please disable your adblock for read our content."
+#~ msgstr "Silahkan nonaktifkan adblock anda untuk membaca konten kami."
+
+#~ msgid "No results"
+#~ msgstr "Tidak ada hasil"
+
+#~ msgid "Author"
+#~ msgstr "Penulis"
+
+#~ msgid "Archive"
+#~ msgstr "Arsip"
+
+#~ msgid "Add +1"
+#~ msgstr "Tambah +1"
+
+#~ msgid "Enable Adblock"
+#~ msgstr "Aktifkan Adblock"
+
+#~ msgid ""
+#~ "Check this if you want enable anti adblock. Anti adblock will display "
+#~ "overlay notification when your visitor enable adblock for your website."
+#~ msgstr ""
+#~ "Cek ini jika anda ingin mengaktifkan anti adblock. Anti adblock akan "
+#~ "menampilkan pemberitahuan ketika pengunjung anda mengaktifkan adblock "
+#~ "pada situs anda."
+
+#~ msgid "Adblock Message"
+#~ msgstr "Pesan Adblock"
+
+#~ msgid "Insert message in your anti adblock."
+#~ msgstr "Masukkan pesan pada anti adblock anda."
+
+#~ msgid "Enable opengraph"
+#~ msgstr "Aktifkan opengraph"
+
+#~ msgid ""
+#~ "Check this if you want enable Open Graph metadata to your posts and pages "
+#~ "so that they look great when shared on sites like Twitter, Facebook and "
+#~ "Google+."
+#~ msgstr ""
+#~ "Centang ini jika anda ingin mengkatifkan Open Graph metadata untuk pos "
+#~ "dan halaman anda, dan membuatnya terlihat bagus ketika disebarkan pada "
+#~ "situs seperti Twitter, Facebook dan Google+."
+
+#~ msgid "Check this if you want enable twitter:creator meta."
+#~ msgstr "Centang ini jika anda ingin mengaktifkan meta twitter:creator."
+
+#~ msgid ""
+#~ "This social support jetpack too. If you want change this share post with "
+#~ "jetpack, just install jetpack and activated module Sharedaddy For "
+#~ "Jetpack, sharedaddy will automatically replace default social share. "
+#~ "Display using <strong>add_filter( 'the_content', "
+#~ "'dlpro_core_add_share_the_content', 30 );</strong>. If you activated "
+#~ "opengraph, opengraph from jetpack will disappear. So if you want using "
+#~ "jetpack open graph, you can disable this opengraph. If you using another "
+#~ "opengraph plugin, please disable opengraph. Do not using opengraph plugin "
+#~ "more then one. Opengraph display using <strong>add_action( 'wp_head', "
+#~ "'dlpro_opengraph_meta_tags', 1 );</strong>"
+#~ msgstr ""
+#~ "Sosial ini mendukung jetpack juga. Jika anda ingin mengubah posting "
+#~ "berbagi ini dengan jetpack, tinggal install jetpack dan aktifkan modul "
+#~ "Sharedaddy Untuk Jetpack, sharedaddy otomatis akan menggantikan standar "
+#~ "sebarkan sosial. Tampilan menggunakan <strong>add_filter ('the_content', "
+#~ "'dlpro_core_add_share_the_content', 30);</strong>. Jika anda mengaktifkan "
+#~ "OpenGraph, OpenGraph dari jetpack akan hilang. Jadi jika anda ingin "
+#~ "menggunakan opengraph jetpack, anda dapat menonaktifkan OpenGraph ini. "
+#~ "Jika anda menggunakan plugin OpenGraph lain, nonaktifkan OpenGraph ini. "
+#~ "Jangan menggunakan OpenGraph Plugin lebih dari satu. OpenGraph "
+#~ "ditampilkan menggunakan <strong>add_action('wp_head', "
+#~ "'dlpro_opengraph_meta_tags', 1);</strong>"
+
+#~ msgid "Enable Ajax Search"
+#~ msgstr "Aktifkan Pencarian Ajax"
+
+#~ msgid "Check this if you want enable ajax in search form."
+#~ msgstr "Centang ini jika anda ingin mengaktifkan ajax pada form pencarian."
+
+#~ msgid "Add simple aweber form in your widget."
+#~ msgstr "Tambahkan simple form aweber di widget anda."
+
+#~ msgid "Aweber Form (Dlpro)"
+#~ msgstr "Aweber Form (Dlpro)"
+
+#~ msgid "Aweber List ID *(Required)"
+#~ msgstr "Aweber List ID *(Wajib)"
+
+#~ msgid ""
+#~ "Input Unique List ID <a target=\"_blank\" href=\"https://help.aweber.com/"
+#~ "hc/en-us/articles/204028426-What-Is-The-Unique-List-ID-\">Click Here to "
+#~ "see where to find it.</a>"
+#~ msgstr ""
+#~ "Masukkan List ID unik <a target=\"_blank\" href=\"https://help.aweber.com/"
+#~ "hc/en-us/articles/204028426-What-Is-The-Unique-List-ID-\">Untuk melihat "
+#~ "bagaimana cara mencarinya.</a>"
+
+#~ msgid "Link to the Thank you page"
+#~ msgstr "Link ke halaman terima kasih"
+
+#~ msgid "Leave empty if you want to use Aweber's default thank you page."
+#~ msgstr ""
+#~ "Biarkan kosong jika anda ingin menggunakan halaman terima kasih bawaan "
+#~ "Aweber."
+
+#~ msgid "Redirect URL"
+#~ msgstr "URL Redirect"
+
+#~ msgid "Redirect Already Subscribed Users to Following URL."
+#~ msgstr "Mengarahkan Pengguna Yang Sudah Berlangganan pada URL."
+
+#~ msgid "Add simple getresponse form in your widget."
+#~ msgstr "Menambahkan simple getresponse form di widget anda."
+
+#~ msgid "Getresponse Form (Dlpro)"
+#~ msgstr "Getresponse Form (Dlpro)"
+
+#~ msgid "Getresponse Campaign Token *(Required)"
+#~ msgstr "Getresponse Campaign Token *(Wajib)"
+
+#~ msgid ""
+#~ "Getresponse Campaign Token <a target=\"_blank\" href=\"https://support."
+#~ "getresponse.com/faq/how-do-i-create-html-web-form-code-from-scratch"
+#~ "\">Click Here to see where to find it.</a>"
+#~ msgstr ""
+#~ "Getresponse Campaign Token <a target=\"_blank\" href=\"https://support."
+#~ "getresponse.com/faq/how-do-i-create-html-web-form-code-from-scratch"
+#~ "\">Klik disini untuk melihat bagaimana cara mendapatkannya.</a>"
+
+#~ msgid "Leave empty if you want to use Getresponse's default thank you page."
+#~ msgstr ""
+#~ "Biarkan kosong jika anda ingin menggunakan halaman terima kasih bawaan "
+#~ "Getresponse."
+
+#~ msgid "Add simple mailchimp form in your widget."
+#~ msgstr "Menambahkan simple mailchimp form di widget anda."
+
+#~ msgid "Mailchimp Form (Dlpro)"
+#~ msgstr "Mailchimp Form (Dlpro)"
+
+#~ msgid "Mailchimp Action URL *(Required)"
+#~ msgstr "Mailchimp Action URL *(Wajib)"
+
+#~ msgid ""
+#~ "Mailchimp Action URL <a target=\"_blank\" href=\"https://help.shopify.com/"
+#~ "themes/customization/communication/get-a-mailchimp-form-action-url"
+#~ "\">Click Here to see where to find it.</a>"
+#~ msgstr ""
+#~ "Mailchimp Action URL <a target=\"_blank\" href=\"https://help.shopify.com/"
+#~ "themes/customization/communication/get-a-mailchimp-form-action-url\">Klik "
+#~ "disini untuk melihat bagaimana cara mendapatkannya.</a>"
+
+#~ msgid ""
+#~ "Display ads on right side logo. You can add adsense or manual banner."
+#~ msgstr ""
+#~ "Menambilkan iklan pada sisi kanan logo. Anda dapat menambahkan adsense "
+#~ "atau banner manual."
+
+#~ msgid "Top Banner After Menu"
+#~ msgstr "Banner Atas Setelah Menu"
+
+#~ msgid "Aweber Form (Idblog)"
+#~ msgstr "Aweber Form (Idblog)"
+
+#~ msgid "Custom Subscribe Form (Idblog)"
+#~ msgstr "Custom Subscribe Form (Idblog)"
+
+#~ msgid "Feedburner Form (Idblog)"
+#~ msgstr "Feedburner Form (Idblog)"
+
+#~ msgid "Getresponse Form (Idblog)"
+#~ msgstr "Getresponse Form (Idblog)"
+
+#~ msgid "Mailchimp Form (Idblog)"
+#~ msgstr "Mailchimp Form (Idblog)"
+
+#~ msgid "By"
+#~ msgstr "Oleh"
+
+#~ msgid "Maximum length of excerpt"
+#~ msgstr "Maksimuma panjang kutipan"
+
+#~ msgid "Signs after excerpt"
+#~ msgstr "Tanda setelah kutipan"
+
+#~ msgid "Show author?"
+#~ msgstr "Tampilkan penulis?"
+
+#~ msgid "Show Categories?"
+#~ msgstr "Tampilkan Kategori?"
+
+#~ msgid "Show Excerpt?"
+#~ msgstr "Tampilkan Kutipan?"
+
+#~ msgid "Link Color"
+#~ msgstr "Warna Link"
+
+#~ msgid "Meta Color"
+#~ msgstr "Warna Meta"
+
+#~ msgid "Error on listing categories"
+#~ msgstr "Kesalahan dalam mendaftar kategori"
+
+#~ msgid "In"
+#~ msgstr "Di"
+
+#~ msgid "Recent Posts (Idblog)"
+#~ msgstr "Posting Terbaru (Idblog)"
+
+#~ msgid "Close"
+#~ msgstr "Tutup"
+
+#~ msgid "Related Posts"
+#~ msgstr "Posting Terkait"
+
+#~ msgid "Homepage"
+#~ msgstr "Beranda"
+
+#~ msgid "404 Not found"
+#~ msgstr "404 Tidak ditemukan"
+
+#~ msgid "Mobile"
+#~ msgstr "Mobile"
+
+#~ msgid "Enable Mobile Theme"
+#~ msgstr "Aktifkan Tema Mobile"
+
+#~ msgid "Mobile subdomain"
+#~ msgstr "Subdomain Mobile"
+
+#~ msgid ""
+#~ "Your website will redirect in this subdomain. Please fill with complate "
+#~ "subdomain ex: http://m.domain.com"
+#~ msgstr ""
+#~ "Website anda akan redirect ke subdomain ini. Silahkan isi dengan "
+#~ "subdomain lengkap misal: http://m.domain.com"
+
+#~ msgid ""
+#~ "Please select mobile theme, please upload your mobile theme and select "
+#~ "here."
+#~ msgstr ""
+#~ "Silahkan seleksi tema mobile, silahkan update tema mobile anda dan "
+#~ "seleksi disini."
+
+#~ msgid "Permalink to"
+#~ msgstr "Permalink ke"
+
+#~ msgid "Documentation"
+#~ msgstr "Dokumentasi"
+
+#~ msgid "Home Docs Per Page"
+#~ msgstr "Dok Tiap Halaman Beranda"
+
+#~ msgid "Number of articles to show in documentations home page."
+#~ msgstr "Jumlah artikel yang ditampilkan pada halaman beranda dokumentasi."
+
+#~ msgid "Docs Per Page"
+#~ msgstr "Dok Tiap Halaman"
+
+#~ msgid "Number of articles to show in each page"
+#~ msgstr "Jumlah artikel yang ditampilkan di tiap halaman"
+
+#~ msgid "Check documentation home page sidebar"
+#~ msgstr "Cek dokumentasi sidebar halaman beranda"
+
+#~ msgid "Inner pages sidebar"
+#~ msgstr "Dalam sidebar halaman"
+
+#~ msgid "Check documentation inner pages sidebar except home page"
+#~ msgstr "Cek dokumentasi di dalam sidebar halaman kecuali halaman beranda"
+
+#~ msgid "All Documentations"
+#~ msgstr "Semua dokumentasi"
+
+#~ msgid "View Documentation"
+#~ msgstr "Lihat dokumentasi"
+
+#~ msgid "Add Documentation"
+#~ msgstr "Tambahkan Dokumentasi"
+
+#~ msgid "Edit Documentation"
+#~ msgstr "Ubah Dokumentasi"
+
+#~ msgid "Update Documentation"
+#~ msgstr "Perbaharui Dokumentasi"
+
+#~ msgid "Search Documentation"
+#~ msgstr "Cari Dokumentasi"
+
+#~ msgid "Not documentation found"
+#~ msgstr "Dokumentasi tidak ditemukan"
+
+#~ msgid "Categories"
+#~ msgstr "Kategori"
+
+#~ msgid "Tags"
+#~ msgstr "Label"
+
+#~ msgid "articles"
+#~ msgstr "artikel"
+
+#~ msgid "No Documentation"
+#~ msgstr "Tidak ada dokumentasi"
+
+#~ msgid "Nothing Found"
+#~ msgstr "Tidak Ditemukan"
+
+#~ msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Baca selengkapnya %s <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Add category for documentation."
+#~ msgstr "Tambahkan kategori untuk dokumentasi."
+
+#~ msgid "Add recent documentation."
+#~ msgstr "Tambahkan dokumentasi terbaru."
+
+#~ msgid "Recent documentation (Salespro)"
+#~ msgstr "Dokumentasi terbaru (Salespro)"
+
+#~ msgid "Add related documentation, this only show in single documentation."
+#~ msgstr ""
+#~ "Tambahkan dokumentasi terkait, ini hanya ditampilkan pada single "
+#~ "dokumentasi."
+
+#~ msgid "Related documentation (Salespro)"
+#~ msgstr "Dokumentasi terkait (Salespro)"
+
+#~ msgid "Search documentation (Salespro)"
+#~ msgstr "Pencarian dokumentasi (Salespro)"
+
+#~ msgid "Optin Form"
+#~ msgstr "Form Optin"
+
+#~ msgid "Form"
+#~ msgstr "Form"
+
+#~ msgid "Form Method"
+#~ msgstr "Form Method"
+
+#~ msgid "Post"
+#~ msgstr "Post"
+
+#~ msgid "Get"
+#~ msgstr "Get"
+
+#~ msgid "Form Action"
+#~ msgstr "Form Action"
+
+#~ msgid "Form Name"
+#~ msgstr "Form Name"
+
+#~ msgid "Form ID"
+#~ msgstr "Form ID"
+
+#~ msgid "Form Class"
+#~ msgstr "Form Class"
+
+#~ msgid "Form accept-charset"
+#~ msgstr "Form accept-charset"
+
+#~ msgid "Form enctype"
+#~ msgstr "Form enctype"
+
+#~ msgid "Input"
+#~ msgstr "Input"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "name"
+#~ msgstr "name"
+
+#~ msgid "text"
+#~ msgstr "text"
+
+#~ msgid "Email Address"
+#~ msgstr "Alamat Email"
+
+#~ msgid "email"
+#~ msgstr "email"
+
+#~ msgid "thankyou_url"
+#~ msgstr "thankyou_url"
+
+#~ msgid "hidden"
+#~ msgstr "hidden"
+
+#~ msgid "submit"
+#~ msgstr "submit"
+
+#~ msgid "Subscribe Now"
+#~ msgstr "Berlangganan Sekarang"
+
+#~ msgid "Input Type"
+#~ msgstr "Input Type"
+
+#~ msgid "Input Placeholder"
+#~ msgstr "Input Placeholder"
+
+#~ msgid "Input Name"
+#~ msgstr "Input Name"
+
+#~ msgid "Input Value"
+#~ msgstr "Input Value"
+
+#~ msgid "Input Class"
+#~ msgstr "Input Class"
+
+#~ msgid "Input ID"
+#~ msgstr "Input ID"
+
+#~ msgid "View"
+#~ msgstr "Tampilkan"
+
+#~ msgid "Left"
+#~ msgstr "Kiri"
+
+#~ msgid "Center"
+#~ msgstr "Tengah"
+
+#~ msgid "Right"
+#~ msgstr "Kanan"
+
+#~ msgid "Display"
+#~ msgstr "Display"
+
+#~ msgid "Block"
+#~ msgstr "Block"
+
+#~ msgid "Inline"
+#~ msgstr "Inline"
+
+#~ msgid "Typography"
+#~ msgstr "Typography"
+
+#~ msgid "Border"
+#~ msgstr "Border"
+
+#~ msgid "Border Radius"
+#~ msgstr "Border Radius"
+
+#~ msgid "Input Padding"
+#~ msgstr "Input Padding"
+
+#~ msgid "Input Margin"
+#~ msgstr "Input Margin"
+
+#~ msgid "Input Submit (button)"
+#~ msgstr "Input Submit (tombol)"
+
+#~ msgid "Input Submit (button) Hover"
+#~ msgstr "Input Submit (tombol) Sorot"
+
+#~ msgid "Border Color"
+#~ msgstr "Warna Border"
+
+#~ msgid "Related Docs"
+#~ msgstr "Dok terkait"
