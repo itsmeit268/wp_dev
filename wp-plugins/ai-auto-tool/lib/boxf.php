@@ -21,6 +21,9 @@ class AutoToolBox {
     }
 
     public function generateHTML() {
+        ?>
+        
+        <?php
         $new_badge = '<div class="aiautotool_box_f_new-badge">New</div>';
         $box_head = '<div class="aiautotool_box_f_box-head wave wave-animate-fast wave-success"><img src="'.$this->img.'" width="16px" height="16px" /></div>';
         $box_content = '
@@ -108,7 +111,7 @@ class AutoToolBox {
         ';
 
         $html = '
-        <div class="aiautotool_box_f_box">
+        <div class="aiautotool_box_f_box ">
             ' . $new_badge . '
             ' . $box_head . '
             ' . $box_content . '

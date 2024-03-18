@@ -1300,9 +1300,6 @@ jQuery(document).ready(function ($) {
 });
 
 
-// form submit
-
-// script.js
 
 
 jQuery(document).ready(function ($) {
@@ -1487,7 +1484,8 @@ function sendTextToServer(text, divId,option,lang) {
             text: text,
             option:option,
             language: lang,
-            hostname:hostname
+            hostname:hostname,
+            info:ajax_object.fsdata
           };
           showProcess();
           // Gửi dữ liệu lên máy chủ
@@ -1513,9 +1511,13 @@ function sendbardToServer(text, divId,option,lang) {
         
         return;
     }
+
+
     var dataToSend = {
       question: text,
-      lang: lang
+      lang: lang,
+      hostname:hostname,
+      info:ajax_object.fsdata
     };
     var jsonData = JSON.stringify(dataToSend);
     showProcess();
@@ -1626,7 +1628,9 @@ function sendbardToServerrewrite(text, divId,option,lang,tone='') {
     var dataToSend = {
       question: text,
       lang: lang,
-      toneOfVoice:tone
+      toneOfVoice:tone,
+      domain:ajax_object.fsdata.domain,
+      info:ajax_object.fsdata
     };
     var jsonData = JSON.stringify(dataToSend);
    jQuery.ajax({

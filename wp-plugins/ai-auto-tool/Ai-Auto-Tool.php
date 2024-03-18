@@ -4,7 +4,7 @@ Plugin Name: Ai Auto Tool Content Writing Assistant (Gemini Bard Writer, ChatGPT
 Plugin URI: https://aiautotool.com
 Description: The AI Auto Tool Plugin is a powerful tool that automates various tasks for effortless content creation and management.
 Author: KCT
-Version: 1.9.1
+Version: 1.9.2
 Author URI: https://aiautotool.com
 License: GPL2
 */
@@ -12,13 +12,17 @@ License: GPL2
 defined( 'ABSPATH' ) || exit;
 define( 'MENUSUBPARRENT','ai_auto_tool' );
 define('AIAUTOTOOL_URI', plugin_dir_url( __FILE__ ));
-define('AIAUTOTOOL_VS', '1.9.1');
+define('AIAUTOTOOL_VS', '1.9.2');
 
 define('AIAUTOTOOL_DIR', plugin_dir_path( __FILE__ ));
 define('AIAUTOTOOL_BASENAME', plugin_basename( __FILE__ ));
 
-define('AIAUTOTOOL_FREE', -1);
+define('AIAUTOTOOL_FREE', 30);
 
+
+    
+
+ 
 if ( ! function_exists( 'aiautotool_premium' ) ) {
     // Create a helper function for easy SDK access.
     function aiautotool_premium() {
@@ -141,6 +145,11 @@ if( ! class_exists( 'AI_Auto_Tool' ) ) {
          public function init_settings() {
         
     }
+        private function aiautotool_getdata() {
+            
+            return rendersetting::aiautotool_getdata();
+            
+        }
 
         public function load_textdomain() {
             load_plugin_textdomain('ai-auto-tool', false, dirname(plugin_basename(__FILE__)) . '/languages/');
@@ -412,13 +421,16 @@ return $content;
         if(isset($post->ID)){
 
             wp_localize_script( 'kct_cr_scriptx', 'ajax_object',array( 'ajax_url' => admin_url( 'admin-ajax.php') , 'postID' => $post->ID, 'postTitle' => $post->post_title,'security' => wp_create_nonce('aiautotool_nonce'),'languageCodes'=>$setting->languageCodes,
-                'langcodedefault'=>$langcodedefault ));
+                'langcodedefault'=>$langcodedefault ,
+                'fsdata'=>$this->aiautotool_getdata()
+                ));
         }else{
             wp_localize_script( 'kct_cr_scriptx', 'ajax_object',array( 
                 'ajax_url' => admin_url( 'admin-ajax.php') , 
                 'security' => wp_create_nonce('aiautotool_nonce'),
                 'languageCodes'=>$setting->languageCodes,
-                'langcodedefault'=>$langcodedefault
+                'langcodedefault'=>$langcodedefault,
+                'fsdata'=>$this->aiautotool_getdata()
             ));
         }
 
@@ -467,6 +479,21 @@ return $content;
         }
         public function menu_page() {
              $this->config_page();
+        }
+
+         function is_free_plan() {
+            if ( ! aiautotool_premium()->is_registered() ) {
+                return true;
+            }
+
+            if ( ! aiautotool_premium()->has_paid_plan() ) {
+                return true;
+            }
+
+            return (
+                'free' === aiautotool_premium()->get_plan_name() ||
+                ! aiautotool_premium()->has_features_enabled_license()
+            );
         }
 
         public function config_page() {
@@ -561,17 +588,20 @@ return $content;
                 <div id="tab-setting"  class="tab-content sotab-box ftbox ">
                     <h2></h2>
                     <div class="ft-card-note"> 
-                        <?php $domain = esc_html(home_url());
+                        
+                        <?php 
+
+                       
+                        $domain = esc_html(home_url());
                              echo "<p><i class=\"fa-solid fa-globe\"></i> Domain: <strong>$domain</strong></p>";
   
-   $fs = rendersetting::is_premium();              
-if($fs->get_plan_name()!='aiautotoolpro'&&$fs->get_plan_name()!='premium'){
-    $accountType =  $fs->get_plan_title();
-    if($accountType =='PLAN_TITLE'){
-        $accountType = 'Free';
-    }
+   
+       
+if($this->is_free_plan()){
+    $accountType = 'Free';
     echo "<p><i class=\"fa-solid fa-bell\"></i> Current Plan: <b class=\"activate-license ai-auto-tool\">$accountType</b> </p><p style=\"display: flex;align-items: center;justify-content: center; \"><a style=\"color:#ff4444;font-weight:bold\" href=\"".aiautotool_premium()->get_upgrade_url()."\" class=\"aiautotool_btn_upgradepro activate-license\" ><i class=\"fa-solid fa-unlock-keyhole\"></i> Upgrade Pro</a></p>";
 }else{
+     $fs = rendersetting::is_premium();       
     $accountType =  $fs->get_plan_title();
     echo "<p>Current Plan: <b>$accountType</b> </p>";
     

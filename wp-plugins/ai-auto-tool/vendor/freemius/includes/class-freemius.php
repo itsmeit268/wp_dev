@@ -11545,7 +11545,7 @@
          */
         function get_plan_title() {
             $plan = $this->get_plan();
-            return 'PREMIUM';
+
             return is_object( $plan ) ? $plan->title : 'PLAN_TITLE';
         }
 
@@ -11559,7 +11559,7 @@
          */
         function get_plan_name() {
             $plan = $this->get_plan();
-            return 'premium';
+
             return is_object( $plan ) ? $plan->name : 'PLAN_NAME';
         }
 

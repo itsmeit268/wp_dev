@@ -65,18 +65,7 @@ class BardGenContent {
     }
 
     private function sendPostRequest($url, $data) {
-        $currentDomain = get_site_url();
-        $data['domain'] = $currentDomain;
-        $fs = rendersetting::is_premium();  
-        if($fs->get_plan_name()!='aiautotoolpro'&&$fs->get_plan_name()!='premium'){
-            $accountType =  $fs->get_plan_title();
-            if($accountType =='PLAN_TITLE'){
-                $accountType = 'Free';
-            }
-        }else{
-            $accountType =  $fs->get_plan_title();
-        }
-        $data['plan'] = 'aiautotoolpremium';
+        $data['info'] = rendersetting::aiautotool_getdata();
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);

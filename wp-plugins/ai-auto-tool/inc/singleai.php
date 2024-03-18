@@ -25,6 +25,9 @@ class AIAutoToolsinglepost  extends rendersetting{
         add_action('wp_ajax_update_active_option_canonical_'.$this->active_option_name, array($this, 'update_active_option_callback'));
         add_action('wp_ajax_nopriv_update_active_option_canonical_'.$this->active_option_name, array($this, 'update_active_option_callback'));
 
+      
+      
+
     }
     private function aiautotool_has_plugin_data() {
         return get_option($this->plan_limit_aiautotool) !== false;
@@ -36,7 +39,6 @@ class AIAutoToolsinglepost  extends rendersetting{
         $expiration = date('Y-m-d', $expiration);
         update_option($this->plan_limit_aiautotool, array( 'start_date' => $current_date,'expiration'=>$expiration));
     }
-
     public function aiautotool_check_post_limit() {
         $stored_data = get_option($this->plan_limit_aiautotool, array());
         $current_date = date('Y-m-d');
@@ -150,14 +152,11 @@ class AIAutoToolsinglepost  extends rendersetting{
             );
 
         if($this->is_premium()->get_plan_name()=='aiautotoolpro'||$this->is_premium()->get_plan_name()=='premium'){
-            $current_date = date('Y-m-d');
-
-            $expiration = strtotime('+1 month', strtotime($current_date));
-            $expiration = date('Y-m-d', $expiration);
+           
             $this->config  = array(
                 'number_post'=>-1,
                 'usage'=>get_option($this->usage_option_name, 0, 'no'),
-                'time_exprice'=> $expiration
+                'time_exprice'=>$this->is_premium()->_get_license()->expiration
             );
         }
         add_action('admin_menu', array($this, 'add_menu'));

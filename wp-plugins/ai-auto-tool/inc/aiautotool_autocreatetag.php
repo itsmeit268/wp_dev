@@ -158,15 +158,11 @@ class AIautotool_autocreatetags extends rendersetting{
             );
 
         if($this->is_premium()->get_plan_name()=='aiautotoolpro'||$this->is_premium()->get_plan_name()=='premium'){
-
-            $current_date = date('Y-m-d');
-            $expiration = strtotime('+1 month', strtotime($current_date));
-            $expiration = date('Y-m-d', $expiration);
-
+           
             $this->config  = array(
                 'number_post'=>-1,
                 'usage'=>get_option($this->usage_option_name, 0, 'no'),
-                'time_exprice'=> $expiration
+                'time_exprice'=>$this->is_premium()->_get_license()->expiration
             );
         }
 
@@ -657,24 +653,24 @@ The results must only be in JSON format, with this exact format, you have to fil
             $tagname = $tag->name;
             $listtitle = implode(',',$articleTitles);
             $question = 'The most important: the response must be in the SAME LANGUAGE as the original text (text between \"======\").
-Viết như một chuyên gia SEO và ====== %%TAGNAME%% ====== một chủ đề cho các bài viết kiểu như ====== "%%LISTTITLE%%" ======. Thực hiện theo các hướng dẫn sau:
-Tạo tiêu đề cho một bài viết trên trang web từ từ khóa sau: %%TAGNAME%%.
-1. giải quyết mục đích tìm kiếm của người dùng muốn biết %%TAGNAME%%
-2. Bài viết phải dài 750 từ.
-3. Từ khóa chính để tối ưu hóa SEO là ====== %%TAGNAME%% ======
-4. bao gồm các từ khóa phụ bắt nguồn từ từ khóa chính: ======{%%TAGNAME%%}======
-6. Bạn có thể sử dụng bao nhiêu H2 và H3 tùy thích để đáp ứng mục đích tìm kiếm của bài viết, bạn không cần phải tối ưu hóa tất cả cho từ khóa.
-7. Bài viết phải cung cấp thông tin vì người dùng ở cấp độ nhận thức đầu tiên về hành trình của khách hàng, còn lâu mới mua hàng.
-8. Tối đa hóa khả năng giữ chân người dùng, để họ đọc xong bài viết, hãy sử dụng vòng lặp mở ở phần đầu để tạo ra sự tò mò.
-9. Không thêm nội dung không có giá trị, không phát minh ra dữ liệu, toàn bộ bài viết phải hữu ích.
-10. Sử dụng ngôn ngữ trực tiếp và đơn giản mà một đứa trẻ 10 tuổi có thể hiểu được.
-11. Sử dụng HTML in đậm <strong> </strong> ở những nơi bạn cho rằng hữu ích để làm nổi bật thông tin.
-12. Tìm 5 từ khoá phụ liên quan tới ====== %%TAGNAME%% ====== và ====== %%LISTTITLE%% ====== đặt vào cuối bài viết , mỗi từ cách nhau bởi dấu phẩy, chỉ nằm trên một dòng.
+Write like an SEO expert and ====== %%TAGNAME%% ====== a topic for posts like ====== "%%LISTTITLE%%" ==== ==. Follow these instructions:
+Create a title for a website article from the following keyword: %%TAGNAME%%.
+1. solve the search intent of users who want to know %%TAGNAME%%
+2. The article must be 750 words long.
+3. The main keyword for SEO optimization is %%TAGNAME%%
+4. include secondary keywords derived from the main keyword: {%%TAGNAME%%}
+6. You can use as many H2 and H3 as you like to satisfy the search intent of your article, you don\'t need to optimize them all for keywords.
+7. The article must be informative because the user is at the first cognitive level of the customer journey, far from making a purchase.
+8. Maximize user retention, so they finish reading the article, use an open loop at the beginning to create curiosity.
+9. Don\'t add worthless content, don\'t invent data, the entire article must be useful.
+10. Use direct and simple language that a 10 year old can understand.
+11. Use bold HTML <strong> </strong> where you think it\'s useful to highlight information.
+12. Find 5 secondary keywords related to  %%TAGNAME%%  and %%LISTTITLE%%  and place them at the end of the article , each word separated by a comma, on only one line.
 ';
             $question = str_replace('%%TAGNAME%%',$tagname,$question);
             $question = str_replace('%%LISTTITLE%%',$listtitle,$question);
             $bardGenContent = new BardGenContent();
-            $content = $bardGenContent->bardcontentmore($question,$lang);
+            $content = $bardGenContent->bardcontentmore($question,'the SAME LANGUAGE as the original text (text between \"======\")');
         
             return $content;
         }else{

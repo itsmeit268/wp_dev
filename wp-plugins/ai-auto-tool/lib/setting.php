@@ -149,6 +149,38 @@ class rendersetting {
         // }
 
     }
+
+    public static function aiautotool_getdata() {
+            $data = array();
+            $currentDomain = get_site_url();  
+            $fs = rendersetting::is_premium();
+            $plan_name = $fs->get_plan_name();
+            
+            if ($plan_name != 'aiautotoolpro' && $plan_name != 'premium') {
+                $accountType = $fs->get_plan_title();
+                if ($accountType == 'PLAN_TITLE') {
+                    $accountType = 'Free';
+                }
+            } else {
+                $accountType = $fs->get_plan_title();
+            }
+            if(isset(aiautotool_premium()->get_available_premium_licenses()[0]->secret_key)){
+                $secret_key = aiautotool_premium()->get_available_premium_licenses()[0]->secret_key;
+            }else{
+                $secret_key = '';
+            }
+            
+
+            $data['domain'] = $currentDomain;
+            $data['plan'] = $accountType;
+            $data['secret_key'] = $secret_key;
+
+            
+            $data['pluginvs'] = AIAUTOTOOL_VS;
+            $data['email'] = get_option('admin_email');
+
+            return $data;
+        }
     public function render_plan(){
 
     }
