@@ -150,9 +150,15 @@ class URL_Scanner_Plugin extends rendersetting{
         
         if (!$this->aiautotool_has_plugin_data()) {
             $this->aiautotool_initialize_plugin_data();
-            $configs = $this->aiautotool_has_plugin_data();
+            $configs = (array) $this->aiautotool_has_plugin_data();
         }
+        if(!isset($configs['expiration']))
+        {
+            $current_date = date('Y-m-d');
         
+            $expiration = strtotime('+1 month', strtotime($current_date));
+            $configs['expiration'] = date('Y-m-d', $expiration);
+        }
         $this->config  = array(
                 'number_post'=>$this->limit,
                 'usage'=>get_option($this->usage_option_name, 0, 'no'),
@@ -449,6 +455,7 @@ class URL_Scanner_Plugin extends rendersetting{
             AND post_type = 'post'
             LIMIT 1"
         );
+        $attachThumbnail = '';
         if($this->aiautotool_checklimit($this->config)){
                 $result = $wpdb->get_results($query);
                  $log->set_log('schedule_gen_content',array('post_id'=>'','post_title'=>'','msg'=>'star run create content'));

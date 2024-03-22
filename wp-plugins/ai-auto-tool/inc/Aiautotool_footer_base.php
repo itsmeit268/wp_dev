@@ -68,7 +68,13 @@ class Aiautotool_Footer_Base  extends rendersetting{
              	<p class="ft-note"><i class="fa-solid fa-lightbulb"></i><?php _e('Select type Footer', 'ai-auto-tool'); ?></p>
              	<p>
 					<?php 
-						
+						if (empty($this->aiautotool_footer_settings)) {
+                $this->aiautotool_footer_settings = array(); // Initialize as empty array
+            }
+
+            if(!isset($this->aiautotool_footer_settings['footer_template'])){
+              $this->aiautotool_footer_settings['footer_template'] = '';
+            }
 						?>
 
 						<select id="footerselect" name="aiautotool_footer_settings[footer_template]" onchange="changeImage()">
@@ -87,7 +93,7 @@ class Aiautotool_Footer_Base  extends rendersetting{
 						function changeImage() {
 						    var select = document.getElementById("footerselect");
 						    var selectedLabel = select.options[select.selectedIndex].text;
-						    var selectedImage = "<?php echo $this->styles['Footer 1']; ?>"; // Default image path
+						    var selectedImage = "<?php echo $this->styles['Footer1']; ?>"; // Default image path
 
 						    // Get the image path based on the selected label
 						    if (selectedLabel in <?php echo json_encode($this->styles); ?>) {

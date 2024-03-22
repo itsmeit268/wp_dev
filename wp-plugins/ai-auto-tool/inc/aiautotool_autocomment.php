@@ -270,6 +270,7 @@ class AIautotool_autocomment extends rendersetting{
                 $post_id = $post->ID;
                 print_r($post_id);
                 $post_title = $post->post_title;
+                $post_content = $post->post_content;
                 // $post_content = $this->aiautotool_fixcontent_PostContent($post->post_content);
                 $lang = get_post_meta($post_id, 'lang', '');
                 $bardGenContent = new BardGenContent();
@@ -286,7 +287,7 @@ The answers must only be in JSON format, with this exact format, you have to fil
                 $question = str_replace('%%CONTENT%%',$post_content,$question);
 
                 
-                $json = $bardGenContent->bardcontentmore($question,$lang);
+                $json = $bardGenContent->bardcontentmore($question,'the SAME LANGUAGE as the original text (text between \"======\")');
                 
                 $newcontent = $this->aiautotool_fixjsonreturn($json);
                 
@@ -490,7 +491,7 @@ The answers must only be in JSON format, with this exact format, you have to fil
                 <p class="ft-note"><i class="fa-solid fa-lightbulb"></i><?php _e('Select post type', 'ai-auto-tool'); ?></p>
 
                 <?php
-                    $post_types = get_post_types();
+                    $post_types = get_post_types(array( 'public' => true ), 'names' );
                     $i = 0;
                     foreach ($post_types as $post_type) {
                         ?>

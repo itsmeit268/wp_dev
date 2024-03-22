@@ -4,7 +4,7 @@ Plugin Name: Ai Auto Tool Content Writing Assistant (Gemini Bard Writer, ChatGPT
 Plugin URI: https://aiautotool.com
 Description: The AI Auto Tool Plugin is a powerful tool that automates various tasks for effortless content creation and management.
 Author: KCT
-Version: 1.9.2
+Version: 1.9.3
 Author URI: https://aiautotool.com
 License: GPL2
 */
@@ -12,7 +12,7 @@ License: GPL2
 defined( 'ABSPATH' ) || exit;
 define( 'MENUSUBPARRENT','ai_auto_tool' );
 define('AIAUTOTOOL_URI', plugin_dir_url( __FILE__ ));
-define('AIAUTOTOOL_VS', '1.9.2');
+define('AIAUTOTOOL_VS', '1.9.3');
 
 define('AIAUTOTOOL_DIR', plugin_dir_path( __FILE__ ));
 define('AIAUTOTOOL_BASENAME', plugin_basename( __FILE__ ));
@@ -21,7 +21,11 @@ define('AIAUTOTOOL_FREE', 30);
 
 
     
-
+function custom_editor_event_enqueue_scripts() {
+    // Thêm mã JavaScript vào trang chỉnh sửa WordPress
+    wp_enqueue_script('custom-editor-event-script', plugin_dir_url(__FILE__) . 'js/ai.js ', array('jquery'), null, true);
+}
+add_action('admin_enqueue_scripts', 'custom_editor_event_enqueue_scripts');
  
 if ( ! function_exists( 'aiautotool_premium' ) ) {
     // Create a helper function for easy SDK access.
@@ -138,7 +142,7 @@ if( ! class_exists( 'AI_Auto_Tool' ) ) {
             'button_text' => 'Join group support Ai auto Tool Plugin',
             'button_url'  => 'https://t.me/aiautotoolchat',
         ));
-            
+            // $aiautotool_Warning_Notice->create_custom_notice();
             
         }
 
@@ -1249,6 +1253,113 @@ self::render_plan();
 
             // Output the HTML markup for your custom meta box
             ?>
+            <div class="aiautotool-modal-container">
+        <div class="aiautotool-modal-overlay"></div>
+        <div class="aiautotool-modal-content">
+            <h2><?php _e('All tool for AI Post','ai-auto-tool');  ?></h2>
+            <p>
+                <span class=" aiautotool_btn_v1 aiautotool_btn_v16 btn_bardWriter btnoutline" id="btn_outline"  onclick="changeType('Outline')"><span class="icon"><i class="fa-solid fa-lightbulb"></i>  </span><span>Outline </span></span>
+                
+                <span class=" aiautotool_btn_v1 aiautotool_btn_v11 btn_bardWriter btn_intro" id=""  onclick="changeType('Introduction')"><span class="icon"><i class="fa-solid fa-info"></i>  </span><span>Introduction </span></span>
+                <span class=" aiautotool_btn_v1 aiautotool_btn_v13 btn_bardWriter btn_conclusion" id=""  onclick="changeType('Conclusion')"><span class="icon"><i class="fa-solid fa-check-double"></i>  </span><span>Conclusion </span></span>
+                <span class=" aiautotool_btn_v1 aiautotool_btn_v12 btn_bardWriter btn_faq" id=""  onclick="changeType('FAQ')"><span class="icon"><i class="fa-solid fa-question"></i>  </span><span>Create FAQ </span></span>
+                <!-- <span class=" aiautotool_btn_v1 aiautotool_btn_v15 btn_bardWriter btn_summary" id=""  onclick="changeType('Summary')"><span class="icon"><i class="fa-solid fa-list-check"></i>  </span><span>Summary </span></span> -->
+            </p>
+            <div class=" aiautotool_container aiautotool_modal_content">
+                <div id="outline">
+                    <h3 id="current_type">Suggest Outline By Ai Auto Tool</h3>
+                        <input type="hidden" name="type" id="type" value="Outline">
+                    <div class="aiautotool_input2">
+                      <input type="text" name="moretool" class="aiautotool_input2_input" placeholder="Enter your Keyword for ">
+                      <button class="aiautotool_input2_button" id="moretool" type="submit">Create </button>  
+
+                    </div>
+                </div>
+                <div id="Summary" style="display:none">
+                    <div class="aiautotool_input2">
+                      <input type="text" class="aiautotool_input2_input" placeholder="Enter your Keyword for ">
+                      <button class="aiautotool_input2_button" type="submit" id="createButton">Create </button>  
+                    </div>
+                </div>
+                <div id="Summary"></div>
+                <div id="Introduction"></div>
+                <div id="Conclusion"></div>
+                <div id="Create FAQ"></div>
+                <script type="text/javascript">
+                    function changeType(newType) {
+                        document.getElementById('current_type').innerText = newType;
+                        document.getElementsByName('type')[0].value = newType;
+                        const createButton = document.getElementById('moretool');
+                        createButton.innerText = 'Create ' + newType;
+                    }
+                    jQuery(document).ready(function(){
+                        jQuery("#moretool").click(function(){
+                            var type = document.getElementsByName('type')[0].value;
+                            var moretoolText = jQuery("input[name='moretool']").val();
+                            var post_language = get_lang();
+                            var langcheck = '';
+                            if(moretoolText.trim() === "") {
+                                if(Swal){
+                                     Swal.fire({
+                                              title: 'Error!',
+                                              text: 'Please fill Keyword in request.',
+                                              icon: 'error',
+                                              confirmButtonText: 'Close'
+                                            });
+                                 }else{
+                                    alert('Please fill Keyword in request.');
+                                 }
+                            } else {
+
+
+                                open_box_aiautotool();
+                            jQuery('.aiautotool-modal-close').click();
+
+                            if (languageCodes.hasOwnProperty(post_language)) {
+                               langcheck = languageCodes[post_language];
+                              
+                            } 
+                            var divId = "outbard";
+
+                            switch(type) {
+                                case "Outline":
+                                    text = 'Create an outline for a {'+moretoolText+'} , with main topics and subtopics organized in a hierarchical numbered list format.'; 
+                                    
+
+                                    sendbardToServer(text, divId,'writemore',langcheck);
+                                    break;
+                                case "Summary":
+                                    // Xử lý khi type là Summary
+                                    sendbardToServer(moretoolText, divId, langcheck); // Điều chỉnh hàm và tham số phù hợp
+                                    break;
+                                case "Introduction":
+                                    text = 'Write an introduction for the article title ['+moretoolText+'] , Include an introduction of 50 to 100 words.'; 
+                                    sendbardToServer(text, divId,'writemore', langcheck); // Điều chỉnh hàm và tham số phù hợp
+                                    break;
+                                case "Conclusion":
+                                    // Xử lý khi type là Conclusion
+                                    text = 'Viết phần kết bài cho bài viết ['+moretoolText+']. ';
+                                    sendbardToServer(text , divId,'writemore', langcheck); // Điều chỉnh hàm và tham số phù hợp
+                                    break;
+                                case "FAQ":
+                                    // Xử lý khi type là Create FAQ
+                                    text = 'I want to create an FAQ section for my ['+moretoolText+']. Can you help me come up with a list of frequently asked questions and answers that will provide helpful information for my customers?';
+                                    sendbardToServer(text, divId,'writemore', langcheck); // Điều chỉnh hàm và tham số phù hợp
+                                    break;
+                                default:
+                                    // Xử lý khi type không khớp với bất kỳ trường hợp nào
+                                    console.error("Unknown type: " + type);
+                            }
+                            
+                            
+                            }
+                        });
+                    });
+                </script>
+            </div>
+            <button class="aiautotool-modal-close"><i class="fa-regular fa-rectangle-xmark"></i></button>
+        </div>
+    </div>
             <div class="aiautotool_box1 ">
                         <div class="aiautotool_box_head">
                                <img src="<?php echo plugins_url('/images/logo.svg', __FILE__); ?>" width="16px" height="16px">

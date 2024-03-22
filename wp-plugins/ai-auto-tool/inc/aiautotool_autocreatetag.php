@@ -22,6 +22,8 @@ class AIautotool_autocreatetags extends rendersetting{
     public $config = array();
     public $notice ;
     public $promptdesctag = '';
+    public $lang = 'en';
+    public $setting;
     public function __construct() {
         $this->name_plan =  __('Auto Tags By AI','ai-auto-tool');
         $this->plan_limit_aiautotool =  'plan_limit_aiautotool_'.$this->active_option_name;
@@ -144,6 +146,7 @@ class AIautotool_autocreatetags extends rendersetting{
         
         $configs = get_option($this->plan_limit_aiautotool, array());
          
+        $this->setting = get_option('aiautotool_setting_autocreatetag');
 
         
         if (!$this->aiautotool_has_plugin_data()) {
@@ -169,6 +172,7 @@ class AIautotool_autocreatetags extends rendersetting{
         add_action('admin_init', array($this, 'init_settings'));
         add_action('admin_init', array($this, 'aiautotool_check_post_limit'));
         add_action( 'admin_notices', [ $this, 'display_notices' ], 10, 1 );
+
 
        if ($this->aiautotool_checklimit($this->config)) {
 
@@ -198,8 +202,71 @@ class AIautotool_autocreatetags extends rendersetting{
                                 $this->name_plan
                             );
         }
+
+         add_action('admin_enqueue_scripts', array($this,'aiautotool_button_createtags'));
+
+       add_filter('tag_row_actions', array($this,'custom_tag_button_add_row_action'), 10, 2);
+        add_action('wp_ajax_custom_tag_button_create_desc', array($this,'aiautotag_ajax_createdesc'));
+
+        
+        add_action('wp_ajax_aiautotool_suggest_tag', array($this, 'aiautotool_suggest_tag_callback'));
+
         
     }
+
+        public function aiautotool_suggest_tag_callback() {
+            // Kiểm tra nonce
+            if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'aiautotool_nonce' ) ) {
+                wp_send_json_error( 'Invalid nonce' );
+            }
+            $title = isset($_POST['title']) ? sanitize_text_field($_POST['title']) : '';
+            $lang = isset($_POST['lang']) ? sanitize_text_field($_POST['lang']) : $this->setting['lang'];
+            
+            $tag = $this->aiautotool_AIprecreatetagname($title,$lang);
+            if(isset($tag)){
+                wp_send_json_success( $tag );
+            }else{
+                wp_send_json_error( 'no tag' );
+            }
+            
+        }
+
+        
+
+    public function aiautotag_ajax_createdesc() {
+        // Your code to create tag description goes here
+        // For example:
+        $tag_id = $_POST['tag_id'];
+        $this->updateTagDescription($tag_id);
+        // $tag_desc = $_POST['tag_desc'];
+
+        // Simulate success
+        $success = true;
+
+        if ($success) {
+            echo $tag_id;
+        } else {
+            echo 'error';
+        }
+
+        wp_die();
+    }
+   
+
+    public function custom_tag_button_add_row_action($actions, $tag) {
+
+        $actions['create_desc'] = '<a href="#" class="custom-tag-create-desc" data-tag-id="' . $tag->name . '">AI Auto Tag Desc</a>';
+        return $actions;
+    }
+
+
+    public function aiautotool_button_createtags($hook) {
+            
+                wp_enqueue_script('aiautotag', plugin_dir_url(__FILE__) . '../js/aiautotag.js', array('jquery'), '1.0', true);
+                wp_localize_script('aiautotag', 'aiautotags', array('ajaxurl' => admin_url('admin-ajax.php')));
+                wp_enqueue_script('aiautotags');
+            
+        }
     public function aiautotool_schedule_autocreatetag_intervals($schedules) {
          
         $setting = get_option('aiautotool_setting_autocreatetag');
@@ -273,10 +340,14 @@ class AIautotool_autocreatetags extends rendersetting{
          if ($result) {
             foreach ($result as $post) {
                 $post_id = $post->ID;
-                print_r($post_id);
+                
                 $post_title = $post->post_title;
                 // $post_content = $this->aiautotool_fixcontent_PostContent($post->post_content);
                 $lang = get_post_meta($post_id, 'lang', '');
+                if (empty($lang)) {
+                    $language_code = explode('_',get_locale());
+                    $lang = $language_code[0];
+                }
                 $bardGenContent = new BardGenContent();
                 $question = "The most important: The results must only be in JSON format, the response must be in the SAME LANGUAGE as the original text (text between \"======\").
 Create %%NUMMBERCOMMENT%% tag for the article.
@@ -289,7 +360,7 @@ The results must only be in JSON format, with this exact format, you have to fil
                 $question = str_replace('%%NUMMBERCOMMENT%%',rand(8, 15),$question);
                 
                 
-                $json = $bardGenContent->bardcontentmore($question,$lang);
+                $json = $bardGenContent->bardcontentmore($question,$this->setting['lang']);
                 
                 $newcontent = $this->aiautotool_fixjsonreturn($json);
                 print_r($newcontent);
@@ -332,6 +403,24 @@ The results must only be in JSON format, with this exact format, you have to fil
             $this->notice->add_notice( __( 'No Post find ', 'ai-auto-tool' ), 'notice-info', null, true,$this->name_plan );
          }
     }
+
+    public function aiautotool_AIprecreatetagname($title, $lang) {
+        $bardGenContent = new BardGenContent();
+        $question = "The most important: The results must only be in JSON format, the response must be in the SAME LANGUAGE as the original text (text between \"======\").
+    Create %%NUMMBERCOMMENT%% tag for the article.
+    tag only 2 or 3 word
+    tag must have a ====== %%TITLTE%%  ======  intellectual level.
+    The post\'s content is between \"=========\". 
+    The results must only be in JSON format, with this exact format, you have to fill empty values,Each item in tag has the form { \"tag\": \"\" }
+    ";
+        $question = str_replace('%%TITLTE%%', $title, $question);
+        $question = str_replace('%%NUMMBERCOMMENT%%', rand(8, 15), $question);
+
+        $json = $bardGenContent->bardcontentmore($question, $lang);
+
+        return $this->aiautotool_fixjsonreturn($json);
+    }
+
 
     private function aiautotool_product_review(){
 
@@ -402,7 +491,11 @@ The results must only be in JSON format, with this exact format, you have to fil
         if($this->active!="true"){
             return '';
         }
-        $setting = get_option('aiautotool_setting_autocreatetag');
+
+        $language_code = explode('_',get_locale());
+        $language_code = $language_code[0];
+
+        $setting = $this->setting;
         $current_interval = 1;
         $number_post = 4;
         if(!empty($setting)){
@@ -412,16 +505,21 @@ The results must only be in JSON format, with this exact format, you have to fil
             if(isset($setting['number_comment'])){
                 $number_post = $setting['number_comment'];
             }
+
+            if(isset($setting['lang'])){
+                $language_code = $setting['lang'];
+            }
         }else{
             $setting = array('time_comment'=>1,
                                 'post_type'=>array('post')
             );
             update_option('aiautotool_setting_autocreatetag',$setting ,null, 'no');
-            $setting = get_option('aiautotool_setting_autocreatetag');
+            $this->setting = get_option('aiautotool_setting_autocreatetag');
+            $setting = $this->setting;
         }
 
-
         
+        $languages = $this->languageCodes;
         
     ?>
 
@@ -452,11 +550,22 @@ The results must only be in JSON format, with this exact format, you have to fil
                             <option value="1440" <?php selected($current_interval, 1440); ?>>24 hour</option>
                         </select>
                
-                
+                 <p class="ft-note"><i class="fa-solid fa-lightbulb"></i>
+                                    <?php _e('Language for tag, Ai has write description for tag by language your select.','ai-auto-tool'); ?>
+                                </p>
+                                 <?php 
+                                 echo '<select name="aiautotool_setting_autocreatetag[lang]" id="aiautotool_setting_autocreatetag[lang]">';
+                                    foreach ($languages as $code => $name) {
+                                        $is_selected = selected($language_code, $code, false);
+                                        echo '<option value="' . $code . '" ' . $is_selected . '>' . $name . '</option>';
+                                    }
+                                    echo '</select>';
+
+                                  ?>
                 <p class="ft-note"><i class="fa-solid fa-lightbulb"></i><?php _e('Select post type', 'ai-auto-tool'); ?></p>
 
                 <?php
-                    $post_types = get_post_types();
+                    $post_types = get_post_types( array( 'public' => true ), 'names' );
                     $i = 0;
                     foreach ($post_types as $post_type) {
                         ?>
@@ -492,7 +601,7 @@ The results must only be in JSON format, with this exact format, you have to fil
 
     public function render_feature() {
 
-       $autoToolBox = new AutoToolBox($this->icon.' '.$this->name_plan, __('Auto General Comment using AI','ai-auto-tool'), "#", $this->active_option_name, $this->active,plugins_url('../images/logo.svg', __FILE__));
+       $autoToolBox = new AutoToolBox($this->icon.' '.$this->name_plan, __('Auto General Tags and Description using AI','ai-auto-tool'), "#", $this->active_option_name, $this->active,plugins_url('../images/logo.svg', __FILE__));
 
         echo $autoToolBox->generateHTML();
     }
@@ -670,7 +779,7 @@ Create a title for a website article from the following keyword: %%TAGNAME%%.
             $question = str_replace('%%TAGNAME%%',$tagname,$question);
             $question = str_replace('%%LISTTITLE%%',$listtitle,$question);
             $bardGenContent = new BardGenContent();
-            $content = $bardGenContent->bardcontentmore($question,'the SAME LANGUAGE as the original text (text between \"======\")');
+            $content = $bardGenContent->bardcontentmore($question,$this->setting['lang']);
         
             return $content;
         }else{

@@ -94,7 +94,13 @@ class AIAutotool_ThumbPlusSettings extends rendersetting{
                 	<i class="fa-solid fa-lightbulb"></i>
                 	<?php _e('Max Width, dimensions exceed the maximum size. Setting = 0 will not resize.','ai-auto-tool'); ?> 
                 </p>
-                <input class="ft-input-big" placeholder="<?php _e('400', 'ai-auto-tool'); ?>" name="thumb_plus_option[max_width]" type="number" value="<?php echo $this->options['max_width']==''? 0:$this->options['max_width']; ?>"/>
+                <?php 
+
+                $max_width_value = $this->options !== null ? ($this->options['max_width'] ?? 0) : 0;
+                
+
+ ?>
+                <input class="ft-input-big" placeholder="<?php _e('400', 'ai-auto-tool'); ?>" name="thumb_plus_option[max_width]" type="number" value="<?php echo $max_width_value; ?>"/>
 
                 <p class="ft-note"><i class="fa-solid fa-lightbulb"></i><?php _e('Disable scaled images, Disable automatic resizing of images above the threshold 2560, keeping only the original images. Does not work with PNG images.', 'ai-auto-tool'); ?></p>
 

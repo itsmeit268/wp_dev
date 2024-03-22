@@ -92,7 +92,7 @@ class AIAutoToolsinglepost  extends rendersetting{
     }
     
     public function add_aiautotool_aipost_js() {
-         wp_register_script('kct_aipost', plugin_dir_url( __FILE__ ) .'js/aipost.js', array('jquery'), '1.2'.rand(), true);
+         wp_register_script('kct_aipost', plugin_dir_url( __FILE__ ) .'../js/aipost.js', array('jquery'), '1.2'.rand(), true);
          wp_localize_script( 'kct_aipost', 'aipost',array( 'ajax_url' => admin_url( 'admin-ajax.php'),'config'=>$this->config,'security' => wp_create_nonce('aiautotool_aipost_nonce') ));
          wp_enqueue_script('kct_aipost');
     }
@@ -162,7 +162,6 @@ class AIAutoToolsinglepost  extends rendersetting{
         add_action('admin_menu', array($this, 'add_menu'));
 
         add_action('admin_init', array($this, 'aiautotool_check_post_limit'));
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
         
         add_action('wp_ajax_aiautotool_get_slug', array($this, 'aiautotool_get_slug'));
         add_action('wp_ajax_nopriv_aiautotool_get_slug', array($this, 'aiautotool_get_slug'));
@@ -174,7 +173,7 @@ class AIAutoToolsinglepost  extends rendersetting{
         add_action('wp_ajax_save_post_data', array($this, 'save_post_data'));
         add_action('wp_ajax_nopriv_save_post_data', array($this, 'save_post_data'));
 
-         add_action( 'admin_enqueue_scripts', array( $this, 'add_aiautotool_aipost_js' ) );
+         add_action( 'admin_footer', array( $this, 'add_aiautotool_aipost_js' ) );
 
         add_action('wp_ajax_update_usage', array($this, 'aiautotool_update_usage_callback'));
         add_action('wp_ajax_nopriv_update_usage', array($this, 'aiautotool_update_usage_callback'));
@@ -433,10 +432,7 @@ class AIAutoToolsinglepost  extends rendersetting{
     }
 
 
-    public function enqueue_scripts() {
-        
-    }
-
+    
    
 
     public function render_form() {

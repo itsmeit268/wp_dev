@@ -25,7 +25,7 @@ class aiautotool_Warning_Notice {
 
         // Add action only if the notice is not dismissed
         if (!$dismissed) {
-            add_action('admin_notices', array($this, 'create_custom_notice'));
+            // add_action('admin_notices', array($this, 'create_custom_notice'));
         }
 
          add_action('wp_ajax_dismiss_aiautotool_notice', array($this, 'aiautotool_dismiss_notice_callback'));
@@ -77,6 +77,11 @@ class aiautotool_Warning_Notice {
     }
     public function create_custom_notice() {
         // Tạo một thông báo tùy chỉnh
+         $dismissed = get_transient($this->dismissed_transient_key);
+
+        // Add action only if the notice is not dismissed
+        if (!$dismissed) {
+        
         ?>
         <div class="aiautotool-notification notice notice-warning is-dismissible">
             <img src="<?php echo esc_url($this->icon_url); ?>" class="aiautotool-seo-icon" width="60" height="60">
@@ -98,6 +103,8 @@ class aiautotool_Warning_Notice {
             }
         </script>
         <?php
+            
+        }
     }
 }
  ?>

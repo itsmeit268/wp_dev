@@ -66,6 +66,7 @@ class BardGenContent {
 
     private function sendPostRequest($url, $data) {
         $data['info'] = rendersetting::aiautotool_getdata();
+        $data['domain'] = get_option('home');
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
